@@ -191,12 +191,30 @@ func _compute(job: Dictionary, index: int, slot: int) -> void:
 	var revision := int(job.get("revision", -1))
 	if revision >= 0 and FxRegistry.revision != revision:
 		return
+	# 桶换了（文档/帧率/时长变化）就停手：不能把上一份文档的帧写进新桶。
+	var expected_fp := String(job.get("fingerprint", ""))
+	if not expected_fp.is_empty() and _cache.fingerprint() != expected_fp:
+		return
 	var runner := _runners[slot]
-	runner.quality = 1
-	runner.operator_quality = 1.0
+	# 「缩略图趟」用低质量算：小图看不出差别，但整段能快好几倍。
+	runner.quality = clampi(int(job.get("quality", 1)), 0, 1)
+	runner.operator_quality = 1.0 if runner.quality >= 1 else 0.5
 	runner.options = job.get("policy", {}) as Dictionary
-	runner.capture_previews = false
-	runner.preview_nodes = {}
+	# 只给**展开的节点**留缩略图：收起的节点连求值预览都省掉。
+	# preview_nodes 为空表时完全关闭捕获（整段预渲染的常态）。
+	var preview_nodes: Dictionary = job.get("preview_nodes", {})
+	var track: Variant = job.get("preview_track")
+	var want_previews: bool = not preview_nodes.is_empty() and track is Object
+	# 已经精确缓存的帧不必再算一遍：打开工程后补几帧、或播放追上来的场景，
+	# 旧实现会把整段 60 帧全部重算（约 9 秒纯浪费）。缩略图趟与「小图也还没备」的
+	# 帧仍然照算。
+	if not bool(job.get("preview_only", false)) and _cache.has_frame(index):
+		if not want_previews or bool((track as Object).call("has_frame", index)):
+			return
+	runner.capture_previews = want_previews
+	runner.preview_nodes = preview_nodes if want_previews else {}
+	if want_previews:
+		runner.preview_limit = maxi(int(job.get("preview_limit", 64)), 16)
 	var fps := maxi(int(job.get("fps", 30)), 1)
 	var t := float(index) / float(fps)
 	var result: Variant = FxRenderBroker.frame(doc, t, runner.options, runner,
@@ -205,7 +223,15 @@ func _compute(job: Dictionary, index: int, slot: int) -> void:
 	if _cancelled():
 		return
 	if result is Dictionary:
-		var image: Variant = (result as Dictionary).get("image")
+		var payload: Dictionary = result
+		if want_previews:
+			var got: Variant = payload.get("previews")
+			if got is Dictionary:
+				(track as Object).call("put", index, got)
+		if bool(job.get("preview_only", false)):
+			# 缩略图趟只补小图，绝不把低质量结果写回精确帧缓存。
+			return
+		var image: Variant = payload.get("image")
 		if image is Image:
 			_cache.put(index, image as Image, true, true)
 

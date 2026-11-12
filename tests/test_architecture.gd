@@ -17,6 +17,7 @@ func _initialize() -> void:
 	_test_node_picker()
 	_test_skin_textures()
 	_test_package_contract()
+	_test_spatiotemporal_composability()
 	print("----")
 	if failures.is_empty():
 		print("架构解耦自测全部通过")
@@ -107,17 +108,40 @@ func _test_render_backends() -> void:
 		{"playing": true, "exact": true})
 	_check(not bool((exact.get("stats", {}) as Dictionary).get("skipped", true)),
 		"精确帧不跳帧，导出结果不受后端影响")
-	# 停用第二个后端：自动回落第一个，不崩。
+	# 停用第二个后端：自动回落到「贡献顺序里的第一个可用后端」，不崩。
 	FxPluginHost.set_enabled("render.lite", false)
 	FxRenderBroker.invalidate()
 	FxSettings.set_value("render.backend", "cpu.economy")
-	_check(String((FxRenderBroker.frame(doc, 0.2,
+	var fallback_id := String((FxRenderBroker.frame(doc, 0.2,
 			FxQualityPolicy.resolve({"playing": false}), runner,
-			{"playing": false, "exact": false}).get("stats", {}) as Dictionary).get("backend", "")) == "cpu.standard",
-		"后端插件停用后自动回落到默认实现")
+			{"playing": false, "exact": false}).get("stats", {}) as Dictionary).get("backend", ""))
+	_check(fallback_id != "cpu.economy" and FxRenderBroker.backend_ids().has(fallback_id),
+		"后端插件停用后自动回落到第一个可用后端（%s）" % fallback_id)
 	FxPluginHost.set_enabled("render.lite", true)
 	FxSettings.reset("render.backend")
 	FxRenderBroker.invalidate()
+
+	# ---- 基座纯度：插件类名与插件 id 不得出现在基座源码里 ----
+	# 「可卸载」的判据不是「停用后不崩」，而是「删掉插件目录后基座仍能编译」。
+	# 类名一旦写进基座，停用只是运行期侥幸，删目录就是解析错误。
+	var plugin_symbols := ["FxRenderService", "FxFrameCache", "FxGraphRunner",
+		"FxPlaybackClock", "FxCatalog", "FxOpsSubgraph", "FxGraphDoc"]
+	for dir in ["res://scripts/graph/kernel", "res://scripts/graph/ui",
+			"res://scripts/graph/plugins", "res://scripts/graph/services"]:
+		_check(_source_has_no(dir, plugin_symbols), "%s 零插件类名（可整目录卸载）" % dir)
+	var base_shell := FileAccess.get_file_as_string("res://scripts/graph/ui/fx_shell.gd")
+	_check(not base_shell.contains("gpu.standard"), "基座不硬编码任何后端 id")
+	_check(FileAccess.file_exists("res://scripts/graph/kernel/fx_render_host.gd"),
+		"呈现器契约住在基座（插件只是实现它）")
+	# 空呈现器必须能独立工作：停用 core.render 也不该让外壳失去播放状态机。
+	var placeholder := FxRenderHost.new()
+	var seen_play: Array[bool] = []
+	placeholder.playback_changed.connect(func(v: bool) -> void: seen_play.append(v))
+	placeholder.set_playing(true)
+	_check(placeholder.playing and seen_play == [true], "空呈现器仍维护播放状态")
+	_check(placeholder.last_image() == null and placeholder.last_stats().is_empty(),
+		"空呈现器不产出画面，也不假装有统计")
+	placeholder.free()
 
 
 # ---------- 3. 节点创建弹窗独立插件 ----------
@@ -226,6 +250,55 @@ func _skin_entry(skin_id: String) -> Dictionary:
 		if String(entry.get("id", "")) == skin_id:
 			return entry
 	return {}
+
+
+# ---------- 6. 时空可组合：职责边界 ----------
+
+## 空间（图/子图）与时间（时钟/帧/缓存）必须各自归属插件，基座只提供组合规则。
+## 这些是静态边界断言：以后谁把领域逻辑写回核心，这里会立刻红。
+func _test_spatiotemporal_composability() -> void:
+	print("== 时空可组合：职责边界 ==")
+	_check(FxRegistry.KINDS.has("status_fragment"), "注册表支持状态栏片段贡献")
+	_check(FxRegistry.KINDS.has("clock"), "注册表支持时钟贡献")
+	_check(FxRegistry.status_fragments.size() >= 1, "渲染插件贡献了状态栏片段（%d）" % FxRegistry.status_fragments.size())
+	_check(FxRegistry.clock_providers.size() >= 1, "时间插件贡献了时钟（%d）" % FxRegistry.clock_providers.size())
+	_check(FxClockBroker.provider_id() == "core.timeline.linear", "时钟代理选中 core.timeline（%s）" % FxClockBroker.provider_id())
+	_check(FileAccess.file_exists("res://plugins/core.timeline/plugin.json"), "时间维度是独立插件而不是基座文件")
+	var shell_src := _code_of("res://scripts/graph/ui/fx_shell.gd")
+	_check(not shell_src.contains('"cache"'), "外壳不读 render 服务的 cache 字段")
+	_check(not shell_src.contains("预渲染 %d") and not shell_src.contains("缓存 %d/%d"),
+		"外壳不硬编码帧缓存 / 预渲染文案")
+	_check(shell_src.contains("FxRegistry.status_fragments"), "外壳按贡献点拼接状态栏片段")
+	var gate_src := _code_of("res://scripts/graph/kernel/fx_render_gate.gd")
+	_check(gate_src.contains("func set_main_thread_pump") and not gate_src.contains("static var _gpu_pump"),
+		"主线程泵已泛化，基座不再以 GPU 命名组合规则")
+	var service_src := _code_of("res://plugins/core.render/fx_render_service.gd")
+	_check(service_src.contains("FxClockBroker.create()") and not service_src.contains("_play_accum"),
+		"渲染服务通过时钟代理推进帧号，自己不实现时间累加")
+	var sub_src := _code_of("res://plugins/core.graph/fx_ops_subgraph.gd")
+	_check(not sub_src.contains("static var _runner") and not sub_src.contains("static var _stack"),
+		"子图组合状态不再是进程级静态单例")
+	var ctx_src := _code_of("res://plugins/core.graph/fx_eval_context.gd")
+	_check(ctx_src.contains("var subgraph_stack") and ctx_src.contains("var subgraph_runners"),
+		"子图递归栈与内层执行器挂在每次求值的上下文上")
+	var a := FxEvalContext.new()
+	var b := FxEvalContext.new()
+	a.subgraph_stack.append("A")
+	a.subgraph_runners["x"] = "runner"
+	_check(b.subgraph_stack.is_empty() and b.subgraph_runners.is_empty(),
+		"两个求值上下文的子图作用域互不共享")
+
+
+## 去掉注释行后的源码：断言「代码」而不是「文档」。
+func _code_of(path: String) -> String:
+	if not FileAccess.file_exists(path):
+		return ""
+	var out: Array[String] = []
+	for line in FileAccess.get_file_as_string(path).split("\n"):
+		var code := line.strip_edges()
+		if not code.begins_with("#"):
+			out.append(line)
+	return "\n".join(PackedStringArray(Array(out)))
 
 
 func _plugin_manifest(plugin_id: String) -> Dictionary:

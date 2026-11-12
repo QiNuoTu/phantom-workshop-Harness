@@ -214,6 +214,21 @@ func _test_gpu_backend() -> void:
 	_check((FxGpuBackend.new() as FxRenderBackend).postprocess(probe_image, {}) == probe_image,
 		"无图形设备时 GPU 发布通道原样返回，不黑屏")
 	_check(FxRenderBroker.backend_ids().has("gpu.standard"), "渲染代理里注册了 GPU 后端")
+	# 默认后端 = 贡献顺序里的第一个（当前是 GPU 渲染服务器）。
+	# 基座不再点名任何插件 id，只按 order 取第一个；停用 GPU 插件后自然让位给 CPU。
+	_check(String(FxSettings.definition("render.backend").get("default", "?")) == "",
+		"默认渲染后端是「自动」（按插件声明顺序）")
+	_check(FxRenderBroker.DEFAULT_ID == "", "代理不硬编码任何后端 id")
+	_check(FxRenderBroker.current_id() == "gpu.standard",
+		"按贡献顺序选出的默认后端是 GPU（%s）" % FxRenderBroker.current_id())
+	FxPluginHost.set_enabled("render.gpu", false)
+	FxRenderBroker.invalidate()
+	FxSettings.set_value("render.backend", "gpu.standard")
+	_check(String(FxRenderBroker.instance().get("id")) != "gpu.standard",
+		"GPU 插件停用后自动回落到 CPU 后端")
+	FxPluginHost.set_enabled("render.gpu", true)
+	FxRenderBroker.invalidate()
+	FxSettings.reset("render.backend")
 	_check(FxGpuDevice.state_text().begins_with("GPU"), "设备状态能拼成一句话（%s）" % FxGpuDevice.state_text())
 	# Phase 1：GPU 算子覆盖是条件式的，无头/CPU 后端下必须等同 CPU 实现。
 	_check(not FxGpuOps.active(), "无头环境 GPU 算子自行停用（回落 CPU）")

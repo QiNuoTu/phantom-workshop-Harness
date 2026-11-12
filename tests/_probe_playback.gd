@@ -81,6 +81,9 @@ func _initialize() -> void:
 		done_ms, int(render.cache_stats().get("ready", 0)),
 		int(render.cache_stats().get("total", 0))])
 
+	# 3b) 停止播放验证：放在所有隔离实验之前，避免 set_time / 手动发布污染状态。
+	var stop_ok := await _probe_stop_frame()
+
 	# 基线：完全不播放时界面自身的帧时间（真实 GUI 环境下不一定有 60fps）。
 	var base := await _measure_idle(90)
 	print("PLAY_IDLE ui_avg=%.1fms ui_max=%.1fms ticks=%d" % [base[0], base[1], base[2]])
@@ -120,6 +123,12 @@ func _initialize() -> void:
 	render.request_render()
 	for i in range(30):
 		await process_frame
+	print("PLAY_GPU_PRE count=%d missing=%d cur=%d state=%d on=%s fp=%s doc_hash=%s nodes=%d" % [
+		render.cache.frame_count(), render.cache.missing(), render.frame_index(),
+		render.cache.state(render.frame_index()), str(render.get("_cache_on")),
+		render.cache.fingerprint(),
+		str(JSON.stringify(FxFrameCache.content_of(shell.store.doc)).hash()),
+		(shell.store.doc.get("nodes", []) as Array).size()])
 	frames.clear()
 	ui_times.clear()
 	await _play_segment("gpu.standard", 180)
@@ -127,11 +136,66 @@ func _initialize() -> void:
 
 	FxSettings.reset("render.backend")
 	FxRenderBroker.invalidate()
-	print("PLAY_PASS=%s" % (cpu_result and gpu_result and start_ms >= 0.0
+	# 先停掉自动求帧再卸载插件：否则 shutdown 清空 op 表后，
+	# 最后一帧 _process 会误报「缺少算子实现 flow.branch / flow.for」。
+	render.auto_render = false
+	render.set_playing(false)
+	for i in range(2):
+		await process_frame
+	print("PLAY_PASS=%s" % (cpu_result and gpu_result and stop_ok and start_ms >= 0.0
 		and start_ms < 1000.0 and done_ms > 0.0 and nodes >= 100
 		and int(render.cache_stats().get("ready", 0)) >= 60))
 	FxPluginHost.shutdown()
 	quit(0)
+
+
+## 停止播放后的画面稳定性：等所有在途 job 回来，画面必须还是当前播放头那一帧。
+## 旧实现没有世代校验，播放期提交的急件在停止后才返回，会把旧帧贴上来。
+## 停止播放后的画面必须钉在当前播放头那一帧，不能被在途的播放期结果覆写。
+## 判据只看最终状态：等所有在途 job 回来后，画面 == 该帧的缓存内容。
+func _probe_stop_frame() -> bool:
+	render.set_playing(true)
+	for i in range(60):
+		await process_frame
+	render.set_playing(false)
+	await process_frame
+	var paused_stats: Dictionary = render.last_stats()
+	var paused_ok := bool(paused_stats.get("paused", false))
+	var index := render.cache.index_for_time(shell.store.current_time)
+	var cached: Image = render.cache.fetch(index)
+	var frame_ok := int(paused_stats.get("frame", -1)) == index
+	# 给足时间让后台 600ms 的 live 重算与所有在途结果都回来。
+	for i in range(120):
+		await process_frame
+	var final_image: Image = render.last_image()
+	var diff := _mean_diff(cached, final_image)
+	var final_stats: Dictionary = render.last_stats()
+	var cached_now: Image = render.cache.fetch(index)
+	print("PLAY_STOP frame=%d paused=%s frame_ok=%s diff=%.5f" % [
+		index, paused_ok, frame_ok, diff])
+	print("PLAY_STOP_DETAIL cached_at_stop=%s final=%s cached_now=%s fp=%s state=%d" % [
+		_get_size(cached), _get_size(final_image), _get_size(cached_now),
+		render.cache.fingerprint(), render.cache.state(index)])
+	print("PLAY_STOP_STATS frame=%s paused=%s cached=%s ms=%s backend=%s" % [
+		final_stats.get("frame", "-"), final_stats.get("paused", false),
+		final_stats.get("cached", false), final_stats.get("ms", -1.0),
+		final_stats.get("backend", "-")])
+	return paused_ok and frame_ok and diff >= 0.0 and diff < 0.02
+
+
+func _get_size(image: Image) -> String:
+	return "%dx%d" % [image.get_width(), image.get_height()] if image != null else "null"
+
+
+func _mean_diff(a: Image, b: Image) -> float:
+	if a == null or b == null or a.get_size() != b.get_size():
+		return -1.0
+	var ab := a.get_data()
+	var bb := b.get_data()
+	var total := 0
+	for i in range(ab.size()):
+		total += absi(int(ab[i]) - int(bb[i]))
+	return float(total) / float(ab.size() * 255)
 
 
 func _measure_idle(ticks: int) -> Array:

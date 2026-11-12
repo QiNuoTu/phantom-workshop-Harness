@@ -57,10 +57,15 @@ var _live_params: Dictionary = {}
 ## 真实工程 103 节点一次求帧会推 100+ 组参数与 55 张预览，全是 UI 线程工作；
 ## 播放期间完全冻结，连续求帧时按间隔合并，停下来再补推最新的一份。
 const LIVE_PUSH_INTERVAL_MS := 220
+## 播放中缩略图的推送间隔：比参数更快一点，让「小图跟着动画动」看得出来。
+const PREVIEW_PUSH_INTERVAL_MS := 90
 var _live_frozen: bool = false
 var _live_pending: Dictionary = {}
 var _preview_pending: Dictionary = {}
 var _last_live_push_ms: int = 0
+var _last_preview_push_ms: int = 0
+## 当前报给渲染服务的「展开节点」集合：只有它们需要随帧刷新的缩略图。
+var _preview_focus: Array[String] = []
 
 # ================= 文档标签条 =================
 ##
@@ -116,6 +121,9 @@ func setup(ctx: Dictionary) -> void:
 		render.connect("node_params_resolved", Callable(self, "_on_node_params_resolved"))
 	if render != null and render.has_signal("playback_changed"):
 		render.connect("playback_changed", Callable(self, "_on_playback_changed"))
+	# 播放只读缓存：逐节点缩略图由渲染服务随帧推过来（只有展开的节点有）。
+	if render != null and render.has_signal("frame_previews"):
+		render.connect("frame_previews", Callable(self, "_on_frame_previews"))
 	set_process(true)
 	if shell != null:
 		shell.provide("graph.editor", self)
@@ -678,6 +686,9 @@ func _fit_view() -> void:
 ## 折叠只是视图状态：不改文档、不进撤销栈，但要在重建后保留。
 func _on_collapse_changed(node_id: String, value: bool) -> void:
 	_collapsed_nodes[node_id] = value
+	# 收起 = 不再需要小图；展开 = 立刻要有。把变化报给渲染服务，
+	# 它据此决定缩略图趟算哪些节点（收起的连求值都跳过）。
+	_push_preview_focus()
 
 
 func _on_node_size_changed(node_id: String, value: Vector2) -> void:
@@ -831,9 +842,24 @@ func _on_delete_nodes_request(nodes: Array[StringName]) -> void:
 func _on_end_node_move() -> void:
 	if store == null:
 		return
+	# 只有真移动过的节点才写回。缩放、点击、按住不动都会走到这里，
+	# 旧实现对全部 103 个节点逐个写一遍位置，虽然 store 现在会静默空变更，
+	# 但那一百多次字典写入本身就是白花的。
+	var before: Dictionary = {}
+	for item in store.doc.get("nodes", []):
+		var node_data: Dictionary = item
+		var pos: Array = node_data.get("pos", [0, 0])
+		before[String(node_data.get("id", ""))] = Vector2(float(pos[0]), float(pos[1]))
+	var moved := false
 	for id in node_views.keys():
 		var view: FxGraphNodeView = node_views[id]
-		store.set_node_position(id, view.position_offset)
+		var old: Vector2 = before.get(String(id), view.position_offset)
+		if old.distance_squared_to(view.position_offset) > 0.0001:
+			store.set_node_position(String(id), view.position_offset)
+			moved = true
+	if not moved:
+		store.discard_batch()
+		return
 	store.commit_batch(["positions"])
 
 
@@ -1366,6 +1392,7 @@ func _toggle_collapse(ids: Array) -> void:
 		view.set_collapsed(target)
 		if target:
 			view.fit_collapsed.call_deferred()
+	_push_preview_focus()
 	_status("%s %d 个节点" % ["已收起" if target else "已展开", ids.size()])
 
 
@@ -1635,20 +1662,77 @@ func _flush_live() -> void:
 
 
 func _flush_previews() -> void:
+	_last_preview_push_ms = Time.get_ticks_msec()
+	# 角标先刷：即使这一刻没有新图到达，「烘焙中/已就绪」也可能刚刚变过。
+	_refresh_bake_badges()
 	if _preview_pending.is_empty():
 		return
 	for key in _preview_pending.keys():
-		var view: FxGraphNodeView = node_views.get(String(key))
-		if view != null:
+		var view := _live_view(String(key))
+		# 收起的节点连预览控件都不可见：不推图、也不重建纹理。
+		if view != null and not view.collapsed:
 			view.set_preview(_preview_pending[key] as Image)
 	_preview_pending.clear()
+
+
+## 取一个还活着的节点视图。重建时旧视图 queue_free 之后，字典里可能还留着
+## 「已经释放但引用不为 null」的对象 —— 直接读属性会报 previously freed。
+func _live_view(node_id: String) -> FxGraphNodeView:
+	var view: FxGraphNodeView = node_views.get(node_id)
+	if view == null or not is_instance_valid(view):
+		return null
+	return view
+
+
+## 展开节点的状态签：这一帧的小图到底烘焙好没有，连帧号一起显示。
+## 状态本身由渲染服务按事实回答（`bake_info`），编辑器不做任何猜测。
+## 收起的节点不打这个签 —— 它们本来就不参与试算。
+func _refresh_bake_badges() -> void:
+	if render == null or not render.has_method("bake_info"):
+		return
+	for key in node_views.keys():
+		var view := _live_view(String(key))
+		if view == null or view.collapsed:
+			continue
+		var info: Dictionary = render.call("bake_info", String(key))
+		view.set_bake_state(int(info.get("state", 0)), int(info.get("frame", -1)))
+
+
+## 当前展开的节点集合报给渲染服务（收起的节点不该产生任何预览计算）。
+func _push_preview_focus() -> void:
+	var ids: Array[String] = []
+	for key in node_views.keys():
+		var view := _live_view(String(key))
+		if view != null and not view.collapsed:
+			ids.append(String(key))
+	ids.sort()
+	if ids == _preview_focus:
+		return
+	_preview_focus = ids
+	if render != null and render.has_method("set_preview_focus"):
+		render.call("set_preview_focus", ids)
+
+
+## 播放中：缓存帧的缩略图到了。只给展开的节点排进推送队列。
+func _on_frame_previews(_index: int, previews: Dictionary) -> void:
+	if previews.is_empty():
+		return
+	for key in previews.keys():
+		var view := _live_view(String(key))
+		if view == null or view.collapsed:
+			continue
+		_preview_pending[String(key)] = previews[key]
+	if Time.get_ticks_msec() - _last_preview_push_ms >= PREVIEW_PUSH_INTERVAL_MS:
+		_flush_previews()
 
 
 func _on_playback_changed(playing: bool) -> void:
 	_live_frozen = playing
 	if playing:
+		# 参数值冻结（每帧 100+ 组实时值纯属浪费），但**缩略图继续跟着动**：
+		# 只有展开的节点要，渲染服务会把它们随帧推过来。
 		_live_pending.clear()
-		_preview_pending.clear()
+		_push_preview_focus()
 		return
 	# 停下来：补推最新的一帧，节点卡片不会停在动画中途的旧值上。
 	_flush_live()
@@ -1656,10 +1740,14 @@ func _on_playback_changed(playing: bool) -> void:
 
 
 func _process(_delta: float) -> void:
+	var now := Time.get_ticks_msec()
 	if _live_frozen:
+		# 播放期只刷缩略图（参数值仍然冻结）。
+		if now - _last_preview_push_ms >= PREVIEW_PUSH_INTERVAL_MS:
+			_flush_previews()
 		return
 	# 连续拖动时间轴 / 改参数时，攒够间隔再统一刷一次 UI。
-	if Time.get_ticks_msec() - _last_live_push_ms < LIVE_PUSH_INTERVAL_MS:
+	if now - _last_live_push_ms < LIVE_PUSH_INTERVAL_MS:
 		return
 	_flush_live()
 	_flush_previews()
@@ -1667,6 +1755,8 @@ func _process(_delta: float) -> void:
 
 ## 重建后新视图还没拿到本帧参数，补推一次（否则要等下一帧才显示上游值）。
 func _push_live_params() -> void:
+	# 视图重建后「哪些节点是展开的」可能变了：重新报一次焦点。
+	_push_preview_focus()
 	if _live_params.is_empty():
 		return
 	for key in _live_params.keys():

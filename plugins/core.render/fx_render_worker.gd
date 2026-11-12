@@ -155,7 +155,13 @@ func _run(job: Dictionary) -> Dictionary:
 		out["frame_index"] = int(job.get("frame_index", -1))
 		# 世代 / 用途随结果回来：主线程据此判断这一帧还算不算「当前」。
 		out["epoch"] = int(job.get("epoch", -1))
+		out["doc_key"] = int(job.get("doc_key", -1))
 		out["purpose"] = String(job.get("purpose", "live"))
 		out["exact"] = bool(job.get("exact", false))
+		# 这一帧到底是按哪一档质量算的，必须随结果回来。
+		# 主线程归档时若拿「此刻」的 runner.quality 判断，播放档算出的急件
+		# 会在暂停后按精确帧入账 —— 标尺上还没算的那一段就提前变绿了。
+		out["frame_quality"] = int(job.get("quality", 1))
+		out["frame_operator_quality"] = float(job.get("operator_quality", 1.0))
 		return out
 	return {"image": null, "previews": {}, "node_params": {}, "stats": {}, "warnings": []}

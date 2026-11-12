@@ -23,6 +23,18 @@ var right_slots: Array[int] = []
 var params_ui: FxNodeParams = null
 
 var _preview: TextureRect
+## 预览右上角的状态签：**这一帧到底渲染了没有**。
+##   ✓12  绿 = 第 12 帧的小图已经烘焙好，就是现在显示的这张
+##   …13  黄 = 播放头在第 13 帧，这张小图还没算出来（要等）
+##   —    灰 = 这个节点没有图像输出，小图永远是空的
+var _bake_badge: Label
+var _bake_state: int = -1
+var _bake_frame: int = -2
+var _bake_shown: int = -2
+const BAKE_COLORS := [Color(0, 0, 0, 0), Color(0.98, 0.76, 0.24),
+	Color(0.44, 0.86, 0.52), Color(0.52, 0.55, 0.60)]
+const BAKE_TIPS := ["", "这一帧的小图还没算出来，正在等",
+	"这一帧的小图已烘焙，就是现在这张", "这个节点没有图像输出，没有小图可烘焙"]
 var store: FxDocumentStore = null
 var apply_edit: Callable = Callable()
 var _fiber: FxFiber = null
@@ -67,6 +79,10 @@ func _rebuild() -> void:
 	left_slots.clear()
 	right_slots.clear()
 	_preview = null
+	_bake_badge = null
+	_bake_state = -1
+	_bake_frame = -2
+	_bake_shown = -2
 	params_ui = null
 	_expanded_size = Vector2.ZERO
 
@@ -256,6 +272,75 @@ func _add_preview_row() -> void:
 	add_child(_preview)
 	var slot := _preview.get_index()
 	set_slot(slot, false, 0, Color(0, 0, 0, 0), false, 0, Color(0, 0, 0, 0))
+
+	# 烘焙状态签：贴在预览右上角，不占布局空间、不吃鼠标。
+	# 带帧号，才能一眼看出「现在这张是哪一帧」和「在等哪一帧」。
+	_bake_badge = Label.new()
+	_bake_badge.text = ""
+	_bake_badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_bake_badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_bake_badge.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	_bake_badge.add_theme_font_size_override("font_size", 10)
+	_bake_badge.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.7))
+	_bake_badge.add_theme_constant_override("shadow_offset_x", 0)
+	_bake_badge.add_theme_constant_override("shadow_offset_y", 1)
+	# 半透明深色底：预览图亮的时候纯文字会看不清，加个底衬才稳定可读。
+	var plate := StyleBoxFlat.new()
+	plate.bg_color = Color(0.04, 0.06, 0.09, 0.66)
+	plate.set_corner_radius_all(3)
+	plate.content_margin_left = 4.0
+	plate.content_margin_right = 4.0
+	plate.content_margin_top = 0.0
+	plate.content_margin_bottom = 0.0
+	_bake_badge.add_theme_stylebox_override("normal", plate)
+	_bake_badge.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	_bake_badge.offset_left = -44
+	_bake_badge.offset_top = 2
+	_bake_badge.offset_right = -4
+	_bake_badge.offset_bottom = 18
+	_preview.add_child(_bake_badge)
+	_bake_state = -1
+	set_bake_state(0)
+
+
+## 设置状态签。state：0 隐藏 / 1 等这一帧 / 2 这一帧已烘焙 / 3 该节点无图像输出。
+## frame 是这次状态对应的帧号：已烘焙时是**画面那一帧**，等待时是**播放头那一帧**。
+## 只有 state 或 frame 真的变了才改控件，避免每次刷新都触发重绘。
+func set_bake_state(state: int, frame: int = -1, shown: int = -1) -> void:
+	if _bake_badge == null:
+		return
+	var clean := clampi(state, 0, 3)
+	if clean == _bake_state and frame == _bake_frame and shown == _bake_shown:
+		return
+	_bake_state = clean
+	_bake_frame = frame
+	_bake_shown = shown
+	_bake_badge.visible = clean != 0
+	_bake_badge.modulate = BAKE_COLORS[clean]
+	match clean:
+		2:
+			_bake_badge.text = "✓%d" % frame
+			_bake_badge.tooltip_text = BAKE_TIPS[2]
+		1:
+			_bake_badge.text = "…%d" % frame
+			# 等待时也说清画面现在停在哪一帧，否则用户会以为小图「卡了」。
+			_bake_badge.tooltip_text = BAKE_TIPS[1] if shown < 0 \
+				else "第 %d 帧的小图还没算出来，画面暂时停在第 %d 帧" % [frame, shown]
+		3:
+			_bake_badge.text = "—"
+			_bake_badge.tooltip_text = BAKE_TIPS[3]
+		_:
+			_bake_badge.text = ""
+			_bake_badge.tooltip_text = ""
+
+
+func bake_state() -> int:
+	return _bake_state
+
+
+## 状态签上显示的帧号（测试与截图核对用）。
+func bake_frame() -> int:
+	return _bake_frame
 
 
 ## 折叠行：左侧是摘要（收起时才显示），右侧一个 ▾ / ▸ 小三角。

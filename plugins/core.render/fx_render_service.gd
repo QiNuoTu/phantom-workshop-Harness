@@ -1,6 +1,10 @@
 class_name FxRenderService
-extends Node
+extends FxRenderHost
 ## 渲染管线服务：把“文档 + 时间”变成“最终图像 + 每个节点的预览”。
+##
+## 它是 `FxRenderHost` 的**插件侧实现**：基座只声明契约（store / playing /
+## rendered / stats_changed / playback_changed / setup / apply_policy / invalidate），
+## 停用本插件后外壳会自动拿到一个什么都不做的空呈现器，而不是崩掉。
 ##
 ## 这是基座里唯一知道何时该渲染的地方。面板不各自跑执行器：
 ##   · 图面板订阅 node_previewed 更新节点缩略图；
@@ -15,22 +19,18 @@ extends Node
 ##     这一条是基座守住的不变量，插件不能覆盖；
 ##   · 渲染慢就按实测耗时自适应节流，不排队堆积，时间轴仍按真实时间推进。
 
-signal rendered(image: Image, stats: Dictionary)
 signal node_previewed(node_id: String, image: Image)
 ## 本帧每个节点解析后的参数：被连线驱动的参数靠它实时显示上游值。
 signal node_params_resolved(params_by_node: Dictionary)
-signal stats_changed(stats: Dictionary)
-signal playback_changed(playing: bool)
 ## 帧缓存状态（已缓存 / 正在算 / 共多少帧）。时间轴标尺与状态栏都订阅它。
 signal cache_changed(stats: Dictionary)
+## 缓存帧的逐节点缩略图：只有**展开**的节点会出现在这里。
+## 播放只读缓存，没有逐节点中间图，这个信号是「小图跟着动画动」的唯一来源。
+signal frame_previews(index: int, previews: Dictionary)
 
-var store: FxDocumentStore
+## store / quality / playing / auto_render 与 rendered / stats_changed /
+## playback_changed 三个信号都来自基座契约 FxRenderHost，这里不再重复声明。
 var runner := FxGraphRunner.new()
-## 暂停时使用的质量档位：0=交互预览，1=精确。播放时强制 0。
-var quality: int = 1
-var playing: bool = false
-## 为 false 时只标记脏，不自动渲染（批处理/导出时临时关闭）。
-var auto_render: bool = true
 
 ## 后台线程求帧：界面线程不再被渲染阻塞。后端没声明 thread_safe 时自动关闭。
 var threaded: bool = false
@@ -48,11 +48,39 @@ var _epoch: int = 0
 
 ## 逐帧缓存与后台预渲染：让播放只读缓存、永不在界面线程求值。
 var cache := FxFrameCache.new()
+## 缓存帧的缩略图伴随层（只装展开节点的小图，纯内存、有容量上限）。
+var previews := FxPreviewTrack.new()
 var prefetcher: FxFramePrefetcher = null
+## 编辑器报上来的「当前展开的节点」。收起的节点不该产生任何预览计算。
+var _preview_focus: Array[String] = []
+## 缩略图趟的节流：缺图时最多每 1.5 秒补起一趟，别让它把预渲染队列踢来踢去。
+var _preview_pass_clock: float = 0.0
+## 缩略图趟是否跑过：跑过还一张图都没收到，说明焦点节点没有图像输出，
+## 这时要退避，不然播放期间会每隔 1.5 秒把整段重算一遍。
+var _preview_pass_ran: bool = false
+## 缩略图尺寸上限（像素）：小图看不出差别，越小小图趟越快。
+const PREVIEW_THUMB := 72
+## 每个节点最近一次「真的推出去了」小图对应的帧号。
+## 节点卡片右上角那颗小圆点就靠它判断「这一帧的小图烘焙好了没有」——
+## 状态必须是事实（小图真的到位了），不能靠「预渲染在跑」猜。
+var _preview_frame: Dictionary = {}
+## 曾经真的产出过小图的节点（不论哪一帧）。用来区分「这一帧还没算」与
+## 「这个节点根本没有图像输出」—— 前者要显示等待，后者才显示灰色横杠。
+var _preview_known: Dictionary = {}
+## 最近一次推送的帧号：同一帧不重复推（暂停态巡检每 0.25s 会问一次）。
+var _preview_sent: int = -1
 var _cache_dirty: bool = true
+## 上一次看到的文档内容身份。渲染只信它：通知说「变了」而身份没变时什么都不做。
+var _content_seen: int = -1
 var _cache_clock: float = 0.0
 var _cache_emit_clock: float = 0.0
 var _idle_clock: float = 0.0
+## 文档「稳定期」计时：内容一改就归零，只有连续安静 CONTENT_SETTLE 秒才认为
+## 这一版就是最终形态，才允许定桶与排队预渲染。
+var _settle: float = 0.0
+const CONTENT_SETTLE := 0.35
+## 上一次看到的文档世代（content_key 高位）。世代变化 = 换文档，需要稳定期。
+var _content_generation: int = -1
 var _prefetch_reported: bool = false
 var _prefetch_revision: int = -1
 ## 缓存开关（设置项 render.cache / render.prefetch），每 0.25s 读一次。
@@ -67,12 +95,21 @@ const PREFETCH_IDLE_DELAY := 0.18
 ## 推进规则本身由 `FxClockBroker` 选出的时间插件提供（默认 core.timeline）；
 ## 这里只保存「当前该显示第几帧」这个组合结果，不实现时钟。
 var _play_frame: int = 0
+## 缺帧挂起的累计时长：超过 STALL_LIMIT 就放行一帧，避免缓存全红时永久卡住。
+## 0.35 秒是「人耳能接受的停顿上限」：再久就不如放行、让画面稍微跳一下。
+var _stall: float = 0.0
+const STALL_LIMIT := 0.35
 var clock: RefCounted = null
 var _published_frame: int = -1
+## 这一帧贴上去的是不是精确帧。贴的是播放档伴随图时，精确帧一到还要再贴一次，
+## 否则屏幕上会永远留着那版糊的（用户说的「停下来还是糊的」）。
+var _published_exact: bool = false
 var _setting_play_time: bool = false
 ## 播放时「命中缓存 / 未命中」的计数，状态栏与诊断都会读。
 var cache_hits: int = 0
 var cache_misses: int = 0
+## 贴的是伴随层（低质量预览）的次数：只用于诊断，永远不算「命中」。
+var cache_approx: int = 0
 ## 预渲染还没追上时，把这些帧号优先补算（播放头附近优先）。
 var _urgent_frame: int = -1
 ## 已经提交给工作线程的急件帧号，避免同一帧每 process 重复提交。
@@ -82,6 +119,8 @@ var _stats_emit_clock: float = 0.0
 ## 播放循环第二圈起不该为同一帧再跑一次 compute。
 var _display_cache: Dictionary = {}
 var _display_fingerprint: String = ""
+## 显示缓存的世代：内容（不是帧号）变了，整张表作废。
+var _display_content: int = -1
 
 var _dirty: bool = true
 var _cooldown: float = 0.0
@@ -108,16 +147,21 @@ func setup(p_store: FxDocumentStore) -> void:
 	clock = FxClockBroker.create()
 	if clock == null:
 		clock = FxLinearClock.create()
+	_content_seen = store.content_key()
+	_content_generation = int(_content_seen / 1048576)
 	_prime_cache()
 
 
 ## 向多路代理询问本帧策略；ctx 只含事实，不含任何插件专有语义。
-func resolve_policy() -> Dictionary:
+## 解析当前质量策略。force_paused 给后台预渲染用：它要算的是**与导出一致**的
+## 精确帧，不能因为「此刻正好在播」就按播放档（quality=0）去算，
+## 否则后台会把一堆低质量帧当成精确帧写满缓存。
+func resolve_policy(force_paused: bool = false) -> Dictionary:
 	var meta_seed: Variant = FxGraphDoc.meta_value(store.doc, "seed", 1) if store != null else 1
 	var canvas := FxGraphDoc.canvas(store.doc) if store != null else Vector2i(128, 128)
 	var nodes: Array = store.doc.get("nodes", []) if store != null else []
 	return FxQualityPolicy.resolve({
-		"playing": playing, "width": canvas.x, "height": canvas.y,
+		"playing": playing and not force_paused, "width": canvas.x, "height": canvas.y,
 		"node_count": nodes.size(), "t": store.current_time if store != null else 0.0,
 		"paused_quality": quality, "seed": meta_seed,
 	})
@@ -219,8 +263,83 @@ func prefetching() -> bool:
 	return prefetcher != null and prefetcher.active()
 
 
+## 预渲染线程是否正忙（不论跑的是精确帧还是缩略图趟）。
+func prefetcher_busy() -> bool:
+	if prefetcher == null:
+		return false
+	return bool(prefetcher.progress().get("active", false))
+
+
 ## 手动预渲染：从头把整段动画算一遍（命令、菜单、设置面板都可以调）。
 ## 正在播 / 后端不能上线程 / 图里有 GPU 节点时不硬来，返回 false 让调用方提示。
+## 编辑器告诉服务「哪些节点现在是展开的」。
+## 只有它们需要随帧刷新的缩略图；收起的节点连预览求值都跳过。
+## 焦点变化会作废旧图，并在播放中重起一趟缩略图预渲染。
+func set_preview_focus(ids: Array) -> void:
+	var next: Array[String] = []
+	for raw in ids:
+		var id := String(raw)
+		if not id.is_empty() and not next.has(id):
+			next.append(id)
+	next.sort()
+	if next == _preview_focus:
+		return
+	_preview_focus = next
+	previews.clear()
+	# 焦点一变，旧的「已烘焙」记录就不作数了：那颗小圆点必须回到未就绪。
+	_preview_frame.clear()
+	_preview_pass_clock = 0.0
+	_preview_pass_ran = false
+	# 不论在不在播都立刻备一趟：暂停时算好，按播放立刻就有小图。
+	start_preview_pass()
+
+
+func preview_focus() -> Array[String]:
+	return _preview_focus.duplicate()
+
+
+## 缩略图趟：用低质量、只算展开节点、**不写帧缓存**地把整段小图补齐。
+## 它只服务于「播放中节点卡片跟着动画动」，与精确帧缓存互不覆盖。
+func start_preview_pass() -> bool:
+	if _preview_focus.is_empty() or store == null or store.doc.is_empty():
+		return false
+	# 先保精确帧：整段还没算完时不抢预渲染队列。
+	if int(cache.stats().get("missing", 0)) > 0:
+		return false
+	if not _prefetch_allowed():
+		return false
+	_ensure_prefetcher()
+	if prefetcher == null or prefetching():
+		return false
+	var tl := FxGraphDoc.timeline(store.doc)
+	var fps := maxi(int(tl.get("fps", 30)), 1)
+	var duration := maxf(float(tl.get("duration", 1.0)), 0.0)
+	_cache_ensure_fingerprint(fps, duration)
+	var focus: Dictionary = {}
+	for id in _preview_focus:
+		focus[id] = true
+	_preview_pass_clock = 1.5
+	_preview_pass_ran = true
+	prefetcher.enqueue({
+		"doc": store.doc.duplicate(true),
+		"fps": fps,
+		"count": cache.frame_count(),
+		"from": 0,
+		"priority": _play_frame if playing else 0,
+		"signature": _doc_revision(),
+		"fingerprint": cache.fingerprint(),
+		"policy": resolve_policy(),
+		"revision": FxRegistry.revision,
+		"label": "缩略图",
+		"quality": 0,
+		"preview_only": true,
+		"preview_nodes": focus,
+		"preview_limit": PREVIEW_THUMB,
+		"preview_track": previews,
+	})
+	return true
+
+
 func start_prefetch(manual: bool = true) -> bool:
 	if not manual and DisplayServer.get_name() == "headless":
 		return false
@@ -238,14 +357,22 @@ func start_prefetch(manual: bool = true) -> bool:
 	var priority := _urgent_frame
 	if priority < 0 and playing:
 		priority = _play_frame
+	var focus: Dictionary = {}
+	for id in _preview_focus:
+		focus[id] = true
 	prefetcher.enqueue({
 		"doc": store.doc.duplicate(true),
 		"fps": fps,
 		"count": cache.frame_count(),
 		"from": 0,
 		"priority": priority,
+		"preview_nodes": focus,
+		"preview_limit": PREVIEW_THUMB,
+		"preview_track": previews,
 		"signature": _doc_revision(),
-		"policy": resolve_policy(),
+		"fingerprint": cache.fingerprint(),
+		# 后台要的是精确帧：即便此刻正在播放，也按暂停档解析策略。
+		"policy": resolve_policy(true),
 		"revision": _prefetch_revision,
 		"label": "预渲染",
 	})
@@ -267,6 +394,7 @@ func clear_cache() -> int:
 	_published_frame = -1
 	_display_cache.clear()
 	_display_fingerprint = ""
+	previews.clear()
 	_emit_cache(true)
 	return freed
 
@@ -303,12 +431,17 @@ func _tick_cache(delta: float) -> void:
 	_cache_emit_clock -= delta
 	_cache_clock -= delta
 	_idle_clock += delta
+	_settle += delta
+	_preview_pass_clock -= delta
 	if _cache_clock <= 0.0:
 		_cache_clock = 0.25
 		_read_cache_settings()
-		var tl := FxGraphDoc.timeline(store.doc)
-		_cache_ensure_fingerprint(maxi(int(tl.get("fps", 30)), 1),
-			maxf(float(tl.get("duration", 1.0)), 0.0))
+		# 文档还在稳定期里就不定桶：装载工程之后参数面板还会回写一轮，
+		# 现在算出的指纹大概率不是最终的，桶会被换掉、预渲染成果白费。
+		if _settle >= CONTENT_SETTLE:
+			var tl := FxGraphDoc.timeline(store.doc)
+			_cache_ensure_fingerprint(maxi(int(tl.get("fps", 30)), 1),
+				maxf(float(tl.get("duration", 1.0)), 0.0))
 	if prefetcher != null:
 		var p := prefetcher.progress()
 		var still := bool(p.get("active", false))
@@ -324,6 +457,21 @@ func _tick_cache(delta: float) -> void:
 	# 内容稳定后立刻把整段排上。播放期间也继续补：先算播放头后面的帧。
 	# 注意只看 _cache_dirty（指纹是否就绪），不看 _dirty（是否还有一帧待重画）——
 	# 旧实现用 _dirty 判断，而播放/交互永远有脏帧，预渲染几乎没机会启动。
+	# 播放中且展开节点的缩略图还没就绪：补一趟「只算小图」的轻量预渲染。
+	# 精确帧缓存已经在绿的时候它也会跑（缓存里没有逐节点中间图）。
+	# 播放中要「当前帧的小图已经备好」，暂停中要「展开的节点有图可看」——
+	# 两种情况都靠这一条补趟，否则展开节点后卡片会一直空着等下一次播放。
+	var want_index := _play_frame if playing else frame_index()
+	if not _preview_focus.is_empty() and _preview_pass_clock <= 0.0 \
+			and not prefetcher_busy() and not previews.has_frame(want_index):
+		if _preview_pass_ran and int(previews.stats().get("frames", 0)) == 0:
+			# 跑过一趟却一张都没收到：焦点节点没有图像输出，退避半分钟。
+			_preview_pass_clock = 30.0
+		else:
+			start_preview_pass()
+	# 暂停态没有别的推送时机：缩略图趟备好了就把当前帧的小图交给卡片。
+	if not playing:
+		_emit_frame_previews(want_index)
 	if not _prefetch_on or not auto_render:
 		return
 	if _idle_clock < PREFETCH_IDLE_DELAY or _cache_dirty:
@@ -333,21 +481,23 @@ func _tick_cache(delta: float) -> void:
 	start_prefetch(false)
 
 
-## 文档刚装载就把帧桶准备好（帧数、指纹、磁盘上已有帧的状态）。
-## 不等 0.25s 巡检：预渲染要能在「打开工程后第一帧」就排上。
+## 文档刚装载：把桶标记成待建，等稳定期结束后的巡检来定桶。
+## 这里**不能**用「桶还空着就顺手建一个」的写法：打开工程前桶里是上一份文档
+## （示例文档 30 帧），那样会跳过重建，于是帧数、指纹、标尺全停在上一份文档上，
+## 预渲染也永远不会被判定成「缺帧」。归档侧已有稳定期保护，不会写入错误桶。
 func _prime_cache() -> void:
 	if store == null or store.doc.is_empty():
 		return
-	var tl := FxGraphDoc.timeline(store.doc)
-	_cache_ensure_fingerprint(maxi(int(tl.get("fps", 30)), 1),
-		maxf(float(tl.get("duration", 1.0)), 0.0))
+	_cache_dirty = true
+	_settle = 0.0
 
 
 func _cache_ensure_fingerprint(fps: int, duration: float) -> void:
 	if not _cache_dirty and cache.frame_count() > 0:
 		return
 	var before := cache.fingerprint()
-	cache.prepare(store.doc, fps, duration)
+	# 桶的帧尺寸来自文档画布：任何异形帧（旧文档 / 空文档求出来的）都不得写入。
+	cache.prepare(store.doc, fps, duration, FxGraphDoc.canvas(store.doc))
 	if cache.fingerprint() != before:
 		# 图变了：手上那次预渲染算的是上一版画面，直接作废。
 		cancel_prefetch()
@@ -369,7 +519,7 @@ func _emit_cache(force: bool = false) -> void:
 
 ## 文档修订号：快照只在修订号变化时重做（深拷贝有成本，不能每帧来一次）。
 func _doc_revision() -> int:
-	return store.revision() if store != null else -1
+	return store.content_key() if store != null else -1
 
 
 func last_image() -> Image:
@@ -394,6 +544,7 @@ func set_playing(value: bool) -> void:
 	# 世代翻转：所有在途结果（播放急件 / 上一暂停态的实时求帧）立即变成历史。
 	_epoch += 1
 	playing = value
+	var pinned := false
 	if playing:
 		# 从当前播放头对应的帧号起播，帧号连续；不取消后台预渲染 ——
 		# 播放期间正是最需要把后面几帧补出来的时候。
@@ -401,8 +552,11 @@ func set_playing(value: bool) -> void:
 		if clock != null:
 			clock.call("reset", _play_frame)
 		_published_frame = -1
+		_published_exact = false
 		cache_hits = 0
 		cache_misses = 0
+		cache_approx = 0
+		_stall = 0.0
 		_urgent_frame = -1
 		_urgent_submitted = -1
 		_last_stats.erase("cached")
@@ -417,11 +571,14 @@ func set_playing(value: bool) -> void:
 		_last_stats.erase("frame")
 		_last_stats.erase("buffering")
 		# 停止 = 立刻显示「当前播放头那一帧」。缓存命中就直接贴图，
-		# 不等一次 600ms 的重新求值；随后 request_render() 再补一张精确帧。
-		_show_frame_at_current_time()
+		# 而且**不再重算**：暂停态那次 600ms 的交互求值是低质量预览，
+		# 发布回来只会把刚定格好的精确缓存帧盖掉（用户看到的「旧数据覆盖」）。
+		pinned = _show_frame_at_current_time()
 	apply_policy()
 	runner.invalidate_cache()
-	request_render()
+	if not pinned:
+		# 只在当前帧还没算出来时才补算；命中缓存时保持精确帧不动。
+		request_render()
 	playback_changed.emit(playing)
 
 
@@ -430,7 +587,9 @@ func _show_frame_at_current_time() -> bool:
 	if store == null or not _cache_on:
 		return false
 	var index := cache.index_for_time(store.current_time)
-	if index < 0 or cache.state(index) == 0:
+	# 只认精确帧：标成待补的（只有播放档预览）不算「这一帧好了」，
+	# 否则停播定格会把一张糊图钉在屏幕上。
+	if index < 0 or cache.state(index) != FxFrameCache.STATE_READY:
 		return false
 	var image := cache.fetch(index)
 	if image == null:
@@ -542,8 +701,13 @@ func _process(delta: float) -> void:
 # ================= 播放：帧号连续 + 只读缓存 =================
 
 ## 按真实时间推进，但**每个 process 至多跨一个帧号**。
-## 界面掉帧时播放会变慢，可帧号永远连续（0→1→2…），不会出现 0→18 的跳帧；
-## 缓存命中后一次 process 只花贴图钱，30fps 动画在 60fps 界面上自然两帧推一次。
+## 界面掉帧时播放会变慢，可帧号永远连续（0→1→2…），不会出现 0→18 的跳帧。
+##
+## 还有一条更硬的不变量：**连一张垫图都没有的帧绝不放过去**。
+## 旧实现「保持上一帧继续前进」，帧号虽然连续，但用户看到的是同一张图停了一下
+## 然后动画跳过去 —— 那就是他们说的「播放会缺帧/闪一下」。现在缺帧时把时钟
+## 钉在当前帧等它算好（等待超过 STALL_LIMIT 才放行一次，绝不卡死）；
+## 已经有播放档垫图的帧照常推进（标尺上是黄格），精确帧算完再原地替换。
 func _advance_playback(delta: float) -> void:
 	var count := cache.frame_count()
 	if count <= 0 or clock == null:
@@ -553,7 +717,24 @@ func _advance_playback(delta: float) -> void:
 	# 完全由帧缓存提供。两者在这里才被组合，互不持有对方的状态。
 	if not bool(clock.call("advance", delta, fps, count)):
 		return
-	_play_frame = int(clock.get("frame"))
+	var next := int(clock.get("frame"))
+	# 只有当这一帧**一张图都没有**时才挂起等：伴随层（播放档预览）有图就先贴上去，
+	# 标尺上它仍是黄格，精确帧一到再原地换掉。这样既不会「停一下再跳」，
+	# 也不会为了等精确帧把播放卡成幻灯片。
+	if _cache_on and next != _published_frame \
+			and cache.state(next) == FxFrameCache.STATE_EMPTY:
+		_stall += delta
+		if _stall < STALL_LIMIT:
+			# 挂起：时钟退回当前帧，画面保持，后台补这一帧。
+			clock.call("reset", _play_frame)
+			_urgent_frame = next
+			if _worker != null and not _worker.busy() and next != _urgent_submitted:
+				_urgent_submitted = next
+				_submit(next, "urgent")
+			_note_buffering(next)
+			return
+	_stall = 0.0
+	_play_frame = next
 	# 时间轴 UI 要跟着走；但这只是一次「时间变化」，不能触发重算或打断预渲染。
 	_setting_play_time = true
 	store.set_time_silent(float(clock.call("time_of", _play_frame, fps)))
@@ -563,37 +744,58 @@ func _advance_playback(delta: float) -> void:
 ## 播放帧服务：命中缓存直接贴图；没命中则保持上一帧，并把这一帧排成后台急件。
 func _serve_playback_frame() -> void:
 	var index := _play_frame
-	if index == _published_frame:
+	# 同一帧已经贴过精确版就收手；贴的是伴随图时，精确帧一到还要再贴一次。
+	if index == _published_frame and (_published_exact or not _cache_on):
 		return
+	var state := cache.state(index) if _cache_on else FxFrameCache.STATE_EMPTY
 	var image: Image = cache.fetch(index) if _cache_on else null
 	if image != null:
-		cache_hits += 1
+		var precise := state == FxFrameCache.STATE_READY
+		if precise:
+			cache_hits += 1
+		else:
+			# 有图可贴但只是播放档预览：画面不黑、不跳，但绝不记成「命中」。
+			cache_approx += 1
 		_published_frame = index
-		_publish_cached(image, index)
+		_published_exact = precise
+		_publish_cached(image, index, false, not precise)
 		return
+	_published_exact = false
 	cache_misses += 1
 	_urgent_frame = index
 	# 未命中时不重算、不黑屏、不跳号；急件交给工作线程，算完写进对应帧的缓存。
 	if _worker != null and not _worker.busy() and index != _urgent_submitted:
 		_urgent_submitted = index
 		_submit(index, "urgent")
-	# 让状态栏知道「正在缓冲」，但别每帧刷字符串。
-	if _stats_emit_clock <= 0.0:
-		_stats_emit_clock = 0.2
-		var stats := _last_stats.duplicate()
-		stats["cache"] = cache.stats(prefetch_progress())
-		stats["buffering"] = index
-		stats_changed.emit(stats)
+	_note_buffering(index)
+
+
+## 让状态栏知道「正在缓冲哪一帧」，但别每帧刷字符串。
+func _note_buffering(index: int) -> void:
+	if _stats_emit_clock > 0.0:
+		return
+	_stats_emit_clock = 0.2
+	var stats := _last_stats.duplicate()
+	stats["cache"] = cache.stats(prefetch_progress())
+	stats["buffering"] = index
+	stats_changed.emit(stats)
 
 
 ## 发布一张缓存帧：只做贴图 + 可选的 GPU 发布后处理，绝不重新求值、绝不写盘。
-func _publish_cached(image: Image, index: int, paused: bool = false) -> void:
+func _publish_cached(image: Image, index: int, paused: bool = false,
+		approx: bool = false) -> void:
+	# 所有已展开节点的缩略图都来自这里：不重新求值，只取缓存帧的伴随小图。
+	_emit_frame_previews(index)
 	var display := _gpu_display(index, image)
 	_last_image = display
 	var stats := _last_stats.duplicate()
 	stats.erase("buffering")
 	stats["cached"] = not paused
 	stats["frame"] = index
+	# approx = 这一帧只有播放档预览，精确版还在后台算。
+	# 状态栏与测试都靠它区分「真的好了」和「先垫一张」。
+	stats["approx"] = approx
+	stats["exact_frame"] = not approx
 	if paused:
 		# 停止播放的「定格帧」不是播放命中：状态栏与测试都不该把它算进帧序列。
 		stats["paused"] = true
@@ -608,17 +810,68 @@ func _publish_cached(image: Image, index: int, paused: bool = false) -> void:
 	_cooldown = 0.0
 
 
-## 缓存帧的显示副本：指纹变了就整桶作废。
+## 把某一帧的缩略图推给编辑器（只有展开的节点；收起的不在这里）。
+## 幂等：同一帧重复调用只发一次，暂停态的巡检不会把卡片当鼓敲。
+func _emit_frame_previews(index: int) -> void:
+	if _preview_focus.is_empty() or index < 0:
+		return
+	var items := previews.get_frame(index)
+	if items.is_empty():
+		return
+	if _preview_sent == index:
+		return
+	_preview_sent = index
+	for key in items.keys():
+		_preview_frame[String(key)] = index
+		_preview_known[String(key)] = true
+	frame_previews.emit(index, items)
+
+
+## 某个节点当前帧的小图状态，连帧号一起给编辑器：
+##   {"state": 2, "frame": 12} 第 12 帧的小图已经烘焙好（就是现在显示的那张）
+##   {"state": 1, "frame": 13} 播放头在第 13 帧，这张还没算出来，要等
+##   {"state": 3} 这个节点没有图像输出，小图永远是空的（灰）
+##   {"state": 0} 没展开 / 没有焦点，不显示任何状态
+func bake_info(node_id: String) -> Dictionary:
+	if node_id.is_empty() or _preview_focus.is_empty() or not _preview_focus.has(node_id):
+		return {"state": 0}
+	var index := _play_frame if playing else frame_index()
+	var baked := int(_preview_frame.get(node_id, -1))
+	if baked == index:
+		return {"state": 2, "frame": baked, "shown": baked}
+	# 已经算出过小图（只是还差这一帧）→ 明确是「等这一帧」，同时说清画面停在哪帧。
+	if _preview_known.has(node_id):
+		return {"state": 1, "frame": index, "shown": baked}
+	# 后台确实在忙也算「等」，不然用户看到灰点会以为这个节点废了。
+	if prefetcher_busy() or (_worker != null and _worker.busy()) or cache.missing() > 0:
+		return {"state": 1, "frame": index, "shown": baked}
+	# 缩略图趟跑过却一张都没有：这些节点本来就没有图像输出。
+	if _preview_pass_ran and int(previews.stats().get("frames", 0)) == 0:
+		return {"state": 3}
+	return {"state": 1, "frame": index}
+
+
+## 兼容旧调用：只要状态数字。
+func preview_state(node_id: String) -> int:
+	return int(bake_info(node_id).get("state", 0))
+
+
+## 发布前的显示副本：GPU 后处理（锐化等）是确定性的，同一帧算一次就够。
+## 缓存键必须同时含**内容身份 + 帧号**：参数一改，帧号还是那一个，但画面已经不同了。
+## 旧实现只用帧号当键、指纹变了才清，于是「改完参数第一帧」常常直接贴回旧图
+## （用户看到的就是一闪而过的旧画面）。
 func _gpu_display(index: int, image: Image) -> Image:
-	var fp := cache.fingerprint()
-	if fp != _display_fingerprint:
+	var content := store.content_key() if store != null else 0
+	if content != _display_content:
 		_display_cache.clear()
-		_display_fingerprint = fp
-	if _display_cache.has(index):
-		return _display_cache[index] as Image
+		_display_content = content
+		_display_fingerprint = cache.fingerprint()
+	var key := "%d:%d" % [content, index]
+	if _display_cache.has(key):
+		return _display_cache[key] as Image
 	var out := _postprocess(image)
 	if _display_cache.size() < 512:
-		_display_cache[index] = out
+		_display_cache[key] = out
 	return out
 
 
@@ -652,12 +905,17 @@ func _render() -> void:
 ## 把一帧结果广播出去。工作线程路径在这里补发节点预览（执行器在工作线程里，
 ## 不能直接发信号给 UI）。
 func _publish(result: Dictionary, from_worker: bool, suppress_render: bool = false) -> void:
-	# 世代不匹配 = 这个结果是「播放/上一次暂停」时代提交的。它算出来的那一帧
-	# 仍然值得存进缓存，但绝不能覆盖当前画面、统计或节点参数。
+	# 结果必须同时属于「当前播放世代」和「当前文档」。
+	# epoch 覆盖播放启停 / 文档失效；doc_key 覆盖「换了工程但世代没变」的情形
+	# （attach 会把 revision 归零，早期版本因此一直复用启动时的空文档快照）。
+	# 过期结果**直接丢弃** —— 连缓存都不写：它算的是另一份文档/另一帧，
+	# 归档回去会把正确帧覆盖成旧数据，还会带坏紧密文件的定长布局。
 	var job_epoch := int(result.get("epoch", -1))
-	if from_worker and job_epoch >= 0 and job_epoch != _epoch:
-		_archive_result(result)
-		return
+	var job_key := int(result.get("doc_key", -1))
+	if from_worker:
+		if (job_epoch >= 0 and job_epoch != _epoch) \
+				or (job_key >= 0 and job_key != _doc_revision()):
+			return
 	var raw: Image = result.get("image") as Image
 	var params_by_node: Variant = result.get("node_params")
 	if params_by_node is Dictionary:
@@ -669,15 +927,23 @@ func _publish(result: Dictionary, from_worker: bool, suppress_render: bool = fal
 	if from_worker:
 		var previews: Variant = result.get("previews")
 		if previews is Dictionary:
+			var index_for_preview := int(result.get("frame_index", -1))
 			for key in (previews as Dictionary).keys():
 				var preview: Variant = (previews as Dictionary)[key]
 				if preview is Image:
+					_preview_frame[String(key)] = index_for_preview
+					_preview_known[String(key)] = true
 					node_previewed.emit(String(key), preview)
 	# 缓存里存的是**CPU 原始帧**（与导出逐像素一致），GPU 发布增强只影响显示。
 	_archive_result(result)
 	if _cache_on:
 		_last_stats["cache"] = cache.stats(prefetch_progress())
-	_last_image = _postprocess(raw)
+	# 交互帧与缓存帧走**同一个**显示通道：同一帧无论从哪条路径发布，
+	# 过不过 GPU 后处理必须一致，否则起播/暂停瞬间会闪一下（细节突然变锐/变钝）。
+	var index := int(result.get("frame_index", -1))
+	if index < 0 and store != null:
+		index = cache.index_for_time(store.current_time)
+	_last_image = _gpu_display(index, raw) if index >= 0 else _postprocess(raw)
 	if not suppress_render:
 		rendered.emit(_last_image, _last_stats)
 		if _stats_emit_clock <= 0.0:
@@ -702,6 +968,10 @@ func _publish(result: Dictionary, from_worker: bool, suppress_render: bool = fal
 func _archive_result(result: Dictionary) -> void:
 	if not _cache_on:
 		return
+	# 桶还没定下来（刚换文档，稳定期没结束）时不要归档：
+	# 这一帧算的是新文档，写进去只会污染上一份文档的桶。
+	if _cache_dirty and _settle < CONTENT_SETTLE:
+		return
 	var raw: Image = result.get("image") as Image
 	if raw == null:
 		return
@@ -711,10 +981,20 @@ func _archive_result(result: Dictionary) -> void:
 	var index := int(result.get("frame_index", -1))
 	if index < 0:
 		index = cache.index_for_time(store.current_time if store != null else 0.0)
-	# 急件/预补帧按提交时的语义决定是否精确，不用「结果回来时是否还在播放」——
-	# 停止播放那一瞬间归档的旧急件不能被误标成精确帧。
-	var exact := bool(result.get("exact", false)) or (runner.quality >= 1 and not playing)
+	# 「是不是精确帧」由**算它的那一档质量**决定，而不是由「结果回来时在不在播」猜。
+	# 播放急件跑在播放档（quality=0、算子 0.5）：这种帧只能进伴随层（黄），
+	# 绝不能标绿。旧实现按 exact 一视同仁，于是标尺上还没算的那一段提前变绿，
+	# 用户按下去等来的却是糊图 —— 这就是「需要等待的帧提前变绿」。
+	var frame_quality := int(result.get("frame_quality", runner.quality))
+	var frame_operator := float(result.get("frame_operator_quality", runner.operator_quality))
+	var precise := frame_quality >= 1 and frame_operator >= 0.999
+	var exact := precise and (bool(result.get("exact", false)) or not playing)
+	var was_ready := cache.state(index) == FxFrameCache.STATE_READY
 	cache.put(index, raw, exact, false)
+	# 状态真的变了就顺手推一次统计：标尺已经绿了、底栏还停在旧数字，
+	# 是用户最容易当场发现的那种「两张皮」。_emit_cache 自带 0.25s 节流。
+	if exact and not was_ready:
+		_emit_cache()
 
 
 ## 提交一帧给工作线程。文档快照与 mute/solo 都转成纯数据，
@@ -755,14 +1035,19 @@ func _submit(frame_index: int = -1, purpose: String = "live") -> void:
 		"policy": policy.duplicate(true),
 		"invalidate": invalidate,
 		"epoch": _epoch,
+		"doc_key": rev,
 		"purpose": purpose,
-		"exact": frame_index >= 0,
+		# 只有当这一帧真的按精确档算时才算「精确帧」。播放档的急件只是
+		# 让画面有东西可贴，不能占据标尺上的绿格。
+		"exact": frame_index >= 0 and runner.quality >= 1 \
+			and float(runner.operator_quality) >= 0.999,
 	})
 
 
 ## 退出前停线程：不等它结束就释放会崩在 C++ 里。
 func _exit_tree() -> void:
 	FxRenderApi.unbind(self)
+	previews.clear()
 	if prefetcher != null:
 		prefetcher.stop()
 		prefetcher = null
@@ -795,6 +1080,9 @@ func _track_enabled(node_id: String, path: String) -> bool:
 
 
 func _on_runner_preview(node_id: StringName, image: Image) -> void:
+	# 主线程同步求帧时执行器直接发信号：小图属于「刚算完的这一帧」。
+	_preview_frame[String(node_id)] = frame_index()
+	_preview_known[String(node_id)] = true
 	node_previewed.emit(String(node_id), image)
 
 
@@ -802,6 +1090,23 @@ func _on_store_changed(keys: Array) -> void:
 	# 播放推进时间不算「文档变了」：不能重置空闲计时、不能重算指纹，
 	# 否则预渲染每帧都被打断，永远补不完缓存（旧实现最致命的一处）。
 	if _setting_play_time:
+		return
+	# 纯布局变化（拖动节点、批量位置写回）不改变任何一帧的像素：
+	# 既不能让缓存指纹换桶，也不该重画。旧实现把它当成「文档变了」，
+	# 于是每拖一次节点就把整段缓存作废、后台预渲染从零重来。
+	if _is_layout_only(keys):
+		return
+	# 最后一道闸门：通知说「变了」，但文档的内容身份根本没动 —— 那就是没变。
+	# 任何一条未知路径（回滚、写回同值、视图态混进内容键）都被这里挡住，
+	# 缓存、画布、预渲染一律不动。渲染只信内容身份，不信通知。
+	var identity := _doc_revision()
+	var identity_changed := identity != _content_seen
+	_content_seen = identity
+	# 注意 time 必须放行：交互拖时间轴（set_time）只发 time，但画面确实要重画。
+	# 播放推进走 set_time_silent，不会走到这里。
+	if not identity_changed and not keys.has("tracks") and not keys.has("time"):
+		if keys.has("selection"):
+			_apply_preview_scope()
 		return
 	var content := false
 	for key in keys:
@@ -811,9 +1116,22 @@ func _on_store_changed(keys: Array) -> void:
 	if content:
 		_cache_dirty = true
 		_idle_clock = 0.0
-		if keys.has("doc"):
+		# 只有**换了文档**（世代变了）才需要稳定期与重建桶：装载工程之后参数面板
+		# 与节点视图还会回写一轮，那时定桶会白算。改参数不需要等 —— 桶必须立刻换，
+		# 否则新算出的帧会被写进上一版内容的桶里。
+		var generation := int(_doc_revision() / 1048576)
+		if generation != _content_generation:
+			_content_generation = generation
+			_settle = 0.0
+			# 换文档 = 换世代：在途的旧文档求帧结果一律作废，快照强制重做。
+			_epoch += 1
+			_preview_frame.clear()
+			_preview_known.clear()
+			_snapshot = {}
+			_snapshot_rev = -1
+			_pending_invalidate = true
 			_prime_cache()
-			# 新工程一装载就把预渲染排上：下一个 process 就启动，不等 0.9 秒。
+			# 新工程一装载就把预渲染排上：稳定期一过就启动，不等 0.9 秒。
 			_idle_clock = PREFETCH_IDLE_DELAY
 	if keys.has("selection"):
 		_apply_preview_scope()
@@ -827,8 +1145,40 @@ func _on_store_changed(keys: Array) -> void:
 	if _touches_params(keys):
 		runner.invalidate_cache()
 		FxRenderBroker.invalidate()
+		# 改参数必须**立刻**换桶：新参数算出的帧不能写进旧内容的桶里。
+		# 装载工程的稳定期里例外（那时桶还没定，等稳定了再建）。
+		if _settle >= CONTENT_SETTLE:
+			_ensure_bucket_now()
 	if structural or timed or tracks_changed or _touches_params(keys):
 		request_render()
+
+
+## 立刻按当前文档重算一次桶（帧数 / 指纹 / 磁盘已有帧）。
+func _ensure_bucket_now() -> void:
+	if store == null or store.doc.is_empty():
+		return
+	var tl := FxGraphDoc.timeline(store.doc)
+	_cache_ensure_fingerprint(maxi(int(tl.get("fps", 30)), 1),
+		maxf(float(tl.get("duration", 1.0)), 0.0))
+
+
+## 只有「节点位置 / 卡片尺寸」这一类改动（配合 commit_batch 自动附加的 doc）。
+## 注意不能用「键的数量」判断：commit_batch 一定会追加 doc。
+## 这类改动不改变任何一帧的像素，因此既不能让缓存指纹换桶，也不该重画；
+## 缩放视图、点一下节点、拖一下卡片都会走到这里 —— 它们全都必须静默。
+func _is_layout_only(keys: Array) -> bool:
+	if keys.is_empty():
+		return false
+	var saw_position := false
+	for key in keys:
+		match String(key):
+			"positions", "size":
+				saw_position = true
+			"doc":
+				pass
+			_:
+				return false
+	return saw_position
 
 
 func _touches_params(keys: Array) -> bool:

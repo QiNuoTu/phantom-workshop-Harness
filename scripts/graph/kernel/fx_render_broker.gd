@@ -10,7 +10,11 @@ extends RefCounted
 ## 后端实例按 (id, FxRegistry.revision) 缓存，停用插件后下一次求帧自动回落。
 
 const SETTING_ID := "render.backend"
-const DEFAULT_ID := "cpu.standard"
+## 默认后端 = **贡献里 order 最小的那个**，基座不点名任何插件。
+## 旧实现把 "gpu.standard" 写死在基座：插件目录一改名，默认值就指向一个不存在的
+## 后端（虽然会回落，但「默认用谁」这件事本身就不该由基座决定）。
+## 现在 render.gpu 自己声明 order=5，它的顺序就是它的优先级。
+const DEFAULT_ID := ""
 
 static var _fallback: FxRenderBackend = null
 static var _instances: Dictionary = {}
@@ -41,11 +45,15 @@ static func has_backend() -> bool:
 	return not entries().is_empty()
 
 
+## 当前选中的后端 id。没设置过（或设置成空）时取贡献顺序里的第一个：
+## 「优先用谁」是插件自己的 order 声明，基座只负责按 order 取第一个可用的。
 static func current_id() -> String:
 	var value: Variant = FxSettings.value(SETTING_ID)
-	if value == null or str(value).is_empty():
-		return DEFAULT_ID
-	return str(value)
+	var wanted := "" if value == null else str(value)
+	if not wanted.is_empty():
+		return wanted
+	var list := entries()
+	return "" if list.is_empty() else String(list[0].get("id", ""))
 
 
 static func entry_for(backend_id: String) -> Dictionary:

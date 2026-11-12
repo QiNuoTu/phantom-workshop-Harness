@@ -1,17 +1,31 @@
-
-# === auto: git-deploy-to-github (godot) ===
-# Godot 4 导入缓存 / 构建产物（绝不提交）
+# === Godot 4 导入缓存 / 构建产物（绝不提交）===
 .godot/
 .import/
 *.tmp
 .mono/
 data_*/
 mono_crash.*.json
-# 系统 / 编辑器
+
+# === 打包与运行期产物 ===
+dist/
+build/
+*.pck
+*.exe
+*.zip
+# 帧缓存（默认落在 exe 同级 fx_cache/，跑一次就有几十 MB）
+fx_cache/
+# 编辑器自动保存的备份工程（examples/demo/示范工程/示范工程_2026*.fxgraph）
+examples/demo/*/*_20*.fxgraph
+
+# === 系统 / 编辑器 ===
 .DS_Store
 Thumbs.db
 desktop.ini
 *.swp
 .vscode/
-# 日志
+.idea/
+__pycache__/
+*.pyc
+
+# === 日志 ===
 *.log

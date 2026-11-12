@@ -34,7 +34,9 @@ const STATE_PENDING := 1
 const STATE_READY := 2
 
 const MAGIC := 0x43465846  # "FXFC"
-const VERSION := 1
+## v2：v1 的位图把播放档急件也标成了精确帧，磁盘上留下一批「绿但其实糊」的帧。
+## 抬版本让所有 v1 桶自动作废重算 —— 缓存可以重算，画面不能骗人。
+const VERSION := 2
 const HEADER_SIZE := 64
 const FILE_NAME := "frames.fxc"
 
@@ -61,6 +63,9 @@ var _last_disk_write_ms: int = 0
 var _disk_bytes_cache: int = -1
 var _file_ready: bool = false
 var _file_size: Vector2i = Vector2i.ZERO
+## 当前桶的帧尺寸（来自文档画布）。紧密文件是定长偏移布局，
+## 混入一张不同尺寸的图会整桶错位 —— 写和读都必须校验。
+var _frame_size: Vector2i = Vector2i.ZERO
 
 
 # ================= 配置 =================
@@ -110,11 +115,13 @@ static func _resolve_root(loc: String) -> String:
 
 # ================= 生命周期 =================
 
-func prepare(doc: Dictionary, fps: int, duration: float) -> void:
+func prepare(doc: Dictionary, fps: int, duration: float,
+		frame_size: Vector2i = Vector2i.ZERO) -> void:
 	var fp := fingerprint_of(doc, fps, duration)
 	var count := maxi(int(round(maxf(duration, 0.0) * float(maxi(fps, 1)))), 1)
 	_mutex.lock()
 	var changed := fp != _fingerprint
+	_frame_size = frame_size
 	_fingerprint = fp
 	_fps = maxi(fps, 1)
 	_duration = maxf(duration, 0.0)
@@ -142,8 +149,21 @@ func prepare(doc: Dictionary, fps: int, duration: float) -> void:
 
 
 static func fingerprint_of(doc: Dictionary, fps: int, duration: float) -> String:
-	var raw := JSON.stringify(doc)
+	var raw := JSON.stringify(content_of(doc))
 	return "%d_%d_%d" % [raw.hash(), maxi(fps, 1), int(round(maxf(duration, 0.0) * 1000.0))]
+
+
+## 只保留「会改变像素」的字段：节点位置、卡片尺寸、连线折点都是纯布局。
+## 拖动节点后指纹必须保持不变，否则整段缓存会因一次拖拽全部作废。
+static func content_of(doc: Dictionary) -> Dictionary:
+	var copy := doc.duplicate(true)
+	for item in copy.get("nodes", []):
+		var node_data: Dictionary = item
+		node_data.erase("pos")
+		node_data.erase("size")
+	for item in copy.get("edges", []):
+		(item as Dictionary).erase("pos")
+	return copy
 
 
 func fingerprint() -> String:
@@ -215,6 +235,12 @@ func put(index: int, image: Image, exact: bool, force_disk: bool = false) -> voi
 	if index < 0 or index >= _count:
 		_mutex.unlock()
 		return
+	# 拒绝异形帧：曾经有过「打开工程后快照没更新」的 bug，
+	# 128×128 的旧文档结果会被写进 192×108 的桶，把定长文件整桶带坏。
+	if _frame_size.x > 0 and (image.get_width() != _frame_size.x \
+			or image.get_height() != _frame_size.y):
+		_mutex.unlock()
+		return
 	if exact:
 		_states[index] = STATE_READY
 	elif int(_states[index]) != STATE_READY:
@@ -248,6 +274,12 @@ func fetch(index: int) -> Image:
 		return null
 	var image := _read_frame(index)
 	if image != null:
+		# 磁盘上可能是上一版留下的异形文件：读回尺寸不对就当没缓存，让后台补算。
+		_mutex.lock()
+		var expected := _frame_size
+		_mutex.unlock()
+		if expected.x > 0 and image.get_size() != expected:
+			return null
 		# 写回内存热层，但不要再触发一次磁盘写。
 		_mutex.lock()
 		if not _memory.has(index):
@@ -266,6 +298,19 @@ func has_frame(index: int) -> bool:
 
 
 # ================= 统计 / 清理 =================
+
+## 还有几帧没就绪（给「节点小图烘焙中」这类高频询问用）。
+## 比 stats() 轻：不拼字典、不碰磁盘，只在锁里数一遍状态。
+func missing() -> int:
+	_mutex.lock()
+	var ready := 0
+	for i in range(_count):
+		if int(_states[i]) == STATE_READY:
+			ready += 1
+	var value := maxi(_count - ready, 0)
+	_mutex.unlock()
+	return value
+
 
 func stats(prefetch: Dictionary = {}) -> Dictionary:
 	_mutex.lock()

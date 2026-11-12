@@ -185,19 +185,30 @@ static func sharpen(image: Image, amount: float) -> Image:
 
 
 
-# ================= 工作线程桥 =================
+# ================= 工作线程桥（批量化合流） =================
 #
-# RenderingDevice 的 compute_list_begin 只能在渲染线程调用（试过 local device 也一样）。
-# 但 `RenderingServer.call_on_render_thread(cb)` 允许工作线程把整批 compute 提交过去：
-# 实测 6 线程并发 48 个请求合流到同一渲染同步点，平均约 1ms/请求，
-# 不会退化成「每请求等一帧」。于是预览与后台预渲染也能吃到 GPU 算子。
+# `compute_list_begin` 只能在渲染线程调用，工作线程必须经
+# `RenderingServer.call_on_render_thread(cb)` 提交。单次往返实测约 16ms：
+# 6 条预渲染线程各等各的，60 帧 × 每帧若干算子就能把整段拖到十几秒。
 #
-# 一个算子只做一次跨线程往返：多 pass（可分离模糊）在渲染线程里连着跑完。
+# 改成**领导线程 + 批**：谁先把作业放进队列，谁负责发起**一次**渲染线程回调；
+# 回调一次抽干队列（含等待期间别人新塞进来的），逐个执行后回写结果。
+# N 条线程的 M 个请求于是合流成 ⌈M/批⌉ 次往返（实测约 1ms/请求）。
+# 队列抽空时回调主动清掉领导标记，下一批由下一个请求重新发起。
+#
+# 主线程 / 渲染线程直接执行，不排队 —— 主线程排队会等自己的回调而死锁。
 
 const BRIDGE_TIMEOUT_MS := 2000
+## 等结果的轮询间隔：越小延迟越低，越大越省 CPU。
+const BRIDGE_POLL_USEC := 50
 
 static var _bridge_jobs: int = 0
 static var _bridge_fallbacks: int = 0
+static var _bridge_batches: int = 0
+static var _bridge_mutex := Mutex.new()
+static var _bridge_queue: Array[Dictionary] = []
+static var _bridge_next_id: int = 0
+static var _bridge_leader: bool = false
 
 
 static func bridged_calls() -> int:
@@ -208,6 +219,11 @@ static func bridge_fallbacks() -> int:
 	return _bridge_fallbacks
 
 
+## 合流效率诊断：批次数 / 请求数（比值越接近 1 合流越好）。
+static func bridge_batches() -> int:
+	return _bridge_batches
+
+
 ## job 是纯参数的 Dictionary，不含 Image 之外的对象；返回 null 表示回落 CPU。
 static func bridged(job: Dictionary) -> Image:
 	if not available():
@@ -215,19 +231,58 @@ static func bridged(job: Dictionary) -> Image:
 	if RenderingServer.is_on_render_thread() \
 			or int(OS.get_thread_caller_id()) == int(OS.get_main_thread_id()):
 		return _exec(job)
-	var slot := {"done": false, "result": null}
+	var slot := {"done": false, "result": null, "id": 0}
+	var lead := false
+	_bridge_mutex.lock()
+	slot["id"] = _bridge_next_id
+	_bridge_next_id += 1
 	_bridge_jobs += 1
-	RenderingServer.call_on_render_thread(func() -> void:
-		slot["result"] = _exec(job)
-		slot["done"] = true
-	)
+	_bridge_queue.append({"id": int(slot["id"]), "job": job, "slot": slot})
+	if not _bridge_leader:
+		_bridge_leader = true
+		lead = true
+	_bridge_mutex.unlock()
+	if lead:
+		RenderingServer.call_on_render_thread(func() -> void: _drain())
 	var deadline := Time.get_ticks_msec() + BRIDGE_TIMEOUT_MS
 	while Time.get_ticks_msec() < deadline:
 		if bool(slot["done"]):
 			return slot["result"] as Image
-		OS.delay_usec(80)
+		OS.delay_usec(BRIDGE_POLL_USEC)
 	_bridge_fallbacks += 1
+	# 超时：把自己的作业从队列里摘掉，别让渲染线程算完写进没人等的槽。
+	_bridge_mutex.lock()
+	if not bool(slot["done"]):
+		for i in range(_bridge_queue.size() - 1, -1, -1):
+			if int((_bridge_queue[i] as Dictionary).get("id", -1)) == int(slot["id"]):
+				_bridge_queue.remove_at(i)
+				break
+		# 回调可能根本没被调度（渲染线程停摆 / 退出中）：队列空了就把领导权放掉，
+		# 否则后续每个请求都白等一次超时。
+		if _bridge_queue.is_empty():
+			_bridge_leader = false
+	_bridge_mutex.unlock()
 	return null
+
+
+## 渲染线程侧：一次抽干队列。必须在这里清领导标记，否则后续批次没人发起。
+static func _drain() -> void:
+	_bridge_batches += 1
+	while true:
+		_bridge_mutex.lock()
+		if _bridge_queue.is_empty():
+			_bridge_leader = false
+			_bridge_mutex.unlock()
+			return
+		var batch := _bridge_queue.duplicate()
+		_bridge_queue.clear()
+		_bridge_mutex.unlock()
+		for item in batch:
+			var entry: Dictionary = item
+			var slot: Dictionary = entry.get("slot", {})
+			var done: Image = _exec(entry.get("job", {}) as Dictionary)
+			slot["result"] = done
+			slot["done"] = true
 
 
 static func _exec(job: Dictionary) -> Image:
@@ -276,6 +331,16 @@ static func outline_bridged(image: Image, thickness: int, inside: bool,
 
 
 static func reset() -> void:
+	# 停插件时把还在排队的作业全部作废：没人会再来取结果了。
+	_bridge_mutex.lock()
+	for item in _bridge_queue:
+		var slot: Dictionary = (item as Dictionary).get("slot", {})
+		slot["result"] = null
+		slot["done"] = true
+	_bridge_queue.clear()
+	_bridge_leader = false
+	_bridge_next_id = 0
+	_bridge_mutex.unlock()
 	if _rd != null:
 		if _pipeline.is_valid():
 			_rd.free_rid(_pipeline)

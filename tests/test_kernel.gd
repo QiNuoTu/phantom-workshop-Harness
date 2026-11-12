@@ -10,6 +10,8 @@ func _initialize() -> void:
 	_test_effects()
 	_test_coeffects()
 	_test_retire()
+	_test_document_identity()
+	_test_layout_is_not_content()
 	_test_store_undo()
 	print("----")
 	if failures.is_empty():
@@ -74,6 +76,53 @@ func _test_retire() -> void:
 	ctx.set_value("k", 2)
 	_check(not fiber.active and runs[0] == 1, "退休后任何 notify 都不会让它复活")
 	fiber.dispose()
+
+
+## 文档世代：attach 会把 revision 归零，内容身份必须仍然变化，
+## 否则渲染服务会一直复用「打开工程前」的文档快照。
+func _test_document_identity() -> void:
+	print("== 文档内容身份 ==")
+	var store := FxDocumentStore.new()
+	store.attach(FxGraphFacade.access().doc_new("A"))
+	var first := store.content_key()
+	_check(store.revision() == 0, "attach 后修订号归零（撤销历史的起点）")
+	store.mutate(func(d: Dictionary) -> void:
+		d["identity_probe"] = 1
+	, ["doc"], "")
+	var after_mutate := store.content_key()
+	_check(after_mutate != first, "参数改动后内容身份变化")
+	store.attach(FxGraphFacade.access().doc_new("B"))
+	var second := store.content_key()
+	_check(store.revision() == 0, "换工程后修订号再次归零")
+	_check(second != first and second != after_mutate,
+		"换工程后内容身份不撞号（世代单调递增）")
+
+
+## 「数据没变就不该重建」：位置/尺寸这类纯布局写入不能改变内容身份，
+## 空手势（点一下节点就结束的假拖拽）连撤销点都不该留下。
+func _test_layout_is_not_content() -> void:
+	print("== 布局不等于内容 ==")
+	var store := FxDocumentStore.new()
+	store.attach({"values": {"a": 1}})
+	var content_before := store.content_key()
+	var revision_before := store.revision()
+	store.mutate(func(d: Dictionary) -> void:
+		d["pos_probe"] = [10, 20]
+	, ["positions"], "")
+	_check(store.content_key() == content_before, "拖动位置不改变内容身份")
+	_check(store.revision() != revision_before, "拖动位置仍然是一个可撤销的修订")
+	var undo_after_drag := store._undo.size()
+	# 点一下节点（没拖）也会走 begin/commit：文档一个字都没变。
+	store.begin_batch()
+	store.commit_batch(["positions"])
+	_check(store._undo.size() == undo_after_drag, "空手势不产生撤销点")
+	var revision_quiet := store.revision()
+	# 写入和原值完全一样：同样必须静默。
+	store.mutate(func(d: Dictionary) -> void:
+		d["values"] = {"a": 1}
+	, ["structure"], "")
+	_check(store.revision() == revision_quiet, "写入相同内容不产生任何修订")
+	_check(store._undo.size() == undo_after_drag, "写入相同内容不产生撤销点")
 
 
 func _test_store_undo() -> void:

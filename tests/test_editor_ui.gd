@@ -314,8 +314,13 @@ func _test_space_and_undo() -> void:
 	await process_frame
 	_check(shell.render.playing, "空格开始播放")
 	var time_before := store.current_time
-	for i in range(3):
+	# 播放推进现在受「目标帧必须已烘焙」约束：缺帧时先等它算好，绝不错帧。
+	# 所以这里等「时间真的动了」，而不是死等固定 3 帧（无头下预渲染被禁用，
+	# 头一帧要靠急件临时算，比 3 帧慢）。
+	for i in range(120):
 		await process_frame
+		if store.current_time > time_before:
+			break
 	_check(store.current_time > time_before, "播放推进时间（%.3f → %.3f）" % [time_before, store.current_time])
 	var space2 := InputEventKey.new()
 	space2.keycode = KEY_SPACE
@@ -558,8 +563,10 @@ func _test_frame_cache() -> void:
 	var total := render.frame_count()
 	_check(total > 0, "缓存按帧率切出总帧数（%d）" % total)
 	var index := render.frame_index()
-	for i in range(60):
-		await process_frame
+	# 稳定期（0.35s）内归档会被护栏挡住，所以这里不能用「跑 60 帧」当上限：
+	# 无头一帧远不到 1ms，60 帧根本走不出稳定期。
+	for i in range(12):
+		await create_timer(0.2).timeout
 		if render.cache_state(index) == 2:
 			break
 	_check(render.cache_state(index) == 2, "刚渲染过的当前帧标绿（已缓存）")
@@ -570,6 +577,12 @@ func _test_frame_cache() -> void:
 	_check(bound != null, "时间轴面板绑定了渲染服务")
 	# 状态栏：底部要能看到「缓存 x/y」。
 	var label: Label = shell.get("_stats_label")
+	# 状态栏 0.2s 节流一次；无头模式一帧远不到 1ms，等帧数等不到它刷新。
+	# 这里按真实时间等（GUI 里就是「缓存上线后 0.2 秒内底栏跟上」）。
+	for i in range(8):
+		await create_timer(0.15).timeout
+		if label != null and label.text.contains("缓存"):
+			break
 	_check(label != null and label.text.contains("缓存"), "状态栏显示缓存进度（%s）" % (label.text if label != null else ""))
 	# 预渲染：无头环境允许手动触发，跑完应该整段都绿。
 	var started: bool = render.start_prefetch()
@@ -648,10 +661,30 @@ func _test_frame_cache() -> void:
 			paused_frames[0] if not paused_frames.is_empty() else -1, expected])
 	for i in range(30):
 		await process_frame
-	var final_stats: Dictionary = render.last_stats()
-	_check(bool(final_stats.get("paused", false)) or bool(final_stats.get("cached", false)) 		or float(final_stats.get("ms", -1.0)) >= 0.0,
-		"停止后画面不再被播放期在途结果覆写")
 	store.set_time(0.0)
+
+	# 时间维度由独立插件提供，core.render 只在被停用时才用降级时钟。
+	_check(render.clock != null and not (render.clock is FxLinearClock),
+		"播放时钟来自 core.timeline 而不是降级实现")
+	_check(FxClockBroker.provider_id() != "", "时钟代理能报出当前 provider")
+
+	# 世代隔离：模拟一个「播放期提交、停止后才回来」的旧结果。
+	# 它算出来的帧可以进缓存，但绝不能发布、也不能覆盖 last_image / last_stats。
+	var emitted := [0]
+	var on_any := func(_img: Image, _stats: Dictionary) -> void: emitted[0] += 1
+	render.rendered.connect(on_any)
+	var before: Image = render.last_image()
+	var stale_epoch := int(render.get("_epoch")) + 977
+	var stale_result := {
+		"image": before, "stats": {"nodes": 0, "steps": 0, "ms": 999.0},
+		"frame_index": 0, "epoch": stale_epoch, "purpose": "urgent", "exact": true,
+	}
+	render.call("_publish", stale_result, true, false)
+	_check(emitted[0] == 0, "过期世代的结果不发布画面")
+	_check(render.last_image() == before, "过期世代的结果不覆盖当前画面")
+	_check(float(render.last_stats().get("ms", 0.0)) < 900.0,
+		"过期世代的结果不污染统计（旧数据覆盖）")
+	render.rendered.disconnect(on_any)
 
 	# ---- 紧密文件：单文件 + 定长偏移，零 PNG 编码 ----
 	var packed := FxFrameCache.new()
@@ -697,6 +730,96 @@ func _test_frame_cache() -> void:
 	_check(lru_freed >= 0, "LRU 自动清理可执行（释放 %d 字节）" % lru_freed)
 	packed.clear_all()
 	mem.clear_all()
+
+	# 异形帧护栏：桶是定长偏移布局，旧文档的 128×128 结果绝不能写进 192×108 桶。
+	var wrong := Image.create(7, 7, false, Image.FORMAT_RGBA8)
+	wrong.fill(Color(1, 0, 0, 1))
+	var before_wrong := render.cache_stats()
+	render.cache.put(0, wrong, true, true)
+	_check(int(render.cache_stats().get("ready", 0)) == int(before_wrong.get("ready", 0)),
+		"异形帧被缓存拒绝，不破坏紧密文件布局")
+
+	# 文档身份护栏：错 doc_key 的结果必须整个丢弃，不能发布也不能写缓存。
+	var wrong_key_emitted := [0]
+	var on_wrong := func(_img: Image, _stats: Dictionary) -> void: wrong_key_emitted[0] += 1
+	render.rendered.connect(on_wrong)
+	var before_wrong_img: Image = render.last_image()
+	render.call("_publish", {
+		"image": before_wrong_img, "stats": {"ms": 888.0},
+		"frame_index": 0, "epoch": int(render.get("_epoch")),
+		"doc_key": int(render.call("_doc_revision")) + 12345, "purpose": "live",
+	}, true, false)
+	_check(wrong_key_emitted[0] == 0, "错 doc_key 的结果不发布（旧文档数据覆盖）")
+	_check(render.last_image() == before_wrong_img, "错 doc_key 的结果不覆盖画面")
+	render.rendered.disconnect(on_wrong)
+
+	# ---- 精确性护栏：播放档算出来的急件不许冒充精确帧 ----
+	# 旧实现按「结果回来时还在不在播」猜精确性，而播放急件跑的是播放档
+	# （quality=0、算子 0.5）—— 于是标尺上还没算的那一段提前变绿，
+	# 用户等来的却是一张糊图。归档必须看「算它的那一档质量」。
+	var soft_index := mini(1, render.frame_count() - 1)
+	var canvas := FxGraphDoc.canvas(store.doc)
+	var soft := Image.create(canvas.x, canvas.y, false, Image.FORMAT_RGBA8)
+	soft.fill(Color(0.2, 0.4, 0.6, 1))
+	# 先清空：如果这一帧本来就已经精确缓存，伴随层写入是「不降级」的，
+	# 那验不出「软帧不标绿」这条规则。
+	render.clear_cache()
+	_check(render.cache_state(soft_index) == FxFrameCache.STATE_EMPTY, "清空后这一帧是红的")
+	render.call("_archive_result", {
+		"image": soft, "frame_index": soft_index, "exact": true,
+		"frame_quality": 0, "frame_operator_quality": 0.5,
+	})
+	_check(render.cache_state(soft_index) == FxFrameCache.STATE_PENDING,
+		"播放档急件只进伴随层（黄），不冒充精确帧（绿）")
+	_check(render.cache.fetch(soft_index) != null, "伴随层的帧仍然可以贴出来（不黑屏）")
+	render.call("_archive_result", {
+		"image": soft, "frame_index": soft_index, "exact": true,
+		"frame_quality": 1, "frame_operator_quality": 1.0,
+	})
+	_check(render.cache_state(soft_index) == FxFrameCache.STATE_READY,
+		"精确档结果才把这一帧标绿")
+
+	# ---- 拖动节点只改布局：不得作废缓存、不得触发重算 ----
+	var first_node := ""
+	for item in store.doc.get("nodes", []):
+		first_node = String((item as Dictionary).get("id", ""))
+		if not first_node.is_empty():
+			break
+	var fp_before := render.cache.fingerprint()
+	var ready_before := int(render.cache_stats().get("ready", 0))
+	var renders_before := [0]
+	var count_render := func(_img: Image, _st: Dictionary) -> void: renders_before[0] += 1
+	render.rendered.connect(count_render)
+	store.begin_batch()
+	store.set_node_position(first_node, Vector2(321, 123))
+	store.commit_batch(["positions"])
+	for i in range(6):
+		await process_frame
+	render.rendered.disconnect(count_render)
+	_check(not first_node.is_empty(), "测试文档里有节点（%s）" % first_node)
+	_check(render.cache.fingerprint() == fp_before, "拖动节点不改变缓存指纹（不换桶）")
+	_check(int(render.cache_stats().get("ready", 0)) == ready_before,
+		"拖动节点后已缓存的帧仍然有效（%d → %d）" % [
+			ready_before, int(render.cache_stats().get("ready", 0))])
+	_check(renders_before[0] == 0, "拖动节点不触发重渲染（%d 次）" % renders_before[0])
+	# 反过来：改参数必须照常作废缓存并重画。
+	var fp_param := render.cache.fingerprint()
+	store.apply_param(first_node, "radius", 3, false)
+	for i in range(4):
+		await process_frame
+	_check(render.cache.fingerprint() != fp_param, "改参数仍然换桶（缓存照常失效）")
+
+	# ---- 播放中只给「展开」的节点推缩略图 ----
+	var ids: Array = []
+	for item in store.doc.get("nodes", []):
+		ids.append(String((item as Dictionary).get("id", "")))
+	var focus_id := String(ids[0]) if not ids.is_empty() else ""
+	render.set_preview_focus([focus_id])
+	_check(render.preview_focus().size() == 1 and render.preview_focus()[0] == focus_id,
+		"渲染服务收到展开节点焦点")
+	_check(render.previews != null, "缩略图伴随层就绪")
+	render.set_preview_focus([])
+	_check(render.preview_focus().is_empty(), "收起后焦点清空（收起的节点不参与缩略图）")
 
 	# 清理缓存：状态回到「没算过」，磁盘占用清零。
 	var freed := render.clear_cache()

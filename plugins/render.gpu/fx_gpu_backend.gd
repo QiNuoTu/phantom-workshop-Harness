@@ -22,7 +22,7 @@ static func create() -> FxRenderBackend:
 
 func _init() -> void:
 	id = "gpu.standard"
-	label = "GPU 合成（实验）"
+	label = "GPU 渲染服务器"
 
 
 func describe() -> String:

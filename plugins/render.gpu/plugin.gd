@@ -21,7 +21,9 @@ func render_backends() -> Array[Dictionary]:
 		"id": "gpu.standard",
 		"label": "GPU 合成（实验）",
 		"description": "图求值在 CPU，整帧合成走 GPU 着色器；无图形设备时自动退回标准 CPU 后端。",
-		"order": 30,
+		# order 最小 = 默认后端。基座不再硬编码 "gpu.standard"，
+		# 「谁该当默认」由插件用 order 自己声明（停用本插件就自动让位给 CPU）。
+		"order": 5,
 		"factory": FxGpuBackend.create,
 	}]
 

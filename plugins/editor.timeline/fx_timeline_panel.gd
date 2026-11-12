@@ -49,6 +49,16 @@ var scope_all: bool = true
 
 var _rows: Array[Dictionary] = []
 var _scroll: float = 0.0
+## 水平缩放：1 = 整段铺满轨道；放大到 240 倍时一帧能占几十像素。
+## 之前时间轴永远是「整段铺满」，两秒的动画里一帧只有两三个像素，
+## 想精确点到某一帧基本靠猜 —— 滚轮缩放就是为这件事加的。
+var _zoom: float = 1.0
+## 可视区左边界对应的时间（秒）。_zoom == 1 时恒为 0。
+var _view_start: float = 0.0
+const ZOOM_MIN := 1.0
+const ZOOM_MAX := 240.0
+## 滚轮每格的缩放倍率。
+const ZOOM_STEP := 1.25
 var _dragging: bool = false
 var _fiber: FxFiber
 ## "" | "scrub"（拖播放头） | "key"（拖关键帧） | "box"（框选）
@@ -213,11 +223,25 @@ func _on_cache_changed(_stats: Dictionary) -> void:
 
 
 func _on_time_ticked(_t: float) -> void:
+	_follow_playhead()
 	queue_redraw()
 
 
+## 放大之后播放头很容易跑出可视区：播放中让它一直留在视野里。
+## 只在「看不见了」的时候挪一次，不做逐帧居中（那会让人眼晕）。
+func _follow_playhead() -> void:
+	if _zoom <= 1.0 or store == null:
+		return
+	var span := _span()
+	var t := store.current_time
+	if t >= _view_start and t <= _view_start + span:
+		return
+	_view_start = clampf(t - span * 0.3, 0.0, maxf(_duration() - span, 0.0))
+
+
 ## 标尺下沿的逐帧色带：每帧一个小方块，颜色 = 缓存状态。
-## 帧多到画不下时按整步抽样（宁可少画，也不让 _draw 变成几千次调用）。
+## 位置一律走 _time_to_x，和刻度、播放头同一条换算；放大后色块自然变宽，
+## 缩到整段时按整步抽样（宁可少画，也不让 _draw 变成几千次调用）。
 func _draw_cache_strip(font: Font, lane_x: float, lane_w: float, _duration: float) -> void:
 	if render == null or not is_instance_valid(render):
 		return
@@ -226,23 +250,32 @@ func _draw_cache_strip(font: Font, lane_x: float, lane_w: float, _duration: floa
 	var count := int(render.call("frame_count"))
 	if count <= 0 or lane_w <= 4.0:
 		return
-	var step := maxi(1, int(ceil(float(count) / lane_w * 2.0)))
-	var block := maxf(lane_w * float(step) / float(count), 1.0)
+	var fps := 30.0
+	if store != null:
+		fps = maxf(1.0, float(FxGraphDoc.timeline(store.doc).get("fps", 30)))
+	var frame_px := lane_w / maxf(_span() * fps, 0.001)
+	var step := 1
+	if frame_px < 2.0:
+		step = int(ceil(2.0 / maxf(frame_px, 0.0001)))
+	var block := maxf(frame_px * float(step), 1.0)
 	var y := TOP_PAD + 13.0
 	var h := 5.0
 	var index := 0
 	while index < count:
-		var x := lane_x + lane_w * float(index) / float(count)
-		var color := COLOR_CACHE_EMPTY
-		match int(render.call("cache_state", index)):
-			2:
-				color = COLOR_CACHE_READY
-			1:
-				color = COLOR_CACHE_PENDING
-		draw_rect(Rect2(x, y, maxf(block - 0.5, 1.0), h), color)
+		var x := _time_to_x(float(index) / fps)
+		if x > lane_x + lane_w + 1.0:
+			break
+		if x >= lane_x - 1.0:
+			var color := COLOR_CACHE_EMPTY
+			match int(render.call("cache_state", index)):
+				2:
+					color = COLOR_CACHE_READY
+				1:
+					color = COLOR_CACHE_PENDING
+			draw_rect(Rect2(x, y, maxf(block - 0.5, 1.0), h), color)
 		index += step
 	# 小图例：不占轨道，贴在标尺右侧空隙里。
-	var legend := "%d 帧" % count
+	var legend := "%d 帧 · 缩放 %.1f×" % [count, _zoom]
 	var legend_w := font.get_string_size(legend, HORIZONTAL_ALIGNMENT_LEFT, -1, 9).x
 	draw_string(font, Vector2(lane_x + lane_w - legend_w - 2.0, TOP_PAD + 11.0), legend,
 		HORIZONTAL_ALIGNMENT_LEFT, -1, 9, COLOR_MUTED)
@@ -306,6 +339,8 @@ func _on_coeffects(_ctx: FxContext, keys: Array) -> void:
 		var keep := _scroll
 		_rebuild_tracks()
 		_scroll = clampf(keep, 0.0, _max_scroll())
+		# 时长可能被改短了：缩放视图必须重新夹回合法范围。
+		_clamp_view()
 		_sync_timeline_controls()
 	queue_redraw()
 
@@ -466,7 +501,7 @@ func _draw_row(font: Font, row: Dictionary, _index: int, y: float, row_h: float,
 		var picked := _selected_keys.has(_sel_key(_index, ki))
 		if picked and _mode == "key":
 			t += _key_preview_delta
-		var x := lane_x + clampf(t / duration, 0.0, 1.0) * lane_w
+		var x := _time_to_x(t)
 		var cy := y + row_h * 0.5
 		draw_line(Vector2(x, y + 2), Vector2(x, y + row_h - 2), Color(1, 0.72, 0.33, 0.18), 1.0)
 		_draw_diamond(Vector2(x, cy),
@@ -486,17 +521,51 @@ func _sel_key(row: int, key_index: int) -> String:
 	return "%d:%d" % [row, key_index]
 
 
+## 标尺刻度跟着缩放走：放大到能看见单帧时按帧标，缩到整段时按秒标。
+## 刻度步长从「帧」这个真实单位里挑（1/2/5/10/15/30/60… 帧），
+## 所以标签永远是整数帧，不会是 0.37s 这种没法对齐的数字。
 func _draw_ruler(font: Font, lane_x: float, lane_w: float, duration: float) -> void:
 	var y := TOP_PAD
 	draw_rect(Rect2(lane_x, y, lane_w, RULER_H), COLOR_PANEL)
-	var steps := 8
-	for i in range(steps + 1):
-		var t := duration * float(i) / float(steps)
-		var x := lane_x + lane_w * float(i) / float(steps)
-		draw_line(Vector2(x, y + RULER_H - 6), Vector2(x, y + RULER_H), COLOR_LINE, 1.0)
-		if i % 2 == 0:
-			draw_string(font, Vector2(x + 2, y + 12), "%.2fs" % t,
-				HORIZONTAL_ALIGNMENT_LEFT, -1, 10, COLOR_MUTED)
+	var fps := 30
+	if store != null:
+		fps = maxi(1, int(FxGraphDoc.timeline(store.doc).get("fps", 30)))
+	var frame_px := lane_w / maxf(_span() * float(fps), 0.001)
+	var candidates := [1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 1800, 3600]
+	var step_frames: int = candidates[candidates.size() - 1]
+	for raw in candidates:
+		var frames := int(raw)
+		if float(frames) * frame_px >= 58.0:
+			step_frames = frames
+			break
+	# 细刻度：能画得开就按帧画，否则退到更粗的帧步长（保证每格至少约 2 像素，
+	# 长片子缩到整段时也不会退化成几千次 draw_line）。
+	var minor_need := int(ceil(2.0 / maxf(frame_px, 0.0001)))
+	var minor := 1
+	for raw in candidates:
+		minor = int(raw)
+		if minor >= minor_need:
+			break
+	var span := _span()
+	var first := int(floor(_view_start * float(fps) / float(minor))) * minor
+	var f := first
+	while true:
+		var t := float(f) / float(fps)
+		if t > _view_start + span + 0.0001:
+			break
+		if t >= -0.0001:
+			var x := _time_to_x(t)
+			var major := (f % step_frames) == 0
+			if major:
+				draw_line(Vector2(x, y + RULER_H - 7), Vector2(x, y + RULER_H), COLOR_LINE, 1.0)
+				var label := "f%d" % f
+				if step_frames >= fps:
+					label = "%.1fs" % t
+				draw_string(font, Vector2(x + 2, y + 12), label,
+					HORIZONTAL_ALIGNMENT_LEFT, -1, 10, COLOR_MUTED)
+			else:
+				draw_line(Vector2(x, y + RULER_H - 3), Vector2(x, y + RULER_H), COLOR_LINE, 1.0)
+		f += minor
 
 
 func _draw_scope_toggle(font: Font, height: float, track_count: int) -> void:
@@ -512,19 +581,34 @@ func _draw_scope_toggle(font: Font, height: float, track_count: int) -> void:
 	draw_string(font, Vector2(144, rect.position.y + 12), summary,
 		HORIZONTAL_ALIGNMENT_LEFT, LABEL_W - 148, 10, COLOR_MUTED)
 	var clip := "" if _clipboard.is_empty() else " · 剪贴板 %d 帧（Ctrl+V 粘贴）" % _clipboard.size()
+	var zoom_hint := " · 滚轮缩放 %.1f×（Shift+滚轮翻轨 · 中键平移 · 双击复位）" % _zoom \
+		if _zoom > 1.001 else " · 滚轮缩放刻度"
 	draw_string(font, Vector2(LABEL_W + 8, height - 6),
-		"拖动改时间 · 框选批量移动/删除 · Ctrl+C/V 复制粘贴 · M 静音 S 独奏 · 双击打帧%s" % clip,
+		("拖动改时间（吸附到帧） · 框选批量移动/删除 · Ctrl+C/V 复制粘贴 · M 静音 S 独奏 · 双击打帧%s%s"
+			% [clip, zoom_hint]),
 		HORIZONTAL_ALIGNMENT_LEFT, -1, 10, COLOR_MUTED)
 
 
 func _draw_playhead(lane_x: float, lane_w: float, duration: float, height: float) -> void:
 	if store == null:
 		return
-	var x := lane_x + clampf(store.current_time / duration, 0.0, 1.0) * lane_w
+	var x := _time_to_x(store.current_time)
+	if x < lane_x - 2.0 or x > lane_x + lane_w + 2.0:
+		return
 	draw_line(Vector2(x, TOP_PAD), Vector2(x, height), COLOR_PLAYHEAD, 1.0)
 	draw_colored_polygon(PackedVector2Array([
 		Vector2(x - 4, TOP_PAD), Vector2(x + 4, TOP_PAD), Vector2(x, TOP_PAD + 6)
 	]), COLOR_PLAYHEAD)
+	# 当前是第几帧写在播放头右侧：精确到帧之后，这个数字就是「选帧」的读数。
+	var label := "f%d / %d" % [_current_frame(), int(round(duration * _fps()))]
+	draw_string(get_theme_default_font(), Vector2(x + 6, TOP_PAD + 10), label,
+		HORIZONTAL_ALIGNMENT_LEFT, -1, 9, COLOR_PLAYHEAD)
+
+
+func _fps() -> float:
+	if store == null:
+		return 30.0
+	return maxf(1.0, float(FxGraphDoc.timeline(store.doc).get("fps", 30)))
 
 
 func _draw_diamond(center: Vector2, color: Color, radius: float = 4.0) -> void:
@@ -566,13 +650,32 @@ func _gui_input(event: InputEvent) -> void:
 				return
 	if event is InputEventMouseButton:
 		var mb := event as InputEventMouseButton
+		# 滚轮 = 水平缩放刻度（以光标处那一帧为锚点）；按住 Shift 或 Ctrl = 纵向翻轨。
+		# 精确选帧靠的就是这个：放大到一帧几十像素，拖播放头才不会「一滑一大片」。
 		if mb.button_index == MOUSE_BUTTON_WHEEL_UP and mb.pressed:
-			_scroll = maxf(0.0, _scroll - ROW_H * 2.0)
+			if mb.shift_pressed or mb.ctrl_pressed:
+				_scroll = maxf(0.0, _scroll - ROW_H * 2.0)
+			else:
+				_zoom_at(mb.position.x, ZOOM_STEP)
 			queue_redraw()
 			accept_event()
 			return
 		if mb.button_index == MOUSE_BUTTON_WHEEL_DOWN and mb.pressed:
-			_scroll = minf(_max_scroll(), _scroll + ROW_H * 2.0)
+			if mb.shift_pressed or mb.ctrl_pressed:
+				_scroll = minf(_max_scroll(), _scroll + ROW_H * 2.0)
+			else:
+				_zoom_at(mb.position.x, 1.0 / ZOOM_STEP)
+			queue_redraw()
+			accept_event()
+			return
+		# 中键拖动 = 水平平移（放大之后看片子的另一半）。
+		if mb.button_index == MOUSE_BUTTON_MIDDLE:
+			if mb.pressed:
+				_mode = "pan"
+				_drag_start = mb.position
+				_drag_now = mb.position
+			else:
+				_finish_drag()
 			queue_redraw()
 			accept_event()
 			return
@@ -591,7 +694,11 @@ func _gui_input(event: InputEvent) -> void:
 			accept_event()
 			return
 		if mb.double_click and row >= 0 and mb.position.x >= LABEL_W:
-			_toggle_key(row)
+			# 双击打帧落在**点击处那一帧**上，不是「播放头当前在哪」：
+			# 放大之后用户点的就是他想打的那一帧，不该被播放头抢走。
+			if String((_rows[row] as Dictionary).get("kind", "")) == "track":
+				store.set_time(_snap_time(_x_to_time(mb.position.x)))
+				_toggle_key(row)
 			accept_event()
 			return
 		if row >= 0 and mb.position.x < LABEL_W:
@@ -602,6 +709,13 @@ func _gui_input(event: InputEvent) -> void:
 			return
 		_drag_start = mb.position
 		_drag_now = mb.position
+		# 双击标尺 = 缩放复位（回到「整段铺满」），比一路滚滚轮退回去快得多。
+		if mb.double_click and mb.position.y < TOP_PAD + RULER_H:
+			_zoom = 1.0
+			_view_start = 0.0
+			queue_redraw()
+			accept_event()
+			return
 		if mb.position.y < TOP_PAD + RULER_H:
 			_mode = "scrub"
 			_dragging = true
@@ -628,10 +742,15 @@ func _gui_input(event: InputEvent) -> void:
 		match _mode:
 			"scrub":
 				_set_time_from_x(mm.position.x)
+			"pan":
+				# 中键平移：鼠标往右拖，视图往左走（内容跟着手走）。
+				var dx := mm.position.x - _drag_start.x
+				_drag_start = mm.position
+				_view_start -= dx / _lane_w() * _span()
+				_clamp_view()
 			"key":
-				var duration := _duration()
-				var lane_w := size.x - LABEL_W - 10.0
-				_key_preview_delta = (mm.position.x - _drag_start.x) / maxf(lane_w, 1.0) * duration
+				# 拖动关键帧也按「当前缩放」换算，放大后微调不会一次飞过半秒。
+				_key_preview_delta = (mm.position.x - _drag_start.x) / _lane_w() * _span()
 			"box":
 				pass
 		queue_redraw()
@@ -642,12 +761,56 @@ func _duration() -> float:
 	return maxf(0.001, float(FxGraphDoc.timeline(store.doc).get("duration", 1.0))) if store != null else 1.0
 
 
+## 轨道可用宽度（去掉左侧标签列与右侧留白）。
+func _lane_w() -> float:
+	return maxf(size.x - LABEL_W - 10.0, 1.0)
+
+
+## 当前可视时间跨度（秒）。缩放越大，跨度越小。
+func _span() -> float:
+	return maxf(_duration() / maxf(_zoom, 1.0), 0.0005)
+
+
+## 时间 → 轨道内 x。整条时间轴只有这一处换算，绘制与命中共用，不可能对不上。
+func _time_to_x(t: float) -> float:
+	return LABEL_W + (t - _view_start) / _span() * _lane_w()
+
+
+func _x_to_time(x: float) -> float:
+	return _view_start + clampf((x - LABEL_W) / _lane_w(), 0.0, 1.0) * _span()
+
+
+## 把视图夹回合法范围：放大时右边界不能越过片尾。
+func _clamp_view() -> void:
+	var duration := _duration()
+	_zoom = clampf(_zoom, ZOOM_MIN, ZOOM_MAX)
+	_view_start = clampf(_view_start, 0.0, maxf(duration - _span(), 0.0))
+
+
+## 吸附到最近的帧。时间轴上任何「点到某个时间」的手势都过它，
+## 于是拖播放头 / 双击打帧永远落在整帧上，不会打出 0.4173 秒这种键。
+func _snap_time(t: float) -> float:
+	var fps := 30.0
+	if store != null:
+		fps = maxf(1.0, float(FxGraphDoc.timeline(store.doc).get("fps", 30)))
+	return clampf(round(t * fps) / fps, 0.0, _duration())
+
+
+## 以 anchor_x 处的时间为锚点缩放：光标下的那一帧在缩放前后留在原地。
+func _zoom_at(anchor_x: float, factor: float) -> void:
+	var ratio := clampf((anchor_x - LABEL_W) / _lane_w(), 0.0, 1.0)
+	var anchor_t := _view_start + ratio * _span()
+	var before := _zoom
+	_zoom = clampf(_zoom * factor, ZOOM_MIN, ZOOM_MAX)
+	if is_equal_approx(before, _zoom):
+		return
+	_view_start = anchor_t - ratio * _span()
+	_clamp_view()
+	queue_redraw()
+
+
 ## 返回命中的关键帧 {row, index}；空字典表示没点中菱形。
 func _key_at(position: Vector2) -> Dictionary:
-	var lane_w := size.x - LABEL_W - 10.0
-	if lane_w <= 0.0:
-		return {}
-	var duration := _duration()
 	var cur := TOP_PAD + RULER_H + 4.0 - _scroll
 	for i in range(_rows.size()):
 		var row: Dictionary = _rows[i]
@@ -659,7 +822,7 @@ func _key_at(position: Vector2) -> Dictionary:
 				if not raw is Array or (raw as Array).size() < 1:
 					continue
 				var t := float((raw as Array)[0])
-				var x := LABEL_W + clampf(t / duration, 0.0, 1.0) * lane_w
+				var x := _time_to_x(t)
 				if absf(x - position.x) <= KEY_HIT:
 					return {"row": i, "index": ki}
 		cur += h
@@ -756,8 +919,6 @@ func _apply_box_selection() -> void:
 	var box := Rect2(_drag_start, _drag_now - _drag_start).abs()
 	if box.size.x < 3.0 and box.size.y < 3.0:
 		return
-	var lane_w := size.x - LABEL_W - 10.0
-	var duration := _duration()
 	var cur := TOP_PAD + RULER_H + 4.0 - _scroll
 	for i in range(_rows.size()):
 		var row: Dictionary = _rows[i]
@@ -769,8 +930,7 @@ func _apply_box_selection() -> void:
 				if not raw is Array or (raw as Array).size() < 1:
 					continue
 				var t := float((raw as Array)[0])
-				var pos := Vector2(LABEL_W + clampf(t / duration, 0.0, 1.0) * lane_w,
-					cur + h * 0.5)
+				var pos := Vector2(_time_to_x(t), cur + h * 0.5)
 				if box.has_point(pos):
 					_selected_keys[_sel_key(i, ki)] = pos.x
 		cur += h
@@ -982,13 +1142,19 @@ func _row_at(y: float) -> int:
 
 
 func _set_time_from_x(x: float) -> void:
-	var lane_w := size.x - LABEL_W - 10.0
-	if lane_w <= 0.0 or x < LABEL_W:
+	if x < LABEL_W:
 		return
-	var duration := maxf(0.001, float(FxGraphDoc.timeline(store.doc).get("duration", 1.0)))
-	var t := clampf((x - LABEL_W) / lane_w, 0.0, 1.0) * duration
-	store.set_time(t)
+	# 吸附到整帧：拖播放头 / 点标尺都精确到帧，不再落到 0.4173 秒。
+	store.set_time(_snap_time(_x_to_time(x)))
 	queue_redraw()
+
+
+## 播放头所在帧号（1 基显示用）。
+func _current_frame() -> int:
+	var fps := 30.0
+	if store != null:
+		fps = maxf(1.0, float(FxGraphDoc.timeline(store.doc).get("fps", 30)))
+	return int(round((store.current_time if store != null else 0.0) * fps))
 
 
 func _toggle_key(row_index: int) -> void:

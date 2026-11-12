@@ -3,7 +3,7 @@ extends Control
 ## 应用外壳（基座）。
 ##
 ## 只做六件事：
-##   1. 创建共享服务：文档上下文 FxDocumentStore、渲染管线 FxRenderService；
+##   1. 创建共享服务：文档上下文 FxDocumentStore、呈现器 FxRenderHost（由插件实现）；
 ##   2. 扫描插件，节点目录与算子经 FxGraphFacade 交给图能力实现；
 ##   3. 按插件贡献搭菜单栏、工具栏、四区停靠、状态栏；
 ##   4. 实例化插件注册的面板与窗口；
@@ -21,7 +21,9 @@ const LAYOUT_PATH := "user://layout.cfg"
 const AREA_LABELS := {"left": "左侧", "center": "中央", "right": "右侧", "bottom": "底部"}
 
 var store := FxDocumentStore.new()
-var render: FxRenderService
+## 呈现器：基座契约 + 插件实现。停用 core.render 时这里是一个空呈现器，
+## 外壳照常启动（没有画面，但菜单、面板、快捷键全都还在）。
+var render: FxRenderHost
 var services: Dictionary = {}
 var dock_areas: Dictionary = {}
 var panel_controls: Dictionary = {}
@@ -1622,15 +1624,16 @@ func _reconcile_services() -> void:
 	_install_render()
 
 
-## 从 services 表取渲染服务；插件停用/切换时重新对齐，缺失则用最小实现兜底。
-## 这是微内核与领域实现之间唯一的接缝（论文 §6.2 的 service broker）。
+## 从 services 表取呈现器；插件停用/切换时重新对齐，缺失则用基座空实现兜底。
+## 注意兜底的是**基座契约**（FxRenderHost），不是某个插件的类 ——
+## 插件目录删掉之后基座仍要能编译、能启动，这是微内核的底线。
 func _install_render() -> void:
 	var made: Variant = services.get("render")
-	if made is FxRenderService and is_instance_valid(made):
+	if made is FxRenderHost and is_instance_valid(made):
 		render = made
 	else:
-		render = FxRenderService.new()
-		render.name = "RenderService"
+		render = FxRenderHost.new()
+		render.name = "RenderPlaceholder"
 		_services_root.add_child(render)
 		services["render"] = render
 		_service_nodes["render"] = render

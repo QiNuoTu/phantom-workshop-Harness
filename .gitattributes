@@ -1,0 +1,25 @@
+# 统一换行：GDScript / 配置按 CRLF 检出（仓库里的文件本来就是 CRLF，
+# 强制 LF 会让每次提交都变成全文件重写）。
+* text=auto
+*.gd text eol=crlf
+*.tscn text eol=crlf
+*.tres text eol=crlf
+*.cfg text eol=crlf
+*.godot text eol=crlf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+
+# 二进制：不要尝试 diff / 合并
+*.png binary
+*.jpg binary
+*.ico binary
+*.fxc binary
+*.pck binary
+*.exe binary
+*.ttf binary
+*.otf binary
+*.wav binary
+*.ogg binary

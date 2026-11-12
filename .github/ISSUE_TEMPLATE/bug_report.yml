@@ -1,0 +1,60 @@
+name: Bug 报告
+description: 有东西不工作
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        先跑一遍 `godot --headless --path . -- --fx-diagnose`，把输出末尾的统计贴上来，
+        很多问题（缺插件、缺语言包、节点目录为空）一眼就能看出来。
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 期望行为 vs 实际行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开 examples/demo/示范工程.fxproj
+        2. 按空格播放
+        3. 第 12 帧卡住
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及区域
+      options:
+        - 蓝图编辑器
+        - 时间轴 / 播放
+        - 帧缓存 / 预渲染
+        - 渲染后端 / GPU
+        - 插件加载 / 插件中心
+        - 导出 / 工程文件
+        - 皮肤 / 布局
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 环境
+      description: 系统 / Godot 版本 / 显卡（GPU 问题必填）
+      placeholder: Windows 11 · Godot 4.7.2 · RTX 3060
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: 控制台输出、`--fx-diagnose` 结果、或截图
+      render: shell

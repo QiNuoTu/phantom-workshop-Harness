@@ -1,1 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"><rect width="124" height="124" x="2" y="2" fill="#363d52" stroke="#212532" stroke-width="4" rx="14"/><g fill="#fff" transform="translate(12.322 12.322)scale(.101)"><path d="M105 673v33q407 354 814 0v-33z"/><path fill="#478cbf" d="m105 673 152 14q12 1 15 14l4 67 132 10 8-61q2-11 15-15h162q13 4 15 15l8 61 132-10 4-67q3-13 15-14l152-14V427q30-39 56-81-35-59-83-108-43 20-82 47-40-37-88-64 7-51 8-102-59-28-123-42-26 43-46 89-49-7-98 0-20-46-46-89-64 14-123 42 1 51 8 102-48 27-88 64-39-27-82-47-48 49-83 108 26 42 56 81zm0 33v39c0 276 813 276 814 0v-39l-134 12-5 69q-2 10-14 13l-162 11q-12 0-16-11l-10-65H446l-10 65q-4 11-16 11l-162-11q-12-3-14-13l-5-69z"/><path d="M483 600c0 34 58 34 58 0v-86c0-34-58-34-58 0z"/><circle cx="725" cy="526" r="90"/><circle cx="299" cy="526" r="90"/></g><g fill="#414042" transform="translate(12.322 12.322)scale(.101)"><circle cx="307" cy="532" r="60"/><circle cx="717" cy="532" r="60"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161C28"/>
+      <stop offset="0.55" stop-color="#0E121B"/>
+      <stop offset="1" stop-color="#080B11"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.48" r="0.55">
+      <stop offset="0" stop-color="#7A5CFF" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#3E6BFF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#00E5C0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wire" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8C6BFF"/>
+      <stop offset="0.5" stop-color="#4E8BFF"/>
+      <stop offset="1" stop-color="#2FE6C8"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A98BFF"/>
+      <stop offset="1" stop-color="#6A4BFF"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6FD0FF"/>
+      <stop offset="1" stop-color="#2E7BFF"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7CFFE0"/>
+      <stop offset="1" stop-color="#13C9A4"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="nodeShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="116" fill="url(#glow)"/>
+  <rect x="6" y="6" width="500" height="500" rx="112" fill="none"
+        stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="2"/>
+
+  <!-- 连线：先画一层模糊光晕，再画实线 -->
+  <g fill="none" stroke="url(#wire)" stroke-linecap="round">
+    <path d="M212 146 C266 146 262 232 300 240" stroke-width="22" stroke-opacity="0.35" filter="url(#soft)"/>
+    <path d="M212 366 C266 366 262 288 300 280" stroke-width="22" stroke-opacity="0.35" filter="url(#soft)"/>
+    <path d="M212 146 C266 146 262 232 300 240" stroke-width="11"/>
+    <path d="M212 366 C266 366 262 288 300 280" stroke-width="11"/>
+  </g>
+
+  <!-- 输入节点 -->
+  <g filter="url(#nodeShadow)">
+    <rect x="76" y="94" width="140" height="104" rx="28" fill="#141A26" stroke="#2B3548" stroke-width="3"/>
+    <rect x="76" y="326" width="140" height="104" rx="28" fill="#141A26" stroke="#2B3548" stroke-width="3"/>
+    <rect x="300" y="208" width="140" height="104" rx="28" fill="#161D2B" stroke="#3A4660" stroke-width="3"/>
+  </g>
+  <rect x="96" y="114" width="100" height="64" rx="14" fill="url(#violet)" opacity="0.92"/>
+  <rect x="96" y="346" width="100" height="64" rx="14" fill="url(#cyan)" opacity="0.92"/>
+  <rect x="320" y="228" width="100" height="64" rx="14" fill="url(#mint)" opacity="0.95"/>
+
+  <!-- 端口 -->
+  <g fill="#0A0E15" stroke="url(#wire)" stroke-width="5">
+    <circle cx="212" cy="146" r="11"/>
+    <circle cx="212" cy="366" r="11"/>
+    <circle cx="300" cy="240" r="11"/>
+    <circle cx="300" cy="280" r="11"/>
+  </g>
+
+  <!-- 播放头：一道细竖线 + 三角，暗示时间维度 -->
+  <g>
+    <line x1="470" y1="96" x2="470" y2="416" stroke="#2FE6C8" stroke-opacity="0.55" stroke-width="4"
+          stroke-dasharray="12 14" stroke-linecap="round"/>
+    <path d="M470 84 L482 106 L458 106 Z" fill="#2FE6C8"/>
+  </g>
+
+  <!-- 高光 -->
+  <path d="M0 116 A116 116 0 0 1 116 0 L396 0 A116 116 0 0 1 512 116 L512 150
+           C380 96 180 78 0 168 Z" fill="#FFFFFF" opacity="0.045"/>
+</svg>

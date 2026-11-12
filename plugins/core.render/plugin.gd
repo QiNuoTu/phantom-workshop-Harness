@@ -64,14 +64,15 @@ func settings() -> Array[Dictionary]:
 		"description": "清掉内存与磁盘上的全部逐帧缓存（含软件本体目录 fx_cache/frames），下次渲染重新算",
 	}, {
 		"id": "render.backend", "label": "渲染后端", "group": "渲染质量",
-		"kind": "enum", "default": "cpu.standard",
+		"kind": "enum", "default": "",
 		"options": [
+			{"value": "", "label": "自动（用插件声明顺序里的第一个）"},
+			{"value": "gpu.standard", "label": "GPU 渲染服务器（无设备自动回落）"},
 			{"value": "cpu.standard", "label": "标准 CPU 逐像素"},
 			{"value": "cpu.economy", "label": "经济模式（跳帧 · 省预览）"},
-			{"value": "gpu.standard", "label": "GPU 合成（实验 · 需插件）"},
 		],
 		"capability": "render.backend", "applies": "runtime", "order": 5,
-		"description": "后端由插件贡献；切换只换求帧实现，不重建工作台、不动文档。",
+		"description": "后端由插件贡献；默认取贡献顺序里的第一个（当前是 GPU，无设备时自动回落 CPU），切换只换求帧实现，不重建工作台、不动文档。",
 	}]
 
 
