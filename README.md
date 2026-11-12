@@ -20,6 +20,8 @@
 
 ![Paper](https://img.shields.io/badge/arXiv-2608.25512-B31B1B.svg)
 
+<sub>**简体中文** · [English](README.en.md)</sub>
+
 [快速开始](#快速开始) · [截图](#界面) · [插件地图](#插件地图) · [架构](#架构) · [性能](#真实工程性能) · [参与贡献](CONTRIBUTING.md)
 
 </div>
@@ -323,6 +325,7 @@ godot --path . --script res://tests/_shot_release.gd      # 重新生成 docs/sc
 
 - **[插件开发手册](docs/插件开发手册.md)** —— 从零写一个插件：清单字段、贡献点、契约、常见坑。
 - **[架构与实现笔记](docs/架构与实现.md)** —— 微内核边界、服务代理、帧缓存格式、每一轮性能优化的实测与踩坑。
+- **[本地化与翻译](docs/本地化.md)** —— 界面语言包怎么加、回退链与合并顺序、`README.en.md` 同步规则与术语表。
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** —— 构建、代码风格、测试要求、PR 流程。
 - **[CLAUDE.md](CLAUDE.md)** —— 给 AI 协作者的项目约定（命令、不变量、陷阱）。
 
@@ -343,8 +346,9 @@ godot --path . --script res://tests/_shot_release.gd      # 重新生成 docs/sc
 | [DeepSeek Harness](https://www.deepseek.com/harness)                                        | 开发期使用的 AI 工具链                                   |
 | [WorkBuddy](https://www.workbuddy.cn)                                                       | 构建、测试与文档协作环境                                    |
 
-素材（`plugins/core.asset/assets/`、`plugins/skin.*/assets/`）遵循其原始许可；  
-代码部分以 MIT 发布，见 [LICENSE](LICENSE)。
+代码以 [MIT](LICENSE) 发布；素材与字体各自遵循原许可（pixelfx 为 MIT、HarmonyOS Sans
+需随附许可、`skin.maid-atelier` 为 **CC BY-NC-SA 4.0 禁止商用**），
+详见 **[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)**。
 
 ---
 

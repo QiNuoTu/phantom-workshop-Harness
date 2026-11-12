@@ -52,13 +52,15 @@ bash tools/run_tests.sh              # 14 套无头回归
 
 - **GDScript 4**，tab 缩进（与现有文件一致），类型尽量标注。
 - 注释写**为什么**，不写「这行在赋值」。中文注释，术语保留英文（broker / fiber / coeffect）。
-- 插件贡献的 `Callable` 必须是**静态函数**（`static func`），不要捕获实例 ——
-  热重载撤回时静态表不能吊着旧对象。
+- 插件贡献的 `Callable` **优先写成静态函数**（`static func`）：热重载撤回时静态表
+  不吊旧对象。绑定实例的 Callable 也能用（实例由 `runtime_plugin` 保活到 shutdown），
+  但静态写法更省心。
 - 插件之间的依赖写在 `plugin.json` 的 `inject` 里；**不要**直接引用别的插件的类。
 - 新增设置项要写 `applies`（`runtime` / `ui` / `none`）与 `order`；
   按钮型入口用 `"kind": "action"`，不要把动作伪装成开关。
 - 译文放 `plugins/<id>/locales/<locale>.json`，键名全局唯一；
-  `core.i18n` 只放外壳文案，不要塞领域词。
+  `core.i18n` 只放外壳文案，不要塞领域词。翻译规则、回退链、术语表见
+  **[本地化与翻译](docs/本地化.md)**。
 
 ---
 
