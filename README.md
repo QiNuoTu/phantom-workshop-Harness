@@ -78,6 +78,12 @@
 <td><img src="docs/screenshots/01-overview.png" alt="103 节点的示范工程">    
    <sub><b>示范工程</b>：103 节点 / 81 连线 / 192×108 / 30fps / 60 帧 —— 所有性能数字的唯一基准</sub></td>    
 </tr>    
+<tr>    
+<td><img src="docs/screenshots/08-add-node.png" alt="添加节点面板">    
+   <sub><b>添加节点</b>：77 个节点按 11 个分类归档，卡片本身就是实时缩略图，右侧直接看端口与参数</sub></td>    
+<td><img src="docs/screenshots/09-workbench.png" alt="工作台：帧刻度与缓存带">    
+   <sub><b>工作台</b>：节点参数内联编辑、标尺按帧对齐（f2 / f4 …）、标尺下方逐帧缓存色带</sub></td>    
+</tr>    
 </table>
 
 <div align="center">    
