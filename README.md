@@ -4,7 +4,7 @@
 
 # 幻像工坊 · Phantom Workshop
 
-**微内核 + 插件化的节点式实时特效工坊** —— 节点即算子，帧即缓存，播放只读缓存。
+**微内核 + 一切皆插件化的节点式实时特效工坊**。
 
 ![License](https://img.shields.io/badge/license-MIT-8C6BFF.svg)
 
@@ -15,6 +15,8 @@
 ![Nodes](https://img.shields.io/badge/节点-77-FFBE5C.svg)
 
 ![Tests](https://img.shields.io/badge/断言-998-44D17A.svg)
+
+![Release](https://img.shields.io/github/v/release/QiNuoTu/phantom-workshop-Harness?color=8C6BFF&label=release)
 
 ![Paper](https://img.shields.io/badge/arXiv-2608.25512-B31B1B.svg)
 
@@ -58,37 +60,37 @@
 
 ## 界面
 
-<div align="center">  
-  <img src="docs/screenshots/04-main.png" alt="主界面：蓝图 / 预览 / 时间轴 / 插件中心" width="100%">  
-  <sub>左：文档与画布 · 中：蓝图（节点卡片上直接显示该节点这一帧的输出小图）· 右：预览与插件中心 · 下：时间轴</sub>  
+<div align="center">    
+  <img src="docs/screenshots/04-main.png" alt="主界面：蓝图 / 预览 / 时间轴 / 插件中心" width="100%">    
+  <sub>左：文档与画布 · 中：蓝图（节点卡片上直接显示该节点这一帧的输出小图）· 右：预览与插件中心 · 下：时间轴</sub>    
 </div>
 
-<table>  
-<tr>  
-<td width="50%"><img src="docs/screenshots/05-playback.png" alt="时间轴：帧刻度、缓存色带、关键帧">  
-   <sub><b>时间轴</b>：标尺按帧刻度，滚轮以光标为锚点缩放，色带逐帧显示缓存状态</sub></td>  
-<td width="50%"><img src="docs/screenshots/06-plugins.png" alt="插件中心">  
-   <sub><b>插件中心</b>：39 个插件的启用状态、依赖、提供的能力与设置项，一键启停</sub></td>  
-</tr>  
-<tr>  
-<td><img src="docs/screenshots/02-node-card.png" alt="节点卡片与状态签">  
-   <sub><b>节点卡片</b>：展开即实时预览，右上角状态签说明这一帧烘没烘好（✓ / … / —）</sub></td>  
-<td><img src="docs/screenshots/01-overview.png" alt="103 节点的示范工程">  
-   <sub><b>示范工程</b>：103 节点 / 81 连线 / 192×108 / 30fps / 60 帧 —— 所有性能数字的唯一基准</sub></td>  
-</tr>  
+<table>    
+<tr>    
+<td width="50%"><img src="docs/screenshots/05-playback.png" alt="时间轴：帧刻度、缓存色带、关键帧">    
+   <sub><b>时间轴</b>：标尺按帧刻度，滚轮以光标为锚点缩放，色带逐帧显示缓存状态</sub></td>    
+<td width="50%"><img src="docs/screenshots/06-plugins.png" alt="插件中心">    
+   <sub><b>插件中心</b>：39 个插件的启用状态、依赖、提供的能力与设置项，一键启停</sub></td>    
+</tr>    
+<tr>    
+<td><img src="docs/screenshots/02-node-card.png" alt="节点卡片与状态签">    
+   <sub><b>节点卡片</b>：展开即实时预览，右上角状态签说明这一帧烘没烘好（✓ / … / —）</sub></td>    
+<td><img src="docs/screenshots/01-overview.png" alt="103 节点的示范工程">    
+   <sub><b>示范工程</b>：103 节点 / 81 连线 / 192×108 / 30fps / 60 帧 —— 所有性能数字的唯一基准</sub></td>    
+</tr>    
 </table>
 
-<div align="center">  
-  <img src="docs/screenshots/07-skin.png" alt="皮肤：深海女仆工坊" width="100%">  
-  <sub>皮肤不是换配色：面板、停靠、节点卡片、端口都由插件重绘（皮肤包可以单独安装 / 停用）</sub>  
+<div align="center">    
+  <img src="docs/screenshots/07-skin.png" alt="皮肤：深海女仆工坊" width="100%">    
+  <sub>皮肤不是换配色：面板、停靠、节点卡片、端口都由插件重绘（皮肤包可以单独安装 / 停用）</sub>    
 </div>
 
 ---
 
 ## 亮点
 
-<table>  
-<tr>  
+<table>    
+<tr>    
 <td width="33%" valign="top">
 
 **可拆卸的插件体系**
@@ -96,7 +98,7 @@
 节点类型、算子、导出格式、参数控件、面板、窗口、命令、菜单、皮肤、语言包、素材包，  
 全部是贡献点。热重载按 LIFO 撤回，停用一个插件不会留下半截 UI。
 
-</td>  
+</td>    
 <td width="33%" valign="top">
 
 **播放只读缓存**
@@ -104,7 +106,7 @@
 帧被算过一次就落进紧密单文件 `frames.fxc`：64B 头 + 位图 + 定长 RGBA8。  
 播放时一次 `seek` 取一帧（约 0.1 ms），**0 跳帧、0 未命中**，界面线程不做任何求值。
 
-</td>  
+</td>    
 <td width="33%" valign="top">
 
 **GPU 渲染服务器**
@@ -112,12 +114,12 @@
 逐像素算子用 compute shader 覆盖，结果与 CPU **逐字节一致**（像素差 ≤ 0.0027）。  
 模糊快 6.4×，混合快 14.6×；无图形设备时自动退回 CPU，不停机。
 
-</td>  
-</tr>  
+</td>    
+</tr>    
 </table>
 
-<div align="center">  
-  <img src="branding/promo-cache.jpg" alt="帧级缓存" width="100%">  
+<div align="center">    
+  <img src="branding/promo-cache.jpg" alt="帧级缓存" width="100%">    
 </div>
 
 **颜色只说事实**：标尺上的红 = 没算过，黄 = 只有播放档垫图（画面能看，但不是精确帧），  
@@ -126,6 +128,14 @@
 ---
 
 ## 快速开始
+
+### 直接下载（Windows 10/11 x64）
+
+不想装 Godot 的话，抓现成的便携版：[**Releases · 最新版**](../../releases/latest)  
+解压后双击 `幻像工坊.exe` 即可，无需安装、无需运行时；示例工程在
+`examples/demo/示范工程.fxproj`。
+
+### 从源码运行
 
 **需要**：Godot **4.7.2**（标准版或 .NET 版均可，本项目是纯 GDScript）。
 
@@ -276,8 +286,8 @@ flowchart TB
 | GPU 与 CPU 像素差    | **≤ 0.0027**（逐字节比对）                              |
 | 缓存读取             | **0.1 ms/帧**（PNG 编码曾是 11 ms/帧）                   |
 
-<div align="center">  
-  <img src="branding/promo-gpu.jpg" alt="GPU 渲染服务器" width="88%">  
+<div align="center">    
+  <img src="branding/promo-gpu.jpg" alt="GPU 渲染服务器" width="88%">    
 </div>
 
 ---
@@ -303,6 +313,7 @@ godot --path . --script res://tests/_shot_release.gd      # 重新生成 docs/sc
 ---
 
 ## 文档
+
 
 - **[插件开发手册](docs/插件开发手册.md)** —— 从零写一个插件：清单字段、贡献点、契约、常见坑。
 - **[架构与实现笔记](docs/架构与实现.md)** —— 微内核边界、服务代理、帧缓存格式、每一轮性能优化的实测与踩坑。
