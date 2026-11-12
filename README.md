@@ -73,6 +73,11 @@
 </tr>
 </table>
 
+<div align="center">
+  <img src="docs/screenshots/07-skin.png" alt="皮肤：深海女仆工坊" width="100%">
+  <sub>皮肤不是换配色：面板、停靠、节点卡片、端口都由插件重绘（皮肤包可以单独安装 / 停用）</sub>
+</div>
+
 ---
 
 ## 亮点
