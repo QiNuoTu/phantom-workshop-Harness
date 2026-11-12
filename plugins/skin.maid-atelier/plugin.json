@@ -1,0 +1,14 @@
+{
+	"id": "skin.maid-atelier",
+	"name": "深海女仆工坊",
+	"version": "1.0",
+	"description": "深蓝女仆主题皮肤，含分层贴图与自定义选项",
+	"author": "Small-tailqwq（原作）· 概念移植",
+	"script": "plugin.gd",
+	"inject": [
+		"kernel.graph"
+	],
+	"provide": {
+		"skin.maid-atelier": "1.0"
+	}
+}

@@ -1,0 +1,2569 @@
+{
+ "frames": [
+  {
+   "filename": "firework-rocket 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 1",
+   "frame": {
+    "x": 300,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 2",
+   "frame": {
+    "x": 600,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 3",
+   "frame": {
+    "x": 900,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 4",
+   "frame": {
+    "x": 1200,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 5",
+   "frame": {
+    "x": 1500,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 6",
+   "frame": {
+    "x": 1800,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 7",
+   "frame": {
+    "x": 2100,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 8",
+   "frame": {
+    "x": 2400,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 9",
+   "frame": {
+    "x": 2700,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 10",
+   "frame": {
+    "x": 3000,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 11",
+   "frame": {
+    "x": 0,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 12",
+   "frame": {
+    "x": 300,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 13",
+   "frame": {
+    "x": 600,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 14",
+   "frame": {
+    "x": 900,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 15",
+   "frame": {
+    "x": 1200,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 16",
+   "frame": {
+    "x": 1500,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 17",
+   "frame": {
+    "x": 1800,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 18",
+   "frame": {
+    "x": 2100,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 19",
+   "frame": {
+    "x": 2400,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 20",
+   "frame": {
+    "x": 2700,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 21",
+   "frame": {
+    "x": 3000,
+    "y": 300,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 22",
+   "frame": {
+    "x": 0,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 23",
+   "frame": {
+    "x": 300,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 24",
+   "frame": {
+    "x": 600,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 25",
+   "frame": {
+    "x": 900,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 26",
+   "frame": {
+    "x": 1200,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 27",
+   "frame": {
+    "x": 1500,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 28",
+   "frame": {
+    "x": 1800,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 29",
+   "frame": {
+    "x": 2100,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 30",
+   "frame": {
+    "x": 2400,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 31",
+   "frame": {
+    "x": 2700,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 32",
+   "frame": {
+    "x": 3000,
+    "y": 600,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 33",
+   "frame": {
+    "x": 0,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 34",
+   "frame": {
+    "x": 300,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 35",
+   "frame": {
+    "x": 600,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 36",
+   "frame": {
+    "x": 900,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 37",
+   "frame": {
+    "x": 1200,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 38",
+   "frame": {
+    "x": 1500,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 39",
+   "frame": {
+    "x": 1800,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 40",
+   "frame": {
+    "x": 2100,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 41",
+   "frame": {
+    "x": 2400,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 42",
+   "frame": {
+    "x": 2700,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 43",
+   "frame": {
+    "x": 3000,
+    "y": 900,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 44",
+   "frame": {
+    "x": 0,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 45",
+   "frame": {
+    "x": 300,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 46",
+   "frame": {
+    "x": 600,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 47",
+   "frame": {
+    "x": 900,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 48",
+   "frame": {
+    "x": 1200,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 49",
+   "frame": {
+    "x": 1500,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 50",
+   "frame": {
+    "x": 1800,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 51",
+   "frame": {
+    "x": 2100,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 52",
+   "frame": {
+    "x": 2400,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 53",
+   "frame": {
+    "x": 2700,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 54",
+   "frame": {
+    "x": 3000,
+    "y": 1200,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 55",
+   "frame": {
+    "x": 0,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 56",
+   "frame": {
+    "x": 300,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 57",
+   "frame": {
+    "x": 600,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 58",
+   "frame": {
+    "x": 900,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 59",
+   "frame": {
+    "x": 1200,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 60",
+   "frame": {
+    "x": 1500,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 61",
+   "frame": {
+    "x": 1800,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 62",
+   "frame": {
+    "x": 2100,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 63",
+   "frame": {
+    "x": 2400,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 64",
+   "frame": {
+    "x": 2700,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 65",
+   "frame": {
+    "x": 3000,
+    "y": 1500,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 66",
+   "frame": {
+    "x": 0,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 67",
+   "frame": {
+    "x": 300,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 68",
+   "frame": {
+    "x": 600,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 69",
+   "frame": {
+    "x": 900,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 70",
+   "frame": {
+    "x": 1200,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 71",
+   "frame": {
+    "x": 1500,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 72",
+   "frame": {
+    "x": 1800,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 73",
+   "frame": {
+    "x": 2100,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 74",
+   "frame": {
+    "x": 2400,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 75",
+   "frame": {
+    "x": 2700,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 76",
+   "frame": {
+    "x": 3000,
+    "y": 1800,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 77",
+   "frame": {
+    "x": 0,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 78",
+   "frame": {
+    "x": 300,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 79",
+   "frame": {
+    "x": 600,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 80",
+   "frame": {
+    "x": 900,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 81",
+   "frame": {
+    "x": 1200,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 82",
+   "frame": {
+    "x": 1500,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 83",
+   "frame": {
+    "x": 1800,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 84",
+   "frame": {
+    "x": 2100,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 85",
+   "frame": {
+    "x": 2400,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 86",
+   "frame": {
+    "x": 2700,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 87",
+   "frame": {
+    "x": 3000,
+    "y": 2100,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 88",
+   "frame": {
+    "x": 0,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 89",
+   "frame": {
+    "x": 300,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 90",
+   "frame": {
+    "x": 600,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 91",
+   "frame": {
+    "x": 900,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 92",
+   "frame": {
+    "x": 1200,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 93",
+   "frame": {
+    "x": 1500,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 94",
+   "frame": {
+    "x": 1800,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 95",
+   "frame": {
+    "x": 2100,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 96",
+   "frame": {
+    "x": 2400,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 97",
+   "frame": {
+    "x": 2700,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 98",
+   "frame": {
+    "x": 3000,
+    "y": 2400,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 99",
+   "frame": {
+    "x": 0,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 100",
+   "frame": {
+    "x": 300,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 101",
+   "frame": {
+    "x": 600,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 102",
+   "frame": {
+    "x": 900,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 103",
+   "frame": {
+    "x": 1200,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 104",
+   "frame": {
+    "x": 1500,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 105",
+   "frame": {
+    "x": 1800,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 106",
+   "frame": {
+    "x": 2100,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 107",
+   "frame": {
+    "x": 2400,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 108",
+   "frame": {
+    "x": 2700,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 109",
+   "frame": {
+    "x": 3000,
+    "y": 2700,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 110",
+   "frame": {
+    "x": 0,
+    "y": 3000,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 111",
+   "frame": {
+    "x": 300,
+    "y": 3000,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 112",
+   "frame": {
+    "x": 600,
+    "y": 3000,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 113",
+   "frame": {
+    "x": 900,
+    "y": 3000,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  },
+  {
+   "filename": "firework-rocket 114",
+   "frame": {
+    "x": 1200,
+    "y": 3000,
+    "w": 300,
+    "h": 300
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 300
+   },
+   "sourceSize": {
+    "w": 300,
+    "h": 300
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "firework-rocket.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 3300,
+   "h": 3300
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "firework-rocket",
+    "from": 0,
+    "to": 114,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "explosions/firework-rocket",
+   "name": "Firework rocket",
+   "fps": 30,
+   "loop": false,
+   "frames": 115,
+   "frameSize": [
+    300,
+    300
+   ],
+   "pivot": [
+    150,
+    288
+   ],
+   "columns": 11
+  }
+ }
+}

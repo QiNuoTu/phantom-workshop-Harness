@@ -1,0 +1,1317 @@
+# 幻像工坊 · 插件化特效工作台
+
+基于 Godot 4.7 的节点式 2D 特效编辑器。**一切皆插件**：节点类型、算子、导出格式、
+参数控件、面板、窗口、命令、菜单、皮肤、停靠容器、语言包、素材包全部由插件目录贡献；
+删掉 `plugins/` 软件仍能启动，只是一张空白工作台。
+
+- 引擎：Godot 4.7.x（Steam 版验证）
+- 主场景：`res://scenes/main.tscn`，根节点 `FxShell`
+- 图文档后缀：`.fxgraph.json`
+
+---
+
+## 快速开始
+
+```bash
+# 运行编辑器
+godot --path .
+
+# 无头跑全部测试（14 套 / 941 条断言）
+for t in test_kernel test_graph_core test_editor_ui test_plugins test_pixelfx \
+         test_text test_math_flow test_plugin_lifecycle test_shell_ui \
+         test_interactions test_platform test_io test_project test_architecture; do
+  godot --headless --path . --script "res://tests/$t.gd"
+done
+
+# 装配诊断（插件 / 节点 / 面板 / 设置 / 语言包 / 贴图）
+godot --headless --path . -- --fx-diagnose
+
+# 界面截图（需要真实渲染）
+godot --path . --script res://tests/capture_ui.gd --resolution 1440x900
+
+# 重新生成随包示例工程
+godot --headless --path . --script res://tools/make_nested_example.gd
+godot --headless --path . --script res://tools/make_showcase.gd
+```
+
+> **写插件先看 [`docs/插件开发手册.md`](docs/插件开发手册.md)。**
+> 那本手册覆盖清单字段、节点定义、算子契约、参数控件、面板/命令/导出器、
+> 服务与能力、语言包、素材根、替换核心、硬性规则、排错与发布清单。
+
+> 无头脚本退出前必须调用 `FxPluginHost.shutdown()`，否则静态注册表里的 Callable
+> 会活过脚本类，引擎退出时报悬空。
+
+---
+
+## 目录结构
+
+```
+幻像工坊/
+  scenes/                 主场景
+  docs/                   插件开发手册（写插件从这里开始）
+  examples/               随包示例工程（.fxgraph / .fxproj）
+  scripts/
+    graph/kernel/         微内核：上下文 / fiber / 作用域 / 文档存储骨架 / 配置 / 服务代理
+    graph/plugins/        插件账本 FxRegistry + 加载器 FxPluginHost + 插件契约
+    graph/ui/             工作台外壳、停靠与浮动窗口、FxSkin/FxUiKit 门面、贴图渲染
+    graph/services/       资源根（系统边界）；图标解析已搬进 core.graph
+  plugins/<id>/           每个插件一个目录（唯一扩展点）
+    assets/               插件自带的外部素材（.gdignore，不进 PCK，随插件走）
+  tests/                  14 套无头测试 + 25 张截图 / 弹窗 / GPU / 播放探针
+  tools/                  示例工程生成器、便携目录打包
+  dist/                   导出的便携版
+```
+
+---
+
+## 架构
+
+### 微内核边界
+
+`scripts/` 只保留四类东西，且不认识任何具体节点、算子、面板或皮肤：
+
+| 位置 | 内容 |
+|---|---|
+| `graph/kernel/` | `FxContext` / `FxFiber` / `FxEffectScope` / `FxComponent` / `FxDocumentStore`（**只管撤销栈、coeffect 通知与批量**，文档语义经 `FxGraphAccess` 问插件），声明式配置 `FxSettings`，服务代理 `FxCapabilities` / `FxQualityPolicy` / `FxPanelBroker` / `FxGraphFacade` / `FxRenderBroker` / `FxNodePickerBroker`，语言代理 `FxI18n`，纯数据契约 `FxNodeDef` / `FxGraphAccess` / `FxRenderBackend`，GDExtension 桥 `FxNative` |
+| `graph/plugins/` | 中立账本 `FxRegistry`、加载器 `FxPluginHost`、契约 `FxPlugin` |
+| `graph/ui/` | 外壳 `FxShell`、默认停靠 `FxDockArea`、浮动窗口 `FxPluginWindow`、皮肤门面 `FxSkin` / `FxUiKit`、贴图渲染 `FxSkinTextureLayer` / `FxSkinTextureLibrary`、节点弹窗契约 `FxNodePicker` |
+| `graph/services/` | `FxResourceRoot` —— 系统边界（§6.1）；`FxVisualIcon`（节点分类字形 / 图标 / 精灵表）已迁到 `plugins/core.graph/` |
+
+图领域词汇全部搬进插件：`core.graph` 提供 `kernel.graph / kernel.catalog /
+kernel.runner / kernel.tracks / kernel.ports`，所有插件都 `inject: ["kernel.graph"]`。
+`scripts/fx_core/` 与 `scripts/graph/core/` 已删除。
+
+> GDScript 的 `class_name` 是编译期全局符号，所以插件停用后其类仍可被解析。
+> 这里的「插件化」指**所有权与依赖声明**，不是运行时卸载字节码。
+
+### 目录整理：基座里还有什么、搬走了什么
+
+一轮逐文件审计的结论（源码静态断言在 `test_architecture` 里，会一直盯着）：
+
+| 位置 | 判定 | 处理 |
+|---|---|---|
+| `kernel/fx_document_store.gd` | 原来塞满了节点/连线/图层路径的图语义 | 只留撤销栈、coeffect 通知、批量合成；语义全部经 `FxGraphFacade.access()` 交给 `core.graph`（新增 `doc_normalize` / `doc_apply_path` / `doc_set_timeline` 等契约方法） |
+| `graph/services/fx_visual_icon.gd` | 节点分类字形、插件图标、精灵表动画都是图领域 | 整个文件搬到 `plugins/core.graph/` |
+| `ui/fx_shell.gd` | 直接 `new` / 调用了 `FxCatalog` `FxGraphDoc` | 改走 `FxGraphFacade`（`catalog_ensure` / `catalog_refresh` / `doc_meta` / `doc_new`） |
+| `plugins/fx_plugin_host.gd` | 加载器直接刷新图目录 | 改走代理转发 `_refresh_catalog()` |
+| `ui/fx_widget_registry.gd`、`fx_skin*.gd` | 通用控件工厂 / 外壳 chrome 样式，属于基座能力 | 保留（不是领域实现） |
+
+现在 `scripts/graph/kernel` 与 `scripts/graph/plugins` 的源码里零 `FxCatalog` / `FxGraphDoc` 符号
+（注释除外），外壳也不再直接调用图容器。测试侧随之分工：`test_kernel` 只验「可逆效果」，
+图语义的撤销/图层断言移到 `test_graph_core`。
+
+### `graph/kernel/` 里为什么有 20 个文件
+
+因为 GDScript 一个文件只能有一个 `class_name`，而内核的**每一样东西都要能被插件
+按名字注入**（`FxContext`、`FxEffectScope`、`FxRenderBroker`…），没法像 C++ 那样
+塞进同一个头文件。2000 行摊成 20 个文件，平均 100 行/文件，按职责分是四组：
+
+| 组 | 文件 | 说明 |
+|---|---|---|
+| 原语（4） | `fx_context` `fx_fiber` `fx_effect_scope` `fx_component` | 论文的上下文 / 纤维 / 效应作用域 / 组件，加起来 236 行 |
+| 状态（2） | `fx_document_store` `fx_settings` | 文档唯一真源（含撤销）+ 声明式配置持久化 |
+| 契约（7） | `fx_node_def` `fx_graph_access` `fx_render_backend` `fx_render_broker` `fx_panel_broker` `fx_node_picker_broker` `fx_drop_broker` | 纯接口/纯数据，**没有实现**，实现都在插件里 |
+| 代理与工具（7） | `fx_capabilities` `fx_quality_policy` `fx_i18n` `fx_graph_facade` `fx_boot` `fx_render_gate` `fx_native` | 服务代理、启动时间轴、线程闸门、GDExtension 桥 |
+
+也就是说：**文件数 = 契约数**，不是实现数。若要更少，只能把同族契约合并进一个
+文件（例如 5 个 broker 合成 `fx_brokers.gd`），代价是失去 `class_name` 的注入
+可见性——插件里就不能再写 `FxRenderBroker.instance()`，得改成 `FxBrokers.render()`。
+这笔交易目前不值得做，接口按文件切开反而让「谁能被替换」一目了然。
+
+### 原生算子：GDExtension
+
+性能敏感的算子可以用 C++ 写，图、节点定义、编辑器一行都不用改——
+**原生和脚本进的是同一张 op 表**，节点 JSON 里只写 `"op": "image.blur_fast"`。
+
+ABI 只有一条，且只交换基础类型（Dictionary / Array / int / float / Vector2i / Color）：
+
+```cpp
+// C++ 侧（godot-cpp）：注册一个类，暴露 fx_exec
+Dictionary FxBlurFast::fx_exec(Dictionary inputs, Dictionary params, Dictionary env) { ... }
+```
+
+```gdscript
+# 插件侧：plugin.json 里声明库，plugin.gd 里声明算子
+# plugin.json → {"native": {"library": "native/fx_blur.gdextension"}}
+func native_ops() -> Array[Dictionary]:
+	return [{"op": "image.blur_fast", "class": &"FxBlurFast", "thread_safe": true}]
+```
+
+- `env` 是 `FxEvalContext` 的**只读镜像**：`abi / node / type / op / canvas / time /
+  fps / frame / quality / operator_quality / options`。C++ 不需要认识任何 GDScript 类，
+  所以原生插件可以独立编译、独立分发。
+- 没写 `thread_safe` 默认按线程安全处理；写成 `false` 时**整条渲染链自动回主线程**
+  （`FxNative.thread_safe()` 进 `_configure_threading` 的判定）。C++ 侧有可变状态
+  就必须声明，别让桥去猜。
+- 库加载失败（架构不符、缺依赖、引擎版本不对）只记一条插件账本 error，
+  插件的其它贡献照常生效；找不到类时绑定返回无效 Callable，不会连累别人。
+- **DLL 加载后不会卸载**（GDExtension 的进程级限制）：停用插件只撤回算子贡献。
+  这是如实告知的代价，不是 bug。
+- 随包的原生插件放 `res://plugins/<id>/native/`，导出时 Godot 会把库放到可执行文件旁；
+  外部插件由用户放到 `dist/plugins/<id>/native/`。
+
+一个完整的原生插件目录（`godot-cpp` + SCons 编译出 `libfxblur.dll`）：
+
+```
+plugins/my.native/
+  plugin.json                     {"id":"my.native","native":{"library":"native/fx_blur.gdextension"}}
+  plugin.gd                       extends FxPlugin，只写 native_ops()
+  nodes.json                      {"id":"image.blur_fast","op":"image.blur_fast", ...}
+  native/fx_blur.gdextension      [configuration] entry_symbol / compatibility_minimum
+  native/libfxblur.windows.x86_64.dll
+```
+
+#### 落地清单（宿主侧已完成，C++ 侧待编译验证）
+
+宿主这一侧已经全部接好：库加载、算子绑定、线程闸门、停用回收、诊断。
+要真正跑起一个 C++ 算子，还差下面这几步（都只需要在**插件目录里**做，
+不需要改引擎或本工程）：
+
+1. **准备工具链**：MSVC（或 MinGW）+ SCons + `godot-cpp`（分支要对上 4.7）。
+2. **最小 C++ 类**（约 30 行）：
+
+   ```cpp
+   #include <godot_cpp/classes/ref_counted.hpp>
+   class FxGain : public godot::RefCounted {
+       GDCLASS(FxGain, RefCounted)
+   protected:
+       static void _bind_methods();
+   public:
+       godot::Dictionary fx_exec(godot::Dictionary inputs,
+               godot::Dictionary params, godot::Dictionary env);
+   };
+   ```
+
+   `fx_exec` 只读写 `Dictionary` / `Array` / 基础类型：`inputs` 是上游端口值，
+   `params` 是解析后的参数（关键帧、被连线驱动的值都已算好），`env` 是上下文镜像。
+   返回 `{ "image": <Image 或 ImageTexture> }` 这样的字典即可，键名与节点 `outputs` 对应。
+3. **编译**：`scons platform=windows target=template_release`，
+   产物 `libfxgain.windows.x86_64.dll` 放进 `plugins/my.native/native/`。
+4. **`.gdextension` 文件**：`entry_symbol = "fx_gain_library_init"`，
+   `compatibility_minimum = "4.7"`，`windows.x86_64 = "res://plugins/my.native/native/libfxgain.windows.x86_64.dll"`。
+5. **验证**：`--fx-diagnose` 会打印原生库加载结果；`FxNative.load_status()` 给出
+   「找不到 / 已加载 / 架构不符」这类如实结论，不会静默失败。
+
+导出时把 `native/` 目录一起镜像到 `dist/plugins/<id>/native/`：
+`tools/package_windows.gd` 的 `_copy_tree` 是**整树复制、不按扩展名过滤**，
+`.dll` / `.so` / `.gdextension` 自然跟着走；PCK 侧则由 `include_filter` 的
+`plugins/*/*/*` 这一层覆盖到 `plugins/<id>/native/*`。两条路都不需要额外配置。
+
+
+### 可逆的声明式账本
+
+- 每条贡献写进 `FxRegistry.ledger`，同时把「撤回这一条」登记进插件的 `FxEffectScope`。
+- 停用插件 = `fiber.retire()` → LIFO 回放逆操作 → 只撤回它自己的贡献，
+  其它插件与面板状态原样保留。
+- 依赖在清单里声明，启用顺序由拓扑排序决定，宿主不需要编排器（Theorem 63）；
+  缺依赖时保持 INACTIVE，提供者出现自动激活、消失自动级联停用。
+- 依赖环 / 缺失提供者 / 供给键冲突从清单静态检出，显示在插件中心。
+
+### 启动时序与错误报告
+
+启动跨了好几个模块（宿主扫插件 → 目录读节点定义 → 配置 → 面板 → 文档），
+谁都不认识谁，但用户需要一条连贯的「正在加载什么」。`FxBoot`（`graph/kernel/`）
+就是这条时间轴：
+
+```gdscript
+FxBoot.begin("启动")            # 外壳 _ready 的第一行
+FxBoot.expect(n)                # 预算：还没数出来的那部分先声明
+FxBoot.step("插件 core.graph")   # 每完成一项推一格
+FxBoot.error("节点定义", "xxx 不是合法 JSON 对象")
+FxBoot.finish()                 # 收尾：写日志、打印汇总
+```
+
+- 事件是纯数据快照（`{kind, current, done, total, ratio, elapsed_ms, …}`），
+  控制台、状态栏进度条、诊断命令、测试各订阅各的，模块之间不互相认识。
+- 控制台逐条打印 `[启动] 12/63 插件 editor.graph`；同一批文字写进
+  `user://logs/startup.log`（含版本、时间、错误与警告）；便携版若用户目录不可写，
+  自动回落到 exe 旁边的 `logs/`，诊断命令会打印真正写到的位置。
+- 出错不是一行 `push_error` 就完事：`FxBoot.error()` 同时进错误列表、
+  控制台与日志，启动结束时汇总打印 `启动完成：63 步 · 3.4s · 2 个错误`，
+  非启动期的错误（插件热重扫）只推控制台，不会污染启动报告。
+- `--fx-quiet-boot` 可关掉逐条打印，只留汇总与错误。
+
+### 服务代理（一个键，多提供者）
+
+| 代理 | 消费方式 | 提供者举例 |
+|---|---|---|
+| `FxGraphFacade` | `graph.facade` | `core.graph`（唯一实现） |
+| `FxRenderBroker` | `render.backend` 设置项 | `core.render` / `render.lite` |
+| `FxNodePickerBroker` | `node_picker.broker` | `editor.node-picker` |
+| `FxCapabilities` / `FxQualityPolicy` | 能力键 | `core.quality` |
+| `FxPanelBroker` | `target` / `"*"` 通配 | `editor.plugin-hub` |
+| `FxI18n` | 直接调用 | `core.i18n` + 每个插件自己的语言包 |
+
+消费者只注入键，不绑定具体插件；替换实现或停用提供者时自动回落安全空实现。
+
+### 后台求帧（工作线程）
+
+渲染编排把「算一帧」搬到一个**持久工作线程**里跑，主线程只管提交与发布：
+
+- 后端先声明 `thread_safe()`（标准 CPU 后端为 true，需要 GL 上下文的实现保持
+  false 就自动留在主线程），设置「渲染质量 · 后台线程求帧」（`render.threaded`）
+  可以整体关掉。
+- 每个导出的文档先做一次深拷贝快照，只在 `FxDocumentStore.revision()` 变化时重建；
+  提交时把快照、muted/solo、画质策略一起交给线程，工作线程用自己那个
+  `FxGraphRunner` 求值，**不碰任何 UI 对象**，所以节点预览走的是「算完回传」。
+- 求值器内部用结构指纹缓存（`_structure_signature` / `_volatile_cache` /
+  `_time_cache`），图结构不变就不重复做两次全图遍历。
+- 主线程 `_process()` 先非阻塞取结果并发布（`rendered` / `node_previewed` /
+  `node_params_resolved`），再决定提交下一帧还是走同步兜底；同一时刻只有一帧在算。
+- `FxRenderGate` 一把非递归锁串行化「插件热重载」与「线程求帧」，
+  纹理缓存的读写也各自加锁。**质量不降**：全分辨率、不跳帧、不降精度，
+  只是把 CPU 时间挪出主线程。
+
+### 帧缓存：紧密文件 + 位置/配额策略
+
+「算过的帧别再算一遍」分成三块，都在 `core.render` 里，基座只显示状态：
+
+- **紧密单文件**：每个工程桶只有一个 `frames.fxc`。头 64 字节存
+  magic/宽/高/帧数/帧字节数/fps/时长，紧接着是每帧 1 字节的位图，
+  再往后是定长的 RGBA8 原始像素。读第 i 帧就是
+  `seek(64 + N + i * w*h*4)` 后一次 `get_buffer` —— **零 PNG 编码、零解码、
+  一次 open**，也不用为 60 帧开 60 个小文件。PNG 在 192×108 上实测 11 ms/帧，
+  紧密文件写 83 KB 只要约 0.1 ms。文件按最终大小一次预分配，帧随便序写入。
+- **位置**（`render.cache_location`）：默认 `exe`，落在 **软件本体 exe 同级**
+  `fx_cache/frames/`（dist 自检会打印绝对路径）；从 Godot 编辑器运行或目录不可写时
+  自动回退 `user://cache/frames`，绝不污染引擎安装目录。另有 `user` 与
+  `memory`（纯内存、不落盘）两档。
+- **自动删除**（`render.cache_max_mb`，默认 512）：按桶文件的修改时间做 LRU，
+  新桶建立 / 启动时各跑一次 `prune()`，超预算就删最旧的桶；当前正在用的桶永不清。
+  设置里的「清理帧缓存」按钮（`kind:"action"`）清全部并返回释放字节数。
+- **内存热层**（`render.cache_memory_mb`，默认 128）：按写入顺序淘汰，
+  纯内存模式下这个上限尤其重要；低质量预览只留内存，不写进紧密文件。
+- **状态**：按 `hash(整份文档 JSON) + 帧率 + 时长` 分桶，三态
+  红（没算过）/ 黄（缓存中或低质量预览）/ 绿（已精确算完）。
+  重新打开同一工程时直接读文件里的位图把绿状态恢复出来，不必重算。
+  写盘有 220 ms 节流；磁盘写另有一把锁，6 条线程只串行化那 83 KB 的 seek+store。
+
+### 并行预渲染与播放调度
+
+- `FxFramePrefetcher` 按 CPU 核数开 **2~6 条**工作线程（`render.prefetch_workers`，0=自动），
+  共享待算队列在锁里派发、每条线程独占一个 `FxGraphRunner`；队列**播放头优先**。
+  只吃深拷贝快照、每帧检查 `FxRegistry.revision`，插件热重载立刻收手。
+- 打开工程（`store.attach` 的 `doc` 通知）当帧准备好帧桶，下一个 process 就排上；
+  改完参数 0.18 秒防抖后重排。播放期间**继续**补帧 —— 那正是最需要缓存的时候。
+- 时间轴标尺下沿每帧一个小色块，底部状态栏显示
+  「缓存 12/30 · 预渲染 8/30 ×6线程」，播放时补「帧 N 命中 / 缓冲 fN」。
+
+### 单帧成本：把 GDScript 逐像素调用砍掉
+
+这一轮不再满足于「把 600 ms 藏到后台」，而是真的降单帧。用
+`tests/_profile_demo.gd`（唯一基准：示范工程）逐项量化：
+
+| 优化 | 依据 | 结果 |
+| --- | --- | --- |
+| **批量像素循环** | 每像素一次 `Callable.call()` 在 192×108 上光调用开销就 ~10 ms（微基准 14.8→3.7 ms，**4×**） | `FxPixelKit` 新增 `generate_batch / map_batch / remap_batch`：循环移进 Callable，整图只调用一次；生成器、调色、扭曲三类算子全部迁移，旧 API 保留给第三方插件 |
+| **常量外提** | 生成器原来每像素重算 `cos/sin`、`match "star"` 字符串、`1/w` 除法 | `shape / gradient / stripes / wave / pixelate` 的三角函数、形状 id、倒数、sin 查表都提到循环外；`image.shape` 退出前四大开销 |
+| **字节缓冲替代 get/set_pixel** | `image.transform` 每像素两次 GDScript 调用（68 ms） | 改成 `get_data()` 直接搬运 + 内联 wrap 采样，退出前四大开销 |
+| **结构索引跨帧缓存** | 原来每帧重建 nodes/edges/邻接表 | `FxGraphRunner._build_index()` 用整表 C++ 哈希（103 节点 0.034 ms）做键，文档不变就复用；60 帧预渲染每线程只建 1 次，端口表仍按帧重建（参数会变） |
+| **预览时冻结节点组件** | 一次求帧要推 100+ 组实时参数与 55 张缩略图，全是 UI 线程工作 | `FxGraphEditor` 播放期间完全冻结 `apply_live_params / set_preview`；连续拖动时间轴按 220 ms 合并，停下来补推最新一帧 |
+
+无头画像（`_profile_demo.gd`，103 节点 / 192×108）：**单帧 stream 均值 643 ms → 约 480–530 ms**，
+算子总耗时 646 ms → 479 ms（`image.shape`、`image.transform`、`image.hue`、
+`image.gradient`、`image.wave` 全部明显下降）。像素循环的写法没有改量化语义：
+`int(clampf(c*255+0.5,0,255))` 与原 `round(clampf(c,0,1)*255)` 对 0..1 全 256 级逐字节一致。
+
+### 播放不跳帧 · 真实工程实测
+
+唯一验收基准是 `examples/demo/示范工程.fxproj`（**103 节点 / 81 边 / 192×108 / 30 fps / 2 秒 = 60 帧**），
+不用小案例。单帧成本本身已经降到约 **480–530 ms**（见上一节），
+但 30 fps 仍不可能实时，所以两条路要同时走：**后台并行算完 + 播放只读缓存**。
+
+三处改动合起来解决了跳帧与卡顿：
+
+1. **播放帧号连续**：按 `1/fps` 逐帧推进，每个 process 至多跨一个帧号；
+   界面掉帧时播放变慢，但帧号永远是 0→1→2…，不会出现 0→18 的跳号。
+   时间轴用 `store.set_time_silent()` 的轻量 `time_ticked` 信号推进播放头，
+   **不走 `notify()` 的全量 coeffect 广播** —— 后者在 103 节点工程实测每帧 131 ms，
+   正是「播放时 UI 超卡」的真凶。交互（拖时间轴）仍用完整的 `set_time()`。
+2. **播放只读缓存**：`_serve_playback_frame()` 命中 `FxFrameCache.fetch()` 就直接贴图，
+   零求值、零写盘；未命中时保持上一帧并把该帧排成后台急件（算完按自带 `frame_index`
+   写回自己的格子），不黑屏、不跳号。发布时只做几毫秒的 GPU 后处理。
+3. **GPU 不再独占主线程**：`shader.image` 这类 GPU 节点原本会把整帧 600 ms 求值
+   拉回主线程。现在 `FxShaderRuntime` 通过 `FxRenderGate` 注册「主线程 GPU 泵」，
+   工作线程把离屏渲染请求排队、主线程每帧限流处理 4 个并回写结果；
+   GPU 节点仍拿到真正的着色器结果，而求值链保持并行。
+   `FxGpuBackend.thread_safe()` 改为 `true`，GPU compute 锐化移到
+   `FxRenderBackend.postprocess()` 发布通道（缓存帧与实时帧都过一遍），
+   增强结果按帧缓存，播放第二圈起不再重复跑 compute。
+
+**实测（Godot 4.7.2 / Windows / 12 核 / RTX 3060，`tests/_probe_playback.gd`，带显示）**：
+
+| 指标 | 改前 | 改后 |
+| --- | --- | --- |
+| 装载后到预渲染启动 | 实际不启动 | **46 ms** |
+| 整段 60 帧算完 | 单线程约 36 s | **6 线程 1.79 s** |
+| 播放帧号 | 跳号 | **连续，0 跳帧** |
+| 播放缓存命中 | — | **73/73，0 未命中** |
+| 播放时 UI 帧时间 | 123–137 ms | **13.3 ms**（空闲基线 14.7 ms） |
+| GPU 后端播放 | 主线程求值、卡 | 同样 **13.3 ms、0 跳帧** |
+
+隔离实验也留在探针里：只 `set_time()` 是 130 ms/帧，只发布一张缓存帧是 14 ms/帧，
+一眼能看出时间都花在哪。
+
+### GPU 渲染服务器
+
+`render.gpu`（第 39 个插件）贡献后端 `gpu.standard`。**Phase 1 已完成逐算子 GPU 化**：
+
+- `FxGpuDevice` 探测适配器 / 厂商 / 接口 / `RenderingDevice`；无头或 dummy 驱动一律判不可用；
+- `FxGpuCompute` 用 `RenderingDevice` 的 **compute shader** 直接读写 RGBA8 像素缓冲：
+  一份 SPIR-V 承载「可分离模糊横/竖、六种混合模式、锐化」四个 op，
+  `buffer_get_data()` 自带同步栅栏，结果与 CPU 逐字节一致（实测像素差 < 0.004）；
+- `FxGpuOps` 以**同名 op 覆盖** `image.blur` / `image.mix`，三重闸门
+  （当前后端 = `gpu.standard`、设备可用、主线程）任一不满足就委托回 `FxOpsImage`；
+  `plugin.json` 声明 `inject: ["plugin.core.image"]` 保证覆盖发生在原实现之后，
+  停用插件时账本 LIFO 撤回自动恢复 CPU 版；
+- `FxGpuBackend.thread_safe() = false`：GPU 上下文主线程独占，服务会自动停掉工作线程与预渲染，
+  逐帧缓存照常工作；读回失败或无设备时**原样退回 CPU 结果**。
+
+**为什么弃用 SubViewport**：canvas 通道 `get_texture().get_image()` 要等下一帧才拿到本次结果
+（`force_draw()` 只提交不等待），读回的是上一帧且可能经过 sRGB 转换；早期「锐化改了多少像素」
+的探针其实把黑图误判成了成功。现在 GUI 探针同时核对 identity 与 CPU 公式。
+
+**实测（RTX 3060 / 256² / Godot 4.7.2，`tests/bench_gpu_ops.gd`）**：
+
+| 算子 | CPU | GPU compute | 加速 | 像素差 |
+| --- | --- | --- | --- | --- |
+| `image.blur` r8 | 43.6 ms | 6.8 ms | **6.4×** | 0.0027 |
+| `image.mix` normal α.35 | 54.0 ms | 3.7 ms | **14.6×** | 0.0000 |
+
+GUI 探针：`_probe_gpu`（锐化正确性）、`_probe_gpu_compute`（模糊/混合与 CPU 对齐）、
+`_probe_gpu_shell`（真实外壳切后端出图）全部 `PASS=true`。
+
+**Phase 2（本轮已开工）—— GPU 真正参与预览/预渲染求值**：
+
+- 关键发现：`RenderingDevice.compute_list_begin` 只能在渲染线程调用（试过
+  `create_local_rendering_device()` 也一样），但 `RenderingServer.call_on_render_thread(cb)`
+  允许工作线程把 compute 提交过去。实测 **6 线程并发 48 个请求合流到同一渲染同步点，
+  约 1 ms/请求**，不会退化成「每请求等一帧」（单次独立往返才是 16 ms）。
+- `FxGpuCompute.bridged(job)`：主线程/渲染线程直接执行，工作线程提交一次整批回调并等结果
+  （2 s 超时 + 回落）。一个算子只往返一次，可分离模糊的两 pass 在回调里连着跑。
+- `FxGpuOps.active()` 不再要求「后端 = `gpu.standard`」或「必须主线程」：
+  GPU 是**逐算子加速**，与整帧后端无关。新增设置 `render.gpu_ops`（默认开），
+  覆盖 `image.blur` / `image.mix` / `image.outline`；`outline` 的 8 邻域 SDF
+  在 GLSL 里一次 dispatch 完成，与 CPU **逐字节一致**（`_probe_gpu_worker` diff=0.0，
+  工作线程 `bridge_calls=1 / fallbacks=0`）。`plugin.json` 追加
+  `inject: ["plugin.fx.composite"]` 保证同名 op 的覆盖顺序。
+- 真实工程 GUI 单帧对比（`tests/_probe_gpu_demo.gd`，103 节点）：
+  关 GPU 算子 **752 ms** → 开 **553 ms**（**1.36×**）。
+
+**Phase 3（待做）**：把 `levels` / `tint` / `transform` / `output.final` 的逐层合成也搬上 GPU，
+减少每个节点一次 upload/readback；最终让纹理全程留在显存、只在最后读回一次，
+才是对 CPU 求值的彻底替代。
+
+### 打开 / 保存进度
+
+`FxShell.begin_progress(title)` / `set_progress(done,total,label)` / `end_progress()` 是基座提供的
+右下角进度卡片（标题 + 进度条 + 一行小字），不认识「工程」是什么：
+
+- 打开 `.fxproj` 走 `FxProjectArchive.read_zip_async()`：打开 → 解析文档 → 逐个解包素材，
+  每步让出一帧并上报；打开纯文本工程也报「读取 / 解析」两步；
+- 另存为的进度同时喂给保存面板内嵌进度条与这块浮层；
+- 界面入口是 `open_path_async()`（会 `await`），`open_path()` 保持同步语义给测试与无界面路径；
+- 版本不匹配要等用户点按钮，走原来的同步分支，不会把进度条挂死。
+
+---
+
+## 工程文件与保存策略
+
+### 启动页与欢迎页
+
+启动页在界面搭起来之前就出现：显示总进度、当前加载项、错误条数与耗时，
+数据来自 `FxBoot` 的事件（`scripts/graph/ui/fx_splash.gd`）。
+启动结束后淡出，接着弹出欢迎页：最近打开（存 `user://recent.cfg`）、新建工程、
+加载工程，以及「下次是否再显示」开关（`project.show_welcome` 设置项）。
+定时保存的 `Timer` 等服务对象要等入树后再启动；所有内嵌 `Window` 统一走
+`FxUiKit.popup_later()`（等 `tree_entered` + 下一帧，viewport 完成子窗口登记后再
+`popup*`），避免 `_sub_window_grab_focus: index == -1`。这两处消除了启动期报错。
+
+### 两种格式
+
+| 格式 | 内容 | 用途 |
+|---|---|---|
+| `.fxproj` | ZIP 容器，里面是 `project.fxgraph.json`、`manifest.json`、`assets/`、`plugins/` | 完整工程，可把用到的素材与插件一起打包 |
+| `.fxgraph` | 纯文本图文档（内容就是 JSON，**后缀不再缀一层 `.json`**），不附带任何文件 | 轻量交换、版本库友好 |
+
+纯文本后缀统一为 `.fxgraph`：保存时 `text.fxgraph` 不会再变成 `text.fxgraph.json`；
+老的 `.fxgraph.json` 仍然读得开（`FxProjectArchive.LEGACY_TEXT_EXT`），另存时自动收成新后缀。
+包内条目名 `project.fxgraph.json` 保持不变，旧工程包不用重打包。
+
+**ZIP 只做壳**：不碰 ZIP 的二进制结构、不加自定义头或预留区，里面全是普通文件，
+用任何解压工具都能打开。宿主版本与支持版本写在 `manifest.json`（纯文本 JSON）：
+
+- 读不到版本号（老工程）→ 直接用当前版本打开，不打扰用户；
+- 版本不匹配 → 弹面板询问「仍要加载吗」，并列出当前支持版本。
+
+另存为面板里可以选格式与路径，逐项勾选要打包的素材 / 插件；
+取消勾选的条目进入 `exclude`，不会被写进包。加载工程包时，
+素材被解到 `user://projects/<包名>/assets/` 并自动回写文档里的路径。
+
+### 保存的三条路径
+
+保存不是一个函数，而是三种语义，按「有没有落过盘」自动切换：
+
+| 触发 | 工程未保存过 | 工程已保存过 |
+|---|---|---|
+| `Ctrl+S` | 弹保存面板 | **静默增量**：工程包只写 `.delta` 差量，纯文本内容没变就跳过写盘 |
+| `Ctrl+Shift+S` | 弹保存面板 | **另存为**（额外保存一份）：默认给 `<名字>_副本.fxproj`，落在同一目录 |
+
+- 状态栏右侧常驻当前文件的保存状态：`未保存` / `<文件名> · 已保存` /
+  `<文件名> · 有改动`（`FxDocumentActions.save_state_text()`，走
+  `FxShell.set_status_hint()`）。保存成功时左侧状态消息以 `✓` 开头并显示完成时间。
+- **进度回调**：写盘拆成「先规划、再逐条写」。`FxProjectArchive.plan_zip()` 只算条目
+  （文档 → 素材 → 清单），`save_zip_async()` 每写一条让出一帧并回调
+  `(done, total, entry_name)`，保存面板据此显示进度条与「正在写入 3/12 · assets/002_x.png」。
+  同步版 `save_zip()` 保留给无界面路径与测试。
+- 保存面板（`FxProjectSaveDialog`）重做过：格式与路径一行、打包项一行、
+  依赖清单带边框可滚动、底部进度条，按钮不会再被列表压住
+  （4.7 的 `AcceptDialog` 已经没有 `get_vbox()`，内容要自己留出按钮栏高度）。
+
+### 增量保存 / 定时保存
+
+- `Ctrl+S` 是瞬时增量保存：`.fxproj` 只把变化写到 `<工程>.delta` 差量日志，
+  **不重写整个压缩包**；`.fxgraph` 在内容没变时直接跳过写盘。
+  整包保存（另存为 / 保存面板）会重写工程包并清掉差量；加载纯文本工程时
+  若发现较新的 `.delta`，先补上差量再显示。
+- 定时保存默认每 60 秒（`project.autosave_seconds`，0 = 关闭），
+  落到工程文件旁的**同名文件夹**，文件名带时间戳：
+  `<工程名>/<工程名>_YYYYMMDD_HHMMSS.fxgraph`，最多保留 20 份（新旧后缀都参与清理）。
+
+### 缺依赖面板
+
+加载工程后会检查素材路径与节点所属插件。**只有真的缺插件才弹面板**；
+只缺素材时状态栏提示一句，用户可从「文件 → 依赖检查…」（`project.deps`）手动打开同一张面板。
+`save` / `dir` 这类「要写到哪」的参数是输出目标、不是输入素材，不参与依赖扫描 ——
+以前一打开带导出节点的示例就误报「缺 5 个素材」正是这个原因。
+
+- 资源：每条给一个「修复…」按钮，重选文件后回写对应参数并刷新列表；
+- 插件：只列 id 并说明「请安装后重新打开工程」—— 插件没法在运行时凭空补上，
+  不做假按钮。
+
+## 界面
+
+### 布局与自适应
+
+- 顶部菜单 → 快速访问工具栏 → 左/中/右/底四个停靠区 → 状态栏。
+- **自绘标题栏**：窗口无系统边框，顶部一条 34px 的标题栏放品牌、菜单与
+  最小化/最大化/关闭；拖动标题栏移动窗口、双击最大化、四边四角拖动缩放
+  （`FxWindowFrame`，无头环境自动跳过）。标题栏背景同样由皮肤提供
+  （`chrome_style("title")`）。
+- **窗口可自由拉伸**：应用窗口最小 960×620，`stretch/mode=disabled`（1:1 像素、
+  容器重排而非整体缩放）；`proj` 里的基准分辨率只决定首次打开尺寸。
+- **浮动窗口八向缩放**：四边 + 四角拖拽、双击标题栏最大化/还原、`⤓` 重新停靠；
+  内容始终铺满窗口并裁剪溢出，面板自己用 `ScrollContainer` 承接滚动。
+- 停靠标签是胶囊样式（选中态强调色描边），面板常驻不销毁，切换只改 `visible`。
+- 插件中心宽时左右并排、窄于 430px 自动退化为「列表 ⇄ 详情」单栏 + `←` 返回。
+
+### 节点预览与独立窗口
+
+- **加载后预览默认收起**：带图像输出的节点只占内容高度，右下角 `▶` 可展开看大图；
+  展开过的节点会记住状态（可在设置「蓝图 · 节点预览默认收起」里改默认值），
+  拖右下角改过的尺寸同样会保留。收起只隐藏预览，端口行一律不动。
+- **两种分离形态**：面板标题的 `⋯` 菜单里「⧉ 分离此面板」是内嵌浮动窗口，
+  「▣ 分离为独立窗口」用 `Window.force_native = true` 开出真正的 OS 窗口
+  （自带标题栏、可拖到第二块屏幕、可 alt-tab / 最小化）。同一个面板 Control
+  实例在两种宿主之间搬家，不重建；关闭独立窗口即重新停靠，形态与窗口位置存
+  `layout.cfg`，重启按原样恢复。「窗口」菜单里也能把插件注册窗口开成独立窗口。
+
+### 弹窗时序与生命周期
+
+内嵌 `Window` 是两个老问题的常客，现在都由 `FxUiKit` 统一兜住：
+
+- **弹出要晚两帧**：`FxUiKit.popup_later()` 等到 `tree_entered` 之后再等两帧才
+  `popup*()`，父 viewport 这时才把子窗口登记进 `subwindows`；抢跑会报
+  `_sub_window_grab_focus: index == -1`。抢焦点同理走 `focus_later()`。
+- **关闭只能销毁，不能隐藏**：`hide()` / `visible = false` 会让引擎在把焦点还给
+  父窗口时用错索引（同一个 `index == -1`），所以统一用 `FxUiKit.dismiss(window)`
+  ——只 `queue_free()`。为此 `style_window()` 顺手把对话框配成「一次性」形态
+  （`one_shot`）：确定键、Esc、右上角关闭都不再走 `AcceptDialog` 内部的 `hide()`，
+  而是「信号 → 销毁」，Esc 由 `window_input` 自己接、语义仍是取消。
+- **关掉一个窗口再开下一个**：中间必须隔两帧（`FxUiKit.defer(action, 2)`），
+  否则「摘掉旧的」和「登记新的」会撞在同一帧。欢迎页的「新建 / 加载 / 最近打开」
+  就是这条路径。
+- **文件面板优先用系统原生**：原生面板不是内嵌子窗口，选择与取消都不碰
+  subwindow 焦点恢复，顺带获得收藏夹、网络路径与多选。平台不支持原生时自动
+  回落内嵌面板。设置「常规 · 使用系统文件对话框」可以关掉这个偏好。
+- 打开工程时若工程包版本与宿主不匹配，仍然弹确认框；销毁当前对话框与弹出下一个
+  的动作被拆到相邻两帧，不会互相踩。
+
+### 所有窗口都能分离
+
+「分离」在本工程里是一个统一的规则，不是某个面板的特权：
+
+| 窗口种类 | 分离方式 |
+|---|---|
+| 面板（文档 / 蓝图 / 预览…） | 标题栏 `⋯` → 分离为浮动窗口 / 独立系统窗口；关闭即重新停靠 |
+| 插件注册窗口（`windows()`） | 「窗口」菜单 → 打开为独立窗口 |
+| 弹窗（保存、欢迎、依赖、对话框、文件面板） | 默认**就是**独立系统窗口 |
+
+`FxUiKit.style_window()` 会给每个新建的 `Window` 调 `detachable()`：
+`force_native = true`，于是标题栏由系统绘制（不再是一块底色上的一行字），
+窗口可以拖出主窗口、进任务栏、单独缩放。这也顺带消灭了内嵌子窗口的
+`_sub_window_grab_focus` 问题——原生窗口不是 subwindow。
+
+- 关掉这个偏好（设置「常规 · 弹窗使用独立系统窗口」）则回落到内嵌显示；
+  无头环境没有原生窗口，`FxUiKit.native_windows()` 自动返回 `false`。
+- `force_native` 必须在窗口**显示之前**设置，`detachable()` 对已显示的窗口
+  直接跳过，不会踩到引擎的 "Can't change force_native while displayed"。
+- 文件对话框另有更优选择：系统原生文件面板（`ui.native_file_dialog`）。
+
+### 插件中心（`editor.plugin-hub`）
+
+默认**左边是插件列表**（搜索、状态点、选中态），**右边是选中插件的详情**；
+标题栏的 `⇄` 按钮可以一键换边，偏好存设置项 `ui.hub_list_right`：
+
+- 图标 / 名称 / 版本 / 作者 / ACTIVE·等待依赖·已停用；图标支持纹理与精灵表动图
+  （`plugin.json` 的 `icon` / `icon_file` / `icon_anim`），没有图标则回退成主题色字形；
+- 说明、inject/provide 芯片、按种类统计的贡献数；
+- **插件功能**：该插件注册的命令渲染成按钮（例如皮肤插件贡献「应用此皮肤」），
+  贡献的皮肤也会出现「应用皮肤 / 当前皮肤」按钮；
+- **插件设置**：该插件自己的设置表单，与设置中心共用 `FxSettingWidgets`。
+
+全部内容来自账本，没有 `if id == "xxx"`；第三方插件装进来即自动获得完整界面。
+
+### 视觉
+
+`FxUiKit` 是稳定门面，实现来自 `FxSkin`。默认皮肤是 **Qt / Fusion 风格**：
+中性灰阶、1px 硬边、3–4px 圆角、28px 左右的控件、蓝色强调色、标签下划线、
+细滚动条与清晰的层级分隔；不用渐变和大圆角。
+
+换肤覆盖到**外壳 chrome**，不只是面板内容：`chrome_style(kind)` 让皮肤替换
+菜单条 / 工具栏 / 状态栏 / 停靠标签条的背景（可以是 `StyleBoxTexture` 贴图），
+`panel_style()` / `tab_style()` / `window_style()` 决定卡片、标签与浮窗的边框。
+自绘控件需订阅 `FxShell.skin_changed(skin_id: String)` 并在回调里 `queue_redraw()`。
+
+设置中心是「左侧分组导航 + 右侧表单」；插件中心是「左列表 + 右详情」，
+两者都随窗口宽度自适应。
+
+---
+
+## 插件开发
+
+> 写插件的完整说明在 **[`docs/插件开发手册.md`](docs/插件开发手册.md)**：
+> 清单字段表、节点定义全字段、算子与求值上下文、参数控件契约、面板/窗口/命令/
+> 导出器、服务与能力、皮肤、语言包、素材根、替换核心、硬性规则、排错表与发布清单。
+> 本节只讲本工程已经落地的约定与设计取舍。
+
+### 插件只有一种（没有内置插件）
+
+所有插件都是「目录 + `plugin.json` + 源码」，走同一条加载路径：
+
+| 环境 | 加载顺序 | 说明 |
+|---|---|---|
+| 开发期 | `res://plugins` | 直接跑工程里的源码 |
+| 发行版 | `user://plugins` → `<exe>/plugins` → `res://plugins` | 前两个可编辑可替换；PCK 里那份只是「目录被删」的兜底 |
+
+- 脚本**源码优先**：磁盘上能读到 `.gd` 就现场编译，改完重启即生效；读不到才回落
+  `ResourceLoader`（PCK 里的字节码）。
+- 打包时整个 `plugins/` 目录原样搬到 `<exe>/plugins`，所以发行版里每个插件
+  （含它们自己的 `assets/`、`locales/`）都是一份可见、可改的目录。
+- **没有「内置插件只能静态 Callable」的限制**：所有插件实例都由 `runtime_plugin`
+  贡献保活到 shutdown，实例方法、闭包都能用。
+
+### 插件目录
+
+```
+plugins/<id>/
+  plugin.json      清单（必需，导出后 .gd 变 .gdc 时靠它定位）
+  plugin.gd        extends FxPlugin
+  nodes.json       节点定义
+  locales/         en_US.json / ja_JP.json —— 本插件自己的译文
+  ...              其它资源一律 local("...") 引用，不跨插件目录
+```
+
+```json
+{
+  "id": "my.pack",
+  "name": "我的节点包",
+  "version": "1.0",
+  "description": "一句话说明",
+  "script": "plugin.gd",
+  "inject": ["kernel.graph", "plugin.core.pixels"],
+  "provide": {"plugin.my.pack": "1.0"}
+}
+```
+
+基座永远存在的注入键：`core.shell / core.catalog / core.document / core.render /
+core.registry / core.plugins`，以及上面列出的代理键。
+
+### 可以贡献什么
+
+```gdscript
+extends FxPlugin
+
+func node_files() -> Array[String]        # 节点定义 JSON
+func ops() -> Dictionary                  # op_id -> Callable
+func native_ops() -> Array[Dictionary]    # GDExtension 算子（同一张 op 表）
+func time_dependent_ops() -> Array        # 会读 ctx.t（关闭跨帧缓存）
+func exporters() -> Array[Dictionary]     # 导出菜单项
+func param_kinds() -> Dictionary          # 自定义参数控件 kind
+func panels() -> Array[Dictionary]        # 停靠面板 left|center|right|bottom
+func windows() -> Array[Dictionary]       # 浮动窗口
+func commands() -> Array[Dictionary]      # 命令 + 快捷键（也是「插件功能」）
+func menus() -> Array[Dictionary]         # 菜单定义
+func menu_items() -> Array[Dictionary]    # 菜单项
+func toolbar() -> Array[Dictionary]       # 工具栏项（quick: true 进快速访问栏）
+func services() -> Dictionary             # 服务工厂 id -> (ctx) -> Variant
+func settings() -> Array[Dictionary]      # 声明式设置项
+func capabilities() -> Array[Dictionary]  # 能力键 provider
+func quality_policies() -> Array[Dictionary]
+func panel_features() -> Array[Dictionary]
+func skins() -> Array[Dictionary]
+func dock_factories() -> Array[Dictionary]
+func graph_access() -> Array[Dictionary]
+func render_backends() -> Array[Dictionary]
+func node_pickers() -> Array[Dictionary]
+func drop_handlers() -> Array[Dictionary]  # 拖进画布的文件怎么变成节点
+func locales() -> Array[Dictionary]       # 也可以用目录里的 locales/*.json
+```
+
+`ctx = {shell, store, render, services, args}`。常用外壳 API：
+`shell.panel(id)` / `shell.service(id)` / `shell.run_command(id, args)` /
+`shell.open_window(id)` / `shell.apply_skin(id)` / `shell.toggle_area("bottom")` /
+`shell.exposed_panels()` / `shell.detach_panel(id)` / `shell.redock_panel(id)`。
+
+### 节点定义
+
+`nodes.json` 里一条定义 = 端口 + 参数 + 算子 id；执行器与编辑器只读数据，
+不写 `if type == "blur"`。新增节点 = 加一条 JSON + 注册一个算子。
+
+```json
+{
+  "category": "图像/生成",
+  "nodes": [{
+    "id": "image.gradient", "label": "渐变", "op": "image.gradient",
+    "inputs": [], "outputs": [{"id": "image", "label": "图像", "type": "image"}],
+    "params": [{"id": "mode", "label": "模式", "kind": "enum", "default": "linear",
+                "options": ["linear", "radial", "angle"]}]
+  }]
+}
+```
+
+参数关键帧格式：`{"track": [[t, value], ...], "interp": "linear|step|ease"}`。
+
+节点定义还可以带**视觉字段**，纯可选、全有回退：
+
+```json
+{"id": "image.gradient", "icon": "assets/icons/gradient.png",
+ "icon_anim": {"cols": 4, "rows": 1, "fps": 8}}
+```
+
+- `icon` 相对**所属插件目录**解析（也可写 `res://` / `user://`）；`.gif` 不写参数时
+  按「单行精灵表」自动猜一个能播的参数。
+- `icon_anim` 把这张图当精灵表循环播放，`cols: 0` 表示按正方形帧自动推列数。
+- 没有 `icon` 时，添加节点面板会用**真实渲染样张**（现拼迷你链跑一帧）代替，
+  再没有就回落到分类色块 + 分类字形。所以不画图标也不影响可用性。
+
+插件图标同理写在 `plugin.json`（`icon` / `icon_file` / `icon_anim`），插件中心里显示。
+
+### 参数就是输入端口
+
+**每个参数默认都有一个输入端口**，端口就长在参数行左侧，和控件是同一个视觉单元。
+只有三类例外：
+
+| 例外 | 例子 | 原因 |
+|---|---|---|
+| `"bindable": false` | 节点写在 JSON 里 | 明确声明「这个参数只在这里填」 |
+| 结构性参数 | `layers`、`flow.sequence.steps` | 它们的值决定端口表本身 |
+| 值是数组/对象且无对应类型 | 配方 JSON 之外的复合值 | 无法用单个值表达 |
+
+执行器按**同一张端口表**回填参数（`FxCatalog.ports()` → `_resolve_params`），
+所以「界面上看得到的端口」和「执行时认的端口」不可能对不上；插件新增参数
+不需要同时改 JSON 和连接代码。参数控件里多行文本用 `"multiline": true`。
+
+节点右下角的 `▼` **只收起下面那块预览图**，参数行与端口一律不动 ——
+GraphNode 的端口缓存按插槽算，藏掉参数行会让连线索引错位（运行时那些
+`get_output_port_position: index out of bounds` 就是这么来的）。
+预览区只给真正输出 `image` 的节点，纯数值 / 布尔 / 文本节点不占这块高度；
+带预览的节点还能拖右下角改尺寸，尺寸按节点记住、重建后恢复。
+
+图层也可以打关键帧：每层行右端有一个 `○ / ◇ / ◆` 按钮，
+点一下就把这一层的**透明度、位移、显隐**在当前时间打成一组关键帧，
+同位置再点一次删掉（删空后字段回到静态值）。混合模式是离散枚举，不进轨道。
+
+### 纹理 / 序列帧导入
+
+`core.asset` 提供两类「贴图来源」节点，输入是文件路径（绝对路径、`res://` 或相对
+资源根），输出仍是普通 Image，下游不需要知道它来自哪里：
+
+| 节点 | 用途 |
+|---|---|
+| `image.texture` | 导入单张外部图片（PNG / WebP / JPG / BMP / TGA / SVG），`fit` 支持原始 / 适应 / 铺满 / 拉伸 |
+| `image.sheet` | **精灵表**（spritesheet）：一格一帧、单元等大、按顺序播放。两种切法——`按列 × 行` 或 `按单元像素尺寸`（列/行由图片算出来）；可设外边距 / 间隔 / 起始帧 / 帧率 / 循环 |
+| `image.pixelfx` | 插件自带的 244 套手绘序列帧素材 |
+
+「精灵表」与「图集」不是一回事，本项目只实现前者：
+
+- **精灵表**：同一角色的连续动作帧，网格规整、每格等大、顺序即时间顺序，尺寸可以从图片本身推出来。
+- **图集**（texture atlas）：把许多**互不相关**的图打包进一张大图以省 draw call，
+  每块区域大小不一，必须配一份 JSON/atlas 元数据才有意义（按名字查区域）。
+  它需要的是「区域表 + 按名取图」，不是「第 N 帧」，所以是另一种节点。
+
+精灵表节点除了图像，还把切分结果直接做成端口，省得下游自己再算一遍：
+`count`（总帧数）、`index`（当前帧号）、`cell`（单元尺寸）、`cols` / `rows`。
+参数行上也会显示「4 × 4 = 16 帧，单元 32 × 32」，接不接输出节点都能看到总数。
+
+路径参数用专门的 `texture` 控件：一行内完成路径、浏览与缩略图，文件读不到会标红。
+`FxTextureLibrary` 负责按修改时间缓存 Image，并可直接给出 `ImageTexture`；
+网格换算统一在 `FxTextureLibrary.grid_of()` / `sheet_frame_at()`，
+执行器、参数行提示、拖拽导入用的是同一份算法。
+
+### 图像对象端口
+
+端口里不再只有裸 `Image`。新增 `image_object` 类型与 `FxImageObject` 值对象：
+带 `image / width / height / format / pixel_count` 字段，`pixel_data()` 拿 RGBA 字节、
+`pixel_at(x, y)` 拿某个像素的颜色。三个节点把能力暴露成可连线的图元：
+
+| 节点 | 作用 |
+|---|---|
+| `image.object` | 裸图像 → 对象，同时直通原图与宽/高/格式/字节数/像素数 |
+| `image.info` | 对象 → 拆包图像 + 同样的属性端口 |
+| `image.pixel` | 对象 + X/Y → 颜色与 R/G/B/A 分量 |
+
+`FxPortType` 允许 `image_object ↔ image` 双向互连并在连线时自动打包/拆包，
+所以**老节点一个都不用改**：`image.object` 的输出可以直接接到最终输出的图层输入。
+类型号追加在 `ORDER` 末尾，旧存档的端口配色不会错位。
+
+### 着色器（`.gdshader`，`core.shader`）
+
+Godot 的着色器是标准资源，**不需要内核支持**：一个插件就能把 `.gdshader`
+变成图里的一个算子。`shader.image` 把输入图送进隐藏的 `SubViewport`，
+用 `ShaderMaterial` 渲染一遍再读回 `Image`，所以它后面接什么节点都不受影响。
+
+```glsl
+// 拖进蓝图 / 在参数里选一个 .gdshader 文件即可
+shader_type canvas_item;
+
+uniform sampler2D input_tex : hint_default_black;   // 上游图像自动绑到这里
+uniform vec2 u_resolution;                          // 引擎自动填：画布尺寸
+uniform float u_time;                               // 引擎自动填：秒
+uniform float strength = 1.0;                       // 由节点参数 uniforms 覆盖
+
+void fragment() {
+	vec4 src = texture(input_tex, UV);
+	COLOR = vec4(1.0 - src.r * strength, src.g, src.b, src.a);
+}
+```
+
+- **代码来源优先级**：节点参数「内联代码」>「着色器文件」> 内置直通着色器。
+  文件用 `shader` 类型的参数控件选（`*.gdshader` 过滤，缺失会标红 `!`）。
+- **uniform 覆盖**：参数 `uniforms` 支持两种写法，值按 JSON 解析（数字/布尔/数组/
+  颜色字符串），解析不了就按字符串传：
+  ```
+  strength = 0.5
+  tint: #ff8800
+  ```
+  或整段 JSON：`{"strength": 0.5, "tint": "#ff8800"}`。
+- **输入绑到哪个 uniform**：优先 `input_tex` / `u_texture` / `source_texture` / `tex`，
+  都没有就用着色器里第一个 `sampler2D`。没有连线也能跑（纯生成式着色器）。
+- **GPU 必须回主线程**：节点定义里有 `"gpu": true`，渲染服务看到图里有这类节点
+  就自动停掉工作线程（`_graph_needs_main_thread()`）。离屏渲染和回读只能在主线程做，
+  交给后台线程只会得到空帧。图里删掉着色器节点后线程会自动恢复。
+- **首帧预热**：`SubViewport` 刚建出来的那一帧读回来是空的（同帧再画一次也没用），
+  所以插件激活时就预热一次视口；万一还是撞上没预热的情况，算子会调
+  `FxRenderGate.request_reframe()` 请渲染服务补算一帧——暂停状态的图也能自愈。
+- **无头环境**：没有渲染器时如实按「原样输出」处理（返回输入图），
+  测试与批量处理不会因为没显卡而产出坏帧。
+- 拖入 `.gdshader` 文件会直接落一个 `shader.image` 节点并填好路径
+  （`core.shader` 贡献的 drop handler）。设置「渲染 · 启用着色器节点」可以整体关掉。
+
+### 拖拽导入（`editor.dropimport`）
+
+把图片文件从资源管理器拖到画布上，落点处直接生成节点：
+
+| 拖法 | 结果 |
+|---|---|
+| 直接拖图片 | `image.texture`，`path` 已填好、`fit = contain` |
+| 按住 `Shift` 拖图片 | `image.sheet`，列/行按图片尺寸猜（最大公因数当单元边长），猜不准就 4 × 1，参数里改两下即可 |
+| 多个文件 | 每行 3 个排布，落完一起选中（可直接 `Ctrl+C` 整组复制） |
+
+拖拽只负责「算出图坐标落点」，映射逻辑在插件里：蓝图调 `FxDropBroker`，
+provider 由插件的 `drop_handlers()` 贡献，声明自己能接的扩展名。
+停用该插件后拖拽自然失效，蓝图代码一行都不用改。菜单「文件 → 导入纹理…」走同一套实现。
+
+### 参数控件读数
+
+参数行读取的是**当前**文档对象：撤销/重做或外部替换节点数据后，编辑器会把
+视图与参数行的数据引用一起指向新对象（`sync_document_data`），控件上下文还提供
+`node_get` 取值器给依赖节点数据的控件（例如精灵表的「共 N 帧」提示）。
+枚举控件遇到候选表里没有的当前值会如实显示该值，不会默默选中第一项。
+关键帧采样对**颜色字符串**（`#rrggbb`）与等长数值数组逐元素插值，不再「到下一帧
+才跳变」；普通文本 / 布尔仍是 step。声明了 `display_fallback` 的参数（如最终输出
+节点的 `canvas_width/height`）在值为 0「跟随文档」时，编辑框显示当前真实画布宽高，
+改到别的值才写入覆盖值，改回去又恢复跟随。
+
+### 被连线驱动的参数
+
+一个参数只要有入边，它的值就不在文档里，而在每帧求值结果里。所以：
+
+- 执行器把每个节点**解析后的完整参数表**放进 `ctx.node_params` 一起回传
+  （`FxRenderService.node_params_resolved`，工作线程路径同样回传）；
+- 编辑器把这张表推给节点视图，参数行优先显示实时值，并加 `⇠` 标记与
+  「由连线驱动」提示，控件被冻结（`MOUSE_FILTER_IGNORE` + 半透明），
+  上游一变，下游参数行立刻跟着变；
+- 断开连线后重建参数行，恢复成可编辑的文档值。文档里那一份旧值不会被覆盖，
+  重新接回连线时它们仍然在那儿。
+
+### 画布属性
+
+画布尺寸是图文档的公开属性：节点通过 `ctx.canvas` 读取，编辑器通过
+`FxGraphFacade.access().doc_canvas(doc)` / `set_doc_canvas(doc, size)` 读写，
+文档面板的尺寸输入框走同一套 API。图里也可以用 `graph.canvas` 节点把
+「宽 / 高 / 宽高比」当作数值输出，接给缩放、定位或程序化节点。
+
+时间轴同理：`graph.timeline` 节点输出 `fps / duration / frames / time / frame /
+progress / seed`。时间轴的编辑入口有两处——文档面板与**轨道顶部的 FPS / 帧数 / 循环**，
+它们写的是同一条 `store.set_timeline()`，所以菜单、轨道、节点读到的永远是一份数据。
+
+### 输出：合成口与预览口
+
+`output.final` 除了 `background` 与每个图层端口，还有一个**图像输出口**
+（`image`），可以接到别的节点继续处理。
+
+`output.preview` 是「预览窗口的节点版」：接一张图进去，节点内实时显示这一帧，
+自带直通输出，**不参与最终合成**，可以放在图的旁支。
+它靠节点定义里的 `"evaluate_always": true` 让执行器在跑完输出后补跑一次，
+所以不需要成为输出节点的上游。
+
+### 工程嵌套：`graph.subgraph`
+
+把**另一个图文档**当节点用。子工程有自己的画布、时间轴与输出节点，外层只看见
+一张图加上它的时长 / 总帧数 / 画布尺寸（都是端口）：
+
+| 参数 | 作用 |
+|---|---|
+| `path` | 子工程文件；参数行上同时显示「节点数 · 画布 · 时长 · 是否有输出」 |
+| `fit` / `scale` / `offset` / `alpha` | 落到外层画布的方式 |
+| `time_scale` / `time_offset` | 子工程的时间映射（0.5 = 半速，2 = 双速，可打关键帧） |
+
+- 文档按「路径 + 修改时间」缓存，播放时不会每帧读盘；改了子图文件下一帧就生效。
+- A 嵌 B 嵌 A 会在求值时被静态栈挡住：报「子图循环引用」并返回空画面，不会卡死。
+- 示例见 `examples/nested_host.fxgraph.json`（外层）与 `examples/nested_child.fxgraph.json`
+  （子工程），生成脚本 `tools/make_nested_example.gd`。
+
+#### 子图的输入与输出端口
+
+子工程里放两个专用节点，端口就长到外层的 `graph.subgraph` 上：
+
+| 节点 | 作用 |
+|---|---|
+| **子图输入**（`graph.input`） | 在子图内部声明一个入口，`value` 出口吐出外层连进来的值 |
+| **子图输出**（`graph.output`） | 在子图内部声明一个出口，接进来的值出现在外层节点的对应输出口 |
+
+- 类型可选图像 / 数值 / 向量 / 颜色 / 布尔 / 文本；选中节点后在参数行改「类型」，
+  外层的端口类型会立刻跟着变（类型不兼容的线连不上，和其他端口同一套规则）。
+- 端口 id 用**节点 id**，`端口名` 只是显示标签 —— 改名字不会断线。
+- 可以声明多个输入与多个输出；再加上原有的 `image` / `duration` / `frames` / `canvas`，
+  一个子图能像普通算子一样被复用。
+- 值只在这一次求值里穿过边界：外层每帧把当前值交给子图，子图再把声明的输出交回去。
+- 子图里「输出节点」是常驻求值的（`evaluate_always`），不需要接到子图的输出节点上游；
+  所以它既能交图，也能交「内部算出来的一个数」。
+- 示范：`examples/demo/示范工程_子图.fxgraph.json` 声明「强度」入、「能量进度」出，
+  外层用脉冲驱动强度、再用能量进度点亮标题辉光。
+
+## 随包示例工程
+
+`examples/` 里几份工程直接双击就能开，也用来在每次改动后核验「引擎还在正常工作」。
+
+**先开 `examples/demo/示范工程.fxproj`** —— 这一份是「照着做一个特效」的范本：
+素材生成、贴图与精灵表、VfxEngine 配方、子图边界端口、着色器、图层合成、
+关键帧与连线两种动画写法、流程控制与五个导出节点，全部各用一遍。
+
+| 文件 | 内容 | 规模 |
+|---|---|---|
+| `demo/示范工程.fxproj` | **示范工程**（工程包，带素材）：① 素材区（贴图/精灵表/pixelfx/配方/字体）② 背景（渐变+星野+噪声星云）③ 前景（精灵表变形调色、光球位移、标题描边辉光染色、子图+着色器）④ 输出 5 图层 ⑤ 驱动区（关键帧 / 连线驱动 / 读像素驱动）⑥ 流程与导出 ⑦ 巡展区补齐剩余类型 | 103 节点 / 77 类型 / 5 图层 / 稳定约 0.7 秒一帧 |
+| `demo/示范工程.fxgraph.json` | 同一张图的纯文本形态（方便对比、手改） | — |
+| `demo/示范工程_子图.fxgraph.json` | 子工程：声明的「强度」输入与「能量进度」输出，外层直接连线驱动 | 9 节点 |
+| `demo/assets/*.png` | 脚本现画的外部素材：4×4 精灵表、带环光球 | 128×128 ×2 |
+| `showcase.fxgraph.json` | **轻量主链**：渐变呼吸 → 光斑关键帧模糊 → 子图 → 文字 → 辉光 → 染色 → 着色器条纹，2 秒循环 | 21 节点 / 19 边 / 稳态约 320ms |
+| `showcase.fxproj` | 上一条的工程包形态（含素材与插件清单），用来验证打包/解包 | — |
+| `showcase_all_nodes.fxgraph.json` | **全节点巡展**：每个节点类型都接了源图与输出预览，逐个看效果 | 99 节点 / 75 类型 / 稳态约 820ms |
+| `nested_host` + `nested_child` | 工程嵌套最小例子 | 小 |
+
+示范工程每帧要跑几十个逐像素算子（还有子图、配方、着色器），慢是正常的：
+追求流畅就把画布调小或关掉巡展区的预览节点；追求「看得全」就用它。
+
+`test_io` 会校验它们：节点类型存在、参数名没过期、每条边两端端口按**实际端口表**
+（含图层 / 子图边界这些动态端口）对得上、每份都有输出节点，示范工程包还能解包回整张图。
+
+生成：`tools/make_demo.gd` / `tools/make_showcase.gd` / `tools/make_nested_example.gd`。
+
+### 节点打包（预合成）
+
+菜单「节点 → 打包成子图（预合成）」`Ctrl+G`：把选中的节点收进一个新的子图文档，
+原图里只留一个 `graph.subgraph`，**整个操作是一个撤销点**。
+「节点 → 展开子图」`Ctrl+Shift+G` 反向操作：把子图文件展开回当前图，便于继续改。
+
+跨边界的连线不会丢：
+
+- 进选区的每条线，在子图里换成一个**子图输入**节点，原图那一侧的线改接到子图节点上；
+- 出选区的线按源端口去重，各换成一个**子图输出**节点，原图的线同样接回去；
+- 状态栏会报「几进几出」；解包时这些边界节点被撤掉，连线按原样接回展开出来的节点。
+
+只有执行流（`exec`）边过不了边界 —— 它不是值，没法用一个端口表达，遇到会明确拒绝。
+
+### 导出与保存的节点版本
+
+「菜单能做的事，图里也能做」：同一个 `godot.export` 插件既注册菜单导出器，
+也注册五个节点 —— 于是批处理、条件导出、导出即保存的流水线都能用图表达。
+
+| 节点 | 等价菜单 | 说明 |
+|---|---|---|
+| `io.export_image` | 导出当前帧 PNG | 接一张图进来直接写 PNG |
+| `io.export_sequence` | PNG 序列帧 | 整段按帧率渲染成带帧号的序列 |
+| `io.export_sheet` | 精灵表 PNG + JSON | 拼图 + 帧元数据（列数/帧尺寸/fps/循环） |
+| `io.export_godot` | Godot 粒子发生器 | `.tscn` + 贴图 `.res` + 翻转书着色器 |
+| `io.save_doc` | 文件 → 保存 | 把当前文档整体写成 `.fxgraph.json` |
+
+写盘是副作用，而节点每帧都会被求值，所以统一约定：
+
+- `run` 默认 **false**，关着的时候完全不碰磁盘，播放预览绝对安全；
+- `run` 可以打关键帧或接端口，于是「只在第 10 帧导出」也能表达；
+- 同一节点 + 同一目标路径两次写之间至少间隔 1.5s，防止一直开着时每帧重写；
+- 输出 `ok` / `path` / `message`（序列帧与保存还带 `count`），下游能判断成功与否。
+
+相对路径统一落到 `user://exports/`，不怕写出到只读目录。
+
+### 硬性规则
+
+1. 所有插件一律按外部插件加载；算子 / 导出器 / 面板 / 命令可以是静态 Callable，
+   也可以绑定插件实例（实例会保活到 shutdown）。
+2. 插件不直接改 `FxCatalog` / `FxOpRegistry`；宿主把结果写进账本，目录统一应用。
+3. 节点定义里的 `op` 必须由某个已启用插件注册。
+4. `plugin.json` 必须有；导出后只放 `plugin.gd` 的极简插件会被跳过。
+5. 不要给静态函数起 `ease` / `remap` 这类与内建同名的名字。
+
+### 多语言：谁注册的东西谁来翻译
+
+`FxI18n` 只提供「键 → 译文」的解析与回退链（`en_US → en → zh_CN`），键就是可读原文，
+未翻译自动回落，不会漏字。**译文分两处，互不越界**：
+
+- **`core.i18n`**：只放基座自己显示的外壳文案（菜单栏、工具栏、停靠标签、窗口壳、
+  布局动作、状态栏）；
+- **每个插件自己的 `locales/<locale>.json`**：该插件注册的面板标题、命令、设置项、
+  皮肤名、节点标签……宿主在加载插件时自动扫描并登记，`core.i18n` 永远不读别人的目录。
+
+```json
+// plugins/skin.maid-atelier/locales/en_US.json
+{
+  "name": "English (US)",
+  "entries": { "深海女仆工坊": "Deep Sea Atelier", "启用皮肤贴图": "Use skin artwork" }
+}
+```
+
+也接受扁平写法 `{ "源文": "译文" }`。多个插件可叠加同一语言，按 `order` 合并，
+停用插件时译文随贡献一起撤回。所有可见文案在外壳的消费点统一过 `FxI18n.text()`；
+`general.locale` 的 `applies = "ui"`，切换只重建界面文字，不动文档与撤销栈。
+
+### 设置与质量
+
+```gdscript
+func settings() -> Array[Dictionary]:
+    return [{
+        "id": "my.quality", "label": "画质", "group": "我的插件",
+        "kind": "enum", "default": "balanced",
+        "options": [{"value": "fast", "label": "快"}, {"value": "balanced", "label": "均衡"}],
+        "capability": "my.quality", "applies": "runtime", "order": 10,
+    }]
+```
+
+- `applies = runtime` 只刷新渲染策略；`ui` 才重建界面；`none` 只落盘。
+- 取值存 `user://settings.cfg`；注册是可逆效应，写盘是不可回收的 emission。
+- `FxQualityPolicy` 的求解结果原样注入 `ctx.options`，算子用 `ctx.option()` 读取；
+  `core.quality` 贡献 12 项设置 + 4 档预设。
+- **`output_downscale` 恒为 false**：输出链永不降采样，播放与导出逐像素一致，
+  导出时 `operator_quality` 强制为 1.0。
+
+### 皮肤与贴图
+
+`FxSkin` 提供颜色 token、`build_theme()`、控件工厂、`textures / texture_layers /
+glass_alpha / build_decoration() / build_overlay()`。贴图从**外部资源根**加载
+（`texture_root` + `textures` 映射，WebP/PNG → `ImageTexture`），布局用声明式字段：
+`{id, texture, layer: back|front, anchor, mode: cover|fit|tile_x|stretch, opacity}`。
+
+- 不要在控件里写死十六进制，一律取 `FxUiKit.BG / PANEL / BORDER / ACCENT / ...`。
+- `GraphEdit` / `GraphNode` 的主题项在 `build_theme()` 里单独下发。
+- 皮肤选项协议 v2：`protocol: 2` + `options`（boolean / slider / color / select /
+  checkbox-group / visibility-schedule + `visibleWhen`），由皮肤自己解释。
+- 浮动窗口用 `solid_panel_style`，不吃 `glass_alpha`，保证文字对比度。
+
+### 外部素材跟着插件走
+
+插件需要的图片、字体、贴图放在**自己的目录**里：`plugins/<id>/assets/`，
+目录内带 `.gdignore`，不进 PCK；运行时由 `FxResourceRoot` 按
+`res://plugins/<id>/assets/...` → `<exe>/plugins/<id>/assets/...` → `user://...` 解析。
+打包脚本把每个插件的 `assets/` 原样镜像到便携目录，因此「谁依赖的素材就在谁目录里」，
+删掉某个素材目录只会让对应功能降级，不会影响其它插件。
+
+已这样迁移的素材：`core.asset` 的 244 套 pixelfx、`core.text` 的 HarmonyOS 字体、
+`skin.maid-atelier` 的 12 张皮肤贴图。项目根目录不再有 `assets/`。
+
+### 停靠容器 / 渲染后端 / 节点弹窗
+
+- `FxDockArea` 既是默认实现也是契约：继承后覆盖 `_rebuild_bar()` 即可换标签外观，
+  面板常驻、`×` 关闭、`−` 折叠等语义自动继承。
+- `FxRenderService` 只做**编排**（何时画），`FxRenderBackend` 做**求帧**（怎么画）。
+  `cpu.standard`（每帧完整求值）与 `cpu.economy`（播放时关预览、相邻帧复用，
+  精确帧绝不跳帧）由两个插件提供，`render.backend` 设置切换。
+- `FxNodePicker` + `FxNodePickerBroker`：搜索式节点浮层在独立插件
+  `editor.node-picker`；停用后蓝图照常编辑，只是「添加节点」没有界面。
+
+---
+
+## 操作
+
+| 操作 | 快捷方式 |
+|---|---|
+| 播放 / 暂停 | `空格` |
+| 撤销 / 重做 | `Ctrl+Z` / `Ctrl+Shift+Z` |
+| 添加节点 / 删除选中节点 | 菜单「节点」 |
+| 复制 / 剪切 / 粘贴节点 | `Ctrl+C` / `Ctrl+X` / `Ctrl+V`（再按 `Ctrl+D` 直接复制一份） |
+| 导入图片 | 把文件拖进画布；`Shift` 拖 = 精灵表；或菜单「文件 → 导入纹理…」 |
+| 打包成子图 / 展开 | `Ctrl+G` / `Ctrl+Shift+G` |
+| 保存（未保存过 → 弹面板选格式与打包项） | `Ctrl+S` 与 `Ctrl+Shift+S` 等价 |
+| 保存（已保存过 → `Ctrl+S` 静默增量写 `.delta`） | `Ctrl+S` |
+| 另存为（默认 `<名字>_副本`） | `Ctrl+Shift+S` |
+| 面板分离 / 分离为独立窗口 / 重新停靠 | 面板 `⋯` 菜单、「窗口」菜单 |
+| 设置中心 | `Ctrl+,` |
+| 插件中心 | `Ctrl+Shift+P` |
+| 命令面板 | `Ctrl+Shift+O` |
+| 皮肤管理 | `Ctrl+Shift+K` |
+| 轮换皮肤 / 折叠底部 | `Ctrl+Shift+T` / `Ctrl+Shift+B` |
+| 切换界面语言 | `Ctrl+Shift+L` |
+| 画布缩放 / 平移 / 横向滚动 | 滚轮 / 中键拖动 / `Ctrl+滚轮` |
+
+轨道：拖动关键帧改时间，框选后整体拖动或 `Delete`，`Ctrl+A` 全选，`Esc` 清空；
+`Ctrl+C` 复制（有选中复制选中，没选中复制播放头这一帧，再没有就复制全部轨道），
+`Ctrl+V` 粘贴到播放头（按相对最早一帧的偏移落位，整段节奏不变形）；
+每行 `M`（静音）/ `S`（独奏）是纯视图状态，不进文档、不进撤销栈。
+轨道左上角的 `FPS` / `帧` / `循环` 直接编辑文档时间轴，回车或改数值即生效。
+
+### 文档标签（双击进入子图）
+
+画布上方有一排**浏览器式标签**：主干常驻且不可关闭（`◈`），双击带子图的节点就把
+子工程开成新标签（`▸`），改完关标签会自动写回文件。
+
+- **双击子图节点进去**，不用先找文件；已经开着就切过去，不会开第二个同名标签；
+- 标签上有 `•` 表示**内容改过还没存**；右键标签可以「保存 / 从磁盘重新载入 /
+  关闭这个 / 关闭其他 / 关闭全部子图标签」；
+- 切标签 = 换掉 `store` 装载的文档，所以时间轴、预览、文档属性这些跟着走的面板
+  自动同步；折叠、选中、视图缩放是「每份文档的」，切换时各自重置；
+- 在子图标签下 `Ctrl+S` 存的是**这张子图**，状态栏也跟着显示子图文件名——
+  不会把子图内容写进工程包。
+
+能不能下钻由节点的端口生成器决定（`port_provider == "subgraph"`），
+编辑器不认识任何具体类型 id：以后再有「把文档当节点」的类型，挂同一个 provider 就自动可进。
+
+### 添加节点面板（卡片墙）
+
+**只有画布空白处右键**才打开它；在节点上右键出的是节点菜单（见下）。
+菜单「节点 → 添加节点」、工具栏、或**从端口拖线到空白**也会打开（后者按源端口类型
+过滤候选，与连线校验同一张表，选定后自动补线）。面板不是目录树，是一面能一眼看懂
+「这个节点属于谁、长什么效果」的卡片墙：
+
+- **每张卡 = 一个节点**：缩略图 + 分类色点 + 插件归属 + `GPU` / `OUT` 标记；
+- **缩略图三级回退**：节点自带纹理（`icon`，可配 `icon_anim` 播动图）→ **真实渲染样张**
+  （面板现拼一条「棋盘 + 圆盘 → 目标节点」的迷你链跑一帧）→ 分类色块 + 分类字形。
+  所以图像类节点打开就能看到效果差异，纯数值/流程类老实回退成色块，不会假装有画面；
+- **右侧详情**：大图（动图 / 时间动画，画面 0.6s 不变就停）、名称、`id · 分类`、
+  分类/插件/GPU/每帧求值/输出节点标签、说明、端口表、参数前几项、添加按钮；
+- **分类 chip 行**：全部 / 最近 / 各分类，配合顶部搜索与**按插件过滤**下拉；
+- **排序**：搜索匹配度 → 有画面的优先 → 分类 → 名称，避免一打开全是控制流节点；
+- 缩略图懒加载，每帧最多补几张，详情优先——400+ 节点也不会卡住打开动作。
+
+面板是一张**可以搬走的浮层**（默认 800×500，比主工作区小一档）：
+
+- 拖标题（「添加节点」那行）就能移动，**双击标题回到居中**；
+- 右下角 `◢` 抓手上拖改大小，最小 540×352；卡片列数按宽度实时重算（1~6 列）；
+- 尺寸只在本次会话内记住（`_last_size`），不写配置——它是个随手用的浮层，不是布局。
+
+注意卡片墙用 `ScrollContainer` 时必须允许**横向滚动**：横向禁用时它会把内容的最小
+宽度传给父级，而卡片是 `GridContainer`，「列数」就会反过来把面板宽度钉死，拖不小。
+
+面板只读视图接口（`card_count()` / `card_has_image()` / `card_owner()` / `card_category()` /
+`selected_type()` / `active_chip()` / `set_chip()` / `panel_size()` / `panel_position()`）
+供测试与自动化断言，契约仍是 `FxNodePicker`（几何相关的 `panel_size` / `resize_panel` /
+`move_panel_to` / `dragging` 在基类里是空操作），换成别的实现不影响蓝图。
+
+### 右键菜单
+
+同一套「面板菜单」出现在三个地方：停靠标签右键、面板内容空白右键、标签末尾的 `⋯`——
+分离为浮动窗口 / 开成独立系统窗口 / 插件注入的功能 / 折叠停靠区 / 关闭。
+
+其余右键各管一段：
+
+| 位置 | 菜单 |
+|---|---|
+| 蓝图**节点**上 | 打开子图、复制 / 剪切 / 复制一份 / 粘贴到此处 / 删除、折叠展开、打包成子图 / 展开子图、全选、适应视图（灰掉的项说明当前不适用，例如普通节点的「打开子图」） |
+| 蓝图**空白**处 | 添加节点面板 |
+| 蓝图**标签** | 切换 / 保存 / 从磁盘重载 / 关闭 |
+| **浮动窗口标题栏** | 重新停靠 / 最大化还原 / 关闭 |
+| **主窗口标题栏** | 最小化 / 最大化还原 / 总在最前 / 关闭（自绘标题栏把系统菜单也补回来了） |
+
+节点菜单的条目是一张**声明式表**（`node_menu_items(ids)`），测试直接断言这张表，
+不用去点弹窗；右键未选中的节点会先把它选中，右键已选中的节点则对整批生效。
+
+### 节点折叠
+
+带图像输出的节点右下角有 `▾ / ▸`：**只收起下面那块预览**，参数行与端口行一律不动，
+节点高度跟着缩回去（展开时长回用户拖过的高度）。不隐藏参数行是有原因的——
+GraphNode 的插槽按可见子节点编号，隐藏中间某一行会让端口索引错位（曾经的
+`get_output_port_position: index out of bounds`）。
+
+节点右下角还可以直接**拖动改尺寸**，尺寸按节点记住，重建后恢复；预览行会一起变高。
+
+### 批量复制 / 剪切 / 粘贴
+
+框选或 `Ctrl+点选` 多个节点后 `Ctrl+C/X/V/D` 作用于整个选区，节点之间的连线一起带走
+（跨选区的连线不带）。剪贴板是一段**自描述 JSON**，写进系统剪贴板：
+
+```json
+{
+  "schema": "phantom.graph.clipboard", "version": 1, "kind": "graph_nodes",
+  "origin": [120, 80], "canvas": {"width": 128, "height": 128},
+  "nodes": [{"id": "blur", "type": "image.blur", "pos": [120, 80], "params": {},
+             "collapsed": false, "size": [304, 235]}],
+  "edges": [{"from": "blur", "from_port": "image", "to": "out", "to_port": "layer_0"}]
+}
+```
+
+因此可以：贴到**另一个文档 / 另一个窗口**（同 id 会换新 id、连线按 id 映射重建）、
+贴到外部编辑器里改参数再贴回来、或者手写一段 JSON 直接贴进画布。
+解析端容错：只认带 `schema` 的包，或裸的 `{"nodes": [...], "edges": [...]}`，
+包前后有多余文字也能扒出来；系统剪贴板不可用时回落到进程内副本。
+粘贴落点是鼠标位置（鼠标不在画布上就贴到视图中心），连续粘贴按 28px 递进。
+
+粘贴后的选中集是**刚贴出来的那批**，不会带上复制之前的旧选区。做法是把期望的
+选中集先记在 `_pending_multi_select` 上，等视图重建完成（重建会覆盖 `selected`）
+再统一置位，并先把所有视图的 `selected` 抹平——`selected = true` 只会加不会减，
+漏了这一步旧选区就会残留，看起来就像「自动选中了复制前那批的第一个」。
+
+---
+
+### 待评估：反射与「节点式编程」
+
+有人问过能不能「反射 GDScript 的类 / 变量 / 函数」，以后拿它做内置插件开发工具、
+代码补全，甚至把任意类变成节点。结论分三层：
+
+1. **不需要原生库**。GDScript 自带反射：`ClassDB.get_class_list()`、
+   `ClassDB.class_get_method_list / property_list / signal_list`、
+   `Script.get_script_method_list / get_script_constant_map`，连枚举常量都能拿到。
+   所以「列举当前注册的所有类和函数」这件事本身是几百行 GDScript，不用碰 C++。
+2. **只读索引值得做，但不是现在**。真要做，形态应该是：启动后扫一遍类与项目内脚本，
+   压成 `user://cache/class_index.json`（类 → 方法名/参数/返回类型/信号），
+   供补全与「插入节点」搜索用。它是**只读**的，出错也不会影响工程，风险可控。
+3. **全自动「类 → 节点」不建议做**。本工程的端口只有 number / vec2 / image /
+   image_object / color / bool / text / exec 这几种纯数据类型，而 GDScript 类的方法
+   到处是 `Object` / `Resource` / `Node` / 可变状态。硬映射会得到一堆
+   「什么都没法接」的节点，还会把生命周期、线程、UI 归属这些坑全部引进图里。
+   要做就做**白名单**：由插件显式声明「这个类的这几个方法是节点」，也就是现在
+   `native_ops()` / 节点 JSON 的做法——只是可以再配一个代码生成器，把声明写得省力些。
+
+一句话：先把 `.gdshader`、C++ 算子这类「能力扩展」做扎实；类索引作为开发工具
+可以随时补，节点式反射先不做，避免为了通用性牺牲图的可预测性。
+
+## 测试
+
+| 套件 | 覆盖 |
+|---|---|
+| `test_kernel` | 上下文 / fiber / 作用域 / 文档存储 / 撤销 |
+| `test_graph_core` | 图文档、端口、求值、缓存 |
+| `test_editor_ui` | 画布、节点视图、参数行、颜色关键帧、驱动参数读数、宽高读数、弹窗时机与生命周期 |
+| `test_plugins` | 账本、供给键、契约违规、原生算子桥（窄 ABI / env / 线程闸门 / 缺库回落）、着色器节点与 uniform 解析 |
+| `test_pixelfx` | 素材包、图集切帧 |
+| `test_text` | 外部字体栅格 |
+| `test_math_flow` | 数学算子 |
+| `test_plugin_lifecycle` | 启停 / 依赖级联 / 逆操作 |
+| `test_shell_ui` | 外壳、停靠、皮肤、独立系统窗口分离 |
+| `test_interactions` | 节点弹窗、拖线、轨道、配方对话框 |
+| `test_platform` | 设置、能力、面板分离、贴图、i18n、批量剪贴板、拖拽导入、精灵表切分 |
+| `test_io` | 启动进度与错误报告、文档保存/加载、四类导出（菜单与节点两套）、子图嵌套、随包示例工程校验、图像对象、后台线程求帧、打包解包 |
+| `test_project` | 工程包 ZIP/JSON 往返、版本兼容、依赖检查与修复、增量保存、定时保存、保存/欢迎/缺依赖面板 |
+| `test_architecture` | 源码零耦合检查、代理降级 |
+
+当前：**14 套 / 941 条断言全绿**（含启动报错回归、颜色关键帧、驱动参数读数、
+弹窗生命周期、后台线程求帧与 GPU 泵桥接、原生算子桥、图像对象、
+着色器节点、节点视觉三级回退、卡片墙面板、文档标签与子图下钻、右键菜单、插件中心左右互换、
+工程保存进度与状态栏保存提示、独立系统窗口、示例工程不漂移、基座零领域符号、
+紧密帧缓存 / 并行预渲染 / LRU 清理 / 纯内存模式、批量像素循环、结构索引跨帧复用、
+节点组件预览冻结、静默时间推进、播放帧号连续与零未命中、GPU 工作线程桥与安全回落）。
+
+分套数量：kernel 19 / graph_core 51 / editor_ui 181 / plugins 87 / pixelfx 10 /
+text 7 / math_flow 7 / plugin_lifecycle 29 / shell_ui 47 / interactions 49 /
+platform 193 / architecture 58 / io 131 / project 72。
+
+图形模式另有探针（不在无头回归里，因为它们必须真的建出子窗口 / GPU 设备 / 渲染循环）：
+
+```bash
+# 欢迎页 → 加载工程：确认不再出现 _sub_window_grab_focus
+godot --path . --script res://tests/_probe_popup.gd
+# 确定 / 取消 / Esc / 关闭按钮：确认对话框都只销毁不隐藏
+godot --path . --script res://tests/_probe_oneshot.gd
+# 真实外壳里的欢迎页确定、另存为取消/确定
+godot --path . --script res://tests/_probe_shell_popups.gd
+# GPU 通道（必须真显卡）：设备信息 + identity/锐化公式正确性
+godot --path . --script res://tests/_probe_gpu.gd
+# compute 算子与 CPU 逐字节对齐
+godot --path . --script res://tests/_probe_gpu_compute.gd
+# 真实外壳切到 GPU 后端后出图
+godot --path . --script res://tests/_probe_gpu_shell.gd
+# 性能基准（CPU vs GPU，256²）
+godot --path . --script res://tests/bench_gpu_ops.gd
+# 真实工程 CPU 画像：103 节点单帧耗时、算子分布、指纹/落盘成本
+godot --headless --path . --script res://tests/_profile_demo.gd
+# 真实工程播放验收（必须带显示）：预渲染延迟、帧号连续、缓存命中、UI 帧时间、CPU/GPU 两段
+godot --path . --script res://tests/_probe_playback.gd
+# 真实工程单帧成本：关/开 GPU 算子对比
+godot --path . --script res://tests/_probe_gpu_demo.gd
+# 工作线程里的 GPU 算子桥：与 CPU 逐字节对齐
+godot --path . --script res://tests/_probe_gpu_worker.gd
+```
+
+---
+
+## 打包
+
+```bash
+# 1. 导出（all_resources + include_filter 已配好）
+godot --headless --path . --export-release "Windows Desktop"
+
+# 2. 生成便携目录：镜像各插件自带 assets/、建外部插件目录、写说明
+godot --headless --path . --script res://tools/package_windows.gd -- ../dist
+
+# 3. 自检
+cd ../dist && ./幻像工坊.exe --headless -- --fx-diagnose --fx-run=portable.hello
+```
+
+`dist/` 结构：
+
+```
+幻像工坊.exe + 幻像工坊.pck      内置插件已进 PCK
+plugins/                         外部插件目录，放进去即扩展
+plugins/core.asset/assets/       pixelfx 素材包（随插件，可删）
+plugins/core.text/assets/        字体（随插件，可删）
+plugins/skin.maid-atelier/assets/ 皮肤贴图包（随插件，可删）
+说明.txt
+```
+
+实测（Godot 4.7.2 / Windows）：`plugins/` 下 39 个插件全部加载，
+77 个节点/算子、19 种参数控件、4 个导出器、5 个面板、5 个窗口、42 条命令、9 个菜单、
+32 项设置、3 个渲染后端（含实验性 GPU）、59 个语言包贡献（每个插件自带译文）、
+4 套皮肤与 1 种自定义停靠容器、12 张皮肤贴图从插件目录读出、2 种拖拽导入（图片 / `.gdshader`）。
+
+---
+
+## 第三方素材与许可
+
+`plugins/skin.maid-atelier/assets/` 的美术资源来自
+[`smalltailqwq/dsh-client-ui-skin-maid-atelier`](https://github.com/smalltailqwq)，
+采用 **CC BY-NC-SA 4.0**（署名 / 非商业性使用 / 相同方式共享）：
+
+- 完整创作链与署名：`plugins/skin.maid-atelier/assets/NOTICE.md`
+- 许可正文：`plugins/skin.maid-atelier/assets/LICENSE-ARTWORK.txt`
+- 语义化文件映射：`plugins/skin.maid-atelier/assets/manifest.json`
+
+这些图片带 `.gdignore`，**不打进 PCK**，只作为可卸载的外部资源随便携目录提供。
+**商业发行前必须删除整个目录**，皮肤会自动回落到纯色 + 自绘几何花边。

@@ -1,0 +1,15 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"当前帧 PNG…": "Current frame PNG…",
+		"导出当前帧 PNG…": "Export current frame PNG…",
+		"导出 PNG 序列帧…": "Export PNG sequence…",
+		"PNG 序列帧…": "PNG sequence…",
+		"导出精灵表…": "Export sprite sheet…",
+		"精灵表 PNG + JSON…": "Sprite sheet PNG + JSON…",
+		"导出 Godot 粒子发生器…": "Export Godot GPU particles…",
+		"Godot 粒子发生器 (.tscn)…": "Godot GPU particles (.tscn)…",
+		"导出": "Export",
+		"PNG、序列帧、精灵表与 Godot 粒子": "PNG, image sequence, sprite sheet and Godot particles"
+	}
+}

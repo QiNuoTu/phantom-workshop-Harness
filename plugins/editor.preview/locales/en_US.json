@@ -1,0 +1,8 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"预览": "Preview",
+		"输出预览": "Output preview",
+		"显示当前帧图像、尺寸与耗时": "Shows the current frame, its size and render time"
+	}
+}

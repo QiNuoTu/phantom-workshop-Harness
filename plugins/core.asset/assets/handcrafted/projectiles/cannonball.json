@@ -1,0 +1,2569 @@
+{
+ "frames": [
+  {
+   "filename": "cannonball 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 1",
+   "frame": {
+    "x": 208,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 2",
+   "frame": {
+    "x": 416,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 3",
+   "frame": {
+    "x": 624,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 4",
+   "frame": {
+    "x": 832,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 5",
+   "frame": {
+    "x": 1040,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 6",
+   "frame": {
+    "x": 1248,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 7",
+   "frame": {
+    "x": 1456,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 8",
+   "frame": {
+    "x": 1664,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 9",
+   "frame": {
+    "x": 0,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 10",
+   "frame": {
+    "x": 208,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 11",
+   "frame": {
+    "x": 416,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 12",
+   "frame": {
+    "x": 624,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 13",
+   "frame": {
+    "x": 832,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 14",
+   "frame": {
+    "x": 1040,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 15",
+   "frame": {
+    "x": 1248,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 16",
+   "frame": {
+    "x": 1456,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 17",
+   "frame": {
+    "x": 1664,
+    "y": 116,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 18",
+   "frame": {
+    "x": 0,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 19",
+   "frame": {
+    "x": 208,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 20",
+   "frame": {
+    "x": 416,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 21",
+   "frame": {
+    "x": 624,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 22",
+   "frame": {
+    "x": 832,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 23",
+   "frame": {
+    "x": 1040,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 24",
+   "frame": {
+    "x": 1248,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 25",
+   "frame": {
+    "x": 1456,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 26",
+   "frame": {
+    "x": 1664,
+    "y": 232,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 27",
+   "frame": {
+    "x": 0,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 28",
+   "frame": {
+    "x": 208,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 29",
+   "frame": {
+    "x": 416,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 30",
+   "frame": {
+    "x": 624,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 31",
+   "frame": {
+    "x": 832,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 32",
+   "frame": {
+    "x": 1040,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 33",
+   "frame": {
+    "x": 1248,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 34",
+   "frame": {
+    "x": 1456,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 35",
+   "frame": {
+    "x": 1664,
+    "y": 348,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 36",
+   "frame": {
+    "x": 0,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 37",
+   "frame": {
+    "x": 208,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 38",
+   "frame": {
+    "x": 416,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 39",
+   "frame": {
+    "x": 624,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 40",
+   "frame": {
+    "x": 832,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 41",
+   "frame": {
+    "x": 1040,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 42",
+   "frame": {
+    "x": 1248,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 43",
+   "frame": {
+    "x": 1456,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 44",
+   "frame": {
+    "x": 1664,
+    "y": 464,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 45",
+   "frame": {
+    "x": 0,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 46",
+   "frame": {
+    "x": 208,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 47",
+   "frame": {
+    "x": 416,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 48",
+   "frame": {
+    "x": 624,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 49",
+   "frame": {
+    "x": 832,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 50",
+   "frame": {
+    "x": 1040,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 51",
+   "frame": {
+    "x": 1248,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 52",
+   "frame": {
+    "x": 1456,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 53",
+   "frame": {
+    "x": 1664,
+    "y": 580,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 54",
+   "frame": {
+    "x": 0,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 55",
+   "frame": {
+    "x": 208,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 56",
+   "frame": {
+    "x": 416,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 57",
+   "frame": {
+    "x": 624,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 58",
+   "frame": {
+    "x": 832,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 59",
+   "frame": {
+    "x": 1040,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 60",
+   "frame": {
+    "x": 1248,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 61",
+   "frame": {
+    "x": 1456,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 62",
+   "frame": {
+    "x": 1664,
+    "y": 696,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 63",
+   "frame": {
+    "x": 0,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 64",
+   "frame": {
+    "x": 208,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 65",
+   "frame": {
+    "x": 416,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 66",
+   "frame": {
+    "x": 624,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 67",
+   "frame": {
+    "x": 832,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 68",
+   "frame": {
+    "x": 1040,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 69",
+   "frame": {
+    "x": 1248,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 70",
+   "frame": {
+    "x": 1456,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 71",
+   "frame": {
+    "x": 1664,
+    "y": 812,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 72",
+   "frame": {
+    "x": 0,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 73",
+   "frame": {
+    "x": 208,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 74",
+   "frame": {
+    "x": 416,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 75",
+   "frame": {
+    "x": 624,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 76",
+   "frame": {
+    "x": 832,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 77",
+   "frame": {
+    "x": 1040,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 78",
+   "frame": {
+    "x": 1248,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 79",
+   "frame": {
+    "x": 1456,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 80",
+   "frame": {
+    "x": 1664,
+    "y": 928,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 81",
+   "frame": {
+    "x": 0,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 82",
+   "frame": {
+    "x": 208,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 83",
+   "frame": {
+    "x": 416,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 84",
+   "frame": {
+    "x": 624,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 85",
+   "frame": {
+    "x": 832,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 86",
+   "frame": {
+    "x": 1040,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 87",
+   "frame": {
+    "x": 1248,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 88",
+   "frame": {
+    "x": 1456,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 89",
+   "frame": {
+    "x": 1664,
+    "y": 1044,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 90",
+   "frame": {
+    "x": 0,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 91",
+   "frame": {
+    "x": 208,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 92",
+   "frame": {
+    "x": 416,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 93",
+   "frame": {
+    "x": 624,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 94",
+   "frame": {
+    "x": 832,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 95",
+   "frame": {
+    "x": 1040,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 96",
+   "frame": {
+    "x": 1248,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 97",
+   "frame": {
+    "x": 1456,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 98",
+   "frame": {
+    "x": 1664,
+    "y": 1160,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 99",
+   "frame": {
+    "x": 0,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 100",
+   "frame": {
+    "x": 208,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 101",
+   "frame": {
+    "x": 416,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 102",
+   "frame": {
+    "x": 624,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 103",
+   "frame": {
+    "x": 832,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 104",
+   "frame": {
+    "x": 1040,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 105",
+   "frame": {
+    "x": 1248,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 106",
+   "frame": {
+    "x": 1456,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 107",
+   "frame": {
+    "x": 1664,
+    "y": 1276,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 108",
+   "frame": {
+    "x": 0,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 109",
+   "frame": {
+    "x": 208,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 110",
+   "frame": {
+    "x": 416,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 111",
+   "frame": {
+    "x": 624,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 112",
+   "frame": {
+    "x": 832,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 113",
+   "frame": {
+    "x": 1040,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "cannonball 114",
+   "frame": {
+    "x": 1248,
+    "y": 1392,
+    "w": 208,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 116
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "cannonball.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1872,
+   "h": 1508
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "cannonball",
+    "from": 0,
+    "to": 114,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/cannonball",
+   "name": "Cannon shot",
+   "fps": 30,
+   "loop": false,
+   "frames": 115,
+   "frameSize": [
+    208,
+    116
+   ],
+   "pivot": [
+    48,
+    102
+   ],
+   "columns": 9
+  }
+ }
+}

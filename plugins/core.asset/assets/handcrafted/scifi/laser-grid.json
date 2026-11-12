@@ -1,0 +1,2019 @@
+{
+ "frames": [
+  {
+   "filename": "laser-grid 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 1",
+   "frame": {
+    "x": 128,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 2",
+   "frame": {
+    "x": 256,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 3",
+   "frame": {
+    "x": 384,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 4",
+   "frame": {
+    "x": 512,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 5",
+   "frame": {
+    "x": 640,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 6",
+   "frame": {
+    "x": 768,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 7",
+   "frame": {
+    "x": 896,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 8",
+   "frame": {
+    "x": 0,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 9",
+   "frame": {
+    "x": 128,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 10",
+   "frame": {
+    "x": 256,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 11",
+   "frame": {
+    "x": 384,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 12",
+   "frame": {
+    "x": 512,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 13",
+   "frame": {
+    "x": 640,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 14",
+   "frame": {
+    "x": 768,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 15",
+   "frame": {
+    "x": 896,
+    "y": 84,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 16",
+   "frame": {
+    "x": 0,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 17",
+   "frame": {
+    "x": 128,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 18",
+   "frame": {
+    "x": 256,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 19",
+   "frame": {
+    "x": 384,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 20",
+   "frame": {
+    "x": 512,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 21",
+   "frame": {
+    "x": 640,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 22",
+   "frame": {
+    "x": 768,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 23",
+   "frame": {
+    "x": 896,
+    "y": 168,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 24",
+   "frame": {
+    "x": 0,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 25",
+   "frame": {
+    "x": 128,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 26",
+   "frame": {
+    "x": 256,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 27",
+   "frame": {
+    "x": 384,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 28",
+   "frame": {
+    "x": 512,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 29",
+   "frame": {
+    "x": 640,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 30",
+   "frame": {
+    "x": 768,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 31",
+   "frame": {
+    "x": 896,
+    "y": 252,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 32",
+   "frame": {
+    "x": 0,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 33",
+   "frame": {
+    "x": 128,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 34",
+   "frame": {
+    "x": 256,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 35",
+   "frame": {
+    "x": 384,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 36",
+   "frame": {
+    "x": 512,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 37",
+   "frame": {
+    "x": 640,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 38",
+   "frame": {
+    "x": 768,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 39",
+   "frame": {
+    "x": 896,
+    "y": 336,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 40",
+   "frame": {
+    "x": 0,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 41",
+   "frame": {
+    "x": 128,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 42",
+   "frame": {
+    "x": 256,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 43",
+   "frame": {
+    "x": 384,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 44",
+   "frame": {
+    "x": 512,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 45",
+   "frame": {
+    "x": 640,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 46",
+   "frame": {
+    "x": 768,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 47",
+   "frame": {
+    "x": 896,
+    "y": 420,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 48",
+   "frame": {
+    "x": 0,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 49",
+   "frame": {
+    "x": 128,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 50",
+   "frame": {
+    "x": 256,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 51",
+   "frame": {
+    "x": 384,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 52",
+   "frame": {
+    "x": 512,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 53",
+   "frame": {
+    "x": 640,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 54",
+   "frame": {
+    "x": 768,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 55",
+   "frame": {
+    "x": 896,
+    "y": 504,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 56",
+   "frame": {
+    "x": 0,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 57",
+   "frame": {
+    "x": 128,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 58",
+   "frame": {
+    "x": 256,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 59",
+   "frame": {
+    "x": 384,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 60",
+   "frame": {
+    "x": 512,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 61",
+   "frame": {
+    "x": 640,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 62",
+   "frame": {
+    "x": 768,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 63",
+   "frame": {
+    "x": 896,
+    "y": 588,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 64",
+   "frame": {
+    "x": 0,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 65",
+   "frame": {
+    "x": 128,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 66",
+   "frame": {
+    "x": 256,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 67",
+   "frame": {
+    "x": 384,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 68",
+   "frame": {
+    "x": 512,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 69",
+   "frame": {
+    "x": 640,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 70",
+   "frame": {
+    "x": 768,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 71",
+   "frame": {
+    "x": 896,
+    "y": 672,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 72",
+   "frame": {
+    "x": 0,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 73",
+   "frame": {
+    "x": 128,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 74",
+   "frame": {
+    "x": 256,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 75",
+   "frame": {
+    "x": 384,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 76",
+   "frame": {
+    "x": 512,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 77",
+   "frame": {
+    "x": 640,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 78",
+   "frame": {
+    "x": 768,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 79",
+   "frame": {
+    "x": 896,
+    "y": 756,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 80",
+   "frame": {
+    "x": 0,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 81",
+   "frame": {
+    "x": 128,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 82",
+   "frame": {
+    "x": 256,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 83",
+   "frame": {
+    "x": 384,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 84",
+   "frame": {
+    "x": 512,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 85",
+   "frame": {
+    "x": 640,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 86",
+   "frame": {
+    "x": 768,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 87",
+   "frame": {
+    "x": 896,
+    "y": 840,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 88",
+   "frame": {
+    "x": 0,
+    "y": 924,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "laser-grid 89",
+   "frame": {
+    "x": 128,
+    "y": 924,
+    "w": 128,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 84
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "laser-grid.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1024,
+   "h": 1008
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "laser-grid",
+    "from": 0,
+    "to": 89,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "scifi/laser-grid",
+   "name": "Laser grid",
+   "fps": 30,
+   "loop": true,
+   "frames": 90,
+   "frameSize": [
+    128,
+    84
+   ],
+   "pivot": [
+    64,
+    76
+   ],
+   "columns": 8
+  }
+ }
+}

@@ -1,0 +1,107 @@
+{
+	"category": "输出",
+	"nodes": [
+		{
+			"id": "output.final",
+			"label": "最终输出",
+			"desc": "背景 + 图层堆栈（从底到顶）。图层端口随 layers 数组动态生成，每层可设混合模式、透明度与位移。",
+			"op": "output.final",
+			"is_output": true,
+			"port_provider": "output_layers",
+			"inputs": [
+				{
+					"id": "background",
+					"label": "背景图",
+					"type": "image"
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "合成",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "layers",
+					"label": "图层",
+					"kind": "layers",
+					"default": [
+						{
+							"name": "图层 1",
+							"blend": "normal",
+							"opacity": 1.0,
+							"offset": [
+								0,
+								0
+							],
+							"visible": true
+						}
+					]
+				},
+				{
+					"id": "background_color",
+					"label": "背景色",
+					"kind": "color",
+					"default": "#00000000"
+				},
+				{
+					"id": "canvas_width",
+					"label": "画布宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"unit": "px",
+					"hint": "0 = 跟随图设置；编辑框显示当前实际画布宽",
+					"display_fallback": "canvas.width"
+				},
+				{
+					"id": "canvas_height",
+					"label": "画布高",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"unit": "px",
+					"hint": "0 = 跟随图设置；编辑框显示当前实际画布高",
+					"display_fallback": "canvas.height"
+				}
+			]
+		},
+		{
+			"id": "output.preview",
+			"label": "输出预览",
+			"desc": "把任意图像接到这里，节点内实时预览这一帧；不参与最终合成，可以放在图的旁支。",
+			"op": "output.preview",
+			"evaluate_always": true,
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "直通",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "note",
+					"label": "备注",
+					"kind": "string",
+					"default": "",
+					"hint": "只作为节点标题的补充说明"
+				}
+			]
+		}
+	]
+}

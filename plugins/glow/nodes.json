@@ -1,0 +1,17 @@
+{
+	"category": "图像/处理",
+	"nodes": [
+		{
+			"id": "image.glow",
+			"label": "辉光",
+			"desc": "示例插件节点：降采样模糊后用滤色叠加，全部走引擎内建 Image 方法。",
+			"op": "image.glow",
+			"inputs": [{"id": "image", "label": "图像", "type": "image"}],
+			"outputs": [{"id": "image", "label": "图像", "type": "image"}],
+			"params": [
+				{"id": "radius", "label": "半径", "kind": "int", "default": 4, "min": 1, "max": 32, "step": 1, "bindable": true},
+				{"id": "amount", "label": "强度", "kind": "float", "default": 0.6, "min": 0.0, "max": 1.0, "step": 0.01, "bindable": true}
+			]
+		}
+	]
+}

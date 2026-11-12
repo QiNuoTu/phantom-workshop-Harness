@@ -1,0 +1,15 @@
+{
+	"id": "core.control",
+	"name": "控制流",
+	"version": "1.0",
+	"description": "分支、循环、序列、索引与累积，组织节点的执行顺序",
+	"script": "plugin.gd",
+	"inject": [
+		"core.catalog",
+		"plugin.core.pixels",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.control": "1.0"
+	}
+}

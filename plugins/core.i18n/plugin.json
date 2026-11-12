@@ -1,0 +1,16 @@
+{
+	"id": "core.i18n",
+	"name": "多语言支持",
+	"version": "1.0",
+	"description": "界面多语言；每个插件可自带译文，支持运行时切换",
+	"script": "plugin.gd",
+	"icon": "文",
+	"color": "#7ee787",
+	"inject": [
+		"core.registry",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.i18n": "1.0"
+	}
+}

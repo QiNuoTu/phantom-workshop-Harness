@@ -1,0 +1,284 @@
+{
+	"category": "图像/调色",
+	"nodes": [
+		{
+			"id": "image.hue",
+			"label": "色相 / 饱和",
+			"desc": "HSV 空间的色相旋转、饱和度与明度微调。",
+			"op": "image.hue",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "hue",
+					"label": "色相",
+					"kind": "float",
+					"default": 0.0,
+					"min": -180.0,
+					"max": 180.0,
+					"step": 1.0,
+					"bindable": true
+				},
+				{
+					"id": "saturation",
+					"label": "饱和",
+					"kind": "float",
+					"default": 0.0,
+					"min": -1.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "value",
+					"label": "明度",
+					"kind": "float",
+					"default": 0.0,
+					"min": -1.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.posterize",
+			"label": "色阶量化",
+			"desc": "把颜色量化成有限级数，做像素风 / 赛璐璐。",
+			"op": "image.posterize",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "levels",
+					"label": "级数",
+					"kind": "int",
+					"default": 8,
+					"min": 2,
+					"max": 32,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "dither",
+					"label": "有序抖动",
+					"kind": "bool",
+					"default": false
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.ramp",
+			"label": "渐变映射",
+			"desc": "按亮度把画面映射到阴影 / 中间 / 高光三色。",
+			"op": "image.ramp",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "shadow",
+					"label": "阴影",
+					"kind": "color",
+					"default": "#101a30",
+					"bindable": true
+				},
+				{
+					"id": "mid",
+					"label": "中间调",
+					"kind": "color",
+					"default": "#4cc2ff",
+					"bindable": true
+				},
+				{
+					"id": "highlight",
+					"label": "高光",
+					"kind": "color",
+					"default": "#ffe6a7",
+					"bindable": true
+				},
+				{
+					"id": "midpoint",
+					"label": "中点",
+					"kind": "float",
+					"default": 0.5,
+					"min": 0.05,
+					"max": 0.95,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.duotone",
+			"label": "双色调",
+			"desc": "亮度插值到两种颜色之间，保留明暗结构。",
+			"op": "image.duotone",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "dark",
+					"label": "暗色",
+					"kind": "color",
+					"default": "#132038",
+					"bindable": true
+				},
+				{
+					"id": "light",
+					"label": "亮色",
+					"kind": "color",
+					"default": "#ffb454",
+					"bindable": true
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "gamma",
+					"label": "伽马",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.2,
+					"max": 4.0,
+					"step": 0.05,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.chroma_key",
+			"label": "色键抠像",
+			"desc": "按颜色距离生成 alpha，可选去溢色。",
+			"op": "image.chroma_key",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "key",
+					"label": "键色",
+					"kind": "color",
+					"default": "#00ff00",
+					"bindable": true
+				},
+				{
+					"id": "tolerance",
+					"label": "容差",
+					"kind": "float",
+					"default": 0.25,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "feather",
+					"label": "羽化",
+					"kind": "float",
+					"default": 0.08,
+					"min": 0.0,
+					"max": 0.5,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "despill",
+					"label": "去溢色",
+					"kind": "bool",
+					"default": true
+				}
+			]
+		}
+	]
+}

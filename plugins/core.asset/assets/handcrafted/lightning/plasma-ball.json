@@ -1,0 +1,2019 @@
+{
+ "frames": [
+  {
+   "filename": "plasma-ball 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 1",
+   "frame": {
+    "x": 112,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 2",
+   "frame": {
+    "x": 224,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 3",
+   "frame": {
+    "x": 336,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 4",
+   "frame": {
+    "x": 448,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 5",
+   "frame": {
+    "x": 560,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 6",
+   "frame": {
+    "x": 672,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 7",
+   "frame": {
+    "x": 784,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 8",
+   "frame": {
+    "x": 896,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 9",
+   "frame": {
+    "x": 1008,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 10",
+   "frame": {
+    "x": 0,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 11",
+   "frame": {
+    "x": 112,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 12",
+   "frame": {
+    "x": 224,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 13",
+   "frame": {
+    "x": 336,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 14",
+   "frame": {
+    "x": 448,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 15",
+   "frame": {
+    "x": 560,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 16",
+   "frame": {
+    "x": 672,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 17",
+   "frame": {
+    "x": 784,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 18",
+   "frame": {
+    "x": 896,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 19",
+   "frame": {
+    "x": 1008,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 20",
+   "frame": {
+    "x": 0,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 21",
+   "frame": {
+    "x": 112,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 22",
+   "frame": {
+    "x": 224,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 23",
+   "frame": {
+    "x": 336,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 24",
+   "frame": {
+    "x": 448,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 25",
+   "frame": {
+    "x": 560,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 26",
+   "frame": {
+    "x": 672,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 27",
+   "frame": {
+    "x": 784,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 28",
+   "frame": {
+    "x": 896,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 29",
+   "frame": {
+    "x": 1008,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 30",
+   "frame": {
+    "x": 0,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 31",
+   "frame": {
+    "x": 112,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 32",
+   "frame": {
+    "x": 224,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 33",
+   "frame": {
+    "x": 336,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 34",
+   "frame": {
+    "x": 448,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 35",
+   "frame": {
+    "x": 560,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 36",
+   "frame": {
+    "x": 672,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 37",
+   "frame": {
+    "x": 784,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 38",
+   "frame": {
+    "x": 896,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 39",
+   "frame": {
+    "x": 1008,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 40",
+   "frame": {
+    "x": 0,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 41",
+   "frame": {
+    "x": 112,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 42",
+   "frame": {
+    "x": 224,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 43",
+   "frame": {
+    "x": 336,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 44",
+   "frame": {
+    "x": 448,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 45",
+   "frame": {
+    "x": 560,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 46",
+   "frame": {
+    "x": 672,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 47",
+   "frame": {
+    "x": 784,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 48",
+   "frame": {
+    "x": 896,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 49",
+   "frame": {
+    "x": 1008,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 50",
+   "frame": {
+    "x": 0,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 51",
+   "frame": {
+    "x": 112,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 52",
+   "frame": {
+    "x": 224,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 53",
+   "frame": {
+    "x": 336,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 54",
+   "frame": {
+    "x": 448,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 55",
+   "frame": {
+    "x": 560,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 56",
+   "frame": {
+    "x": 672,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 57",
+   "frame": {
+    "x": 784,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 58",
+   "frame": {
+    "x": 896,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 59",
+   "frame": {
+    "x": 1008,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 60",
+   "frame": {
+    "x": 0,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 61",
+   "frame": {
+    "x": 112,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 62",
+   "frame": {
+    "x": 224,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 63",
+   "frame": {
+    "x": 336,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 64",
+   "frame": {
+    "x": 448,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 65",
+   "frame": {
+    "x": 560,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 66",
+   "frame": {
+    "x": 672,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 67",
+   "frame": {
+    "x": 784,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 68",
+   "frame": {
+    "x": 896,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 69",
+   "frame": {
+    "x": 1008,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 70",
+   "frame": {
+    "x": 0,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 71",
+   "frame": {
+    "x": 112,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 72",
+   "frame": {
+    "x": 224,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 73",
+   "frame": {
+    "x": 336,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 74",
+   "frame": {
+    "x": 448,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 75",
+   "frame": {
+    "x": 560,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 76",
+   "frame": {
+    "x": 672,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 77",
+   "frame": {
+    "x": 784,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 78",
+   "frame": {
+    "x": 896,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 79",
+   "frame": {
+    "x": 1008,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 80",
+   "frame": {
+    "x": 0,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 81",
+   "frame": {
+    "x": 112,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 82",
+   "frame": {
+    "x": 224,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 83",
+   "frame": {
+    "x": 336,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 84",
+   "frame": {
+    "x": 448,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 85",
+   "frame": {
+    "x": 560,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 86",
+   "frame": {
+    "x": 672,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 87",
+   "frame": {
+    "x": 784,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 88",
+   "frame": {
+    "x": 896,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-ball 89",
+   "frame": {
+    "x": 1008,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "plasma-ball.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1120,
+   "h": 936
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "plasma-ball",
+    "from": 0,
+    "to": 89,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "lightning/plasma-ball",
+   "name": "Plasma ball",
+   "fps": 30,
+   "loop": true,
+   "frames": 90,
+   "frameSize": [
+    112,
+    104
+   ],
+   "pivot": [
+    56,
+    96
+   ],
+   "columns": 10
+  }
+ }
+}

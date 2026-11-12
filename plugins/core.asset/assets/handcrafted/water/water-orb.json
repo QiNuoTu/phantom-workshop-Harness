@@ -1,0 +1,2019 @@
+{
+ "frames": [
+  {
+   "filename": "water-orb 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 1",
+   "frame": {
+    "x": 100,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 2",
+   "frame": {
+    "x": 200,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 3",
+   "frame": {
+    "x": 300,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 4",
+   "frame": {
+    "x": 400,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 5",
+   "frame": {
+    "x": 500,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 6",
+   "frame": {
+    "x": 600,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 7",
+   "frame": {
+    "x": 700,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 8",
+   "frame": {
+    "x": 800,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 9",
+   "frame": {
+    "x": 900,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 10",
+   "frame": {
+    "x": 0,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 11",
+   "frame": {
+    "x": 100,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 12",
+   "frame": {
+    "x": 200,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 13",
+   "frame": {
+    "x": 300,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 14",
+   "frame": {
+    "x": 400,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 15",
+   "frame": {
+    "x": 500,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 16",
+   "frame": {
+    "x": 600,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 17",
+   "frame": {
+    "x": 700,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 18",
+   "frame": {
+    "x": 800,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 19",
+   "frame": {
+    "x": 900,
+    "y": 108,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 20",
+   "frame": {
+    "x": 0,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 21",
+   "frame": {
+    "x": 100,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 22",
+   "frame": {
+    "x": 200,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 23",
+   "frame": {
+    "x": 300,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 24",
+   "frame": {
+    "x": 400,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 25",
+   "frame": {
+    "x": 500,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 26",
+   "frame": {
+    "x": 600,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 27",
+   "frame": {
+    "x": 700,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 28",
+   "frame": {
+    "x": 800,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 29",
+   "frame": {
+    "x": 900,
+    "y": 216,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 30",
+   "frame": {
+    "x": 0,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 31",
+   "frame": {
+    "x": 100,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 32",
+   "frame": {
+    "x": 200,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 33",
+   "frame": {
+    "x": 300,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 34",
+   "frame": {
+    "x": 400,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 35",
+   "frame": {
+    "x": 500,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 36",
+   "frame": {
+    "x": 600,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 37",
+   "frame": {
+    "x": 700,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 38",
+   "frame": {
+    "x": 800,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 39",
+   "frame": {
+    "x": 900,
+    "y": 324,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 40",
+   "frame": {
+    "x": 0,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 41",
+   "frame": {
+    "x": 100,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 42",
+   "frame": {
+    "x": 200,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 43",
+   "frame": {
+    "x": 300,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 44",
+   "frame": {
+    "x": 400,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 45",
+   "frame": {
+    "x": 500,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 46",
+   "frame": {
+    "x": 600,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 47",
+   "frame": {
+    "x": 700,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 48",
+   "frame": {
+    "x": 800,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 49",
+   "frame": {
+    "x": 900,
+    "y": 432,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 50",
+   "frame": {
+    "x": 0,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 51",
+   "frame": {
+    "x": 100,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 52",
+   "frame": {
+    "x": 200,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 53",
+   "frame": {
+    "x": 300,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 54",
+   "frame": {
+    "x": 400,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 55",
+   "frame": {
+    "x": 500,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 56",
+   "frame": {
+    "x": 600,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 57",
+   "frame": {
+    "x": 700,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 58",
+   "frame": {
+    "x": 800,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 59",
+   "frame": {
+    "x": 900,
+    "y": 540,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 60",
+   "frame": {
+    "x": 0,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 61",
+   "frame": {
+    "x": 100,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 62",
+   "frame": {
+    "x": 200,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 63",
+   "frame": {
+    "x": 300,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 64",
+   "frame": {
+    "x": 400,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 65",
+   "frame": {
+    "x": 500,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 66",
+   "frame": {
+    "x": 600,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 67",
+   "frame": {
+    "x": 700,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 68",
+   "frame": {
+    "x": 800,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 69",
+   "frame": {
+    "x": 900,
+    "y": 648,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 70",
+   "frame": {
+    "x": 0,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 71",
+   "frame": {
+    "x": 100,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 72",
+   "frame": {
+    "x": 200,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 73",
+   "frame": {
+    "x": 300,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 74",
+   "frame": {
+    "x": 400,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 75",
+   "frame": {
+    "x": 500,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 76",
+   "frame": {
+    "x": 600,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 77",
+   "frame": {
+    "x": 700,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 78",
+   "frame": {
+    "x": 800,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 79",
+   "frame": {
+    "x": 900,
+    "y": 756,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 80",
+   "frame": {
+    "x": 0,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 81",
+   "frame": {
+    "x": 100,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 82",
+   "frame": {
+    "x": 200,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 83",
+   "frame": {
+    "x": 300,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 84",
+   "frame": {
+    "x": 400,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 85",
+   "frame": {
+    "x": 500,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 86",
+   "frame": {
+    "x": 600,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 87",
+   "frame": {
+    "x": 700,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 88",
+   "frame": {
+    "x": 800,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  },
+  {
+   "filename": "water-orb 89",
+   "frame": {
+    "x": 900,
+    "y": 864,
+    "w": 100,
+    "h": 108
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 108
+   },
+   "sourceSize": {
+    "w": 100,
+    "h": 108
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "water-orb.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1000,
+   "h": 972
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "water-orb",
+    "from": 0,
+    "to": 89,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "water/water-orb",
+   "name": "Water orb",
+   "fps": 30,
+   "loop": true,
+   "frames": 90,
+   "frameSize": [
+    100,
+    108
+   ],
+   "pivot": [
+    50,
+    100
+   ],
+   "columns": 10
+  }
+ }
+}

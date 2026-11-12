@@ -1,0 +1,28 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"主题": "Theme",
+		"按钮": "Button",
+		"标题": "Title",
+		"深海女仆工坊": "Deep Sea Atelier",
+		"简洁界面": "Minimal UI",
+		"深海蓝": "Deep sea blue",
+		"陶瓷白": "Ceramic white",
+		"柔金强调色": "Soft gold accent",
+		"显示侧栏 U 形花边": "Show side U-shaped lace",
+		"不那么二次元模式（按时段收起装饰）": "Less-anime mode (hide decorations by schedule)",
+		"背景亮度 (%)": "Background brightness (%)",
+		"装饰带高度": "Lace band height",
+		"强调目标": "Emphasis",
+		"边框": "Border",
+		"启用皮肤贴图": "Use skin artwork",
+		"显示双女仆立绘": "Show both maid portraits",
+		"显示蕾丝与纹章": "Show lace & crest",
+		"显示 Q 版侧栏": "Show chibi sidebar",
+		"显示侧栏垂幔": "Show side swag",
+		"背景贴图不透明度": "Background opacity",
+		"立绘不透明度": "Portrait opacity",
+		"立绘缩放": "Portrait scale",
+		"深蓝女仆主题皮肤，含分层贴图与自定义选项": "A deep-sea maid theme skin with layered artwork and custom options"
+	}
+}

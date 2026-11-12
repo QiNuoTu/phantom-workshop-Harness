@@ -1,0 +1,16 @@
+{
+	"id": "render.lite",
+	"name": "轻量渲染后端",
+	"version": "1.0",
+	"description": "播放时跳帧复用并关闭节点预览，精确帧仍完整求值",
+	"script": "plugin.gd",
+	"icon": "⚡",
+	"color": "#7ee787",
+	"category": "渲染插件",
+	"inject": [
+		"renderer.broker"
+	],
+	"provide": {
+		"plugin.render.lite": "1.0"
+	}
+}

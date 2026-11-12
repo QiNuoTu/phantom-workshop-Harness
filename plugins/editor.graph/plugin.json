@@ -1,0 +1,15 @@
+{
+	"id": "editor.graph",
+	"name": "蓝图",
+	"version": "1.0",
+	"description": "节点画布、连线、内联参数与节点预览",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"graph.facade",
+		"node_picker.broker"
+	],
+	"provide": {
+		"panel.editor.graph": "1.0"
+	}
+}

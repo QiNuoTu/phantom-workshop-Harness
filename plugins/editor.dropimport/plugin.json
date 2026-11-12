@@ -1,0 +1,18 @@
+{
+	"id": "editor.dropimport",
+	"name": "拖拽导入",
+	"version": "1.0",
+	"description": "把图片 / 精灵表文件直接拖进蓝图，自动落成纹理或精灵表节点",
+	"script": "plugin.gd",
+	"icon": "⇲",
+	"color": "#4cc2ff",
+	"category": "编辑器",
+	"inject": [
+		"core.shell",
+		"kernel.graph",
+		"plugin.core.asset"
+	],
+	"provide": {
+		"plugin.editor.dropimport": "1.0"
+	}
+}

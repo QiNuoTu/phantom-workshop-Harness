@@ -1,0 +1,404 @@
+{
+	"category": "特效/生成",
+	"nodes": [
+		{
+			"id": "image.shockwave",
+			"label": "冲击波",
+			"desc": "随时间向外扩张的亮环，可叠加核心闪光。",
+			"op": "image.shockwave",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "radius",
+					"label": "最大半径",
+					"kind": "float",
+					"default": 0.75,
+					"min": 0.05,
+					"max": 2.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "width",
+					"label": "环宽",
+					"kind": "float",
+					"default": 0.08,
+					"min": 0.005,
+					"max": 0.6,
+					"step": 0.005,
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "速度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.05,
+					"max": 8.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "color",
+					"label": "环色",
+					"kind": "color",
+					"default": "#ffd166",
+					"bindable": true
+				},
+				{
+					"id": "core",
+					"label": "核心色",
+					"kind": "color",
+					"default": "#ff7a2a",
+					"bindable": true
+				},
+				{
+					"id": "intensity",
+					"label": "强度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 3.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "center",
+					"label": "中心",
+					"kind": "vec2",
+					"default": [
+						0.5,
+						0.5
+					],
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.flame",
+			"label": "火焰",
+			"desc": "基于 fbm 噪声的程序化火柱，随时间上卷。",
+			"op": "image.flame",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "base",
+					"label": "底色",
+					"kind": "color",
+					"default": "#ff3b1f",
+					"bindable": true
+				},
+				{
+					"id": "tip",
+					"label": "尖端色",
+					"kind": "color",
+					"default": "#ffe08a",
+					"bindable": true
+				},
+				{
+					"id": "intensity",
+					"label": "强度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 3.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "速度",
+					"kind": "float",
+					"default": 2.0,
+					"min": 0.0,
+					"max": 12.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "turbulence",
+					"label": "扰动",
+					"kind": "float",
+					"default": 4.0,
+					"min": 0.0,
+					"max": 16.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "height",
+					"label": "火高",
+					"kind": "float",
+					"default": 0.85,
+					"min": 0.1,
+					"max": 1.5,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 11,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.lightning",
+			"label": "闪电",
+			"desc": "分叉折线闪电，种子 + 时间决定形态。",
+			"op": "image.lightning",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#9fd8ff",
+					"bindable": true
+				},
+				{
+					"id": "branches",
+					"label": "分叉",
+					"kind": "int",
+					"default": 3,
+					"min": 0,
+					"max": 12,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "width",
+					"label": "线宽",
+					"kind": "float",
+					"default": 2.0,
+					"min": 0.5,
+					"max": 12.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "jitter",
+					"label": "抖动",
+					"kind": "float",
+					"default": 0.35,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "速度",
+					"kind": "float",
+					"default": 6.0,
+					"min": 0.0,
+					"max": 30.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 5,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.sparks",
+			"label": "火花",
+			"desc": "上抛 + 重力的粒子火花，数量可控。",
+			"op": "image.sparks",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "count",
+					"label": "数量",
+					"kind": "int",
+					"default": 48,
+					"min": 1,
+					"max": 300,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#ffb454",
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "速度",
+					"kind": "float",
+					"default": 0.6,
+					"min": 0.05,
+					"max": 3.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "gravity",
+					"label": "重力",
+					"kind": "float",
+					"default": 0.5,
+					"min": -2.0,
+					"max": 3.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "size",
+					"label": "尺寸",
+					"kind": "float",
+					"default": 1.6,
+					"min": 0.3,
+					"max": 8.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "life",
+					"label": "寿命",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.2,
+					"max": 4.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 9,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.rays",
+			"label": "放射光束",
+			"desc": "从中心射出的旋转光束，适合爆点 / 神光。",
+			"op": "image.rays",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "count",
+					"label": "光束数",
+					"kind": "int",
+					"default": 12,
+					"min": 1,
+					"max": 64,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#ffe6a7",
+					"bindable": true
+				},
+				{
+					"id": "length",
+					"label": "长度",
+					"kind": "float",
+					"default": 0.9,
+					"min": 0.05,
+					"max": 2.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "width",
+					"label": "张角",
+					"kind": "float",
+					"default": 0.12,
+					"min": 0.01,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "转速",
+					"kind": "float",
+					"default": 0.5,
+					"min": -6.0,
+					"max": 6.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "intensity",
+					"label": "强度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 3.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "center",
+					"label": "中心",
+					"kind": "vec2",
+					"default": [
+						0.5,
+						0.5
+					],
+					"bindable": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,2107 @@
+{
+ "frames": [
+  {
+   "filename": "grasping-hands 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 1",
+   "frame": {
+    "x": 200,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 2",
+   "frame": {
+    "x": 400,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 3",
+   "frame": {
+    "x": 600,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 4",
+   "frame": {
+    "x": 800,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 5",
+   "frame": {
+    "x": 1000,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 6",
+   "frame": {
+    "x": 1200,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 7",
+   "frame": {
+    "x": 1400,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 8",
+   "frame": {
+    "x": 0,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 9",
+   "frame": {
+    "x": 200,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 10",
+   "frame": {
+    "x": 400,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 11",
+   "frame": {
+    "x": 600,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 12",
+   "frame": {
+    "x": 800,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 13",
+   "frame": {
+    "x": 1000,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 14",
+   "frame": {
+    "x": 1200,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 15",
+   "frame": {
+    "x": 1400,
+    "y": 116,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 16",
+   "frame": {
+    "x": 0,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 17",
+   "frame": {
+    "x": 200,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 18",
+   "frame": {
+    "x": 400,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 19",
+   "frame": {
+    "x": 600,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 20",
+   "frame": {
+    "x": 800,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 21",
+   "frame": {
+    "x": 1000,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 22",
+   "frame": {
+    "x": 1200,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 23",
+   "frame": {
+    "x": 1400,
+    "y": 232,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 24",
+   "frame": {
+    "x": 0,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 25",
+   "frame": {
+    "x": 200,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 26",
+   "frame": {
+    "x": 400,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 27",
+   "frame": {
+    "x": 600,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 28",
+   "frame": {
+    "x": 800,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 29",
+   "frame": {
+    "x": 1000,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 30",
+   "frame": {
+    "x": 1200,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 31",
+   "frame": {
+    "x": 1400,
+    "y": 348,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 32",
+   "frame": {
+    "x": 0,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 33",
+   "frame": {
+    "x": 200,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 34",
+   "frame": {
+    "x": 400,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 35",
+   "frame": {
+    "x": 600,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 36",
+   "frame": {
+    "x": 800,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 37",
+   "frame": {
+    "x": 1000,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 38",
+   "frame": {
+    "x": 1200,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 39",
+   "frame": {
+    "x": 1400,
+    "y": 464,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 40",
+   "frame": {
+    "x": 0,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 41",
+   "frame": {
+    "x": 200,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 42",
+   "frame": {
+    "x": 400,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 43",
+   "frame": {
+    "x": 600,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 44",
+   "frame": {
+    "x": 800,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 45",
+   "frame": {
+    "x": 1000,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 46",
+   "frame": {
+    "x": 1200,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 47",
+   "frame": {
+    "x": 1400,
+    "y": 580,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 48",
+   "frame": {
+    "x": 0,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 49",
+   "frame": {
+    "x": 200,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 50",
+   "frame": {
+    "x": 400,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 51",
+   "frame": {
+    "x": 600,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 52",
+   "frame": {
+    "x": 800,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 53",
+   "frame": {
+    "x": 1000,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 54",
+   "frame": {
+    "x": 1200,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 55",
+   "frame": {
+    "x": 1400,
+    "y": 696,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 56",
+   "frame": {
+    "x": 0,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 57",
+   "frame": {
+    "x": 200,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 58",
+   "frame": {
+    "x": 400,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 59",
+   "frame": {
+    "x": 600,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 60",
+   "frame": {
+    "x": 800,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 61",
+   "frame": {
+    "x": 1000,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 62",
+   "frame": {
+    "x": 1200,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 63",
+   "frame": {
+    "x": 1400,
+    "y": 812,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 64",
+   "frame": {
+    "x": 0,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 65",
+   "frame": {
+    "x": 200,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 66",
+   "frame": {
+    "x": 400,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 67",
+   "frame": {
+    "x": 600,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 68",
+   "frame": {
+    "x": 800,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 69",
+   "frame": {
+    "x": 1000,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 70",
+   "frame": {
+    "x": 1200,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 71",
+   "frame": {
+    "x": 1400,
+    "y": 928,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 72",
+   "frame": {
+    "x": 0,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 73",
+   "frame": {
+    "x": 200,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 74",
+   "frame": {
+    "x": 400,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 75",
+   "frame": {
+    "x": 600,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 76",
+   "frame": {
+    "x": 800,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 77",
+   "frame": {
+    "x": 1000,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 78",
+   "frame": {
+    "x": 1200,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 79",
+   "frame": {
+    "x": 1400,
+    "y": 1044,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 80",
+   "frame": {
+    "x": 0,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 81",
+   "frame": {
+    "x": 200,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 82",
+   "frame": {
+    "x": 400,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 83",
+   "frame": {
+    "x": 600,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 84",
+   "frame": {
+    "x": 800,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 85",
+   "frame": {
+    "x": 1000,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 86",
+   "frame": {
+    "x": 1200,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 87",
+   "frame": {
+    "x": 1400,
+    "y": 1160,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 88",
+   "frame": {
+    "x": 0,
+    "y": 1276,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 89",
+   "frame": {
+    "x": 200,
+    "y": 1276,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 90",
+   "frame": {
+    "x": 400,
+    "y": 1276,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 91",
+   "frame": {
+    "x": 600,
+    "y": 1276,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 92",
+   "frame": {
+    "x": 800,
+    "y": 1276,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "grasping-hands 93",
+   "frame": {
+    "x": 1000,
+    "y": 1276,
+    "w": 200,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 200,
+    "h": 116
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "grasping-hands.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1600,
+   "h": 1392
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "grasping-hands",
+    "from": 0,
+    "to": 93,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "shadow/grasping-hands",
+   "name": "Grasping hands",
+   "fps": 30,
+   "loop": false,
+   "frames": 94,
+   "frameSize": [
+    200,
+    116
+   ],
+   "pivot": [
+    100,
+    100
+   ],
+   "columns": 8
+  }
+ }
+}

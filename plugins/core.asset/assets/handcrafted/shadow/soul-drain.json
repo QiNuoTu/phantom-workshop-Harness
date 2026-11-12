@@ -1,0 +1,2151 @@
+{
+ "frames": [
+  {
+   "filename": "soul-drain 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 1",
+   "frame": {
+    "x": 208,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 2",
+   "frame": {
+    "x": 416,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 3",
+   "frame": {
+    "x": 624,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 4",
+   "frame": {
+    "x": 832,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 5",
+   "frame": {
+    "x": 1040,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 6",
+   "frame": {
+    "x": 1248,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 7",
+   "frame": {
+    "x": 1456,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 8",
+   "frame": {
+    "x": 0,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 9",
+   "frame": {
+    "x": 208,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 10",
+   "frame": {
+    "x": 416,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 11",
+   "frame": {
+    "x": 624,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 12",
+   "frame": {
+    "x": 832,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 13",
+   "frame": {
+    "x": 1040,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 14",
+   "frame": {
+    "x": 1248,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 15",
+   "frame": {
+    "x": 1456,
+    "y": 120,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 16",
+   "frame": {
+    "x": 0,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 17",
+   "frame": {
+    "x": 208,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 18",
+   "frame": {
+    "x": 416,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 19",
+   "frame": {
+    "x": 624,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 20",
+   "frame": {
+    "x": 832,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 21",
+   "frame": {
+    "x": 1040,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 22",
+   "frame": {
+    "x": 1248,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 23",
+   "frame": {
+    "x": 1456,
+    "y": 240,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 24",
+   "frame": {
+    "x": 0,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 25",
+   "frame": {
+    "x": 208,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 26",
+   "frame": {
+    "x": 416,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 27",
+   "frame": {
+    "x": 624,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 28",
+   "frame": {
+    "x": 832,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 29",
+   "frame": {
+    "x": 1040,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 30",
+   "frame": {
+    "x": 1248,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 31",
+   "frame": {
+    "x": 1456,
+    "y": 360,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 32",
+   "frame": {
+    "x": 0,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 33",
+   "frame": {
+    "x": 208,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 34",
+   "frame": {
+    "x": 416,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 35",
+   "frame": {
+    "x": 624,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 36",
+   "frame": {
+    "x": 832,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 37",
+   "frame": {
+    "x": 1040,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 38",
+   "frame": {
+    "x": 1248,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 39",
+   "frame": {
+    "x": 1456,
+    "y": 480,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 40",
+   "frame": {
+    "x": 0,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 41",
+   "frame": {
+    "x": 208,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 42",
+   "frame": {
+    "x": 416,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 43",
+   "frame": {
+    "x": 624,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 44",
+   "frame": {
+    "x": 832,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 45",
+   "frame": {
+    "x": 1040,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 46",
+   "frame": {
+    "x": 1248,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 47",
+   "frame": {
+    "x": 1456,
+    "y": 600,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 48",
+   "frame": {
+    "x": 0,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 49",
+   "frame": {
+    "x": 208,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 50",
+   "frame": {
+    "x": 416,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 51",
+   "frame": {
+    "x": 624,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 52",
+   "frame": {
+    "x": 832,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 53",
+   "frame": {
+    "x": 1040,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 54",
+   "frame": {
+    "x": 1248,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 55",
+   "frame": {
+    "x": 1456,
+    "y": 720,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 56",
+   "frame": {
+    "x": 0,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 57",
+   "frame": {
+    "x": 208,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 58",
+   "frame": {
+    "x": 416,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 59",
+   "frame": {
+    "x": 624,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 60",
+   "frame": {
+    "x": 832,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 61",
+   "frame": {
+    "x": 1040,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 62",
+   "frame": {
+    "x": 1248,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 63",
+   "frame": {
+    "x": 1456,
+    "y": 840,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 64",
+   "frame": {
+    "x": 0,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 65",
+   "frame": {
+    "x": 208,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 66",
+   "frame": {
+    "x": 416,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 67",
+   "frame": {
+    "x": 624,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 68",
+   "frame": {
+    "x": 832,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 69",
+   "frame": {
+    "x": 1040,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 70",
+   "frame": {
+    "x": 1248,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 71",
+   "frame": {
+    "x": 1456,
+    "y": 960,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 72",
+   "frame": {
+    "x": 0,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 73",
+   "frame": {
+    "x": 208,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 74",
+   "frame": {
+    "x": 416,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 75",
+   "frame": {
+    "x": 624,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 76",
+   "frame": {
+    "x": 832,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 77",
+   "frame": {
+    "x": 1040,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 78",
+   "frame": {
+    "x": 1248,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 79",
+   "frame": {
+    "x": 1456,
+    "y": 1080,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 80",
+   "frame": {
+    "x": 0,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 81",
+   "frame": {
+    "x": 208,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 82",
+   "frame": {
+    "x": 416,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 83",
+   "frame": {
+    "x": 624,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 84",
+   "frame": {
+    "x": 832,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 85",
+   "frame": {
+    "x": 1040,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 86",
+   "frame": {
+    "x": 1248,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 87",
+   "frame": {
+    "x": 1456,
+    "y": 1200,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 88",
+   "frame": {
+    "x": 0,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 89",
+   "frame": {
+    "x": 208,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 90",
+   "frame": {
+    "x": 416,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 91",
+   "frame": {
+    "x": 624,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 92",
+   "frame": {
+    "x": 832,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 93",
+   "frame": {
+    "x": 1040,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 94",
+   "frame": {
+    "x": 1248,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "soul-drain 95",
+   "frame": {
+    "x": 1456,
+    "y": 1320,
+    "w": 208,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 120
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "soul-drain.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1664,
+   "h": 1440
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "soul-drain",
+    "from": 0,
+    "to": 95,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "shadow/soul-drain",
+   "name": "Soul drain",
+   "fps": 30,
+   "loop": true,
+   "frames": 96,
+   "frameSize": [
+    208,
+    120
+   ],
+   "pivot": [
+    40,
+    110
+   ],
+   "columns": 8
+  }
+ }
+}

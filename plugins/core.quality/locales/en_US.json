@@ -1,0 +1,29 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"算子质量系数": "Operator quality",
+		"渲染质量": "Render quality",
+		"质量预设": "Quality preset",
+		"暂停时质量档": "Paused quality",
+		"播放时质量档": "Playback quality",
+		"模糊半径上限": "Max blur radius",
+		"模糊快速路径": "Blur fast path",
+		"节点预览边长": "Node preview size",
+		"播放时预览范围": "Playback preview scope",
+		"生成节点预览": "Generate node previews",
+		"静态子图跨帧缓存": "Static subgraph cache",
+		"自适应渲染节流": "Adaptive throttling",
+		"节流系数": "Throttle factor",
+		"交互预览（快）": "Interactive (fast)",
+		"精确（与导出一致）": "Exact (matches export)",
+		"全部节点": "All nodes",
+		"选中节点 + 输出": "Selected + output",
+		"不刷新节点预览": "No node previews",
+		"无（逐项设置）": "None (per-setting)",
+		"性能优先": "Performance",
+		"均衡": "Balanced",
+		"画质优先": "Fidelity",
+		"质量与性能策略": "Quality & performance",
+		"预览质量、算子质量、缓存与节流的统一设置": "One place for preview quality, operator quality, caching and throttling"
+	}
+}

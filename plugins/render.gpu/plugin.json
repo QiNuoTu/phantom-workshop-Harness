@@ -1,0 +1,18 @@
+{
+	"id": "render.gpu",
+	"name": "GPU 渲染服务器",
+	"version": "0.1",
+	"description": "设备探测 + GPU 合成通道；求值仍在 CPU，无图形设备时自动退回",
+	"script": "plugin.gd",
+	"icon": "◈",
+	"color": "#a371f7",
+	"category": "渲染插件",
+	"inject": [
+		"renderer.broker",
+		"plugin.core.image",
+		"plugin.fx.composite"
+	],
+	"provide": {
+		"plugin.render.gpu": "0.1"
+	}
+}

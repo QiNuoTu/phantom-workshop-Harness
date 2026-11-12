@@ -1,0 +1,11 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"插件": "Plugins",
+		"命令面板": "Command palette",
+		"帮助": "Help",
+		"插件管理器": "Plugin manager",
+		"快捷键与关于": "Shortcuts & about",
+		"快捷键一览与关于信息": "Shortcut reference and about"
+	}
+}

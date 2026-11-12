@@ -1,0 +1,19 @@
+{
+	"id": "core.graph",
+	"name": "图文档与求值核心",
+	"version": "1.0",
+	"description": "图文档、节点目录、执行器与关键帧轨道",
+	"icon": "◇",
+	"color": "#4cc2ff",
+	"category": "核心组件",
+	"inject": [],
+	"provide": {
+		"kernel.graph": "1.0",
+		"kernel.catalog": "1.0",
+		"kernel.runner": "1.0",
+		"kernel.tracks": "1.0",
+		"kernel.ports": "1.0",
+		"graph.access": "1.0"
+	},
+	"script": "plugin.gd"
+}

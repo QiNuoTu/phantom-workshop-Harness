@@ -1,0 +1,16 @@
+{
+	"id": "core.render",
+	"name": "渲染管线",
+	"version": "1.0",
+	"description": "把当前蓝图求值成图像，供预览与导出使用",
+	"script": "plugin.gd",
+	"icon": "▶",
+	"color": "#ffb454",
+	"category": "核心组件",
+	"inject": [
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.render": "1.0"
+	}
+}

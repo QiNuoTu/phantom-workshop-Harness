@@ -1,0 +1,7 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"轻量渲染后端": "Lite renderer",
+		"播放时跳帧复用并关闭节点预览，精确帧仍完整求值": "Reuses frames and skips node previews during playback; exact frames stay full quality"
+	}
+}

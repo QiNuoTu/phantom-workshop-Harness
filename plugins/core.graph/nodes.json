@@ -1,0 +1,75 @@
+{
+	"category": "图属性",
+	"nodes": [
+		{
+			"id": "graph.canvas",
+			"label": "画布信息",
+			"desc": "读取画布宽度、高度与宽高比，用于自适应布局与定位。",
+			"op": "graph.canvas",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "width",
+					"label": "宽",
+					"type": "number"
+				},
+				{
+					"id": "height",
+					"label": "高",
+					"type": "number"
+				},
+				{
+					"id": "aspect",
+					"label": "宽高比",
+					"type": "number"
+				}
+			],
+			"params": []
+		},
+		{
+			"id": "graph.timeline",
+			"label": "时间轴信息",
+			"desc": "读出帧率、时长、总帧数、当前时间、当前帧序号与播放进度；可直接驱动动画。",
+			"op": "graph.timeline",
+			"inputs": [],
+			"params": [],
+			"outputs": [
+				{
+					"id": "fps",
+					"label": "帧率",
+					"type": "number"
+				},
+				{
+					"id": "duration",
+					"label": "时长",
+					"type": "number"
+				},
+				{
+					"id": "frames",
+					"label": "总帧数",
+					"type": "number"
+				},
+				{
+					"id": "time",
+					"label": "时间",
+					"type": "number"
+				},
+				{
+					"id": "frame",
+					"label": "帧序号",
+					"type": "number"
+				},
+				{
+					"id": "progress",
+					"label": "进度",
+					"type": "number"
+				},
+				{
+					"id": "seed",
+					"label": "随机种子",
+					"type": "number"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,2569 @@
+{
+ "frames": [
+  {
+   "filename": "homing-missile 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 1",
+   "frame": {
+    "x": 248,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 2",
+   "frame": {
+    "x": 496,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 3",
+   "frame": {
+    "x": 744,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 4",
+   "frame": {
+    "x": 992,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 5",
+   "frame": {
+    "x": 1240,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 6",
+   "frame": {
+    "x": 1488,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 7",
+   "frame": {
+    "x": 1736,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 8",
+   "frame": {
+    "x": 1984,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 9",
+   "frame": {
+    "x": 0,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 10",
+   "frame": {
+    "x": 248,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 11",
+   "frame": {
+    "x": 496,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 12",
+   "frame": {
+    "x": 744,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 13",
+   "frame": {
+    "x": 992,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 14",
+   "frame": {
+    "x": 1240,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 15",
+   "frame": {
+    "x": 1488,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 16",
+   "frame": {
+    "x": 1736,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 17",
+   "frame": {
+    "x": 1984,
+    "y": 140,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 18",
+   "frame": {
+    "x": 0,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 19",
+   "frame": {
+    "x": 248,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 20",
+   "frame": {
+    "x": 496,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 21",
+   "frame": {
+    "x": 744,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 22",
+   "frame": {
+    "x": 992,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 23",
+   "frame": {
+    "x": 1240,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 24",
+   "frame": {
+    "x": 1488,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 25",
+   "frame": {
+    "x": 1736,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 26",
+   "frame": {
+    "x": 1984,
+    "y": 280,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 27",
+   "frame": {
+    "x": 0,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 28",
+   "frame": {
+    "x": 248,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 29",
+   "frame": {
+    "x": 496,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 30",
+   "frame": {
+    "x": 744,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 31",
+   "frame": {
+    "x": 992,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 32",
+   "frame": {
+    "x": 1240,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 33",
+   "frame": {
+    "x": 1488,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 34",
+   "frame": {
+    "x": 1736,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 35",
+   "frame": {
+    "x": 1984,
+    "y": 420,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 36",
+   "frame": {
+    "x": 0,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 37",
+   "frame": {
+    "x": 248,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 38",
+   "frame": {
+    "x": 496,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 39",
+   "frame": {
+    "x": 744,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 40",
+   "frame": {
+    "x": 992,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 41",
+   "frame": {
+    "x": 1240,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 42",
+   "frame": {
+    "x": 1488,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 43",
+   "frame": {
+    "x": 1736,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 44",
+   "frame": {
+    "x": 1984,
+    "y": 560,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 45",
+   "frame": {
+    "x": 0,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 46",
+   "frame": {
+    "x": 248,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 47",
+   "frame": {
+    "x": 496,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 48",
+   "frame": {
+    "x": 744,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 49",
+   "frame": {
+    "x": 992,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 50",
+   "frame": {
+    "x": 1240,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 51",
+   "frame": {
+    "x": 1488,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 52",
+   "frame": {
+    "x": 1736,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 53",
+   "frame": {
+    "x": 1984,
+    "y": 700,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 54",
+   "frame": {
+    "x": 0,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 55",
+   "frame": {
+    "x": 248,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 56",
+   "frame": {
+    "x": 496,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 57",
+   "frame": {
+    "x": 744,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 58",
+   "frame": {
+    "x": 992,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 59",
+   "frame": {
+    "x": 1240,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 60",
+   "frame": {
+    "x": 1488,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 61",
+   "frame": {
+    "x": 1736,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 62",
+   "frame": {
+    "x": 1984,
+    "y": 840,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 63",
+   "frame": {
+    "x": 0,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 64",
+   "frame": {
+    "x": 248,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 65",
+   "frame": {
+    "x": 496,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 66",
+   "frame": {
+    "x": 744,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 67",
+   "frame": {
+    "x": 992,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 68",
+   "frame": {
+    "x": 1240,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 69",
+   "frame": {
+    "x": 1488,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 70",
+   "frame": {
+    "x": 1736,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 71",
+   "frame": {
+    "x": 1984,
+    "y": 980,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 72",
+   "frame": {
+    "x": 0,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 73",
+   "frame": {
+    "x": 248,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 74",
+   "frame": {
+    "x": 496,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 75",
+   "frame": {
+    "x": 744,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 76",
+   "frame": {
+    "x": 992,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 77",
+   "frame": {
+    "x": 1240,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 78",
+   "frame": {
+    "x": 1488,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 79",
+   "frame": {
+    "x": 1736,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 80",
+   "frame": {
+    "x": 1984,
+    "y": 1120,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 81",
+   "frame": {
+    "x": 0,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 82",
+   "frame": {
+    "x": 248,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 83",
+   "frame": {
+    "x": 496,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 84",
+   "frame": {
+    "x": 744,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 85",
+   "frame": {
+    "x": 992,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 86",
+   "frame": {
+    "x": 1240,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 87",
+   "frame": {
+    "x": 1488,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 88",
+   "frame": {
+    "x": 1736,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 89",
+   "frame": {
+    "x": 1984,
+    "y": 1260,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 90",
+   "frame": {
+    "x": 0,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 91",
+   "frame": {
+    "x": 248,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 92",
+   "frame": {
+    "x": 496,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 93",
+   "frame": {
+    "x": 744,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 94",
+   "frame": {
+    "x": 992,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 95",
+   "frame": {
+    "x": 1240,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 96",
+   "frame": {
+    "x": 1488,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 97",
+   "frame": {
+    "x": 1736,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 98",
+   "frame": {
+    "x": 1984,
+    "y": 1400,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 99",
+   "frame": {
+    "x": 0,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 100",
+   "frame": {
+    "x": 248,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 101",
+   "frame": {
+    "x": 496,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 102",
+   "frame": {
+    "x": 744,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 103",
+   "frame": {
+    "x": 992,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 104",
+   "frame": {
+    "x": 1240,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 105",
+   "frame": {
+    "x": 1488,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 106",
+   "frame": {
+    "x": 1736,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 107",
+   "frame": {
+    "x": 1984,
+    "y": 1540,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 108",
+   "frame": {
+    "x": 0,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 109",
+   "frame": {
+    "x": 248,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 110",
+   "frame": {
+    "x": 496,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 111",
+   "frame": {
+    "x": 744,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 112",
+   "frame": {
+    "x": 992,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 113",
+   "frame": {
+    "x": 1240,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  },
+  {
+   "filename": "homing-missile 114",
+   "frame": {
+    "x": 1488,
+    "y": 1680,
+    "w": 248,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 248,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 248,
+    "h": 140
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "homing-missile.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 2232,
+   "h": 1820
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "homing-missile",
+    "from": 0,
+    "to": 114,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/homing-missile",
+   "name": "Homing missile",
+   "fps": 30,
+   "loop": false,
+   "frames": 115,
+   "frameSize": [
+    248,
+    140
+   ],
+   "pivot": [
+    160,
+    120
+   ],
+   "columns": 9
+  }
+ }
+}

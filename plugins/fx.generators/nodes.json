@@ -1,0 +1,397 @@
+{
+	"category": "图像/生成",
+	"nodes": [
+		{
+			"id": "image.gradient",
+			"label": "渐变",
+			"desc": "线性 / 径向 / 角度渐变，可直接当背景或蒙版。",
+			"op": "image.gradient",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "mode",
+					"label": "模式",
+					"kind": "enum",
+					"default": "linear",
+					"options": [
+						"linear",
+						"radial",
+						"angle"
+					]
+				},
+				{
+					"id": "color_a",
+					"label": "起点色",
+					"kind": "color",
+					"default": "#102040",
+					"bindable": true
+				},
+				{
+					"id": "color_b",
+					"label": "终点色",
+					"kind": "color",
+					"default": "#ffb454",
+					"bindable": true
+				},
+				{
+					"id": "angle",
+					"label": "角度",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 360.0,
+					"step": 1.0,
+					"bindable": true
+				},
+				{
+					"id": "center",
+					"label": "中心",
+					"kind": "vec2",
+					"default": [
+						0.5,
+						0.5
+					],
+					"bindable": true
+				},
+				{
+					"id": "scale",
+					"label": "缩放",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.1,
+					"max": 16.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "softness",
+					"label": "柔化",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.shape",
+			"label": "形状",
+			"desc": "圆形 / 环 / 矩形 / 菱形 / 星形 SDF，带边缘羽化。",
+			"op": "image.shape",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "shape",
+					"label": "形状",
+					"kind": "enum",
+					"default": "circle",
+					"options": [
+						"circle",
+						"ring",
+						"rect",
+						"diamond",
+						"star",
+						"triangle"
+					]
+				},
+				{
+					"id": "color",
+					"label": "填充色",
+					"kind": "color",
+					"default": "#ffcc66",
+					"bindable": true
+				},
+				{
+					"id": "background",
+					"label": "背景色",
+					"kind": "color",
+					"default": "#00000000",
+					"bindable": true
+				},
+				{
+					"id": "size",
+					"label": "尺寸",
+					"kind": "float",
+					"default": 0.6,
+					"min": 0.01,
+					"max": 2.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "feather",
+					"label": "羽化",
+					"kind": "float",
+					"default": 0.02,
+					"min": 0.0,
+					"max": 0.5,
+					"step": 0.005,
+					"bindable": true
+				},
+				{
+					"id": "sides",
+					"label": "星角数",
+					"kind": "int",
+					"default": 5,
+					"min": 3,
+					"max": 12,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "center",
+					"label": "中心",
+					"kind": "vec2",
+					"default": [
+						0.5,
+						0.5
+					],
+					"bindable": true
+				},
+				{
+					"id": "rotation",
+					"label": "旋转",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 360.0,
+					"step": 1.0,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.stripes",
+			"label": "条纹",
+			"desc": "线性 / 径向 / 扇形条纹，常用于能量盾与扫描线。",
+			"op": "image.stripes",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "mode",
+					"label": "模式",
+					"kind": "enum",
+					"default": "linear",
+					"options": [
+						"linear",
+						"radial",
+						"conic"
+					]
+				},
+				{
+					"id": "color_a",
+					"label": "颜色 A",
+					"kind": "color",
+					"default": "#1b2230",
+					"bindable": true
+				},
+				{
+					"id": "color_b",
+					"label": "颜色 B",
+					"kind": "color",
+					"default": "#4cc2ff",
+					"bindable": true
+				},
+				{
+					"id": "frequency",
+					"label": "频率",
+					"kind": "float",
+					"default": 8.0,
+					"min": 1.0,
+					"max": 64.0,
+					"step": 0.5,
+					"bindable": true
+				},
+				{
+					"id": "angle",
+					"label": "角度",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 360.0,
+					"step": 1.0,
+					"bindable": true
+				},
+				{
+					"id": "softness",
+					"label": "柔化",
+					"kind": "float",
+					"default": 0.05,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "phase",
+					"label": "相位",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 10.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.voronoi",
+			"label": "细胞噪声",
+			"desc": "Voronoi 细胞图案，可勾边做水晶 / 鳞片质感。",
+			"op": "image.voronoi",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "cells",
+					"label": "细胞数",
+					"kind": "int",
+					"default": 12,
+					"min": 2,
+					"max": 64,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "随机种子",
+					"kind": "int",
+					"default": 7,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "jitter",
+					"label": "抖动",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "outline",
+					"label": "勾边",
+					"kind": "bool",
+					"default": false
+				},
+				{
+					"id": "color_a",
+					"label": "颜色 A",
+					"kind": "color",
+					"default": "#20304a",
+					"bindable": true
+				},
+				{
+					"id": "color_b",
+					"label": "颜色 B",
+					"kind": "color",
+					"default": "#7ee787",
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.starfield",
+			"label": "星场",
+			"desc": "带光晕的随机星点，种子固定则预览与导出一致。",
+			"op": "image.starfield",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "count",
+					"label": "星点数",
+					"kind": "int",
+					"default": 80,
+					"min": 1,
+					"max": 500,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "随机种子",
+					"kind": "int",
+					"default": 3,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "color",
+					"label": "星点色",
+					"kind": "color",
+					"default": "#ffffff",
+					"bindable": true
+				},
+				{
+					"id": "background",
+					"label": "背景色",
+					"kind": "color",
+					"default": "#00000000",
+					"bindable": true
+				},
+				{
+					"id": "size",
+					"label": "尺寸",
+					"kind": "float",
+					"default": 1.4,
+					"min": 0.2,
+					"max": 8.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "glow",
+					"label": "光晕",
+					"kind": "float",
+					"default": 2.5,
+					"min": 0.0,
+					"max": 12.0,
+					"step": 0.1,
+					"bindable": true
+				}
+			]
+		}
+	]
+}

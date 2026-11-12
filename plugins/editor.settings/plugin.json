@@ -1,0 +1,16 @@
+{
+	"id": "editor.settings",
+	"name": "设置中心",
+	"version": "1.0",
+	"description": "集中管理所有插件提供的设置项",
+	"script": "plugin.gd",
+	"icon": "⚙",
+	"color": "#ffb454",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.settings": "1.0"
+	}
+}

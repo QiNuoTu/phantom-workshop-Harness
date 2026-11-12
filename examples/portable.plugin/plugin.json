@@ -1,0 +1,7 @@
+{
+  "id": "my.portable",
+  "name": "我的便携插件",
+  "version": "1.0",
+  "description": "把整个目录拷到 exe 同级 plugins/ 下，重启即生效",
+  "script": "plugin.gd"
+}

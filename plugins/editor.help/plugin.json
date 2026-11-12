@@ -1,0 +1,14 @@
+{
+	"id": "editor.help",
+	"name": "帮助",
+	"version": "1.0",
+	"description": "快捷键一览与关于信息",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.help": "1.0"
+	}
+}

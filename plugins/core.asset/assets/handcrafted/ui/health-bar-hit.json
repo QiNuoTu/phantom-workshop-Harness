@@ -1,0 +1,1381 @@
+{
+ "frames": [
+  {
+   "filename": "health-bar-hit 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 1",
+   "frame": {
+    "x": 160,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 2",
+   "frame": {
+    "x": 320,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 3",
+   "frame": {
+    "x": 480,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 4",
+   "frame": {
+    "x": 640,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 5",
+   "frame": {
+    "x": 0,
+    "y": 64,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 6",
+   "frame": {
+    "x": 160,
+    "y": 64,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 7",
+   "frame": {
+    "x": 320,
+    "y": 64,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 8",
+   "frame": {
+    "x": 480,
+    "y": 64,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 9",
+   "frame": {
+    "x": 640,
+    "y": 64,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 10",
+   "frame": {
+    "x": 0,
+    "y": 128,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 11",
+   "frame": {
+    "x": 160,
+    "y": 128,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 12",
+   "frame": {
+    "x": 320,
+    "y": 128,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 13",
+   "frame": {
+    "x": 480,
+    "y": 128,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 14",
+   "frame": {
+    "x": 640,
+    "y": 128,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 15",
+   "frame": {
+    "x": 0,
+    "y": 192,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 16",
+   "frame": {
+    "x": 160,
+    "y": 192,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 17",
+   "frame": {
+    "x": 320,
+    "y": 192,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 18",
+   "frame": {
+    "x": 480,
+    "y": 192,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 19",
+   "frame": {
+    "x": 640,
+    "y": 192,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 20",
+   "frame": {
+    "x": 0,
+    "y": 256,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 21",
+   "frame": {
+    "x": 160,
+    "y": 256,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 22",
+   "frame": {
+    "x": 320,
+    "y": 256,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 23",
+   "frame": {
+    "x": 480,
+    "y": 256,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 24",
+   "frame": {
+    "x": 640,
+    "y": 256,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 25",
+   "frame": {
+    "x": 0,
+    "y": 320,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 26",
+   "frame": {
+    "x": 160,
+    "y": 320,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 27",
+   "frame": {
+    "x": 320,
+    "y": 320,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 28",
+   "frame": {
+    "x": 480,
+    "y": 320,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 29",
+   "frame": {
+    "x": 640,
+    "y": 320,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 30",
+   "frame": {
+    "x": 0,
+    "y": 384,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 31",
+   "frame": {
+    "x": 160,
+    "y": 384,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 32",
+   "frame": {
+    "x": 320,
+    "y": 384,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 33",
+   "frame": {
+    "x": 480,
+    "y": 384,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 34",
+   "frame": {
+    "x": 640,
+    "y": 384,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 35",
+   "frame": {
+    "x": 0,
+    "y": 448,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 36",
+   "frame": {
+    "x": 160,
+    "y": 448,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 37",
+   "frame": {
+    "x": 320,
+    "y": 448,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 38",
+   "frame": {
+    "x": 480,
+    "y": 448,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 39",
+   "frame": {
+    "x": 640,
+    "y": 448,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 40",
+   "frame": {
+    "x": 0,
+    "y": 512,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 41",
+   "frame": {
+    "x": 160,
+    "y": 512,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 42",
+   "frame": {
+    "x": 320,
+    "y": 512,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 43",
+   "frame": {
+    "x": 480,
+    "y": 512,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 44",
+   "frame": {
+    "x": 640,
+    "y": 512,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 45",
+   "frame": {
+    "x": 0,
+    "y": 576,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 46",
+   "frame": {
+    "x": 160,
+    "y": 576,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 47",
+   "frame": {
+    "x": 320,
+    "y": 576,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 48",
+   "frame": {
+    "x": 480,
+    "y": 576,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 49",
+   "frame": {
+    "x": 640,
+    "y": 576,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 50",
+   "frame": {
+    "x": 0,
+    "y": 640,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 51",
+   "frame": {
+    "x": 160,
+    "y": 640,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 52",
+   "frame": {
+    "x": 320,
+    "y": 640,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 53",
+   "frame": {
+    "x": 480,
+    "y": 640,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 54",
+   "frame": {
+    "x": 640,
+    "y": 640,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 55",
+   "frame": {
+    "x": 0,
+    "y": 704,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 56",
+   "frame": {
+    "x": 160,
+    "y": 704,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 57",
+   "frame": {
+    "x": 320,
+    "y": 704,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 58",
+   "frame": {
+    "x": 480,
+    "y": 704,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 59",
+   "frame": {
+    "x": 640,
+    "y": 704,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "health-bar-hit 60",
+   "frame": {
+    "x": 0,
+    "y": 768,
+    "w": 160,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 160,
+    "h": 64
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "health-bar-hit.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 800,
+   "h": 832
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "health-bar-hit",
+    "from": 0,
+    "to": 60,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "ui/health-bar-hit",
+   "name": "Health bar hit",
+   "fps": 30,
+   "loop": false,
+   "frames": 61,
+   "frameSize": [
+    160,
+    64
+   ],
+   "pivot": [
+    80,
+    30
+   ],
+   "columns": 5
+  }
+ }
+}

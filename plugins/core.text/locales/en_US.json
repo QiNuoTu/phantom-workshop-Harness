@@ -1,0 +1,7 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"文字": "Text",
+		"用外部字体渲染文字，支持描边与对齐": "Renders text with external fonts, outlines and alignment"
+	}
+}

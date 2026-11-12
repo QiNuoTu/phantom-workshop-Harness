@@ -1,0 +1,15 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"插件": "Plugins",
+		"已停用": "DISABLED",
+		"插件管理器": "Plugin manager",
+		"等待依赖": "WAITING",
+		"插件管理器（浮动窗口）": "Plugin manager (floating)",
+		"插件管理器（窗口）": "Plugin manager (window)",
+		"重新扫描插件": "Rescan plugins",
+		"打开用户插件目录": "Open user plugin folder",
+		"插件维护": "Plugin maintenance",
+		"重新扫描插件与打开用户插件目录": "Rescan plugins or open the user plugin folder"
+	}
+}

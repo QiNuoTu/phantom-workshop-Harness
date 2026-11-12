@@ -1,0 +1,435 @@
+{
+ "frames": [
+  {
+   "filename": "arrow 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 1",
+   "frame": {
+    "x": 112,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 2",
+   "frame": {
+    "x": 224,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 3",
+   "frame": {
+    "x": 0,
+    "y": 32,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 4",
+   "frame": {
+    "x": 112,
+    "y": 32,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 5",
+   "frame": {
+    "x": 224,
+    "y": 32,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 6",
+   "frame": {
+    "x": 0,
+    "y": 64,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 7",
+   "frame": {
+    "x": 112,
+    "y": 64,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 8",
+   "frame": {
+    "x": 224,
+    "y": 64,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 9",
+   "frame": {
+    "x": 0,
+    "y": 96,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 10",
+   "frame": {
+    "x": 112,
+    "y": 96,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 11",
+   "frame": {
+    "x": 224,
+    "y": 96,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 12",
+   "frame": {
+    "x": 0,
+    "y": 128,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 13",
+   "frame": {
+    "x": 112,
+    "y": 128,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 14",
+   "frame": {
+    "x": 224,
+    "y": 128,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 15",
+   "frame": {
+    "x": 0,
+    "y": 160,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 16",
+   "frame": {
+    "x": 112,
+    "y": 160,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arrow 17",
+   "frame": {
+    "x": 224,
+    "y": 160,
+    "w": 112,
+    "h": 32
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 32
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 32
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "arrow.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 336,
+   "h": 192
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "arrow",
+    "from": 0,
+    "to": 17,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/arrow",
+   "name": "Arrow",
+   "fps": 30,
+   "loop": true,
+   "frames": 18,
+   "frameSize": [
+    112,
+    32
+   ],
+   "pivot": [
+    92,
+    16
+   ],
+   "columns": 3
+  }
+ }
+}

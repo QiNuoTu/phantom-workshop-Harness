@@ -1,0 +1,2458 @@
+{
+ "frames": [
+  {
+   "filename": "sword-combo 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 1",
+   "frame": {
+    "x": 264,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 2",
+   "frame": {
+    "x": 528,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 3",
+   "frame": {
+    "x": 792,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 4",
+   "frame": {
+    "x": 1056,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 5",
+   "frame": {
+    "x": 1320,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 6",
+   "frame": {
+    "x": 1584,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 7",
+   "frame": {
+    "x": 1848,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 8",
+   "frame": {
+    "x": 0,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 9",
+   "frame": {
+    "x": 264,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 10",
+   "frame": {
+    "x": 528,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 11",
+   "frame": {
+    "x": 792,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 12",
+   "frame": {
+    "x": 1056,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 13",
+   "frame": {
+    "x": 1320,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 14",
+   "frame": {
+    "x": 1584,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 15",
+   "frame": {
+    "x": 1848,
+    "y": 150,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 16",
+   "frame": {
+    "x": 0,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 17",
+   "frame": {
+    "x": 264,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 18",
+   "frame": {
+    "x": 528,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 19",
+   "frame": {
+    "x": 792,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 20",
+   "frame": {
+    "x": 1056,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 21",
+   "frame": {
+    "x": 1320,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 22",
+   "frame": {
+    "x": 1584,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 23",
+   "frame": {
+    "x": 1848,
+    "y": 300,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 24",
+   "frame": {
+    "x": 0,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 25",
+   "frame": {
+    "x": 264,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 26",
+   "frame": {
+    "x": 528,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 27",
+   "frame": {
+    "x": 792,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 28",
+   "frame": {
+    "x": 1056,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 29",
+   "frame": {
+    "x": 1320,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 30",
+   "frame": {
+    "x": 1584,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 31",
+   "frame": {
+    "x": 1848,
+    "y": 450,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 32",
+   "frame": {
+    "x": 0,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 33",
+   "frame": {
+    "x": 264,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 34",
+   "frame": {
+    "x": 528,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 35",
+   "frame": {
+    "x": 792,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 36",
+   "frame": {
+    "x": 1056,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 37",
+   "frame": {
+    "x": 1320,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 38",
+   "frame": {
+    "x": 1584,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 39",
+   "frame": {
+    "x": 1848,
+    "y": 600,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 40",
+   "frame": {
+    "x": 0,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 41",
+   "frame": {
+    "x": 264,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 42",
+   "frame": {
+    "x": 528,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 43",
+   "frame": {
+    "x": 792,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 44",
+   "frame": {
+    "x": 1056,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 45",
+   "frame": {
+    "x": 1320,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 46",
+   "frame": {
+    "x": 1584,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 47",
+   "frame": {
+    "x": 1848,
+    "y": 750,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 48",
+   "frame": {
+    "x": 0,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 49",
+   "frame": {
+    "x": 264,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 50",
+   "frame": {
+    "x": 528,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 51",
+   "frame": {
+    "x": 792,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 52",
+   "frame": {
+    "x": 1056,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 53",
+   "frame": {
+    "x": 1320,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 54",
+   "frame": {
+    "x": 1584,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 55",
+   "frame": {
+    "x": 1848,
+    "y": 900,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 56",
+   "frame": {
+    "x": 0,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 57",
+   "frame": {
+    "x": 264,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 58",
+   "frame": {
+    "x": 528,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 59",
+   "frame": {
+    "x": 792,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 60",
+   "frame": {
+    "x": 1056,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 61",
+   "frame": {
+    "x": 1320,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 62",
+   "frame": {
+    "x": 1584,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 63",
+   "frame": {
+    "x": 1848,
+    "y": 1050,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 64",
+   "frame": {
+    "x": 0,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 65",
+   "frame": {
+    "x": 264,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 66",
+   "frame": {
+    "x": 528,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 67",
+   "frame": {
+    "x": 792,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 68",
+   "frame": {
+    "x": 1056,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 69",
+   "frame": {
+    "x": 1320,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 70",
+   "frame": {
+    "x": 1584,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 71",
+   "frame": {
+    "x": 1848,
+    "y": 1200,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 72",
+   "frame": {
+    "x": 0,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 73",
+   "frame": {
+    "x": 264,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 74",
+   "frame": {
+    "x": 528,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 75",
+   "frame": {
+    "x": 792,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 76",
+   "frame": {
+    "x": 1056,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 77",
+   "frame": {
+    "x": 1320,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 78",
+   "frame": {
+    "x": 1584,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 79",
+   "frame": {
+    "x": 1848,
+    "y": 1350,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 80",
+   "frame": {
+    "x": 0,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 81",
+   "frame": {
+    "x": 264,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 82",
+   "frame": {
+    "x": 528,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 83",
+   "frame": {
+    "x": 792,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 84",
+   "frame": {
+    "x": 1056,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 85",
+   "frame": {
+    "x": 1320,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 86",
+   "frame": {
+    "x": 1584,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 87",
+   "frame": {
+    "x": 1848,
+    "y": 1500,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 88",
+   "frame": {
+    "x": 0,
+    "y": 1650,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  },
+  {
+   "filename": "sword-combo 89",
+   "frame": {
+    "x": 264,
+    "y": 1650,
+    "w": 264,
+    "h": 150
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 150
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 150
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "sword-combo.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 2112,
+   "h": 1800
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "sword-combo",
+    "from": 0,
+    "to": 89,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "moves/sword-combo",
+   "name": "Sword combo",
+   "fps": 30,
+   "loop": false,
+   "frames": 90,
+   "frameSize": [
+    264,
+    150
+   ],
+   "pivot": [
+    72,
+    130
+   ],
+   "columns": 8,
+   "act": {
+    "windup": 0.55,
+    "recovery": 0,
+    "onBody": false,
+    "targets": [
+     118
+    ],
+    "hits": [
+     {
+      "t": 0.06,
+      "freeze": 0.14,
+      "shake": 0.18,
+      "amp": 2,
+      "push": 2.8
+     },
+     {
+      "t": 0.56,
+      "freeze": 0.05,
+      "shake": 0.08,
+      "amp": 1,
+      "push": 1.4
+     },
+     {
+      "t": 0.66,
+      "freeze": 0.14,
+      "shake": 0.2,
+      "amp": 2,
+      "push": 2.8
+     },
+     {
+      "t": 1.375,
+      "freeze": 0.2,
+      "shake": 0.34,
+      "amp": 3,
+      "push": 3.2
+     }
+    ],
+    "poses": [
+     {
+      "t": -0.55,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 12,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "sa": -0.85,
+       "x": -8
+      }
+     },
+     {
+      "t": -0.3,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": -7,
+       "fy": -35,
+       "bx": 9,
+       "by": -25,
+       "ffx": 9,
+       "fbx": -8,
+       "weapon": "sword",
+       "sa": -2.65,
+       "x": -8,
+       "lean": -4,
+       "armsFront": true
+      }
+     },
+     {
+      "t": -0.08,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": -7,
+       "fy": -35,
+       "bx": 9,
+       "by": -25,
+       "ffx": 9,
+       "fbx": -8,
+       "weapon": "sword",
+       "sa": -2.65,
+       "x": -8,
+       "lean": -5,
+       "armsFront": true
+      }
+     },
+     {
+      "t": 0,
+      "how": "snap",
+      "pose": {
+       "crouch": 2,
+       "fx": 16,
+       "fy": -37,
+       "bx": -7,
+       "by": -24,
+       "ffx": 11,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": -1.45,
+       "x": 0,
+       "lean": 3,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 0.06,
+      "how": "snap",
+      "pose": {
+       "crouch": 5,
+       "fx": 20,
+       "fy": -21,
+       "bx": -9,
+       "by": -24,
+       "ffx": 13,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": 0.62,
+       "x": 2,
+       "lean": 5,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.3,
+      "how": "smooth",
+      "pose": {
+       "crouch": 6,
+       "fx": 20,
+       "fy": -21,
+       "bx": -9,
+       "by": -24,
+       "ffx": 13,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": 0.62,
+       "x": 3,
+       "lean": 5,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.46,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": -7,
+       "fy": -35,
+       "bx": 9,
+       "by": -25,
+       "ffx": 9,
+       "fbx": -8,
+       "weapon": "sword",
+       "sa": -2.65,
+       "x": 3,
+       "lean": -4,
+       "armsFront": true
+      }
+     },
+     {
+      "t": 0.5,
+      "how": "snap",
+      "pose": {
+       "crouch": 2,
+       "fx": 16,
+       "fy": -37,
+       "bx": -7,
+       "by": -24,
+       "ffx": 11,
+       "fbx": -9,
+       "weapon": "sword",
+       "sa": -1.45,
+       "x": 10,
+       "lean": 3,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 0.56,
+      "how": "snap",
+      "pose": {
+       "crouch": 6,
+       "fx": 22,
+       "fy": -20,
+       "bx": -8,
+       "by": -24,
+       "ffx": 13,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": 0.62,
+       "x": 13,
+       "lean": 6,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.64,
+      "how": "smooth",
+      "pose": {
+       "crouch": 6,
+       "fx": 20,
+       "fy": -17,
+       "bx": -8,
+       "by": -24,
+       "ffx": 13,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": 0.85,
+       "x": 14,
+       "lean": 5,
+       "toeB": true,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 0.67,
+      "how": "snap",
+      "pose": {
+       "crouch": 3,
+       "fx": 22,
+       "fy": -28,
+       "bx": -8,
+       "by": -18,
+       "ffx": 13,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": 0.1,
+       "x": 15,
+       "lean": 5,
+       "toeB": true,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 0.71,
+      "how": "snap",
+      "pose": {
+       "crouch": 1,
+       "fx": 19,
+       "fy": -37,
+       "bx": -8,
+       "by": -18,
+       "ffx": 13,
+       "fbx": -10,
+       "weapon": "sword",
+       "sa": -0.95,
+       "x": 16,
+       "lean": 6,
+       "toeB": true,
+       "fby": -6
+      }
+     },
+     {
+      "t": 0.74,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": 13,
+       "fy": -29,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": -1.3,
+       "x": 17
+      }
+     },
+     {
+      "t": 0.92,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": 1,
+       "fy": -42,
+       "bx": 9,
+       "by": -21,
+       "ffx": 8,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": -2.45,
+       "x": 16,
+       "lean": -2
+      }
+     },
+     {
+      "t": 1.24,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 1,
+       "fy": -42,
+       "bx": 9,
+       "by": -21,
+       "ffx": 8,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": -2.45,
+       "x": 16,
+       "lean": -2
+      }
+     },
+     {
+      "t": 1.31,
+      "how": "snap",
+      "pose": {
+       "crouch": 0,
+       "fx": 11,
+       "fy": -42,
+       "bx": 9,
+       "by": -21,
+       "ffx": 10,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": -1.45,
+       "x": 19,
+       "y": -2,
+       "lean": 2,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 1.35,
+      "how": "snap",
+      "pose": {
+       "crouch": 3,
+       "fx": 18,
+       "fy": -33,
+       "bx": 9,
+       "by": -21,
+       "ffx": 12,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": -0.45,
+       "x": 20,
+       "y": -1,
+       "lean": 4,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 1.375,
+      "how": "snap",
+      "pose": {
+       "crouch": 7,
+       "fx": 17,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 11,
+       "fbx": -10,
+       "weapon": "sword",
+       "two": true,
+       "sa": 0.72,
+       "x": 20,
+       "lean": 6,
+       "toeB": true
+      }
+     },
+     {
+      "t": 1.8900000000000001,
+      "how": "smooth",
+      "pose": {
+       "crouch": 6,
+       "fx": 17,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 11,
+       "fbx": -10,
+       "weapon": "sword",
+       "two": true,
+       "sa": 0.72,
+       "x": 20,
+       "lean": 5,
+       "toeB": true
+      }
+     },
+     {
+      "t": 2.34,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": 15,
+       "fy": -23,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": 0.1,
+       "x": 18,
+       "lean": 2
+      }
+     },
+     {
+      "t": 2.74,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "two": true,
+       "sa": -1,
+       "x": 16
+      }
+     },
+     {
+      "t": 2.975,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -15,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "sa": 0.38,
+       "x": 16
+      }
+     }
+    ]
+   }
+  }
+ }
+}

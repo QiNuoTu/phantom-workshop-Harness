@@ -1,0 +1,2035 @@
+{
+ "frames": [
+  {
+   "filename": "holy-smite 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 1",
+   "frame": {
+    "x": 252,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 2",
+   "frame": {
+    "x": 504,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 3",
+   "frame": {
+    "x": 756,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 4",
+   "frame": {
+    "x": 1008,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 5",
+   "frame": {
+    "x": 1260,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 6",
+   "frame": {
+    "x": 1512,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 7",
+   "frame": {
+    "x": 1764,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 8",
+   "frame": {
+    "x": 0,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 9",
+   "frame": {
+    "x": 252,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 10",
+   "frame": {
+    "x": 504,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 11",
+   "frame": {
+    "x": 756,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 12",
+   "frame": {
+    "x": 1008,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 13",
+   "frame": {
+    "x": 1260,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 14",
+   "frame": {
+    "x": 1512,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 15",
+   "frame": {
+    "x": 1764,
+    "y": 182,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 16",
+   "frame": {
+    "x": 0,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 17",
+   "frame": {
+    "x": 252,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 18",
+   "frame": {
+    "x": 504,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 19",
+   "frame": {
+    "x": 756,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 20",
+   "frame": {
+    "x": 1008,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 21",
+   "frame": {
+    "x": 1260,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 22",
+   "frame": {
+    "x": 1512,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 23",
+   "frame": {
+    "x": 1764,
+    "y": 364,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 24",
+   "frame": {
+    "x": 0,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 25",
+   "frame": {
+    "x": 252,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 26",
+   "frame": {
+    "x": 504,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 27",
+   "frame": {
+    "x": 756,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 28",
+   "frame": {
+    "x": 1008,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 29",
+   "frame": {
+    "x": 1260,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 30",
+   "frame": {
+    "x": 1512,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 31",
+   "frame": {
+    "x": 1764,
+    "y": 546,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 32",
+   "frame": {
+    "x": 0,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 33",
+   "frame": {
+    "x": 252,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 34",
+   "frame": {
+    "x": 504,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 35",
+   "frame": {
+    "x": 756,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 36",
+   "frame": {
+    "x": 1008,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 37",
+   "frame": {
+    "x": 1260,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 38",
+   "frame": {
+    "x": 1512,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 39",
+   "frame": {
+    "x": 1764,
+    "y": 728,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 40",
+   "frame": {
+    "x": 0,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 41",
+   "frame": {
+    "x": 252,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 42",
+   "frame": {
+    "x": 504,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 43",
+   "frame": {
+    "x": 756,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 44",
+   "frame": {
+    "x": 1008,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 45",
+   "frame": {
+    "x": 1260,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 46",
+   "frame": {
+    "x": 1512,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 47",
+   "frame": {
+    "x": 1764,
+    "y": 910,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 48",
+   "frame": {
+    "x": 0,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 49",
+   "frame": {
+    "x": 252,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 50",
+   "frame": {
+    "x": 504,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 51",
+   "frame": {
+    "x": 756,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 52",
+   "frame": {
+    "x": 1008,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 53",
+   "frame": {
+    "x": 1260,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 54",
+   "frame": {
+    "x": 1512,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 55",
+   "frame": {
+    "x": 1764,
+    "y": 1092,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 56",
+   "frame": {
+    "x": 0,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 57",
+   "frame": {
+    "x": 252,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 58",
+   "frame": {
+    "x": 504,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 59",
+   "frame": {
+    "x": 756,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 60",
+   "frame": {
+    "x": 1008,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 61",
+   "frame": {
+    "x": 1260,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 62",
+   "frame": {
+    "x": 1512,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 63",
+   "frame": {
+    "x": 1764,
+    "y": 1274,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 64",
+   "frame": {
+    "x": 0,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 65",
+   "frame": {
+    "x": 252,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 66",
+   "frame": {
+    "x": 504,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 67",
+   "frame": {
+    "x": 756,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 68",
+   "frame": {
+    "x": 1008,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 69",
+   "frame": {
+    "x": 1260,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 70",
+   "frame": {
+    "x": 1512,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 71",
+   "frame": {
+    "x": 1764,
+    "y": 1456,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 72",
+   "frame": {
+    "x": 0,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 73",
+   "frame": {
+    "x": 252,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 74",
+   "frame": {
+    "x": 504,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 75",
+   "frame": {
+    "x": 756,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 76",
+   "frame": {
+    "x": 1008,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 77",
+   "frame": {
+    "x": 1260,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 78",
+   "frame": {
+    "x": 1512,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 79",
+   "frame": {
+    "x": 1764,
+    "y": 1638,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 80",
+   "frame": {
+    "x": 0,
+    "y": 1820,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 81",
+   "frame": {
+    "x": 252,
+    "y": 1820,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 82",
+   "frame": {
+    "x": 504,
+    "y": 1820,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 83",
+   "frame": {
+    "x": 756,
+    "y": 1820,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  },
+  {
+   "filename": "holy-smite 84",
+   "frame": {
+    "x": 1008,
+    "y": 1820,
+    "w": 252,
+    "h": 182
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 252,
+    "h": 182
+   },
+   "sourceSize": {
+    "w": 252,
+    "h": 182
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "holy-smite.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 2016,
+   "h": 2002
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "holy-smite",
+    "from": 0,
+    "to": 84,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "moves/holy-smite",
+   "name": "Holy smite",
+   "fps": 30,
+   "loop": false,
+   "frames": 85,
+   "frameSize": [
+    252,
+    182
+   ],
+   "pivot": [
+    42,
+    151
+   ],
+   "columns": 8,
+   "act": {
+    "windup": 0.42,
+    "recovery": 0,
+    "onBody": false,
+    "targets": [
+     118
+    ],
+    "hits": [
+     {
+      "t": 0.47,
+      "freeze": 0.14,
+      "shake": 0.32,
+      "amp": 3,
+      "push": 2.8,
+      "skin": "holy"
+     },
+     {
+      "t": 2.3,
+      "freeze": 0,
+      "shake": 0,
+      "amp": 0,
+      "push": 0,
+      "skin": null
+     }
+    ],
+    "poses": [
+     {
+      "t": -0.42,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7
+      }
+     },
+     {
+      "t": -0.04,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.15,
+       "crouch": -1,
+       "fx": -7,
+       "fy": -44,
+       "bx": 8,
+       "by": -44,
+       "ffx": -3,
+       "fbx": 4
+      }
+     },
+     {
+      "t": 0.45999999999999996,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.15,
+       "crouch": -1,
+       "fx": -7,
+       "fy": -44,
+       "bx": 8,
+       "by": -44,
+       "ffx": -3,
+       "fbx": 4,
+       "y": -1
+      }
+     },
+     {
+      "t": 0.47,
+      "how": "snap",
+      "pose": {
+       "crouch": 5,
+       "fx": 17,
+       "fy": -29,
+       "bx": 13,
+       "by": -25,
+       "ffx": 12,
+       "fbx": -10,
+       "lean": 5,
+       "toeB": true
+      }
+     },
+     {
+      "t": 1.1,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 17,
+       "fy": -29,
+       "bx": 13,
+       "by": -25,
+       "ffx": 12,
+       "fbx": -10,
+       "lean": 3,
+       "toeB": true
+      }
+     },
+     {
+      "t": 1.7,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7
+      }
+     },
+     {
+      "t": 2.8,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7
+      }
+     }
+    ]
+   }
+  }
+ }
+}

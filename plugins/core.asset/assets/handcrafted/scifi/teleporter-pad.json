@@ -1,0 +1,1623 @@
+{
+ "frames": [
+  {
+   "filename": "teleporter-pad 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 1",
+   "frame": {
+    "x": 96,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 2",
+   "frame": {
+    "x": 192,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 3",
+   "frame": {
+    "x": 288,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 4",
+   "frame": {
+    "x": 384,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 5",
+   "frame": {
+    "x": 480,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 6",
+   "frame": {
+    "x": 576,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 7",
+   "frame": {
+    "x": 672,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 8",
+   "frame": {
+    "x": 768,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 9",
+   "frame": {
+    "x": 0,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 10",
+   "frame": {
+    "x": 96,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 11",
+   "frame": {
+    "x": 192,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 12",
+   "frame": {
+    "x": 288,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 13",
+   "frame": {
+    "x": 384,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 14",
+   "frame": {
+    "x": 480,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 15",
+   "frame": {
+    "x": 576,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 16",
+   "frame": {
+    "x": 672,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 17",
+   "frame": {
+    "x": 768,
+    "y": 104,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 18",
+   "frame": {
+    "x": 0,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 19",
+   "frame": {
+    "x": 96,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 20",
+   "frame": {
+    "x": 192,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 21",
+   "frame": {
+    "x": 288,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 22",
+   "frame": {
+    "x": 384,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 23",
+   "frame": {
+    "x": 480,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 24",
+   "frame": {
+    "x": 576,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 25",
+   "frame": {
+    "x": 672,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 26",
+   "frame": {
+    "x": 768,
+    "y": 208,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 27",
+   "frame": {
+    "x": 0,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 28",
+   "frame": {
+    "x": 96,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 29",
+   "frame": {
+    "x": 192,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 30",
+   "frame": {
+    "x": 288,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 31",
+   "frame": {
+    "x": 384,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 32",
+   "frame": {
+    "x": 480,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 33",
+   "frame": {
+    "x": 576,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 34",
+   "frame": {
+    "x": 672,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 35",
+   "frame": {
+    "x": 768,
+    "y": 312,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 36",
+   "frame": {
+    "x": 0,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 37",
+   "frame": {
+    "x": 96,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 38",
+   "frame": {
+    "x": 192,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 39",
+   "frame": {
+    "x": 288,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 40",
+   "frame": {
+    "x": 384,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 41",
+   "frame": {
+    "x": 480,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 42",
+   "frame": {
+    "x": 576,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 43",
+   "frame": {
+    "x": 672,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 44",
+   "frame": {
+    "x": 768,
+    "y": 416,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 45",
+   "frame": {
+    "x": 0,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 46",
+   "frame": {
+    "x": 96,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 47",
+   "frame": {
+    "x": 192,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 48",
+   "frame": {
+    "x": 288,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 49",
+   "frame": {
+    "x": 384,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 50",
+   "frame": {
+    "x": 480,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 51",
+   "frame": {
+    "x": 576,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 52",
+   "frame": {
+    "x": 672,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 53",
+   "frame": {
+    "x": 768,
+    "y": 520,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 54",
+   "frame": {
+    "x": 0,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 55",
+   "frame": {
+    "x": 96,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 56",
+   "frame": {
+    "x": 192,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 57",
+   "frame": {
+    "x": 288,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 58",
+   "frame": {
+    "x": 384,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 59",
+   "frame": {
+    "x": 480,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 60",
+   "frame": {
+    "x": 576,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 61",
+   "frame": {
+    "x": 672,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 62",
+   "frame": {
+    "x": 768,
+    "y": 624,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 63",
+   "frame": {
+    "x": 0,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 64",
+   "frame": {
+    "x": 96,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 65",
+   "frame": {
+    "x": 192,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 66",
+   "frame": {
+    "x": 288,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 67",
+   "frame": {
+    "x": 384,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 68",
+   "frame": {
+    "x": 480,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 69",
+   "frame": {
+    "x": 576,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 70",
+   "frame": {
+    "x": 672,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "teleporter-pad 71",
+   "frame": {
+    "x": 768,
+    "y": 728,
+    "w": 96,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 96,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 96,
+    "h": 104
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "teleporter-pad.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 864,
+   "h": 832
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "teleporter-pad",
+    "from": 0,
+    "to": 71,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "scifi/teleporter-pad",
+   "name": "Teleporter pad",
+   "fps": 30,
+   "loop": true,
+   "frames": 72,
+   "frameSize": [
+    96,
+    104
+   ],
+   "pivot": [
+    48,
+    92
+   ],
+   "columns": 9
+  }
+ }
+}

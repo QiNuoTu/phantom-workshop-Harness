@@ -1,0 +1,11 @@
+{
+	"id": "editor.plugins",
+	"name": "插件维护",
+	"version": "1.0",
+	"description": "重新扫描插件与打开用户插件目录",
+	"script": "plugin.gd",
+	"inject": [
+		"core.plugins",
+		"kernel.graph"
+	]
+}

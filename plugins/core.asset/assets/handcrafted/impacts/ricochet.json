@@ -1,0 +1,787 @@
+{
+ "frames": [
+  {
+   "filename": "ricochet 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 1",
+   "frame": {
+    "x": 232,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 2",
+   "frame": {
+    "x": 464,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 3",
+   "frame": {
+    "x": 696,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 4",
+   "frame": {
+    "x": 0,
+    "y": 84,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 5",
+   "frame": {
+    "x": 232,
+    "y": 84,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 6",
+   "frame": {
+    "x": 464,
+    "y": 84,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 7",
+   "frame": {
+    "x": 696,
+    "y": 84,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 8",
+   "frame": {
+    "x": 0,
+    "y": 168,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 9",
+   "frame": {
+    "x": 232,
+    "y": 168,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 10",
+   "frame": {
+    "x": 464,
+    "y": 168,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 11",
+   "frame": {
+    "x": 696,
+    "y": 168,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 12",
+   "frame": {
+    "x": 0,
+    "y": 252,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 13",
+   "frame": {
+    "x": 232,
+    "y": 252,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 14",
+   "frame": {
+    "x": 464,
+    "y": 252,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 15",
+   "frame": {
+    "x": 696,
+    "y": 252,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 16",
+   "frame": {
+    "x": 0,
+    "y": 336,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 17",
+   "frame": {
+    "x": 232,
+    "y": 336,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 18",
+   "frame": {
+    "x": 464,
+    "y": 336,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 19",
+   "frame": {
+    "x": 696,
+    "y": 336,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 20",
+   "frame": {
+    "x": 0,
+    "y": 420,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 21",
+   "frame": {
+    "x": 232,
+    "y": 420,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 22",
+   "frame": {
+    "x": 464,
+    "y": 420,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 23",
+   "frame": {
+    "x": 696,
+    "y": 420,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 24",
+   "frame": {
+    "x": 0,
+    "y": 504,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 25",
+   "frame": {
+    "x": 232,
+    "y": 504,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 26",
+   "frame": {
+    "x": 464,
+    "y": 504,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 27",
+   "frame": {
+    "x": 696,
+    "y": 504,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 28",
+   "frame": {
+    "x": 0,
+    "y": 588,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 29",
+   "frame": {
+    "x": 232,
+    "y": 588,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 30",
+   "frame": {
+    "x": 464,
+    "y": 588,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 31",
+   "frame": {
+    "x": 696,
+    "y": 588,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 32",
+   "frame": {
+    "x": 0,
+    "y": 672,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ricochet 33",
+   "frame": {
+    "x": 232,
+    "y": 672,
+    "w": 232,
+    "h": 84
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 84
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 84
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "ricochet.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 928,
+   "h": 756
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "ricochet",
+    "from": 0,
+    "to": 33,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "impacts/ricochet",
+   "name": "Ricochet",
+   "fps": 30,
+   "loop": false,
+   "frames": 34,
+   "frameSize": [
+    232,
+    84
+   ],
+   "pivot": [
+    64,
+    60
+   ],
+   "columns": 4
+  }
+ }
+}

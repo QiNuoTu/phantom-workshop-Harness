@@ -1,0 +1,1755 @@
+{
+ "frames": [
+  {
+   "filename": "frog 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 1",
+   "frame": {
+    "x": 112,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 2",
+   "frame": {
+    "x": 224,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 3",
+   "frame": {
+    "x": 336,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 4",
+   "frame": {
+    "x": 448,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 5",
+   "frame": {
+    "x": 560,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 6",
+   "frame": {
+    "x": 672,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 7",
+   "frame": {
+    "x": 784,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 8",
+   "frame": {
+    "x": 0,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 9",
+   "frame": {
+    "x": 112,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 10",
+   "frame": {
+    "x": 224,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 11",
+   "frame": {
+    "x": 336,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 12",
+   "frame": {
+    "x": 448,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 13",
+   "frame": {
+    "x": 560,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 14",
+   "frame": {
+    "x": 672,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 15",
+   "frame": {
+    "x": 784,
+    "y": 88,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 16",
+   "frame": {
+    "x": 0,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 17",
+   "frame": {
+    "x": 112,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 18",
+   "frame": {
+    "x": 224,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 19",
+   "frame": {
+    "x": 336,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 20",
+   "frame": {
+    "x": 448,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 21",
+   "frame": {
+    "x": 560,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 22",
+   "frame": {
+    "x": 672,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 23",
+   "frame": {
+    "x": 784,
+    "y": 176,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 24",
+   "frame": {
+    "x": 0,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 25",
+   "frame": {
+    "x": 112,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 26",
+   "frame": {
+    "x": 224,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 27",
+   "frame": {
+    "x": 336,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 28",
+   "frame": {
+    "x": 448,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 29",
+   "frame": {
+    "x": 560,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 30",
+   "frame": {
+    "x": 672,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 31",
+   "frame": {
+    "x": 784,
+    "y": 264,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 32",
+   "frame": {
+    "x": 0,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 33",
+   "frame": {
+    "x": 112,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 34",
+   "frame": {
+    "x": 224,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 35",
+   "frame": {
+    "x": 336,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 36",
+   "frame": {
+    "x": 448,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 37",
+   "frame": {
+    "x": 560,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 38",
+   "frame": {
+    "x": 672,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 39",
+   "frame": {
+    "x": 784,
+    "y": 352,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 40",
+   "frame": {
+    "x": 0,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 41",
+   "frame": {
+    "x": 112,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 42",
+   "frame": {
+    "x": 224,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 43",
+   "frame": {
+    "x": 336,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 44",
+   "frame": {
+    "x": 448,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 45",
+   "frame": {
+    "x": 560,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 46",
+   "frame": {
+    "x": 672,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 47",
+   "frame": {
+    "x": 784,
+    "y": 440,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 48",
+   "frame": {
+    "x": 0,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 49",
+   "frame": {
+    "x": 112,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 50",
+   "frame": {
+    "x": 224,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 51",
+   "frame": {
+    "x": 336,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 52",
+   "frame": {
+    "x": 448,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 53",
+   "frame": {
+    "x": 560,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 54",
+   "frame": {
+    "x": 672,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 55",
+   "frame": {
+    "x": 784,
+    "y": 528,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 56",
+   "frame": {
+    "x": 0,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 57",
+   "frame": {
+    "x": 112,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 58",
+   "frame": {
+    "x": 224,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 59",
+   "frame": {
+    "x": 336,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 60",
+   "frame": {
+    "x": 448,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 61",
+   "frame": {
+    "x": 560,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 62",
+   "frame": {
+    "x": 672,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 63",
+   "frame": {
+    "x": 784,
+    "y": 616,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 64",
+   "frame": {
+    "x": 0,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 65",
+   "frame": {
+    "x": 112,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 66",
+   "frame": {
+    "x": 224,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 67",
+   "frame": {
+    "x": 336,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 68",
+   "frame": {
+    "x": 448,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 69",
+   "frame": {
+    "x": 560,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 70",
+   "frame": {
+    "x": 672,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 71",
+   "frame": {
+    "x": 784,
+    "y": 704,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 72",
+   "frame": {
+    "x": 0,
+    "y": 792,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 73",
+   "frame": {
+    "x": 112,
+    "y": 792,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 74",
+   "frame": {
+    "x": 224,
+    "y": 792,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 75",
+   "frame": {
+    "x": 336,
+    "y": 792,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 76",
+   "frame": {
+    "x": 448,
+    "y": 792,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "frog 77",
+   "frame": {
+    "x": 560,
+    "y": 792,
+    "w": 112,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 88
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "frog.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 896,
+   "h": 880
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "frog",
+    "from": 0,
+    "to": 77,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "critters/frog",
+   "name": "Frog",
+   "fps": 30,
+   "loop": true,
+   "frames": 78,
+   "frameSize": [
+    112,
+    88
+   ],
+   "pivot": [
+    56,
+    80
+   ],
+   "columns": 8
+  }
+ }
+}

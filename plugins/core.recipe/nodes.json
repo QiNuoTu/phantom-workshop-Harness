@@ -1,0 +1,61 @@
+{
+	"category": "图像/来源",
+	"nodes": [
+		{
+			"id": "image.recipe",
+			"label": "VfxEngine 配方",
+			"desc": "复用旧 VfxEngine 的粒子/光环/冲击波/后处理配方。配方 JSON 内嵌在节点参数里，输出普通 Image。",
+			"op": "image.recipe",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "recipe",
+					"label": "配方",
+					"kind": "recipe",
+					"default": "",
+					"hint": "点“编辑”打开 JSON 编辑器，可选火焰/能量环/冲击波预设"
+				},
+				{
+					"id": "fit",
+					"label": "适配",
+					"kind": "enum",
+					"default": "contain",
+					"options": [
+						"contain",
+						"cover",
+						"stretch",
+						"none"
+					]
+				},
+				{
+					"id": "time_offset",
+					"label": "时间偏移",
+					"kind": "float",
+					"default": 0.0,
+					"min": -30.0,
+					"max": 30.0,
+					"step": 0.01,
+					"unit": "s",
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 9999,
+					"step": 1,
+					"hint": "0 = 跟随配方"
+				}
+			]
+		}
+	]
+}

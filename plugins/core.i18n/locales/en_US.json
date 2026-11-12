@@ -1,0 +1,10 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"切换界面语言": "Cycle language",
+		"界面语言（设置）": "Language (Settings)",
+		"界面语言": "Interface language",
+		"多语言支持": "Localization",
+		"界面多语言；每个插件可自带译文，支持运行时切换": "UI localization with per-plugin language packs and runtime switching"
+	}
+}

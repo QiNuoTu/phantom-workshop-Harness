@@ -1,0 +1,2173 @@
+{
+ "frames": [
+  {
+   "filename": "emp-blast 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 1",
+   "frame": {
+    "x": 152,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 2",
+   "frame": {
+    "x": 304,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 3",
+   "frame": {
+    "x": 456,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 4",
+   "frame": {
+    "x": 608,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 5",
+   "frame": {
+    "x": 760,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 6",
+   "frame": {
+    "x": 912,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 7",
+   "frame": {
+    "x": 1064,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 8",
+   "frame": {
+    "x": 1216,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 9",
+   "frame": {
+    "x": 0,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 10",
+   "frame": {
+    "x": 152,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 11",
+   "frame": {
+    "x": 304,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 12",
+   "frame": {
+    "x": 456,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 13",
+   "frame": {
+    "x": 608,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 14",
+   "frame": {
+    "x": 760,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 15",
+   "frame": {
+    "x": 912,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 16",
+   "frame": {
+    "x": 1064,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 17",
+   "frame": {
+    "x": 1216,
+    "y": 116,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 18",
+   "frame": {
+    "x": 0,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 19",
+   "frame": {
+    "x": 152,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 20",
+   "frame": {
+    "x": 304,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 21",
+   "frame": {
+    "x": 456,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 22",
+   "frame": {
+    "x": 608,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 23",
+   "frame": {
+    "x": 760,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 24",
+   "frame": {
+    "x": 912,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 25",
+   "frame": {
+    "x": 1064,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 26",
+   "frame": {
+    "x": 1216,
+    "y": 232,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 27",
+   "frame": {
+    "x": 0,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 28",
+   "frame": {
+    "x": 152,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 29",
+   "frame": {
+    "x": 304,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 30",
+   "frame": {
+    "x": 456,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 31",
+   "frame": {
+    "x": 608,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 32",
+   "frame": {
+    "x": 760,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 33",
+   "frame": {
+    "x": 912,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 34",
+   "frame": {
+    "x": 1064,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 35",
+   "frame": {
+    "x": 1216,
+    "y": 348,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 36",
+   "frame": {
+    "x": 0,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 37",
+   "frame": {
+    "x": 152,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 38",
+   "frame": {
+    "x": 304,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 39",
+   "frame": {
+    "x": 456,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 40",
+   "frame": {
+    "x": 608,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 41",
+   "frame": {
+    "x": 760,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 42",
+   "frame": {
+    "x": 912,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 43",
+   "frame": {
+    "x": 1064,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 44",
+   "frame": {
+    "x": 1216,
+    "y": 464,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 45",
+   "frame": {
+    "x": 0,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 46",
+   "frame": {
+    "x": 152,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 47",
+   "frame": {
+    "x": 304,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 48",
+   "frame": {
+    "x": 456,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 49",
+   "frame": {
+    "x": 608,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 50",
+   "frame": {
+    "x": 760,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 51",
+   "frame": {
+    "x": 912,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 52",
+   "frame": {
+    "x": 1064,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 53",
+   "frame": {
+    "x": 1216,
+    "y": 580,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 54",
+   "frame": {
+    "x": 0,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 55",
+   "frame": {
+    "x": 152,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 56",
+   "frame": {
+    "x": 304,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 57",
+   "frame": {
+    "x": 456,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 58",
+   "frame": {
+    "x": 608,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 59",
+   "frame": {
+    "x": 760,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 60",
+   "frame": {
+    "x": 912,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 61",
+   "frame": {
+    "x": 1064,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 62",
+   "frame": {
+    "x": 1216,
+    "y": 696,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 63",
+   "frame": {
+    "x": 0,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 64",
+   "frame": {
+    "x": 152,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 65",
+   "frame": {
+    "x": 304,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 66",
+   "frame": {
+    "x": 456,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 67",
+   "frame": {
+    "x": 608,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 68",
+   "frame": {
+    "x": 760,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 69",
+   "frame": {
+    "x": 912,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 70",
+   "frame": {
+    "x": 1064,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 71",
+   "frame": {
+    "x": 1216,
+    "y": 812,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 72",
+   "frame": {
+    "x": 0,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 73",
+   "frame": {
+    "x": 152,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 74",
+   "frame": {
+    "x": 304,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 75",
+   "frame": {
+    "x": 456,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 76",
+   "frame": {
+    "x": 608,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 77",
+   "frame": {
+    "x": 760,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 78",
+   "frame": {
+    "x": 912,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 79",
+   "frame": {
+    "x": 1064,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 80",
+   "frame": {
+    "x": 1216,
+    "y": 928,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 81",
+   "frame": {
+    "x": 0,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 82",
+   "frame": {
+    "x": 152,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 83",
+   "frame": {
+    "x": 304,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 84",
+   "frame": {
+    "x": 456,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 85",
+   "frame": {
+    "x": 608,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 86",
+   "frame": {
+    "x": 760,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 87",
+   "frame": {
+    "x": 912,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 88",
+   "frame": {
+    "x": 1064,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 89",
+   "frame": {
+    "x": 1216,
+    "y": 1044,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 90",
+   "frame": {
+    "x": 0,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 91",
+   "frame": {
+    "x": 152,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 92",
+   "frame": {
+    "x": 304,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 93",
+   "frame": {
+    "x": 456,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 94",
+   "frame": {
+    "x": 608,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 95",
+   "frame": {
+    "x": 760,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  },
+  {
+   "filename": "emp-blast 96",
+   "frame": {
+    "x": 912,
+    "y": 1160,
+    "w": 152,
+    "h": 116
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 152,
+    "h": 116
+   },
+   "sourceSize": {
+    "w": 152,
+    "h": 116
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "emp-blast.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1368,
+   "h": 1276
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "emp-blast",
+    "from": 0,
+    "to": 96,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "scifi/emp-blast",
+   "name": "EMP blast",
+   "fps": 30,
+   "loop": false,
+   "frames": 97,
+   "frameSize": [
+    152,
+    116
+   ],
+   "pivot": [
+    76,
+    84
+   ],
+   "columns": 9
+  }
+ }
+}

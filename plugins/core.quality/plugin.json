@@ -1,0 +1,16 @@
+{
+	"id": "core.quality",
+	"name": "质量与性能策略",
+	"version": "1.0",
+	"description": "预览质量、算子质量、缓存与节流的统一设置",
+	"script": "plugin.gd",
+	"icon": "◈",
+	"color": "#4cc2ff",
+	"inject": [
+		"core.catalog",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.quality": "1.0"
+	}
+}

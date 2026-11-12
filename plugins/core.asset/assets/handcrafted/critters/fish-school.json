@@ -1,0 +1,3207 @@
+{
+ "frames": [
+  {
+   "filename": "fish-school 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 1",
+   "frame": {
+    "x": 136,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 2",
+   "frame": {
+    "x": 272,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 3",
+   "frame": {
+    "x": 408,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 4",
+   "frame": {
+    "x": 544,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 5",
+   "frame": {
+    "x": 680,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 6",
+   "frame": {
+    "x": 816,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 7",
+   "frame": {
+    "x": 952,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 8",
+   "frame": {
+    "x": 1088,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 9",
+   "frame": {
+    "x": 1224,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 10",
+   "frame": {
+    "x": 0,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 11",
+   "frame": {
+    "x": 136,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 12",
+   "frame": {
+    "x": 272,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 13",
+   "frame": {
+    "x": 408,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 14",
+   "frame": {
+    "x": 544,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 15",
+   "frame": {
+    "x": 680,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 16",
+   "frame": {
+    "x": 816,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 17",
+   "frame": {
+    "x": 952,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 18",
+   "frame": {
+    "x": 1088,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 19",
+   "frame": {
+    "x": 1224,
+    "y": 80,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 20",
+   "frame": {
+    "x": 0,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 21",
+   "frame": {
+    "x": 136,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 22",
+   "frame": {
+    "x": 272,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 23",
+   "frame": {
+    "x": 408,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 24",
+   "frame": {
+    "x": 544,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 25",
+   "frame": {
+    "x": 680,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 26",
+   "frame": {
+    "x": 816,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 27",
+   "frame": {
+    "x": 952,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 28",
+   "frame": {
+    "x": 1088,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 29",
+   "frame": {
+    "x": 1224,
+    "y": 160,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 30",
+   "frame": {
+    "x": 0,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 31",
+   "frame": {
+    "x": 136,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 32",
+   "frame": {
+    "x": 272,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 33",
+   "frame": {
+    "x": 408,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 34",
+   "frame": {
+    "x": 544,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 35",
+   "frame": {
+    "x": 680,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 36",
+   "frame": {
+    "x": 816,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 37",
+   "frame": {
+    "x": 952,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 38",
+   "frame": {
+    "x": 1088,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 39",
+   "frame": {
+    "x": 1224,
+    "y": 240,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 40",
+   "frame": {
+    "x": 0,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 41",
+   "frame": {
+    "x": 136,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 42",
+   "frame": {
+    "x": 272,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 43",
+   "frame": {
+    "x": 408,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 44",
+   "frame": {
+    "x": 544,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 45",
+   "frame": {
+    "x": 680,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 46",
+   "frame": {
+    "x": 816,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 47",
+   "frame": {
+    "x": 952,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 48",
+   "frame": {
+    "x": 1088,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 49",
+   "frame": {
+    "x": 1224,
+    "y": 320,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 50",
+   "frame": {
+    "x": 0,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 51",
+   "frame": {
+    "x": 136,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 52",
+   "frame": {
+    "x": 272,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 53",
+   "frame": {
+    "x": 408,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 54",
+   "frame": {
+    "x": 544,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 55",
+   "frame": {
+    "x": 680,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 56",
+   "frame": {
+    "x": 816,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 57",
+   "frame": {
+    "x": 952,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 58",
+   "frame": {
+    "x": 1088,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 59",
+   "frame": {
+    "x": 1224,
+    "y": 400,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 60",
+   "frame": {
+    "x": 0,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 61",
+   "frame": {
+    "x": 136,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 62",
+   "frame": {
+    "x": 272,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 63",
+   "frame": {
+    "x": 408,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 64",
+   "frame": {
+    "x": 544,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 65",
+   "frame": {
+    "x": 680,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 66",
+   "frame": {
+    "x": 816,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 67",
+   "frame": {
+    "x": 952,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 68",
+   "frame": {
+    "x": 1088,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 69",
+   "frame": {
+    "x": 1224,
+    "y": 480,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 70",
+   "frame": {
+    "x": 0,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 71",
+   "frame": {
+    "x": 136,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 72",
+   "frame": {
+    "x": 272,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 73",
+   "frame": {
+    "x": 408,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 74",
+   "frame": {
+    "x": 544,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 75",
+   "frame": {
+    "x": 680,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 76",
+   "frame": {
+    "x": 816,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 77",
+   "frame": {
+    "x": 952,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 78",
+   "frame": {
+    "x": 1088,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 79",
+   "frame": {
+    "x": 1224,
+    "y": 560,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 80",
+   "frame": {
+    "x": 0,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 81",
+   "frame": {
+    "x": 136,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 82",
+   "frame": {
+    "x": 272,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 83",
+   "frame": {
+    "x": 408,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 84",
+   "frame": {
+    "x": 544,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 85",
+   "frame": {
+    "x": 680,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 86",
+   "frame": {
+    "x": 816,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 87",
+   "frame": {
+    "x": 952,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 88",
+   "frame": {
+    "x": 1088,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 89",
+   "frame": {
+    "x": 1224,
+    "y": 640,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 90",
+   "frame": {
+    "x": 0,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 91",
+   "frame": {
+    "x": 136,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 92",
+   "frame": {
+    "x": 272,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 93",
+   "frame": {
+    "x": 408,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 94",
+   "frame": {
+    "x": 544,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 95",
+   "frame": {
+    "x": 680,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 96",
+   "frame": {
+    "x": 816,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 97",
+   "frame": {
+    "x": 952,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 98",
+   "frame": {
+    "x": 1088,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 99",
+   "frame": {
+    "x": 1224,
+    "y": 720,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 100",
+   "frame": {
+    "x": 0,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 101",
+   "frame": {
+    "x": 136,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 102",
+   "frame": {
+    "x": 272,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 103",
+   "frame": {
+    "x": 408,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 104",
+   "frame": {
+    "x": 544,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 105",
+   "frame": {
+    "x": 680,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 106",
+   "frame": {
+    "x": 816,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 107",
+   "frame": {
+    "x": 952,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 108",
+   "frame": {
+    "x": 1088,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 109",
+   "frame": {
+    "x": 1224,
+    "y": 800,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 110",
+   "frame": {
+    "x": 0,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 111",
+   "frame": {
+    "x": 136,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 112",
+   "frame": {
+    "x": 272,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 113",
+   "frame": {
+    "x": 408,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 114",
+   "frame": {
+    "x": 544,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 115",
+   "frame": {
+    "x": 680,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 116",
+   "frame": {
+    "x": 816,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 117",
+   "frame": {
+    "x": 952,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 118",
+   "frame": {
+    "x": 1088,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 119",
+   "frame": {
+    "x": 1224,
+    "y": 880,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 120",
+   "frame": {
+    "x": 0,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 121",
+   "frame": {
+    "x": 136,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 122",
+   "frame": {
+    "x": 272,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 123",
+   "frame": {
+    "x": 408,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 124",
+   "frame": {
+    "x": 544,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 125",
+   "frame": {
+    "x": 680,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 126",
+   "frame": {
+    "x": 816,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 127",
+   "frame": {
+    "x": 952,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 128",
+   "frame": {
+    "x": 1088,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 129",
+   "frame": {
+    "x": 1224,
+    "y": 960,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 130",
+   "frame": {
+    "x": 0,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 131",
+   "frame": {
+    "x": 136,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 132",
+   "frame": {
+    "x": 272,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 133",
+   "frame": {
+    "x": 408,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 134",
+   "frame": {
+    "x": 544,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 135",
+   "frame": {
+    "x": 680,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 136",
+   "frame": {
+    "x": 816,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 137",
+   "frame": {
+    "x": 952,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 138",
+   "frame": {
+    "x": 1088,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 139",
+   "frame": {
+    "x": 1224,
+    "y": 1040,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 140",
+   "frame": {
+    "x": 0,
+    "y": 1120,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 141",
+   "frame": {
+    "x": 136,
+    "y": 1120,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 142",
+   "frame": {
+    "x": 272,
+    "y": 1120,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  },
+  {
+   "filename": "fish-school 143",
+   "frame": {
+    "x": 408,
+    "y": 1120,
+    "w": 136,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 80
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "fish-school.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1360,
+   "h": 1200
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "fish-school",
+    "from": 0,
+    "to": 143,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "critters/fish-school",
+   "name": "Fish school",
+   "fps": 30,
+   "loop": true,
+   "frames": 144,
+   "frameSize": [
+    136,
+    80
+   ],
+   "pivot": [
+    68,
+    40
+   ],
+   "columns": 10
+  }
+ }
+}

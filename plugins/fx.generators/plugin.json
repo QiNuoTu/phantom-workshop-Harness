@@ -1,0 +1,17 @@
+{
+	"id": "fx.generators",
+	"name": "程序化图像生成",
+	"version": "1.0",
+	"description": "渐变、形状、条纹、细胞噪声与星场",
+	"script": "plugin.gd",
+	"icon": "◐",
+	"color": "#4cc2ff",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.fx.generators": "1.0"
+	}
+}

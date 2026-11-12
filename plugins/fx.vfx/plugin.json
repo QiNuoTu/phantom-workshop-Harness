@@ -1,0 +1,17 @@
+{
+	"id": "fx.vfx",
+	"name": "特效生成器",
+	"version": "1.0",
+	"description": "冲击波、火焰、闪电、火花与放射光束",
+	"script": "plugin.gd",
+	"icon": "✦",
+	"color": "#ffb454",
+	"category": "特效插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.fx.vfx": "1.0"
+	}
+}

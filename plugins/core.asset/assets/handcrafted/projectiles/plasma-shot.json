@@ -1,0 +1,567 @@
+{
+ "frames": [
+  {
+   "filename": "plasma-shot 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 1",
+   "frame": {
+    "x": 144,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 2",
+   "frame": {
+    "x": 288,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 3",
+   "frame": {
+    "x": 432,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 4",
+   "frame": {
+    "x": 0,
+    "y": 60,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 5",
+   "frame": {
+    "x": 144,
+    "y": 60,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 6",
+   "frame": {
+    "x": 288,
+    "y": 60,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 7",
+   "frame": {
+    "x": 432,
+    "y": 60,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 8",
+   "frame": {
+    "x": 0,
+    "y": 120,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 9",
+   "frame": {
+    "x": 144,
+    "y": 120,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 10",
+   "frame": {
+    "x": 288,
+    "y": 120,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 11",
+   "frame": {
+    "x": 432,
+    "y": 120,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 12",
+   "frame": {
+    "x": 0,
+    "y": 180,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 13",
+   "frame": {
+    "x": 144,
+    "y": 180,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 14",
+   "frame": {
+    "x": 288,
+    "y": 180,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 15",
+   "frame": {
+    "x": 432,
+    "y": 180,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 16",
+   "frame": {
+    "x": 0,
+    "y": 240,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 17",
+   "frame": {
+    "x": 144,
+    "y": 240,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 18",
+   "frame": {
+    "x": 288,
+    "y": 240,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 19",
+   "frame": {
+    "x": 432,
+    "y": 240,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 20",
+   "frame": {
+    "x": 0,
+    "y": 300,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 21",
+   "frame": {
+    "x": 144,
+    "y": 300,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 22",
+   "frame": {
+    "x": 288,
+    "y": 300,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  },
+  {
+   "filename": "plasma-shot 23",
+   "frame": {
+    "x": 432,
+    "y": 300,
+    "w": 144,
+    "h": 60
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 144,
+    "h": 60
+   },
+   "sourceSize": {
+    "w": 144,
+    "h": 60
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "plasma-shot.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 576,
+   "h": 360
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "plasma-shot",
+    "from": 0,
+    "to": 23,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/plasma-shot",
+   "name": "Plasma shot",
+   "fps": 30,
+   "loop": true,
+   "frames": 24,
+   "frameSize": [
+    144,
+    60
+   ],
+   "pivot": [
+    108,
+    30
+   ],
+   "columns": 4
+  }
+ }
+}

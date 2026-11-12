@@ -1,0 +1,981 @@
+{
+ "frames": [
+  {
+   "filename": "arcane-beam 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 1",
+   "frame": {
+    "x": 264,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 2",
+   "frame": {
+    "x": 528,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 3",
+   "frame": {
+    "x": 792,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 4",
+   "frame": {
+    "x": 0,
+    "y": 100,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 5",
+   "frame": {
+    "x": 264,
+    "y": 100,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 6",
+   "frame": {
+    "x": 528,
+    "y": 100,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 7",
+   "frame": {
+    "x": 792,
+    "y": 100,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 8",
+   "frame": {
+    "x": 0,
+    "y": 200,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 9",
+   "frame": {
+    "x": 264,
+    "y": 200,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 10",
+   "frame": {
+    "x": 528,
+    "y": 200,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 11",
+   "frame": {
+    "x": 792,
+    "y": 200,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 12",
+   "frame": {
+    "x": 0,
+    "y": 300,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 13",
+   "frame": {
+    "x": 264,
+    "y": 300,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 14",
+   "frame": {
+    "x": 528,
+    "y": 300,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 15",
+   "frame": {
+    "x": 792,
+    "y": 300,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 16",
+   "frame": {
+    "x": 0,
+    "y": 400,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 17",
+   "frame": {
+    "x": 264,
+    "y": 400,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 18",
+   "frame": {
+    "x": 528,
+    "y": 400,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 19",
+   "frame": {
+    "x": 792,
+    "y": 400,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 20",
+   "frame": {
+    "x": 0,
+    "y": 500,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 21",
+   "frame": {
+    "x": 264,
+    "y": 500,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 22",
+   "frame": {
+    "x": 528,
+    "y": 500,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 23",
+   "frame": {
+    "x": 792,
+    "y": 500,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 24",
+   "frame": {
+    "x": 0,
+    "y": 600,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 25",
+   "frame": {
+    "x": 264,
+    "y": 600,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 26",
+   "frame": {
+    "x": 528,
+    "y": 600,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 27",
+   "frame": {
+    "x": 792,
+    "y": 600,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 28",
+   "frame": {
+    "x": 0,
+    "y": 700,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 29",
+   "frame": {
+    "x": 264,
+    "y": 700,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 30",
+   "frame": {
+    "x": 528,
+    "y": 700,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 31",
+   "frame": {
+    "x": 792,
+    "y": 700,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 32",
+   "frame": {
+    "x": 0,
+    "y": 800,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 33",
+   "frame": {
+    "x": 264,
+    "y": 800,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 34",
+   "frame": {
+    "x": 528,
+    "y": 800,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  },
+  {
+   "filename": "arcane-beam 35",
+   "frame": {
+    "x": 792,
+    "y": 800,
+    "w": 264,
+    "h": 100
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 100
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 100
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "arcane-beam.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1056,
+   "h": 900
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "arcane-beam",
+    "from": 0,
+    "to": 35,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "arcane/arcane-beam",
+   "name": "Arcane beam",
+   "fps": 30,
+   "loop": true,
+   "frames": 36,
+   "frameSize": [
+    264,
+    100
+   ],
+   "pivot": [
+    26,
+    84
+   ],
+   "columns": 4,
+   "act": {
+    "windup": 0.62,
+    "recovery": 0,
+    "onBody": false,
+    "targets": [
+     186
+    ],
+    "hits": [
+     {
+      "t": 0.1,
+      "freeze": 0,
+      "shake": 0,
+      "amp": 0,
+      "push": 0.5
+     },
+     {
+      "t": 0.7,
+      "freeze": 0,
+      "shake": 0,
+      "amp": 0,
+      "push": 0.5
+     }
+    ],
+    "poses": [
+     {
+      "t": -0.62,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "x": -3
+      }
+     },
+     {
+      "t": -0.3,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": 1,
+       "fy": -20,
+       "bx": 4,
+       "by": -22,
+       "ffx": 9,
+       "fbx": -7,
+       "x": -3,
+       "lean": -3
+      }
+     },
+     {
+      "t": -0.04,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": 1,
+       "fy": -20,
+       "bx": 4,
+       "by": -22,
+       "ffx": 9,
+       "fbx": -7,
+       "x": -3,
+       "lean": -4
+      }
+     },
+     {
+      "t": 0,
+      "how": "snap",
+      "pose": {
+       "crouch": 3,
+       "fx": 18,
+       "fy": -24,
+       "bx": 13,
+       "by": -20,
+       "ffx": 11,
+       "fbx": -9,
+       "x": -3,
+       "lean": 4,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.3,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": 18,
+       "fy": -24,
+       "bx": 13,
+       "by": -20,
+       "ffx": 11,
+       "fbx": -9,
+       "x": -3,
+       "lean": 4,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.6,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": 18,
+       "fy": -24,
+       "bx": 13,
+       "by": -20,
+       "ffx": 11,
+       "fbx": -9,
+       "x": -3,
+       "lean": 3,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.9,
+      "how": "smooth",
+      "pose": {
+       "crouch": 4,
+       "fx": 18,
+       "fy": -24,
+       "bx": 13,
+       "by": -20,
+       "ffx": 11,
+       "fbx": -9,
+       "x": -3,
+       "lean": 4,
+       "toeB": true
+      }
+     },
+     {
+      "t": 1.2,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 18,
+       "fy": -24,
+       "bx": 13,
+       "by": -20,
+       "ffx": 11,
+       "fbx": -9,
+       "x": -3,
+       "lean": 4,
+       "toeB": true
+      }
+     }
+    ]
+   }
+  }
+ }
+}

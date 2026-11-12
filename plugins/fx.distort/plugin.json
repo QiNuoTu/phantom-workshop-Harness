@@ -1,0 +1,17 @@
+{
+	"id": "fx.distort",
+	"name": "几何扭曲",
+	"version": "1.0",
+	"description": "波浪、漩涡、像素化、镜像与涟漪",
+	"script": "plugin.gd",
+	"icon": "◒",
+	"color": "#a78bfa",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.fx.distort": "1.0"
+	}
+}

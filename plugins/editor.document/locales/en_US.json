@@ -1,0 +1,18 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"编辑": "Edit",
+		"新建": "New",
+		"打开": "Open",
+		"保存": "Save",
+		"退出": "Quit",
+		"撤销": "Undo",
+		"文档": "Document",
+		"时间轴": "Timeline",
+		"打开…": "Open…",
+		"另存为…": "Save as…",
+		"重做": "Redo",
+		"删除选中节点": "Delete selected node",
+		"文档属性、新建/打开/保存与撤销重做": "Document properties, new/open/save, undo and redo"
+	}
+}

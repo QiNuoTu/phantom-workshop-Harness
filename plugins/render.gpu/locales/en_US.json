@@ -1,0 +1,14 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"GPU 渲染服务器": "GPU render server",
+		"设备探测 + GPU 合成通道；求值仍在 CPU，无图形设备时自动退回": "Device probing plus a GPU compositing pass; evaluation stays on CPU and falls back when no graphics device is available",
+		"GPU 合成（实验）": "GPU compositing (experimental)",
+		"图求值在 CPU，整帧合成走 GPU 着色器；无图形设备时自动退回标准 CPU 后端。": "Graph evaluation on CPU, whole-frame compositing through a GPU shader; falls back to the standard CPU backend without a graphics device.",
+		"GPU 锐化强度": "GPU sharpen amount",
+		"GPU 后处理的锐化量；0 = 只上传不下指令（等同关闭）。仅在渲染后端选到 GPU 合成时生效": "Sharpen amount for the GPU pass; 0 disables it. Only applies when the GPU compositing backend is selected.",
+		"图形设备": "Graphics device",
+		"检测 GPU": "Probe GPU",
+		"检测 GPU 设备": "Probe GPU device"
+	}
+}

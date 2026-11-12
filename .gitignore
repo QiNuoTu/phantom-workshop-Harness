@@ -1,0 +1,17 @@
+
+# === auto: git-deploy-to-github (godot) ===
+# Godot 4 导入缓存 / 构建产物（绝不提交）
+.godot/
+.import/
+*.tmp
+.mono/
+data_*/
+mono_crash.*.json
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+# 日志
+*.log

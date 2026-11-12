@@ -1,0 +1,62 @@
+{
+	"category": "图像对象",
+	"nodes": [
+		{
+			"id": "image.object",
+			"label": "图像对象",
+			"desc": "把一张图包成带属性的对象：宽高、格式、像素数、字节数据都可直接查询，同时直通原图。对象输出也能接到任何普通图像输入。",
+			"op": "image.object",
+			"inputs": [
+				{"id": "image", "label": "图像", "type": "image"}
+			],
+			"outputs": [
+				{"id": "object", "label": "对象", "type": "image_object"},
+				{"id": "image", "label": "图像", "type": "image"},
+				{"id": "width", "label": "宽", "type": "number"},
+				{"id": "height", "label": "高", "type": "number"},
+				{"id": "format", "label": "格式", "type": "number"},
+				{"id": "data_size", "label": "字节数", "type": "number"},
+				{"id": "pixels", "label": "像素数", "type": "number"}
+			],
+			"params": []
+		},
+		{
+			"id": "image.info",
+			"label": "图像属性",
+			"desc": "读取图像对象的属性与像素数据，并输出拆包后的裸图像给普通节点使用。",
+			"op": "image.info",
+			"inputs": [
+				{"id": "object", "label": "对象", "type": "image_object"}
+			],
+			"outputs": [
+				{"id": "image", "label": "图像", "type": "image"},
+				{"id": "width", "label": "宽", "type": "number"},
+				{"id": "height", "label": "高", "type": "number"},
+				{"id": "format", "label": "格式", "type": "number"},
+				{"id": "data_size", "label": "字节数", "type": "number"},
+				{"id": "pixels", "label": "像素数", "type": "number"}
+			],
+			"params": []
+		},
+		{
+			"id": "image.pixel",
+			"label": "取像素",
+			"desc": "按坐标读取图像对象里某个像素的颜色，并拆成 RGBA 四个分量输出。坐标越界自动夹到边缘。",
+			"op": "image.pixel",
+			"inputs": [
+				{"id": "object", "label": "对象", "type": "image_object"}
+			],
+			"outputs": [
+				{"id": "color", "label": "颜色", "type": "color"},
+				{"id": "r", "label": "R", "type": "number"},
+				{"id": "g", "label": "G", "type": "number"},
+				{"id": "b", "label": "B", "type": "number"},
+				{"id": "a", "label": "A", "type": "number"}
+			],
+			"params": [
+				{"id": "x", "label": "X", "kind": "int", "default": 0, "min": 0, "max": 4096, "step": 1, "bindable": true},
+				{"id": "y", "label": "Y", "kind": "int", "default": 0, "min": 0, "max": 4096, "step": 1, "bindable": true}
+			]
+		}
+	]
+}

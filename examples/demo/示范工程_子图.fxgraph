@@ -1,0 +1,215 @@
+{
+	"edges": [
+		{
+			"from": "s_intensity",
+			"from_port": "value",
+			"to": "s_shock",
+			"to_port": "intensity"
+		},
+		{
+			"from": "s_time",
+			"from_port": "progress",
+			"to": "s_progress",
+			"to_port": "value"
+		},
+		{
+			"from": "s_progress",
+			"from_port": "value",
+			"to": "s_progress_out",
+			"to_port": "value"
+		},
+		{
+			"from": "s_rays",
+			"from_port": "image",
+			"to": "s_mix",
+			"to_port": "a"
+		},
+		{
+			"from": "s_shock",
+			"from_port": "image",
+			"to": "s_mix",
+			"to_port": "b"
+		},
+		{
+			"from": "s_mix",
+			"from_port": "image",
+			"to": "s_blur",
+			"to_port": "image"
+		},
+		{
+			"from": "s_blur",
+			"from_port": "image",
+			"to": "s_out",
+			"to_port": "background"
+		}
+	],
+	"format": "phantom.graph",
+	"frames": [],
+	"meta": {
+		"canvas": {
+			"background": "#00000000",
+			"height": 72,
+			"width": 128
+		},
+		"name": "示范工程 · 子图（能量环）",
+		"seed": 1,
+		"timeline": {
+			"duration": 2.0,
+			"fps": 30,
+			"loop": true
+		}
+	},
+	"nodes": [
+		{
+			"collapsed": false,
+			"id": "s_intensity",
+			"params": {
+				"name": "强度",
+				"type": "number"
+			},
+			"pos": [
+				-300.0,
+				0.0
+			],
+			"type": "graph.input"
+		},
+		{
+			"collapsed": false,
+			"id": "s_time",
+			"params": {},
+			"pos": [
+				-300.0,
+				200.0
+			],
+			"type": "graph.timeline"
+		},
+		{
+			"collapsed": false,
+			"id": "s_progress",
+			"params": {
+				"clamp": true,
+				"curve": "linear",
+				"in_max": 1.0,
+				"in_min": 0.0,
+				"out_max": 0.6,
+				"out_min": 0.25
+			},
+			"pos": [
+				-60.0,
+				200.0
+			],
+			"type": "anim.remap"
+		},
+		{
+			"collapsed": false,
+			"id": "s_progress_out",
+			"params": {
+				"name": "能量进度",
+				"type": "number"
+			},
+			"pos": [
+				200.0,
+				200.0
+			],
+			"type": "graph.output"
+		},
+		{
+			"collapsed": false,
+			"id": "s_rays",
+			"params": {
+				"center": [
+					0.5,
+					0.5
+				],
+				"color": "#ffd479",
+				"count": 16,
+				"intensity": 1.3,
+				"length": 1.15,
+				"speed": 0.8,
+				"width": 0.06
+			},
+			"pos": [
+				0.0,
+				0.0
+			],
+			"type": "image.rays"
+		},
+		{
+			"collapsed": false,
+			"id": "s_shock",
+			"params": {
+				"center": [
+					0.5,
+					0.5
+				],
+				"color": "#ffd166",
+				"core": "#ff7a2a",
+				"intensity": 1.1,
+				"radius": {
+					"interp": "ease",
+					"track": [
+						[
+							0.0,
+							0.05
+						],
+						[
+							1.6,
+							0.95
+						],
+						[
+							2.0,
+							0.05
+						]
+					]
+				},
+				"speed": 1.0,
+				"width": 0.06
+			},
+			"pos": [
+				0.0,
+				380.0
+			],
+			"type": "image.shockwave"
+		},
+		{
+			"collapsed": false,
+			"id": "s_mix",
+			"params": {
+				"amount": 1.0,
+				"mode": "add"
+			},
+			"pos": [
+				360.0,
+				110.0
+			],
+			"type": "image.mix"
+		},
+		{
+			"collapsed": false,
+			"id": "s_blur",
+			"params": {
+				"radius": 2
+			},
+			"pos": [
+				620.0,
+				110.0
+			],
+			"type": "image.blur"
+		},
+		{
+			"collapsed": false,
+			"id": "s_out",
+			"params": {
+				"background_color": "#00000000",
+				"layers": []
+			},
+			"pos": [
+				880.0,
+				110.0
+			],
+			"type": "output.final"
+		}
+	],
+	"output": "s_out",
+	"version": 1
+}

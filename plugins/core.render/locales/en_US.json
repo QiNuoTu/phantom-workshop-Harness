@@ -1,0 +1,8 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"渲染质量": "Render quality",
+		"渲染管线": "Render pipeline",
+		"把当前蓝图求值成图像，供预览与导出使用": "Evaluates the graph into an image for preview and export"
+	}
+}

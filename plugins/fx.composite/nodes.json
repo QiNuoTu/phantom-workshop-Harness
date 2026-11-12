@@ -1,0 +1,309 @@
+{
+	"category": "图像/合成",
+	"nodes": [
+		{
+			"id": "image.mask",
+			"label": "蒙版",
+			"desc": "用另一张图的 alpha / 亮度当作遮罩。",
+			"op": "image.mask",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				},
+				{
+					"id": "mask",
+					"label": "蒙版",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "channel",
+					"label": "通道",
+					"kind": "enum",
+					"default": "alpha",
+					"options": [
+						"alpha",
+						"luma",
+						"red",
+						"green",
+						"blue"
+					]
+				},
+				{
+					"id": "invert",
+					"label": "反相",
+					"kind": "bool",
+					"default": false
+				},
+				{
+					"id": "softness",
+					"label": "柔化",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "opacity",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.blend2",
+			"label": "双图混合",
+			"desc": "两张图按混合模式叠加，不改基座 output.final。",
+			"op": "image.blend2",
+			"inputs": [
+				{
+					"id": "a",
+					"label": "A",
+					"type": "image",
+					"required": true
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "mode",
+					"label": "模式",
+					"kind": "enum",
+					"default": "normal",
+					"options": [
+						"normal",
+						"add",
+						"screen",
+						"multiply",
+						"overlay",
+						"difference"
+					]
+				},
+				{
+					"id": "opacity",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "B 位移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.outline",
+			"label": "描边",
+			"desc": "基于 alpha 邻域生成外 / 内描边。",
+			"op": "image.outline",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#ffb454",
+					"bindable": true
+				},
+				{
+					"id": "thickness",
+					"label": "厚度",
+					"kind": "int",
+					"default": 2,
+					"min": 1,
+					"max": 16,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "mode",
+					"label": "模式",
+					"kind": "enum",
+					"default": "outside",
+					"options": [
+						"outside",
+						"inside"
+					]
+				},
+				{
+					"id": "threshold",
+					"label": "阈值",
+					"kind": "float",
+					"default": 0.1,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.shadow",
+			"label": "投影",
+			"desc": "偏移 + 简化模糊的彩色投影，叠加在源图下方。",
+			"op": "image.shadow",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "offset",
+					"label": "位移",
+					"kind": "vec2",
+					"default": [
+						6,
+						6
+					],
+					"bindable": true
+				},
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#000000aa",
+					"bindable": true
+				},
+				{
+					"id": "blur",
+					"label": "模糊",
+					"kind": "int",
+					"default": 3,
+					"min": 0,
+					"max": 16,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "opacity",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 0.6,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.bloom",
+			"label": "柔光",
+			"desc": "提取亮部并做一次降采样扩散，叠加回原图。",
+			"op": "image.bloom",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "threshold",
+					"label": "阈值",
+					"kind": "float",
+					"default": 0.7,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "amount",
+					"label": "强度",
+					"kind": "float",
+					"default": 0.8,
+					"min": 0.0,
+					"max": 3.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "radius",
+					"label": "半径",
+					"kind": "int",
+					"default": 4,
+					"min": 1,
+					"max": 16,
+					"step": 1,
+					"bindable": true
+				}
+			]
+		}
+	]
+}

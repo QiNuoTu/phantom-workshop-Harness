@@ -1,0 +1,19 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"插件": "Plugins",
+		"皮肤管理": "Skin manager",
+		"启用": "Enabled",
+		"皮肤管理…": "Skin manager…",
+		"已安装皮肤": "Installed skins",
+		"皮肤选项（协议 v2）": "Skin options (protocol v2)",
+		"恢复默认选项": "Reset options",
+		"官方默认": "Built-in default",
+		"基座内置": "Bundled with the app",
+		"按时段收起": "Hide by schedule",
+		"从": "From",
+		"到": "To",
+		"皮肤管理器": "Skin manager",
+		"切换皮肤并调整皮肤选项": "Switch skins and adjust their options"
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"category": "图像/着色器",
+	"nodes": [
+		{
+			"id": "shader.image",
+			"label": "着色器",
+			"desc": "把图像交给 .gdshader 处理：离屏渲染后读回，结果和别的图像节点一样可以继续接。输入图绑到着色器的第一个 sampler2D，另自动提供 u_time / u_frame / u_resolution。",
+			"op": "shader.image",
+			"gpu": true,
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "path", "label": "着色器", "kind": "shader", "default": "" },
+				{
+					"id": "code", "label": "内联代码", "kind": "string", "multiline": true,
+					"default": "", "bindable": false,
+					"hint": "留空则用上面的文件；填了就以这里的为准"
+				},
+				{
+					"id": "uniforms", "label": "uniform", "kind": "string", "multiline": true,
+					"default": "", "bindable": false,
+					"hint": "每行 名称 = 值，或直接写 JSON"
+				},
+				{ "id": "enabled", "label": "启用", "kind": "bool", "default": true }
+			]
+		}
+	]
+}

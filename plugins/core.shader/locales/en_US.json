@@ -1,0 +1,12 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"着色器": "Shader",
+		"用 .gdshader 处理图像：离屏渲染后回读，和普通图像节点一样接线": "Process images with .gdshader files: offscreen render and read back like any other image node",
+		"图像/着色器": "Image/Shader",
+		"内联代码": "Inline code",
+		"uniform": "Uniforms",
+		"启用": "Enabled",
+		"把图像交给 .gdshader 处理：离屏渲染后回读，结果和别的图像节点一样可以继续接。输入图绑到着色器的第一个 sampler2D，另自动提供 u_time / u_frame / u_resolution。": "Runs the image through a .gdshader (offscreen render + readback). The input is bound to the first sampler2D; u_time / u_frame / u_resolution are provided automatically."
+	}
+}

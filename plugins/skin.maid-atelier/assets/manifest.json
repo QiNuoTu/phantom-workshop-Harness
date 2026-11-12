@@ -1,0 +1,57 @@
+{
+	"id": "maid-atelier",
+	"source": "smalltailqwq/dsh-client-ui-skin-maid-atelier",
+	"license": "CC BY-NC-SA 4.0 (artwork) / MIT (code) — NON-COMMERCIAL ONLY",
+	"attribution": "NOTICE.md",
+	"note": "preview.webp 是原 Web 皮肤的整体效果截图，仅作构图参考与皮肤预览；运行时贴图使用下面这些分层素材。",
+	"files": {
+		"palace_light.webp": {
+			"source": "assets/runtime/52e7dce6993e3f955c3fbb2875885e7ab60fb38ca89adb15d977c7a85d58c073.webp",
+			"bytes": 279480
+		},
+		"palace_dark.webp": {
+			"source": "assets/runtime/ae6917bb1aafa71e6a10cfcaa1289f13e265aa7f32d3fb7c1988004bf50f8983.webp",
+			"bytes": 270544
+		},
+		"maid_left.webp": {
+			"source": "assets/runtime/2818e5359596b13c5d64f5b1c5d4a9e0c05be477824779af8af37a0e10016b07.webp",
+			"bytes": 1034470
+		},
+		"maid_right.webp": {
+			"source": "assets/runtime/7c5a5493e84418bc0435013c8605222718923872c15eb46fdd36158d201c0b1e.webp",
+			"bytes": 1209838
+		},
+		"chibi.webp": {
+			"source": "assets/runtime/405917afdb68d725624bbf7e4f1619a35fc4004039b7d553c5528ca5f65308d3.webp",
+			"bytes": 91476
+		},
+		"top_lace.webp": {
+			"source": "assets/runtime/e49115f3942ea5c5034c81016c61944b5261c8ea410318cb0419b445c990b063.webp",
+			"bytes": 39106
+		},
+		"bottom_trim.webp": {
+			"source": "assets/runtime/47072d2d652f09e857dbc8555ff5c1917c926ef5d4581641f7018b1607c42fda.webp",
+			"bytes": 972
+		},
+		"crest.webp": {
+			"source": "assets/runtime/24f2fb04ce2d38574a3817f6d675b8c1ee5d9322588eec651271f67aabfcb48d.webp",
+			"bytes": 45398
+		},
+		"swag.webp": {
+			"source": "assets/runtime/cd728ce5c1794ec4958ef75c4cdd60a3d513b871bea99e3b526656f14089fd74.webp",
+			"bytes": 111004
+		},
+		"lace_tile.png": {
+			"source": "assets/runtime/2789906568a926c4cf8c4a5639b1566e0eaf55ab947756839bdfd6a8d6354d92.png",
+			"bytes": 18087
+		},
+		"settings_frame.webp": {
+			"source": "assets/runtime/3d2b126caf0549c2e86684dcbc0ff4443b887e5e1684190710d2df7940466d98.webp",
+			"bytes": 32358
+		},
+		"preview.webp": {
+			"source": "docs/preview.webp",
+			"bytes": 67760
+		}
+	}
+}

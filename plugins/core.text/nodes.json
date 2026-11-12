@@ -1,0 +1,121 @@
+{
+	"category": "图像/来源",
+	"nodes": [
+		{
+			"id": "image.text",
+			"label": "文字",
+			"desc": "用外部字体渲染文字，支持多行、对齐、行距、描边与外部 TTF/OTF/TTC。",
+			"op": "image.text",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "font",
+					"label": "字体",
+					"kind": "font",
+					"default": "plugins/core.text/assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf",
+					"hint": "相对资源根或绝对路径"
+				},
+				{
+					"id": "text",
+					"label": "文本",
+					"kind": "string",
+					"default": "幻像工坊",
+					"multiline": true,
+					"hint": "支持换行；可连线接收上游文本"
+				},
+				{
+					"id": "size",
+					"label": "字号",
+					"kind": "int",
+					"default": 24,
+					"min": 4,
+					"max": 256,
+					"step": 1,
+					"unit": "px",
+					"bindable": true
+				},
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#ffffff"
+				},
+				{
+					"id": "align",
+					"label": "对齐",
+					"kind": "enum",
+					"default": "center",
+					"options": [
+						"left",
+						"center",
+						"right"
+					]
+				},
+				{
+					"id": "offset",
+					"label": "位移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"min": -4096,
+					"max": 4096,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "line_spacing",
+					"label": "行距",
+					"kind": "float",
+					"default": 1.1,
+					"min": 0.5,
+					"max": 4.0,
+					"step": 0.01
+				},
+				{
+					"id": "outline",
+					"label": "描边",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 8,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "outline_color",
+					"label": "描边色",
+					"kind": "color",
+					"default": "#000000"
+				},
+				{
+					"id": "box_width",
+					"label": "文本框宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 按文字实际宽度"
+				},
+				{
+					"id": "alpha",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		}
+	]
+}

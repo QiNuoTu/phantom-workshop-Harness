@@ -1,0 +1,180 @@
+{
+	"category": "图像/来源",
+	"nodes": [
+		{
+			"id": "image.solid",
+			"label": "纯色",
+			"desc": "用单一颜色填满画布。常用来做背景或遮罩底。",
+			"op": "image.solid",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "color",
+					"label": "颜色",
+					"kind": "color",
+					"default": "#202636",
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.checker",
+			"label": "棋盘",
+			"desc": "双色棋盘格。调试变换、混合与画布尺寸时最直观的底图。",
+			"op": "image.checker",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "cell",
+					"label": "格子",
+					"kind": "int",
+					"default": 8,
+					"min": 1,
+					"max": 256,
+					"step": 1,
+					"unit": "px",
+					"bindable": true
+				},
+				{
+					"id": "color_a",
+					"label": "颜色 A",
+					"kind": "color",
+					"default": "#1b1f2a",
+					"bindable": true
+				},
+				{
+					"id": "color_b",
+					"label": "颜色 B",
+					"kind": "color",
+					"default": "#2f3746",
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "偏移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.noise",
+			"label": "噪声",
+			"desc": "确定性的块状噪声。同 seed 每次结果一致，适合做抖动、云底与随机遮罩。",
+			"op": "image.noise",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 1,
+					"min": -99999,
+					"max": 99999,
+					"step": 1
+				},
+				{
+					"id": "cell",
+					"label": "粒度",
+					"kind": "int",
+					"default": 2,
+					"min": 1,
+					"max": 64,
+					"step": 1,
+					"unit": "px",
+					"bindable": true
+				},
+				{
+					"id": "density",
+					"label": "密度",
+					"kind": "float",
+					"default": 0.5,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "color_a",
+					"label": "暗部",
+					"kind": "color",
+					"default": "#101018",
+					"bindable": true
+				},
+				{
+					"id": "color_b",
+					"label": "亮部",
+					"kind": "color",
+					"default": "#f0f0f0",
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.file",
+			"label": "图片文件",
+			"desc": "载入 PNG 并按画布适配。pixelfx 序列帧节点会在后续阶段单独提供。",
+			"op": "image.file",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "path",
+					"label": "路径",
+					"kind": "asset",
+					"default": "",
+					"hint": "res:// 或绝对路径"
+				},
+				{
+					"id": "fit",
+					"label": "适配",
+					"kind": "enum",
+					"default": "contain",
+					"options": [
+						"contain",
+						"cover",
+						"stretch",
+						"none"
+					]
+				},
+				{
+					"id": "background",
+					"label": "底色",
+					"kind": "color",
+					"default": "#00000000"
+				}
+			]
+		}
+	]
+}

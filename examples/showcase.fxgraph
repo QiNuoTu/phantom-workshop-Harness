@@ -1,0 +1,540 @@
+{
+	"edges": [
+		{
+			"from": "dot",
+			"from_port": "image",
+			"to": "dot_blur",
+			"to_port": "image"
+		},
+		{
+			"from": "title",
+			"from_port": "image",
+			"to": "title_glow",
+			"to_port": "image"
+		},
+		{
+			"from": "title_glow",
+			"from_port": "image",
+			"to": "title_tint",
+			"to_port": "image"
+		},
+		{
+			"from": "bg",
+			"from_port": "image",
+			"to": "bg_dot",
+			"to_port": "a"
+		},
+		{
+			"from": "dot_blur",
+			"from_port": "image",
+			"to": "bg_dot",
+			"to_port": "b"
+		},
+		{
+			"from": "sub",
+			"from_port": "image",
+			"to": "shader",
+			"to_port": "image"
+		},
+		{
+			"from": "bg_dot",
+			"from_port": "image",
+			"to": "out",
+			"to_port": "background"
+		},
+		{
+			"from": "sub",
+			"from_port": "image",
+			"to": "out",
+			"to_port": "layer_0"
+		},
+		{
+			"from": "shader",
+			"from_port": "image",
+			"to": "out",
+			"to_port": "layer_1"
+		},
+		{
+			"from": "title_tint",
+			"from_port": "image",
+			"to": "out",
+			"to_port": "layer_2"
+		},
+		{
+			"from": "tour_src_checker",
+			"from_port": "image",
+			"to": "tour_image_levels",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_image_levels",
+			"from_port": "image",
+			"to": "tour_prev_image_levels",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_src_shape",
+			"from_port": "image",
+			"to": "tour_image_hue",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_image_hue",
+			"from_port": "image",
+			"to": "tour_prev_image_hue",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_src_noise",
+			"from_port": "image",
+			"to": "tour_image_mask",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_src_checker",
+			"from_port": "image",
+			"to": "tour_image_mask",
+			"to_port": "mask"
+		},
+		{
+			"from": "tour_image_mask",
+			"from_port": "image",
+			"to": "tour_prev_image_mask",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_src_checker",
+			"from_port": "image",
+			"to": "tour_image_wave",
+			"to_port": "image"
+		},
+		{
+			"from": "tour_image_wave",
+			"from_port": "image",
+			"to": "tour_prev_image_wave",
+			"to_port": "image"
+		}
+	],
+	"format": "phantom.graph",
+	"frames": [],
+	"meta": {
+		"canvas": {
+			"background": "#00000000",
+			"height": 112,
+			"width": 200
+		},
+		"name": "幻像工坊 · 全能力演示",
+		"seed": 1,
+		"timeline": {
+			"duration": 2.0,
+			"fps": 30,
+			"loop": true
+		}
+	},
+	"nodes": [
+		{
+			"collapsed": false,
+			"id": "bg",
+			"params": {
+				"color_a": "#101a3a",
+				"color_b": "#4a2a6a",
+				"mode": "radial",
+				"scale": {
+					"interp": "ease",
+					"track": [
+						[
+							0.0,
+							1.15
+						],
+						[
+							1.0,
+							1.85
+						],
+						[
+							2.0,
+							1.15
+						]
+					]
+				},
+				"softness": 0.35
+			},
+			"pos": [
+				0.0,
+				0.0
+			],
+			"type": "image.gradient"
+		},
+		{
+			"collapsed": false,
+			"id": "dot",
+			"params": {
+				"background": "#00000000",
+				"center": [
+					0.5,
+					0.5
+				],
+				"color": "#ffd479",
+				"feather": 0.22,
+				"shape": "circle",
+				"size": 0.44
+			},
+			"pos": [
+				0.0,
+				200.0
+			],
+			"type": "image.shape"
+		},
+		{
+			"collapsed": false,
+			"id": "dot_blur",
+			"params": {
+				"radius": {
+					"interp": "ease",
+					"track": [
+						[
+							0.0,
+							2.0
+						],
+						[
+							0.6,
+							12.0
+						],
+						[
+							1.4,
+							3.0
+						],
+						[
+							2.0,
+							2.0
+						]
+					]
+				}
+			},
+			"pos": [
+				240.0,
+				200.0
+			],
+			"type": "image.blur"
+		},
+		{
+			"collapsed": false,
+			"id": "sub",
+			"params": {
+				"fit": "contain",
+				"path": "res://examples/nested_child.fxgraph",
+				"time_scale": 1.5
+			},
+			"pos": [
+				0.0,
+				400.0
+			],
+			"type": "graph.subgraph"
+		},
+		{
+			"collapsed": false,
+			"id": "title",
+			"params": {
+				"align": "center",
+				"color": "#ffffff",
+				"offset": [
+					0,
+					0
+				],
+				"size": 30,
+				"text": "幻像工坊"
+			},
+			"pos": [
+				0.0,
+				600.0
+			],
+			"type": "image.text"
+		},
+		{
+			"collapsed": false,
+			"id": "title_glow",
+			"params": {
+				"amount": 0.55,
+				"radius": {
+					"interp": "ease",
+					"track": [
+						[
+							0.0,
+							4.0
+						],
+						[
+							1.0,
+							10.0
+						],
+						[
+							2.0,
+							4.0
+						]
+					]
+				}
+			},
+			"pos": [
+				260.0,
+				600.0
+			],
+			"type": "image.glow"
+		},
+		{
+			"collapsed": false,
+			"id": "title_tint",
+			"params": {
+				"amount": 0.55,
+				"color": "#9fd0ff",
+				"preserve_luma": true
+			},
+			"pos": [
+				520.0,
+				600.0
+			],
+			"type": "image.tint"
+		},
+		{
+			"collapsed": false,
+			"id": "shader",
+			"params": {
+				"code": "shader_type canvas_item;\nuniform float u_time = 0.0;\nvoid fragment() {\n\tvec2 uv = UV;\n\tfloat band = sin((uv.x + uv.y) * 18.0 + u_time * 3.0);\n\tCOLOR = vec4(mix(vec3(0.15, 0.45, 1.0), vec3(1.0, 0.75, 0.3), band * 0.5 + 0.5), 0.55);\n}\n",
+				"enabled": true,
+				"uniforms": "u_time = 0.0"
+			},
+			"pos": [
+				520.0,
+				400.0
+			],
+			"type": "shader.image"
+		},
+		{
+			"collapsed": false,
+			"id": "bg_dot",
+			"params": {
+				"amount": 0.85,
+				"mode": "add"
+			},
+			"pos": [
+				500.0,
+				200.0
+			],
+			"type": "image.mix"
+		},
+		{
+			"collapsed": false,
+			"id": "out",
+			"params": {
+				"background_color": "#0a0d18",
+				"layers": [
+					{
+						"blend": "add",
+						"name": "子图",
+						"offset": [
+							0,
+							0
+						],
+						"opacity": 0.38,
+						"visible": true
+					},
+					{
+						"blend": "screen",
+						"name": "着色器条纹",
+						"offset": [
+							0,
+							0
+						],
+						"opacity": 0.3,
+						"visible": true
+					},
+					{
+						"blend": "add",
+						"name": "文字光晕",
+						"offset": {
+							"interp": "ease",
+							"track": [
+								[
+									0.0,
+									[
+										0,
+										5
+									]
+								],
+								[
+									1.0,
+									[
+										0,
+										-5
+									]
+								],
+								[
+									2.0,
+									[
+										0,
+										5
+									]
+								]
+							]
+						},
+						"opacity": 1.0,
+						"visible": true
+					}
+				]
+			},
+			"pos": [
+				1080.0,
+				200.0
+			],
+			"type": "output.final"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_src_checker",
+			"params": {
+				"cell": 12,
+				"color_a": "#2b5fa8",
+				"color_b": "#e8b34a"
+			},
+			"pos": [
+				-520.0,
+				0.0
+			],
+			"type": "image.checker"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_src_shape",
+			"params": {
+				"color": "#ffd479",
+				"feather": 0.1,
+				"shape": "circle",
+				"size": 0.6
+			},
+			"pos": [
+				-520.0,
+				160.0
+			],
+			"type": "image.shape"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_src_noise",
+			"params": {
+				"cell": 3,
+				"density": 0.6,
+				"seed": 7
+			},
+			"pos": [
+				-520.0,
+				320.0
+			],
+			"type": "image.noise"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_image_levels",
+			"params": {
+				"brightness": 0.0,
+				"contrast": 1.0,
+				"gamma": 1.0
+			},
+			"pos": [
+				1400.0,
+				0.0
+			],
+			"type": "image.levels"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_prev_image_levels",
+			"params": {
+				"note": "image.levels"
+			},
+			"pos": [
+				1680.0,
+				0.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_image_hue",
+			"params": {
+				"hue": 0.0,
+				"saturation": 0.0,
+				"value": 0.0
+			},
+			"pos": [
+				1400.0,
+				220.0
+			],
+			"type": "image.hue"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_prev_image_hue",
+			"params": {
+				"note": "image.hue"
+			},
+			"pos": [
+				1680.0,
+				220.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_image_mask",
+			"params": {
+				"channel": "alpha",
+				"invert": false,
+				"opacity": 1.0,
+				"softness": 0.0
+			},
+			"pos": [
+				1400.0,
+				440.0
+			],
+			"type": "image.mask"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_prev_image_mask",
+			"params": {
+				"note": "image.mask"
+			},
+			"pos": [
+				1680.0,
+				440.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_image_wave",
+			"params": {
+				"amplitude": 8.0,
+				"axis": "y",
+				"frequency": 0.08,
+				"speed": 2.0
+			},
+			"pos": [
+				1400.0,
+				660.0
+			],
+			"type": "image.wave"
+		},
+		{
+			"collapsed": false,
+			"id": "tour_prev_image_wave",
+			"params": {
+				"note": "image.wave"
+			},
+			"pos": [
+				1680.0,
+				660.0
+			],
+			"type": "output.preview"
+		}
+	],
+	"output": "out",
+	"version": 1
+}

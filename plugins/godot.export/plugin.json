@@ -1,0 +1,14 @@
+{
+	"id": "godot.export",
+	"name": "导出",
+	"version": "1.0",
+	"description": "PNG、序列帧、精灵图集与 Godot 粒子",
+	"script": "plugin.gd",
+	"inject": [
+		"core.catalog",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.godot.export": "1.0"
+	}
+}

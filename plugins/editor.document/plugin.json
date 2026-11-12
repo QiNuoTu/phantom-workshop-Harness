@@ -1,0 +1,14 @@
+{
+	"id": "editor.document",
+	"name": "文档",
+	"version": "1.0",
+	"description": "文档属性、新建/打开/保存与撤销重做",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.document": "1.0"
+	}
+}

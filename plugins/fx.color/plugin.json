@@ -1,0 +1,17 @@
+{
+	"id": "fx.color",
+	"name": "调色与色彩映射",
+	"version": "1.0",
+	"description": "色相与饱和度、色阶量化、渐变映射、双色调与抠像",
+	"script": "plugin.gd",
+	"icon": "◑",
+	"color": "#f472b6",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.fx.color": "1.0"
+	}
+}

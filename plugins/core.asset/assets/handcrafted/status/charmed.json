@@ -1,0 +1,1709 @@
+{
+ "frames": [
+  {
+   "filename": "charmed 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 1",
+   "frame": {
+    "x": 60,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 2",
+   "frame": {
+    "x": 120,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 3",
+   "frame": {
+    "x": 180,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 4",
+   "frame": {
+    "x": 240,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 5",
+   "frame": {
+    "x": 300,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 6",
+   "frame": {
+    "x": 360,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 7",
+   "frame": {
+    "x": 420,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 8",
+   "frame": {
+    "x": 480,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 9",
+   "frame": {
+    "x": 540,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 10",
+   "frame": {
+    "x": 0,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 11",
+   "frame": {
+    "x": 60,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 12",
+   "frame": {
+    "x": 120,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 13",
+   "frame": {
+    "x": 180,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 14",
+   "frame": {
+    "x": 240,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 15",
+   "frame": {
+    "x": 300,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 16",
+   "frame": {
+    "x": 360,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 17",
+   "frame": {
+    "x": 420,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 18",
+   "frame": {
+    "x": 480,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 19",
+   "frame": {
+    "x": 540,
+    "y": 76,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 20",
+   "frame": {
+    "x": 0,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 21",
+   "frame": {
+    "x": 60,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 22",
+   "frame": {
+    "x": 120,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 23",
+   "frame": {
+    "x": 180,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 24",
+   "frame": {
+    "x": 240,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 25",
+   "frame": {
+    "x": 300,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 26",
+   "frame": {
+    "x": 360,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 27",
+   "frame": {
+    "x": 420,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 28",
+   "frame": {
+    "x": 480,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 29",
+   "frame": {
+    "x": 540,
+    "y": 152,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 30",
+   "frame": {
+    "x": 0,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 31",
+   "frame": {
+    "x": 60,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 32",
+   "frame": {
+    "x": 120,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 33",
+   "frame": {
+    "x": 180,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 34",
+   "frame": {
+    "x": 240,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 35",
+   "frame": {
+    "x": 300,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 36",
+   "frame": {
+    "x": 360,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 37",
+   "frame": {
+    "x": 420,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 38",
+   "frame": {
+    "x": 480,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 39",
+   "frame": {
+    "x": 540,
+    "y": 228,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 40",
+   "frame": {
+    "x": 0,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 41",
+   "frame": {
+    "x": 60,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 42",
+   "frame": {
+    "x": 120,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 43",
+   "frame": {
+    "x": 180,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 44",
+   "frame": {
+    "x": 240,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 45",
+   "frame": {
+    "x": 300,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 46",
+   "frame": {
+    "x": 360,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 47",
+   "frame": {
+    "x": 420,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 48",
+   "frame": {
+    "x": 480,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 49",
+   "frame": {
+    "x": 540,
+    "y": 304,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 50",
+   "frame": {
+    "x": 0,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 51",
+   "frame": {
+    "x": 60,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 52",
+   "frame": {
+    "x": 120,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 53",
+   "frame": {
+    "x": 180,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 54",
+   "frame": {
+    "x": 240,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 55",
+   "frame": {
+    "x": 300,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 56",
+   "frame": {
+    "x": 360,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 57",
+   "frame": {
+    "x": 420,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 58",
+   "frame": {
+    "x": 480,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 59",
+   "frame": {
+    "x": 540,
+    "y": 380,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 60",
+   "frame": {
+    "x": 0,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 61",
+   "frame": {
+    "x": 60,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 62",
+   "frame": {
+    "x": 120,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 63",
+   "frame": {
+    "x": 180,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 64",
+   "frame": {
+    "x": 240,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 65",
+   "frame": {
+    "x": 300,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 66",
+   "frame": {
+    "x": 360,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 67",
+   "frame": {
+    "x": 420,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 68",
+   "frame": {
+    "x": 480,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 69",
+   "frame": {
+    "x": 540,
+    "y": 456,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 70",
+   "frame": {
+    "x": 0,
+    "y": 532,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "charmed 71",
+   "frame": {
+    "x": 60,
+    "y": 532,
+    "w": 60,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 60,
+    "h": 76
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "charmed.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 600,
+   "h": 608
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "charmed",
+    "from": 0,
+    "to": 71,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "status/charmed",
+   "name": "Charmed",
+   "fps": 30,
+   "loop": true,
+   "frames": 72,
+   "frameSize": [
+    60,
+    76
+   ],
+   "pivot": [
+    30,
+    68
+   ],
+   "columns": 10,
+   "act": {
+    "windup": 0,
+    "recovery": 0,
+    "onBody": true,
+    "targets": [],
+    "hits": [],
+    "poses": [
+     {
+      "t": 0,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.1,
+       "fx": -2,
+       "fy": -28,
+       "bx": 2,
+       "by": -28,
+       "armsFront": true,
+       "ffx": -3,
+       "fbx": 4,
+       "lean": -2
+      }
+     },
+     {
+      "t": 0.6,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.1,
+       "fx": -2,
+       "fy": -28,
+       "bx": 2,
+       "by": -28,
+       "armsFront": true,
+       "ffx": -3,
+       "fbx": 4,
+       "lean": 0,
+       "crouch": 1
+      }
+     },
+     {
+      "t": 1.2,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.1,
+       "fx": -2,
+       "fy": -28,
+       "bx": 2,
+       "by": -28,
+       "armsFront": true,
+       "ffx": -3,
+       "fbx": 4,
+       "lean": 2
+      }
+     },
+     {
+      "t": 1.8,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.1,
+       "fx": -2,
+       "fy": -28,
+       "bx": 2,
+       "by": -28,
+       "armsFront": true,
+       "ffx": -3,
+       "fbx": 4,
+       "lean": 0,
+       "crouch": 1
+      }
+     },
+     {
+      "t": 2.4,
+      "how": "smooth",
+      "pose": {
+       "turn": 1.1,
+       "fx": -2,
+       "fy": -28,
+       "bx": 2,
+       "by": -28,
+       "armsFront": true,
+       "ffx": -3,
+       "fbx": 4,
+       "lean": -2
+      }
+     }
+    ]
+   }
+  }
+ }
+}

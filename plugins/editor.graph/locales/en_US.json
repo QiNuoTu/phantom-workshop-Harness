@@ -1,0 +1,12 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"节点": "Node",
+		"蓝图": "Blueprint",
+		"添加节点": "Add node",
+		"添加节点…": "Add node…",
+		"自动排列": "Auto arrange",
+		"适应视图": "Fit view",
+		"节点画布、连线、内联参数与节点预览": "Node canvas with connections, inline parameters and previews"
+	}
+}

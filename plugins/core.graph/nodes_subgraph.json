@@ -1,0 +1,227 @@
+{
+	"category": "子图",
+	"nodes": [
+		{
+			"id": "graph.subgraph",
+			"label": "子图",
+			"desc": "把另一个图文档当作一个节点来渲染：工程嵌套 / 预合成。子工程里放「子图输入 / 子图输出」节点，就会在这个节点上长出对应端口。",
+			"op": "graph.subgraph",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				},
+				{
+					"id": "duration",
+					"label": "时长",
+					"type": "number"
+				},
+				{
+					"id": "frames",
+					"label": "总帧数",
+					"type": "number"
+				},
+				{
+					"id": "canvas",
+					"label": "画布",
+					"type": "vec2"
+				}
+			],
+			"params": [
+				{
+					"id": "path",
+					"label": "子图",
+					"kind": "graph",
+					"default": "",
+					"hint": "子工程文件（.fxgraph.json）；参数行上会显示节点数、画布与时长"
+				},
+				{
+					"id": "fit",
+					"label": "适配",
+					"kind": "enum",
+					"default": "contain",
+					"options": [
+						{
+							"value": "native",
+							"label": "原始尺寸"
+						},
+						{
+							"value": "contain",
+							"label": "适应画布"
+						},
+						{
+							"value": "cover",
+							"label": "铺满画布"
+						},
+						{
+							"value": "stretch",
+							"label": "拉伸到画布"
+						}
+					]
+				},
+				{
+					"id": "scale",
+					"label": "缩放",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 32.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "偏移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"bindable": true
+				},
+				{
+					"id": "alpha",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "time_scale",
+					"label": "时间倍率",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 8.0,
+					"step": 0.01,
+					"bindable": true,
+					"hint": "1 = 跟随外层播放头；0.5 = 半速，2 = 双速"
+				},
+				{
+					"id": "time_offset",
+					"label": "时间偏移",
+					"kind": "float",
+					"default": 0.0,
+					"min": -60.0,
+					"max": 60.0,
+					"step": 0.01,
+					"bindable": true,
+					"hint": "让子工程从第几秒开始播"
+				}
+			],
+			"port_provider": "subgraph"
+		},
+		{
+			"id": "graph.input",
+			"label": "子图输入",
+			"category": "子图",
+			"desc": "在子图内部声明一个输入端口。外层在子图节点上连这个端口，值就会从这里进入子图；没接线时给该类型的零值。",
+			"op": "graph.input",
+			"port_provider": "subgraph_input",
+			"inputs": [],
+			"outputs": [],
+			"params": [
+				{
+					"id": "name",
+					"label": "端口名",
+					"kind": "string",
+					"default": "",
+					"bindable": false,
+					"hint": "只影响显示；端口 id 用节点 id，改名不会断线"
+				},
+				{
+					"id": "type",
+					"label": "类型",
+					"kind": "enum",
+					"default": "image",
+					"bindable": false,
+					"options": [
+						{
+							"value": "image",
+							"label": "图像"
+						},
+						{
+							"value": "number",
+							"label": "数值"
+						},
+						{
+							"value": "vec2",
+							"label": "向量"
+						},
+						{
+							"value": "color",
+							"label": "颜色"
+						},
+						{
+							"value": "bool",
+							"label": "布尔"
+						},
+						{
+							"value": "string",
+							"label": "文本"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "graph.output",
+			"label": "子图输出",
+			"category": "子图",
+			"desc": "在子图内部声明一个输出端口。接进来的值会出现在外层子图节点对应的出口上，可以声明多个。",
+			"op": "graph.output",
+			"port_provider": "subgraph_output",
+			"evaluate_always": true,
+			"inputs": [],
+			"outputs": [],
+			"params": [
+				{
+					"id": "name",
+					"label": "端口名",
+					"kind": "string",
+					"default": "",
+					"bindable": false,
+					"hint": "只影响显示；端口 id 用节点 id，改名不会断线"
+				},
+				{
+					"id": "type",
+					"label": "类型",
+					"kind": "enum",
+					"default": "image",
+					"bindable": false,
+					"options": [
+						{
+							"value": "image",
+							"label": "图像"
+						},
+						{
+							"value": "number",
+							"label": "数值"
+						},
+						{
+							"value": "vec2",
+							"label": "向量"
+						},
+						{
+							"value": "color",
+							"label": "颜色"
+						},
+						{
+							"value": "bool",
+							"label": "布尔"
+						},
+						{
+							"value": "string",
+							"label": "文本"
+						}
+					]
+				}
+			]
+		}
+	]
+}

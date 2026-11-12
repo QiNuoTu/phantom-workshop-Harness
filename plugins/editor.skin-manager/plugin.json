@@ -1,0 +1,14 @@
+{
+	"id": "editor.skin-manager",
+	"name": "皮肤管理器",
+	"version": "1.0",
+	"description": "切换皮肤并调整皮肤选项",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.skin-manager": "1.0"
+	}
+}

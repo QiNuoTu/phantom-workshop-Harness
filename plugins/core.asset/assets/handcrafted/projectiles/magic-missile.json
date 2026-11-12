@@ -1,0 +1,1315 @@
+{
+ "frames": [
+  {
+   "filename": "magic-missile 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 1",
+   "frame": {
+    "x": 208,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 2",
+   "frame": {
+    "x": 416,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 3",
+   "frame": {
+    "x": 624,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 4",
+   "frame": {
+    "x": 832,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 5",
+   "frame": {
+    "x": 1040,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 6",
+   "frame": {
+    "x": 0,
+    "y": 112,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 7",
+   "frame": {
+    "x": 208,
+    "y": 112,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 8",
+   "frame": {
+    "x": 416,
+    "y": 112,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 9",
+   "frame": {
+    "x": 624,
+    "y": 112,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 10",
+   "frame": {
+    "x": 832,
+    "y": 112,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 11",
+   "frame": {
+    "x": 1040,
+    "y": 112,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 12",
+   "frame": {
+    "x": 0,
+    "y": 224,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 13",
+   "frame": {
+    "x": 208,
+    "y": 224,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 14",
+   "frame": {
+    "x": 416,
+    "y": 224,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 15",
+   "frame": {
+    "x": 624,
+    "y": 224,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 16",
+   "frame": {
+    "x": 832,
+    "y": 224,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 17",
+   "frame": {
+    "x": 1040,
+    "y": 224,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 18",
+   "frame": {
+    "x": 0,
+    "y": 336,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 19",
+   "frame": {
+    "x": 208,
+    "y": 336,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 20",
+   "frame": {
+    "x": 416,
+    "y": 336,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 21",
+   "frame": {
+    "x": 624,
+    "y": 336,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 22",
+   "frame": {
+    "x": 832,
+    "y": 336,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 23",
+   "frame": {
+    "x": 1040,
+    "y": 336,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 24",
+   "frame": {
+    "x": 0,
+    "y": 448,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 25",
+   "frame": {
+    "x": 208,
+    "y": 448,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 26",
+   "frame": {
+    "x": 416,
+    "y": 448,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 27",
+   "frame": {
+    "x": 624,
+    "y": 448,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 28",
+   "frame": {
+    "x": 832,
+    "y": 448,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 29",
+   "frame": {
+    "x": 1040,
+    "y": 448,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 30",
+   "frame": {
+    "x": 0,
+    "y": 560,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 31",
+   "frame": {
+    "x": 208,
+    "y": 560,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 32",
+   "frame": {
+    "x": 416,
+    "y": 560,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 33",
+   "frame": {
+    "x": 624,
+    "y": 560,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 34",
+   "frame": {
+    "x": 832,
+    "y": 560,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 35",
+   "frame": {
+    "x": 1040,
+    "y": 560,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 36",
+   "frame": {
+    "x": 0,
+    "y": 672,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 37",
+   "frame": {
+    "x": 208,
+    "y": 672,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 38",
+   "frame": {
+    "x": 416,
+    "y": 672,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 39",
+   "frame": {
+    "x": 624,
+    "y": 672,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 40",
+   "frame": {
+    "x": 832,
+    "y": 672,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 41",
+   "frame": {
+    "x": 1040,
+    "y": 672,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 42",
+   "frame": {
+    "x": 0,
+    "y": 784,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 43",
+   "frame": {
+    "x": 208,
+    "y": 784,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 44",
+   "frame": {
+    "x": 416,
+    "y": 784,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 45",
+   "frame": {
+    "x": 624,
+    "y": 784,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 46",
+   "frame": {
+    "x": 832,
+    "y": 784,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 47",
+   "frame": {
+    "x": 1040,
+    "y": 784,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 48",
+   "frame": {
+    "x": 0,
+    "y": 896,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 49",
+   "frame": {
+    "x": 208,
+    "y": 896,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 50",
+   "frame": {
+    "x": 416,
+    "y": 896,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 51",
+   "frame": {
+    "x": 624,
+    "y": 896,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 52",
+   "frame": {
+    "x": 832,
+    "y": 896,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 53",
+   "frame": {
+    "x": 1040,
+    "y": 896,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 54",
+   "frame": {
+    "x": 0,
+    "y": 1008,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 55",
+   "frame": {
+    "x": 208,
+    "y": 1008,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 56",
+   "frame": {
+    "x": 416,
+    "y": 1008,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  },
+  {
+   "filename": "magic-missile 57",
+   "frame": {
+    "x": 624,
+    "y": 1008,
+    "w": 208,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 208,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 208,
+    "h": 112
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "magic-missile.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1248,
+   "h": 1120
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "magic-missile",
+    "from": 0,
+    "to": 57,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/magic-missile",
+   "name": "Magic missile",
+   "fps": 30,
+   "loop": false,
+   "frames": 58,
+   "frameSize": [
+    208,
+    112
+   ],
+   "pivot": [
+    24,
+    104
+   ],
+   "columns": 6
+  }
+ }
+}

@@ -1,0 +1,15 @@
+{
+	"id": "core.recipe",
+	"name": "特效配方",
+	"version": "1.0",
+	"description": "用参数化配方生成火焰、能量环、冲击波等特效",
+	"script": "plugin.gd",
+	"inject": [
+		"core.catalog",
+		"plugin.core.pixels",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.recipe": "1.0"
+	}
+}

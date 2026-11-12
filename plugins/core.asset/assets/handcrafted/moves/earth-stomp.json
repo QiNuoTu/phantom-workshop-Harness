@@ -1,0 +1,2472 @@
+{
+ "frames": [
+  {
+   "filename": "earth-stomp 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 1",
+   "frame": {
+    "x": 290,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 2",
+   "frame": {
+    "x": 580,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 3",
+   "frame": {
+    "x": 870,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 4",
+   "frame": {
+    "x": 1160,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 5",
+   "frame": {
+    "x": 1450,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 6",
+   "frame": {
+    "x": 1740,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 7",
+   "frame": {
+    "x": 2030,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 8",
+   "frame": {
+    "x": 0,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 9",
+   "frame": {
+    "x": 290,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 10",
+   "frame": {
+    "x": 580,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 11",
+   "frame": {
+    "x": 870,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 12",
+   "frame": {
+    "x": 1160,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 13",
+   "frame": {
+    "x": 1450,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 14",
+   "frame": {
+    "x": 1740,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 15",
+   "frame": {
+    "x": 2030,
+    "y": 142,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 16",
+   "frame": {
+    "x": 0,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 17",
+   "frame": {
+    "x": 290,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 18",
+   "frame": {
+    "x": 580,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 19",
+   "frame": {
+    "x": 870,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 20",
+   "frame": {
+    "x": 1160,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 21",
+   "frame": {
+    "x": 1450,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 22",
+   "frame": {
+    "x": 1740,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 23",
+   "frame": {
+    "x": 2030,
+    "y": 284,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 24",
+   "frame": {
+    "x": 0,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 25",
+   "frame": {
+    "x": 290,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 26",
+   "frame": {
+    "x": 580,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 27",
+   "frame": {
+    "x": 870,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 28",
+   "frame": {
+    "x": 1160,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 29",
+   "frame": {
+    "x": 1450,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 30",
+   "frame": {
+    "x": 1740,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 31",
+   "frame": {
+    "x": 2030,
+    "y": 426,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 32",
+   "frame": {
+    "x": 0,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 33",
+   "frame": {
+    "x": 290,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 34",
+   "frame": {
+    "x": 580,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 35",
+   "frame": {
+    "x": 870,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 36",
+   "frame": {
+    "x": 1160,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 37",
+   "frame": {
+    "x": 1450,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 38",
+   "frame": {
+    "x": 1740,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 39",
+   "frame": {
+    "x": 2030,
+    "y": 568,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 40",
+   "frame": {
+    "x": 0,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 41",
+   "frame": {
+    "x": 290,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 42",
+   "frame": {
+    "x": 580,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 43",
+   "frame": {
+    "x": 870,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 44",
+   "frame": {
+    "x": 1160,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 45",
+   "frame": {
+    "x": 1450,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 46",
+   "frame": {
+    "x": 1740,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 47",
+   "frame": {
+    "x": 2030,
+    "y": 710,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 48",
+   "frame": {
+    "x": 0,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 49",
+   "frame": {
+    "x": 290,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 50",
+   "frame": {
+    "x": 580,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 51",
+   "frame": {
+    "x": 870,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 52",
+   "frame": {
+    "x": 1160,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 53",
+   "frame": {
+    "x": 1450,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 54",
+   "frame": {
+    "x": 1740,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 55",
+   "frame": {
+    "x": 2030,
+    "y": 852,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 56",
+   "frame": {
+    "x": 0,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 57",
+   "frame": {
+    "x": 290,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 58",
+   "frame": {
+    "x": 580,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 59",
+   "frame": {
+    "x": 870,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 60",
+   "frame": {
+    "x": 1160,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 61",
+   "frame": {
+    "x": 1450,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 62",
+   "frame": {
+    "x": 1740,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 63",
+   "frame": {
+    "x": 2030,
+    "y": 994,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 64",
+   "frame": {
+    "x": 0,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 65",
+   "frame": {
+    "x": 290,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 66",
+   "frame": {
+    "x": 580,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 67",
+   "frame": {
+    "x": 870,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 68",
+   "frame": {
+    "x": 1160,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 69",
+   "frame": {
+    "x": 1450,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 70",
+   "frame": {
+    "x": 1740,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 71",
+   "frame": {
+    "x": 2030,
+    "y": 1136,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 72",
+   "frame": {
+    "x": 0,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 73",
+   "frame": {
+    "x": 290,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 74",
+   "frame": {
+    "x": 580,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 75",
+   "frame": {
+    "x": 870,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 76",
+   "frame": {
+    "x": 1160,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 77",
+   "frame": {
+    "x": 1450,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 78",
+   "frame": {
+    "x": 1740,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 79",
+   "frame": {
+    "x": 2030,
+    "y": 1278,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 80",
+   "frame": {
+    "x": 0,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 81",
+   "frame": {
+    "x": 290,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 82",
+   "frame": {
+    "x": 580,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 83",
+   "frame": {
+    "x": 870,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 84",
+   "frame": {
+    "x": 1160,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 85",
+   "frame": {
+    "x": 1450,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 86",
+   "frame": {
+    "x": 1740,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 87",
+   "frame": {
+    "x": 2030,
+    "y": 1420,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 88",
+   "frame": {
+    "x": 0,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 89",
+   "frame": {
+    "x": 290,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 90",
+   "frame": {
+    "x": 580,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 91",
+   "frame": {
+    "x": 870,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 92",
+   "frame": {
+    "x": 1160,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 93",
+   "frame": {
+    "x": 1450,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 94",
+   "frame": {
+    "x": 1740,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 95",
+   "frame": {
+    "x": 2030,
+    "y": 1562,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 96",
+   "frame": {
+    "x": 0,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 97",
+   "frame": {
+    "x": 290,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 98",
+   "frame": {
+    "x": 580,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 99",
+   "frame": {
+    "x": 870,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 100",
+   "frame": {
+    "x": 1160,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 101",
+   "frame": {
+    "x": 1450,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 102",
+   "frame": {
+    "x": 1740,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 103",
+   "frame": {
+    "x": 2030,
+    "y": 1704,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  },
+  {
+   "filename": "earth-stomp 104",
+   "frame": {
+    "x": 0,
+    "y": 1846,
+    "w": 290,
+    "h": 142
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 142
+   },
+   "sourceSize": {
+    "w": 290,
+    "h": 142
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "earth-stomp.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 2320,
+   "h": 1988
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "earth-stomp",
+    "from": 0,
+    "to": 104,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "moves/earth-stomp",
+   "name": "Earth stomp",
+   "fps": 30,
+   "loop": false,
+   "frames": 105,
+   "frameSize": [
+    290,
+    142
+   ],
+   "pivot": [
+    50,
+    128
+   ],
+   "columns": 8,
+   "act": {
+    "windup": 0.5,
+    "recovery": 0,
+    "onBody": false,
+    "targets": [
+     112
+    ],
+    "hits": [
+     {
+      "t": 0.06,
+      "freeze": 0.1,
+      "shake": 0.2,
+      "amp": 3,
+      "push": 0
+     },
+     {
+      "t": 0.49,
+      "freeze": 0.14,
+      "shake": 0.28,
+      "amp": 3,
+      "push": -3.2
+     }
+    ],
+    "poses": [
+     {
+      "t": -0.5,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7
+      }
+     },
+     {
+      "t": -0.14,
+      "how": "smooth",
+      "pose": {
+       "crouch": 1,
+       "fx": 3,
+       "fy": -34,
+       "bx": 11,
+       "by": -30,
+       "ffx": 9,
+       "fbx": -5,
+       "lean": -3,
+       "ffy": -15
+      }
+     },
+     {
+      "t": 0.055,
+      "how": "smooth",
+      "pose": {
+       "crouch": 1,
+       "fx": 3,
+       "fy": -34,
+       "bx": 11,
+       "by": -30,
+       "ffx": 9,
+       "fbx": -5,
+       "lean": -3,
+       "ffy": -17
+      }
+     },
+     {
+      "t": 0.06,
+      "how": "snap",
+      "pose": {
+       "crouch": 7,
+       "fx": 14,
+       "fy": -14,
+       "bx": -5,
+       "by": -18,
+       "ffx": 11,
+       "fbx": -9,
+       "lean": 3
+      }
+     },
+     {
+      "t": 0.99,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": 14,
+       "fy": -14,
+       "bx": -5,
+       "by": -18,
+       "ffx": 11,
+       "fbx": -9,
+       "lean": 3
+      }
+     },
+     {
+      "t": 1.59,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7
+      }
+     },
+     {
+      "t": 3.46,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 11,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7
+      }
+     }
+    ]
+   }
+  }
+ }
+}

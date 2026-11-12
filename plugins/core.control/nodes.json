@@ -1,0 +1,232 @@
+{
+	"category": "流程",
+	"nodes": [
+		{
+			"id": "flow.branch",
+			"label": "分支",
+			"desc": "按布尔条件走 true 或 false 出口。条件可由上游节点驱动。",
+			"op": "flow.branch",
+			"inputs": [
+				{
+					"id": "exec",
+					"label": "执行",
+					"type": "exec"
+				},
+				{
+					"id": "condition",
+					"label": "条件",
+					"type": "bool"
+				}
+			],
+			"outputs": [
+				{
+					"id": "true",
+					"label": "真",
+					"type": "exec"
+				},
+				{
+					"id": "false",
+					"label": "假",
+					"type": "exec"
+				}
+			],
+			"params": [
+				{
+					"id": "condition",
+					"label": "条件",
+					"kind": "bool",
+					"default": true,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "flow.for",
+			"label": "循环",
+			"desc": "从 first 到 last（含）按 step 迭代。循环体里用“循环索引”节点取当前值。",
+			"op": "flow.for",
+			"inputs": [
+				{
+					"id": "exec",
+					"label": "执行",
+					"type": "exec"
+				}
+			],
+			"outputs": [
+				{
+					"id": "body",
+					"label": "循环体",
+					"type": "exec"
+				},
+				{
+					"id": "done",
+					"label": "完成",
+					"type": "exec"
+				},
+				{
+					"id": "last_index",
+					"label": "末次索引",
+					"type": "number"
+				},
+				{
+					"id": "iterations",
+					"label": "迭代数",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "first",
+					"label": "起始",
+					"kind": "int",
+					"default": 0,
+					"min": -100000,
+					"max": 100000,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "last",
+					"label": "结束",
+					"kind": "int",
+					"default": 7,
+					"min": -100000,
+					"max": 100000,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "step",
+					"label": "步长",
+					"kind": "int",
+					"default": 1,
+					"min": -1000,
+					"max": 1000,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "max_iterations",
+					"label": "上限",
+					"kind": "int",
+					"default": 4096,
+					"min": 1,
+					"max": 65536,
+					"step": 1
+				}
+			]
+		},
+		{
+			"id": "flow.sequence",
+			"label": "序列",
+			"desc": "按 1..N 的顺序执行多个出口，避免依赖连线先后。",
+			"op": "flow.sequence",
+			"port_provider": "sequence",
+			"inputs": [
+				{
+					"id": "exec",
+					"label": "执行",
+					"type": "exec"
+				}
+			],
+			"outputs": [],
+			"params": [
+				{
+					"id": "steps",
+					"label": "出口数",
+					"kind": "int",
+					"default": 2,
+					"min": 1,
+					"max": 8,
+					"step": 1,
+					"bindable": false,
+					"hint": "结构性参数：决定出口数量，不能连线"
+				}
+			]
+		},
+		{
+			"id": "flow.index",
+			"label": "循环索引",
+			"desc": "读取当前循环的 index / count / iteration。放在循环体里，绑到任意参数上。",
+			"op": "flow.index",
+			"cache": false,
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "index",
+					"label": "索引",
+					"type": "number"
+				},
+				{
+					"id": "count",
+					"label": "总数",
+					"type": "number"
+				},
+				{
+					"id": "iteration",
+					"label": "第几次",
+					"type": "number"
+				}
+			],
+			"params": []
+		},
+		{
+			"id": "image.accumulate",
+			"label": "图像累积",
+			"desc": "把每次执行进来的图叠进一张缓冲。放在循环体里，就能把多次结果合成一张。",
+			"op": "image.accumulate",
+			"cache": false,
+			"inputs": [
+				{
+					"id": "exec",
+					"label": "执行",
+					"type": "exec"
+				},
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "累积",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "mode",
+					"label": "混合",
+					"kind": "enum",
+					"default": "normal",
+					"options": [
+						"normal",
+						"add",
+						"multiply",
+						"screen",
+						"overlay",
+						"subtract"
+					]
+				},
+				{
+					"id": "opacity",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				},
+				{
+					"id": "reset",
+					"label": "每次重置",
+					"kind": "bool",
+					"default": false
+				}
+			]
+		}
+	]
+}

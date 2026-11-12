@@ -1,0 +1,17 @@
+{
+	"id": "anim.curves",
+	"name": "动画曲线",
+	"version": "1.0",
+	"description": "缓动、振荡、脉冲、阶梯序列、噪声与区间映射，输出数值驱动任意参数",
+	"script": "plugin.gd",
+	"icon": "∿",
+	"color": "#ffd166",
+	"category": "动画插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.anim.curves": "1.0"
+	}
+}

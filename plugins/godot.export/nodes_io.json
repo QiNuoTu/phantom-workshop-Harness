@@ -1,0 +1,105 @@
+{
+	"category": "导出与保存",
+	"nodes": [
+		{
+			"id": "io.export_image",
+			"label": "导出图像",
+			"desc": "把接进来的图像写成 PNG。写盘由 run 控制，默认关闭，播放预览不会碰磁盘。",
+			"op": "io.export_image",
+			"evaluate_always": true,
+			"inputs": [
+				{"id": "image", "label": "图像", "type": "image"}
+			],
+			"outputs": [
+				{"id": "ok", "label": "成功", "type": "bool"},
+				{"id": "path", "label": "路径", "type": "string"},
+				{"id": "message", "label": "说明", "type": "string"}
+			],
+			"params": [
+				{"id": "path", "label": "输出文件", "kind": "save", "default": "user://exports/frame.png",
+				 "hint": "相对路径会放到 user://exports/ 下"},
+				{"id": "run", "label": "写盘", "kind": "bool", "default": false,
+				 "hint": "打开才会写；可打关键帧，只在需要的帧写一次"}
+			]
+		},
+		{
+			"id": "io.export_sequence",
+			"label": "导出序列帧",
+			"desc": "把整段动画按帧率渲染成 PNG 序列，文件名带帧号，可直接作为序列读入其它软件。",
+			"op": "io.export_sequence",
+			"evaluate_always": true,
+			"inputs": [],
+			"outputs": [
+				{"id": "ok", "label": "成功", "type": "bool"},
+				{"id": "path", "label": "目录", "type": "string"},
+				{"id": "message", "label": "说明", "type": "string"},
+				{"id": "count", "label": "帧数", "type": "number"}
+			],
+			"params": [
+				{"id": "dir", "label": "输出目录", "kind": "dir", "default": "user://exports/sequence"},
+				{"id": "run", "label": "写盘", "kind": "bool", "default": false}
+			]
+		},
+		{
+			"id": "io.export_sheet",
+			"label": "导出精灵表",
+			"desc": "把整段动画拼成一张精灵表 PNG，并写出同名的帧元数据 JSON（列数、帧尺寸、fps、循环）。",
+			"op": "io.export_sheet",
+			"evaluate_always": true,
+			"inputs": [],
+			"outputs": [
+				{"id": "ok", "label": "成功", "type": "bool"},
+				{"id": "path", "label": "文件", "type": "string"},
+				{"id": "message", "label": "说明", "type": "string"},
+				{"id": "count", "label": "文件数", "type": "number"}
+			],
+			"params": [
+				{"id": "path", "label": "输出文件", "kind": "save", "default": "user://exports/sheet.png"},
+				{"id": "run", "label": "写盘", "kind": "bool", "default": false}
+			]
+		},
+		{
+			"id": "io.export_godot",
+			"label": "导出 Godot 粒子",
+			"desc": "导出 GPUParticles2D 场景（.tscn）+ 内嵌贴图 + 翻转书着色器，可直接拖进 Godot 工程使用。",
+			"op": "io.export_godot",
+			"evaluate_always": true,
+			"inputs": [],
+			"outputs": [
+				{"id": "ok", "label": "成功", "type": "bool"},
+				{"id": "path", "label": "文件", "type": "string"},
+				{"id": "message", "label": "说明", "type": "string"}
+			],
+			"params": [
+				{"id": "path", "label": "场景文件", "kind": "save", "default": "user://exports/emitter.tscn"},
+				{"id": "source", "label": "贴图来源", "kind": "enum", "default": "sheet",
+				 "options": [
+					{"value": "sheet", "label": "整段序列"},
+					{"value": "frame", "label": "当前帧"}
+				 ]},
+				{"id": "amount", "label": "粒子数", "kind": "int", "default": 48, "min": 1, "max": 4096, "step": 1, "bindable": true},
+				{"id": "lifetime", "label": "生命周期", "kind": "float", "default": 0.0, "min": 0.0, "max": 120.0, "step": 0.01, "bindable": true,
+				 "hint": "0 = 用时间轴时长"},
+				{"id": "run", "label": "写盘", "kind": "bool", "default": false}
+			]
+		},
+		{
+			"id": "io.save_doc",
+			"label": "保存工程",
+			"desc": "把当前图文档整体写成 .fxgraph.json —— 保存的节点版。配合子图节点可以做「生成工程再嵌套」的流程。",
+			"op": "io.save_doc",
+			"evaluate_always": true,
+			"inputs": [],
+			"outputs": [
+				{"id": "ok", "label": "成功", "type": "bool"},
+				{"id": "path", "label": "文件", "type": "string"},
+				{"id": "message", "label": "说明", "type": "string"},
+				{"id": "count", "label": "节点数", "type": "number"}
+			],
+			"params": [
+				{"id": "path", "label": "保存到", "kind": "save", "default": "user://exports/graph.fxgraph.json"},
+				{"id": "run", "label": "写盘", "kind": "bool", "default": false}
+			]
+		}
+	]
+}

@@ -1,0 +1,1645 @@
+{
+ "frames": [
+  {
+   "filename": "thorns 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 1",
+   "frame": {
+    "x": 232,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 2",
+   "frame": {
+    "x": 464,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 3",
+   "frame": {
+    "x": 696,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 4",
+   "frame": {
+    "x": 928,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 5",
+   "frame": {
+    "x": 1160,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 6",
+   "frame": {
+    "x": 0,
+    "y": 92,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 7",
+   "frame": {
+    "x": 232,
+    "y": 92,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 8",
+   "frame": {
+    "x": 464,
+    "y": 92,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 9",
+   "frame": {
+    "x": 696,
+    "y": 92,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 10",
+   "frame": {
+    "x": 928,
+    "y": 92,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 11",
+   "frame": {
+    "x": 1160,
+    "y": 92,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 12",
+   "frame": {
+    "x": 0,
+    "y": 184,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 13",
+   "frame": {
+    "x": 232,
+    "y": 184,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 14",
+   "frame": {
+    "x": 464,
+    "y": 184,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 15",
+   "frame": {
+    "x": 696,
+    "y": 184,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 16",
+   "frame": {
+    "x": 928,
+    "y": 184,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 17",
+   "frame": {
+    "x": 1160,
+    "y": 184,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 18",
+   "frame": {
+    "x": 0,
+    "y": 276,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 19",
+   "frame": {
+    "x": 232,
+    "y": 276,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 20",
+   "frame": {
+    "x": 464,
+    "y": 276,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 21",
+   "frame": {
+    "x": 696,
+    "y": 276,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 22",
+   "frame": {
+    "x": 928,
+    "y": 276,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 23",
+   "frame": {
+    "x": 1160,
+    "y": 276,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 24",
+   "frame": {
+    "x": 0,
+    "y": 368,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 25",
+   "frame": {
+    "x": 232,
+    "y": 368,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 26",
+   "frame": {
+    "x": 464,
+    "y": 368,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 27",
+   "frame": {
+    "x": 696,
+    "y": 368,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 28",
+   "frame": {
+    "x": 928,
+    "y": 368,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 29",
+   "frame": {
+    "x": 1160,
+    "y": 368,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 30",
+   "frame": {
+    "x": 0,
+    "y": 460,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 31",
+   "frame": {
+    "x": 232,
+    "y": 460,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 32",
+   "frame": {
+    "x": 464,
+    "y": 460,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 33",
+   "frame": {
+    "x": 696,
+    "y": 460,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 34",
+   "frame": {
+    "x": 928,
+    "y": 460,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 35",
+   "frame": {
+    "x": 1160,
+    "y": 460,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 36",
+   "frame": {
+    "x": 0,
+    "y": 552,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 37",
+   "frame": {
+    "x": 232,
+    "y": 552,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 38",
+   "frame": {
+    "x": 464,
+    "y": 552,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 39",
+   "frame": {
+    "x": 696,
+    "y": 552,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 40",
+   "frame": {
+    "x": 928,
+    "y": 552,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 41",
+   "frame": {
+    "x": 1160,
+    "y": 552,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 42",
+   "frame": {
+    "x": 0,
+    "y": 644,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 43",
+   "frame": {
+    "x": 232,
+    "y": 644,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 44",
+   "frame": {
+    "x": 464,
+    "y": 644,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 45",
+   "frame": {
+    "x": 696,
+    "y": 644,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 46",
+   "frame": {
+    "x": 928,
+    "y": 644,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 47",
+   "frame": {
+    "x": 1160,
+    "y": 644,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 48",
+   "frame": {
+    "x": 0,
+    "y": 736,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 49",
+   "frame": {
+    "x": 232,
+    "y": 736,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 50",
+   "frame": {
+    "x": 464,
+    "y": 736,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 51",
+   "frame": {
+    "x": 696,
+    "y": 736,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 52",
+   "frame": {
+    "x": 928,
+    "y": 736,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 53",
+   "frame": {
+    "x": 1160,
+    "y": 736,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 54",
+   "frame": {
+    "x": 0,
+    "y": 828,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 55",
+   "frame": {
+    "x": 232,
+    "y": 828,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 56",
+   "frame": {
+    "x": 464,
+    "y": 828,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 57",
+   "frame": {
+    "x": 696,
+    "y": 828,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 58",
+   "frame": {
+    "x": 928,
+    "y": 828,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 59",
+   "frame": {
+    "x": 1160,
+    "y": 828,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 60",
+   "frame": {
+    "x": 0,
+    "y": 920,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 61",
+   "frame": {
+    "x": 232,
+    "y": 920,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 62",
+   "frame": {
+    "x": 464,
+    "y": 920,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 63",
+   "frame": {
+    "x": 696,
+    "y": 920,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 64",
+   "frame": {
+    "x": 928,
+    "y": 920,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 65",
+   "frame": {
+    "x": 1160,
+    "y": 920,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 66",
+   "frame": {
+    "x": 0,
+    "y": 1012,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 67",
+   "frame": {
+    "x": 232,
+    "y": 1012,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 68",
+   "frame": {
+    "x": 464,
+    "y": 1012,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 69",
+   "frame": {
+    "x": 696,
+    "y": 1012,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 70",
+   "frame": {
+    "x": 928,
+    "y": 1012,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 71",
+   "frame": {
+    "x": 1160,
+    "y": 1012,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thorns 72",
+   "frame": {
+    "x": 0,
+    "y": 1104,
+    "w": 232,
+    "h": 92
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 232,
+    "h": 92
+   },
+   "sourceSize": {
+    "w": 232,
+    "h": 92
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "thorns.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1392,
+   "h": 1196
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "thorns",
+    "from": 0,
+    "to": 72,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "nature/thorns",
+   "name": "Thorns",
+   "fps": 30,
+   "loop": false,
+   "frames": 73,
+   "frameSize": [
+    232,
+    92
+   ],
+   "pivot": [
+    48,
+    78
+   ],
+   "columns": 6
+  }
+ }
+}

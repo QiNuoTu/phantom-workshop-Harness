@@ -1,0 +1,14 @@
+{
+	"id": "editor.skin",
+	"name": "皮肤与停靠样式",
+	"version": "1.0",
+	"description": "内置三套皮肤与一种紧凑停靠样式",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.skin": "1.0"
+	}
+}

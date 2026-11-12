@@ -1,0 +1,709 @@
+{
+ "frames": [
+  {
+   "filename": "thrust 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 1",
+   "frame": {
+    "x": 196,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 2",
+   "frame": {
+    "x": 392,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 3",
+   "frame": {
+    "x": 588,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 4",
+   "frame": {
+    "x": 0,
+    "y": 76,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 5",
+   "frame": {
+    "x": 196,
+    "y": 76,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 6",
+   "frame": {
+    "x": 392,
+    "y": 76,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 7",
+   "frame": {
+    "x": 588,
+    "y": 76,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 8",
+   "frame": {
+    "x": 0,
+    "y": 152,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 9",
+   "frame": {
+    "x": 196,
+    "y": 152,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 10",
+   "frame": {
+    "x": 392,
+    "y": 152,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 11",
+   "frame": {
+    "x": 588,
+    "y": 152,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 12",
+   "frame": {
+    "x": 0,
+    "y": 228,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 13",
+   "frame": {
+    "x": 196,
+    "y": 228,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 14",
+   "frame": {
+    "x": 392,
+    "y": 228,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 15",
+   "frame": {
+    "x": 588,
+    "y": 228,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 16",
+   "frame": {
+    "x": 0,
+    "y": 304,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 17",
+   "frame": {
+    "x": 196,
+    "y": 304,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 18",
+   "frame": {
+    "x": 392,
+    "y": 304,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 19",
+   "frame": {
+    "x": 588,
+    "y": 304,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 20",
+   "frame": {
+    "x": 0,
+    "y": 380,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 21",
+   "frame": {
+    "x": 196,
+    "y": 380,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 22",
+   "frame": {
+    "x": 392,
+    "y": 380,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "thrust 23",
+   "frame": {
+    "x": 588,
+    "y": 380,
+    "w": 196,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 196,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 196,
+    "h": 76
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "thrust.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 784,
+   "h": 456
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "thrust",
+    "from": 0,
+    "to": 23,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "melee/thrust",
+   "name": "Thrust",
+   "fps": 30,
+   "loop": false,
+   "frames": 24,
+   "frameSize": [
+    196,
+    76
+   ],
+   "pivot": [
+    34,
+    62
+   ],
+   "columns": 4,
+   "act": {
+    "windup": 0.46,
+    "recovery": 0,
+    "onBody": false,
+    "targets": [
+     80
+    ],
+    "hits": [
+     {
+      "t": 0.07,
+      "freeze": 0.12,
+      "shake": 0.14,
+      "amp": 2,
+      "push": 2.8
+     }
+    ],
+    "poses": [
+     {
+      "t": -0.46,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 12,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "x": -14,
+       "sa": -0.3
+      }
+     },
+     {
+      "t": -0.24,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": -3,
+       "fy": -19,
+       "bx": 8,
+       "by": -30,
+       "ffx": 10,
+       "fbx": -8,
+       "weapon": "sword",
+       "x": -14,
+       "sa": -0.05,
+       "lean": -3,
+       "armsFront": true
+      }
+     },
+     {
+      "t": -0.05,
+      "how": "smooth",
+      "pose": {
+       "crouch": 6,
+       "fx": -5,
+       "fy": -19,
+       "bx": 8,
+       "by": -30,
+       "ffx": 10,
+       "fbx": -8,
+       "weapon": "sword",
+       "x": -14,
+       "sa": -0.05,
+       "lean": -3,
+       "armsFront": true
+      }
+     },
+     {
+      "t": 0,
+      "how": "snap",
+      "pose": {
+       "crouch": 6,
+       "fx": 23,
+       "fy": -20,
+       "bx": -8,
+       "by": -24,
+       "ffx": 15,
+       "fbx": -11,
+       "weapon": "sword",
+       "x": -14,
+       "sa": 0,
+       "lean": 6,
+       "toeB": true,
+       "ghost": 1
+      }
+     },
+     {
+      "t": 0.07,
+      "how": "snap",
+      "pose": {
+       "crouch": 6,
+       "fx": 23,
+       "fy": -20,
+       "bx": -8,
+       "by": -24,
+       "ffx": 15,
+       "fbx": -11,
+       "weapon": "sword",
+       "x": -14,
+       "sa": 0,
+       "lean": 6,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.3,
+      "how": "smooth",
+      "pose": {
+       "crouch": 5,
+       "fx": 23,
+       "fy": -20,
+       "bx": -8,
+       "by": -24,
+       "ffx": 15,
+       "fbx": -11,
+       "weapon": "sword",
+       "x": -14,
+       "sa": 0,
+       "lean": 5,
+       "toeB": true
+      }
+     },
+     {
+      "t": 0.7,
+      "how": "smooth",
+      "pose": {
+       "crouch": 3,
+       "fx": 12,
+       "fy": -21,
+       "bx": 9,
+       "by": -21,
+       "ffx": 7,
+       "fbx": -7,
+       "weapon": "sword",
+       "x": -14,
+       "sa": -0.3
+      }
+     }
+    ]
+   }
+  }
+ }
+}

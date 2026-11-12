@@ -1,0 +1,430 @@
+{
+	"category": "动画/曲线",
+	"nodes": [
+		{
+			"id": "anim.ease",
+			"label": "缓动",
+			"desc": "按时间输出 0→1 再映射；11 种缓动曲线。",
+			"op": "anim.ease",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "curve",
+					"label": "曲线",
+					"kind": "enum",
+					"default": "quad_inout",
+					"options": [
+						"linear",
+						"quad_in",
+						"quad_out",
+						"quad_inout",
+						"cubic_in",
+						"cubic_out",
+						"sine_inout",
+						"expo_out",
+						"back_out",
+						"elastic_out",
+						"bounce_out"
+					]
+				},
+				{
+					"id": "duration",
+					"label": "周期",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 60.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "from",
+					"label": "起点",
+					"kind": "float",
+					"default": 0.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "to",
+					"label": "终点",
+					"kind": "float",
+					"default": 1.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "相位",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 60.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "loop",
+					"label": "循环",
+					"kind": "bool",
+					"default": true
+				},
+				{
+					"id": "reverse",
+					"label": "往返",
+					"kind": "bool",
+					"default": false
+				}
+			]
+		},
+		{
+			"id": "anim.oscillator",
+			"label": "振荡器",
+			"desc": "正弦 / 方波 / 三角 / 锯齿，输出 [-1,1]×振幅。",
+			"op": "anim.oscillator",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "wave",
+					"label": "波形",
+					"kind": "enum",
+					"default": "sine",
+					"options": [
+						"sine",
+						"square",
+						"triangle",
+						"saw"
+					]
+				},
+				{
+					"id": "frequency",
+					"label": "频率",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 60.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "amplitude",
+					"label": "振幅",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "直流",
+					"kind": "float",
+					"default": 0.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "phase",
+					"label": "相位",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 6.283,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "duty",
+					"label": "占空比",
+					"kind": "float",
+					"default": 0.5,
+					"min": 0.01,
+					"max": 0.99,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "anim.pulse",
+			"label": "脉冲包络",
+			"desc": "attack / hold / release 三段包络，周期循环。",
+			"op": "anim.pulse",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "attack",
+					"label": "起",
+					"kind": "float",
+					"default": 0.15,
+					"min": 0.0,
+					"max": 10.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "hold",
+					"label": "保持",
+					"kind": "float",
+					"default": 0.2,
+					"min": 0.0,
+					"max": 10.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "release",
+					"label": "落",
+					"kind": "float",
+					"default": 0.35,
+					"min": 0.0,
+					"max": 10.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "period",
+					"label": "周期",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 60.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "amplitude",
+					"label": "振幅",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "anim.steps",
+			"label": "阶梯序列",
+			"desc": "逗号分隔的数值序列，可 step 或 linear 插值。",
+			"op": "anim.steps",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "values",
+					"label": "序列",
+					"kind": "string",
+					"default": "0,0.25,0.5,1"
+				},
+				{
+					"id": "duration",
+					"label": "周期",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 60.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "loop",
+					"label": "循环",
+					"kind": "bool",
+					"default": true
+				},
+				{
+					"id": "interp",
+					"label": "插值",
+					"kind": "enum",
+					"default": "linear",
+					"options": [
+						"step",
+						"linear"
+					]
+				}
+			]
+		},
+		{
+			"id": "anim.noise1d",
+			"label": "一维噪声",
+			"desc": "平滑随机曲线，适合抖动与呼吸感。",
+			"op": "anim.noise1d",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 13,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "frequency",
+					"label": "频率",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 30.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "octaves",
+					"label": "倍频",
+					"kind": "int",
+					"default": 3,
+					"min": 1,
+					"max": 8,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "amplitude",
+					"label": "振幅",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "直流",
+					"kind": "float",
+					"default": 0.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "anim.remap",
+			"label": "区间重映射",
+			"desc": "把输入数值夹取并重映射到新区间，可加曲线。",
+			"op": "anim.remap",
+			"inputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"outputs": [
+				{
+					"id": "value",
+					"label": "数值",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "in_min",
+					"label": "输入下限",
+					"kind": "float",
+					"default": 0.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "in_max",
+					"label": "输入上限",
+					"kind": "float",
+					"default": 1.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "out_min",
+					"label": "输出下限",
+					"kind": "float",
+					"default": 0.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "out_max",
+					"label": "输出上限",
+					"kind": "float",
+					"default": 100.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "clamp",
+					"label": "夹取",
+					"kind": "bool",
+					"default": true
+				},
+				{
+					"id": "curve",
+					"label": "曲线",
+					"kind": "enum",
+					"default": "linear",
+					"options": [
+						"linear",
+						"smooth",
+						"square",
+						"sqrt"
+					]
+				}
+			]
+		}
+	]
+}

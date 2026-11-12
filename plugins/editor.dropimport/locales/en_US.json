@@ -1,0 +1,9 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"拖拽导入": "Drag & drop import",
+		"把图片 / 精灵表文件直接拖进蓝图，自动落成纹理或精灵表节点": "Drop images or spritesheets onto the graph to create texture / sprite-sheet nodes",
+		"导入纹理…": "Import texture…",
+		"导入": "Import"
+	}
+}

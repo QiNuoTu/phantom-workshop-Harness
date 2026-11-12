@@ -1,0 +1,240 @@
+{
+	"category": "数值/逻辑",
+	"nodes": [
+		{
+			"id": "math.number",
+			"label": "数值运算",
+			"desc": "加减乘除/取余/最值/幂。循环索引乘步长、时间做缓动都从这里开始。",
+			"op": "math.number",
+			"inputs": [
+				{
+					"id": "a",
+					"label": "A",
+					"type": "number"
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"type": "number"
+				}
+			],
+			"outputs": [
+				{
+					"id": "number",
+					"label": "结果",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "op",
+					"label": "运算",
+					"kind": "enum",
+					"default": "add",
+					"options": [
+						"add",
+						"subtract",
+						"multiply",
+						"divide",
+						"modulo",
+						"min",
+						"max",
+						"power",
+						"atan2"
+					]
+				},
+				{
+					"id": "a",
+					"label": "A",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100000,
+					"max": 100000,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100000,
+					"max": 100000,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "math.vec2",
+			"label": "向量",
+			"desc": "把两个数值组装成 vec2（位移/缩放/轴心）。",
+			"op": "math.vec2",
+			"inputs": [
+				{
+					"id": "x",
+					"label": "X",
+					"type": "number"
+				},
+				{
+					"id": "y",
+					"label": "Y",
+					"type": "number"
+				}
+			],
+			"outputs": [
+				{
+					"id": "vec",
+					"label": "向量",
+					"type": "vec2"
+				}
+			],
+			"params": [
+				{
+					"id": "x",
+					"label": "X",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100000,
+					"max": 100000,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "y",
+					"label": "Y",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100000,
+					"max": 100000,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "logic.compare",
+			"label": "比较",
+			"desc": "比较两个数值，输出布尔。分支节点的条件通常来自这里。",
+			"op": "logic.compare",
+			"inputs": [
+				{
+					"id": "a",
+					"label": "A",
+					"type": "number"
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"type": "number"
+				}
+			],
+			"outputs": [
+				{
+					"id": "result",
+					"label": "结果",
+					"type": "bool"
+				}
+			],
+			"params": [
+				{
+					"id": "op",
+					"label": "比较",
+					"kind": "enum",
+					"default": "greater",
+					"options": [
+						"greater",
+						"greater_equal",
+						"less",
+						"less_equal",
+						"equal",
+						"not_equal"
+					]
+				},
+				{
+					"id": "a",
+					"label": "A",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100000,
+					"max": 100000,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100000,
+					"max": 100000,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "tolerance",
+					"label": "容差",
+					"kind": "float",
+					"default": 0.0001,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.0001
+				}
+			]
+		},
+		{
+			"id": "logic.bool",
+			"label": "布尔运算",
+			"desc": "与/或/非/异或，用来组合多个条件。",
+			"op": "logic.bool",
+			"inputs": [
+				{
+					"id": "a",
+					"label": "A",
+					"type": "bool"
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"type": "bool"
+				}
+			],
+			"outputs": [
+				{
+					"id": "result",
+					"label": "结果",
+					"type": "bool"
+				}
+			],
+			"params": [
+				{
+					"id": "op",
+					"label": "运算",
+					"kind": "enum",
+					"default": "and",
+					"options": [
+						"and",
+						"or",
+						"not",
+						"xor",
+						"nand"
+					]
+				},
+				{
+					"id": "a",
+					"label": "A",
+					"kind": "bool",
+					"default": false,
+					"bindable": true
+				},
+				{
+					"id": "b",
+					"label": "B",
+					"kind": "bool",
+					"default": false,
+					"bindable": true
+				}
+			]
+		}
+	]
+}

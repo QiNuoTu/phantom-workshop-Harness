@@ -1,0 +1,17 @@
+{
+	"id": "fx.composite",
+	"name": "合成与边缘",
+	"version": "1.0",
+	"description": "蒙版、双图混合、描边、投影与柔光",
+	"script": "plugin.gd",
+	"icon": "◓",
+	"color": "#7ee787",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.fx.composite": "1.0"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"id": "editor.preview",
+	"name": "输出预览",
+	"version": "1.0",
+	"description": "显示当前帧图像、尺寸与耗时",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.preview": "1.0"
+	}
+}

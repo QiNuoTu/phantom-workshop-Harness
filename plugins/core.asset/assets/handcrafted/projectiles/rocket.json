@@ -1,0 +1,831 @@
+{
+ "frames": [
+  {
+   "filename": "rocket 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 1",
+   "frame": {
+    "x": 288,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 2",
+   "frame": {
+    "x": 576,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 3",
+   "frame": {
+    "x": 864,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 4",
+   "frame": {
+    "x": 0,
+    "y": 76,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 5",
+   "frame": {
+    "x": 288,
+    "y": 76,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 6",
+   "frame": {
+    "x": 576,
+    "y": 76,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 7",
+   "frame": {
+    "x": 864,
+    "y": 76,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 8",
+   "frame": {
+    "x": 0,
+    "y": 152,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 9",
+   "frame": {
+    "x": 288,
+    "y": 152,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 10",
+   "frame": {
+    "x": 576,
+    "y": 152,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 11",
+   "frame": {
+    "x": 864,
+    "y": 152,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 12",
+   "frame": {
+    "x": 0,
+    "y": 228,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 13",
+   "frame": {
+    "x": 288,
+    "y": 228,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 14",
+   "frame": {
+    "x": 576,
+    "y": 228,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 15",
+   "frame": {
+    "x": 864,
+    "y": 228,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 16",
+   "frame": {
+    "x": 0,
+    "y": 304,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 17",
+   "frame": {
+    "x": 288,
+    "y": 304,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 18",
+   "frame": {
+    "x": 576,
+    "y": 304,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 19",
+   "frame": {
+    "x": 864,
+    "y": 304,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 20",
+   "frame": {
+    "x": 0,
+    "y": 380,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 21",
+   "frame": {
+    "x": 288,
+    "y": 380,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 22",
+   "frame": {
+    "x": 576,
+    "y": 380,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 23",
+   "frame": {
+    "x": 864,
+    "y": 380,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 24",
+   "frame": {
+    "x": 0,
+    "y": 456,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 25",
+   "frame": {
+    "x": 288,
+    "y": 456,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 26",
+   "frame": {
+    "x": 576,
+    "y": 456,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 27",
+   "frame": {
+    "x": 864,
+    "y": 456,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 28",
+   "frame": {
+    "x": 0,
+    "y": 532,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 29",
+   "frame": {
+    "x": 288,
+    "y": 532,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 30",
+   "frame": {
+    "x": 576,
+    "y": 532,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 31",
+   "frame": {
+    "x": 864,
+    "y": 532,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 32",
+   "frame": {
+    "x": 0,
+    "y": 608,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 33",
+   "frame": {
+    "x": 288,
+    "y": 608,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 34",
+   "frame": {
+    "x": 576,
+    "y": 608,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "rocket 35",
+   "frame": {
+    "x": 864,
+    "y": 608,
+    "w": 288,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 288,
+    "h": 76
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "rocket.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1152,
+   "h": 684
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "rocket",
+    "from": 0,
+    "to": 35,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/rocket",
+   "name": "Rocket",
+   "fps": 30,
+   "loop": true,
+   "frames": 36,
+   "frameSize": [
+    288,
+    76
+   ],
+   "pivot": [
+    252,
+    42
+   ],
+   "columns": 4
+  }
+ }
+}

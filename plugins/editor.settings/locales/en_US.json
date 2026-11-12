@@ -1,0 +1,14 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"设置": "Settings",
+		"刷新": "Refresh",
+		"启用": "Enabled",
+		"打开设置": "Open settings",
+		"设置中心": "Settings",
+		"设置…": "Settings…",
+		"设置中心…": "Settings center…",
+		"全部恢复默认": "Reset all to defaults",
+		"集中管理所有插件提供的设置项": "All settings contributed by plugins in one window"
+	}
+}

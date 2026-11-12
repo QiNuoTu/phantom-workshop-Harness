@@ -1,0 +1,2679 @@
+{
+ "frames": [
+  {
+   "filename": "hologram 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 1",
+   "frame": {
+    "x": 112,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 2",
+   "frame": {
+    "x": 224,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 3",
+   "frame": {
+    "x": 336,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 4",
+   "frame": {
+    "x": 448,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 5",
+   "frame": {
+    "x": 560,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 6",
+   "frame": {
+    "x": 672,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 7",
+   "frame": {
+    "x": 784,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 8",
+   "frame": {
+    "x": 896,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 9",
+   "frame": {
+    "x": 1008,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 10",
+   "frame": {
+    "x": 1120,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 11",
+   "frame": {
+    "x": 0,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 12",
+   "frame": {
+    "x": 112,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 13",
+   "frame": {
+    "x": 224,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 14",
+   "frame": {
+    "x": 336,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 15",
+   "frame": {
+    "x": 448,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 16",
+   "frame": {
+    "x": 560,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 17",
+   "frame": {
+    "x": 672,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 18",
+   "frame": {
+    "x": 784,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 19",
+   "frame": {
+    "x": 896,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 20",
+   "frame": {
+    "x": 1008,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 21",
+   "frame": {
+    "x": 1120,
+    "y": 104,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 22",
+   "frame": {
+    "x": 0,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 23",
+   "frame": {
+    "x": 112,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 24",
+   "frame": {
+    "x": 224,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 25",
+   "frame": {
+    "x": 336,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 26",
+   "frame": {
+    "x": 448,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 27",
+   "frame": {
+    "x": 560,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 28",
+   "frame": {
+    "x": 672,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 29",
+   "frame": {
+    "x": 784,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 30",
+   "frame": {
+    "x": 896,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 31",
+   "frame": {
+    "x": 1008,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 32",
+   "frame": {
+    "x": 1120,
+    "y": 208,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 33",
+   "frame": {
+    "x": 0,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 34",
+   "frame": {
+    "x": 112,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 35",
+   "frame": {
+    "x": 224,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 36",
+   "frame": {
+    "x": 336,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 37",
+   "frame": {
+    "x": 448,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 38",
+   "frame": {
+    "x": 560,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 39",
+   "frame": {
+    "x": 672,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 40",
+   "frame": {
+    "x": 784,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 41",
+   "frame": {
+    "x": 896,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 42",
+   "frame": {
+    "x": 1008,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 43",
+   "frame": {
+    "x": 1120,
+    "y": 312,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 44",
+   "frame": {
+    "x": 0,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 45",
+   "frame": {
+    "x": 112,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 46",
+   "frame": {
+    "x": 224,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 47",
+   "frame": {
+    "x": 336,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 48",
+   "frame": {
+    "x": 448,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 49",
+   "frame": {
+    "x": 560,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 50",
+   "frame": {
+    "x": 672,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 51",
+   "frame": {
+    "x": 784,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 52",
+   "frame": {
+    "x": 896,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 53",
+   "frame": {
+    "x": 1008,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 54",
+   "frame": {
+    "x": 1120,
+    "y": 416,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 55",
+   "frame": {
+    "x": 0,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 56",
+   "frame": {
+    "x": 112,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 57",
+   "frame": {
+    "x": 224,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 58",
+   "frame": {
+    "x": 336,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 59",
+   "frame": {
+    "x": 448,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 60",
+   "frame": {
+    "x": 560,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 61",
+   "frame": {
+    "x": 672,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 62",
+   "frame": {
+    "x": 784,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 63",
+   "frame": {
+    "x": 896,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 64",
+   "frame": {
+    "x": 1008,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 65",
+   "frame": {
+    "x": 1120,
+    "y": 520,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 66",
+   "frame": {
+    "x": 0,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 67",
+   "frame": {
+    "x": 112,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 68",
+   "frame": {
+    "x": 224,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 69",
+   "frame": {
+    "x": 336,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 70",
+   "frame": {
+    "x": 448,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 71",
+   "frame": {
+    "x": 560,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 72",
+   "frame": {
+    "x": 672,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 73",
+   "frame": {
+    "x": 784,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 74",
+   "frame": {
+    "x": 896,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 75",
+   "frame": {
+    "x": 1008,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 76",
+   "frame": {
+    "x": 1120,
+    "y": 624,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 77",
+   "frame": {
+    "x": 0,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 78",
+   "frame": {
+    "x": 112,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 79",
+   "frame": {
+    "x": 224,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 80",
+   "frame": {
+    "x": 336,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 81",
+   "frame": {
+    "x": 448,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 82",
+   "frame": {
+    "x": 560,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 83",
+   "frame": {
+    "x": 672,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 84",
+   "frame": {
+    "x": 784,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 85",
+   "frame": {
+    "x": 896,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 86",
+   "frame": {
+    "x": 1008,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 87",
+   "frame": {
+    "x": 1120,
+    "y": 728,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 88",
+   "frame": {
+    "x": 0,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 89",
+   "frame": {
+    "x": 112,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 90",
+   "frame": {
+    "x": 224,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 91",
+   "frame": {
+    "x": 336,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 92",
+   "frame": {
+    "x": 448,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 93",
+   "frame": {
+    "x": 560,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 94",
+   "frame": {
+    "x": 672,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 95",
+   "frame": {
+    "x": 784,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 96",
+   "frame": {
+    "x": 896,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 97",
+   "frame": {
+    "x": 1008,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 98",
+   "frame": {
+    "x": 1120,
+    "y": 832,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 99",
+   "frame": {
+    "x": 0,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 100",
+   "frame": {
+    "x": 112,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 101",
+   "frame": {
+    "x": 224,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 102",
+   "frame": {
+    "x": 336,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 103",
+   "frame": {
+    "x": 448,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 104",
+   "frame": {
+    "x": 560,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 105",
+   "frame": {
+    "x": 672,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 106",
+   "frame": {
+    "x": 784,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 107",
+   "frame": {
+    "x": 896,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 108",
+   "frame": {
+    "x": 1008,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 109",
+   "frame": {
+    "x": 1120,
+    "y": 936,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 110",
+   "frame": {
+    "x": 0,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 111",
+   "frame": {
+    "x": 112,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 112",
+   "frame": {
+    "x": 224,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 113",
+   "frame": {
+    "x": 336,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 114",
+   "frame": {
+    "x": 448,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 115",
+   "frame": {
+    "x": 560,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 116",
+   "frame": {
+    "x": 672,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 117",
+   "frame": {
+    "x": 784,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 118",
+   "frame": {
+    "x": 896,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  },
+  {
+   "filename": "hologram 119",
+   "frame": {
+    "x": 1008,
+    "y": 1040,
+    "w": 112,
+    "h": 104
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 104
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 104
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "hologram.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1232,
+   "h": 1144
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "hologram",
+    "from": 0,
+    "to": 119,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "scifi/hologram",
+   "name": "Hologram",
+   "fps": 30,
+   "loop": true,
+   "frames": 120,
+   "frameSize": [
+    112,
+    104
+   ],
+   "pivot": [
+    56,
+    92
+   ],
+   "columns": 11
+  }
+ }
+}

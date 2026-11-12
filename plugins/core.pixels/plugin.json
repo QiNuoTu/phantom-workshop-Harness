@@ -1,0 +1,12 @@
+{
+	"id": "core.pixels",
+	"name": "像素工具",
+	"version": "1.0",
+	"description": "像素混合与几何工具，供图像节点共用",
+	"inject": [
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.pixels": "1.0"
+	}
+}

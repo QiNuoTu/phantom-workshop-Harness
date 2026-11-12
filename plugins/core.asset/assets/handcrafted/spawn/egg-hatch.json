@@ -1,0 +1,2107 @@
+{
+ "frames": [
+  {
+   "filename": "egg-hatch 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 1",
+   "frame": {
+    "x": 120,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 2",
+   "frame": {
+    "x": 240,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 3",
+   "frame": {
+    "x": 360,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 4",
+   "frame": {
+    "x": 480,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 5",
+   "frame": {
+    "x": 600,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 6",
+   "frame": {
+    "x": 720,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 7",
+   "frame": {
+    "x": 840,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 8",
+   "frame": {
+    "x": 960,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 9",
+   "frame": {
+    "x": 0,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 10",
+   "frame": {
+    "x": 120,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 11",
+   "frame": {
+    "x": 240,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 12",
+   "frame": {
+    "x": 360,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 13",
+   "frame": {
+    "x": 480,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 14",
+   "frame": {
+    "x": 600,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 15",
+   "frame": {
+    "x": 720,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 16",
+   "frame": {
+    "x": 840,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 17",
+   "frame": {
+    "x": 960,
+    "y": 96,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 18",
+   "frame": {
+    "x": 0,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 19",
+   "frame": {
+    "x": 120,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 20",
+   "frame": {
+    "x": 240,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 21",
+   "frame": {
+    "x": 360,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 22",
+   "frame": {
+    "x": 480,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 23",
+   "frame": {
+    "x": 600,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 24",
+   "frame": {
+    "x": 720,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 25",
+   "frame": {
+    "x": 840,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 26",
+   "frame": {
+    "x": 960,
+    "y": 192,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 27",
+   "frame": {
+    "x": 0,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 28",
+   "frame": {
+    "x": 120,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 29",
+   "frame": {
+    "x": 240,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 30",
+   "frame": {
+    "x": 360,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 31",
+   "frame": {
+    "x": 480,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 32",
+   "frame": {
+    "x": 600,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 33",
+   "frame": {
+    "x": 720,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 34",
+   "frame": {
+    "x": 840,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 35",
+   "frame": {
+    "x": 960,
+    "y": 288,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 36",
+   "frame": {
+    "x": 0,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 37",
+   "frame": {
+    "x": 120,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 38",
+   "frame": {
+    "x": 240,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 39",
+   "frame": {
+    "x": 360,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 40",
+   "frame": {
+    "x": 480,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 41",
+   "frame": {
+    "x": 600,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 42",
+   "frame": {
+    "x": 720,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 43",
+   "frame": {
+    "x": 840,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 44",
+   "frame": {
+    "x": 960,
+    "y": 384,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 45",
+   "frame": {
+    "x": 0,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 46",
+   "frame": {
+    "x": 120,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 47",
+   "frame": {
+    "x": 240,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 48",
+   "frame": {
+    "x": 360,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 49",
+   "frame": {
+    "x": 480,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 50",
+   "frame": {
+    "x": 600,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 51",
+   "frame": {
+    "x": 720,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 52",
+   "frame": {
+    "x": 840,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 53",
+   "frame": {
+    "x": 960,
+    "y": 480,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 54",
+   "frame": {
+    "x": 0,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 55",
+   "frame": {
+    "x": 120,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 56",
+   "frame": {
+    "x": 240,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 57",
+   "frame": {
+    "x": 360,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 58",
+   "frame": {
+    "x": 480,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 59",
+   "frame": {
+    "x": 600,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 60",
+   "frame": {
+    "x": 720,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 61",
+   "frame": {
+    "x": 840,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 62",
+   "frame": {
+    "x": 960,
+    "y": 576,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 63",
+   "frame": {
+    "x": 0,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 64",
+   "frame": {
+    "x": 120,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 65",
+   "frame": {
+    "x": 240,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 66",
+   "frame": {
+    "x": 360,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 67",
+   "frame": {
+    "x": 480,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 68",
+   "frame": {
+    "x": 600,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 69",
+   "frame": {
+    "x": 720,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 70",
+   "frame": {
+    "x": 840,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 71",
+   "frame": {
+    "x": 960,
+    "y": 672,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 72",
+   "frame": {
+    "x": 0,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 73",
+   "frame": {
+    "x": 120,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 74",
+   "frame": {
+    "x": 240,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 75",
+   "frame": {
+    "x": 360,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 76",
+   "frame": {
+    "x": 480,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 77",
+   "frame": {
+    "x": 600,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 78",
+   "frame": {
+    "x": 720,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 79",
+   "frame": {
+    "x": 840,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 80",
+   "frame": {
+    "x": 960,
+    "y": 768,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 81",
+   "frame": {
+    "x": 0,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 82",
+   "frame": {
+    "x": 120,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 83",
+   "frame": {
+    "x": 240,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 84",
+   "frame": {
+    "x": 360,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 85",
+   "frame": {
+    "x": 480,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 86",
+   "frame": {
+    "x": 600,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 87",
+   "frame": {
+    "x": 720,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 88",
+   "frame": {
+    "x": 840,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 89",
+   "frame": {
+    "x": 960,
+    "y": 864,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 90",
+   "frame": {
+    "x": 0,
+    "y": 960,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 91",
+   "frame": {
+    "x": 120,
+    "y": 960,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 92",
+   "frame": {
+    "x": 240,
+    "y": 960,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  },
+  {
+   "filename": "egg-hatch 93",
+   "frame": {
+    "x": 360,
+    "y": 960,
+    "w": 120,
+    "h": 96
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 96
+   },
+   "sourceSize": {
+    "w": 120,
+    "h": 96
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "egg-hatch.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1080,
+   "h": 1056
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "egg-hatch",
+    "from": 0,
+    "to": 93,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "spawn/egg-hatch",
+   "name": "Egg hatch",
+   "fps": 30,
+   "loop": false,
+   "frames": 94,
+   "frameSize": [
+    120,
+    96
+   ],
+   "pivot": [
+    60,
+    84
+   ],
+   "columns": 9
+  }
+ }
+}

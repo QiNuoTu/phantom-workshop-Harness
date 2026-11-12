@@ -1,0 +1,17 @@
+{
+	"id": "anim.motion",
+	"name": "动画运动",
+	"version": "1.0",
+	"description": "环绕、震动、路径与弹簧，输出二维向量驱动位移、缩放与轴心",
+	"script": "plugin.gd",
+	"icon": "➰",
+	"color": "#ff9f43",
+	"category": "动画插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.anim.motion": "1.0"
+	}
+}

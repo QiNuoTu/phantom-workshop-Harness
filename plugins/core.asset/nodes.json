@@ -1,0 +1,417 @@
+{
+	"category": "图像/来源",
+	"nodes": [
+		{
+			"id": "image.pixelfx",
+			"label": "pixelfx 序列帧",
+			"desc": "244 套手绘像素特效。按时间取帧，支持缩放/旋转/镜像/轴心、调色板重映射与染色。",
+			"op": "image.pixelfx",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "asset",
+					"label": "素材",
+					"kind": "pixelfx",
+					"default": ""
+				},
+				{
+					"id": "frame",
+					"label": "帧偏移",
+					"kind": "int",
+					"default": 0,
+					"min": -100000,
+					"max": 100000,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "速度",
+					"kind": "float",
+					"default": 1.0,
+					"min": -8.0,
+					"max": 8.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "fps",
+					"label": "帧率",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 120,
+					"step": 1,
+					"hint": "0 = 跟随素材"
+				},
+				{
+					"id": "loop",
+					"label": "循环",
+					"kind": "bool",
+					"default": true
+				},
+				{
+					"id": "scale",
+					"label": "缩放",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 8.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "位移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"min": -4096,
+					"max": 4096,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "angle",
+					"label": "旋转",
+					"kind": "float",
+					"default": 0.0,
+					"min": -360,
+					"max": 360,
+					"step": 0.5,
+					"unit": "°",
+					"bindable": true
+				},
+				{
+					"id": "flip",
+					"label": "镜像",
+					"kind": "bool",
+					"default": false
+				},
+				{
+					"id": "palette",
+					"label": "调色板",
+					"kind": "string",
+					"default": "",
+					"hint": "逗号分隔的十六进制：#102,#215,#43a"
+				},
+				{
+					"id": "palette_amount",
+					"label": "调色强度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				},
+				{
+					"id": "tint",
+					"label": "染色",
+					"kind": "color",
+					"default": "#ffffff"
+				},
+				{
+					"id": "tint_amount",
+					"label": "染色强度",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				},
+				{
+					"id": "alpha",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		},
+		{
+			"id": "image.texture",
+			"label": "纹理",
+			"desc": "导入外部图片（PNG/WebP/JPG…）作为图像源，可适配画布。",
+			"op": "image.texture",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "path",
+					"label": "文件",
+					"kind": "texture",
+					"default": ""
+				},
+				{
+					"id": "fit",
+					"label": "适配",
+					"kind": "enum",
+					"default": "native",
+					"options": [
+						{
+							"value": "native",
+							"label": "原始尺寸"
+						},
+						{
+							"value": "contain",
+							"label": "适应画布"
+						},
+						{
+							"value": "cover",
+							"label": "铺满画布"
+						},
+						{
+							"value": "stretch",
+							"label": "拉伸到画布"
+						}
+					]
+				},
+				{
+					"id": "scale",
+					"label": "缩放",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 32.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "偏移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"bindable": true
+				},
+				{
+					"id": "alpha",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "image.sheet",
+			"label": "精灵表",
+			"desc": "把一张精灵表（spritesheet）切成序列帧：按列×行或按单元像素尺寸切，可随时间播放；同时输出总帧数、当前帧号、单元尺寸与列行数，方便下游按帧驱动。",
+			"op": "image.sheet",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				},
+				{
+					"id": "count",
+					"label": "总帧数",
+					"type": "number"
+				},
+				{
+					"id": "index",
+					"label": "当前帧",
+					"type": "number"
+				},
+				{
+					"id": "cell",
+					"label": "单元尺寸",
+					"type": "vec2"
+				},
+				{
+					"id": "cols",
+					"label": "列数",
+					"type": "number"
+				},
+				{
+					"id": "rows",
+					"label": "行数",
+					"type": "number"
+				}
+			],
+			"params": [
+				{
+					"id": "path",
+					"label": "精灵表",
+					"kind": "texture",
+					"default": ""
+				},
+				{
+					"id": "mode",
+					"label": "切分方式",
+					"kind": "enum",
+					"default": "grid",
+					"options": [
+						{
+							"value": "grid",
+							"label": "按列 × 行"
+						},
+						{
+							"value": "size",
+							"label": "按单元尺寸"
+						}
+					],
+					"hint": "按单元尺寸切分时，列数与行数由图片大小自动算出"
+				},
+				{
+					"id": "columns",
+					"label": "列",
+					"kind": "int",
+					"default": 4,
+					"min": 1,
+					"max": 64,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "rows",
+					"label": "行",
+					"kind": "int",
+					"default": 1,
+					"min": 1,
+					"max": 64,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "cell",
+					"label": "单元像素",
+					"kind": "vec2",
+					"default": [
+						32,
+						32
+					],
+					"bindable": true,
+					"hint": "按单元尺寸切分时使用；宽高按像素填"
+				},
+				{
+					"id": "margin",
+					"label": "外边距",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 512,
+					"step": 1,
+					"bindable": true,
+					"hint": "精灵表四周的空白像素"
+				},
+				{
+					"id": "spacing",
+					"label": "间隔",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 512,
+					"step": 1,
+					"bindable": true,
+					"hint": "帧与帧之间的空隙像素"
+				},
+				{
+					"id": "frame",
+					"label": "起始帧",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 1024,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "fps",
+					"label": "帧率",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 120.0,
+					"step": 0.5,
+					"bindable": true,
+					"hint": "0 = 静止，只显示起始帧；大于 0 时按时间自动推进"
+				},
+				{
+					"id": "loop",
+					"label": "循环",
+					"kind": "bool",
+					"default": true
+				},
+				{
+					"id": "fit",
+					"label": "适配",
+					"kind": "enum",
+					"default": "contain",
+					"options": [
+						{
+							"value": "native",
+							"label": "原始尺寸"
+						},
+						{
+							"value": "contain",
+							"label": "适应画布"
+						},
+						{
+							"value": "cover",
+							"label": "铺满画布"
+						},
+						{
+							"value": "stretch",
+							"label": "拉伸到画布"
+						}
+					]
+				},
+				{
+					"id": "scale",
+					"label": "缩放",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.01,
+					"max": 32.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "offset",
+					"label": "偏移",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"bindable": true
+				},
+				{
+					"id": "alpha",
+					"label": "不透明度",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		}
+	]
+}

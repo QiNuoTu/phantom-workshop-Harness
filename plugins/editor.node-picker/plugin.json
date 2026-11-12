@@ -1,0 +1,17 @@
+{
+	"id": "editor.node-picker",
+	"name": "节点创建面板",
+	"version": "1.0",
+	"description": "搜索式添加节点，支持最近使用与键盘导航",
+	"script": "plugin.gd",
+	"icon": "⊕",
+	"color": "#4cc2ff",
+	"category": "编辑器",
+	"inject": [
+		"graph.facade",
+		"node_picker.broker"
+	],
+	"provide": {
+		"service.node_picker": "1.0"
+	}
+}

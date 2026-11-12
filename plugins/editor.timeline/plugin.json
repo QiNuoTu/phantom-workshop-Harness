@@ -1,0 +1,14 @@
+{
+	"id": "editor.timeline",
+	"name": "时间轴",
+	"version": "1.0",
+	"description": "查看与编辑所有节点的关键帧",
+	"script": "plugin.gd",
+	"inject": [
+		"core.shell",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.timeline": "1.0"
+	}
+}

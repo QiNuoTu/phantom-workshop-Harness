@@ -1,0 +1,18 @@
+{
+	"id": "core.shader",
+	"name": "着色器",
+	"version": "1.0",
+	"description": "用 .gdshader 处理图像：离屏渲染后回读，和普通图像节点一样接线",
+	"script": "plugin.gd",
+	"icon": "◈",
+	"color": "#a78bfa",
+	"category": "核心组件",
+	"inject": [
+		"core.catalog",
+		"plugin.core.pixels",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.shader": "1.0"
+	}
+}

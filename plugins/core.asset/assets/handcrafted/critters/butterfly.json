@@ -1,0 +1,2151 @@
+{
+ "frames": [
+  {
+   "filename": "butterfly 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 1",
+   "frame": {
+    "x": 128,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 2",
+   "frame": {
+    "x": 256,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 3",
+   "frame": {
+    "x": 384,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 4",
+   "frame": {
+    "x": 512,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 5",
+   "frame": {
+    "x": 640,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 6",
+   "frame": {
+    "x": 768,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 7",
+   "frame": {
+    "x": 896,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 8",
+   "frame": {
+    "x": 1024,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 9",
+   "frame": {
+    "x": 0,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 10",
+   "frame": {
+    "x": 128,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 11",
+   "frame": {
+    "x": 256,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 12",
+   "frame": {
+    "x": 384,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 13",
+   "frame": {
+    "x": 512,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 14",
+   "frame": {
+    "x": 640,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 15",
+   "frame": {
+    "x": 768,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 16",
+   "frame": {
+    "x": 896,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 17",
+   "frame": {
+    "x": 1024,
+    "y": 88,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 18",
+   "frame": {
+    "x": 0,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 19",
+   "frame": {
+    "x": 128,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 20",
+   "frame": {
+    "x": 256,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 21",
+   "frame": {
+    "x": 384,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 22",
+   "frame": {
+    "x": 512,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 23",
+   "frame": {
+    "x": 640,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 24",
+   "frame": {
+    "x": 768,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 25",
+   "frame": {
+    "x": 896,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 26",
+   "frame": {
+    "x": 1024,
+    "y": 176,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 27",
+   "frame": {
+    "x": 0,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 28",
+   "frame": {
+    "x": 128,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 29",
+   "frame": {
+    "x": 256,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 30",
+   "frame": {
+    "x": 384,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 31",
+   "frame": {
+    "x": 512,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 32",
+   "frame": {
+    "x": 640,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 33",
+   "frame": {
+    "x": 768,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 34",
+   "frame": {
+    "x": 896,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 35",
+   "frame": {
+    "x": 1024,
+    "y": 264,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 36",
+   "frame": {
+    "x": 0,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 37",
+   "frame": {
+    "x": 128,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 38",
+   "frame": {
+    "x": 256,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 39",
+   "frame": {
+    "x": 384,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 40",
+   "frame": {
+    "x": 512,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 41",
+   "frame": {
+    "x": 640,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 42",
+   "frame": {
+    "x": 768,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 43",
+   "frame": {
+    "x": 896,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 44",
+   "frame": {
+    "x": 1024,
+    "y": 352,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 45",
+   "frame": {
+    "x": 0,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 46",
+   "frame": {
+    "x": 128,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 47",
+   "frame": {
+    "x": 256,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 48",
+   "frame": {
+    "x": 384,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 49",
+   "frame": {
+    "x": 512,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 50",
+   "frame": {
+    "x": 640,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 51",
+   "frame": {
+    "x": 768,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 52",
+   "frame": {
+    "x": 896,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 53",
+   "frame": {
+    "x": 1024,
+    "y": 440,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 54",
+   "frame": {
+    "x": 0,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 55",
+   "frame": {
+    "x": 128,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 56",
+   "frame": {
+    "x": 256,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 57",
+   "frame": {
+    "x": 384,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 58",
+   "frame": {
+    "x": 512,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 59",
+   "frame": {
+    "x": 640,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 60",
+   "frame": {
+    "x": 768,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 61",
+   "frame": {
+    "x": 896,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 62",
+   "frame": {
+    "x": 1024,
+    "y": 528,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 63",
+   "frame": {
+    "x": 0,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 64",
+   "frame": {
+    "x": 128,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 65",
+   "frame": {
+    "x": 256,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 66",
+   "frame": {
+    "x": 384,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 67",
+   "frame": {
+    "x": 512,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 68",
+   "frame": {
+    "x": 640,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 69",
+   "frame": {
+    "x": 768,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 70",
+   "frame": {
+    "x": 896,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 71",
+   "frame": {
+    "x": 1024,
+    "y": 616,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 72",
+   "frame": {
+    "x": 0,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 73",
+   "frame": {
+    "x": 128,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 74",
+   "frame": {
+    "x": 256,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 75",
+   "frame": {
+    "x": 384,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 76",
+   "frame": {
+    "x": 512,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 77",
+   "frame": {
+    "x": 640,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 78",
+   "frame": {
+    "x": 768,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 79",
+   "frame": {
+    "x": 896,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 80",
+   "frame": {
+    "x": 1024,
+    "y": 704,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 81",
+   "frame": {
+    "x": 0,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 82",
+   "frame": {
+    "x": 128,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 83",
+   "frame": {
+    "x": 256,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 84",
+   "frame": {
+    "x": 384,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 85",
+   "frame": {
+    "x": 512,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 86",
+   "frame": {
+    "x": 640,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 87",
+   "frame": {
+    "x": 768,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 88",
+   "frame": {
+    "x": 896,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 89",
+   "frame": {
+    "x": 1024,
+    "y": 792,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 90",
+   "frame": {
+    "x": 0,
+    "y": 880,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 91",
+   "frame": {
+    "x": 128,
+    "y": 880,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 92",
+   "frame": {
+    "x": 256,
+    "y": 880,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 93",
+   "frame": {
+    "x": 384,
+    "y": 880,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 94",
+   "frame": {
+    "x": 512,
+    "y": 880,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  },
+  {
+   "filename": "butterfly 95",
+   "frame": {
+    "x": 640,
+    "y": 880,
+    "w": 128,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 88
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "butterfly.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1152,
+   "h": 968
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "butterfly",
+    "from": 0,
+    "to": 95,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "critters/butterfly",
+   "name": "Butterfly",
+   "fps": 30,
+   "loop": true,
+   "frames": 96,
+   "frameSize": [
+    128,
+    88
+   ],
+   "pivot": [
+    64,
+    44
+   ],
+   "columns": 9
+  }
+ }
+}

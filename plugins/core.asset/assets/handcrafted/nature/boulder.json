@@ -1,0 +1,1579 @@
+{
+ "frames": [
+  {
+   "filename": "boulder 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 1",
+   "frame": {
+    "x": 264,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 2",
+   "frame": {
+    "x": 528,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 3",
+   "frame": {
+    "x": 792,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 4",
+   "frame": {
+    "x": 1056,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 5",
+   "frame": {
+    "x": 1320,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 6",
+   "frame": {
+    "x": 0,
+    "y": 120,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 7",
+   "frame": {
+    "x": 264,
+    "y": 120,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 8",
+   "frame": {
+    "x": 528,
+    "y": 120,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 9",
+   "frame": {
+    "x": 792,
+    "y": 120,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 10",
+   "frame": {
+    "x": 1056,
+    "y": 120,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 11",
+   "frame": {
+    "x": 1320,
+    "y": 120,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 12",
+   "frame": {
+    "x": 0,
+    "y": 240,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 13",
+   "frame": {
+    "x": 264,
+    "y": 240,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 14",
+   "frame": {
+    "x": 528,
+    "y": 240,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 15",
+   "frame": {
+    "x": 792,
+    "y": 240,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 16",
+   "frame": {
+    "x": 1056,
+    "y": 240,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 17",
+   "frame": {
+    "x": 1320,
+    "y": 240,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 18",
+   "frame": {
+    "x": 0,
+    "y": 360,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 19",
+   "frame": {
+    "x": 264,
+    "y": 360,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 20",
+   "frame": {
+    "x": 528,
+    "y": 360,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 21",
+   "frame": {
+    "x": 792,
+    "y": 360,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 22",
+   "frame": {
+    "x": 1056,
+    "y": 360,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 23",
+   "frame": {
+    "x": 1320,
+    "y": 360,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 24",
+   "frame": {
+    "x": 0,
+    "y": 480,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 25",
+   "frame": {
+    "x": 264,
+    "y": 480,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 26",
+   "frame": {
+    "x": 528,
+    "y": 480,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 27",
+   "frame": {
+    "x": 792,
+    "y": 480,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 28",
+   "frame": {
+    "x": 1056,
+    "y": 480,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 29",
+   "frame": {
+    "x": 1320,
+    "y": 480,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 30",
+   "frame": {
+    "x": 0,
+    "y": 600,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 31",
+   "frame": {
+    "x": 264,
+    "y": 600,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 32",
+   "frame": {
+    "x": 528,
+    "y": 600,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 33",
+   "frame": {
+    "x": 792,
+    "y": 600,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 34",
+   "frame": {
+    "x": 1056,
+    "y": 600,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 35",
+   "frame": {
+    "x": 1320,
+    "y": 600,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 36",
+   "frame": {
+    "x": 0,
+    "y": 720,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 37",
+   "frame": {
+    "x": 264,
+    "y": 720,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 38",
+   "frame": {
+    "x": 528,
+    "y": 720,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 39",
+   "frame": {
+    "x": 792,
+    "y": 720,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 40",
+   "frame": {
+    "x": 1056,
+    "y": 720,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 41",
+   "frame": {
+    "x": 1320,
+    "y": 720,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 42",
+   "frame": {
+    "x": 0,
+    "y": 840,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 43",
+   "frame": {
+    "x": 264,
+    "y": 840,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 44",
+   "frame": {
+    "x": 528,
+    "y": 840,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 45",
+   "frame": {
+    "x": 792,
+    "y": 840,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 46",
+   "frame": {
+    "x": 1056,
+    "y": 840,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 47",
+   "frame": {
+    "x": 1320,
+    "y": 840,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 48",
+   "frame": {
+    "x": 0,
+    "y": 960,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 49",
+   "frame": {
+    "x": 264,
+    "y": 960,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 50",
+   "frame": {
+    "x": 528,
+    "y": 960,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 51",
+   "frame": {
+    "x": 792,
+    "y": 960,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 52",
+   "frame": {
+    "x": 1056,
+    "y": 960,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 53",
+   "frame": {
+    "x": 1320,
+    "y": 960,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 54",
+   "frame": {
+    "x": 0,
+    "y": 1080,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 55",
+   "frame": {
+    "x": 264,
+    "y": 1080,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 56",
+   "frame": {
+    "x": 528,
+    "y": 1080,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 57",
+   "frame": {
+    "x": 792,
+    "y": 1080,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 58",
+   "frame": {
+    "x": 1056,
+    "y": 1080,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 59",
+   "frame": {
+    "x": 1320,
+    "y": 1080,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 60",
+   "frame": {
+    "x": 0,
+    "y": 1200,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 61",
+   "frame": {
+    "x": 264,
+    "y": 1200,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 62",
+   "frame": {
+    "x": 528,
+    "y": 1200,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 63",
+   "frame": {
+    "x": 792,
+    "y": 1200,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 64",
+   "frame": {
+    "x": 1056,
+    "y": 1200,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 65",
+   "frame": {
+    "x": 1320,
+    "y": 1200,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 66",
+   "frame": {
+    "x": 0,
+    "y": 1320,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 67",
+   "frame": {
+    "x": 264,
+    "y": 1320,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 68",
+   "frame": {
+    "x": 528,
+    "y": 1320,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  },
+  {
+   "filename": "boulder 69",
+   "frame": {
+    "x": 792,
+    "y": 1320,
+    "w": 264,
+    "h": 120
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 264,
+    "h": 120
+   },
+   "sourceSize": {
+    "w": 264,
+    "h": 120
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "boulder.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1584,
+   "h": 1440
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "boulder",
+    "from": 0,
+    "to": 69,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "nature/boulder",
+   "name": "Boulder",
+   "fps": 30,
+   "loop": false,
+   "frames": 70,
+   "frameSize": [
+    264,
+    120
+   ],
+   "pivot": [
+    40,
+    104
+   ],
+   "columns": 6
+  }
+ }
+}

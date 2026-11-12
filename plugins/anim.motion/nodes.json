@@ -1,0 +1,237 @@
+{
+	"category": "动画/运动",
+	"nodes": [
+		{
+			"id": "anim.orbit",
+			"label": "环绕",
+			"desc": "椭圆轨迹，半径与速度可分别打关键帧。",
+			"op": "anim.orbit",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "vec",
+					"label": "向量",
+					"type": "vec2"
+				}
+			],
+			"params": [
+				{
+					"id": "radius",
+					"label": "半径",
+					"kind": "vec2",
+					"default": [
+						32,
+						32
+					],
+					"bindable": true
+				},
+				{
+					"id": "speed",
+					"label": "速度",
+					"kind": "float",
+					"default": 1.0,
+					"min": -20.0,
+					"max": 20.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "phase",
+					"label": "相位",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 6.283,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "center",
+					"label": "中心",
+					"kind": "vec2",
+					"default": [
+						0,
+						0
+					],
+					"bindable": true
+				},
+				{
+					"id": "tilt",
+					"label": "倾斜",
+					"kind": "float",
+					"default": 0.0,
+					"min": -3.14,
+					"max": 3.14,
+					"step": 0.01,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "anim.shake",
+			"label": "震动",
+			"desc": "带衰减的随机抖动，命中/爆炸时的镜头震动。",
+			"op": "anim.shake",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "vec",
+					"label": "向量",
+					"type": "vec2"
+				}
+			],
+			"params": [
+				{
+					"id": "amplitude",
+					"label": "振幅",
+					"kind": "vec2",
+					"default": [
+						6,
+						6
+					],
+					"bindable": true
+				},
+				{
+					"id": "frequency",
+					"label": "频率",
+					"kind": "float",
+					"default": 12.0,
+					"min": 0.1,
+					"max": 120.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "seed",
+					"label": "种子",
+					"kind": "int",
+					"default": 17,
+					"min": 0,
+					"max": 99999,
+					"step": 1,
+					"bindable": true
+				},
+				{
+					"id": "decay",
+					"label": "衰减",
+					"kind": "float",
+					"default": 2.0,
+					"min": 0.0,
+					"max": 20.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "period",
+					"label": "周期",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.05,
+					"max": 20.0,
+					"step": 0.05,
+					"bindable": true
+				}
+			]
+		},
+		{
+			"id": "anim.path",
+			"label": "路径",
+			"desc": "分号分隔的二维点序列，循环或往返插值。",
+			"op": "anim.path",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "vec",
+					"label": "向量",
+					"type": "vec2"
+				}
+			],
+			"params": [
+				{
+					"id": "points",
+					"label": "路径点",
+					"kind": "string",
+					"default": "0,0;32,0;32,32;0,32"
+				},
+				{
+					"id": "duration",
+					"label": "周期",
+					"kind": "float",
+					"default": 2.0,
+					"min": 0.05,
+					"max": 60.0,
+					"step": 0.05,
+					"bindable": true
+				},
+				{
+					"id": "loop",
+					"label": "循环",
+					"kind": "bool",
+					"default": true
+				},
+				{
+					"id": "smooth",
+					"label": "平滑",
+					"kind": "bool",
+					"default": true
+				}
+			]
+		},
+		{
+			"id": "anim.spring",
+			"label": "弹簧",
+			"desc": "二阶阻尼弹簧，输出 (位置, 速度)。",
+			"op": "anim.spring",
+			"inputs": [],
+			"outputs": [
+				{
+					"id": "vec",
+					"label": "向量",
+					"type": "vec2"
+				}
+			],
+			"params": [
+				{
+					"id": "target",
+					"label": "目标",
+					"kind": "float",
+					"default": 100.0,
+					"min": -10000.0,
+					"max": 10000.0,
+					"step": 0.01,
+					"bindable": true
+				},
+				{
+					"id": "stiffness",
+					"label": "刚度",
+					"kind": "float",
+					"default": 120.0,
+					"min": 1.0,
+					"max": 1000.0,
+					"step": 1.0,
+					"bindable": true
+				},
+				{
+					"id": "damping",
+					"label": "阻尼",
+					"kind": "float",
+					"default": 14.0,
+					"min": 0.1,
+					"max": 100.0,
+					"step": 0.1,
+					"bindable": true
+				},
+				{
+					"id": "duration",
+					"label": "时长",
+					"kind": "float",
+					"default": 1.5,
+					"min": 0.1,
+					"max": 20.0,
+					"step": 0.05,
+					"bindable": true
+				}
+			]
+		}
+	]
+}

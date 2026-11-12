@@ -1,0 +1,11 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"下一帧": "Next frame",
+		"时间轴": "Timeline",
+		"播放 / 暂停": "Play / Pause",
+		"上一帧": "Previous frame",
+		"回到开头": "Rewind",
+		"查看与编辑所有节点的关键帧": "View and edit keyframes of every node"
+	}
+}

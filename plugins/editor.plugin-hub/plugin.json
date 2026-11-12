@@ -1,0 +1,18 @@
+{
+	"id": "editor.plugin-hub",
+	"name": "插件中心",
+	"version": "1.0",
+	"description": "浏览插件、启用停用、查看依赖与各自设置",
+	"script": "plugin.gd",
+	"icon": "⬡",
+	"color": "#a78bfa",
+	"category": "编辑器",
+	"inject": [
+		"core.shell",
+		"core.plugins",
+		"kernel.graph"
+	],
+	"provide": {
+		"panel.editor.plugin-hub": "1.0"
+	}
+}

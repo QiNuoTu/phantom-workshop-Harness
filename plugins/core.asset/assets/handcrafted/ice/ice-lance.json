@@ -1,0 +1,567 @@
+{
+ "frames": [
+  {
+   "filename": "ice-lance 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 1",
+   "frame": {
+    "x": 176,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 2",
+   "frame": {
+    "x": 352,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 3",
+   "frame": {
+    "x": 0,
+    "y": 64,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 4",
+   "frame": {
+    "x": 176,
+    "y": 64,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 5",
+   "frame": {
+    "x": 352,
+    "y": 64,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 6",
+   "frame": {
+    "x": 0,
+    "y": 128,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 7",
+   "frame": {
+    "x": 176,
+    "y": 128,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 8",
+   "frame": {
+    "x": 352,
+    "y": 128,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 9",
+   "frame": {
+    "x": 0,
+    "y": 192,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 10",
+   "frame": {
+    "x": 176,
+    "y": 192,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 11",
+   "frame": {
+    "x": 352,
+    "y": 192,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 12",
+   "frame": {
+    "x": 0,
+    "y": 256,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 13",
+   "frame": {
+    "x": 176,
+    "y": 256,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 14",
+   "frame": {
+    "x": 352,
+    "y": 256,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 15",
+   "frame": {
+    "x": 0,
+    "y": 320,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 16",
+   "frame": {
+    "x": 176,
+    "y": 320,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 17",
+   "frame": {
+    "x": 352,
+    "y": 320,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 18",
+   "frame": {
+    "x": 0,
+    "y": 384,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 19",
+   "frame": {
+    "x": 176,
+    "y": 384,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 20",
+   "frame": {
+    "x": 352,
+    "y": 384,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 21",
+   "frame": {
+    "x": 0,
+    "y": 448,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 22",
+   "frame": {
+    "x": 176,
+    "y": 448,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  },
+  {
+   "filename": "ice-lance 23",
+   "frame": {
+    "x": 352,
+    "y": 448,
+    "w": 176,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 176,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 176,
+    "h": 64
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "ice-lance.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 528,
+   "h": 512
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "ice-lance",
+    "from": 0,
+    "to": 23,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "ice/ice-lance",
+   "name": "Ice lance",
+   "fps": 30,
+   "loop": true,
+   "frames": 24,
+   "frameSize": [
+    176,
+    64
+   ],
+   "pivot": [
+    146,
+    32
+   ],
+   "columns": 3
+  }
+ }
+}

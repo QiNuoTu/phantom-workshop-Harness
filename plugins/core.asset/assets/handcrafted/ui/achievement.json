@@ -1,0 +1,1645 @@
+{
+ "frames": [
+  {
+   "filename": "achievement 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 1",
+   "frame": {
+    "x": 220,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 2",
+   "frame": {
+    "x": 440,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 3",
+   "frame": {
+    "x": 660,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 4",
+   "frame": {
+    "x": 880,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 5",
+   "frame": {
+    "x": 0,
+    "y": 72,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 6",
+   "frame": {
+    "x": 220,
+    "y": 72,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 7",
+   "frame": {
+    "x": 440,
+    "y": 72,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 8",
+   "frame": {
+    "x": 660,
+    "y": 72,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 9",
+   "frame": {
+    "x": 880,
+    "y": 72,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 10",
+   "frame": {
+    "x": 0,
+    "y": 144,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 11",
+   "frame": {
+    "x": 220,
+    "y": 144,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 12",
+   "frame": {
+    "x": 440,
+    "y": 144,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 13",
+   "frame": {
+    "x": 660,
+    "y": 144,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 14",
+   "frame": {
+    "x": 880,
+    "y": 144,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 15",
+   "frame": {
+    "x": 0,
+    "y": 216,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 16",
+   "frame": {
+    "x": 220,
+    "y": 216,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 17",
+   "frame": {
+    "x": 440,
+    "y": 216,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 18",
+   "frame": {
+    "x": 660,
+    "y": 216,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 19",
+   "frame": {
+    "x": 880,
+    "y": 216,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 20",
+   "frame": {
+    "x": 0,
+    "y": 288,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 21",
+   "frame": {
+    "x": 220,
+    "y": 288,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 22",
+   "frame": {
+    "x": 440,
+    "y": 288,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 23",
+   "frame": {
+    "x": 660,
+    "y": 288,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 24",
+   "frame": {
+    "x": 880,
+    "y": 288,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 25",
+   "frame": {
+    "x": 0,
+    "y": 360,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 26",
+   "frame": {
+    "x": 220,
+    "y": 360,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 27",
+   "frame": {
+    "x": 440,
+    "y": 360,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 28",
+   "frame": {
+    "x": 660,
+    "y": 360,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 29",
+   "frame": {
+    "x": 880,
+    "y": 360,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 30",
+   "frame": {
+    "x": 0,
+    "y": 432,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 31",
+   "frame": {
+    "x": 220,
+    "y": 432,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 32",
+   "frame": {
+    "x": 440,
+    "y": 432,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 33",
+   "frame": {
+    "x": 660,
+    "y": 432,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 34",
+   "frame": {
+    "x": 880,
+    "y": 432,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 35",
+   "frame": {
+    "x": 0,
+    "y": 504,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 36",
+   "frame": {
+    "x": 220,
+    "y": 504,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 37",
+   "frame": {
+    "x": 440,
+    "y": 504,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 38",
+   "frame": {
+    "x": 660,
+    "y": 504,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 39",
+   "frame": {
+    "x": 880,
+    "y": 504,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 40",
+   "frame": {
+    "x": 0,
+    "y": 576,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 41",
+   "frame": {
+    "x": 220,
+    "y": 576,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 42",
+   "frame": {
+    "x": 440,
+    "y": 576,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 43",
+   "frame": {
+    "x": 660,
+    "y": 576,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 44",
+   "frame": {
+    "x": 880,
+    "y": 576,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 45",
+   "frame": {
+    "x": 0,
+    "y": 648,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 46",
+   "frame": {
+    "x": 220,
+    "y": 648,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 47",
+   "frame": {
+    "x": 440,
+    "y": 648,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 48",
+   "frame": {
+    "x": 660,
+    "y": 648,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 49",
+   "frame": {
+    "x": 880,
+    "y": 648,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 50",
+   "frame": {
+    "x": 0,
+    "y": 720,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 51",
+   "frame": {
+    "x": 220,
+    "y": 720,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 52",
+   "frame": {
+    "x": 440,
+    "y": 720,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 53",
+   "frame": {
+    "x": 660,
+    "y": 720,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 54",
+   "frame": {
+    "x": 880,
+    "y": 720,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 55",
+   "frame": {
+    "x": 0,
+    "y": 792,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 56",
+   "frame": {
+    "x": 220,
+    "y": 792,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 57",
+   "frame": {
+    "x": 440,
+    "y": 792,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 58",
+   "frame": {
+    "x": 660,
+    "y": 792,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 59",
+   "frame": {
+    "x": 880,
+    "y": 792,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 60",
+   "frame": {
+    "x": 0,
+    "y": 864,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 61",
+   "frame": {
+    "x": 220,
+    "y": 864,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 62",
+   "frame": {
+    "x": 440,
+    "y": 864,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 63",
+   "frame": {
+    "x": 660,
+    "y": 864,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 64",
+   "frame": {
+    "x": 880,
+    "y": 864,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 65",
+   "frame": {
+    "x": 0,
+    "y": 936,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 66",
+   "frame": {
+    "x": 220,
+    "y": 936,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 67",
+   "frame": {
+    "x": 440,
+    "y": 936,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 68",
+   "frame": {
+    "x": 660,
+    "y": 936,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 69",
+   "frame": {
+    "x": 880,
+    "y": 936,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 70",
+   "frame": {
+    "x": 0,
+    "y": 1008,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 71",
+   "frame": {
+    "x": 220,
+    "y": 1008,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "achievement 72",
+   "frame": {
+    "x": 440,
+    "y": 1008,
+    "w": 220,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 220,
+    "h": 72
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "achievement.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1100,
+   "h": 1080
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "achievement",
+    "from": 0,
+    "to": 72,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "ui/achievement",
+   "name": "Achievement",
+   "fps": 30,
+   "loop": false,
+   "frames": 73,
+   "frameSize": [
+    220,
+    72
+   ],
+   "pivot": [
+    110,
+    36
+   ],
+   "columns": 5
+  }
+ }
+}

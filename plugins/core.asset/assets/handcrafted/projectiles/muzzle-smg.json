@@ -1,0 +1,699 @@
+{
+ "frames": [
+  {
+   "filename": "muzzle-smg 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 1",
+   "frame": {
+    "x": 112,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 2",
+   "frame": {
+    "x": 224,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 3",
+   "frame": {
+    "x": 336,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 4",
+   "frame": {
+    "x": 448,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 5",
+   "frame": {
+    "x": 0,
+    "y": 72,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 6",
+   "frame": {
+    "x": 112,
+    "y": 72,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 7",
+   "frame": {
+    "x": 224,
+    "y": 72,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 8",
+   "frame": {
+    "x": 336,
+    "y": 72,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 9",
+   "frame": {
+    "x": 448,
+    "y": 72,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 10",
+   "frame": {
+    "x": 0,
+    "y": 144,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 11",
+   "frame": {
+    "x": 112,
+    "y": 144,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 12",
+   "frame": {
+    "x": 224,
+    "y": 144,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 13",
+   "frame": {
+    "x": 336,
+    "y": 144,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 14",
+   "frame": {
+    "x": 448,
+    "y": 144,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 15",
+   "frame": {
+    "x": 0,
+    "y": 216,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 16",
+   "frame": {
+    "x": 112,
+    "y": 216,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 17",
+   "frame": {
+    "x": 224,
+    "y": 216,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 18",
+   "frame": {
+    "x": 336,
+    "y": 216,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 19",
+   "frame": {
+    "x": 448,
+    "y": 216,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 20",
+   "frame": {
+    "x": 0,
+    "y": 288,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 21",
+   "frame": {
+    "x": 112,
+    "y": 288,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 22",
+   "frame": {
+    "x": 224,
+    "y": 288,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 23",
+   "frame": {
+    "x": 336,
+    "y": 288,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 24",
+   "frame": {
+    "x": 448,
+    "y": 288,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 25",
+   "frame": {
+    "x": 0,
+    "y": 360,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 26",
+   "frame": {
+    "x": 112,
+    "y": 360,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 27",
+   "frame": {
+    "x": 224,
+    "y": 360,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 28",
+   "frame": {
+    "x": 336,
+    "y": 360,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  },
+  {
+   "filename": "muzzle-smg 29",
+   "frame": {
+    "x": 448,
+    "y": 360,
+    "w": 112,
+    "h": 72
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 72
+   },
+   "sourceSize": {
+    "w": 112,
+    "h": 72
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "muzzle-smg.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 560,
+   "h": 432
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "muzzle-smg",
+    "from": 0,
+    "to": 29,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "projectiles/muzzle-smg",
+   "name": "SMG burst",
+   "fps": 30,
+   "loop": true,
+   "frames": 30,
+   "frameSize": [
+    112,
+    72
+   ],
+   "pivot": [
+    56,
+    66
+   ],
+   "columns": 5
+  }
+ }
+}

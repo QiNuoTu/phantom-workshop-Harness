@@ -1,0 +1,113 @@
+{
+	"edges": [
+		{
+			"from": "shape",
+			"from_port": "image",
+			"to": "blur",
+			"to_port": "image"
+		},
+		{
+			"from": "blur",
+			"from_port": "image",
+			"to": "tint",
+			"to_port": "image"
+		},
+		{
+			"from": "tint",
+			"from_port": "image",
+			"to": "out",
+			"to_port": "layer_0"
+		}
+	],
+	"format": "phantom.graph",
+	"frames": [],
+	"meta": {
+		"canvas": {
+			"background": "#00000000",
+			"height": 96,
+			"width": 96
+		},
+		"name": "脉冲光斑",
+		"seed": 1,
+		"timeline": {
+			"duration": 1.0,
+			"fps": 30,
+			"loop": true
+		}
+	},
+	"nodes": [
+		{
+			"collapsed": false,
+			"id": "shape",
+			"params": {
+				"background": "#00000000",
+				"center": [
+					0.5,
+					0.5
+				],
+				"color": "#ff7040",
+				"feather": 0.18,
+				"shape": "circle",
+				"size": 0.34
+			},
+			"pos": [
+				0.0,
+				0.0
+			],
+			"type": "image.shape"
+		},
+		{
+			"collapsed": false,
+			"id": "blur",
+			"params": {
+				"radius": {
+					"interp": "ease",
+					"track": [
+						[
+							0.0,
+							2.0
+						],
+						[
+							0.5,
+							9.0
+						],
+						[
+							1.0,
+							2.0
+						]
+					]
+				}
+			},
+			"pos": [
+				240.0,
+				0.0
+			],
+			"type": "image.blur"
+		},
+		{
+			"collapsed": false,
+			"id": "tint",
+			"params": {
+				"amount": 0.5,
+				"color": "#ffd166"
+			},
+			"pos": [
+				480.0,
+				0.0
+			],
+			"type": "image.tint"
+		},
+		{
+			"collapsed": false,
+			"id": "out",
+			"params": {},
+			"pos": [
+				720.0,
+				0.0
+			],
+			"type": "output.final"
+		}
+	],
+	"output": "out",
+	"version": 1
+}

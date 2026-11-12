@@ -1,0 +1,2679 @@
+{
+ "frames": [
+  {
+   "filename": "candle 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 1",
+   "frame": {
+    "x": 56,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 2",
+   "frame": {
+    "x": 112,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 3",
+   "frame": {
+    "x": 168,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 4",
+   "frame": {
+    "x": 224,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 5",
+   "frame": {
+    "x": 280,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 6",
+   "frame": {
+    "x": 336,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 7",
+   "frame": {
+    "x": 392,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 8",
+   "frame": {
+    "x": 448,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 9",
+   "frame": {
+    "x": 504,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 10",
+   "frame": {
+    "x": 560,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 11",
+   "frame": {
+    "x": 616,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 12",
+   "frame": {
+    "x": 672,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 13",
+   "frame": {
+    "x": 0,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 14",
+   "frame": {
+    "x": 56,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 15",
+   "frame": {
+    "x": 112,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 16",
+   "frame": {
+    "x": 168,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 17",
+   "frame": {
+    "x": 224,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 18",
+   "frame": {
+    "x": 280,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 19",
+   "frame": {
+    "x": 336,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 20",
+   "frame": {
+    "x": 392,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 21",
+   "frame": {
+    "x": 448,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 22",
+   "frame": {
+    "x": 504,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 23",
+   "frame": {
+    "x": 560,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 24",
+   "frame": {
+    "x": 616,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 25",
+   "frame": {
+    "x": 672,
+    "y": 76,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 26",
+   "frame": {
+    "x": 0,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 27",
+   "frame": {
+    "x": 56,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 28",
+   "frame": {
+    "x": 112,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 29",
+   "frame": {
+    "x": 168,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 30",
+   "frame": {
+    "x": 224,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 31",
+   "frame": {
+    "x": 280,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 32",
+   "frame": {
+    "x": 336,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 33",
+   "frame": {
+    "x": 392,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 34",
+   "frame": {
+    "x": 448,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 35",
+   "frame": {
+    "x": 504,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 36",
+   "frame": {
+    "x": 560,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 37",
+   "frame": {
+    "x": 616,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 38",
+   "frame": {
+    "x": 672,
+    "y": 152,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 39",
+   "frame": {
+    "x": 0,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 40",
+   "frame": {
+    "x": 56,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 41",
+   "frame": {
+    "x": 112,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 42",
+   "frame": {
+    "x": 168,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 43",
+   "frame": {
+    "x": 224,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 44",
+   "frame": {
+    "x": 280,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 45",
+   "frame": {
+    "x": 336,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 46",
+   "frame": {
+    "x": 392,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 47",
+   "frame": {
+    "x": 448,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 48",
+   "frame": {
+    "x": 504,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 49",
+   "frame": {
+    "x": 560,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 50",
+   "frame": {
+    "x": 616,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 51",
+   "frame": {
+    "x": 672,
+    "y": 228,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 52",
+   "frame": {
+    "x": 0,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 53",
+   "frame": {
+    "x": 56,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 54",
+   "frame": {
+    "x": 112,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 55",
+   "frame": {
+    "x": 168,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 56",
+   "frame": {
+    "x": 224,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 57",
+   "frame": {
+    "x": 280,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 58",
+   "frame": {
+    "x": 336,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 59",
+   "frame": {
+    "x": 392,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 60",
+   "frame": {
+    "x": 448,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 61",
+   "frame": {
+    "x": 504,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 62",
+   "frame": {
+    "x": 560,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 63",
+   "frame": {
+    "x": 616,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 64",
+   "frame": {
+    "x": 672,
+    "y": 304,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 65",
+   "frame": {
+    "x": 0,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 66",
+   "frame": {
+    "x": 56,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 67",
+   "frame": {
+    "x": 112,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 68",
+   "frame": {
+    "x": 168,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 69",
+   "frame": {
+    "x": 224,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 70",
+   "frame": {
+    "x": 280,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 71",
+   "frame": {
+    "x": 336,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 72",
+   "frame": {
+    "x": 392,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 73",
+   "frame": {
+    "x": 448,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 74",
+   "frame": {
+    "x": 504,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 75",
+   "frame": {
+    "x": 560,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 76",
+   "frame": {
+    "x": 616,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 77",
+   "frame": {
+    "x": 672,
+    "y": 380,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 78",
+   "frame": {
+    "x": 0,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 79",
+   "frame": {
+    "x": 56,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 80",
+   "frame": {
+    "x": 112,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 81",
+   "frame": {
+    "x": 168,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 82",
+   "frame": {
+    "x": 224,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 83",
+   "frame": {
+    "x": 280,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 84",
+   "frame": {
+    "x": 336,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 85",
+   "frame": {
+    "x": 392,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 86",
+   "frame": {
+    "x": 448,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 87",
+   "frame": {
+    "x": 504,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 88",
+   "frame": {
+    "x": 560,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 89",
+   "frame": {
+    "x": 616,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 90",
+   "frame": {
+    "x": 672,
+    "y": 456,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 91",
+   "frame": {
+    "x": 0,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 92",
+   "frame": {
+    "x": 56,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 93",
+   "frame": {
+    "x": 112,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 94",
+   "frame": {
+    "x": 168,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 95",
+   "frame": {
+    "x": 224,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 96",
+   "frame": {
+    "x": 280,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 97",
+   "frame": {
+    "x": 336,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 98",
+   "frame": {
+    "x": 392,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 99",
+   "frame": {
+    "x": 448,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 100",
+   "frame": {
+    "x": 504,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 101",
+   "frame": {
+    "x": 560,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 102",
+   "frame": {
+    "x": 616,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 103",
+   "frame": {
+    "x": 672,
+    "y": 532,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 104",
+   "frame": {
+    "x": 0,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 105",
+   "frame": {
+    "x": 56,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 106",
+   "frame": {
+    "x": 112,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 107",
+   "frame": {
+    "x": 168,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 108",
+   "frame": {
+    "x": 224,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 109",
+   "frame": {
+    "x": 280,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 110",
+   "frame": {
+    "x": 336,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 111",
+   "frame": {
+    "x": 392,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 112",
+   "frame": {
+    "x": 448,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 113",
+   "frame": {
+    "x": 504,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 114",
+   "frame": {
+    "x": 560,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 115",
+   "frame": {
+    "x": 616,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 116",
+   "frame": {
+    "x": 672,
+    "y": 608,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 117",
+   "frame": {
+    "x": 0,
+    "y": 684,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 118",
+   "frame": {
+    "x": 56,
+    "y": 684,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  },
+  {
+   "filename": "candle 119",
+   "frame": {
+    "x": 112,
+    "y": 684,
+    "w": 56,
+    "h": 76
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 76
+   },
+   "sourceSize": {
+    "w": 56,
+    "h": 76
+   },
+   "duration": 33
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "candle.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 728,
+   "h": 760
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "candle",
+    "from": 0,
+    "to": 119,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "fire/candle",
+   "name": "Candle",
+   "fps": 30,
+   "loop": true,
+   "frames": 120,
+   "frameSize": [
+    56,
+    76
+   ],
+   "pivot": [
+    28,
+    64
+   ],
+   "columns": 13
+  }
+ }
+}

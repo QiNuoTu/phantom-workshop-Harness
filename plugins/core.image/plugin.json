@@ -1,0 +1,15 @@
+{
+	"id": "core.image",
+	"name": "图像处理",
+	"version": "1.0",
+	"description": "模糊、色阶、染色、变换、混合与输出合成",
+	"script": "plugin.gd",
+	"inject": [
+		"core.catalog",
+		"plugin.core.pixels",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.image": "1.0"
+	}
+}

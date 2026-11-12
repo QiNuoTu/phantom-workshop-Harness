@@ -1,0 +1,15 @@
+{
+	"id": "core.text",
+	"name": "文字",
+	"version": "1.0",
+	"description": "用外部字体渲染文字，支持描边与对齐",
+	"script": "plugin.gd",
+	"inject": [
+		"core.catalog",
+		"plugin.core.pixels",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.text": "1.0"
+	}
+}
