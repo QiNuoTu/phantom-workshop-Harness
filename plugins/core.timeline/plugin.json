@@ -1,0 +1,14 @@
+{
+	"id": "core.timeline",
+	"name": "时间轴时钟",
+	"version": "1.0",
+	"description": "时间维度：播放帧号推进、时间与帧换算、循环；与图结构和求帧解耦",
+	"script": "plugin.gd",
+	"icon": "◷",
+	"color": "#79c0ff",
+	"category": "核心插件",
+	"inject": [],
+	"provide": {
+		"timeline.clock": "1.0"
+	}
+}

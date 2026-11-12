@@ -64,8 +64,10 @@ var _prefetch_workers: int = 0
 ## 旧实现等 0.9s 且每次 set_time 都把计时归零，播放前后永远排不上。
 const PREFETCH_IDLE_DELAY := 0.18
 ## 播放帧号：按帧号逐帧推进，绝不允许因为「这一帧算不出来」就跳号。
+## 推进规则本身由 `FxClockBroker` 选出的时间插件提供（默认 core.timeline）；
+## 这里只保存「当前该显示第几帧」这个组合结果，不实现时钟。
 var _play_frame: int = 0
-var _play_accum: float = 0.0
+var clock: RefCounted = null
 var _published_frame: int = -1
 var _setting_play_time: bool = false
 ## 播放时「命中缓存 / 未命中」的计数，状态栏与诊断都会读。
@@ -101,6 +103,11 @@ func setup(p_store: FxDocumentStore) -> void:
 	apply_policy()
 	_configure_threading()
 	_read_cache_settings()
+	# 时间维度：向服务代理要一个时钟。插件被停用时用 core.render 的最小降级实现，
+	# 保证「帧号连续」这条不变量始终成立，但基座里没有任何时间推进代码。
+	clock = FxClockBroker.create()
+	if clock == null:
+		clock = FxLinearClock.create()
 	_prime_cache()
 
 
@@ -391,7 +398,8 @@ func set_playing(value: bool) -> void:
 		# 从当前播放头对应的帧号起播，帧号连续；不取消后台预渲染 ——
 		# 播放期间正是最需要把后面几帧补出来的时候。
 		_play_frame = cache.index_for_time(store.current_time if store != null else 0.0)
-		_play_accum = 0.0
+		if clock != null:
+			clock.call("reset", _play_frame)
 		_published_frame = -1
 		cache_hits = 0
 		cache_misses = 0
@@ -538,18 +546,17 @@ func _process(delta: float) -> void:
 ## 缓存命中后一次 process 只花贴图钱，30fps 动画在 60fps 界面上自然两帧推一次。
 func _advance_playback(delta: float) -> void:
 	var count := cache.frame_count()
-	if count <= 0:
+	if count <= 0 or clock == null:
 		return
 	var fps := maxf(float(cache.fps()), 1.0)
-	var step := 1.0 / fps
-	_play_accum += delta
-	if _play_accum < step:
+	# 时间维度只回答「该不该进下一帧、帧号是多少」；空间维度（这一帧的图像）
+	# 完全由帧缓存提供。两者在这里才被组合，互不持有对方的状态。
+	if not bool(clock.call("advance", delta, fps, count)):
 		return
-	_play_accum = fmod(_play_accum, step)
-	_play_frame = (_play_frame + 1) % count
+	_play_frame = int(clock.get("frame"))
 	# 时间轴 UI 要跟着走；但这只是一次「时间变化」，不能触发重算或打断预渲染。
 	_setting_play_time = true
-	store.set_time_silent(float(_play_frame) / fps)
+	store.set_time_silent(float(clock.call("time_of", _play_frame, fps)))
 	_setting_play_time = false
 
 
@@ -726,7 +733,9 @@ func _submit(frame_index: int = -1, purpose: String = "live") -> void:
 	var t := store.current_time
 	var index := frame_index
 	if index >= 0:
-		t = float(index) / maxf(float(cache.fps()), 1.0)
+		var fps := maxf(float(cache.fps()), 1.0)
+		t = float(clock.call("time_of", index, fps)) if clock != null \
+			else float(index) / fps
 	else:
 		index = cache.index_for_time(t)
 	_worker.submit({

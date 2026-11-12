@@ -1,0 +1,8 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"时间轴时钟": "Timeline clock",
+		"时间维度：播放帧号推进、时间与帧换算、循环；与图结构和求帧解耦": "Temporal dimension: playback frame advance, time/frame conversion and looping; decoupled from graph structure and frame evaluation",
+		"线性帧时钟": "Linear frame clock"
+	}
+}
