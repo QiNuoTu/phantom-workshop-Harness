@@ -14,7 +14,7 @@
 | 显卡 | 可选。GPU 算子需要支持 compute 的显卡；没有会自动退回 CPU |
 
 ```bash
-git clone <this-repo> phantom-workshop
+git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git phantom-workshop
 cd phantom-workshop
 godot --path .                       # 启动工作台
 bash tools/run_tests.sh              # 14 套无头回归

@@ -140,7 +140,7 @@
 **需要**：Godot **4.7.2**（标准版或 .NET 版均可，本项目是纯 GDScript）。
 
 ```bash
-git clone <this-repo> phantom-workshop
+git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git phantom-workshop
 cd phantom-workshop
 
 # 1) 打开工作台（编辑器形态）
