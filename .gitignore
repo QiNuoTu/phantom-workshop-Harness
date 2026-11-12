@@ -19,6 +19,7 @@ examples/demo/*/*_20*.fxgraph
 
 # === 系统 / 编辑器 ===
 .DS_Store
+**/.DS_Store
 Thumbs.db
 desktop.ini
 *.swp
