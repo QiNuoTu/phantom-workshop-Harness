@@ -174,8 +174,8 @@ func _diagnose() -> void:
 			String(info.get("root_label", "")),
 			"（已停用）" if not bool(info.get("enabled", true)) else "",
 		])
-	print("节点定义 %d / 算子 %d / 参数控件 %d / 导出器 %d" % [
-		FxGraphFacade.access().catalog_all().size(), FxOpRegistry.ids().size(),
+	# 节点类型 / 算子的数量由 core.graph 自己以诊断片段报（基座不认识算子表）。
+	print("参数控件 %d / 导出器 %d" % [
 		FxWidgetRegistry.kinds().size(), FxRegistry.exporters.size(),
 	])
 	print("面板 %d / 窗口 %d / 命令 %d / 菜单 %d / 服务 %d" % [
@@ -214,10 +214,7 @@ func _diagnose() -> void:
 			skin_texture_count += FxSkinTextureLibrary.available(tex_root, tex_map)
 	print("皮肤贴图 %d 张（外部资源根，不进 PCK）" % skin_texture_count)
 	print("已实例化面板：%s" % ", ".join(PackedStringArray(Array(panel_controls.keys()))))
-	var asset_roots := FxResourceRoot.existing_roots(FxAssetLibrary.ROOT_RELATIVE)
-	print("素材根 %d：%s" % [asset_roots.size(), ", ".join(PackedStringArray(Array(asset_roots)))])
-	FxAssetLibrary.ensure_loaded()
-	print("pixelfx 素材 %d 套" % FxAssetLibrary.all().size())
+	# 素材根与素材套数由 core.asset 以诊断片段自报（基座不认识素材库）。
 	for root in FxPluginHost.roots():
 		var root_path := String(root.get("path", ""))
 		print("插件根 %s [%s] %s" % [
@@ -227,11 +224,18 @@ func _diagnose() -> void:
 	if not FxRegistry.errors.is_empty():
 		print("插件错误：%s" % str(FxRegistry.errors))
 	# 可选：跑一条命令，用于验证外部插件的实例 Callable 在导出后仍可用。
+	# `--fx-arg=x` 按出现顺序收集成命令参数：调试命令（如 diag.cache）需要
+	# 「先清空再统计」这类开关，而给每条命令各加一个专用开关会把启动参数表撑爆。
+	var run_id := ""
+	var run_args: Array = []
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--fx-run="):
-			var command_id := arg.trim_prefix("--fx-run=")
-			var ok := run_command(command_id)
-			print("命令 %s：%s" % [command_id, "执行成功" if ok else "未找到"])
+			run_id = arg.trim_prefix("--fx-run=")
+		elif arg.begins_with("--fx-arg="):
+			run_args.append(arg.trim_prefix("--fx-arg="))
+	if not run_id.is_empty():
+		var ok := run_command(run_id, run_args)
+		print("命令 %s：%s" % [run_id, "执行成功" if ok else "未找到"])
 	print("== 诊断结束 ==")
 	get_tree().quit(0)
 
@@ -254,7 +258,16 @@ func _on_setting_changed(setting_id: String, _value: Variant, applies: String) -
 		return
 	if render != null:
 		render.apply_policy()
-		render.invalidate()
+		# 影响面由**声明者**给出（`impact`），基座只转达，不解释其含义：
+		#   content —— 像素内容变了，整段缓存重建；
+		#   derived —— 内容没变、算法变了，只丢派生缓存；
+		#   display —— 只丢贴屏那一层；
+		#   none    —— 调度/存储/界面，不碰渲染。
+		# 没声明时回落 content，与旧行为一致（第三方插件不写这字段也不会变坏）。
+		# 旧实现一律 `invalidate()`：调一下预渲染线程数也要把整段缓存重建一遍。
+		var impact := FxSettings.impact_of(setting_id)
+		if impact != "none":
+			render.invalidate(impact, setting_id)
 	status("设置已更新：%s" % setting_id)
 
 
@@ -1795,7 +1808,8 @@ func _apply_saved_visibility() -> void:
 		if dock == null:
 			continue
 		var want := bool(_panel_visible.get(panel_id, true))
-		dock.set_panel_visible(String(panel_id), want)
+		# 只恢复可见性，不换当前面板：默认显示谁由停靠区的 order 规则决定。
+		dock.set_panel_visible(String(panel_id), want, false)
 	_refresh_view_menu()
 
 

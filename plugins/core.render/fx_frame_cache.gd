@@ -32,6 +32,10 @@ extends RefCounted
 const STATE_EMPTY := 0
 const STATE_PENDING := 1
 const STATE_READY := 2
+## 只给界面看：有线程**正在**为这一格干活（预渲染 / 急件 / 实时候选）。
+## 它不是缓存状态 —— 不落盘、不参与任何求值与分发判断，
+## 所以绝不能用 `state()` 返回：播放的挂起条件会误以为「这一格已经有图了」。
+const STATE_RENDERING := 3
 
 const MAGIC := 0x43465846  # "FXFC"
 ## v2：v1 的位图把播放档急件也标成了精确帧，磁盘上留下一批「绿但其实糊」的帧。
@@ -54,6 +58,20 @@ var _fps: int = 30
 var _duration: float = 1.0
 var _count: int = 0
 var _states: PackedByteArray = PackedByteArray()
+## 每帧是在哪个「内容身份」上算出来的。
+##
+## 为什么必须记：桶的重建按指纹走，可指纹只看「拓扑 + 参数 + 画布」的合成哈希，
+## 而预渲染线程与主线程是并发的 —— 第 N 版文档算的帧，完全可能在这一桶里活到第 N+1 版。
+## 只认「算它的那一刻的文档」才是安全的分发条件；否则屏幕上会出现一张
+## 谁也不认领的旧图，而且它每次都「绿色就绪」，看着毫无异常。
+var _identities: PackedInt64Array = PackedInt64Array()
+## 这一格的垫图是按哪个画布倍率算的（0 = 不是垫图 / 不知道）。
+## 它只服务「说清楚现在看到的是什么」：状态栏写「草稿 f0 1/8」，
+## 比只说「草稿」有用得多 —— 用户要判断「还要不要再等」。
+var _draft_scale: PackedFloat32Array = PackedFloat32Array()
+## 谁正在算这一格（界面用的瞬时事实，不落盘）。由渲染服务每帧整批覆盖：
+## 「谁在算」只有调度方知道，缓存只负责把它画出来，不负责猜。
+var _rendering: PackedByteArray = PackedByteArray()
 var _dir: String = ""
 ## index -> Image
 var _memory: Dictionary = {}
@@ -66,6 +84,13 @@ var _file_size: Vector2i = Vector2i.ZERO
 ## 当前桶的帧尺寸（来自文档画布）。紧密文件是定长偏移布局，
 ## 混入一张不同尺寸的图会整桶错位 —— 写和读都必须校验。
 var _frame_size: Vector2i = Vector2i.ZERO
+## 内容分段的哈希（nodes / edges / meta），只在换桶时算一次。
+## 用途是归因：指纹变了到底是图变了、连线变了，还是 meta 抖了。
+var _parts: Dictionary = {}
+## 逐节点/逐连线的哈希（配合 `_parts` 定位「这一段里是谁变了」），同样只在换桶时算。
+var _detail: Dictionary = {}
+## 最近一次 prepare 的结果（`last_build()` 返回它）。诊断用，不在主路径上做判断。
+var _last_build: Dictionary = {}
 
 
 # ================= 配置 =================
@@ -120,18 +145,39 @@ func prepare(doc: Dictionary, fps: int, duration: float,
 	var fp := fingerprint_of(doc, fps, duration)
 	var count := maxi(int(round(maxf(duration, 0.0) * float(maxi(fps, 1)))), 1)
 	_mutex.lock()
-	var changed := fp != _fingerprint
+	var size_changed := frame_size.x > 0 and _frame_size.x > 0 and frame_size != _frame_size
+	var changed := fp != _fingerprint or size_changed
+	var fp_before := _fingerprint
+	var count_before := _count
+	var parts_before := _parts
+	var detail_before := _detail
 	_frame_size = frame_size
 	_fingerprint = fp
 	_fps = maxi(fps, 1)
 	_duration = maxf(duration, 0.0)
 	if not changed and _count == count:
 		_mutex.unlock()
+		_last_build = {
+			"rebuilt": false, "cleared": 0,
+			"fp_before": fp_before, "fp_after": fp,
+			"count_before": count_before, "count_after": count,
+			"parts_before": parts_before, "parts_after": _parts,
+		}
 		return
 	_count = count
 	_states = PackedByteArray()
 	_states.resize(count)
 	_states.fill(STATE_EMPTY)
+	_rendering = PackedByteArray()
+	_rendering.resize(count)
+	_rendering.fill(0)
+	# 身份不落盘：磁盘里的帧是不是当前文档的，由桶目录（指纹）自己保证。
+	_identities = PackedInt64Array()
+	_identities.resize(count)
+	_identities.fill(-1)
+	_draft_scale = PackedFloat32Array()
+	_draft_scale.resize(count)
+	_draft_scale.fill(0.0)
 	_memory.clear()
 	_memory_order.clear()
 	_memory_bytes = 0
@@ -140,12 +186,30 @@ func prepare(doc: Dictionary, fps: int, duration: float,
 	_file_ready = false
 	_file_size = Vector2i.ZERO
 	# 同一份文档以前算过：把紧密文件里已有的帧直接标绿，省掉重算。
+	var ready := 0
 	for index in _disk_indices():
 		if index >= 0 and index < _count:
 			_states[index] = STATE_READY
+			ready += 1
+	_parts = parts_of(doc)
+	_detail = detail_of(doc)
 	_mutex.unlock()
+	_last_build = {
+		"rebuilt": true, "cleared": maxi(0, count_before - ready),
+		"fp_before": fp_before, "fp_after": fp,
+		"count_before": count_before, "count_after": count,
+		"parts_before": parts_before, "parts_after": _parts,
+		"detail_before": detail_before, "detail_after": _detail,
+		"ready_from_disk": ready, "frame_size": frame_size,
+	}
 	if disk_enabled:
 		prune()
+
+
+## 最近一次 `prepare` 的结果：是否真的换了桶、清掉几格、指纹与分段前后值。
+## 只读快照，调用方（诊断）不需要理解桶的内部结构。
+func last_build() -> Dictionary:
+	return _last_build.duplicate(true)
 
 
 static func fingerprint_of(doc: Dictionary, fps: int, duration: float) -> String:
@@ -153,26 +217,117 @@ static func fingerprint_of(doc: Dictionary, fps: int, duration: float) -> String
 	return "%d_%d_%d" % [raw.hash(), maxi(fps, 1), int(round(maxf(duration, 0.0) * 1000.0))]
 
 
-## 只保留「会改变像素」的字段：节点位置、卡片尺寸、连线折点都是纯布局。
+## 只保留「会改变像素」的字段：位置、尺寸、收起状态、分组框矩形都是纯布局。
 ## 拖动节点后指纹必须保持不变，否则整段缓存会因一次拖拽全部作废。
+##
+## 判据是「这个字段能不能改变输出的像素」，不是「它在不在文档里」：
+##   · 节点 `pos`/`size` —— 卡片摆在哪、多大，不影响求值；
+##   · 节点 `collapsed` —— 只决定卡片是否折叠，参数照样生效；
+##   · 连线折点 `pos` —— 走线形状；
+##   · 分组框 `rect` —— 框本身不参与求值，挪一下框不该让整段缓存作废。
+## 反过来 `frames[].nodes`（成员归属）留在这里不管：它同样不影响像素，
+## 但它跟着节点增删一起变，抹掉也省不下重建，留着让指纹更直观。
 static func content_of(doc: Dictionary) -> Dictionary:
 	var copy := doc.duplicate(true)
 	for item in copy.get("nodes", []):
 		var node_data: Dictionary = item
 		node_data.erase("pos")
 		node_data.erase("size")
+		node_data.erase("collapsed")
+		# 分辨率档**会**改变像素，所以不能像布局字段那样一律抹掉；
+		# 但值为 1.0（等于没声明）时抹掉，这样旧工程与「显式写 1.0」指纹相同，
+		# 不会因为一次无意义的回写把整段缓存白算一遍。
+		# 就地判值而不调 FxGraphDoc：缓存层只该认数据结构，不该认识图插件的类。
+		var raw_scale: Variant = node_data.get("res_scale", 1.0)
+		if not (raw_scale is float or raw_scale is int) or float(raw_scale) >= 0.999:
+			node_data.erase("res_scale")
 	for item in copy.get("edges", []):
 		(item as Dictionary).erase("pos")
+	for item in copy.get("frames", []):
+		(item as Dictionary).erase("rect")
 	return copy
+
+
+## 逐节点 / 逐连线的单独哈希：归因用。
+## `parts_of` 只回答「哪一段变了」，这里回答「这一段里是谁变了」——
+## 没有它，一个 103 节点的工程里改了哪一格只能靠猜。
+## 键在页面内唯一且稳定：节点用 id，连线用「源:口>目标:口」。
+static func detail_of(doc: Dictionary) -> Dictionary:
+	var content := content_of(doc)
+	var nodes := {}
+	for item in content.get("nodes", []):
+		var node_data: Dictionary = item
+		nodes[String(node_data.get("id", ""))] = JSON.stringify(node_data).hash()
+	var edges := {}
+	for item in content.get("edges", []):
+		var edge: Dictionary = item
+		var key := "%s:%s>%s:%s" % [
+			String(edge.get("from", "")), String(edge.get("from_port", "")),
+			String(edge.get("to", "")), String(edge.get("to_port", "")),
+		]
+		edges[key] = JSON.stringify(edge).hash()
+	return {"nodes": nodes, "edges": edges}
 
 
 func fingerprint() -> String:
 	return _fingerprint
 
 
+## 内容分段哈希：图 / 连线 / meta 各一个。
+## 只有归因才需要「指纹为什么变」——指纹本身是整体哈希，变了以后看不出是谁变的。
+static func parts_of(doc: Dictionary) -> Dictionary:
+	var content := content_of(doc)
+	return {
+		"nodes": JSON.stringify(content.get("nodes", [])).hash(),
+		"edges": JSON.stringify(content.get("edges", [])).hash(),
+		"meta": JSON.stringify(content.get("meta", {})).hash(),
+	}
+
+
 func frame_count() -> int:
 	_mutex.lock()
 	var value := _count
+	_mutex.unlock()
+	return value
+
+
+## 当前桶的帧尺寸（= 定桶那一刻的文档画布）。
+## 紧密文件是「帧号 × 定长 = 偏移」的布局，尺寸就是文件格式的一部分；
+## 调度方必须能用它验证「画布改了，桶还是旧尺寸吗」。
+func frame_size() -> Vector2i:
+	_mutex.lock()
+	var value := _frame_size
+	_mutex.unlock()
+	return value
+
+
+## 整批覆盖「正在算哪些帧」。只影响界面着色，不改变任何缓存语义。
+## 用整批覆盖而不是逐格置位/清除：调度方每帧都知道全貌，
+## 逐格清除一旦漏掉一格，那一格就会永远橘着（比不显示更糟）。
+func set_rendering(indices: Array) -> void:
+	_mutex.lock()
+	if _rendering.size() != _count:
+		_rendering = PackedByteArray()
+		_rendering.resize(_count)
+		_rendering.fill(0)
+	else:
+		_rendering.fill(0)
+	for item in indices:
+		var index := int(item)
+		if index >= 0 and index < _count:
+			_rendering[index] = 1
+	_mutex.unlock()
+
+
+## 界面用的三色半状态：已就绪 > 正在算 > 缓存状态。
+## 它回答的是「标尺这一格该画什么颜色」，不是「这一格能不能用」。
+func display_state(index: int) -> int:
+	_mutex.lock()
+	var value := STATE_EMPTY
+	if index >= 0 and index < _count:
+		var base := int(_states[index])
+		var busy := index < _rendering.size() and int(_rendering[index]) == 1
+		value = base if base == STATE_READY else (STATE_RENDERING if busy else base)
 	_mutex.unlock()
 	return value
 
@@ -217,6 +372,37 @@ func state(index: int) -> int:
 	return value
 
 
+## 这一格的垫图倍率（0 = 精确帧或不知道）。
+func draft_scale_of(index: int) -> float:
+	_mutex.lock()
+	var value := 0.0
+	if index >= 0 and index < _draft_scale.size():
+		value = float(_draft_scale[index])
+	_mutex.unlock()
+	return value
+
+
+## 这一帧是在哪个内容身份上算出来的（-1 = 不知道，例如从磁盘恢复的老帧）。
+func identity_of(index: int) -> int:
+	_mutex.lock()
+	var value := -1
+	if index >= 0 and index < _identities.size():
+		value = int(_identities[index])
+	_mutex.unlock()
+	return value
+
+
+## 这一帧能不能当作「当前这份文档」的帧来用。
+## identity < 0 表示调用方不关心内容身份（导出、纯时间轴巡检），一律放行。
+func accepts(index: int, identity: int) -> bool:
+	if identity < 0:
+		return true
+	var stamp := identity_of(index)
+	# -1 = 从磁盘恢复的帧（没记身份）：桶目录本身就是内容指纹，
+	# 属于这一桶即属于这份内容，放行；写过身份的必须逐字相符。
+	return stamp < 0 or stamp == identity
+
+
 func index_for_time(t: float) -> int:
 	var count := frame_count()
 	if count <= 0 or _fps <= 0:
@@ -228,7 +414,8 @@ func index_for_time(t: float) -> int:
 
 ## exact = true：精确帧，标绿并落盘；false：低质量预览，只标黄并留在内存。
 ## force_disk 给预渲染用（顺序写，不走节流）。
-func put(index: int, image: Image, exact: bool, force_disk: bool = false) -> void:
+func put(index: int, image: Image, exact: bool, force_disk: bool = false,
+		identity: int = -1, draft_scale: float = 0.0) -> void:
 	if not enabled or image == null or image.is_empty():
 		return
 	_mutex.lock()
@@ -243,8 +430,19 @@ func put(index: int, image: Image, exact: bool, force_disk: bool = false) -> voi
 		return
 	if exact:
 		_states[index] = STATE_READY
-	elif int(_states[index]) != STATE_READY:
+	elif int(_states[index]) == STATE_READY:
+		# 这一格已经是精确帧了：糊的那张**连内存都不许进**。
+		# 旧实现只挡「状态降级」，却照样把近似帧写进 `_memory[index]` ——
+		# 状态还是绿，取出来却是播放档的糊图。表现是「导出与预览差几个字节」，
+		# 以及「看着绿色就绪，按下去画面糊一下」。
+		_mutex.unlock()
+		return
+	else:
 		_states[index] = STATE_PENDING
+	if index < _identities.size():
+		_identities[index] = identity
+	if not exact and index < _draft_scale.size():
+		_draft_scale[index] = clampf(draft_scale, 0.0, 1.0)
 	if _memory.has(index):
 		var old: Image = _memory[index]
 		_memory_bytes -= old.get_width() * old.get_height() * 4
@@ -265,19 +463,24 @@ func put(index: int, image: Image, exact: bool, force_disk: bool = false) -> voi
 ## 不叫 get()：那是 Object 的保留方法，重写会改变引擎语义。
 func fetch(index: int) -> Image:
 	_mutex.lock()
+	var expected := _frame_size
 	if _memory.has(index):
 		var hit: Image = _memory[index]
-		_mutex.unlock()
-		return hit
+		# 内存层也必须过尺寸校验。旧实现只在磁盘那条路上校验，于是
+		# 「画布改了、桶没换」的窗口里，内存里那张旧尺寸的图会被当成命中直接上屏：
+		# 屏幕上是一张与画布无关的旧图，而所有状态都显示正常。
+		if expected.x <= 0 or hit.get_size() == expected:
+			_mutex.unlock()
+			return hit
+		_memory.erase(index)
+		_memory_order.erase(index)
+		_memory_bytes -= hit.get_width() * hit.get_height() * 4
 	_mutex.unlock()
 	if not disk_enabled:
 		return null
 	var image := _read_frame(index)
 	if image != null:
 		# 磁盘上可能是上一版留下的异形文件：读回尺寸不对就当没缓存，让后台补算。
-		_mutex.lock()
-		var expected := _frame_size
-		_mutex.unlock()
 		if expected.x > 0 and image.get_size() != expected:
 			return null
 		# 写回内存热层，但不要再触发一次磁盘写。
@@ -316,7 +519,11 @@ func stats(prefetch: Dictionary = {}) -> Dictionary:
 	_mutex.lock()
 	var ready := 0
 	var pending := 0
+	var rendering := 0
 	for i in range(_count):
+		if i < _rendering.size() and int(_rendering[i]) == 1 \
+				and int(_states[i]) != STATE_READY:
+			rendering += 1
 		match int(_states[i]):
 			STATE_READY:
 				ready += 1
@@ -329,6 +536,7 @@ func stats(prefetch: Dictionary = {}) -> Dictionary:
 		"total": total,
 		"ready": ready,
 		"pending": pending,
+		"rendering": rendering,
 		"missing": maxi(total - ready, 0),
 		"memory_bytes": bytes,
 		"disk_bytes": disk_bytes(),
@@ -408,6 +616,9 @@ func clear() -> void:
 		_states = PackedByteArray()
 		_states.resize(_count)
 		_states.fill(STATE_EMPTY)
+		_rendering = PackedByteArray()
+		_rendering.resize(_count)
+		_rendering.fill(0)
 	_disk_bytes_cache = 0
 	_file_ready = false
 	_mutex.unlock()

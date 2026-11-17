@@ -22,29 +22,37 @@ static func hue(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var shift: float = FxPortType.as_number(params.get("hue", 0.0), 0.0) / 360.0
 	var sat: float = FxPortType.as_number(params.get("saturation", 0.0), 0.0)
 	var val: float = FxPortType.as_number(params.get("value", 0.0), 0.0)
-	var image := FxPixelKit.map_batch(source, func(src: PackedByteArray, bw: int, bh: int) -> PackedByteArray:
-		var dst := PackedByteArray()
-		dst.resize(src.size())
-		var w := float(bw)
-		var h := float(bh)
-		var index := 0
-		for by in range(bh):
-			var y := float(by)
-			for bx in range(bw):
-				var x := float(bx)
-				var c := Color(float(src[index]) / 255.0, float(src[index + 1]) / 255.0,
-					float(src[index + 2]) / 255.0, float(src[index + 3]) / 255.0)
-				var hsv := FxPixelKit.rgb_to_hsv(c)
-				var out := FxPixelKit.hsv_to_rgb(hsv.x + shift,
-					clampf(hsv.y + sat, 0.0, 1.0), clampf(hsv.z + val, 0.0, 1.0))
-				out.a = c.a
-				var result: Color = out
-				dst[index] = int(clampf(result.r * 255.0 + 0.5, 0.0, 255.0))
-				dst[index + 1] = int(clampf(result.g * 255.0 + 0.5, 0.0, 255.0))
-				dst[index + 2] = int(clampf(result.b * 255.0 + 0.5, 0.0, 255.0))
-				dst[index + 3] = int(clampf(result.a * 255.0 + 0.5, 0.0, 255.0))
-				index += 4
-		return dst
+	# 原生快速路径：HSV 换算是纯逐像素算术，交给 C++ 比 GDScript 快一个数量级。
+	# 拿不到扩展（没编 / 被关掉）时返回 null，下面照旧走 GDScript。
+	var native := FxNativeBridge.hue(source, shift, sat, val)
+	if native != null:
+		return {"image": native}
+	# 按行并行：色相映射是纯逐像素运算，各线程只读 src、只写自己那几行。
+	# 读写索引必须分开（si / di）—— 原来共用一个 index，切片后会直接错行。
+	var image := FxPixelKit.map_rows(source,
+		func(src: PackedByteArray, bw: int, _bh: int, y0: int, y1: int) -> PackedByteArray:
+			var dst := PackedByteArray()
+			dst.resize((y1 - y0) * bw * 4)
+			var di := 0
+			for by in range(y0, y1):
+				var si := by * bw * 4
+				for _bx in range(bw):
+					var c := Color(float(src[si]) * 0.00392156862745098,
+						float(src[si + 1]) * 0.00392156862745098,
+						float(src[si + 2]) * 0.00392156862745098,
+						float(src[si + 3]) * 0.00392156862745098)
+					# 走引擎的 C++ 实现（`Color.h/s/v` 属性 + `Color.from_hsv`），
+					# 不再用 GDScript 手写的 rgb_to_hsv/hsv_to_rgb：
+					# 同一段换算在解释器里是二十来条字节码，在 C++ 里是几次乘加。
+					var out := Color.from_hsv(fposmod(c.h + shift, 1.0),
+						clampf(c.s + sat, 0.0, 1.0), clampf(c.v + val, 0.0, 1.0), c.a)
+					dst[di] = int(out.r * 255.0 + 0.5)
+					dst[di + 1] = int(out.g * 255.0 + 0.5)
+					dst[di + 2] = int(out.b * 255.0 + 0.5)
+					dst[di + 3] = int(out.a * 255.0 + 0.5)
+					si += 4
+					di += 4
+			return dst
 	)
 	return {"image": image}
 
@@ -94,6 +102,9 @@ static func ramp(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var high := FxPortType.as_color(params.get("highlight", "#ffe6a7"), Color(1, 0.9, 0.65))
 	var midpoint := clampf(FxPortType.as_number(params.get("midpoint", 0.5), 0.5), 0.05, 0.95)
 	var amount := clampf(FxPortType.as_number(params.get("amount", 1.0), 1.0), 0.0, 1.0)
+	var native := FxNativeBridge.ramp_three(source, shadow, mid, high, midpoint, amount)
+	if native != null:
+		return {"image": native}
 	var image := FxPixelKit.map_batch(source, func(src: PackedByteArray, bw: int, bh: int) -> PackedByteArray:
 		var dst := PackedByteArray()
 		dst.resize(src.size())

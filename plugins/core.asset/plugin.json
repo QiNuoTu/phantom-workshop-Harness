@@ -1,7 +1,8 @@
 {
 	"id": "core.asset",
 	"name": "素材与纹理",
-	"version": "1.0",
+	"version": "0.1.1",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "外部纹理 / 序列帧导入，附 244 套手绘 pixelfx 素材",
 	"script": "plugin.gd",
 	"inject": [

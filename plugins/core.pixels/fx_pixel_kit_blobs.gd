@@ -5,6 +5,9 @@ extends RefCounted
 
 static func paint(size: Vector2i, background: Color,
 		blobs: Array[Dictionary]) -> Image:
+	var native := FxNativeBridge.paint_blobs(size, background, flatten(blobs))
+	if native != null:
+		return native
 	var image := FxPixelKit.canvas(size, background)
 	var buf := image.get_data()
 	for raw in blobs:
@@ -40,3 +43,25 @@ static func paint(size: Vector2i, background: Color,
 				buf[index + 3] = int(round(oa * 255.0))
 	image.set_data(size.x, size.y, false, Image.FORMAT_RGBA8, buf)
 	return image
+
+
+## 光点数组 → 内核要的定长浮点流（每点 9 个 float）。
+## 原生路径缺席时这份数据没人用，所以只在 paint 里按需展开。
+static func flatten(blobs: Array[Dictionary]) -> PackedFloat32Array:
+	var out := PackedFloat32Array()
+	out.resize(blobs.size() * 9)
+	var i := 0
+	for raw in blobs:
+		var blob: Dictionary = raw
+		var tint: Color = blob.get("color", Color.WHITE)
+		out[i] = float(blob.get("x", 0.0))
+		out[i + 1] = float(blob.get("y", 0.0))
+		out[i + 2] = float(blob.get("radius", 1.0))
+		out[i + 3] = float(blob.get("strength", 1.0))
+		out[i + 4] = float(blob.get("core", 0.35))
+		out[i + 5] = tint.r
+		out[i + 6] = tint.g
+		out[i + 7] = tint.b
+		out[i + 8] = tint.a
+		i += 9
+	return out

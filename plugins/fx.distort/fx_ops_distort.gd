@@ -31,38 +31,50 @@ static func wave(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var axis_both := axis == "both"
 	var omega := frequency * TAU
 	var phase := ctx.t * speed
-	var image := FxPixelKit.remap_batch(source, func(w: int, h: int) -> PackedFloat32Array:
-		var coords := PackedFloat32Array()
-		coords.resize(w * h * 2)
-		# 位移只依赖单一坐标轴：把 sin 预计算成一行/一列查表，
-		# 20736 次三角函数调用压到最多 max(w,h) 次。
-		var shift_x := PackedFloat32Array()
-		shift_x.resize(w)
-		var shift_y := PackedFloat32Array()
+	# 原生快速路径：0 = 沿 X、1 = both、2 = 沿 Y（与下面的分支一一对应）。
+	var axis_mode := 0 if axis_x else (1 if axis_both else 2)
+	var native := FxNativeBridge.wave(source, amplitude, omega, phase, axis_mode)
+	if native != null:
+		return {"image": native}
+	# 位移只依赖单一坐标轴：把 sin 预计算成一行/一列查表，
+	# 20736 次三角函数调用压到最多 max(w,h) 次。查表在切片之外算一次，
+	# 各线程只读它 —— 比每块各算一遍更省，也不会写出竞争。
+	var w := source.get_width()
+	var h := source.get_height()
+	var shift_x := PackedFloat32Array()
+	var shift_y := PackedFloat32Array()
+	if axis_x:
 		shift_y.resize(h)
-		if axis_x:
-			for y in range(h):
-				shift_y[y] = sin(float(y) * omega + phase) * amplitude
-		else:
-			for x in range(w):
-				shift_x[x] = sin(float(x) * omega + phase) * amplitude
-		var ci := 0
 		for y in range(h):
-			var sy := shift_y[y]
-			for x in range(w):
-				var shift := sy if axis_x else shift_x[x]
-				var ux := float(x)
-				var uy := float(y)
-				if axis_x or axis_both:
-					ux += shift
-				if axis_both:
-					uy += shift * 0.6
-				elif not axis_x:
-					uy += shift
-				coords[ci] = ux
-				coords[ci + 1] = uy
-				ci += 2
-		return coords
+			shift_y[y] = sin(float(y) * omega + phase) * amplitude
+	else:
+		shift_x.resize(w)
+		for x in range(w):
+			shift_x[x] = sin(float(x) * omega + phase) * amplitude
+	# 按行并行：每块自己生成坐标、自己采样。坐标是局部数组（从 0 开始），
+	# 采样用整图 src 的绝对坐标，所以拼起来与整图一次算逐字节一致。
+	var image := FxPixelKit.map_rows(source,
+		func(src: PackedByteArray, bw: int, bh: int, y0: int, y1: int) -> PackedByteArray:
+			var rows := y1 - y0
+			var coords := PackedFloat32Array()
+			coords.resize(rows * bw * 2)
+			var ci := 0
+			for y in range(y0, y1):
+				var sy := shift_y[y] if axis_x else 0.0
+				for x in range(bw):
+					var shift := sy if axis_x else shift_x[x]
+					var ux := float(x)
+					var uy := float(y)
+					if axis_x or axis_both:
+						ux += shift
+					if axis_both:
+						uy += shift * 0.6
+					elif not axis_x:
+						uy += shift
+					coords[ci] = ux
+					coords[ci + 1] = uy
+					ci += 2
+			return FxPixelKit.sample_rows(src, bw, bh, coords, 0, rows)
 	)
 	return {"image": image}
 

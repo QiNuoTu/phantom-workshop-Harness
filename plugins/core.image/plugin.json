@@ -1,7 +1,8 @@
 {
 	"id": "core.image",
 	"name": "图像处理",
-	"version": "1.0",
+	"version": "0.1.1",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "模糊、色阶、染色、变换、混合与输出合成",
 	"script": "plugin.gd",
 	"inject": [

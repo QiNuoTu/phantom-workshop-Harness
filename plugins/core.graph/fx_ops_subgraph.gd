@@ -162,6 +162,9 @@ static func render(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		ctx.subgraph_runners[path] = sub
 	sub.capture_previews = false
 	sub.quality = ctx.quality
+	# 外层这一档也要传给子图：外层给了半尺寸输入、子图内部却按全尺寸算，
+	# 出来还得再缩一次 —— 等于白缩两趟，档位的收益全丢在边界上。
+	sub.base_scale = ctx.eval_scale
 	sub.operator_quality = ctx.operator_quality
 	sub.options = ctx.options.duplicate(true)
 	sub.boundary_inputs = forwarded
@@ -171,6 +174,17 @@ static func render(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		sub.inherited_subgraph_stack.append(entry)
 	var result := sub.run(doc, ctx.t * scale + offset)
 	stack.pop_back()
+	# 子图的耗时合并回父级：否则性能画像里只剩一个 `graph.subgraph 80ms`，
+	# 看不出里面到底谁贵（子图执行器有自己的 ctx，计时不会自动汇总）。
+	# 只影响诊断，不参与任何求值判断。
+	if sub.ctx != null:
+		var tag := String(raw.get_file())
+		for key in sub.ctx.timing_totals.keys():
+			var merged := "%s/%s" % [tag, String(key)]
+			ctx.timing_totals[merged] = float(ctx.timing_totals.get(merged, 0.0)) \
+				+ float(sub.ctx.timing_totals[key])
+			ctx.op_calls[merged] = int(ctx.op_calls.get(merged, 0)) \
+				+ int(sub.ctx.op_calls.get(key, 0))
 
 	var warned := 0
 	for item in result.get("warnings", []):

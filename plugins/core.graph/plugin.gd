@@ -39,3 +39,12 @@ func time_dependent_ops() -> Array:
 ## 子图路径控件：一行内完成路径、浏览与健康检查。
 func param_kinds() -> Dictionary:
 	return {"graph": FxGraphPathWidget.build}
+
+
+## 装配诊断的「节点类型 / 算子」由本插件自报：基座不认识算子表。
+func status_fragments() -> Array[Dictionary]:
+	return [{
+		"id": "graph.catalog", "order": 20,
+		"handler": FxGraphStatus.fragment,
+		"diagnostic": FxGraphStatus.diagnostic,
+	}]

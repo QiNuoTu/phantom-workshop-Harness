@@ -1,7 +1,8 @@
 {
 	"id": "core.i18n",
 	"name": "多语言支持",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "界面多语言；每个插件可自带译文，支持运行时切换",
 	"script": "plugin.gd",
 	"icon": "文",

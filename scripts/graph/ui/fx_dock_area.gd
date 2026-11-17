@@ -31,6 +31,14 @@ var _empty: Label
 var _collapse_bar: Button
 var _entries: Array[Dictionary] = []
 var _current: String = ""
+## 还没人显式选过标签。装配期允许「更重要的面板后来居上」，
+## 一旦有代码或用户明确点了某个面板，就不再自动换。
+##
+## 为什么需要它：插件注册顺序决定了谁先 `add_panel`，而「先注册的」不该等于
+## 「默认显示的」。默认面板必须由声明里的 `order` 说话 —— 预览 order=10、
+## 插件中心 order=900，默认就该是预览。之前按「谁先加进来」选，右侧面板
+## 打开软件时显示的是插件列表，用户得先点一下预览标签。
+var _auto_pick: bool = true
 var _expanded_min_size: Vector2 = Vector2.ZERO
 var _expanded_stretch: float = 1.0
 ## 右键菜单实例：内容区右键与标签右键共用，弹出前按目标面板重填。
@@ -156,8 +164,10 @@ func add_panel(panel_id: String, title: String, control: Control, order: int = 0
 		return int(a.get("order", 0)) < int(b.get("order", 0))
 	)
 	_rebuild_bar()
-	if visible and _current.is_empty():
-		show_panel(panel_id)
+	if not visible:
+		return
+	if _current.is_empty() or (_auto_pick and order < _current_order()):
+		_activate(panel_id)
 
 
 ## 分离：把面板实例原样交给外壳，不销毁、不重建，画布缩放/滚动状态都保留。
@@ -225,13 +235,21 @@ func current_id() -> String:
 	return _current
 
 
-func set_panel_visible(panel_id: String, visible: bool) -> void:
+## `focus = false`：只改可见性，不抢「当前面板」。
+##
+## 外壳在装配末尾会按保存的布局把每个面板的可见性重放一遍；如果重放也算
+## 「有人选择了这个面板」，那么最后被重放的那个面板就成了当前面板 ——
+## 与声明里的 `order` 完全无关。右侧面板默认显示插件中心而不是预览，
+## 就是这么来的：预览 order=10 先被加上、随后插件中心 order=900 在重放里抢走焦点。
+func set_panel_visible(panel_id: String, visible: bool, focus: bool = true) -> void:
 	var index := _find(panel_id)
 	if index < 0:
 		return
 	(_entries[index] as Dictionary)["visible"] = visible
-	if visible:
+	if visible and (focus or _current.is_empty()):
 		show_panel(panel_id)
+	elif visible:
+		return
 	elif _current == panel_id:
 		_current = ""
 		_show_first_visible()
@@ -245,7 +263,14 @@ func is_panel_visible(panel_id: String) -> bool:
 	return bool((_entries[index] as Dictionary).get("visible", true))
 
 
+## 外部（标签按钮 / 外壳 / 命令）要求显示某个面板：从此不再自动换默认。
 func show_panel(panel_id: String) -> void:
+	_auto_pick = false
+	_activate(panel_id)
+
+
+## 内部激活：只切可见性，不改「默认选择」的状态机。
+func _activate(panel_id: String) -> void:
 	var index := _find(panel_id)
 	if index < 0:
 		return
@@ -271,6 +296,12 @@ func visible_ids() -> Array[String]:
 	return out
 
 
+## 当前面板声明的 order；没有面板时给一个「谁都能超过」的大值。
+func _current_order() -> int:
+	var index := _find(_current)
+	return int((_entries[index] as Dictionary).get("order", 0)) if index >= 0 else 1 << 30
+
+
 func _show_first_visible() -> void:
 	var first := ""
 	for entry in _entries:
@@ -284,7 +315,7 @@ func _show_first_visible() -> void:
 				control.visible = false
 		_empty.visible = true
 		return
-	show_panel(first)
+	_activate(first)
 
 
 func _find(panel_id: String) -> int:

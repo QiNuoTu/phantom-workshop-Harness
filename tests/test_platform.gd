@@ -27,6 +27,7 @@ func _run() -> void:
 	await _test_panels()
 	await _test_skin_artwork()
 	_test_microkernel()
+	_test_preview_pipeline()
 	_test_param_ports()
 	_test_output_nodes()
 	await _test_timeline_ops()
@@ -64,7 +65,19 @@ func _test_settings() -> void:
 		"设置变化经能力代理广播给质量策略 provider")
 	var policy := FxQualityPolicy.resolve({"playing": false, "width": 128, "height": 128})
 	_check(int(policy.get("quality", -1)) == 0, "质量预设覆盖播放/暂停质量档")
-	_check(not bool(policy.get("output_downscale", true)), "输出链永不降采样是不变量，插件无法覆盖")
+	_check(not bool(policy.get("output_downscale", true)),
+		"归档 / 导出永不降采样是不变量，插件无法覆盖")
+	_check(is_equal_approx(float(policy.get("display_scale", -1.0)), 1.0),
+		"显示倍率默认 1.0（与归档一致）")
+	# 下限夹取要穿过 provider 才测得准：直接传 ctx 会被设置驱动的 provider 覆盖。
+	# 顺手证明了「provider 能覆盖，但内核的夹取在合并之后」这条顺序。
+	var rogue := {"apply": func(_c: Dictionary, _cur: Dictionary) -> Dictionary:
+			return {"display_scale": 0.0}, "order": 9999}
+	FxRegistry.quality_policies.append(rogue)
+	var clamped := FxQualityPolicy.resolve({})
+	FxRegistry.quality_policies.erase(rogue)
+	_check(is_equal_approx(float(clamped.get("display_scale", 0.0)), 0.125),
+		"显示倍率按 1/8 夹取，插件写 0 也不会除零")
 	_check(FxQualityPolicy.provider_count() >= 1, "质量策略由插件 provider 提供")
 	_check(FxSettings.coerce({"kind": "int", "min": 1, "max": 8}, 99) == 8,
 		"设置值按声明夹取")
@@ -345,6 +358,42 @@ func _test_fx_plugins() -> void:
 # ---------- 多语言 ----------
 
 # ---------- 参数端口通用化 ----------
+
+## 节点小图与输出预览是两条**独立**的质量管线：
+## 小图可以糊、可以慢半拍；输出预览恒精确（内核把 output_downscale 钉死为 false）。
+func _test_preview_pipeline() -> void:
+	var render: FxRenderService = shell.service("render")
+	_check(render != null, "渲染服务可用（预览管线）")
+	if render == null:
+		return
+	_check(FxSettings.impact_of("quality.preview_operator") == "derived",
+		"小图算子质量只作废派生缓存（不换桶）")
+	_check(FxSettings.impact_of("quality.preview_refresh_ms") == "derived",
+		"小图刷新间隔只作废派生缓存")
+	render.apply_policy()
+	var cfg := render.preview_pipeline_config()
+	_check(is_equal_approx(float(cfg.get("operator", -1.0)),
+			float(FxSettings.value("quality.preview_operator"))),
+		"小图算子质量跟随设置（实得 %.2f）" % float(cfg.get("operator", -1.0)))
+	_check(int(cfg.get("limit", 0)) == int(FxSettings.value("quality.preview_limit")),
+		"小图边长跟随设置，不是写死的 72（实得 %d）" % int(cfg.get("limit", 0)))
+	_check(not bool(cfg.get("output_downscale", true)),
+		"归档 / 导出永不降采样（内核硬约束，插件改不动）")
+	_check(is_equal_approx(float(cfg.get("display_scale", -1.0)),
+			float(FxSettings.value("quality.display_scale"))),
+		"显示倍率跟随设置（它与归档精度是两件事）")
+	_check(FxSettings.impact_of("quality.display_scale") == "display",
+		"显示倍率只作废显示层：不换桶、不重算精确帧")
+	# 改设置后必须立刻生效，否则「调了没反应」又是一笔旧账。
+	var before := float(cfg.get("operator", 0.5))
+	var next := 0.9 if absf(before - 0.9) > 0.01 else 0.7
+	FxSettings.set_value("quality.preview_operator", next)
+	render.apply_policy()
+	_check(is_equal_approx(float(render.preview_pipeline_config().get("operator", 0.0)), next),
+		"改完设置下一帧就生效（%.2f → %.2f）" % [before, next])
+	FxSettings.reset("quality.preview_operator")
+	render.apply_policy()
+
 
 func _test_param_ports() -> void:
 	# 每个参数默认都有输入端口：数值、字符串、枚举、颜色、纹理路径都算。

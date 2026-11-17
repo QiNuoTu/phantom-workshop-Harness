@@ -113,6 +113,39 @@ func doc_node(_doc: Dictionary, _node_id: Variant) -> Dictionary:
 	return {}
 
 
+## 逐层分辨率档的可用倍率。是**倍率**不是档位号：0.5 = 边长一半、像素成本 1/4。
+## 放在契约里而不是图插件里，是因为它是纯数值表 —— 停用 core.graph 时，
+## 蓝图的右键菜单照样要能列出档位（只是改了没效果），不该因此崩或空菜单。
+const RES_SCALES := [1.0, 0.75, 0.5, 0.25, 0.125]
+
+
+## 档位判定**只有这一处**（`FxGraphDoc.res_scale_of` 转调它）。
+## 缺省 / 垃圾值 / 0 / 负数一律 1.0，下限夹到 0.125：
+## 再小就没法判断画面了（192×108 的链会变成 24×14）。
+static func res_scale_of_data(node_data: Dictionary) -> float:
+	var raw: Variant = node_data.get("res_scale", 1.0)
+	if not (raw is float or raw is int):
+		return 1.0
+	var value := float(raw)
+	if value >= 0.999 or value <= 0.0:
+		return 1.0
+	return clampf(value, 0.125, 1.0)
+
+
+static func has_res_scale_data(node_data: Dictionary) -> bool:
+	return res_scale_of_data(node_data) < 0.999
+
+
+## 某节点当前的求值倍率（编辑器菜单用：它不该认识 FxGraphDoc）。
+## 默认返回 1.0 —— 与 doc_canvas 等一样，没有实现者时给安全值而不是崩。
+func doc_res_scale(_doc: Dictionary, _node_id: String) -> float:
+	return 1.0
+
+
+func res_scales() -> Array:
+	return RES_SCALES
+
+
 func doc_output_id(_doc: Dictionary) -> String:
 	return ""
 
@@ -219,6 +252,15 @@ func catalog_ensure() -> void:
 
 ## 插件增删后重建目录与应用算子表。
 func catalog_refresh() -> void:
+	pass
+
+
+## 卸载 / 重载插件前，清空**运行时派生表**（算子表这类「账本的缓存」）。
+##
+## 为什么由 provider 实现：基座不认识算子表（它是 core.graph 的内部结构），
+## 只认识「该清了」这个信号。宿主必须在**撤销贡献之前**调用本方法 ——
+## 撤完之后代理会回落到空实现，信号就丢了，残留的 Callable 会活到下次加载。
+func reset_runtime_tables() -> void:
 	pass
 
 

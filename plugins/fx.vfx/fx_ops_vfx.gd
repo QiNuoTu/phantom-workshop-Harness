@@ -30,6 +30,11 @@ static func shockwave(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var phase: float = fposmod(ctx.t * speed, 1.0)
 	var r: float = phase * max_radius
 	var fade: float = 1.0 - phase * 0.55
+	# 原生快速路径：示范工程子图里这一项 33ms，是除描边之外最大的单点。
+	var native := FxNativeBridge.radial_ring(size, phase, max_radius, width, intensity,
+		center, ring_color, core_color)
+	if native != null:
+		return {"image": native}
 	var image := FxPixelKit.generate(size, func(x: float, y: float, w: float, h: float) -> Color:
 		var dx: float = (x / maxf(w, 1.0) - center.x) * 1.6
 		var dy: float = (y / maxf(h, 1.0) - center.y)
@@ -162,6 +167,10 @@ static func rays(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var intensity := FxPortType.as_number(params.get("intensity", 1.0), 1.0)
 	var center := FxPortType.as_vec2(params.get("center", [0.5, 0.5]), Vector2(0.5, 0.5))
 	var spin: float = ctx.t * speed
+	var native := FxNativeBridge.radial_spokes(size, count, spin, width, length, intensity,
+		center, color)
+	if native != null:
+		return {"image": native}
 	var image := FxPixelKit.generate(size, func(x: float, y: float, w: float, h: float) -> Color:
 		var dx: float = (x / maxf(w, 1.0) - center.x) * 1.6
 		var dy: float = y / maxf(h, 1.0) - center.y

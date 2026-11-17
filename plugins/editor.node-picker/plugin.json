@@ -1,7 +1,8 @@
 {
 	"id": "editor.node-picker",
 	"name": "节点创建面板",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "搜索式添加节点，支持最近使用与键盘导航",
 	"script": "plugin.gd",
 	"icon": "⊕",

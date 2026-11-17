@@ -70,8 +70,19 @@ func unload() -> void:
 ## 退出/热重载前显式释放：静态引用如果在脚本类释放后才回收，会让引擎在
 ## shutdown 阶段崩溃（headless 下表现为 segfault）。
 static func shutdown() -> void:
+	# 启动事件的订阅者可能是脚本/节点上的方法或 lambda：它们比静态表先死，
+	# 表却活到最后才释放 —— 引擎退出时直接 SIGSEGV，日志里一句话都没有。
+	# 这是这里最该先做的一步：它没有任何依赖，也不许失败。
+	FxBoot.forget_listeners()
 	var gate := FxRenderGate.mutex()
-	gate.lock()
+	var locked := _acquire_gate(gate)
+	if not locked:
+		# 超时也不许卡死退出：宁可走无锁路径（退出前那一帧的完整性无关紧要），
+		# 也不能让用户点关闭之后窗口再也关不掉。
+		push_warning("插件卸载：等待渲染闸门超时（2s），按无锁路径继续")
+	# 运行时派生表（算子表之类）必须在撤销贡献**之前**清：撤完之后图能力代理
+	# 会回落到空实现，这个信号就再也发不到 provider 了，旧的 Callable 会活过插件。
+	FxGraphFacade.access().reset_runtime_tables()
 	# 逆序卸载 fiber：后加载的依赖者先撤，提供者后撤。
 	for i in range(_ordered.size() - 1, -1, -1):
 		var pid := _ordered[i]
@@ -90,7 +101,6 @@ static func shutdown() -> void:
 		if is_instance_valid(plugin):
 			plugin.host = null
 	FxRegistry.reset()
-	FxOpRegistry.clear()
 	FxWidgetRegistry.clear()
 	FxResourceRoot.clear_roots()
 	# 原生库留在内存里（GDExtension 不能卸载），但引用与线程安全标记必须清掉，
@@ -102,7 +112,34 @@ static func shutdown() -> void:
 	_context = null
 	_ensured = false
 	_loading = false
-	gate.unlock()
+	if locked:
+		gate.unlock()
+
+
+## 拿渲染闸门，但**在等的时候主动泵主线程**。
+##
+## 死锁链：工作线程持锁求一帧 → 这一帧的 GPU 算子要主线程泵推进 →
+## 主线程若死等锁，泵就停了 → 工作线程永远等不到 → 双方互等。
+## 所以这里是「等一会儿 → 泵一次 → 再试」，并给出上限：退出/热重载
+## 宁可少一次同步，也不能让窗口关不掉。
+static func _acquire_gate(gate: Mutex, max_ms: int = 2000) -> bool:
+	var deadline := Time.get_ticks_msec() + max_ms
+	while true:
+		if gate.try_lock():
+			return true
+		FxRenderGate.pump_main_thread()
+		if Time.get_ticks_msec() > deadline:
+			return false
+		OS.delay_usec(300)
+	return false
+
+
+## 待应用的启停请求（主线程拿不到渲染闸门时排队）。
+static var _pending_toggles: Array = []
+
+
+static func pending_toggles() -> int:
+	return _pending_toggles.size()
 
 
 static func reload_all() -> void:
@@ -305,8 +342,22 @@ static func set_enabled(id: String, enabled: bool) -> void:
 	cfg.set_value("plugins", "disabled", list)
 	cfg.save(CONFIG_PATH)
 
+	# 闸门用 try_lock，**不能**在这里阻塞主线程。
+	# 原因是一条具体的死锁链：工作线程求一帧时持着这把锁，而那一帧里的 GPU 算子
+	# 要靠主线程泵（`FxRenderGate.pump_main_thread()`）推进。主线程若在此等锁，
+	# 泵就停了，工作线程永远等不到下一步 —— 两边互等，界面卡死。
+	# 拿不到就排队，下一帧再试（`tick()`），界面上表现为「慢一帧」，不是卡住。
+	if not _apply_enabled_locked(id, enabled):
+		_pending_toggles.append([id, enabled])
+
+
+## 真正应用一次启停。返回 false = 闸门被占用，调用方负责排队重试。
+static func _apply_enabled_locked(id: String, enabled: bool) -> bool:
+	if not _manifests.has(id):
+		return true
 	var gate := FxRenderGate.mutex()
-	gate.lock()
+	if not gate.try_lock():
+		return false
 	var record: Dictionary = _manifests[id]
 	var info: Dictionary = record["info"]
 	info["enabled"] = enabled
@@ -321,6 +372,27 @@ static func set_enabled(id: String, enabled: bool) -> void:
 		FxNative.release(id)
 	reconcile()
 	gate.unlock()
+	return true
+
+
+## 每帧重试排队的启停请求。由渲染服务在自己的 `_process` 里调用
+## （那里已经每帧跑一次主线程泵，先泵后试，工作线程才有机会把锁放回来）。
+## 返回这一帧应用了几个。
+static func tick() -> int:
+	if _pending_toggles.is_empty():
+		return 0
+	var done := 0
+	var batch: Array = _pending_toggles.duplicate()
+	_pending_toggles.clear()
+	for item in batch:
+		var pair: Array = item
+		if pair.size() < 2:
+			continue
+		if _apply_enabled_locked(String(pair[0]), bool(pair[1])):
+			done += 1
+		else:
+			_pending_toggles.append(pair)
+	return done
 
 
 # ================= 扫描根 =================
@@ -465,7 +537,9 @@ static func _refresh_catalog() -> void:
 
 static func _add_host_error(text: String) -> void:
 	_host_scope.add(FxRegistry.add(HOST_OWNER, "error", text))
-	FxBoot.error("插件加载", text)
+	# 归属写死为「装配」：扫目录、读清单、协调供给键都是宿主在干的事，
+	# 但它不属于任何一个插件，也不是内核缺陷 —— 这类错误以前会被归因成内核。
+	FxBoot.error("插件加载", text, "assembly")
 
 
 ## 启动预算用：各根下带清单的插件目录数（素材目录不算）。

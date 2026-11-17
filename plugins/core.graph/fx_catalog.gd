@@ -134,7 +134,7 @@ static func _node_file_owners() -> Dictionary:
 static func _catalog_error(text: String) -> void:
 	push_error("FxCatalog：" + text)
 	if FxBoot.active():
-		FxBoot.error("节点定义", text)
+		FxBoot.error("节点定义", text, "plugin:core.graph")
 
 
 static func def(id: Variant) -> FxNodeDef:

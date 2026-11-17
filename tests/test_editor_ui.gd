@@ -83,6 +83,8 @@ func _run() -> void:
 	await _test_plugin_hub_side()
 	await _test_bound_param_display()
 	await _test_tabs_and_menus()
+	await _test_value_gauge()
+	await _test_res_scale_menu()
 	await _test_frame_cache()
 
 	print("----")
@@ -549,6 +551,155 @@ func _test_popup_later() -> void:
 ## 顺带覆盖节点右键菜单表与「只有空白处才弹添加面板」的分工。
 ## 逐帧缓存：渲染出来的帧进缓存，预渲染把整段补齐，清理后归零。
 ## 时间轴标尺与状态栏都从同一份状态取数，所以一起验。
+## 节点卡片上的输出值预览：**按类型分派**，不是一律一行灰字。
+## 这里钉的是分派规则与文本格式 —— 画得好不好看没法断言，但「画成什么种类」可以。
+func _test_value_gauge() -> void:
+	var gauge := FxNodeValueGauge.new()
+	root.add_child(gauge)
+	await process_frame
+	_check(is_equal_approx(gauge.custom_minimum_size.y, FxNodeValueGauge.HEIGHT),
+		"数值预览占固定高度（不跟节点一起被压扁）")
+
+	var by_type := {
+		"number": {"port": "v", "type": "number", "value": 3.5, "text": "3.5"},
+		"vec2": {"port": "v", "type": "vec2", "value": Vector2(1, -1), "text": ""},
+		"color": {"port": "v", "type": "color", "value": Color(1, 0.5, 0, 1), "text": ""},
+		"bool": {"port": "v", "type": "bool", "value": true, "text": ""},
+		"string": {"port": "v", "type": "string", "value": "abc", "text": "abc"},
+	}
+	# 端口类型 -> 画法。`string` 归到文本画法（"text"）：它是"怎么画"，不是端口名。
+	var expected_kinds := {"number": "number", "vec2": "vec2", "color": "color",
+		"bool": "bool", "string": "text"}
+	for declared in by_type.keys():
+		var sample: Dictionary = by_type[declared]
+		_check(FxNodeValueGauge.kind_of(sample) == String(expected_kinds[declared]),
+			"端口类型 %s 分派到「%s」画法" % [String(declared), String(expected_kinds[declared])])
+
+	# 端口类型缺失时按值的形态兜底：第三方插件不写 type 也不能退化成一块灰字。
+	_check(FxNodeValueGauge.kind_of({"value": 2}) == "number", "没有类型声明时按值判成数值")
+	_check(FxNodeValueGauge.kind_of({"value": Vector2(2, 3)}) == "vec2", "没有类型声明时按值判成向量")
+	_check(FxNodeValueGauge.kind_of({"value": Color.RED}) == "color", "没有类型声明时按值判成颜色")
+	_check(FxNodeValueGauge.kind_of({"value": false}) == "bool", "没有类型声明时按值判成布尔")
+
+	_check(FxNodeValueGauge.text_of(by_type["number"]) == "3.500", "数值文本保留三位小数")
+	_check(FxNodeValueGauge.text_of(by_type["color"]).begins_with("#"), "颜色文本是十六进制")
+	_check(FxNodeValueGauge.text_of(by_type["bool"]) == "开", "布尔文本读作开/关")
+	_check(FxNodeValueGauge.text_of(by_type["vec2"]).begins_with("("),
+		"向量文本是 (x, y) 形式")
+
+	# 曲线历史：值变了才追加，值没变不追加（否则静止画面会把曲线挤成一条直线）。
+	gauge.set_samples([by_type["number"]])
+	gauge.set_samples([{"port": "v", "type": "number", "value": 4.5, "text": "4.5"}])
+	_check(gauge.history_of("v").size() == 2, "两次不同的值记两个采样")
+	# 组件化：曲线是 SPARK_SEGMENTS 个 ColorRect（高度编码数值），不是手绘折线。
+	# 曾经用过 CurveTexture，实测它是「填充到底部」，当折线会糊成实心块，已换掉。
+	var segs := gauge.spark_of("v")
+	_check(segs.size() == FxNodeValueGauge.SPARK_SEGMENTS,
+		"数值走分段色块组件（%d 段）" % segs.size())
+	var lit := 0
+	for seg in segs:
+		if (seg as ColorRect).visible:
+			lit += 1
+	_check(lit == 2, "两段采样只点亮两格（实得 %d）" % lit)
+	gauge.set_samples([by_type["vec2"]])
+	_check(gauge.bars_of("v") == Vector2(1, -1),
+		"向量走 ProgressBar，且负数向左长（实得 %s）" % str(gauge.bars_of("v")))
+	gauge.set_samples([{"port": "v", "type": "number", "value": 4.5, "text": "4.5"}])
+	_check(gauge.history_of("v").size() == 2, "同一个值重复推送不额外记采样")
+
+	# 一行文本的旧入口仍然可用（老插件 / 旧缓存）。
+	gauge.set_text("旧格式读数")
+	_check(gauge.samples().size() == 1 and FxNodeValueGauge.kind_of(gauge.samples()[0]) == "text",
+		"旧的一行文本入口按文本画法降级")
+
+	# 节点视图那一侧：有图像输出的走预览图，没有的走仪表。
+	# 示例图全是图像节点，所以临时加一个纯数值节点来验这条接线。
+	var created := store.add_node("math.number", "gauge_probe", Vector2(640, 640))
+	var probe_id := String(created.get("id", ""))
+	var value_view: FxGraphNodeView = null
+	for i in range(20):
+		await process_frame
+		value_view = editor.node_views.get(probe_id)
+		if value_view != null and value_view.value_gauge() != null:
+			break
+	_check(value_view != null and value_view.value_gauge() != null,
+		"纯数值节点卡片上挂了值预览仪表")
+	if value_view != null and value_view.value_gauge() != null:
+		value_view.set_value_samples([by_type["number"]])
+		_check(value_view.value_gauge().samples().size() == 1,
+			"编辑器把结构化读数推进了卡片仪表")
+	if not probe_id.is_empty():
+		store.remove_node(probe_id)
+	await process_frame
+
+	gauge.queue_free()
+
+
+## 逐层分辨率档：菜单是声明式表，能直接断言；写入必须走 store（撤销/失效靠它）。
+func _test_res_scale_menu() -> void:
+	var first := ""
+	for item in (store.doc.get("nodes", []) as Array):
+		first = String((item as Dictionary).get("id", ""))
+		break
+	_check(not first.is_empty(), "示例工程里有节点可测")
+	if first.is_empty():
+		return
+
+	var items := editor.node_menu_items([first])
+	var scales: Array[String] = []
+	for item in items:
+		var id := String(item.get("id", ""))
+		if id.begins_with(FxGraphEditor.MENU_RES_PREFIX):
+			scales.append(id.trim_prefix(FxGraphEditor.MENU_RES_PREFIX))
+	_check(scales.size() == FxGraphDoc.RES_SCALES.size(),
+		"菜单列出全部 %d 个档位（实得 %d）" % [FxGraphDoc.RES_SCALES.size(), scales.size()])
+	var disabled_single := false
+	for item in items:
+		if String(item.get("id", "")).begins_with(FxGraphEditor.MENU_RES_PREFIX):
+			disabled_single = bool(item.get("disabled", true))
+	_check(not disabled_single, "选中一个节点时档位可用")
+
+	# 多选时禁用：一次改一批档位是危险操作（用户看不到每个节点的当前档）。
+	var many_disabled := true
+	if (store.doc.get("nodes", []) as Array).size() >= 2:
+		var two: Array = []
+		for item in (store.doc.get("nodes", []) as Array):
+			two.append(String((item as Dictionary).get("id", "")))
+			if two.size() >= 2:
+				break
+		for item in editor.node_menu_items(two):
+			if String(item.get("id", "")).begins_with(FxGraphEditor.MENU_RES_PREFIX):
+				many_disabled = bool(item.get("disabled", false))
+	_check(many_disabled, "多选时禁用档位（避免一次改一批看不见的节点）")
+
+	# 写入：走 store.mutate，字段落进文档，且角标跟着变。
+	editor._set_res_scale([first], 0.5)
+	var stored := FxGraphFacade.access().doc_node(store.doc, first)
+	_check(is_equal_approx(FxGraphDoc.res_scale_of(stored), 0.5),
+		"档位写进了文档（实得 %s）" % str(stored.get("res_scale", "缺")))
+	var view: FxGraphNodeView = editor.node_views.get(first)
+	if view != null:
+		_check(view._scale_badge != null and view._scale_badge.text == "1/2",
+			"节点左上角出现 1/2 角标（实得 %s）" %
+				(str(view._scale_badge.text) if view._scale_badge != null else "无控件"))
+
+	# 调回全分辨率：字段被删掉，指纹与「从未设过」完全一致。
+	editor._set_res_scale([first], 1.0)
+	var restored := FxGraphFacade.access().doc_node(store.doc, first)
+	_check(not restored.has("res_scale"), "调回全分辨率时删除字段（不只是写 1.0）")
+	if view != null and view._scale_badge != null:
+		_check(not view._scale_badge.visible, "角标随之隐藏")
+
+	# 菜单里当前档位要有标记，否则用户看不出「这层现在是什么档」。
+	editor._set_res_scale([first], 0.25)
+	var marked := ""
+	for item in editor.node_menu_items([first]):
+		if String(item.get("label", "")).contains("← 当前"):
+			marked = String(item.get("label", ""))
+	_check(marked.contains("1/4"), "菜单标出当前档位（实得 %s）" % marked)
+	editor._set_res_scale([first], 1.0)
+
+
 func _test_frame_cache() -> void:
 	var render: FxRenderService = shell.service("render")
 	_check(render != null, "渲染服务可用")
@@ -569,6 +720,10 @@ func _test_frame_cache() -> void:
 		await create_timer(0.2).timeout
 		if render.cache_state(index) == 2:
 			break
+	if render.cache_state(index) != 2:
+		# 这条断言历史上一直是「偶发失败」：等到超时也没变绿，但没人知道为什么。
+		# 失败时顺手把缓存归因打出来（谁重建了桶、清了几格），下次就不用再猜。
+		shell.run_command("diag.cache", [])
 	_check(render.cache_state(index) == 2, "刚渲染过的当前帧标绿（已缓存）")
 	var stats := render.cache_stats()
 	_check(int(stats.get("ready", 0)) >= 1, "缓存统计里有已缓存帧")
@@ -780,6 +935,11 @@ func _test_frame_cache() -> void:
 		"精确档结果才把这一帧标绿")
 
 	# ---- 拖动节点只改布局：不得作废缓存、不得触发重算 ----
+	# 先让前面那些操作留下的尾巴跑完（换桶后的补算、后台预渲染的一帧），
+	# 再开始计数。否则这条断言测的其实是「上一个用例有没有欠一笔渲染」，
+	# 而机器快一点/慢一点就会得出相反结论 —— 这类断言比没有断言更坏。
+	for i in range(6):
+		await process_frame
 	var first_node := ""
 	for item in store.doc.get("nodes", []):
 		first_node = String((item as Dictionary).get("id", ""))

@@ -132,16 +132,16 @@ def make_banner() -> None:
 
     draw.text((88, 232), "微内核 · 插件化 · 时空可组合", font=font(32), fill=(220, 229, 243))
     draw.text((88, 280), "的节点式实时特效工坊", font=font(32), fill=(220, 229, 243))
-    draw.text((88, 352), "39 个插件构成的工作台：节点即算子，帧即缓存，播放只读缓存。",
+    draw.text((88, 352), "42 个插件构成的工作台：节点即算子，帧即缓存，拖动与播放只读缓存。",
               font=font(19, False), fill=MUTED)
 
     x = 88
-    for label, color in (("39 插件", VIOLET), ("77 节点", CYAN), ("播放 0 跳帧", (255, 190, 92))):
+    for label, color in (("42 插件", VIOLET), ("77 节点", CYAN), ("1366 断言", (255, 190, 92))):
         x = pill(img, (x, 404), label, font(16, False), color) + 12
 
     draw = ImageDraw.Draw(img)
     draw.line((88, 486, 470, 486), fill=(255, 255, 255, 28), width=1)
-    draw.text((88, 502), "Godot 4.7  ·  MIT License  ·  arXiv 2608.25512",
+    draw.text((88, 502), "Godot 4.7  ·  MIT License  ·  arXiv 2608.25512  ·  v0.0.17-alpha",
               font=font(15, False), fill=(120, 134, 158))
     img.convert("RGB").save(os.path.join(BRAND, "banner.jpg"), quality=90, optimize=True)
     print("ART banner.jpg 1600x640")
@@ -169,7 +169,7 @@ def make_plugins_card() -> None:
     draw = ImageDraw.Draw(img)
 
     draw.text((76, 92), "一切能力都是插件", font=font(46), fill=TEXT)
-    draw.text((78, 158), "基座只留 8.9k 行骨架；图语义、渲染、皮肤、面板、导出全在 plugins/ 里。",
+    draw.text((78, 158), "基座只留 9.3k 行骨架；图语义、渲染、皮肤、面板、导出全在 plugins/ 里。",
               font=font(18, False), fill=MUTED)
     draw.text((78, 190), "停用一个插件，软件照常启动 —— 因为基座根本不认识它的类名。",
               font=font(18, False), fill=(126, 140, 165))
@@ -248,7 +248,7 @@ def make_cache_card() -> None:
     draw.text((72, 466), "标尺上的颜色只反映事实：低质量预览永远不会冒充绿格。",
               font=font(17, False), fill=(120, 140, 165))
     x = 72
-    for label, color in (("整段 60 帧 1.79 s", CYAN), ("读一帧 0.1 ms", VIOLET),
+    for label, color in (("60 帧定长布局", CYAN), ("一次 seek 取一帧", VIOLET),
                          ("512 MB LRU 上限", (255, 190, 92))):
         x = pill(img, (x, 522), label, font(15, False), color) + 12
     img.convert("RGB").save(os.path.join(BRAND, "promo-cache.jpg"), quality=90, optimize=True)

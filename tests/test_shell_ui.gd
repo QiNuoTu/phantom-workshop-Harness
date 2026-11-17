@@ -88,6 +88,30 @@ func _test_window_menu() -> void:
 			all_checkable = false
 	_check(all_checkable, "面板与折叠项都是可勾选状态")
 
+	# 每个停靠区的**默认面板**由声明里的 `order` 决定，而不是「谁最后被加进来 / 谁最后
+	# 被重放了一次可见性」。真实事故：打开软件右侧显示插件中心（order=900），
+	# 用户得先点一下「预览」标签 —— 默认面板根本不该由装配顺序决定。
+	for area in ["left", "right", "bottom", "center"]:
+		var dock: FxDockArea = shell.dock_areas.get(area)
+		if dock == null:
+			continue
+		var lowest := ""
+		var lowest_order := 1 << 30
+		for raw_entry in dock.entries():
+			var entry: Dictionary = raw_entry
+			if not bool(entry.get("visible", true)):
+				continue
+			if int(entry.get("order", 0)) < lowest_order:
+				lowest_order = int(entry.get("order", 0))
+				lowest = String(entry.get("id", ""))
+		_check(dock.current_id() == lowest,
+			"%s 区默认显示 order 最小的面板（期望 %s，实得 %s）" % [
+				area, lowest, dock.current_id()])
+	var right_dock: FxDockArea = shell.dock_areas.get("right")
+	if right_dock != null:
+		_check(right_dock.current_id() == "editor.preview",
+			"右侧默认是输出预览（实得 %s）" % right_dock.current_id())
+
 	var bottom: FxDockArea = shell.dock_areas.get("bottom")
 	_check(bottom != null, "底部停靠区存在")
 	if bottom != null:

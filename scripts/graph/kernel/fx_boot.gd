@@ -95,8 +95,19 @@ static func finish() -> void:
 
 
 ## 报告一次错误：控制台、错误列表、启动日志三处都留痕。
-static func error(where: String, message: String) -> void:
-	_errors.append({"where": where, "message": message, "ms": Time.get_ticks_msec()})
+##
+## `scope` 是**归属声明**，可取值：
+##   ""           未声明 → 归因工具回落到「看文本里有没有插件痕迹」的老规则
+##   "kernel"     基座自己的启动步骤
+##   "assembly"   装配：扫目录、读清单、依赖/供给键协调 —— 不属于任何一个插件
+##   "plugin:<id>" 某个插件
+##
+## 为什么必须显式传：靠文本猜归属会猜错。`plugins/pixels.native` 缺 plugin.json 那一次，
+## 文本里没有插件 id，归因工具就把它判成了「内核问题」——而它其实发生在扫描步骤，
+## 既不是内核也不是某个插件。工具越依赖措辞，越容易把装配问题写成内核缺陷。
+static func error(where: String, message: String, scope: String = "") -> void:
+	_errors.append({"where": where, "message": message, "scope": scope,
+		"ms": Time.get_ticks_msec()})
 	_trace("[错误] %s：%s" % [where, message])
 	push_error("[%s] %s" % [where, message])
 	_emit("error")
@@ -120,12 +131,23 @@ static func active() -> bool:
 
 
 ## 订阅启动事件：回调收到 progress() 快照，返回取消订阅的 Callable。
+##
+## ⚠️ 静态表活不过脚本类：订阅者如果把 `self` 捕获进回调却从不退订，
+## 引擎退出时这张表会在脚本实例之后才释放，真机表现是**静默 SIGSEGV**
+## （没有 backtrace、没有报错，日志停在最后一行）。所以 `FxPluginHost.shutdown()`
+## 会强制清空一次（`forget_listeners()`）；长跑进程里请自己用返回的 Callable 退订。
 static func listen(callback: Callable) -> Callable:
 	if not callback.is_valid():
 		return func() -> void: pass
 	_listeners.append(callback)
 	return func() -> void:
 		_listeners.erase(callback)
+
+
+## 丢掉全部订阅者，不动启动记录（诊断仍可读）。
+## 由 `FxPluginHost.shutdown()` 调用 —— 那是「所有静态表都必须清干净」的唯一入口。
+static func forget_listeners() -> void:
+	_listeners.clear()
 
 
 static func progress() -> Dictionary:

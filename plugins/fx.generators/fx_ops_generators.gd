@@ -13,13 +13,22 @@ static func ops() -> Dictionary:
 	}
 
 
-static func _size(ctx: FxEvalContext, inputs: Dictionary) -> Vector2i:
+## 生成器自己的输出尺寸。旧实现只有两条路：有 image 输入就跟上游尺寸，
+## 没有就用**全局画布** —— 用户没法让一张噪声/渐变图独立成 64×64。
+## 现在节点参数 out_width / out_height 优先；0（默认）保持原语义，向后兼容。
+const GEN_MAX_SIZE := 4096
+
+static func _size(ctx: FxEvalContext, inputs: Dictionary, params: Dictionary) -> Vector2i:
+	var w := int(FxPortType.as_number(params.get("out_width", 0), 0))
+	var h := int(FxPortType.as_number(params.get("out_height", 0), 0))
+	if w > 0 and h > 0:
+		return Vector2i(clampi(w, 1, GEN_MAX_SIZE), clampi(h, 1, GEN_MAX_SIZE))
 	return FxPixelKit.size_of(inputs, ctx)
 
 
 static func gradient(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:
-	var size := _size(ctx, inputs)
+	var size := _size(ctx, inputs, params)
 	var mode := FxPortType.as_string(params.get("mode", "linear"), "linear")
 	var a := FxPortType.as_color(params.get("color_a", "#102040"), Color(0.06, 0.12, 0.25))
 	var b := FxPortType.as_color(params.get("color_b", "#ffb454"), Color(1, 0.7, 0.33))
@@ -28,13 +37,19 @@ static func gradient(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var scale := maxf(0.01, FxPortType.as_number(params.get("scale", 1.0), 1.0))
 	var soft := clampf(FxPortType.as_number(params.get("softness", 0.0), 0.0), 0.0, 1.0)
 	var dir := Vector2(cos(angle), sin(angle))
-	var image := FxPixelKit.generate_batch(size, func(bw: int, bh: int) -> PackedByteArray:
+	# 原生生成器：整张图只是 (x, y) 的纯函数，逐像素算术全在核里。
+	var mode_id := 1 if mode == "radial" else (2 if mode == "angle" else 0)
+	var native := FxNativeBridge.gradient_fill(size, mode_id, a, b,
+		FxPortType.as_number(params.get("angle", 0.0), 0.0), center, scale, soft)
+	if native != null:
+		return {"image": native}
+	var image := FxPixelKit.generate_rows(size, func(bw: int, bh: int, y0: int, y1: int) -> PackedByteArray:
 		var buf := PackedByteArray()
-		buf.resize(bw * bh * 4)
+		buf.resize((y1 - y0) * bw * 4)
 		var w := float(bw)
 		var h := float(bh)
 		var index := 0
-		for by in range(bh):
+		for by in range(y0, y1):
 			var y := float(by)
 			for bx in range(bw):
 				var x := float(bx)
@@ -63,7 +78,7 @@ static func gradient(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 
 static func shape(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:
-	var size := _size(ctx, inputs)
+	var size := _size(ctx, inputs, params)
 	var kind := FxPortType.as_string(params.get("shape", "circle"), "circle")
 	var fill := FxPortType.as_color(params.get("color", "#ffcc66"), Color(1, 0.8, 0.4))
 	var bg := FxPortType.as_color(params.get("background", "#00000000"), Color(0, 0, 0, 0))
@@ -86,15 +101,19 @@ static func shape(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		"diamond": kind_id = 3
 		"triangle": kind_id = 4
 		"star": kind_id = 5
-	var image := FxPixelKit.generate_batch(size, func(bw: int, bh: int) -> PackedByteArray:
+	var native := FxNativeBridge.shape_field(size, kind_id, fill, bg, radius, feather, sides,
+		center, FxPortType.as_number(params.get("rotation", 0.0), 0.0), aspect)
+	if native != null:
+		return {"image": native}
+	var image := FxPixelKit.generate_rows(size, func(bw: int, bh: int, y0: int, y1: int) -> PackedByteArray:
 		var buf := PackedByteArray()
-		buf.resize(bw * bh * 4)
+		buf.resize((y1 - y0) * bw * 4)
 		var w := float(bw)
 		var h := float(bh)
 		var inv_w := 1.0 / maxf(w, 1.0)
 		var inv_h := 1.0 / maxf(h, 1.0)
 		var index := 0
-		for by in range(bh):
+		for by in range(y0, y1):
 			var py: float = (float(by) * inv_h - center.y) * 2.0
 			for bx in range(bw):
 				var px: float = (float(bx) * inv_w - center.x) * 2.0 * aspect
@@ -134,7 +153,7 @@ static func shape(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 
 static func stripes(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:
-	var size := _size(ctx, inputs)
+	var size := _size(ctx, inputs, params)
 	var mode := FxPortType.as_string(params.get("mode", "linear"), "linear")
 	var a := FxPortType.as_color(params.get("color_a", "#1b2230"), Color(0.1, 0.13, 0.19))
 	var b := FxPortType.as_color(params.get("color_b", "#4cc2ff"), Color(0.3, 0.76, 1.0))
@@ -143,13 +162,13 @@ static func stripes(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var soft := clampf(FxPortType.as_number(params.get("softness", 0.05), 0.05), 0.0, 0.5)
 	var phase := FxPortType.as_number(params.get("phase", 0.0), 0.0)
 	var dir := Vector2(cos(angle), sin(angle))
-	var image := FxPixelKit.generate_batch(size, func(bw: int, bh: int) -> PackedByteArray:
+	var image := FxPixelKit.generate_rows(size, func(bw: int, bh: int, y0: int, y1: int) -> PackedByteArray:
 		var buf := PackedByteArray()
-		buf.resize(bw * bh * 4)
+		buf.resize((y1 - y0) * bw * 4)
 		var w := float(bw)
 		var h := float(bh)
 		var index := 0
-		for by in range(bh):
+		for by in range(y0, y1):
 			var y := float(by)
 			for bx in range(bw):
 				var x := float(bx)
@@ -178,7 +197,7 @@ static func stripes(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 
 static func voronoi(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:
-	var size := _size(ctx, inputs)
+	var size := _size(ctx, inputs, params)
 	var cells := clampi(FxPortType.as_int(params.get("cells", 12), 12), 2, 64)
 	var seed := FxPortType.as_int(params.get("seed", 7), 7)
 	var jitter := clampf(FxPortType.as_number(params.get("jitter", 1.0), 1.0), 0.0, 1.0)
@@ -229,7 +248,7 @@ static func voronoi(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 
 static func starfield(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:
-	var size := _size(ctx, inputs)
+	var size := _size(ctx, inputs, params)
 	var count := clampi(FxPortType.as_int(params.get("count", 80), 80), 1, 500)
 	var seed := FxPortType.as_int(params.get("seed", 3), 3)
 	var color := FxPortType.as_color(params.get("color", "#ffffff"), Color.WHITE)

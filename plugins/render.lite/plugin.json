@@ -1,7 +1,8 @@
 {
 	"id": "render.lite",
 	"name": "轻量渲染后端",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "播放时跳帧复用并关闭节点预览，精确帧仍完整求值",
 	"script": "plugin.gd",
 	"icon": "⚡",

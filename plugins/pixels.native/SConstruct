@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+## 原生像素内核（插件 pixels.native 自带）的构建脚本。
+##
+## 这个扩展从「仓库级扩展」变成了「插件自带库」：库文件、描述文件、源码
+## 全在 plugins/pixels.native/ 里，删掉这个目录就回到纯 GDScript（慢，但能跑）。
+##
+## godot-cpp 不随仓库提交（几十 MB、且必须与引擎 ABI 对齐）：
+##
+##   python -m SCons api_version=4.7 godot_cpp=/path/to/godot-cpp
+##
+## `api_version` 要与引擎大版本一致：godot-cpp 自带 4.3–4.8 的描述，选错会
+## 在加载时报「扩展不兼容」。
+import os
+
+godot_cpp_path = ARGUMENTS.get("godot_cpp", os.environ.get("GODOT_CPP", "godot-cpp"))
+if not os.path.isdir(godot_cpp_path):
+    raise SCons.Errors.UserError(
+        "找不到 godot-cpp：%s（用 godot_cpp=<路径> 指定）" % godot_cpp_path
+    )
+
+env = SConscript(os.path.join(godot_cpp_path, "SConstruct"))
+env.Append(CPPPATH=[Dir("src")])
+
+## 只编 src/ 顶层的 .cpp：common/ 是头文件，_legacy/ 之类不参与构建。
+sources = Glob("src/*.cpp")
+
+## 目标名带 godot-cpp 生成的 suffix（.windows.template_debug.x86_64 之类），
+## .gdextension 里的路径必须逐字对应，否则引擎找不到库。
+library = env.SharedLibrary(
+    target="native/pixels_native{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+    source=sources,
+)
+Default(library)

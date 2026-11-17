@@ -69,6 +69,10 @@ func invalidate() -> void:
 ## 设置面板 / 菜单的「检测 GPU」按钮：把探测结果打到状态栏。
 static func log_info(ctx: Dictionary) -> void:
 	print(FxGpuDevice.describe())
+	# 两条加速路一起报：GPU 走 compute shader（要图形设备、要渲染线程），
+	# 原生内核走 GDExtension（无头也能用、工作线程直接算）。缺一条就少一份速度，
+	# 但都不影响画面 —— 所以这里说清楚「现在哪条在生效」。
+	print(FxNativeBridge.describe())
 	var shell: Variant = ctx.get("shell")
 	if shell != null and shell.has_method("status"):
 		shell.call("status", FxGpuDevice.state_text())

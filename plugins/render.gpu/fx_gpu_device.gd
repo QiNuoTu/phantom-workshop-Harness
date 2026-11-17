@@ -20,6 +20,8 @@ static func info() -> Dictionary:
 		return _cached
 	_probed = true
 	var headless := DisplayServer.get_name() == "headless"
+	# 与 FxNativeBridge 的 `FX_NATIVE=0` 对称：做 A/B 对照时不必改代码。
+	var forced_off := OS.get_environment("FX_GPU") == "0"
 	var adapter := ""
 	var vendor := ""
 	var api := ""
@@ -30,10 +32,11 @@ static func info() -> Dictionary:
 		vendor = String(RenderingServer.get_video_adapter_vendor())
 		api = String(RenderingServer.get_video_adapter_api_version())
 		device_ready = RenderingServer.get_rendering_device() != null
-	var available := not headless and device_ready and not adapter.is_empty()
+	var available := not headless and not forced_off and device_ready and not adapter.is_empty()
 	_cached = {
 		"available": available,
 		"headless": headless,
+		"forced_off": forced_off,
 		"name": adapter,
 		"vendor": vendor,
 		"api_version": api,
@@ -52,6 +55,8 @@ static func state_text() -> String:
 	var data := info()
 	if bool(data.get("available", false)):
 		return "GPU：%s" % String(data.get("name", ""))
+	if bool(data.get("forced_off", false)):
+		return "GPU：被 FX_GPU=0 关掉"
 	if bool(data.get("headless", false)):
 		return "GPU：无头模式，未启用"
 	return "GPU：不可用（回落到 CPU 求值）"

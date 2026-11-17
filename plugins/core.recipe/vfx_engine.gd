@@ -21,6 +21,9 @@ var _loop: bool = false
 var _palette: Array[Color] = []
 var _layers: Array[Dictionary] = []
 var _compiled: Array = []
+## 渲染与重配的互斥量。引擎实例按节点缓存，会被多条预渲染线程共用；
+## 它内部是「复用缓冲」的有状态实现，不互斥就会互相踩。
+var _lock := Mutex.new()
 var _color: PackedByteArray = PackedByteArray()
 var _light: PackedInt32Array = PackedInt32Array()
 var _tx: float = 0.0
@@ -66,8 +69,18 @@ const PIXEL_KEYS: Array = [
 ## 画布/时长/帧率/种子是**结构性**字段：即使配方里误存了轨道，也按首帧折叠成常量
 ## （走 FxTracks.static_of），绝不出现 float(Dictionary) 这类崩溃。
 func configure(recipe: Dictionary, assets: Dictionary = {}) -> void:
+	# 这个实例会被多条预渲染线程共用（引擎按节点缓存），而 `render()` 会原地写
+	# `_color` / `_light`。所以：
+	#   ① 配置与渲染**互斥**（`_lock`），否则一条线程 resize、另一条正在绘制，
+	#      `_add/_put` 就会拿到「尺寸对不上」的缓冲并越界（真机上表现为
+	#      `Out of bounds get index ... on base: 'PackedByteArray'`）；
+	#   ② 尺寸与缓冲**一次性换**：先分配再算别的，绝不留「_w 已改、缓冲还空」的窗口。
+	#      旧实现把 resize 放在函数末尾，窗口有整整 70 行那么宽。
+	_lock.lock()
 	_w = clampi(FxTracks.integer(recipe.get("width"), int(DESIGN_SIZE)), 16, 512)
 	_h = clampi(FxTracks.integer(recipe.get("height"), int(DESIGN_SIZE)), 16, 512)
+	_color.resize(_w * _h * 4)
+	_light.resize(_w * _h * 3)
 	# stretch=true：内容按画布等比缩放（分辨率无关，适合导出 2x）；
 	# stretch=false：内容保持 1:1 像素尺寸并居中（画布只是多给留白/裁切区）。
 	_stretch = _as_bool(FxTracks.static_of(recipe.get("stretch"), true), true)
@@ -137,8 +150,7 @@ func configure(recipe: Dictionary, assets: Dictionary = {}) -> void:
 	var angle: float = deg_to_rad(FxTracks.number(recipe.get("angle"), 0.0))
 	_cs = cos(angle)
 	_sn = sin(angle)
-	_color.resize(_w * _h * 4)
-	_light.resize(_w * _h * 3)
+	_lock.unlock()
 
 func frame_count(fps: int) -> int:
 	return maxi(1, int(_duration * clampi(fps, 1, 120)))
@@ -149,6 +161,7 @@ func duration() -> float:
 
 ## 渲染 t 秒时的画面。这是引擎唯一的输出口，纯函数式（除内部缓冲复用外无副作用）。
 func render(t: float) -> Image:
+	_lock.lock()
 	_color.fill(0)
 	_light.fill(0)
 	var time: float = fmod(t, _duration) if _loop else t
@@ -165,6 +178,7 @@ func render(t: float) -> Image:
 	# 泛光/扫描线/像素化/热浪/染色/震动/色差七个模式全是空转，画面一点不变。
 	if not _post_raw.is_empty():
 		image = _apply_post(image, time)
+	_lock.unlock()
 	return image
 
 ## 把整段时间烘焙成一张网格 sprite sheet；列数由调用方控制。
@@ -744,6 +758,9 @@ func _post_chromatic(image: Image, t: float) -> Image:
 	var w: int = image.get_width()
 	var h: int = image.get_height()
 	var off: int = int(roundf(shift * amount))
+	var native := FxNativeBridge.chromatic(image, off)
+	if native != null:
+		return native
 	for y in range(h):
 		for x in range(w):
 			var c: Color = image.get_pixel(x, y)
@@ -1084,6 +1101,10 @@ func is_stretch() -> bool:
 # ---------- 合成：颜色覆盖 + 加性光，透明背景上光转成带 alpha 的颜色 ----------
 
 func _composite() -> Image:
+	# 原生：一趟逐像素「颜色 + 加性光 → RGBA」。整帧最整齐的一段纯算术。
+	var native := FxNativeBridge.composite_add(_color, _light, Vector2i(_w, _h), _light_k)
+	if native != null:
+		return native
 	var out: PackedByteArray = PackedByteArray()
 	out.resize(_w * _h * 4)
 	for i in range(_w * _h):

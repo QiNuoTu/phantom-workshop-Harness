@@ -18,6 +18,12 @@ const PRESET_OPTIONS := [
 	{"value": "balanced", "label": "均衡"},
 	{"value": "fidelity", "label": "画质优先"},
 ]
+## 显示通道的采样倍率。只影响屏幕上的那张图，缓存与导出不受影响。
+const DISPLAY_SCALE_OPTIONS := [
+	{"value": 1.0, "label": "全分辨率（1:1）"},
+	{"value": 0.5, "label": "一半（大画布更跟手）"},
+	{"value": 0.25, "label": "四分之一（只求跟手）"},
+]
 const PRESETS := {
 	"none": {},
 	"performance": {
@@ -42,60 +48,84 @@ static func settings() -> Array[Dictionary]:
 		{
 			"id": "quality.preset", "label": "质量预设", "group": "渲染质量",
 			"kind": "enum", "default": "none", "options": PRESET_OPTIONS,
-			"capability": "quality.preset", "applies": "runtime", "order": 10,
+			"capability": "quality.preset", "impact": "derived", "applies": "runtime", "order": 10,
 			"description": "预设会覆盖下方同名项；由能力代理广播给所有质量 provider。",
 		},
 		{
 			"id": "quality.paused", "label": "暂停时质量档", "group": "渲染质量",
 			"kind": "enum", "default": 1, "options": QUALITY_OPTIONS,
-			"applies": "runtime", "order": 20,
+			"impact": "derived", "applies": "runtime", "order": 20,
 		},
 		{
 			"id": "quality.playing", "label": "播放时质量档", "group": "渲染质量",
 			"kind": "enum", "default": 0, "options": QUALITY_OPTIONS,
-			"applies": "runtime", "order": 21,
+			"impact": "derived", "applies": "runtime", "order": 21,
 		},
 		{
 			"id": "quality.operator", "label": "算子质量系数", "group": "渲染质量",
 			"kind": "float", "default": 1.0, "min": 0.0, "max": 1.0, "step": 0.05,
-			"applies": "runtime", "order": 30,
+			"impact": "derived", "applies": "runtime", "order": 30,
 			"description": "注入 ctx.operator_quality；算子自己决定如何降级，输出链始终精确。",
 		},
 		{
 			"id": "quality.max_blur_radius", "label": "模糊半径上限", "group": "渲染质量",
 			"kind": "int", "default": 32, "min": 1, "max": 128, "step": 1,
-			"applies": "runtime", "order": 31,
+			"impact": "derived", "applies": "runtime", "order": 31,
 		},
 		{
 			"id": "quality.blur_fast_path", "label": "模糊快速路径", "group": "渲染质量",
-			"kind": "bool", "default": true, "applies": "runtime", "order": 32,
+			"kind": "bool", "default": true, "impact": "derived", "applies": "runtime", "order": 32,
 		},
 		{
 			"id": "quality.preview_limit", "label": "节点预览边长", "group": "渲染质量",
 			"kind": "int", "default": 128, "min": 16, "max": 512, "step": 16,
-			"applies": "runtime", "order": 40,
+			"impact": "derived", "applies": "runtime", "order": 40,
+		},
+		{
+			# 节点小图与输出预览是**两条不同的管线**：小图可以糊、可以慢半拍，
+			# 输出预览必须是精确帧（内核把 output_downscale 钉死为 false）。
+			# 这两项只作用于「缩略图趟」，不会污染精确帧缓存。
+			"id": "quality.preview_operator", "label": "节点小图算子质量", "group": "渲染质量",
+			"kind": "float", "default": 0.5, "min": 0.1, "max": 1.0, "step": 0.05,
+			"impact": "derived", "applies": "runtime", "order": 43,
+			"description": "只影响节点卡片上的缩略图（模糊半径、采样步长这类降级）；最终输出与缓存帧始终精确。",
+		},
+		{
+			"id": "quality.preview_refresh_ms", "label": "节点小图刷新间隔", "group": "渲染质量",
+			"kind": "int", "default": 1500, "min": 120, "max": 5000, "step": 60,
+			"impact": "derived", "applies": "runtime", "order": 44,
+			"description": "缩略图趟两次之间的最小间隔。调小更跟手，代价是后台算得更勤。",
 		},
 		{
 			"id": "quality.preview_scope", "label": "播放时预览范围", "group": "渲染质量",
 			"kind": "enum", "default": "selection_output", "options": SCOPE_OPTIONS,
-			"applies": "runtime", "order": 41,
+			"impact": "derived", "applies": "runtime", "order": 41,
 		},
 		{
 			"id": "quality.capture_previews", "label": "生成节点预览", "group": "渲染质量",
-			"kind": "bool", "default": true, "applies": "runtime", "order": 42,
+			"kind": "bool", "default": true, "impact": "derived", "applies": "runtime", "order": 42,
 		},
 		{
 			"id": "quality.static_cache", "label": "静态子图跨帧缓存", "group": "渲染质量",
-			"kind": "bool", "default": true, "applies": "runtime", "order": 50,
+			"kind": "bool", "default": true, "impact": "derived", "applies": "runtime", "order": 50,
+		},
+		{
+			# 只影响「贴到屏幕那一步」的分辨率：归档帧、导出序列、缓存里的帧都不动。
+			# 所以它的 impact 是 `display`（只丢显示层），不是 `derived` —— 换个倍率
+			# 不该让整段精确帧重算，那正是 0.0.11 之前最贵的一次误伤。
+			"id": "quality.display_scale", "label": "显示采样倍率", "group": "渲染质量",
+			"kind": "enum", "default": 1.0, "options": DISPLAY_SCALE_OPTIONS,
+			"impact": "display", "applies": "runtime", "order": 45,
+			"description": "只缩放显示通道。缓存帧与导出仍是全分辨率，逐像素不变。",
 		},
 		{
 			"id": "quality.adaptive_throttle", "label": "自适应渲染节流", "group": "渲染质量",
-			"kind": "bool", "default": true, "applies": "runtime", "order": 51,
+			"kind": "bool", "default": true, "impact": "none", "applies": "runtime", "order": 51,
 		},
 		{
 			"id": "quality.throttle_factor", "label": "节流系数", "group": "渲染质量",
 			"kind": "float", "default": 0.0006, "min": 0.0, "max": 0.01, "step": 0.0002,
-			"applies": "runtime", "order": 52,
+			"impact": "none", "applies": "runtime", "order": 52,
 		},
 	]
 
@@ -129,11 +159,14 @@ static func policy(ctx: Dictionary, _current: Dictionary) -> Dictionary:
 		"max_blur_radius": int(FxSettings.value("quality.max_blur_radius")),
 		"blur_fast_path": bool(FxSettings.value("quality.blur_fast_path")),
 		"preview_limit": int(FxSettings.value("quality.preview_limit")),
+		"preview_operator": float(FxSettings.value("quality.preview_operator")),
+		"preview_refresh_ms": int(FxSettings.value("quality.preview_refresh_ms")),
 		"preview_scope": String(FxSettings.value("quality.preview_scope")),
 		"capture_previews": bool(FxSettings.value("quality.capture_previews")),
 		"static_cache": bool(FxSettings.value("quality.static_cache")),
 		"adaptive_throttle": bool(FxSettings.value("quality.adaptive_throttle")),
 		"throttle_factor": float(FxSettings.value("quality.throttle_factor")),
+		"display_scale": float(FxSettings.value("quality.display_scale")),
 		"operator_quality_threshold": 0.999,
 	}
 	return patch.merged(_override, true)

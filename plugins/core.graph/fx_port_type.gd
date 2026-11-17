@@ -128,16 +128,10 @@ static func cast_value(value: Variant, from_type: Variant, to_type: Variant) -> 
 
 # ================= 参数值归一化 =================
 
+## 值归一的唯一实现在基座 `FxValue`：控件工厂也要用它，而基座不能反向依赖本插件。
+## 这层保留同名 API，插件内部的调用点一个都不用改。
 static func as_number(value: Variant, fallback: float = 0.0) -> float:
-	if value is float or value is int:
-		return float(value)
-	if value is bool:
-		return 1.0 if bool(value) else 0.0
-	if value is String:
-		return String(value).to_float() if String(value).is_valid_float() else fallback
-	if value is Array and not (value as Array).is_empty():
-		return as_number((value as Array)[0], fallback)
-	return fallback
+	return FxValue.as_number(value, fallback)
 
 
 static func as_int(value: Variant, fallback: int = 0) -> int:
@@ -145,17 +139,7 @@ static func as_int(value: Variant, fallback: int = 0) -> int:
 
 
 static func as_bool(value: Variant, fallback: bool = false) -> bool:
-	if value is bool:
-		return value
-	if value is int or value is float:
-		return absf(float(value)) > 0.0001
-	if value is String:
-		var text := String(value).strip_edges().to_lower()
-		if text == "true" or text == "yes" or text == "1":
-			return true
-		if text == "false" or text == "no" or text == "0" or text.is_empty():
-			return false
-	return fallback
+	return FxValue.as_bool(value, fallback)
 
 
 static func as_string(value: Variant, fallback: String = "") -> String:
@@ -165,24 +149,11 @@ static func as_string(value: Variant, fallback: String = "") -> String:
 
 
 static func as_color(value: Variant, fallback: Color = Color.WHITE) -> Color:
-	if value is Color:
-		return value
-	if value is String:
-		return Color.from_string(String(value), fallback)
-	if value is Array:
-		var arr: Array = value
-		if arr.size() >= 3:
-			return Color(
-				clampf(as_number(arr[0], 0.0), 0.0, 1.0),
-				clampf(as_number(arr[1], 0.0), 0.0, 1.0),
-				clampf(as_number(arr[2], 0.0), 0.0, 1.0),
-				clampf(as_number(arr[3], 1.0) if arr.size() > 3 else 1.0, 0.0, 1.0)
-			)
-	return fallback
+	return FxValue.as_color(value, fallback)
 
 
 static func as_vec2(value: Variant, fallback: Vector2 = Vector2.ZERO) -> Vector2:
-	return FxTransform.vec2_of(value, fallback)
+	return FxValue.as_vec2(value, fallback)
 
 
 ## 按参数 kind 归一化（绑定端口传进来的值也走这里）。

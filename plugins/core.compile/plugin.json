@@ -1,0 +1,18 @@
+{
+	"id": "core.compile",
+	"name": "图编译与剪枝",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "节点图降级为 DAG、端口类型检查、常量折叠、按 Live 判活的结构剪枝",
+	"script": "plugin.gd",
+	"icon": "⌘",
+	"color": "#a78bfa",
+	"category": "核心",
+	"inject": [
+		"core.catalog",
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.core.compile": "0.1.0"
+	}
+}

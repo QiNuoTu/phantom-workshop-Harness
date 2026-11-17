@@ -18,6 +18,9 @@ var _fps: SpinBox
 var _loop: CheckBox
 var _background: ColorPickerButton
 var _output_label: Label
+## 画布尺寸改动的防抖计时：SpinBox 拖动时每个数字都会发 value_changed。
+var _canvas_timer: Timer
+var _canvas_hint: Label
 
 
 static func create(ctx: Dictionary) -> Control:
@@ -77,6 +80,15 @@ func _build() -> void:
 	canvas_row.add_child(FxUiKit.label("×", 11))
 	canvas_row.add_child(_canvas_h)
 	root.add_child(canvas_row)
+	_canvas_hint = FxUiKit.label("", 10, Color(0.96, 0.68, 0.28))
+	_canvas_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	root.add_child(_canvas_hint)
+	# 停下来 0.22s 才提交一次，且宽高一起写。
+	_canvas_timer = Timer.new()
+	_canvas_timer.one_shot = true
+	_canvas_timer.wait_time = 0.22
+	_canvas_timer.timeout.connect(_flush_canvas)
+	add_child(_canvas_timer)
 	var bg_row := HBoxContainer.new()
 	bg_row.add_child(FxUiKit.label("背景", 11))
 	_background = ColorPickerButton.new()
@@ -153,10 +165,44 @@ func _commit_name() -> void:
 	store.set_doc_meta("name", text)
 
 
+## 画布一改就会换内容身份 → 换缓存桶 → 全分辨率重算整段。
+## 旧实现让 SpinBox 的每次 value_changed 都直接 mutate(["canvas"])：
+## 拖一下从 128 到 4096 会产生几十次提交，宽、高还各写一次（中间态也重算）。
+## 4096² 单帧 64 MB，连续几次就足以把主线程卡死 —— 这就是「改宽高直接卡飞」。
+## 现在只重启计时器，停下来合并成一次写入；大画布另外给内存预估提示。
 func _commit_canvas() -> void:
 	if _syncing or store == null:
 		return
-	store.set_canvas(int(_canvas_w.value), int(_canvas_h.value))
+	_update_canvas_hint()
+	if _canvas_timer != null:
+		_canvas_timer.start()
+
+
+func _flush_canvas() -> void:
+	if _syncing or store == null:
+		return
+	var w := int(_canvas_w.value)
+	var h := int(_canvas_h.value)
+	# 写前 == 写后：连撤销点都不该产生（FxDocumentStore 也会静默，这里省一次广播）。
+	if FxGraphDoc.canvas(store.doc) == Vector2i(w, h):
+		return
+	store.set_canvas(w, h)
+
+
+func _update_canvas_hint() -> void:
+	if _canvas_hint == null or store == null:
+		return
+	var w := int(_canvas_w.value)
+	var h := int(_canvas_h.value)
+	var timeline := FxGraphDoc.timeline(store.doc)
+	var frames := maxi(1, int(round(float(timeline.get("duration", 1.0))
+			* float(timeline.get("fps", 30)))))
+	var frame_mb := float(w) * float(h) * 4.0 / 1048576.0
+	if w * h > 1048576:
+		_canvas_hint.text = "注意：%d×%d 单帧约 %.1f MB，整段 %d 帧约 %.0f MB；大画布建议先关闭预渲染" % [
+					w, h, frame_mb, frames, frame_mb * float(frames)]
+	else:
+		_canvas_hint.text = ""
 
 
 func _commit_timeline() -> void:
@@ -203,6 +249,7 @@ func _sync_all() -> void:
 	_background.color = FxGraphDoc.canvas_background(doc)
 	var output := FxGraphDoc.output_id(doc)
 	_output_label.text = output if not output.is_empty() else "（未指定输出节点）"
+	_update_canvas_hint()
 	var actions: Variant = shell.service("document") if shell != null else null
 	if actions != null:
 		var path := String(actions.get("current_path"))

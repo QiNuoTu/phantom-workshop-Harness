@@ -1,0 +1,7 @@
+{
+	"app": "0.0.17-alpha",
+	"kernel": "0.1.8",
+	"project_format": "0.1",
+	"channel": "alpha",
+	"_note": "四套版本号各管一件事：app=可交付产品，kernel=插件契约，plugin=各插件自己的迭代号（写在各自 plugin.json），project_format=工程文件格式。语义见 docs/版本策略.md。"
+}

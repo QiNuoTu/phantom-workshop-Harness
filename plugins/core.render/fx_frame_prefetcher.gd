@@ -33,6 +33,13 @@ var _done: int = 0
 var _total: int = 0
 var _note: String = ""
 var _worker_count: int = 0
+## 每条线程**此刻**在算哪一帧（slot → 帧号）。只给时间轴标尺着色用。
+## 它是调度事实，不是缓存状态：算完不一定成功（取消、桶换了都会丢），
+## 所以只用来回答「这一格现在有没有人在干」。
+var _inflight: Dictionary = {}
+## 这一趟是不是「只补缩略图」趟。它是真实计算，但不产出可缓存的帧，
+## 所以不该让标尺上的格子变橘 —— 那会让用户以为「这一段正在补帧」。
+var _preview_only: bool = false
 
 
 func bind(p_cache: FxFrameCache) -> void:
@@ -70,6 +77,7 @@ func stop() -> void:
 	_mutex.lock()
 	_running = false
 	_cancel = true
+	_inflight.clear()
 	_mutex.unlock()
 	for sem in _sems:
 		sem.post()
@@ -91,6 +99,11 @@ func worker_count() -> int:
 
 ## 开始（或重新开始）一次预渲染。job 需要：
 ## doc / fps / count / policy / revision / from / priority / signature / label
+##
+## `draft_scale > 0` 时这一趟是**草稿趟**：所有帧按缩小画布算，结果写进
+## 帧缓存的「垫图层」（exact = false，标尺上是黄格）。它比精确趟快一个数量级，
+## 几十毫秒就能把整段填满 —— 播放从此不会「一格都没有」，改画布也不会
+## 眼看着标尺一路全红等几分钟。
 func enqueue(job: Dictionary) -> void:
 	var count := int(job.get("count", 0))
 	if count <= 0:
@@ -118,6 +131,8 @@ func enqueue(job: Dictionary) -> void:
 	_total = order.size()
 	_cancel = false
 	_active = true
+	_preview_only = bool(job.get("preview_only", false))
+	_inflight.clear()
 	_note = String(job.get("label", ""))
 	var sems := _sems.duplicate()
 	_mutex.unlock()
@@ -132,6 +147,7 @@ func cancel() -> void:
 	_mutex.lock()
 	_cancel = true
 	_active = false
+	_inflight.clear()
 	_mutex.unlock()
 
 
@@ -149,6 +165,21 @@ func progress() -> Dictionary:
 		"active": _active, "done": _done, "total": _total,
 		"cursor": _cursor, "note": _note, "workers": _worker_count,
 	}
+	_mutex.unlock()
+	return out
+
+
+## 此刻各线程正在算的帧号（去重）。已经就绪的帧不算 —— 那是「算完了」。
+func inflight() -> Array:
+	_mutex.lock()
+	var out: Array = []
+	if _preview_only:
+		_mutex.unlock()
+		return out
+	for slot in _inflight.keys():
+		var index := int(_inflight[slot])
+		if index >= 0 and not out.has(index):
+			out.append(index)
 	_mutex.unlock()
 	return out
 
@@ -171,9 +202,13 @@ func _loop(slot: int) -> void:
 			var index: int = _pending[_cursor]
 			_cursor += 1
 			var job: Dictionary = _job
+			# 登记「这一格有人在干」：标尺的橘色就是这条登记表。
+			# 必须在解锁前写，否则主线程可能读到「已派发但没人认领」的中间态。
+			_inflight[slot] = index
 			_mutex.unlock()
 			_compute(job, index, slot)
 			_mutex.lock()
+			_inflight.erase(slot)
 			_done += 1
 			if _done >= _total:
 				_active = false
@@ -196,9 +231,25 @@ func _compute(job: Dictionary, index: int, slot: int) -> void:
 	if not expected_fp.is_empty() and _cache.fingerprint() != expected_fp:
 		return
 	var runner := _runners[slot]
+	# 草稿趟：缩小画布 + 低算子质量 + 不跑汇点。它唯一的产物是「一张能看的图」。
+	var draft_scale := clampf(float(job.get("draft_scale", 0.0)), 0.0, 1.0)
+	var draft := draft_scale > 0.0 and draft_scale < 0.999
 	# 「缩略图趟」用低质量算：小图看不出差别，但整段能快好几倍。
 	runner.quality = clampi(int(job.get("quality", 1)), 0, 1)
-	runner.operator_quality = 1.0 if runner.quality >= 1 else 0.5
+	# 算子质量可以由任务显式指定（节点小图那条管线有独立档位）。
+	# 没指定时才按 quality 推导 —— 精确帧预渲染走的仍是这条老路，行为不变。
+	var want_operator := float(job.get("operator_quality", -1.0))
+	if want_operator < 0.0:
+		want_operator = 1.0 if runner.quality >= 1 else 0.5
+	runner.operator_quality = clampf(want_operator, 0.0, 1.0)
+	# 草稿趟在这三件事上必须和精确趟分开：画布倍率、汇点副作用、缩略图。
+	runner.base_scale = draft_scale if draft else 1.0
+	if draft:
+		runner.quality = 0
+		runner.operator_quality = clampf(float(job.get("operator_quality", 0.35)), 0.0, 1.0)
+		runner.skip_sinks = true
+	else:
+		runner.skip_sinks = false
 	runner.options = job.get("policy", {}) as Dictionary
 	# 只给**展开的节点**留缩略图：收起的节点连求值预览都省掉。
 	# preview_nodes 为空表时完全关闭捕获（整段预渲染的常态）。
@@ -211,8 +262,20 @@ func _compute(job: Dictionary, index: int, slot: int) -> void:
 	if not bool(job.get("preview_only", false)) and _cache.has_frame(index):
 		if not want_previews or bool((track as Object).call("has_frame", index)):
 			return
+	# 草稿趟只补「一张图都没有」的帧：已经有垫图的不必再画一遍。
+	if draft and _cache.state(index) != FxFrameCache.STATE_EMPTY:
+		return
 	runner.capture_previews = want_previews
 	runner.preview_nodes = preview_nodes if want_previews else {}
+	# 后台预渲染是第三条求值路径：预览根与剪枝计划必须和同步/工作线程一致，
+	# 否则「预渲染算出来的帧」和「当场算出来的帧」会在旁支上分叉。
+	var roots_raw: Variant = job.get("preview_roots", [])
+	var roots: Array[String] = []
+	if roots_raw is Array:
+		for item in (roots_raw as Array):
+			roots.append(String(item))
+	runner.preview_roots = roots
+	runner.compile_plan = job.get("compile_plan", {}) as Dictionary
 	if want_previews:
 		runner.preview_limit = maxi(int(job.get("preview_limit", 64)), 16)
 	var fps := maxi(int(job.get("fps", 30)), 1)
@@ -233,7 +296,19 @@ func _compute(job: Dictionary, index: int, slot: int) -> void:
 			return
 		var image: Variant = payload.get("image")
 		if image is Image:
-			_cache.put(index, image as Image, true, true)
+			# 身份随帧一起写：预渲染跑在后台，作业开始时的那份文档就是这一帧的出处。
+			if draft:
+				# 垫图必须是画布尺寸（帧缓存的定长布局没得商量）：在这里放大，
+				# 别丢给主线程 —— 主线程每帧只该贴图，不该做 2 MB 的双线性缩放。
+				var up := image as Image
+				var want := _cache.frame_size()
+				if want.x > 0 and up.get_size() != want:
+					up = up.duplicate()
+					up.resize(want.x, want.y, Image.INTERPOLATE_BILINEAR)
+				_cache.put(index, up, false, true, int(job.get("signature", -1)), draft_scale)
+			else:
+				_cache.put(index, image as Image, true, true,
+					int(job.get("signature", -1)))
 
 
 func _cancelled() -> bool:

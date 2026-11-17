@@ -34,8 +34,13 @@ var COLOR_TEXT: Color = Color("#c9d4e2")
 var COLOR_MUTED: Color = Color("#8b949e")
 var COLOR_ACCENT: Color = Color("#ffb454")
 var COLOR_PLAYHEAD: Color = Color("#4cc2ff")
-## 缓存状态色：红=没算过，黄=正在算/只有低质量预览，绿=已按精确质量缓存。
+## 缓存状态色（四档，从左到右就是「一帧的一生」）：
+##   红 = 没算过 · 橘 = 有线程正在为这一格干活 · 黄 = 只有垫图（草稿/播放档）
+##   绿 = 精确帧已缓存。
+## 橘色是**调度事实**（此刻谁在算），不是缓存状态：它只由预渲染/急件的在飞登记表驱动，
+## 不做任何「它能用了」的承诺 —— 算完能不能落地还要看桶有没有换。
 var COLOR_CACHE_EMPTY: Color = Color("#8f3a3a")
+var COLOR_CACHE_RENDERING: Color = Color("#ff8c1a")
 var COLOR_CACHE_PENDING: Color = Color("#d9a521")
 var COLOR_CACHE_READY: Color = Color("#3fb950")
 
@@ -266,11 +271,17 @@ func _draw_cache_strip(font: Font, lane_x: float, lane_w: float, _duration: floa
 		if x > lane_x + lane_w + 1.0:
 			break
 		if x >= lane_x - 1.0:
+			# 一个色块可能盖好几帧（缩得很远时 step > 1）：取这一格里**最强**的状态。
+			# 只读 block 起点会把「整段都在算」画成一片红，看着像没开始。
 			var color := COLOR_CACHE_EMPTY
-			match int(render.call("cache_state", index)):
-				2:
+			for j in range(index, mini(index + step, count)):
+				var state := int(render.call("cache_state", j))
+				if state == 2:
 					color = COLOR_CACHE_READY
-				1:
+					break
+				elif state == 3:
+					color = COLOR_CACHE_RENDERING
+				elif state == 1 and color != COLOR_CACHE_RENDERING:
 					color = COLOR_CACHE_PENDING
 			draw_rect(Rect2(x, y, maxf(block - 0.5, 1.0), h), color)
 		index += step

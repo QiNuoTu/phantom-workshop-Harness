@@ -132,10 +132,12 @@ func _open_zip_async(path: String) -> void:
 		_status("工程包读不了：%s" % String(status["error"]))
 		_finish_progress()
 		return
-	if bool(status.get("found", false)) and not bool(status.get("compatible", true)):
-		# 版本不匹配要等用户点按钮：交给同步路径处理，进度先收起。
+	# 旧格式在读之前就拒绝，不再问「仍要尝试加载吗」：0.x 阶段不背历史包袱，
+	# 拿新语义去解释旧字段只会把数据读坏，而且读坏了还看不出来。
+	var refused := FxProjectArchive.version_refusal(status)
+	if not refused.is_empty():
+		_status(refused)
 		_finish_progress()
-		_open_zip(path)
 		return
 	await _load_zip_async(path)
 
@@ -159,26 +161,9 @@ func _open_zip(path: String) -> void:
 	if not String(status.get("error", "")).is_empty():
 		_status("工程包读不了：%s" % String(status["error"]))
 		return
-	if bool(status.get("found", false)) and not bool(status.get("compatible", true)):
-		var supported: Array = status.get("supported", [])
-		var ask := ConfirmationDialog.new()
-		FxUiKit.style_window(ask)
-		ask.title = "工程版本不匹配"
-		ask.dialog_text = "该工程由版本 %s 保存，当前软件支持 %s。仍要尝试加载吗？" % [
-			String(status.get("version", "")), ", ".join(PackedStringArray(supported)),
-		]
-		ask.ok_button_text = "仍然加载"
-		ask.cancel_button_text = "取消"
-		if shell != null:
-			shell.add_child(ask)
-			ask.confirmed.connect(func() -> void:
-				_load_zip_now(path)
-				ask.queue_free()
-			)
-			ask.canceled.connect(func() -> void: ask.queue_free())
-			FxUiKit.popup_later(ask)
-		else:
-			_load_zip_now(path)
+	var refused := FxProjectArchive.version_refusal(status)
+	if not refused.is_empty():
+		_status(refused)
 		return
 	# 没读到版本号：按约定当成老工程，直接用当前版本打开，不打扰用户。
 	_load_zip_now(path)
@@ -200,6 +185,7 @@ func _apply_loaded(path: String, doc: Dictionary, message: String) -> void:
 		_status("读不到工程：%s" % path)
 		return
 	current_path = path
+	_drop_binding_overrides(doc)
 	_baseline = doc.duplicate(true)
 	store.attach(doc)
 	var output := FxGraphDoc.output_id(store.doc)
@@ -220,6 +206,7 @@ func _open_json(path: String) -> void:
 	if not FxProjectArchive.delta_empty(delta):
 		doc = FxProjectArchive.apply_delta(doc, delta)
 	current_path = path
+	_drop_binding_overrides(doc)
 	_baseline = doc.duplicate(true)
 	store.attach(doc)
 	var output := FxGraphDoc.output_id(store.doc)
@@ -228,6 +215,34 @@ func _open_json(path: String) -> void:
 	_add_recent(path)
 	_check_dependencies()
 	_status("已打开 %s" % path.get_file())
+
+
+## 旧工程里的「绑定型参数」遗留覆盖值。
+##
+## 节点可以声明 `binds`（例如输出节点的画布宽/高）：那种参数读的是**文档**里的值，
+## 自己不该存数据。早期版本把它当覆盖值写进节点，于是「节点说 256、文档说 192」，
+## 输出帧尺寸和帧缓存的定长布局对不上，每一帧都被尺寸闸门丢掉 —— 画面卡死、
+## 不报错、改回 0 才恢复。装载时清掉这类遗留值：尺寸只有一个来源（`meta.canvas`）。
+##
+## 判定完全由节点定义驱动（`binds` 字段），这里不认识任何具体节点或参数名。
+func _drop_binding_overrides(doc: Dictionary) -> void:
+	for raw in doc.get("nodes", []):
+		if not raw is Dictionary:
+			continue
+		var node: Dictionary = raw
+		var params: Variant = node.get("params", {})
+		if not params is Dictionary or (params as Dictionary).is_empty():
+			continue
+		var d := FxCatalog.def(node.get("type", ""))
+		if d == null:
+			continue
+		for key in (params as Dictionary).keys():
+			var path := String(key)
+			var spec := d.param(path)
+			if spec.is_empty() or String(spec.get("binds", "")).is_empty():
+				continue
+			if int(FxValue.as_number((params as Dictionary)[key], 0.0)) != 0:
+				(params as Dictionary)[path] = 0
 
 
 ## 加载后检查依赖。

@@ -24,6 +24,10 @@ var apply_edit: Callable = Callable()
 var store: FxDocumentStore = null
 
 var _host: GraphNode
+## 绑定型参数（`binds: canvas.*`）的防抖计时：拖滑块会连着写几十次，
+## 每一次都换桶就要把整段缓存重建几十遍 —— 那正是「改宽高直接卡飞」。
+var _bind_timer: Timer = null
+var _bind_pending: Vector2i = Vector2i.ZERO
 var _attach: Callable
 var _rows: Array[Dictionary] = []
 var _keys: Dictionary = {}
@@ -441,12 +445,58 @@ func set_time(value: float) -> void:
 		var focus := _host.get_viewport().gui_get_focus_owner()
 		if focus != null and _host.is_ancestor_of(focus) and focus is LineEdit:
 			return
-	refresh_values()
-	_refresh_keys()
+	refresh_time_dependent()
+	_refresh_keys_time()
+
+
+## 时间变化只重画**会随时间变**的那几行。
+##
+## 从前这里调的是 `refresh_values()`：示范工程 103 个节点 × 每节点五六个参数，
+## 每次 `set_time` 都要重设 slider / SpinBox / LineEdit 文本 / tooltip。
+## 拖动时每个鼠标事件就是一次 set_time —— 实测一步 110 ms 以上，
+## 指针甩出去几帧，画面才跟一格，看起来就是「拖进度条根本没用」。
+## 静态参数与时间无关，重设它们只是把同一件事重复几百遍。
+func refresh_time_dependent() -> void:
+	for row in _rows:
+		var pid := String(row.get("pid", ""))
+		if not _time_dependent(pid):
+			continue
+		var sync: Callable = row.get("sync", Callable())
+		if sync.is_valid():
+			sync.call()
+	var layers := _layers()
+	for index in range(_layer_syncs.size()):
+		if index >= layers.size() or not layers[index] is Dictionary:
+			continue
+		if not _layer_animated(layers[index] as Dictionary):
+			continue
+		var layer_sync: Callable = _layer_syncs[index]
+		if layer_sync.is_valid():
+			layer_sync.call()
+
+
+## 这一行的值会不会随播放头变：打了关键帧，或者被连线驱动（值由上游每帧给）。
+func _time_dependent(pid: String) -> bool:
+	return _has_track(pid) or _bound.has(pid)
+
+
+## 这一层有没有被轨道驱动的字段（透明度 / 位移 / 显隐）。
+func _layer_animated(layer: Dictionary) -> bool:
+	for field in LAYER_TRACK_FIELDS:
+		var raw: Variant = layer.get(String((field as Array)[0]), null)
+		if raw is Dictionary and (raw as Dictionary).has("track"):
+			return true
+	return false
 
 
 ## 撤销/重做或外部改参数后，把控件显示拉回文档值。
 func refresh_values() -> void:
+	_sync_all_rows()
+	_refresh_keys()
+
+
+## 只同步控件显示，不动关键帧圆点（每帧被驱动值刷新时用，省掉几百个按钮的重设）。
+func _sync_all_rows() -> void:
 	for row in _rows:
 		var sync: Callable = row.get("sync", Callable())
 		if sync.is_valid():
@@ -457,34 +507,59 @@ func refresh_values() -> void:
 			layer_sync.call()
 
 
+## 播放头移动时只更新「有轨道」的那几个圆点：没打帧的参数永远是 ○，
+## 每次拖动把几百个按钮重设一遍纯属浪费（和上面的 refresh_time_dependent 同源）。
+func _refresh_keys_time() -> void:
+	for pid in _keys.keys():
+		if not _has_track(String(pid)):
+			continue
+		_paint_key_button(String(pid), _keys[pid])
+	for index in _layer_keys.keys():
+		if _layer_animated(_layer(index)):
+			_paint_layer_key(int(index), _layer_keys[index])
+
+
+func _paint_key_button(pid: String, button: Button) -> void:
+	if not is_instance_valid(button):
+		return
+	if _has_key_at(pid, time):
+		button.text = "◆"
+		button.add_theme_color_override("font_color", FxUiKit.ACCENT)
+	elif _has_track(pid):
+		button.text = "◇"
+		button.add_theme_color_override("font_color", FxUiKit.ACCENT)
+	else:
+		button.text = "○"
+		button.add_theme_color_override("font_color", FxUiKit.MUTED)
+
+
+func _paint_layer_key(index: int, layer_button: Button) -> void:
+	if not is_instance_valid(layer_button):
+		return
+	var state := _layer_track_state(index)
+	if bool(state.get("key", false)):
+		layer_button.text = "◆"
+		layer_button.add_theme_color_override("font_color", FxUiKit.ACCENT)
+	elif bool(state.get("track", false)):
+		layer_button.text = "◇"
+		layer_button.add_theme_color_override("font_color", FxUiKit.ACCENT)
+	else:
+		layer_button.text = "○"
+		layer_button.add_theme_color_override("font_color", FxUiKit.MUTED)
+
+
+func _layer(index: int) -> Dictionary:
+	var layers := _layers()
+	if index < 0 or index >= layers.size() or not layers[index] is Dictionary:
+		return {}
+	return layers[index] as Dictionary
+
+
 func _refresh_keys() -> void:
 	for pid in _keys.keys():
-		var button: Button = _keys[pid]
-		if not is_instance_valid(button):
-			continue
-		if _has_key_at(String(pid), time):
-			button.text = "◆"
-			button.add_theme_color_override("font_color", FxUiKit.ACCENT)
-		elif _has_track(String(pid)):
-			button.text = "◇"
-			button.add_theme_color_override("font_color", FxUiKit.ACCENT)
-		else:
-			button.text = "○"
-			button.add_theme_color_override("font_color", FxUiKit.MUTED)
+		_paint_key_button(String(pid), _keys[pid])
 	for index in _layer_keys.keys():
-		var layer_button: Button = _layer_keys[index]
-		if not is_instance_valid(layer_button):
-			continue
-		var state := _layer_track_state(int(index))
-		if bool(state.get("key", false)):
-			layer_button.text = "◆"
-			layer_button.add_theme_color_override("font_color", FxUiKit.ACCENT)
-		elif bool(state.get("track", false)):
-			layer_button.text = "◇"
-			layer_button.add_theme_color_override("font_color", FxUiKit.ACCENT)
-		else:
-			layer_button.text = "○"
-			layer_button.add_theme_color_override("font_color", FxUiKit.MUTED)
+		_paint_layer_key(int(index), _layer_keys[index])
 
 
 func _toggle_track(pid: String) -> void:
@@ -663,7 +738,8 @@ func set_live_values(values: Dictionary) -> void:
 			_live[pid] = next
 			changed = true
 	if changed:
-		refresh_values()
+		# 只同步数值，不动关键帧圆点：这是每帧都会走的路（被驱动参数）。
+		_sync_all_rows()
 
 
 ## 递归停用交互：连线驱动的参数不该被本地编辑（改了也会被上游覆盖）。
@@ -685,6 +761,15 @@ func _default_value(pid: String) -> Variant:
 func _write(pid: String, value: Variant) -> void:
 	if data.is_empty():
 		return
+	# 声明了 `binds` 的参数不属于节点数据，它是**文档某一处值的视图**。
+	# 画布宽/高就是这种：帧缓存的定长布局按画布尺寸走，所以尺寸只能有一份
+	# （`meta.canvas`）。节点上再存一份「覆盖值」的结果是两处说法不一致，
+	# 而渲染层只认文档那一份 —— 每一帧都会被尺寸闸门丢掉，且不报错。
+	# 所以写它 = 写文档画布，节点参数永远留在 0（跟随）。
+	var binds := String(def.param(pid).get("binds", ""))
+	if not binds.is_empty():
+		_write_binding(binds, value)
+		return
 	var params: Dictionary = data.get("params", {})
 	var raw: Variant = params.get(pid, _default_value(pid))
 	var stored: Variant = _to_store(value)
@@ -694,6 +779,50 @@ func _write(pid: String, value: Variant) -> void:
 		track["track"] = FxTracks.upsert(track.get("track", []), time, stored, duration)
 		new_raw = track
 	_apply_value(pid, new_raw, false)
+
+
+## 绑定型参数的唯一写入口。目前只有画布两个方向；新增绑定在这里加一族，
+## 而不是让每个控件自己认识画布（控件只负责显示，不知道值存在哪）。
+func _write_binding(binds: String, value: Variant) -> void:
+	if store == null:
+		return
+	var canvas: Vector2i = FxGraphFacade.access().doc_canvas(store.doc)
+	var next := canvas
+	var size := maxi(1, int(round(float(FxValue.as_number(value, 0.0)))))
+	# 0 是「跟随」的哨兵值（控件在 0 时显示文档值）：它不表达任何尺寸，直接忽略。
+	if size <= 0:
+		return
+	match binds:
+		"canvas.width":
+			next = Vector2i(size, canvas.y)
+		"canvas.height":
+			next = Vector2i(canvas.x, size)
+		_:
+			return
+	if next == canvas:
+		return
+	_bind_pending = next
+	if _host != null and _host.is_inside_tree():
+		if _bind_timer == null:
+			_bind_timer = Timer.new()
+			_bind_timer.one_shot = true
+			_bind_timer.wait_time = 0.22
+			_bind_timer.timeout.connect(_flush_binding)
+			_host.add_child(_bind_timer)
+		_bind_timer.start()
+	else:
+		_flush_binding()
+
+
+func _flush_binding() -> void:
+	if store == null:
+		return
+	var want := _bind_pending
+	if want.x <= 0 or want.y <= 0:
+		return
+	if FxGraphFacade.access().doc_canvas(store.doc) == want:
+		return
+	store.set_canvas(want.x, want.y)
 
 
 ## 参数写回的唯一出口：走可逆效果；没有 apply_edit 时退回直接写（独立使用/旧测试）。

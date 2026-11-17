@@ -1,7 +1,8 @@
 {
 	"id": "core.control",
 	"name": "控制流",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "分支、循环、序列、索引与累积，组织节点的执行顺序",
 	"script": "plugin.gd",
 	"inject": [

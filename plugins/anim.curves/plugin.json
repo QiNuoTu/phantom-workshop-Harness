@@ -1,7 +1,8 @@
 {
 	"id": "anim.curves",
 	"name": "动画曲线",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "缓动、振荡、脉冲、阶梯序列、噪声与区间映射，输出数值驱动任意参数",
 	"script": "plugin.gd",
 	"icon": "∿",

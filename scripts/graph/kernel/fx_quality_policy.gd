@@ -8,8 +8,15 @@ extends RefCounted
 ## 因此插件可以只覆盖自己关心的那一项（比如只把播放档的模糊半径调小），
 ## 不用复制整份策略，也不需要外壳认识任何新字段（§6.2）。
 ##
-## 硬约束：output_downscale 恒为 false —— 输出链永不降采样，插件不能覆盖它。
-## 这是「时间可组合性」里的不变量：预览与导出必须逐像素一致。
+## 硬约束：output_downscale 恒为 false —— **归档帧与导出**永不降采样，插件不能覆盖。
+## 这是「时间可组合性」里的不变量：缓存里的帧、导出的序列、UI 上看到的那一张，
+## 逐像素必须是同一份数据。
+##
+## 但这条不变量**只约束归档/导出**，不约束「贴到屏幕那一步」：
+##   · `output_downscale` —— 归档/导出是否允许降采样，恒 false（内核钉死）；
+##   · `display_scale`     —— 显示通道的采样倍率，可调（1.0 / 0.5 / 0.25）。
+## 两者分开之前，想要一块小的预览就把整条输出链的精度一起赔进去；
+## 分开之后，显示可以糊、缓存与导出仍然精确 —— 这正是 #2 要的那条独立管线。
 
 const DEFAULTS := {
 	"quality": 1,
@@ -22,6 +29,7 @@ const DEFAULTS := {
 	"throttle_factor": 0.0006,
 	"max_blur_radius": 32,
 	"output_downscale": false,
+	"display_scale": 1.0,
 }
 
 
@@ -45,6 +53,7 @@ static func resolve(ctx: Dictionary) -> Dictionary:
 			for key in (patch as Dictionary).keys():
 				out[key] = (patch as Dictionary)[key]
 	out["output_downscale"] = false
+	out["display_scale"] = clampf(float(out.get("display_scale", 1.0)), 0.125, 1.0)
 	out["quality"] = clampi(int(out.get("quality", 1)), 0, 1)
 	out["operator_quality"] = clampf(float(out.get("operator_quality", 1.0)), 0.0, 1.0)
 	out["preview_limit"] = clampi(int(out.get("preview_limit", 128)), 16, 512)

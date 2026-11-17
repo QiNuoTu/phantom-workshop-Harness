@@ -1,7 +1,8 @@
 {
 	"id": "editor.graph",
 	"name": "蓝图",
-	"version": "1.0",
+	"version": "0.1.1",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "节点画布、连线、内联参数与节点预览",
 	"script": "plugin.gd",
 	"inject": [

@@ -19,6 +19,9 @@ var outputs: Dictionary = {}
 ## 编辑器用它显示「被连线驱动的参数」当前值，核心不认识 UI。
 var node_params: Dictionary = {}
 var previews: Dictionary = {}
+## 纯数值 / 布尔 / 向量节点没有图像可预览，把本帧的输出摘要成一行文本。
+## 键 = node_id，值 = "value = 0.42  vec = (1.00, 0.00)" 这样的短串。
+var node_values: Dictionary = {}
 var evaluating: Dictionary = {}
 var volatile: Dictionary = {}
 ## 时间相关节点（自身或上游有轨道/时间算子）。执行器用它决定能否跨帧复用结果。
@@ -40,6 +43,10 @@ var subgraph_stack: Array[String] = []
 var subgraph_runners: Dictionary = {}
 
 var timings: Dictionary = {}
+## 累计耗时与调用次数（`timings` 只留最后一次，循环体里的重复求值会漏掉）。
+## 性能画像要靠它回答「这 600ms 到底花在谁身上」，不能靠「最后一次」的抽样。
+var timing_totals: Dictionary = {}
+var op_calls: Dictionary = {}
 var steps: int = 0
 var max_steps: int = 20000
 var loop_ticks: int = 0
@@ -49,6 +56,13 @@ var quality: int = 1
 ## 算子级质量系数 [0,1]：由质量策略代理注入，算子自己决定怎么用。
 ## 插件可以贡献策略覆盖它，也可以往 options 里放任意自定义旋钮。
 var operator_quality: float = 1.0
+## 当前节点的求值倍率（1.0 = 全分辨率，0.5 = 边长减半）。
+##
+## 由执行器按「逐层分辨率档」注入，**只在这一次节点求值期间有效**，出区段就还原。
+## 存在的意义是让算子知道「我现在在一个缩小的空间里算」：
+## 像素单位的参数（模糊半径、描边宽度、位移量）必须乘上它，否则 0.5 档下
+## radius=10 看起来会像全分辨率的 20 —— 那不是「质量略降」，是效果变了。
+var eval_scale: float = 1.0
 var options: Dictionary = {}
 var capture_previews: bool = true
 var preview_limit: int = 128

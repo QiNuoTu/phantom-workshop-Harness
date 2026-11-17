@@ -133,9 +133,16 @@ func _update_info(size: Vector2i, stats: Dictionary) -> void:
 		return
 	var doc := store.doc if store != null else {}
 	var timeline := FxGraphDoc.timeline(doc)
+	var canvas := FxGraphDoc.canvas(doc)
 	var parts: Array[String] = []
 	if size.x > 0:
-		parts.append("%d × %d" % [size.x, size.y])
+		# 显示通道可以降采样（`display_scale`），但缓存帧与导出永远是画布尺寸。
+		# 两个数字都给出来，避免「预览写着 48×48，导出却是 192×192」被当成 bug。
+		if canvas.x > 0 and size != canvas:
+			parts.append("%d × %d（显示）" % [size.x, size.y])
+			parts.append("归档 %d × %d" % [canvas.x, canvas.y])
+		else:
+			parts.append("%d × %d" % [size.x, size.y])
 	parts.append("%.2fs" % float(timeline.get("duration", 1.0)))
 	parts.append("%d fps" % int(timeline.get("fps", 30)))
 	if not stats.is_empty():

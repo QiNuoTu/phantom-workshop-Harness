@@ -105,6 +105,10 @@ func doc_canvas(doc: Dictionary) -> Vector2i:
 	return FxGraphDoc.canvas(doc)
 
 
+func doc_res_scale(doc: Dictionary, node_id: String) -> float:
+	return FxGraphDoc.res_scale_of(FxGraphDoc.node(doc, node_id))
+
+
 func set_doc_canvas(doc: Dictionary, size: Vector2i) -> bool:
 	var width := clampi(size.x, 1, 4096)
 	var height := clampi(size.y, 1, 4096)
@@ -152,9 +156,47 @@ func doc_apply_path(doc: Dictionary, node_id: String, path: String, value: Varia
 	var node_data := FxGraphDoc.node(doc, node_id)
 	if node_data.is_empty():
 		return false
+	# 绑定型参数（节点声明 `binds`，例如输出节点的画布宽/高）不是节点自己的数据，
+	# 而是文档里某一处值的视图：写它 = 写那一处，节点上永远不留值。
+	# 这一层是**模型级**的拦截 —— 界面、脚本、探针、任何写入方都走这里，
+	# 所以「两个来源」不可能再从别的入口长回来。
+	if _apply_binding(doc, node_data, path, value):
+		return true
 	var params: Dictionary = node_data.get("params", {})
 	FxCatalog.apply_path(params, path, value)
 	node_data["params"] = params
+	return true
+
+
+## 处理绑定型参数。返回 true 表示「这次写入已经被绑定接管，不要再写进节点」。
+##
+## 0 是「跟随」的哨兵值：它不表达任何尺寸，只表示「别在这里覆盖」——
+## 直接吞掉，也不写进节点（写进去就又变成第二个来源）。
+func _apply_binding(doc: Dictionary, node_data: Dictionary, path: String,
+		value: Variant) -> bool:
+	# 嵌套路径（layers.0.opacity 这类）不可能是绑定：绑定只声明在顶层参数上。
+	if path.is_empty() or path.contains("."):
+		return false
+	var def := FxCatalog.def(node_data.get("type", ""))
+	if def == null:
+		return false
+	var binds := String(def.param(path).get("binds", ""))
+	if binds.is_empty():
+		return false
+	var size := int(as_number(value, 0.0))
+	if size <= 0:
+		return true
+	var canvas := FxGraphDoc.canvas(doc)
+	var next := canvas
+	match binds:
+		"canvas.width":
+			next = Vector2i(size, canvas.y)
+		"canvas.height":
+			next = Vector2i(canvas.x, size)
+		_:
+			return true
+	if next != canvas:
+		set_doc_canvas(doc, next)
 	return true
 
 
@@ -212,6 +254,11 @@ func catalog_ensure() -> void:
 
 func catalog_refresh() -> void:
 	FxCatalog.apply_registry()
+
+
+## 算子表是本插件对账本的缓存：卸载前由基座请我们清掉，避免旧 Callable 活过插件。
+func reset_runtime_tables() -> void:
+	FxOpRegistry.clear()
 
 
 func link_ok() -> int:

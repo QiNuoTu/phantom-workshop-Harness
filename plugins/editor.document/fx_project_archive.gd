@@ -24,8 +24,16 @@ const ZIP_EXT := "fxproj"
 const TEXT_EXT := "fxgraph"
 ## 兼容老工程：`.fxgraph.json` 读得开，写出去时收成 `.fxgraph`。
 const LEGACY_TEXT_EXT := "fxgraph.json"
-const HOST_VERSION := "1.0"
-const SUPPORTED_VERSIONS := ["1.0"]
+## 工程文件格式版本：与产品版本、内核契约版本是**三件事**。
+## 之前这里是 "1.0"，出现在每一个 .fxproj 的 manifest 里，等于对用户宣布
+## 「这是稳定格式」——而实际上字段随时会变。现在从 0.1 起步。
+##
+## **只认 0.1**。0.x 阶段不背历史包袱：`host_version: "1.0"` 的工程一律拒绝，
+## 并明确告诉用户「这是旧格式，当前版本不再支持」—— 而不是弹一个
+## 「仍要尝试加载吗？」然后拿新语义去解释旧字段（那才是真的会读坏数据）。
+## 需要迁移的，用标 `v0.1.0` 之前的构建导出成 `.fxgraph` 文本再打开。
+const HOST_VERSION := "0.1"
+const SUPPORTED_VERSIONS := ["0.1"]
 const ENTRY_DOC := "project.fxgraph.json"
 const ENTRY_MANIFEST := "manifest.json"
 const IMAGE_EXTS := ["png", "webp", "jpg", "jpeg", "bmp", "tga", "svg", "json", "ttf", "otf"]
@@ -225,8 +233,11 @@ static func save_zip(doc: Dictionary, path: String, options: Dictionary = {}) ->
 	if not bool(plan.get("ok", false)):
 		return {"ok": false, "message": String(plan.get("message", "保存失败"))}
 	var final_path := String(plan["path"])
+	var tmp := final_path + ".tmp"
+	if FileAccess.file_exists(tmp):
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(tmp))
 	var packer := ZIPPacker.new()
-	var err := packer.open(final_path, ZIPPacker.APPEND_CREATE)
+	var err := packer.open(tmp, ZIPPacker.APPEND_CREATE)
 	if err != OK:
 		return {"ok": false, "message": "ZIP 打不开：%s" % error_string(err)}
 	packer.set_compression_level(6)
@@ -234,8 +245,33 @@ static func save_zip(doc: Dictionary, path: String, options: Dictionary = {}) ->
 		var item: Dictionary = entry
 		_add_entry(packer, String(item["name"]), item["data"])
 	packer.close()
+	var failed := _commit_temp(tmp, final_path)
+	if not failed.is_empty():
+		return {"ok": false, "message": failed}
 	return {"ok": true, "path": final_path, "manifest": plan["manifest"],
 		"message": "已保存工程包：%s" % final_path.get_file()}
+
+
+## 临时文件换名成正式文件。
+##
+## 为什么不在正式路径上直接写：`ZIPPacker` 用的是 `APPEND_CREATE`（追加），
+## 同一个路径保存第二次会把**每个条目再写一遍** —— 包体积翻倍，读的时候
+## 还可能拿到旧副本；而且写到一半失败，原来那份也没了。
+## 临时文件 + 删除旧文件 + 改名，一次解决这两件事。
+static func _commit_temp(tmp: String, final_path: String) -> String:
+	var abs_tmp := ProjectSettings.globalize_path(tmp)
+	var abs_final := ProjectSettings.globalize_path(final_path)
+	var dir := abs_final.get_base_dir()
+	if not DirAccess.dir_exists_absolute(dir):
+		DirAccess.make_dir_recursive_absolute(dir)
+	if FileAccess.file_exists(final_path):
+		var removed := DirAccess.remove_absolute(abs_final)
+		if removed != OK:
+			return "旧文件删不掉：%s" % error_string(removed)
+	var renamed := DirAccess.rename_absolute(abs_tmp, abs_final)
+	if renamed != OK:
+		return "改名失败：%s" % error_string(renamed)
+	return ""
 
 
 ## 异步版：每写一个条目让出一帧，界面上的进度条能真的走起来。
@@ -249,8 +285,11 @@ static func save_zip_async(doc: Dictionary, path: String, options: Dictionary,
 		return {"ok": false, "message": String(plan.get("message", "保存失败"))}
 	var final_path := String(plan["path"])
 	var entries: Array = plan["entries"]
+	var tmp := final_path + ".tmp"
+	if FileAccess.file_exists(tmp):
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(tmp))
 	var packer := ZIPPacker.new()
-	var err := packer.open(final_path, ZIPPacker.APPEND_CREATE)
+	var err := packer.open(tmp, ZIPPacker.APPEND_CREATE)
 	if err != OK:
 		return {"ok": false, "message": "ZIP 打不开：%s" % error_string(err)}
 	packer.set_compression_level(6)
@@ -262,6 +301,10 @@ static func save_zip_async(doc: Dictionary, path: String, options: Dictionary,
 			on_step.call(i + 1, total, String(item["name"]))
 			await next_frame()
 	packer.close()
+	# 换名放在最后：异步保存中途被取消/崩溃时，旧的那份仍然完好。
+	var failed := _commit_temp(tmp, final_path)
+	if not failed.is_empty():
+		return {"ok": false, "message": failed}
 	return {"ok": true, "path": final_path, "manifest": plan["manifest"],
 		"message": "已保存工程包：%s" % final_path.get_file()}
 
@@ -284,11 +327,24 @@ static func _add_entry(packer: ZIPPacker, name: String, data: PackedByteArray) -
 
 # ================= 读 =================
 
+## 版本闸门：不支持的格式**在读之前**就挡掉，别让新语义去解释旧字段。
+## 返回空字符串表示可以继续；否则是给用户看的那句话（两层读路径共用一份）。
+static func version_refusal(status: Dictionary) -> String:
+	if not bool(status.get("found", false)) or bool(status.get("compatible", true)):
+		return ""
+	var supported: Array = status.get("supported", [])
+	return "工程格式 %s 已不再支持（当前只认 %s）。请用保存它的旧版本导出成 .fxgraph 再打开。" % [
+		String(status.get("version", "?")), ", ".join(PackedStringArray(supported))]
+
+
 ## 返回 {ok, doc, manifest, version_status, extracted_assets, bundled_plugins, message}
 static func read_zip(path: String) -> Dictionary:
 	var status := version_status(path)
 	if not String(status.get("error", "")).is_empty():
 		return {"ok": false, "message": String(status["error"]), "version_status": status}
+	var refused := version_refusal(status)
+	if not refused.is_empty():
+		return {"ok": false, "message": refused, "version_status": status, "legacy": true}
 	var reader := ZIPReader.new()
 	var err := reader.open(path)
 	if err != OK:
@@ -346,6 +402,9 @@ static func read_zip_async(path: String, on_step: Callable = Callable()) -> Dict
 	var status := version_status(path)
 	if not String(status.get("error", "")).is_empty():
 		return {"ok": false, "message": String(status["error"]), "version_status": status}
+	var refused := version_refusal(status)
+	if not refused.is_empty():
+		return {"ok": false, "message": refused, "version_status": status, "legacy": true}
 	var reader := ZIPReader.new()
 	var err := reader.open(path)
 	if err != OK:

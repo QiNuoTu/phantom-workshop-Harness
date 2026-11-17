@@ -1,0 +1,20 @@
+{
+	"id": "pixels.native",
+	"name": "原生像素内核",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "五个算子族的逐像素循环用 C++ 跑；库缺失或停用时自动回落 GDScript",
+	"script": "plugin.gd",
+	"icon": "⬢",
+	"color": "#6ee7b7",
+	"category": "核心组件",
+	"native": {
+		"library": "pixels_native.gdextension"
+	},
+	"inject": [
+		"plugin.core.pixels"
+	],
+	"provide": {
+		"plugin.pixels.native": "0.1"
+	}
+}

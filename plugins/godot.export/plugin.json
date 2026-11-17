@@ -1,7 +1,8 @@
 {
 	"id": "godot.export",
 	"name": "导出",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "PNG、序列帧、精灵图集与 Godot 粒子",
 	"script": "plugin.gd",
 	"inject": [

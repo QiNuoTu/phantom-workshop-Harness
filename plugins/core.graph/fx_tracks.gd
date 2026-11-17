@@ -252,6 +252,45 @@ static func collect(node: Variant, prefix: String = "", depth: int = 0) -> Dicti
 	return out
 
 
+## 帧指纹：把全图轨道在时刻 t 的采样值压成一个可比较的字符串。
+##
+## 两帧的 key 相同 ⇔ 所有轨道采样值相同 ⇒「不直接读时钟」的节点输出必然相同。
+## 这就是帧区间分段的全部依据：step / 文本 / 单帧轨道、以及到达终点后的保持段
+## 会自然得到相同的 key，无需显式切区间；linear / ease 段则每帧不同。
+##
+## 由 core.graph 提供，core.compile（编译与报告）与 FxGraphRunner（跨帧缓存）
+## 共用同一实现，避免「诊断里一个算法、运行时另一个算法」。
+static func key_of(tracks: Array, t: float) -> String:
+	var parts: Array[String] = []
+	for raw in tracks:
+		parts.append(_value_key(sample(raw, t)))
+	return "|".join(PackedStringArray(parts))
+
+
+static func _value_key(value: Variant) -> String:
+	if value is float:
+		return str(snappedf(float(value), 0.000001))
+	if value is int:
+		return str(value)
+	if value is bool:
+		return "1" if bool(value) else "0"
+	if value is String or value is StringName:
+		return String(value)
+	if value is Color:
+		return (value as Color).to_html(true)
+	if value is Vector2:
+		var v: Vector2 = value
+		return "%s,%s" % [_value_key(v.x), _value_key(v.y)]
+	if value is Array:
+		var items: Array[String] = []
+		for item in (value as Array):
+			items.append(_value_key(item))
+		return "[" + ",".join(PackedStringArray(items)) + "]"
+	if value is Dictionary:
+		return "{" + str(hash(value)) + "}"
+	return str(value)
+
+
 ## 便捷构造：轨道 + 在当前时刻插入/替换关键帧。
 static func upsert(track: Array, t: float, value: Variant, duration: float) -> Array:
 	var keys: Array = []

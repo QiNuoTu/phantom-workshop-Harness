@@ -46,6 +46,11 @@ static func noise(ctx: FxEvalContext, node: Dictionary, _def: FxNodeDef,
 	var color_a := FxPortType.as_color(params.get("color_a", "#101018"), Color(0.06, 0.06, 0.09))
 	var color_b := FxPortType.as_color(params.get("color_b", "#f0f0f0"), Color(0.94, 0.94, 0.94))
 	var seed_offset := FxPortType.as_int(params.get("seed", 1), 1) + ctx.node_seed(String(node.get("id", "")))
+	# 原生：整片只由 (格子下标, seed) 的哈希决定，一像素一次哈希。
+	var native := FxNativeBridge.noise_field(ctx.canvas, cell, density, color_a, color_b,
+		seed_offset)
+	if native != null:
+		return {"image": native}
 	var image := FxImageUtil.new_canvas(ctx.canvas)
 	var width := ctx.canvas.x
 	var height := ctx.canvas.y

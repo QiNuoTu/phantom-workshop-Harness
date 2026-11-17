@@ -337,12 +337,21 @@ func apply_param(node_id: String, param_id: String, value: Variant, structural: 
 	var keys: Array = ["node:%s" % node_id, "param:%s:%s" % [node_id, param_id]]
 	if structural:
 		keys.append("structure")
+	# 值先拷一份：文档不能持有调用方的 Array/Dictionary 引用（外部再改就污染文档）。
+	var copy: Variant = value.duplicate(true) if value is Array or value is Dictionary else value
 	mutate(func(d: Dictionary) -> void:
-		var node_data := api().doc_node(d, node_id)
-		if node_data.is_empty():
+		if api().doc_node(d, node_id).is_empty():
 			return
+		# 先交给图能力实现：它知道「这个参数是不是文档另一处值的视图」
+		# （节点可以用 `binds` 声明这种参数，例如输出节点的画布宽/高）。
+		# 交给 provider 之后，写参数与写路径就只有一套语义了 —— 从前这两条路
+		# 各写各的，绑定型参数能从 apply_param 绕过去，变成「两个来源」。
+		# provider 没实现（返回 false）时退回原来的直接写，行为不变。
+		if api().doc_apply_path(d, node_id, param_id, copy):
+			return
+		var node_data := api().doc_node(d, node_id)
 		var params: Dictionary = node_data.get("params", {})
-		params[param_id] = value.duplicate(true) if value is Array or value is Dictionary else value
+		params[param_id] = copy
 		node_data["params"] = params
 	, keys, "param:%s:%s" % [node_id, param_id])
 

@@ -23,11 +23,19 @@ var right_slots: Array[int] = []
 var params_ui: FxNodeParams = null
 
 var _preview: TextureRect
+## 没有图像输出的节点：按输出类型画（数值曲线 / 向量坐标 / 色块 / 灯 / 文本）。
+## 旧实现是一行灰字，用户只能「读」，看不出趋势也分不清类型。
+var _value_gauge: FxNodeValueGauge
 ## 预览右上角的状态签：**这一帧到底渲染了没有**。
 ##   ✓12  绿 = 第 12 帧的小图已经烘焙好，就是现在显示的这张
 ##   …13  黄 = 播放头在第 13 帧，这张小图还没算出来（要等）
 ##   —    灰 = 这个节点没有图像输出，小图永远是空的
 var _bake_badge: Label
+## 分辨率档角标（左上角）：只在节点被设了 < 1.0 的倍率时出现。
+var _scale_badge: Label
+## 不带档位后缀的标题。折叠是节点的默认状态，那时预览（含角标）是藏起来的，
+## 所以「这一层被降了档」必须在标题上也能看见。
+var _base_title: String = ""
 var _bake_state: int = -1
 var _bake_frame: int = -2
 var _bake_shown: int = -2
@@ -62,7 +70,8 @@ func setup(p_node_id: String, p_def: FxNodeDef, p_node_data: Dictionary,
 	store = p_store
 	apply_edit = p_apply_edit
 	name = node_id
-	title = "%s   %s" % [FxI18n.text(def.label), node_id]
+	_base_title = "%s   %s" % [FxI18n.text(def.label), node_id]
+	title = _base_title
 	custom_minimum_size = Vector2(NODE_WIDTH + (48.0 if def.is_output else 0.0), 0)
 	var pos: Array = p_node_data.get("pos", [0, 0])
 	position_offset = Vector2(float(pos[0]), float(pos[1]))
@@ -79,7 +88,9 @@ func _rebuild() -> void:
 	left_slots.clear()
 	right_slots.clear()
 	_preview = null
+	_value_gauge = null
 	_bake_badge = null
+	_scale_badge = null
 	_bake_state = -1
 	_bake_frame = -2
 	_bake_shown = -2
@@ -129,6 +140,9 @@ func _rebuild() -> void:
 		_add_row({}, p)
 	if _has_image_output(data_outputs):
 		_add_preview_row()
+	else:
+		# 数值 / 布尔 / 向量节点也要有个地方显示结果，不然「算出来是多少」只能靠猜。
+		_add_value_row()
 	_add_collapse_row()
 	# 重建阶段只同步可见性：尺寸由编辑器按记录恢复，别在这里抢先重算。
 	_apply_collapse(false)
@@ -259,6 +273,33 @@ func _add_row(in_port: Dictionary, out_port: Dictionary) -> void:
 		right_slots.append(slot)
 
 
+func _add_value_row() -> void:
+	_value_gauge = FxNodeValueGauge.new()
+	_value_gauge.name = "ValueGauge"
+	add_child(_value_gauge)
+	var slot := _value_gauge.get_index()
+	set_slot(slot, false, 0, Color(0, 0, 0, 0), false, 0, Color(0, 0, 0, 0))
+
+
+## 结构化读数（含端口类型）：由 FxNodeValueGauge 按类型画。
+func set_value_samples(samples: Array) -> void:
+	if _value_gauge == null:
+		return
+	_value_gauge.set_samples(samples)
+
+
+## 只有一行文本时的入口（旧路径 / 没有结构化读数的插件）。
+func set_value_text(text: String) -> void:
+	if _value_gauge == null:
+		return
+	_value_gauge.set_text("（无输出）" if text.is_empty() else text)
+
+
+## 本帧读数（测试与诊断读它，UI 只画不查）。
+func value_gauge() -> FxNodeValueGauge:
+	return _value_gauge
+
+
 func _add_preview_row() -> void:
 	_preview = TextureRect.new()
 	_preview.custom_minimum_size = Vector2(0, PREVIEW_HEIGHT)
@@ -301,6 +342,47 @@ func _add_preview_row() -> void:
 	_preview.add_child(_bake_badge)
 	_bake_state = -1
 	set_bake_state(0)
+
+	# 分辨率档角标：贴左上角（右上角是烘焙状态签）。
+	# 「这层被我降了档」必须在图上看得见 —— 否则画质下降会变成一桩无头案。
+	_scale_badge = Label.new()
+	_scale_badge.text = ""
+	_scale_badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_scale_badge.add_theme_font_size_override("font_size", 10)
+	_scale_badge.add_theme_color_override("font_color", FxUiKit.ACCENT)
+	_scale_badge.add_theme_stylebox_override("normal", plate)
+	_scale_badge.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	_scale_badge.offset_left = 4
+	_scale_badge.offset_top = 2
+	_scale_badge.offset_right = 40
+	_scale_badge.offset_bottom = 18
+	_preview.add_child(_scale_badge)
+	# 就地读这一格：视图只关心一个节点的角标，为它引一次图插件的类不值得，
+	# 也不该（test_architecture 禁止蓝图源码出现 FxGraphDoc）。判定与
+	# FxGraphAccess.res_scale_of_data 同一套：≥0.999 视为未降档。
+	var raw_scale: Variant = node_data.get("res_scale", 1.0)
+	set_res_scale(float(raw_scale) if (raw_scale is float or raw_scale is int) else 1.0)
+
+
+## 分辨率档。1.0 = 全分辨率，不给任何视觉噪音。
+##
+## 两处都要标：标题后缀（折叠时唯一可见的位置）+ 预览左上角角标（展开时更醒目）。
+## 只做角标的话，折叠状态下用户根本看不见自己把哪一层降了档。
+func set_res_scale(scale: float) -> void:
+	var fact := "" if scale >= 0.999 else "   ×1/%d" % int(round(1.0 / scale))
+	if not _base_title.is_empty() and title != _base_title + fact:
+		title = _base_title + fact
+	if _scale_badge == null or not is_instance_valid(_scale_badge):
+		return
+	if scale >= 0.999:
+		_scale_badge.text = ""
+		_scale_badge.visible = false
+		return
+	var denominator := int(round(1.0 / scale))
+	_scale_badge.visible = true
+	_scale_badge.text = "1/%d" % denominator
+	_scale_badge.tooltip_text = "本节点及其上游按 1/%d 分辨率求值（像素成本 %.0f%%）；输出尺寸不变" % [
+		denominator, scale * scale * 100.0]
 
 
 ## 设置状态签。state：0 隐藏 / 1 等这一帧 / 2 这一帧已烘焙 / 3 该节点无图像输出。
@@ -396,7 +478,7 @@ func set_collapsed(value: bool) -> void:
 ## 重建后按「内容最小尺寸」把收起的节点压矮（不改用户拖过的尺寸记录）。
 ## 编辑器只在没有记录尺寸时调它，所以不会覆盖用户手动调整。
 func fit_collapsed() -> void:
-	if collapsed and is_inside_tree() and _preview != null:
+	if collapsed and is_inside_tree() and (_preview != null or _value_gauge != null):
 		size = Vector2(size.x, 0.0)
 
 
@@ -411,9 +493,13 @@ func sync_document_data(new_data: Dictionary) -> void:
 
 
 func _apply_collapse(refit: bool = true) -> void:
-	if _preview == null or _collapse_button == null or not is_instance_valid(_collapse_button):
+	# 数值/向量/颜色节点没有预览图，但同样该能收起 —— 那一格仪表也算「预览」。
+	if is_instance_valid(_value_gauge):
+		_value_gauge.visible = not collapsed
+	if _collapse_button == null or not is_instance_valid(_collapse_button):
 		return
-	_preview.visible = not collapsed
+	if _preview != null:
+		_preview.visible = not collapsed
 	if is_instance_valid(_summary_label):
 		_summary_label.text = "预览已收起" if collapsed else ""
 	_collapse_button.text = "▶" if collapsed else "▼"

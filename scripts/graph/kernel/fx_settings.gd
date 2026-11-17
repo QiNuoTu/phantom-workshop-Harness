@@ -39,6 +39,26 @@ static func definition(id: String) -> Dictionary:
 	return FxRegistry.setting(id)
 
 
+## 设置项改动会波及什么：`content` / `derived` / `display` / `none`。
+##
+## 这个字段的意义只有一句：**声明者知道，基座不知道**。「换语言」与「改模糊半径」
+## 在基座眼里都是 `applies=runtime`，但前者不该碰渲染、后者不该重建整段帧缓存。
+## 让声明者写清楚，基座只照着转达，就不需要在基座里维护一张设置 id 白名单。
+##
+## 没声明时的回落规则：`runtime` → `content`（旧行为，逐字兼容），其余 → `none`。
+static func impact_of(id: String) -> String:
+	return impact_from(FxRegistry.setting(id))
+
+
+static func impact_from(def: Dictionary) -> String:
+	if def.is_empty():
+		return "none"
+	var declared := String(def.get("impact", ""))
+	if not declared.is_empty():
+		return declared
+	return "content" if String(def.get("applies", "runtime")) == "runtime" else "none"
+
+
 static func value(id: String) -> Variant:
 	ensure()
 	if _values.has(id):

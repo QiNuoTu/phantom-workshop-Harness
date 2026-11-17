@@ -19,24 +19,28 @@ func render_backends() -> Array[Dictionary]:
 func settings() -> Array[Dictionary]:
 	return [{
 		"id": "render.threaded", "label": "后台线程渲染", "group": "渲染质量",
-		"kind": "bool", "default": true, "applies": "runtime", "order": 4,
+		"kind": "bool", "default": true, "impact": "none", "applies": "runtime", "order": 4,
 		"description": "求帧放在工作线程上，界面不被大图卡住；画质完全不变（全分辨率、逐节点预览照旧）",
 	}, {
 		"id": "render.cache", "label": "逐帧缓存", "group": "渲染质量",
-		"kind": "bool", "default": true, "applies": "runtime", "order": 6,
-		"description": "算过的帧存进内存热层与紧密单文件 frames.fxc；时间轴标尺上的小色块显示状态（红=未缓存 / 黄=缓存中 / 绿=已缓存）",
+		"kind": "bool", "default": true, "impact": "none", "applies": "runtime", "order": 6,
+		"description": "算过的帧存进内存热层与紧密单文件 frames.fxc；时间轴标尺上的小色块显示状态（红=未缓存 / 橘=正在渲染 / 黄=只有草稿 / 绿=已缓存精确帧）",
+	}, {
+		"id": "render.draft", "label": "动态质量（草稿帧）", "group": "渲染质量",
+		"kind": "bool", "default": true, "impact": "none", "applies": "runtime", "order": 5,
+		"description": "帧还没算好时，先用独立线程按 1/8 → 1/4 → 1/2 画布出一张草稿上屏，精确帧一到原地替换。草稿只服务显示：不写缓存、不归档、不影响导出",
 	}, {
 		"id": "render.prefetch", "label": "空闲时后台预渲染", "group": "渲染质量",
-		"kind": "bool", "default": true, "applies": "runtime", "order": 7,
+		"kind": "bool", "default": true, "impact": "none", "applies": "runtime", "order": 7,
 		"description": "打开工程或改完参数后立刻（0.18 秒防抖）用多条工作线程把整段动画按精确质量算一遍并落盘；播放只读缓存，帧号连续不跳",
 	}, {
 		"id": "render.prefetch_workers", "label": "预渲染并行线程", "group": "渲染质量",
 		"kind": "int", "default": 0, "min": 0, "max": 8, "step": 1,
-		"applies": "runtime", "order": 7,
+		"impact": "none", "applies": "runtime", "order": 7,
 		"description": "0 = 按 CPU 核数自动（最多 6 条）。各帧互不依赖，多条线程同时算；12 核机器上 60 帧工程从约 36 秒压到几秒",
 	}, {
 		"id": "render.cache_location", "label": "帧缓存位置", "group": "渲染质量",
-		"kind": "enum", "default": "exe", "applies": "runtime", "order": 10,
+		"kind": "enum", "default": "exe", "impact": "none", "applies": "runtime", "order": 10,
 		"options": [
 			{"value": "exe", "label": "软件本体目录（紧密文件）"},
 			{"value": "user", "label": "用户数据目录"},
@@ -46,16 +50,16 @@ func settings() -> Array[Dictionary]:
 	}, {
 		"id": "render.cache_max_mb", "label": "磁盘缓存上限 (MB)", "group": "渲染质量",
 		"kind": "int", "default": 512, "min": 64, "max": 4096, "step": 64,
-		"applies": "runtime", "order": 11,
+		"impact": "none", "applies": "runtime", "order": 11,
 		"description": "超过上限按工程桶的最后修改时间 LRU 自动删除；当前正在用的桶不会被清",
 	}, {
 		"id": "render.cache_memory_mb", "label": "内存缓存上限 (MB)", "group": "渲染质量",
 		"kind": "int", "default": 128, "min": 32, "max": 1024, "step": 32,
-		"applies": "runtime", "order": 12,
+		"impact": "none", "applies": "runtime", "order": 12,
 		"description": "纯内存模式下尤其重要：按写入顺序淘汰，避免长时间预览占用过大",
 	}, {
 		"id": "render.gpu_ops", "label": "GPU 算子（预览与预渲染）", "group": "渲染质量",
-		"kind": "bool", "default": true, "applies": "runtime", "order": 9,
+		"kind": "bool", "default": true, "impact": "derived", "applies": "runtime", "order": 9,
 		"description": "把逐像素算子交给 compute shader；工作线程通过渲染线程桥批量提交，无图形设备时自动回落 CPU",
 	}, {
 		"id": "render.cache_clear", "label": "帧缓存", "group": "渲染质量",
@@ -71,7 +75,7 @@ func settings() -> Array[Dictionary]:
 			{"value": "cpu.standard", "label": "标准 CPU 逐像素"},
 			{"value": "cpu.economy", "label": "经济模式（跳帧 · 省预览）"},
 		],
-		"capability": "render.backend", "applies": "runtime", "order": 5,
+		"capability": "render.backend", "impact": "content", "applies": "runtime", "order": 5,
 		"description": "后端由插件贡献；默认取贡献顺序里的第一个（当前是 GPU，无设备时自动回落 CPU），切换只换求帧实现，不重建工作台、不动文档。",
 	}]
 

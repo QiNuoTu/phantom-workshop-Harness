@@ -119,6 +119,41 @@ func _test_version() -> void:
 		"版本不匹配被检出")
 	_check((new_status.get("supported", []) as Array).has(FxProjectArchive.HOST_VERSION),
 		"告知支持版本")
+	_check(not (new_status.get("supported", []) as Array).has("1.0"),
+		"1.0 已不在支持列表里（0.x 不背历史包袱）")
+
+	# 旧格式（host_version 1.0）在读之前就被拒：不是「问一句仍然加载」，
+	# 而是明确失败 —— 拿新语义去解释旧字段会把数据读坏，而且读坏了看不出来。
+	var legacy := ROOT + "/version_legacy.fxproj"
+	FxProjectArchive.save_zip(doc, legacy, {"version": "1.0"})
+	var legacy_status := FxProjectArchive.version_status(legacy)
+	_check(bool(legacy_status.get("found", false)) and not bool(legacy_status.get("compatible", true)),
+		"旧格式 1.0 被判为不兼容")
+	var refusal := FxProjectArchive.version_refusal(legacy_status)
+	_check(refusal.contains("1.0") and refusal.contains("不再支持"), "拒收话说清了版本与结论")
+	var legacy_read := FxProjectArchive.read_zip(legacy)
+	_check(not bool(legacy_read.get("ok", true)), "旧格式工程包读不出来")
+	_check(bool(legacy_read.get("legacy", false)), "失败原因标记为「旧格式」，而不是「文件坏了」")
+
+	# 同一个路径连存两次：包体不能翻倍（ZIPPacker 是追加写，容易踩）。
+	var twice := ROOT + "/version_twice.fxproj"
+	FxProjectArchive.save_zip(doc, twice, {})
+	var first_size := FileAccess.get_file_as_bytes(twice).size()
+	FxProjectArchive.save_zip(doc, twice, {})
+	var second_size := FileAccess.get_file_as_bytes(twice).size()
+	_check(first_size > 0 and absi(second_size - first_size) < 16,
+		"覆盖保存不追加（%d → %d 字节）" % [first_size, second_size])
+	var twice_reader := ZIPReader.new()
+	if twice_reader.open(twice) == OK:
+		var seen := {}
+		var duplicated := false
+		for name in twice_reader.get_files():
+			var key := String(name)
+			if seen.has(key):
+				duplicated = true
+			seen[key] = true
+		twice_reader.close()
+		_check(not duplicated, "覆盖保存后包里没有重复条目")
 
 
 func _test_dependencies() -> void:

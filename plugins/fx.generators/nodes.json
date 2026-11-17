@@ -16,6 +16,26 @@
 			],
 			"params": [
 				{
+					"id": "out_width",
+					"label": "输出宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
+					"id": "out_height",
+					"label": "输出高",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
 					"id": "mode",
 					"label": "模式",
 					"kind": "enum",
@@ -96,6 +116,26 @@
 				}
 			],
 			"params": [
+				{
+					"id": "out_width",
+					"label": "输出宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
+					"id": "out_height",
+					"label": "输出高",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
 				{
 					"id": "shape",
 					"label": "形状",
@@ -191,6 +231,26 @@
 			],
 			"params": [
 				{
+					"id": "out_width",
+					"label": "输出宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
+					"id": "out_height",
+					"label": "输出高",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
 					"id": "mode",
 					"label": "模式",
 					"kind": "enum",
@@ -272,6 +332,26 @@
 			],
 			"params": [
 				{
+					"id": "out_width",
+					"label": "输出宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
+					"id": "out_height",
+					"label": "输出高",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
 					"id": "cells",
 					"label": "细胞数",
 					"kind": "int",
@@ -337,6 +417,26 @@
 				}
 			],
 			"params": [
+				{
+					"id": "out_width",
+					"label": "输出宽",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
+				{
+					"id": "out_height",
+					"label": "输出高",
+					"kind": "int",
+					"default": 0,
+					"min": 0,
+					"max": 4096,
+					"step": 1,
+					"hint": "0 = 跟随上游图像 / 文档画布"
+				},
 				{
 					"id": "count",
 					"label": "星点数",

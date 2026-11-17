@@ -101,19 +101,45 @@ static func blend_image(dst: Image, src: Image, offset: Vector2, mode: String, o
 
 
 ## 在字节层做 source-over 合成。mode_id 与 MODES 下标一致（0 = normal）。
+##
+## 这是整个渲染管线最核心的原语：`output.final` 的每层、`image.blend2`、
+## 阴影、遮罩、文字合成都走它。所以它按行并行 —— 一处改动，所有合成类算子受益。
+## 每块返回「自己那几行的整图宽字节」（先 slice 出来再改），拼接后一次 set_data：
+## 直接让多线程写同一个 PackedByteArray 的不同区间会触发 COW 复制，反而是错的。
 static func _blend_bytes(dst: Image, src: Image, rect: Rect2i, at: Vector2i,
 		mode_id: int, opacity: float) -> void:
+	# 原生快速路径：这是整个管线最核心的原语（每层合成、blend2、阴影、遮罩、
+	# 文字全走它）。C++ 里一次算完，比 GDScript 分块并行还快一个档。
+	# 扩展缺席时返回 false，继续走下面这条（不变）。
+	if FxNativeBridge.blend(dst, src, rect, at, mode_id, opacity):
+		return
 	var sw := src.get_width()
 	var dw := dst.get_width()
+	var dh := dst.get_height()
 	var sd := src.get_data()
 	var dd := dst.get_data()
 	var stride_s := sw * 4
 	var stride_d := dw * 4
 	var normal_only := mode_id <= 0
-	for y in range(rect.size.y):
-		var si := (rect.position.y + y) * stride_s + rect.position.x * 4
-		var di := (at.y + y) * stride_d + at.x * 4
-		for x in range(rect.size.x):
+	var blended := FxPixelParallel.map_rows(dh, dw, func(y0: int, y1: int) -> PackedByteArray:
+		return _blend_rows(dd, sd, rect, at, y0, y1, dw, dh, stride_s, stride_d,
+			mode_id, opacity, normal_only))
+	dst.set_data(dw, dh, false, Image.FORMAT_RGBA8, blended)
+
+
+## 合成 [y0, y1) 这几行，返回该行段的**整图宽**字节（未落在 rect 内的像素原样拷贝）。
+static func _blend_rows(dd: PackedByteArray, sd: PackedByteArray, rect: Rect2i,
+		at: Vector2i, y0: int, y1: int, dw: int, _dh: int, stride_s: int, stride_d: int,
+		mode_id: int, opacity: float, normal_only: bool) -> PackedByteArray:
+	var part := dd.slice(y0 * stride_d, y1 * stride_d)
+	# 只遍历与 rect 相交的那几行；其余行只是原样拷贝。
+	var row_begin := maxi(y0, at.y)
+	var row_end := mini(y1, at.y + rect.size.y)
+	for y in range(row_begin, row_end):
+		var local_y := y - at.y
+		var si := (rect.position.y + local_y) * stride_s + rect.position.x * 4
+		var di := (y - y0) * stride_d + at.x * 4
+		for _x in range(rect.size.x):
 			var sa := float(sd[si + 3]) / 255.0 * opacity
 			if sa <= 0.002:
 				si += 4
@@ -122,10 +148,10 @@ static func _blend_bytes(dst: Image, src: Image, rect: Rect2i, at: Vector2i,
 			var da := float(dd[di + 3]) / 255.0
 			var oa := sa + da * (1.0 - sa)
 			if oa <= 0.0001:
-				dd[di] = 0
-				dd[di + 1] = 0
-				dd[di + 2] = 0
-				dd[di + 3] = 0
+				part[di] = 0
+				part[di + 1] = 0
+				part[di + 2] = 0
+				part[di + 3] = 0
 				si += 4
 				di += 4
 				continue
@@ -162,13 +188,13 @@ static func _blend_bytes(dst: Image, src: Image, rect: Rect2i, at: Vector2i,
 						bb = maxf(db - sb, 0.0)
 			var k := sa / oa
 			var kb := da * (1.0 - sa) / oa
-			dd[di] = int(round(clampf(br * k + dr * kb, 0.0, 1.0) * 255.0))
-			dd[di + 1] = int(round(clampf(bg * k + dg * kb, 0.0, 1.0) * 255.0))
-			dd[di + 2] = int(round(clampf(bb * k + db * kb, 0.0, 1.0) * 255.0))
-			dd[di + 3] = int(round(clampf(oa, 0.0, 1.0) * 255.0))
+			part[di] = int(round(clampf(br * k + dr * kb, 0.0, 1.0) * 255.0))
+			part[di + 1] = int(round(clampf(bg * k + dg * kb, 0.0, 1.0) * 255.0))
+			part[di + 2] = int(round(clampf(bb * k + db * kb, 0.0, 1.0) * 255.0))
+			part[di + 3] = int(round(clampf(oa, 0.0, 1.0) * 255.0))
 			si += 4
 			di += 4
-	dst.set_data(dst.get_width(), dst.get_height(), false, Image.FORMAT_RGBA8, dd)
+	return part
 
 
 ## 算子拿到任意格式（灰度/压缩）的图时，先转成可逐字节处理的 RGBA8。

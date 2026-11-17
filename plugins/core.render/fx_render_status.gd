@@ -28,14 +28,25 @@ static func fragment(stats: Dictionary) -> Dictionary:
 				tone = "accent"
 			if active:
 				var progress: Dictionary = prefetch
-				text += " · 预渲染 %d/%d" % [
+				# 草稿趟与精确趟共用同一条预渲染通道，但用户看到的是两件事：
+				# 一个是「先铺一层能看的」，一个是「逐帧算准」。文案必须分开，
+				# 否则「预渲染 3/60」会被读成「怎么这么慢」，其实那是草稿在铺。
+				var label := "垫图" if String(progress.get("note", "")) == "草稿" else "预渲染"
+				text += " · %s %d/%d" % [label,
 					int(progress.get("done", 0)), int(progress.get("total", 0)),
 				]
 				var workers := int(progress.get("workers", 0))
 				if workers > 1:
 					text += " ×%d线程" % workers
+	# 动态质量：屏幕上这一张是草稿（精确帧还在路上），必须先说清楚。
+	# 「画质突然变差」如果没有任何解释，用户只会认为渲染坏了 ——
+	# 而它其实是「先给你看，再给你好」的第一步。
+	if bool(stats.get("draft", false)):
+		text += " · 草稿 f%d %s" % [int(stats.get("frame", 0)),
+			_param_label(float(stats.get("draft_scale", 0.0)))]
+		tone = "accent"
 	# 播放期：缓冲中 / 定格 / 命中，三者互斥。
-	if stats.has("buffering"):
+	elif stats.has("buffering"):
 		text += " · 缓冲 f%d" % int(stats.get("buffering", 0))
 		tone = "accent"
 	elif bool(stats.get("paused", false)):
@@ -43,6 +54,14 @@ static func fragment(stats: Dictionary) -> Dictionary:
 	elif bool(stats.get("cached", false)):
 		text += " · 帧 %d 命中" % int(stats.get("frame", 0))
 	return {"text": text, "tone": tone}
+
+## 草稿倍率的可读写法：0.125 → 「1/8」。写「12.5%」不如写「1/8」直观 ——
+## 它本来就是画布的比例。
+static func _param_label(scale: float) -> String:
+	if scale <= 0.0 or scale >= 0.999:
+		return ""
+	return "1/%d" % int(round(1.0 / scale))
+
 
 ## 启动诊断：缓存落在哪、配额多少。基座不该直接摸 render.cache 的内部字段，
 ## 所以由本插件把领域对象翻译成一行纯文本。

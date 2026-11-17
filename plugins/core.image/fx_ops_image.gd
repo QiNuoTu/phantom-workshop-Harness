@@ -39,6 +39,10 @@ static func blur(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var threshold := ctx.float_option("operator_quality_threshold", 0.999)
 	if fast and (ctx.quality == 0 or ctx.operator_quality < threshold):
 		return {"image": _fast_blur(source, radius, ctx.operator_quality)}
+	# 精确路径走原生：可分离滑窗在 C++ 里跑，示范工程里 12.8ms 的竖趟没了。
+	var native := FxNativeBridge.box_blur(source, radius)
+	if native != null:
+		return {"image": native}
 	return {"image": _box_blur(source, radius)}
 
 
@@ -113,6 +117,9 @@ static func levels(_ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var brightness := clampf(FxPortType.as_number(params.get("brightness", 0.0), 0.0), -1.0, 1.0)
 	var contrast := clampf(FxPortType.as_number(params.get("contrast", 1.0), 1.0), 0.0, 4.0)
 	var gamma := maxf(FxPortType.as_number(params.get("gamma", 1.0), 1.0), 0.05)
+	var native := FxNativeBridge.levels(source, brightness, contrast, gamma)
+	if native != null:
+		return {"image": native}
 	var out: Image = source.duplicate()
 	FxImageUtil._ensure_rgba(out)
 	# 三通道共用同一条曲线：先算 256 项 LUT，再逐字节查表。
@@ -141,6 +148,10 @@ static func tint(_ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var tint_color := FxPortType.as_color(params.get("color", "#ff7a2a"), Color(1.0, 0.48, 0.16))
 	var amount := clampf(FxPortType.as_number(params.get("amount", 1.0), 1.0), 0.0, 1.0)
 	var preserve := FxPortType.as_bool(params.get("preserve_luma", false), false)
+	# 原生快速路径。原实现每像素一次 get_pixel + set_pixel（20k 像素实测 10ms 级）。
+	var native := FxNativeBridge.tint(source, tint_color, amount, preserve)
+	if native != null:
+		return {"image": native}
 	var out: Image = source.duplicate()
 	var width := out.get_width()
 	var height := out.get_height()
@@ -171,6 +182,12 @@ static func transform(_ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var angle := deg_to_rad(FxPortType.as_number(params.get("rotation", 0.0), 0.0))
 	var anchor := FxPortType.as_vec2(params.get("anchor", [0.5, 0.5]), Vector2(0.5, 0.5))
 	var wrap := FxPortType.as_string(params.get("wrap", "transparent"), "transparent")
+	# 原生快速路径：0 = 越界透明、1 = repeat、2 = clamp。
+	var native := FxNativeBridge.affine(source, offset, scale,
+		FxPortType.as_number(params.get("rotation", 0.0), 0.0), anchor,
+		1 if wrap == "repeat" else (2 if wrap == "clamp" else 0))
+	if native != null:
+		return {"image": native}
 	var width := source.get_width()
 	var height := source.get_height()
 	FxImageUtil._ensure_rgba(source)
@@ -253,6 +270,9 @@ static func threshold(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	var softness := clampf(FxPortType.as_number(params.get("softness", 0.02), 0.02), 0.0, 0.5)
 	var channel := FxPortType.as_string(params.get("channel", "alpha"), "alpha")
 	var color := FxPortType.as_color(params.get("color", "#ffffff"), Color.WHITE)
+	var native := FxNativeBridge.threshold_map(source, cutoff, softness, channel != "alpha", color)
+	if native != null:
+		return {"image": native}
 	var out := FxImageUtil.new_canvas(Vector2i(source.get_width(), source.get_height()))
 	var src: Image = source
 	if src.is_compressed() or src.get_format() != Image.FORMAT_RGBA8:
@@ -289,6 +309,9 @@ static func threshold(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 static func invert(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, _params: Dictionary) -> Dictionary:
 	var source := _image_or_canvas(inputs, ctx)
+	var native := FxNativeBridge.invert(source)
+	if native != null:
+		return {"image": native}
 	var out: Image = source.duplicate()
 	FxImageUtil._ensure_rgba(out)
 	var data := out.get_data()
@@ -300,11 +323,6 @@ static func invert(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 	return {"image": out}
 
 
-## 最终输出：背景色 → 背景图 → 图层 0..n（从底到顶）。
-## 图层的端口由 FxPortProviders 按 params.layers 动态长出；模型与界面共用。
-##
-## 输出链**永不降采样**：播放时 quality=0 只用来给中间算子省算力，
-## 若这里降到半分辨率再放大，预览窗口在播放时会明显发糊、与导出结果不一致。
 ## 输出预览：纯直通。没有输入时给一张透明画布，节点预览区不至于空着。
 static func output_preview(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, _params: Dictionary) -> Dictionary:
@@ -314,15 +332,20 @@ static func output_preview(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDe
 	return {"image": image}
 
 
+## 最终输出：背景色 → 背景图 → 图层 0..n（从底到顶）。
+## 图层的端口由 FxPortProviders 按 params.layers 动态长出；模型与界面共用。
+##
+## 输出链**永不降采样**：播放时 quality=0 只用来给中间算子省算力，
+## 若这里降到半分辨率再放大，预览窗口在播放时会明显发糊、与导出结果不一致。
+##
+## 输出尺寸**只有 ctx.canvas 一个来源**。节点上的 `canvas_width` / `canvas_height`
+## 是画布的**视图**（声明 `binds: canvas.*`，改它等于改文档画布），不是覆盖值。
+## 这里曾经按 params 里的值出图，于是「节点说 256×108、文档说 192×108」，
+## 每一帧都被渲染服务的尺寸闸门丢掉 —— 表现是改一下画布滑块，预览就永远不动了，
+## 而且不报错。帧缓存是定长布局，尺寸只能有一份（见 docs/架构.md §5.1）。
 static func output_final(ctx: FxEvalContext, _node: Dictionary, _def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:
-	var width := FxPortType.as_int(params.get("canvas_width", 0), 0)
-	var height := FxPortType.as_int(params.get("canvas_height", 0), 0)
-	var size := Vector2i(
-		clampi(width, 1, FxGraphDoc.MAX_CANVAS) if width > 0 else ctx.canvas.x,
-		clampi(height, 1, FxGraphDoc.MAX_CANVAS) if height > 0 else ctx.canvas.y
-	)
-	var work := size
+	var work := Vector2i(maxi(1, ctx.canvas.x), maxi(1, ctx.canvas.y))
 	var canvas := FxImageUtil.new_canvas(work, FxPortType.as_color(
 		params.get("background_color", "#00000000"), Color(0, 0, 0, 0)))
 	var background: Variant = inputs.get("background")

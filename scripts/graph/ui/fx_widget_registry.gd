@@ -116,7 +116,7 @@ static func _build_number(ctx: Dictionary) -> Dictionary:
 	var effective := func() -> float:
 		return float(fallback_get.call()) if fallback_get.is_valid() else 0.0
 	var display := func() -> float:
-		var raw: float = FxPortType.as_number(ctx["get"].call(), 0.0)
+		var raw: float = FxValue.as_number(ctx["get"].call(), 0.0)
 		if raw == 0.0 and fallback_get.is_valid():
 			return effective.call()
 		return raw
@@ -165,7 +165,7 @@ static func _build_vec2(ctx: Dictionary) -> Dictionary:
 	line.add_child(sy)
 
 	var sync := func() -> void:
-		var value := FxPortType.as_vec2(ctx["get"].call(), Vector2.ZERO)
+		var value := FxValue.as_vec2(ctx["get"].call(), Vector2.ZERO)
 		sx.set_value_no_signal(value.x)
 		sy.set_value_no_signal(value.y)
 	sx.value_changed.connect(func(_value: float) -> void:
@@ -185,7 +185,7 @@ static func _build_bool(ctx: Dictionary) -> Dictionary:
 	check.add_theme_font_size_override("font_size", 11)
 	check.text = "开"
 	var sync := func() -> void:
-		var value := FxPortType.as_bool(ctx["get"].call(), false)
+		var value := FxValue.as_bool(ctx["get"].call(), false)
 		check.set_pressed_no_signal(value)
 		check.text = "开" if value else "关"
 	check.toggled.connect(func(pressed: bool) -> void:
@@ -211,7 +211,7 @@ static func _build_color(ctx: Dictionary) -> Dictionary:
 	line.add_child(hex)
 
 	var sync := func() -> void:
-		var color := FxPortType.as_color(ctx["get"].call(), Color.WHITE)
+		var color := FxValue.as_color(ctx["get"].call(), Color.WHITE)
 		picker.set_block_signals(true)
 		picker.color = color
 		picker.set_block_signals(false)

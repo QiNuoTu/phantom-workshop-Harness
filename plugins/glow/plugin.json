@@ -1,7 +1,8 @@
 {
 	"id": "glow",
 	"name": "辉光",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "为图像添加柔和的外发光",
 	"script": "plugin.gd",
 	"inject": [

@@ -1,7 +1,8 @@
 {
 	"id": "editor.dropimport",
 	"name": "拖拽导入",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "把图片 / 精灵表文件直接拖进蓝图，自动落成纹理或精灵表节点",
 	"script": "plugin.gd",
 	"icon": "⇲",

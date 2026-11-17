@@ -128,6 +128,15 @@ func _run(job: Dictionary) -> Dictionary:
 	runner.static_cache_enabled = bool(job.get("static_cache", true))
 	var scope: Variant = job.get("preview_nodes", {})
 	runner.preview_nodes = scope if scope is Dictionary else {}
+	# 预览根随 job 快照进线程：工作线程不回调主线程对象。
+	var roots_raw: Variant = job.get("preview_roots", [])
+	var roots: Array[String] = []
+	if roots_raw is Array:
+		for item in (roots_raw as Array):
+			roots.append(String(item))
+	runner.preview_roots = roots
+	# 剪枝计划随 job 快照进线程：只读字典，三条路径共用同一份。
+	runner.compile_plan = job.get("compile_plan", {}) as Dictionary
 	# solo/mute 状态快照成纯数据谓词：工作线程不回调主线程的对象。
 	var muted: Dictionary = job.get("muted", {})
 	var solo: Dictionary = job.get("solo", {})
@@ -163,5 +172,10 @@ func _run(job: Dictionary) -> Dictionary:
 		# 会在暂停后按精确帧入账 —— 标尺上还没算的那一段就提前变绿了。
 		out["frame_quality"] = int(job.get("quality", 1))
 		out["frame_operator_quality"] = float(job.get("operator_quality", 1.0))
+		# 后端可能只回精简字典（播放跳帧分支）；从执行器上下文补齐数值读数。
+		if not out.has("node_values") and runner.ctx != null:
+			# 深拷贝：读数是嵌套 Array/Dictionary，浅拷贝会让工作线程与主线程
+			# 共用同一批对象（跨线程写同一个 Array 是隐患，不是省下的那点开销能换的）。
+			out["node_values"] = runner.ctx.node_values.duplicate(true)
 		return out
-	return {"image": null, "previews": {}, "node_params": {}, "stats": {}, "warnings": []}
+	return {"image": null, "previews": {}, "node_values": {}, "node_params": {}, "stats": {}, "warnings": []}

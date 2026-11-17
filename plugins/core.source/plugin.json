@@ -1,7 +1,8 @@
 {
 	"id": "core.source",
 	"name": "图像来源",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "棋盘、纯色、噪声与图片文件",
 	"script": "plugin.gd",
 	"inject": [

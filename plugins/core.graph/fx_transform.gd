@@ -276,35 +276,8 @@ static func summary(raw: Variant, t: float = 0.0) -> String:
 
 ## 任意值 → Vector2。标量广播、数组取前两位、字符串解析 "x,y" / "(x, y)"。
 static func vec2_of(value: Variant, fallback: Vector2 = Vector2.ZERO) -> Vector2:
-	if value is Vector2:
-		return value
-	if value is Array:
-		var arr: Array = value
-		if arr.is_empty():
-			return fallback
-		if arr.size() == 1:
-			var both: float = FxTracks.number(arr[0], fallback.x)
-			return Vector2(both, both)
-		return Vector2(FxTracks.number(arr[0], fallback.x), FxTracks.number(arr[1], fallback.y))
-	if value is Dictionary:
-		var dict: Dictionary = value
-		if dict.has("x") or dict.has("y"):
-			return Vector2(FxTracks.number(dict.get("x"), fallback.x),
-				FxTracks.number(dict.get("y"), fallback.y))
-		return fallback
-	if value is String:
-		var text: String = String(value).strip_edges().trim_prefix("(").trim_suffix(")")
-		var parts: PackedStringArray = text.split(",", false)
-		if parts.size() >= 2:
-			return Vector2(parts[0].strip_edges().to_float(), parts[1].strip_edges().to_float())
-		if parts.size() == 1 and parts[0].strip_edges().is_valid_float():
-			var both: float = parts[0].strip_edges().to_float()
-			return Vector2(both, both)
-		return fallback
-	if value is int or value is float or value is bool:
-		var scalar: float = FxTracks.number(value, fallback.x)
-		return Vector2(scalar, scalar)
-	return fallback
+	# 实现在基座 FxValue：控件工厂也要用，而基座不能反向依赖本插件（见 FxValue 注释）。
+	return FxValue.as_vec2(value, fallback)
 
 
 ## Vector2 → 存盘用的 [x, y]。文档里**只放数组**：

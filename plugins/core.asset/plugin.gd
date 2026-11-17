@@ -15,3 +15,12 @@ func time_dependent_ops() -> Array:
 
 func param_kinds() -> Dictionary:
 	return {"pixelfx": FxPixelfxWidget.build, "texture": FxTextureWidget.build}
+
+
+## 装配诊断的「素材根 / pixelfx 素材」由本插件自报：基座不认识素材库。
+func status_fragments() -> Array[Dictionary]:
+	return [{
+		"id": "asset.library", "order": 30,
+		"handler": FxAssetStatus.fragment,
+		"diagnostic": FxAssetStatus.diagnostic,
+	}]

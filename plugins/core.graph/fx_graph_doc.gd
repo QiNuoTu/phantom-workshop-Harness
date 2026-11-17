@@ -166,6 +166,29 @@ static func output_id(doc: Dictionary) -> String:
 	return String(doc.get("output", ""))
 
 
+## 逐层分辨率档的可用值。**是倍率不是档位号**：0.5 就是「一半边长」，
+## 像素成本是 1/4 —— 这样界面和诊断里都能直接算出代价，不用查表。
+## 表本身放在契约里（`FxGraphAccess.RES_SCALES`）：它是纯数值，
+## 停用图插件时菜单也要能列出来。
+const RES_SCALES := FxGraphAccess.RES_SCALES
+
+## 节点声明的求值倍率。缺省 / 非法值一律 1.0（= 全分辨率，与旧工程逐像素一致）。
+##
+## 语义：**本节点及其上游**按该倍率求值，输出在交给下游时还原到下游的空间尺寸。
+## 边界是另一个声明者：A(0.5) 向上游传播时遇到 B(0.25) 就停，B 的区段仍按 0.25 ——
+## 这样每个声明者的效果局限在自己的区段，语义可预测（对应 AE 的「每个图层一个分辨率」）。
+##
+## 判定逻辑只有一份，在基座里（`FxGraphAccess.res_scale_of_data`）：
+## 执行器与蓝图都要按同一套规则理解「这格数据是什么意思」。
+static func res_scale_of(node_data: Dictionary) -> float:
+	return FxGraphAccess.res_scale_of_data(node_data)
+
+
+## 节点是否声明了降分辨率（1.0 视为「没声明」）。
+static func has_res_scale(node_data: Dictionary) -> bool:
+	return FxGraphAccess.has_res_scale_data(node_data)
+
+
 static func canvas(doc: Dictionary) -> Vector2i:
 	var meta: Dictionary = doc.get("meta", {})
 	var c: Dictionary = meta.get("canvas", {})

@@ -30,3 +30,23 @@ __pycache__/
 
 # === 日志 ===
 *.log
+
+# === 回归结论快照（tools/run_tests.sh 生成，check_docs.py 读它核对断言数）===
+tools/.last_tests.json
+
+# === 原生像素内核（插件 pixels.native 自带的 GDExtension）===
+# 库、`.gdextension` 描述、绑定生成物、对象文件全是构建产物：
+# godot-cpp 静态库输出
+build/
+# 没有 DLL 时引擎每次启动都会刷「dynamic library not found」，所以描述文件
+# 也跟着产物走（模板见 plugins/pixels.native/pixels_native.gdextension.in）。
+plugins/pixels.native/native/
+plugins/pixels.native/build/
+plugins/pixels.native/pixels_native.gdextension
+plugins/pixels.native/.sconsign.dblite
+# 历史位置（扩展曾是仓库级而不是插件级的），留着是为了让旧工作区不被误提交
+extensions/pixel_native/bin/
+extensions/pixel_native/fx_pixel_native.gdextension
+extensions/pixel_native/.sconsign.dblite
+extensions/**/*.obj
+extensions/**/*.import

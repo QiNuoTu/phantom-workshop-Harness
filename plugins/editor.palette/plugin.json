@@ -1,7 +1,8 @@
 {
 	"id": "editor.palette",
 	"name": "命令面板",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "搜索并执行任意命令",
 	"script": "plugin.gd",
 	"inject": [

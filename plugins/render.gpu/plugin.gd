@@ -13,6 +13,9 @@ func ops() -> Dictionary:
 		&"image.blur": FxGpuOps.blur,
 		&"image.mix": FxGpuOps.mix,
 		&"image.outline": FxGpuOps.outline,
+		&"image.bloom": FxGpuOps.bloom,
+		&"image.hue": FxGpuOps.hue,
+		&"image.wave": FxGpuOps.wave,
 	}
 
 
@@ -32,7 +35,7 @@ func settings() -> Array[Dictionary]:
 	return [{
 		"id": "render.gpu_sharpen", "label": "GPU 锐化强度", "group": "渲染质量",
 		"kind": "float", "default": 0.6, "min": 0.0, "max": 2.0, "step": 0.05,
-		"applies": "runtime", "order": 40,
+		"impact": "display", "applies": "runtime", "order": 40,
 		"description": "GPU 后处理的锐化量；0 = 只上传不下指令（等同关闭）。仅在渲染后端选到 GPU 合成时生效",
 	}, {
 		"id": "render.gpu_probe", "label": "图形设备", "group": "渲染质量",

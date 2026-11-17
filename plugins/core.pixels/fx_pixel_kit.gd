@@ -195,6 +195,20 @@ static func generate_batch(size: Vector2i, fn: Callable) -> Image:
 	return Image.create_from_data(size.x, size.y, false, Image.FORMAT_RGBA8, buf)
 
 
+## 按行并行的生成器：fn(bw, bh, y0, y1) 只写 [y0, y1) 这几行，返回长度
+## `(y1 - y0) * bw * 4` 的字节。生成器（渐变/形状/光栅）全是纯逐像素算术，
+## 而且只写不读，是最干净的并行场景 —— 各线程之间没有任何共享状态。
+static func generate_rows(size: Vector2i, fn: Callable) -> Image:
+	var w := size.x
+	var h := size.y
+	var buf := FxPixelParallel.map_rows(h, w, func(y0: int, y1: int) -> PackedByteArray:
+		return fn.call(w, h, y0, y1))
+	if buf.size() != w * h * 4:
+		push_error("FxPixelKit.generate_rows：返回 %d 字节，期望 %d" % [buf.size(), w * h * 4])
+		buf.resize(w * h * 4)
+	return Image.create_from_data(w, h, false, Image.FORMAT_RGBA8, buf)
+
+
 ## fn(src: PackedByteArray, w: int, h: int) -> PackedByteArray。
 static func map_batch(source: Image, fn: Callable) -> Image:
 	FxImageUtil._ensure_rgba(source)
@@ -202,6 +216,85 @@ static func map_batch(source: Image, fn: Callable) -> Image:
 	var h := source.get_height()
 	var dst: PackedByteArray = fn.call(source.get_data(), w, h)
 	return Image.create_from_data(w, h, false, Image.FORMAT_RGBA8, dst)
+
+
+## 按行并行的 `map_batch`：fn(src, w, h, y0, y1) 必须只读 src、只写 [y0, y1) 这几行，
+## 返回的字节长度必须是 `(y1 - y0) * w * 4`。
+##
+## 逐像素算子的成本全在这类循环里（实测一帧 555ms 中 93% 在算子内），
+## 所以这里是本项目唯一能拿到数倍提速的地方。签名不同是因为切片必须知道行范围，
+## 否则 lambda 里的绝对索引会错位。
+static func map_rows(source: Image, fn: Callable) -> Image:
+	FxImageUtil._ensure_rgba(source)
+	var w := source.get_width()
+	var h := source.get_height()
+	var src := source.get_data()
+	var dst := FxPixelParallel.map_rows(h, w, func(y0: int, y1: int) -> PackedByteArray:
+		return fn.call(src, w, h, y0, y1))
+	if dst.size() != w * h * 4:
+		# 长度不对就是 lambda 写错了行范围。宁可返回原图，也不要交出半张图。
+		push_error("FxPixelKit.map_rows：返回 %d 字节，期望 %d" % [dst.size(), w * h * 4])
+		return source.duplicate()
+	return Image.create_from_data(w, h, false, Image.FORMAT_RGBA8, dst)
+
+
+## 双线性采样 `[y0, y1)` 这几行。coords 是整图的（每像素 2 个 float），
+## 所以调用方可以按行只生成自己那段坐标，也可以一次生成全图 —— 两种都能用。
+static func remap_rows(source: Image, coords: PackedFloat32Array) -> Image:
+	FxImageUtil._ensure_rgba(source)
+	var w := source.get_width()
+	var h := source.get_height()
+	if coords.size() < w * h * 2:
+		push_error("FxPixelKit.remap_rows：坐标数组不足（%d < %d）" % [coords.size(), w * h * 2])
+		return source.duplicate()
+	var src := source.get_data()
+	var dst := FxPixelParallel.map_rows(h, w, func(y0: int, y1: int) -> PackedByteArray:
+		return sample_rows(src, w, h, coords, y0, y1))
+	return Image.create_from_data(w, h, false, Image.FORMAT_RGBA8, dst)
+
+
+## 双线性采样一个行段。与 `remap_batch` 的内联循环逐字节等价 —— 只是把
+## 「整图一次」拆成「按行段多次」，让并行版能复用同一份采样代码。
+static func sample_rows(src: PackedByteArray, w: int, h: int,
+		coords: PackedFloat32Array, y0: int, y1: int) -> PackedByteArray:
+	var dst := PackedByteArray()
+	dst.resize((y1 - y0) * w * 4)
+	var last_x := w - 1
+	var last_y := h - 1
+	var index := 0
+	var ci := y0 * w * 2
+	for _y in range(y0, y1):
+		for _x in range(w):
+			var px := coords[ci]
+			var py := coords[ci + 1]
+			ci += 2
+			var x0 := clampi(int(floor(px)), 0, last_x)
+			var yy0 := clampi(int(floor(py)), 0, last_y)
+			var x1 := mini(x0 + 1, last_x)
+			var yy1 := mini(yy0 + 1, last_y)
+			var fx := clampf(px - float(x0), 0.0, 1.0)
+			var fy := clampf(py - float(yy0), 0.0, 1.0)
+			var i00 := (yy0 * w + x0) * 4
+			var i10 := (yy0 * w + x1) * 4
+			var i01 := (yy1 * w + x0) * 4
+			var i11 := (yy1 * w + x1) * 4
+			# 双线性展开成四个权重：原来是 4 通道 × 3 次 lerpf = 12 次函数调用/像素，
+			# 现在 4 次乘加一次算完所有权重，四个通道共用。GDScript 里函数调用比
+			# 乘加贵得多，这一处改动让所有 remap 类算子（wave/swirl/ripple…）都受益。
+			var w00 := (1.0 - fx) * (1.0 - fy)
+			var w10 := fx * (1.0 - fy)
+			var w01 := (1.0 - fx) * fy
+			var w11 := fx * fy
+			dst[index] = int(float(src[i00]) * w00 + float(src[i10]) * w10
+				+ float(src[i01]) * w01 + float(src[i11]) * w11 + 0.5)
+			dst[index + 1] = int(float(src[i00 + 1]) * w00 + float(src[i10 + 1]) * w10
+				+ float(src[i01 + 1]) * w01 + float(src[i11 + 1]) * w11 + 0.5)
+			dst[index + 2] = int(float(src[i00 + 2]) * w00 + float(src[i10 + 2]) * w10
+				+ float(src[i01 + 2]) * w01 + float(src[i11 + 2]) * w11 + 0.5)
+			dst[index + 3] = int(float(src[i00 + 3]) * w00 + float(src[i10 + 3]) * w10
+				+ float(src[i01 + 3]) * w01 + float(src[i11 + 3]) * w11 + 0.5)
+			index += 4
+	return dst
 
 
 ## fn(w: int, h: int) -> PackedFloat32Array，每像素两个 float：源像素坐标 (u, v)。
@@ -233,14 +326,21 @@ static func remap_batch(source: Image, fn: Callable) -> Image:
 			var i10 := (y0 * w + x1) * 4
 			var i01 := (y1 * w + x0) * 4
 			var i11 := (y1 * w + x1) * 4
-			dst[index] = int(round(lerpf(lerpf(float(src[i00]), float(src[i10]), fx),
-				lerpf(float(src[i01]), float(src[i11]), fx), fy)))
-			dst[index + 1] = int(round(lerpf(lerpf(float(src[i00 + 1]), float(src[i10 + 1]), fx),
-				lerpf(float(src[i01 + 1]), float(src[i11 + 1]), fx), fy)))
-			dst[index + 2] = int(round(lerpf(lerpf(float(src[i00 + 2]), float(src[i10 + 2]), fx),
-				lerpf(float(src[i01 + 2]), float(src[i11 + 2]), fx), fy)))
-			dst[index + 3] = int(round(lerpf(lerpf(float(src[i00 + 3]), float(src[i10 + 3]), fx),
-				lerpf(float(src[i01 + 3]), float(src[i11 + 3]), fx), fy)))
+			# 双线性展开成四个权重：原来是 4 通道 × 3 次 lerpf = 12 次函数调用/像素，
+			# 现在 4 次乘加一次算完所有权重，四个通道共用。GDScript 里函数调用比
+			# 乘加贵得多，这一处改动让所有 remap 类算子（wave/swirl/ripple…）都受益。
+			var w00 := (1.0 - fx) * (1.0 - fy)
+			var w10 := fx * (1.0 - fy)
+			var w01 := (1.0 - fx) * fy
+			var w11 := fx * fy
+			dst[index] = int(float(src[i00]) * w00 + float(src[i10]) * w10
+				+ float(src[i01]) * w01 + float(src[i11]) * w11 + 0.5)
+			dst[index + 1] = int(float(src[i00 + 1]) * w00 + float(src[i10 + 1]) * w10
+				+ float(src[i01 + 1]) * w01 + float(src[i11 + 1]) * w11 + 0.5)
+			dst[index + 2] = int(float(src[i00 + 2]) * w00 + float(src[i10 + 2]) * w10
+				+ float(src[i01 + 2]) * w01 + float(src[i11 + 2]) * w11 + 0.5)
+			dst[index + 3] = int(float(src[i00 + 3]) * w00 + float(src[i10 + 3]) * w10
+				+ float(src[i01 + 3]) * w01 + float(src[i11 + 3]) * w11 + 0.5)
 			index += 4
 	return Image.create_from_data(w, h, false, Image.FORMAT_RGBA8, dst)
 

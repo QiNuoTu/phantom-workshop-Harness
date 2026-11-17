@@ -1,7 +1,8 @@
 {
 	"id": "fx.vfx",
 	"name": "特效生成器",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "冲击波、火焰、闪电、火花与放射光束",
 	"script": "plugin.gd",
 	"icon": "✦",

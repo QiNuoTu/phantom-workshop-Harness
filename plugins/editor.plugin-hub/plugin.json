@@ -1,7 +1,8 @@
 {
 	"id": "editor.plugin-hub",
 	"name": "插件中心",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "浏览插件、启用停用、查看依赖与各自设置",
 	"script": "plugin.gd",
 	"icon": "⬡",

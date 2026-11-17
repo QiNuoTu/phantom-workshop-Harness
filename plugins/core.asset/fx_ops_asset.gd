@@ -120,6 +120,11 @@ static func _recolor(image: Image, palette: Array, palette_amount: float,
 	var needs_alpha := alpha < 0.999
 	if not needs_palette and not needs_tint and not needs_alpha:
 		return
+	var native := FxNativeBridge.recolor(image, PackedColorArray(palette), palette_amount,
+		tint, tint_amount, alpha)
+	if native != null:
+		image.copy_from(native)
+		return
 	FxImageUtil._ensure_rgba(image)
 	var data := image.get_data()
 	for i in range(0, data.size(), 4):

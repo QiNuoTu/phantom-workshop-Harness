@@ -60,6 +60,62 @@ static func mix(ctx: FxEvalContext, node: Dictionary, def: FxNodeDef,
 	return {"image": out}
 
 
+## 泛光：阈值趟 + 叠加趟在 GPU 上，中间两次缩放仍交给引擎（本来就是 C++）。
+## 与 CPU 版逐字节可能差 1 LSB（浮点顺序不同），但它跑出来的是**唯一结果**：
+## 缓存里存的就是 GPU 这一帧，不存在「同一帧两套像素」。
+static func bloom(ctx: FxEvalContext, node: Dictionary, def: FxNodeDef,
+		inputs: Dictionary, params: Dictionary) -> Dictionary:
+	if not active():
+		return FxOpsComposite.bloom(ctx, node, def, inputs, params)
+	var source: Variant = inputs.get("image")
+	if not source is Image:
+		return FxOpsComposite.bloom(ctx, node, def, inputs, params)
+	var threshold := clampf(FxPortType.as_number(params.get("threshold", 0.7), 0.7), 0.0, 1.0)
+	var amount := clampf(FxPortType.as_number(params.get("amount", 0.8), 0.8), 0.0, 3.0)
+	var radius := clampi(FxPortType.as_int(params.get("radius", 4), 4), 1, 32)
+	var out := FxGpuCompute.bloom_bridged(source as Image, threshold, amount, radius)
+	if out == null:
+		return FxOpsComposite.bloom(ctx, node, def, inputs, params)
+	return {"image": out}
+
+
+## 色相/饱和/明度：整张图逐像素查表，最典型的 GPU 活。
+static func hue(ctx: FxEvalContext, node: Dictionary, def: FxNodeDef,
+		inputs: Dictionary, params: Dictionary) -> Dictionary:
+	if not active():
+		return FxOpsColor.hue(ctx, node, def, inputs, params)
+	var source: Variant = inputs.get("image")
+	if not source is Image:
+		return FxOpsColor.hue(ctx, node, def, inputs, params)
+	var shift := FxPortType.as_number(params.get("hue", 0.0), 0.0) / 360.0
+	var sat := FxPortType.as_number(params.get("saturation", 0.0), 0.0)
+	var val := FxPortType.as_number(params.get("value", 0.0), 0.0)
+	var out := FxGpuCompute.hue_bridged(source as Image, shift, sat, val)
+	if out == null:
+		return FxOpsColor.hue(ctx, node, def, inputs, params)
+	return {"image": out}
+
+
+## 波纹位移：每个像素做一次 sin + 双线性采样，GPU 上几乎免费。
+static func wave(ctx: FxEvalContext, node: Dictionary, def: FxNodeDef,
+		inputs: Dictionary, params: Dictionary) -> Dictionary:
+	if not active():
+		return FxOpsDistort.wave(ctx, node, def, inputs, params)
+	var source: Variant = inputs.get("image")
+	if not source is Image:
+		return FxOpsDistort.wave(ctx, node, def, inputs, params)
+	var amplitude := FxPortType.as_number(params.get("amplitude", 8.0), 8.0)
+	var frequency := FxPortType.as_number(params.get("frequency", 0.08), 0.08)
+	var speed := FxPortType.as_number(params.get("speed", 2.0), 2.0)
+	var axis := FxPortType.as_string(params.get("axis", "y"), "y")
+	var axis_mode := 0 if axis == "x" else (1 if axis == "both" else 2)
+	var out := FxGpuCompute.wave_bridged(source as Image, amplitude,
+		frequency * TAU, ctx.t * speed, axis_mode)
+	if out == null:
+		return FxOpsDistort.wave(ctx, node, def, inputs, params)
+	return {"image": out}
+
+
 ## 描边（真实工程里最贵的单算子之一）：8 邻域 alpha 比较全在 GPU 上并行。
 static func outline(ctx: FxEvalContext, node: Dictionary, def: FxNodeDef,
 		inputs: Dictionary, params: Dictionary) -> Dictionary:

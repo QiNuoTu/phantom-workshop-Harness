@@ -1,7 +1,8 @@
 {
 	"id": "core.timeline",
 	"name": "时间轴时钟",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "时间维度：播放帧号推进、时间与帧换算、循环；与图结构和求帧解耦",
 	"script": "plugin.gd",
 	"icon": "◷",

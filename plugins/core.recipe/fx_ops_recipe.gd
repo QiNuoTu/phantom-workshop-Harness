@@ -35,7 +35,11 @@ static func apply(ctx: FxEvalContext, node: Dictionary, _def: FxNodeDef,
 	)
 	var render_scale := 1.0
 	var node_id := String(node.get("id", ""))
-	var sig := hash(text) ^ (seed_override * 7919) ^ int(render_scale * 1000.0)
+	# 签名必须含**渲染尺寸**：配方里没写 width/height 时，base_size 跟随画布，
+	# 而画布会因 res_scale / 预览档而变。漏了它，就会拿「按上一版尺寸配好」的引擎
+	# 去渲染这一版画布 —— 尺寸对不上，画面会静默错位（甚至越界）。
+	var sig := hash(text) ^ (seed_override * 7919) ^ int(render_scale * 1000.0) \
+		^ (base_size.x * 73856093) ^ (base_size.y * 19349663)
 	var entry: Dictionary = _cache.get(node_id, {})
 	if entry.is_empty() or int(entry.get("sig", 0)) != sig:
 		var engine := VfxEngine.new()
@@ -49,6 +53,7 @@ static func apply(ctx: FxEvalContext, node: Dictionary, _def: FxNodeDef,
 		_cache[node_id] = entry
 		_trim_cache()
 	var engine: VfxEngine = entry["engine"]
+	# 引擎内部有互斥（多线程共用），这里不需要额外加锁。
 	var time_offset := FxPortType.as_number(params.get("time_offset", 0.0), 0.0)
 	var image := engine.render(ctx.t + time_offset)
 	if render_scale != 1.0 and image.get_size() != base_size:

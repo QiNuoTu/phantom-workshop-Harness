@@ -18,26 +18,42 @@ static var _loaded: bool = false
 
 static var _sheets: Dictionary = {}
 static var _sheet_order: Array[String] = []
+## 跨线程锁：预渲染的 2–6 条线程会**同时**取素材（不变量 31：这类按内容缓存的
+## 东西必须自己保证并发安全，别指望「很少改，撞不上」）。
+##
+## 没有它时的真机表现：一条线程在 `_sheets` 里做 LRU 淘汰（`erase`），
+## 另一条正在读同一格 —— C++ 里直接
+## `ERROR: Parameter "_p" is null. at: _unref (core/variant/dictionary.cpp)`
+## 然后进程被信号打死（exit 132/139），日志里只有一段看不懂的 backtrace。
+## 那把锁只护**表结构**，解码（几十毫秒的 PNG）留在锁外，否则六条线程互相等。
+static var _lock := Mutex.new()
 
 
 static func ensure_loaded() -> void:
+	_lock.lock()
 	if _loaded:
+		_lock.unlock()
 		return
 	_loaded = true
 	_entries.clear()
 	_order.clear()
 	var roots := FxResourceRoot.existing_roots(ROOT_RELATIVE)
 	for root in roots:
+		# _scan → _register 在这把锁**里面**跑，所以 _register 自己不再取锁。
 		_scan(root)
 	_order.sort()
-	print("FxAssetLibrary：%d 套 pixelfx 素材（%d 个资源根）" % [_order.size(), roots.size()])
+	var count := _order.size()
+	_lock.unlock()
+	print("FxAssetLibrary：%d 套 pixelfx 素材（%d 个资源根）" % [count, roots.size()])
 
 
 ## 安装/卸载素材包后重扫。返回逆操作不适用，扫描结果本身是派生值，重扫即可。
 static func refresh() -> void:
+	_lock.lock()
 	_loaded = false
 	_sheets.clear()
 	_sheet_order.clear()
+	_lock.unlock()
 	ensure_loaded()
 
 
@@ -127,29 +143,46 @@ static func _register(json_path: String, root: String) -> void:
 static func all() -> Array[Dictionary]:
 	ensure_loaded()
 	var out: Array[Dictionary] = []
+	_lock.lock()
 	for id in _order:
-		out.append(_entries[id])
+		var data: Variant = _entries.get(id)
+		if data is Dictionary:
+			out.append(data)
+	_lock.unlock()
 	return out
 
 
 static func entry(id: String) -> Dictionary:
 	ensure_loaded()
-	return _entries.get(id, {})
+	_lock.lock()
+	var data: Dictionary = _entries.get(id, {})
+	_lock.unlock()
+	return data
 
 
 static func has(id: String) -> bool:
 	ensure_loaded()
-	return _entries.has(id)
+	_lock.lock()
+	var found := _entries.has(id)
+	_lock.unlock()
+	return found
 
 
 ## 取整张 sheet（带 LRU）。返回 {image, frames, frame_size, pivot, fps, loop}。
+##
+## 读 / 解码 / 装表分三段：查表持锁（微秒级），解码在锁外（几十毫秒），
+## 装表再持锁并做一次「别人是不是已经装好了」的复查。这样六条预渲染线程
+## 不会因为一张 1280×1152 的 PNG 互相排队，也不会同时把它装两遍。
 static func sheet(id: String) -> Dictionary:
 	var data := entry(id)
 	if data.is_empty():
 		return {}
 	var key := String(data.get("json_path", ""))
-	if _sheets.has(key):
-		return _sheets[key]
+	_lock.lock()
+	var hit: Variant = _sheets.get(key)
+	_lock.unlock()
+	if hit is Dictionary:
+		return hit
 	var image := Image.load_from_file(String(data.get("image_path", "")))
 	if image == null:
 		return {}
@@ -158,11 +191,18 @@ static func sheet(id: String) -> Dictionary:
 		"frames": data.get("frames", []),
 		"frame_size": data.get("frame_size", Vector2i(128, 128)),
 	}
+	_lock.lock()
+	# 锁外解码期间，另一条线程可能已经装好了同一张：以先到的为准。
+	var existing: Variant = _sheets.get(key)
+	if existing is Dictionary:
+		_lock.unlock()
+		return existing
 	_sheets[key] = cached
 	_sheet_order.append(key)
 	while _sheet_order.size() > MAX_SHEETS:
 		var oldest: String = _sheet_order.pop_front()
 		_sheets.erase(oldest)
+	_lock.unlock()
 	return cached
 
 

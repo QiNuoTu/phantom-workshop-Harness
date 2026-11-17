@@ -28,6 +28,58 @@ uint pack_px(vec4 c) {
 	return q.r | (q.g << 8u) | (q.b << 16u) | (q.a << 24u);
 }
 
+// RGB <-> HSV：与引擎 Color.get_hsv / Color.from_hsv 同一套公式（CPU 侧也是这两条）。
+vec3 rgb2hsv(vec3 c) {
+	float mx = max(c.r, max(c.g, c.b));
+	float mn = min(c.r, min(c.g, c.b));
+	float d = mx - mn;
+	float h = 0.0;
+	float s = 0.0;
+	if (d != 0.0 && mx > 0.0) {
+		s = d / mx;
+		if (c.r == mx) h = (c.g - c.b) / d;
+		else if (c.g == mx) h = 2.0 + (c.b - c.r) / d;
+		else h = 4.0 + (c.r - c.g) / d;
+		h *= 60.0;
+		if (h < 0.0) h += 360.0;
+		h /= 360.0;
+	}
+	return vec3(h, s, mx);
+}
+
+vec3 hsv2rgb(vec3 hsv) {
+	float s = hsv.y, v = hsv.z;
+	if (s == 0.0) return vec3(v);
+	float h = fract(hsv.x) * 6.0;
+	int i = int(floor(h));
+	float f = h - float(i);
+	float p = v * (1.0 - s);
+	float q = v * (1.0 - s * f);
+	float t = v * (1.0 - s * (1.0 - f));
+	if (i == 0) return vec3(v, t, p);
+	if (i == 1) return vec3(q, v, p);
+	if (i == 2) return vec3(p, v, t);
+	if (i == 3) return vec3(p, q, v);
+	if (i == 4) return vec3(t, p, v);
+	return vec3(v, p, q);
+}
+
+// 双线性采样（clamp 到边缘），与 FxPixelKit.sample_rows 的取整方式一致。
+vec4 sample_bilinear(uint W, uint H, float px, float py) {
+	int x0 = clamp(int(floor(px)), 0, int(W) - 1);
+	int y0 = clamp(int(floor(py)), 0, int(H) - 1);
+	int x1 = min(x0 + 1, int(W) - 1);
+	int y1 = min(y0 + 1, int(H) - 1);
+	float fx = clamp(px - float(x0), 0.0, 1.0);
+	float fy = clamp(py - float(y0), 0.0, 1.0);
+	vec4 c00 = unpack_px(src_px[uint(y0) * W + uint(x0)]);
+	vec4 c10 = unpack_px(src_px[uint(y0) * W + uint(x1)]);
+	vec4 c01 = unpack_px(src_px[uint(y1) * W + uint(x0)]);
+	vec4 c11 = unpack_px(src_px[uint(y1) * W + uint(x1)]);
+	return c00 * ((1.0 - fx) * (1.0 - fy)) + c10 * (fx * (1.0 - fy))
+		+ c01 * ((1.0 - fx) * fy) + c11 * (fx * fy);
+}
+
 void main() {
 	uint W = cfg[0], H = cfg[1], R = cfg[2], op = cfg[3];
 	uint mix_mode = cfg[4], amount_m = cfg[5], dir_x = cfg[6], dir_y = cfg[7];
@@ -98,6 +150,54 @@ void main() {
 		float strength = st * st * (3.0 - 2.0 * st);
 		float out_a = max(own_a, inside ? strength * own_a : strength);
 		outc = vec4(clamp(mix(own.rgb, edgeColor, strength), 0.0, 1.0), out_a);
+	} else if (op == 5u) {
+		// 5 = 亮度阈值（bloom 的 bright pass）：cfg[8] = 阈值*1000
+		float threshold = float(cfg[8]) / 1000.0;
+		float hi = min(threshold + 0.25, 1.0);
+		float inv = 1.0 / max(hi - threshold, 0.00001);
+		vec4 c = unpack_px(src_px[idx]);
+		float l = 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
+		float t = clamp((l - threshold) * inv, 0.0, 1.0);
+		float keep = t * t * (3.0 - 2.0 * t);
+		outc = vec4(c.rgb * keep, c.a * keep);
+	} else if (op == 6u) {
+		// 6 = 泛光叠加：src=底图 top=泛光，cfg[5] = amount*1000（alpha 保持底图）
+		vec4 base = unpack_px(src_px[idx]);
+		vec4 glow = unpack_px(top_px[idx]);
+		// 注意用 cfg[8] 而不是 amount_m：bloom 的 amount 允许到 3.0，
+		// 而 run() 把 amount 收进 [0,1] 再打包（那条路是给混合用的）。
+		float amount = float(cfg[8]) / 1000.0;
+		outc = vec4(clamp(base.rgb + glow.rgb * amount, 0.0, 1.0), base.a);
+	} else if (op == 7u) {
+		// 7 = 色相/饱和/明度：cfg[8..10] = 各自*10000
+		vec4 c = unpack_px(src_px[idx]);
+		vec3 hsv = rgb2hsv(c.rgb);
+		// 必须 `int(cfg[i])` 再转 float：cfg 是 uint 缓冲区，负数（降亮度 -0.1）
+		// 按 uint 读会变成 4294966xxx，整个画面直接刷白。
+		hsv.x = fract(hsv.x + float(int(cfg[8])) / 10000.0);
+		hsv.y = clamp(hsv.y + float(int(cfg[9])) / 10000.0, 0.0, 1.0);
+		hsv.z = clamp(hsv.z + float(int(cfg[10])) / 10000.0, 0.0, 1.0);
+		outc = vec4(hsv2rgb(hsv), c.a);
+	} else if (op == 8u) {
+		// 8 = 波纹位移：cfg[8..10] = 幅值/角频率/相位的 float 位，cfg[11] = 轴向
+		float amp = uintBitsToFloat(cfg[8]);
+		float omega = uintBitsToFloat(cfg[9]);
+		float phase = uintBitsToFloat(cfg[10]);
+		uint axis = cfg[11];
+		// 0 = 沿 X（表按 y）  1 = both（表按 x，y 附加 0.6 倍）  2 = 沿 Y（表按 x）
+		float shift = axis == 0u
+			? sin(float(xy.y) * omega + phase) * amp
+			: sin(float(xy.x) * omega + phase) * amp;
+		vec2 uv = vec2(float(xy.x), float(xy.y));
+		if (axis == 0u || axis == 1u) {
+			uv.x += shift;
+		}
+		if (axis == 1u) {
+			uv.y += shift * 0.6;
+		} else if (axis == 2u) {
+			uv.y += shift;
+		}
+		outc = sample_bilinear(W, H, uv.x, uv.y);
 	} else {
 		vec4 center = unpack_px(src_px[idx]);
 		uint xl = xy.x > 0u ? xy.x - 1u : 0u;
@@ -302,6 +402,36 @@ static func _exec(job: Dictionary) -> Image:
 				job["extra"] as PackedInt32Array)
 		"sharpen":
 			return run(job["src"], null, 3, 0, 0, float(job["amount"]))
+		"bloom":
+			var bright_src: Image = job["src"]
+			var threshold := clampf(float(job["threshold"]), 0.0, 1.0)
+			var amount := clampf(float(job["amount"]), 0.0, 3.0)
+			var divisor := maxi(2, int(job["radius"]))
+			var bright := run(bright_src, null, 5, 0, 0, 1.0, Vector2i.ZERO,
+				PackedInt32Array([int(round(threshold * 1000.0))]))
+			if bright == null:
+				return null
+			var bright_size := bright.get_size()
+			var small := Vector2i(maxi(1, bright_size.x / divisor),
+				maxi(1, bright_size.y / divisor))
+			var reduced: Image = bright.duplicate()
+			reduced.resize(small.x, small.y, Image.INTERPOLATE_BILINEAR)
+			reduced.resize(bright_size.x, bright_size.y, Image.INTERPOLATE_BILINEAR)
+			return run(bright_src, reduced, 6, 0, 0, 1.0, Vector2i.ZERO,
+				PackedInt32Array([int(round(amount * 1000.0))]))
+		"hue":
+			var shift := clampf(float(job["shift"]), -4.0, 4.0)
+			var sat := clampf(float(job["sat"]), -1.0, 1.0)
+			var val := clampf(float(job["val"]), -1.0, 1.0)
+			return run(job["src"], null, 7, 0, 0, 1.0, Vector2i.ZERO, PackedInt32Array([
+				int(round(shift * 10000.0)), int(round(sat * 10000.0)),
+				int(round(val * 10000.0)),
+			]))
+		"wave":
+			return run(job["src"], null, 8, 0, 0, 1.0, Vector2i.ZERO, PackedInt32Array([
+				_fbits(float(job["amplitude"])), _fbits(float(job["omega"])),
+				_fbits(float(job["phase"])), int(job["axis"]),
+			]))
 	return null
 
 
@@ -328,6 +458,29 @@ static func outline_bridged(image: Image, thickness: int, inside: bool,
 		int(round(clampf(color.b, 0.0, 1.0) * 1000.0)),
 	])
 	return bridged({"kind": "outline", "src": image, "extra": extra})
+
+
+## 泛光：阈值趟与叠加趟都走 compute，中间的降采样/升采样交给引擎（C++，很便宜）。
+static func bloom_bridged(image: Image, threshold: float, amount: float, radius: int) -> Image:
+	return bridged({"kind": "bloom", "src": image, "threshold": threshold,
+		"amount": amount, "radius": radius})
+
+
+static func hue_bridged(image: Image, shift: float, sat: float, val: float) -> Image:
+	return bridged({"kind": "hue", "src": image, "shift": shift, "sat": sat, "val": val})
+
+
+static func wave_bridged(image: Image, amplitude: float, omega: float, phase: float,
+		axis_mode: int) -> Image:
+	return bridged({"kind": "wave", "src": image, "amplitude": amplitude,
+		"omega": omega, "phase": phase, "axis": axis_mode})
+
+
+## float 的位模式：着色器用 uintBitsToFloat 取回。cfg 是整型缓冲区，
+## 而幅值/频率/相位都带小数，乘 1000 打包会丢精度（相位可能上千）。
+static func _fbits(value: float) -> int:
+	var packed := PackedFloat32Array([value]).to_byte_array()
+	return packed.decode_s32(0)
 
 
 static func reset() -> void:

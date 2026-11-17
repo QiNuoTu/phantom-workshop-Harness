@@ -31,7 +31,7 @@ static func invalidate_backend(_value: Variant) -> void:
 	# 算子实现可能随后端切换（GPU 算子覆盖）；执行器的跨帧静态缓存必须作废，
 	# 否则上一后端算出的图会被当成这一后端的结果复用。
 	if _current != null:
-		_current.invalidate()
+		_current.invalidate("content", "render.backend")
 
 
 # ================= 帧缓存入口（设置按钮 / 命令） =================

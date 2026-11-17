@@ -119,6 +119,8 @@ func setup(ctx: Dictionary) -> void:
 		render.connect("node_previewed", Callable(self, "_on_node_previewed"))
 	if render != null and render.has_signal("node_params_resolved"):
 		render.connect("node_params_resolved", Callable(self, "_on_node_params_resolved"))
+	if render != null and render.has_signal("node_values_resolved"):
+		render.connect("node_values_resolved", Callable(self, "_on_node_values_resolved"))
 	if render != null and render.has_signal("playback_changed"):
 		render.connect("playback_changed", Callable(self, "_on_playback_changed"))
 	# 播放只读缓存：逐节点缩略图由渲染服务随帧推过来（只有展开的节点有）。
@@ -1289,6 +1291,8 @@ const MENU_PACK := "pack"
 const MENU_UNPACK := "unpack"
 const MENU_SELECT_ALL := "select_all"
 const MENU_FIT := "fit"
+## 分辨率档的菜单 id 前缀，后面接倍率（"res_scale:0.500"）。
+const MENU_RES_PREFIX := "res_scale:"
 
 
 ## 右键菜单的条目（纯数据）。`separator` 项没有 id。
@@ -1303,7 +1307,7 @@ func node_menu_items(ids: Array) -> Array[Dictionary]:
 	var openable := not single.is_empty() \
 		and FxGraphFacade.access().catalog_openable(type_id)
 	var many := " %d 个节点" % count if count > 1 else ""
-	return [
+	var out: Array[Dictionary] = [
 		{"id": MENU_ENTER, "label": "打开子图（双击）", "disabled": not openable},
 		{"separator": true},
 		{"id": MENU_COPY, "label": "复制%s  Ctrl+C" % many, "disabled": count == 0},
@@ -1316,9 +1320,41 @@ func node_menu_items(ids: Array) -> Array[Dictionary]:
 		{"id": MENU_PACK, "label": "打包成子图  Ctrl+G", "disabled": count == 0},
 		{"id": MENU_UNPACK, "label": "展开子图  Ctrl+Shift+G", "disabled": not openable},
 		{"separator": true},
-		{"id": MENU_SELECT_ALL, "label": "全选  Ctrl+A", "disabled": node_views.is_empty()},
-		{"id": MENU_FIT, "label": "适应视图", "disabled": node_views.is_empty()},
 	]
+	# 数组拼接会退化成 Array，赋值给 Array[Dictionary] 会报运行时错误 —— 用 append_array。
+	out.append_array(_res_scale_items(single))
+	out.append({"separator": true})
+	out.append({"id": MENU_SELECT_ALL, "label": "全选  Ctrl+A", "disabled": node_views.is_empty()})
+	out.append({"id": MENU_FIT, "label": "适应视图", "disabled": node_views.is_empty()})
+	return out
+
+
+## 分辨率档子菜单项。放在 `node_menu_items()` 这张表里而不是另建弹窗，
+## 是为了让测试能断言「有哪些档位、当前是哪一档」，不用真的点菜单。
+##
+## 档位是**倍率**（1/2 就是边长一半、像素成本 1/4），和 AE 的「图层分辨率」同一个心智：
+## 它降的是这条链的求值分辨率，**不是最终输出的尺寸**（输出节点与汇点拒绝降档）。
+func _res_scale_items(single: String) -> Array[Dictionary]:
+	var out: Array[Dictionary] = []
+	var current := 1.0
+	if not single.is_empty():
+		# 经代理读：蓝图不该认识 FxGraphDoc（这是 test_architecture 的硬边界）。
+		current = FxGraphFacade.access().doc_res_scale(doc, single)
+	for scale in FxGraphFacade.access().res_scales():
+		var value := float(scale)
+		var mark := "  ← 当前" if is_equal_approx(value, current) else ""
+		out.append({
+			"id": MENU_RES_PREFIX + String.num(value, 3),
+			"label": "分辨率档：%s%s" % [_res_scale_label(value), mark],
+			"disabled": single.is_empty(),
+		})
+	return out
+
+
+static func _res_scale_label(scale: float) -> String:
+	if scale >= 0.999:
+		return "全分辨率"
+	return "1/%d（%.0f%% 边长）" % [int(round(1.0 / scale)), scale * 100.0]
 
 
 func _popup_node_menu(at: Vector2) -> void:
@@ -1374,6 +1410,33 @@ func _on_node_menu_id(id: int) -> void:
 			_select_all()
 		MENU_FIT:
 			_fit_view()
+		_:
+			if action.begins_with(MENU_RES_PREFIX):
+				_set_res_scale(ids, float(action.trim_prefix(MENU_RES_PREFIX)))
+
+
+## 写分辨率档。走 `mutate` 而不是直接改字典：撤销、修订号、渲染失效都靠它。
+## 档位是内容（会改变像素），所以键用 "structure" —— 换桶重建是应该的。
+func _set_res_scale(ids: Array, scale: float) -> void:
+	if store == null or ids.is_empty():
+		return
+	var target: Array = ids.duplicate()
+	store.mutate(func(d: Dictionary) -> void:
+		for raw in (d.get("nodes", []) as Array):
+			var node_data: Dictionary = raw
+			if not target.has(String(node_data.get("id", ""))):
+				continue
+			if scale >= 0.999:
+				# 全分辨率就删字段：这样指纹与「从未设过」完全一致，
+				# 不会因为一次「调回 1.0」白重建一遍缓存。
+				node_data.erase("res_scale")
+			else:
+				node_data["res_scale"] = scale
+	, ["structure"], "res_scale")
+	var view: FxGraphNodeView = node_views.get(String(target[0])) if target.size() == 1 else null
+	if view != null:
+		view.set_res_scale(scale)
+	_status("分辨率档：%s（%d 个节点）" % [_res_scale_label(scale), target.size()])
 
 
 ## 批量折叠：只要有一个是展开的，就把这批全收起来；全收着就全展开。
@@ -1577,6 +1640,11 @@ func _on_store_changed(keys: Array) -> void:
 		_apply_selection(store.selected_id)
 	if _touches_params(keys):
 		_refresh_param_views(keys)
+	# 画布尺寸是**文档级**的值，但参数行里有它的视图（`binds: canvas.*`）：
+	# 在文档面板改了尺寸，节点卡片上那两个数字必须跟着变，否则同一份事实
+	# 在界面上有两个说法 —— 用户会以为改的是两件不同的事。
+	if keys.has("canvas"):
+		_refresh_param_views(["canvas"])
 	if keys.has("structure") and not _suppress_store_rebuild:
 		_schedule_rebuild()
 	if _touches_content(keys):
@@ -1634,6 +1702,22 @@ func _refresh_param_views(keys: Array) -> void:
 	if view != null:
 		view.sync_document_data(FxGraphFacade.access().doc_node(doc, only))
 		view.sync_params()
+
+
+## 本帧输出值广播：每张卡片按**自己的输出类型**画（数值曲线 / 向量坐标 / 色块 / 灯）。
+## 值由执行器给成结构化读数 `[{port, type, value, text}]`，这里只做转发，
+## 不认识任何节点类型 —— 分派在 FxNodeValueGauge.kind_of() 里。
+func _on_node_values_resolved(values_by_node: Dictionary) -> void:
+	for key in values_by_node.keys():
+		var view: FxGraphNodeView = node_views.get(String(key))
+		if view == null:
+			continue
+		var samples: Variant = values_by_node[key]
+		if samples is Array:
+			view.set_value_samples(samples as Array)
+		else:
+			# 老插件 / 旧缓存回传一行文本：仍然显示，只是失去分类绘制。
+			view.set_value_text(String(samples))
 
 
 ## 本帧参数广播：只推给有被驱动参数的节点视图，其余视图不做无谓刷新。

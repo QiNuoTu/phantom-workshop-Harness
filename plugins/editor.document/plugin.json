@@ -1,7 +1,8 @@
 {
 	"id": "editor.document",
 	"name": "文档",
-	"version": "1.0",
+	"version": "0.1.2",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "文档属性、新建/打开/保存与撤销重做",
 	"script": "plugin.gd",
 	"inject": [

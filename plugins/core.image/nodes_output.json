@@ -55,7 +55,8 @@
 					"max": 4096,
 					"step": 1,
 					"unit": "px",
-					"hint": "0 = 跟随图设置；编辑框显示当前实际画布宽",
+					"hint": "改这里等于改文档画布（同一个值，不是覆盖）",
+					"binds": "canvas.width",
 					"display_fallback": "canvas.width"
 				},
 				{
@@ -67,7 +68,8 @@
 					"max": 4096,
 					"step": 1,
 					"unit": "px",
-					"hint": "0 = 跟随图设置；编辑框显示当前实际画布高",
+					"hint": "改这里等于改文档画布（同一个值，不是覆盖）",
+					"binds": "canvas.height",
 					"display_fallback": "canvas.height"
 				}
 			]

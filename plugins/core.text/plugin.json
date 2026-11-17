@@ -1,7 +1,8 @@
 {
 	"id": "core.text",
 	"name": "文字",
-	"version": "1.0",
+	"version": "0.1.0",
+	"contract": ">=0.1.0 <0.2.0",
 	"description": "用外部字体渲染文字，支持描边与对齐",
 	"script": "plugin.gd",
 	"inject": [
