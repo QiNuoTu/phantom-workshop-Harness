@@ -4,378 +4,292 @@
 
 # Phantom Workshop
 
-**A micro-kernel node compositor where everything is a plugin.**
+**A node-based 2D effects workshop with a microkernel and everything-as-a-plugin**
 
 ![License](https://img.shields.io/badge/license-MIT-8C6BFF.svg)
-
 ![Godot](https://img.shields.io/badge/Godot-4.7.2-478CBF.svg)
-
-![Plugins](https://img.shields.io/badge/plugins-39-2FE6C8.svg)
-
+![Plugins](https://img.shields.io/badge/plugins-42-2FE6C8.svg)
 ![Nodes](https://img.shields.io/badge/nodes-77-FFBE5C.svg)
+![Tests](https://img.shields.io/badge/assertions-1366-44D17A.svg)
+![Status](https://img.shields.io/badge/status-alpha_·_not_production_ready-DF6B4F.svg)
 
-![Tests](https://img.shields.io/badge/assertions-998-44D17A.svg)
-
-![Release](https://img.shields.io/github/v/release/QiNuoTu/phantom-workshop-Harness?color=8C6BFF&label=release)
-
-![Paper](https://img.shields.io/badge/arXiv-2608.25512-B31B1B.svg)
-
-<sub>**English** · [简体中文](README.md)</sub>
-
-[Quick start](#quick-start) · [Screenshots](#screenshots) · [Plugin map](#plugin-map) · [Architecture](#architecture) · [Performance](#performance-on-a-real-project) · [Contributing](CONTRIBUTING.md)
+<sub>[简体中文](README.md) · **English**</sub>
 
 </div>
 
----
+> **Current state: `0.0.17-alpha` (first test build).** Not production ready: APIs, file
+> formats and performance will change. There is no official binary — run it from source;
+> the app is its own editor. Every GitHub Release is published as a **pre-release**;
+> there is no "latest stable".
+>
+> This version is about **making the claims accurate**: every number is read from the code by
+> `python tools/check_docs.py`, which exits non-zero when a document disagrees. When docs and
+> code differ, the script wins.
 
-## What this is
+## What it is
 
-Phantom Workshop is a **2D effects compositor** running on [Godot 4.7](https://godotengine.org/):
-wire nodes into a graph, let the graph move along a timeline, watch the result live, and export
-it as video or an image sequence.
+A **2D effects compositor** on Godot 4.7: wire nodes into a graph, animate it on a timeline,
+see the result live, export to video or image sequences.
 
-What makes it different is not "it has nodes" — it's that **the application itself is detachable**:
+What sets it apart is not "it has nodes" but that **the application is detachable**:
 
-- The kernel is only **8.9k lines**: document undo stack, context/scope, registry and ledger,
-  service brokers, shell and docking.
-- Everything else is **39 plugins**: graph semantics, evaluator, render orchestration, GPU
-  backend, operator library, blueprint editor, timeline, skins, exporters, language packs…
-  Each one can be disabled, hot-reloaded, or swapped at runtime.
-- **No plugin class name appears in kernel source.** Delete `plugins/core.render/` and the app
-  still starts — it just gets an "empty renderer": no image, but menus, panels and shortcuts
-  are all still there.
+| Layer | Where | Size | Responsibility |
+| --- | --- | --- | --- |
+| **Kernel** | `scripts/graph/` | 9.3k lines | context and effect scopes, component/fiber lifecycle, registry and ledger, settings, service brokers, shell and docks |
+| **Plugins** | `plugins/` | 31k lines / 42 | graph semantics, evaluator, IR compiler, render orchestration, GPU backend, native pixel kernel, operator library, blueprint editor, timeline, skins, exporters, locales, diagnostics |
 
-This is not architectural fussiness. It comes from a paper:
+The kernel contains **no plugin class names** — `--fx-run=diag.blame` reports this fact
+(currently 0 kernel findings). Remove `plugins/core.render/` and it still boots: you get an
+empty presenter — no picture, but every menu and panel is there.
 
-> **A Programming Paradigm for Spatiotemporal Composability**
-> <https://arxiv.org/abs/2608.25512>
+## Paradigm: it organises the boundaries, it is not an equivalent implementation
 
-Its central claim is that **space and time must be orthogonal**: space (graph structure,
-subgraphs, operators) and time (clock, frame index, cache) evolve independently and only meet
-at a "composition point". This project is one complete implementation of that claim:
+Designed after *[A Programming Paradigm for Spatiotemporal Composability](https://arxiv.org/abs/2608.25512)*:
+**space** (dependency declaration and reaction) and **time** (revertible side effects)
+evolve independently and meet only at composition points.
 
-| Dimension | Owner           | In practice                                                                                                  |
-| --------- | --------------- | ------------------------------------------------------------------------------------------------------------ |
-| Space     | `core.graph`    | Documents, nodes, ports, links, subgraphs. The evaluator knows no UI; the editor knows no graph container.     |
-| Time      | `core.timeline` | `FxPlaybackClock` only answers "should we advance?" — it knows nothing about graphs, caches or UI.             |
-| Compose   | `core.render`   | The only place holding both "frame index" and "the graph for that frame"; playback reads the cache, never evaluates. |
+**What actually holds in the code** (each row maps to a file):
 
-There is no shared mutable state between the three — only broker contracts. That is why you can
-swap the clock for a variable-speed or audio-driven one, swap the backend for a GPU, or replace
-the editor with a different shape, without touching the other two.
+| Paper | Where |
+| --- | --- |
+| Coeffect context Σ (key → value / key → provider) | `FxContext.values` / `providers` |
+| Satisfaction `σ ⊧ d` | `FxContext.satisfies()` |
+| Notification trichotomy (activating / deactivating / neutral) | `FxFiber.refresh()` |
+| Witnessed effects with a LIFO inverse stack | `FxEffectScope.add(inverse)` |
+| Component =(d, p, e); fibers with retire | `FxComponent` / `FxFiber` |
+| Declarative loader + config reconciliation + hot reload | `FxPluginHost` / `plugins.cfg` |
 
----
+**What is explicitly not done** (so nobody relies on the paper's strong guarantees):
 
-## Screenshots
+1. **No value equivalence `≃ₖ`.** `set_value()` / `provide()` notify on every write without
+   comparing. Notifications — and therefore downstream rebuilds — are more frequent than needed.
+2. **`set` has no "key not already bound" precondition.** Last writer wins; this is how
+   `render.gpu` overrides `image.blur`. Provision exclusivity does not hold.
+3. **No isolation / interception / derived contexts.** The context is a flat table: you cannot
+   bind different values of one key for two components, nor intercept dependency access.
+4. **Temporal composability holds only for UI/services.** Graph and operator state is torn down
+   by `reset_runtime_tables()`, not by replaying inverses.
 
-<div align="center">
-  <img src="docs/screenshots/04-main.png" alt="Main window: blueprint / preview / timeline / plugin hub" width="100%">
-  <sub>Left: document &amp; canvas · Center: blueprint (node cards show that node's output for the current frame) · Right: preview and plugin hub · Bottom: timeline</sub>
-</div>
-
-<table>
-<tr>
-<td width="50%"><img src="docs/screenshots/05-playback.png" alt="Timeline: frame ticks, cache strip, keyframes">
-   <sub><b>Timeline</b>: the ruler is ticked in frames; the wheel zooms anchored at the cursor; the strip shows per-frame cache state</sub></td>
-<td width="50%"><img src="docs/screenshots/06-plugins.png" alt="Plugin hub">
-   <sub><b>Plugin hub</b>: state, dependencies, provided capabilities and settings for all 39 plugins, toggleable in one click</sub></td>
-</tr>
-<tr>
-<td><img src="docs/screenshots/02-node-card.png" alt="Node card and bake badge">
-   <sub><b>Node cards</b>: expand one for a live thumbnail; the badge in the corner tells you whether that frame is baked (✓ / … / —)</sub></td>
-<td><img src="docs/screenshots/01-overview.png" alt="The 103-node demo project">
-   <sub><b>Demo project</b>: 103 nodes / 81 links / 192×108 / 30 fps / 60 frames — the single benchmark for every number below</sub></td>
-</tr>
-<tr>
-<td><img src="docs/screenshots/08-add-node.png" alt="Add-node panel">
-   <sub><b>Add node</b>: 77 nodes filed under 11 categories; each card is itself a live thumbnail, and the side pane shows ports and parameters</sub></td>
-<td><img src="docs/screenshots/09-workbench.png" alt="Workbench with frame ticks and cache strip">
-   <sub><b>Workbench</b>: inline parameter editing, ruler aligned to frames (f2 / f4 …), per-frame cache strip beneath it</sub></td>
-</tr>
-</table>
-
-<div align="center">
-  <img src="docs/screenshots/07-skin.png" alt="Skin: Deep Sea Maid Atelier" width="100%">
-  <sub>A skin is not a recolour: panels, docking, node cards and ports are all repainted by a plugin (skin packs install and uninstall on their own)</sub>
-</div>
-
----
-
-## Highlights
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-**A detachable plugin system**
-
-Node types, operators, export formats, parameter widgets, panels, windows, commands, menus,
-skins, language packs, asset packs — all are contribution points. Hot reload unwinds LIFO;
-disabling a plugin never leaves half a UI behind.
-
-</td>
-<td width="33%" valign="top">
-
-**Playback only reads the cache**
-
-Once a frame is computed it lands in a tight single file, `frames.fxc`: 64-byte header +
-bitmap + fixed-stride RGBA8. Playback seeks one frame in about 0.1 ms — **0 skipped frames,
-0 misses** — and the UI thread never evaluates anything.
-
-</td>
-<td width="33%" valign="top">
-
-**A GPU render server**
-
-Per-pixel operators are covered by compute shaders whose output is **byte-identical** to the
-CPU path (pixel delta ≤ 0.0027). Blur is 6.4× faster, mixing 14.6×; without a graphics device
-it falls back to CPU instead of failing.
-
-</td>
-</tr>
-</table>
-
-<div align="center">
-  <img src="branding/promo-cache.jpg" alt="Frame-level cache" width="100%">
-</div>
-
-**Colour states a fact.** On the ruler, red = never computed, yellow = only a playback-tier
-stand-in (viewable, but not exact), green = an exact frame, pixel-identical to export.
-Low-quality previews never masquerade as green — that is a contract users can read at a glance.
-
----
+In one line: **the paradigm is the basis for the boundaries, not a fulfilled mathematical promise.**
 
 ## Quick start
 
-### Download (Windows 10/11 x64)
-
-If you don't want to install Godot, grab the portable build:
-[**Releases · latest**](../../releases/latest).
-Unzip and double-click `幻像工坊.exe` — no installer, no runtime needed. The demo project lives in
-`examples/demo/示范工程.fxproj`.
-
-### Run from source
-
-**Requires**: Godot **4.7.2** (standard or .NET build — this project is pure GDScript).
-
 ```bash
-git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git phantom-workshop
+git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git
 cd phantom-workshop
-
-# 1) Open the workbench (editor form)
-godot --path .
-
-# 2) Assembly diagnostics: plugins / nodes / panels / settings / language packs / textures / cache location
-godot --headless --path . -- --fx-diagnose
-
-# 3) Run the suite (14 files, ~4 minutes)
-bash tools/run_tests.sh
+godot --path .                     # launches the workbench (scenes/main.tscn)
 ```
 
-**Export an executable**:
+The native pixel kernel is an **optional accelerator**; without it everything falls back to
+GDScript (same output, slower):
 
 ```bash
-godot --headless --path . --export-release "Windows Desktop" ../dist/幻像工坊.exe
+# needs godot-cpp sources + MSVC. Skipping it costs speed, not features.
+bash plugins/pixels.native/build.sh template_debug
 ```
 
-The packaging script mirrors `plugins/` next to the executable by plugin id — plugins are
-**external resources**, so a user can simply delete a plugin directory to slim the app down.
-
-### Layout
-
-```
-.
-├── project.godot            # Godot project (repo root == project root)
-├── scenes/main.tscn         # the only scene: the FxShell
-├── scripts/graph/           # kernel (8.9k lines, knows no plugin class name)
-│   ├── kernel/              #   context / document undo stack / brokers / registry contracts
-│   ├── plugins/             #   plugin host: scanning, dependencies, reversible ledger
-│   ├── ui/                  #   shell / docking / windows / skins / widget factory
-│   └── services/            #   asset roots
-├── plugins/                 # 39 plugins (each with plugin.json + plugin.gd)
-│   ├── core.graph/          #   graph semantics: document, catalog, ports, subgraphs, evaluator
-│   ├── core.render/         #   render orchestration: clock composition, frame cache, prefetch
-│   ├── render.gpu/          #   GPU render server (compute shaders)
-│   ├── editor.*/            #   blueprint, timeline, preview, skins, plugin hub, settings…
-│   └── fx.*/ glow/ …        #   operator libraries
-├── examples/demo/           # demo project (the benchmark — always validate against it)
-├── docs/                    # architecture notes · plugin manual · screenshots
-├── branding/                # icon and promo art
-├── tests/                   # 14 headless suites + various on-screen probes
-└── tools/                   # packaging, icon rendering, art generation
+```bash
+bash tools/run_tests.sh            # 23 suites / 1366 assertions (0 failed, 0 abnormal exits)
+python tools/check_docs.py         # docs vs code (CI; non-zero means drift)
 ```
 
----
+## Interface
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/01-overview.png" alt="Workbench" /></td>
+    <td><img src="docs/screenshots/02-node-card.png" alt="Node card" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Workbench</b>: node library, blueprint, inspector, timeline</sub></td>
+    <td align="center"><sub><b>Node cards</b>: typed ports, params, live readouts of this frame</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/09-workbench.png" alt="Cache band" /></td>
+    <td><img src="docs/screenshots/05-playback.png" alt="Playback" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Cache band</b>: green = exact cached frame, yellow = placeholder</sub></td>
+    <td align="center"><sub><b>Playback</b>: the playhead only reads the cache</sub></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/06-plugins.png" alt="Plugin hub" /></td>
+    <td><img src="docs/screenshots/08-add-node.png" alt="Add node" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Plugin hub</b>: dependencies, capabilities, settings, toggle for all 42 plugins</sub></td>
+    <td align="center"><sub><b>Add node</b>: 77 nodes in 11 categories, each card is a live thumbnail</sub></td>
+  </tr>
+</table>
 
 ## Plugin map
 
-The `39` in the startup log is these plugins, in five layers:
+| Group | Plugins | Provides |
+| --- | --- | --- |
+| **Kernel capabilities** | `core.graph` `core.compile` `core.render` `core.quality` `core.timeline` `core.control` `core.i18n` | graph semantics + evaluator, IR compile + pruning, render orchestration + frame cache, quality policy, clock, palette, locales |
+| **Pixels** | `core.pixels` `core.image` `core.source` `core.text` `core.asset` `core.recipe` `core.shader` | blend/resample utilities, image ops, generators, text raster, pixelfx assets, recipe engine, shader nodes |
+| **Acceleration** | **`pixels.native`** `render.gpu` `render.lite` | five C++ operator families (GDExtension), GPU compute backend, pure CPU backend |
+| **Operators** | `core.math` `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion` | maths and logic, colour, compositing, distortion, generators, VFX, glow, curves, motion — the 77 nodes live in this range |
+| **Editor** | `editor.document` `editor.graph` `editor.preview` `editor.timeline` `editor.node-picker` `editor.palette` `editor.plugin-hub` `editor.plugins` `editor.settings` `editor.skin` `editor.skin-manager` `editor.help` `editor.dropimport` `editor.diagnostics` | document + undo, blueprint view, output preview, timeline, node picker, palette, plugin hub, settings, skins, help, drag-import, blame diagnostics |
+| **Look / output** | `skin.maid-atelier` `godot.export` | skins, exporters (video / frame sequences / PNG) |
 
-| Layer                | Plugins                                                                                                                                                                                                                                  | Contributes                                                                               |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Kernel services**  | `core.graph` `core.render` `core.timeline` `core.quality` `core.i18n` `core.asset` `core.pixels` `core.math` `core.text` `core.control` `core.shader` `core.recipe` `core.source` `core.image`                                          | Graph semantics, render orchestration, clock, quality policy, language, assets, pixel kit, math, text, widgets, shaders, recipes, external sources, image operators |
-| **Eval backends**    | `render.gpu` `render.lite`                                                                                                                                                                                                               | Compute operator coverage; a skimpy "economy" mode that skips previews during playback      |
-| **Operator library** | `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion`                                                                                                                                        | Colour, compositing, distortion, generators, VFX, glow, curves, motion — 77 nodes/operators |
-| **Editors**          | `editor.graph` `editor.timeline` `editor.preview` `editor.document` `editor.node-picker` `editor.palette` `editor.settings` `editor.plugins` `editor.plugin-hub` `editor.skin` `editor.skin-manager` `editor.help` `editor.dropimport`    | Blueprint, timeline, preview, document tabs, add-node panel, command palette, settings, plugin management, skins, help, drag &amp; drop import |
-| **Skin / export**    | `skin.maid-atelier` `godot.export`                                                                                                                                                                                                       | A third theme; 4 exporters (PNG sequence / GIF / video …)                                   |
-
-What a plugin can contribute is declared by methods on `plugin.gd`:
-
-```gdscript
-nodes()            # node definitions (nodes*.json)
-ops()              # operator implementations (static Callables)
-render_backends()  # frame backends
-exporters()        # export formats
-panels()           # panels
-windows()          # standalone windows
-commands()         # commands (menu / command palette / shortcuts share them)
-status_fragments() # status bar fragments
-settings()         # settings entries (including button-style actions)
-skins()            # skins and docking styles
-locales()          # language packs
-quality_policies() # quality policy provider
-graph_access()     # graph capability implementation
-node_picker()      # search implementation for the add-node panel
-drop_handlers()    # drag & drop import
-```
-
-A new plugin is two files: `plugin.json` (metadata + dependencies + inject keys) and `plugin.gd`
-(extends `FxPlugin`). Details in the **[plugin manual](docs/插件开发手册.md)** (Chinese).
-
----
+Writing a plugin means **adding a directory**, not editing the shell —
+see [Plugin development](docs/插件开发.md) (Chinese).
 
 ## Architecture
 
 ```mermaid
 flowchart TB
-  subgraph Base["Kernel scripts/graph (8.9k lines, zero plugin class names)"]
+  subgraph Base["Kernel scripts/graph (9.3k lines, zero plugin class names)"]
     direction LR
     B1[FxContext / Fiber / Scope]
-    B2[FxDocumentStore<br/>undo stack + content identity]
-    B3[FxRegistry / FxPluginHost<br/>reversible ledger]
-    B4[FxGraphFacade / FxRenderBroker<br/>FxClockBroker / FxSettings …]
-    B5[FxShell<br/>docking / windows / skins / menus]
+    B2[FxRegistry / Ledger]
+    B3[FxShell / Docks]
   end
-
-  subgraph Domain["Plugins (swappable)"]
-    D1[core.graph<br/>graph semantics + evaluator]
-    D2[core.timeline<br/>FxPlaybackClock]
-    D3[core.render<br/>render orchestration + frame cache]
-    D4[render.gpu<br/>compute operators]
-    D5[editor.*<br/>blueprint / timeline / preview]
+  subgraph Plugins["plugins/ (42)"]
+    P1[core.graph semantics+evaluator]
+    P2[core.compile IR+pruning]
+    P3[core.render orchestration+cache]
+    P4[pixels.native C++ kernel]
+    P5[editor.* UI]
   end
-
-  B4 -->|doc_* contract| D1
-  D3 -->|asks only "advance?"| D2
-  D3 -->|fetch image| D1
-  D3 -->|postprocess| D4
-  D5 -->|injects graph.facade only| B4
-  B5 -->|services["render"]| D3
+  Base -- contracts: contributions / capabilities / service brokers --> Plugins
+  P1 -- accessed only via FxGraphFacade --> Base
 ```
 
-Three hard rules, enforced by static assertions in `tests/test_architecture.gd`:
+Three hard rules, all machine-checked:
 
-1. **No plugin class names in the kernel** — not "doesn't crash when disabled", but "still
-   compiles after you delete the directory".
-2. **No graph-domain symbols in UI code** — editors inject `graph.facade` only, never import a
-   container class.
-3. **Node types live only inside plugins** — no `if type == "image.blur"` in the evaluator or
-   the UI, only operator tables.
+1. **Zero plugin class names in the kernel** — `test_architecture` whitelist + `diag.blame` structural scan.
+2. **Graph semantics live only in `core.graph`**; the kernel goes through `FxGraphFacade.access()`.
+   Node types live in `nodes*.json` + the operator table, never hard-coded.
+3. **The presenter is a contract, not an implementation** — `FxRenderHost` is an empty
+   implementation that `core.render` extends; look ids are not hard-coded.
 
-### Where spatiotemporal composability lands
+Details: [docs/架构.md](docs/架构.md) (Chinese).
 
-- Document writes go through `FxDocumentStore.mutate / apply_param / apply_path`; batch with
-  `begin_batch/commit_batch`. If nothing actually changed, it is **completely silent**: no undo
-  entry, no revision bump, no broadcast.
-- "Content identity" is `content_key = generation × 2²⁰ + revision`: it changes on project swap
-  or parameter edits, but not when you drag nodes (pure layout). The renderer uses it to decide
-  whether the cache bucket and evaluation snapshot must be rebuilt — one drag must not invalidate
-  a 60-frame cache.
-- The playback frame index advances at most `+1` per process: a stuttering UI makes playback
-  slower, never skip frames. It only stalls when the target frame has not even a stand-in.
+## Cache, preview, pruning
 
----
+The **frame cache** is the core asset: a correct frame goes to disk (`frames.fxc`, 64B header +
+fixed-size RGBA8) and playback only reads it.
 
-## Performance on a real project
+- **Buckets are keyed by content identity**, not by notifications:
+  `content_key() = generation × 2²⁰ + content revision`. Dragging nodes, resizing groups and
+  changing selection are **not content** — no bucket change, no repaint.
+- **Invalidation has three tiers**: `content` (rebuild bucket) / `derived` (drop derived tables
+  and thumbnails, keep exact frames) / `display` (drop only the display layer). Settings declare
+  their tier via `impact` (26 runtime settings annotated).
+- **Two preview pipelines**: node thumbnails may lower operator quality (0.5 by default), the
+  output preview is always exact. Exactness is decided by the quality tier that produced the
+  frame (`frame_quality`), not by "is it playing right now".
+- **The canvas size has exactly one home** (`meta.canvas`): `frames.fxc` is a fixed-stride
+  file, so the frame size *is* its layout — a document that says 192 while a node says 256
+  gets every frame dropped by the size gate. The width/height sliders on the output node are
+  a **view** of that value (declared via `binds`): editing them edits the document canvas.
+  Bucket / store-fetch / publish each enforce the size independently. See [architecture](docs/架构.md) §5.1.
+- **Pruning in two layers**: pull-based evaluation never touches unreachable nodes; `core.compile`
+  then compiles the graph into a pure-data plan (order / live / dead / sinks / constants /
+  type errors / frame segments). Demo project: **Live 85 / Dead 18**, 2 folded constants.
 
-> **The only benchmark**: `examples/demo/示范工程.fxproj` — 103 nodes / 81 links / 192×108 /
-> 30 fps / 60 frames. All numbers measured on one machine (RTX 3060 / 12 cores) with on-screen
-> probes; scripts live in `tests/`.
+> Be careful with the wording: Dead 18 is a **structural upper bound**, not a speed-up.
+> Pull-based evaluation already skips dead nodes; the real wins are constants folding steps 3→2,
+> sinks going from O(N) to O(#sinks), and observability.
 
-| Metric                              | Value                                                        |
-| ----------------------------------- | ------------------------------------------------------------ |
-| Single frame (CPU, per pixel)       | **480 – 530 ms** (643 ms before optimisation)                 |
-| Whole 60 frames, parallel prefetch  | **1.79 s** (6 threads; ~36 s single-threaded)                 |
-| Playback of 73 frames               | **0 skipped · 0 misses**, UI frame time **13.3 ms** (idle 13.2 ms) |
-| Open project → prefetch starts      | **31 – 80 ms**                                                |
-| GPU operator: separable blur, r8    | 43.6 → **6.8 ms** (**6.4×**)                                  |
-| GPU operator: six-way mix, α .35    | 54.0 → **3.7 ms** (**14.6×**)                                 |
-| GPU vs CPU pixel delta              | **≤ 0.0027** (byte-for-byte comparison)                       |
-| Cache read                          | **0.1 ms/frame** (PNG encoding used to cost 11 ms/frame)      |
+## Performance
 
-<div align="center">
-  <img src="branding/promo-gpu.jpg" alt="GPU render server" width="88%">
-</div>
+Fixed measurement setup: **`examples/demo/示范工程.fxproj`, 103 nodes, 192×108, 60 frames, headless.**
+Numbers from other setups are not comparable.
 
----
+| Metric | Value | Notes |
+| --- | --- | --- |
+| Frame | **69.0 ms** | measured 2026-11-17, `tests/_profile_frame.gd` |
+| Operators | 44.1 ms (64%) | 97 calls, 0.45 ms average |
+| Framework/other | 24.9 ms (36%) | port table, param resolution, subgraph runners, preview capture |
+| Most expensive | `graph.subgraph` 13.3 ms | 2 calls, 3.55 ms of which is inside the subgraph |
 
-## Tests
+History: pure GDScript 555 ms → row-parallel 344 ms (1.61×) → native kernel 226 ms (2.46×)
+→ now 69 ms (**8.0×** vs the start).
 
-14 headless suites covering the kernel, graph, editor, plugin lifecycle, pixel operators, text,
-platform, IO, project files and architecture boundaries:
+Two optional accelerators, both may be absent:
+
+- **Native pixel kernel** (`pixels.native`, GDExtension): 5 classes / 25 generic primitives, it
+  knows no node types. Absent or disabled → GDScript fallback; `tests/test_pixel_native.gd`
+  guards precision by running the same operator with the switch off and on and comparing bytes
+  (97 assertions).
+- **GPU compute** (`render.gpu`): blur, mix, sharpen, outline; worker threads join through
+  `RenderingServer.call_on_render_thread`. **Main evaluation is still CPU.**
+
+Per-layer resolution (`res_scale`) is the only double-digit-percent switch: 2.40× at 0.5,
+3.59× at 0.25 (192²).
+
+## Diagnostics: find out whose fault it is
 
 ```bash
-bash tools/run_tests.sh          # everything
-godot --headless --path . --script res://tests/test_architecture.gd   # boundaries only
+GODOT="D:/SteamLibrary/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe"
+
+"$GODOT" --headless --path . -- --fx-diagnose                        # what exists
+"$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.blame    # whose fault
+"$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.cache    # who rebuilds
+"$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.compile  # what the graph compiles to
 ```
 
-On-screen probes (real rendering / GPU / playback) live in `tests/_probe_*.gd`:
+`diag.blame` ends with `needs action: kernel N / plugin M / assembly K` — that line is the only
+basis for action. Ownership now comes from a **declared scope**
+(`FxBoot.error(where, msg, scope)` with `kernel` / `assembly` / `plugin:<id>`), not from guessing
+by wording: the previous version classified "plugin directory missing a manifest" as a kernel bug.
 
-```bash
-godot --path . --script res://tests/_probe_playback.gd    # playback acceptance (takes over the window)
-godot --path . --script res://tests/_shot_release.gd      # regenerate docs/screenshots
+See [docs/诊断与归因.md](docs/诊断与归因.md) (Chinese).
+
+## Known gaps
+
+| # | Goal | Status |
+| --- | --- | --- |
+| 1 | Rebuild only when data changes | **Core done.** Three gates + per-node signatures + downstream-closure diff invalidation: editing one parameter drops only it and its downstream, upstream entries keep hitting. |
+| 2 | Preview on its own adjustable quality pipeline | **Partial.** `display_scale` (1.0/0.5/0.25) shrinks only the on-screen copy; archive frames and exports stay pixel-identical. Thumbnails still compute full-res then resize. |
+| 3 | Runtime pruning | **Partial.** The IR plan feeds all three evaluation paths; exec-entry pruning, `evaluate_always` side branches, keyframe-free detection and per-frame port indexing are still open. |
+| 4 | Entire pipeline in GDExtension | **Not started.** Native covers 25 primitives; the evaluation loop, param resolution, port conversion and Image allocation are still GDScript (that 36%). |
+| 5 | Make the GDExtension a plugin | **Done.** `plugins/pixels.native/` is a real plugin: ships its library and descriptor, declares a capability, falls back when disabled. The assembly report says "5/5 families present". |
+| 6 | Break up the monolithic CPP | **Done.** 1635-line monolith → five operator families + `common/` (2027 lines); 97 byte-exact assertions pass. |
+
+## Documentation map
+
+| Looking for | Go to (Chinese unless noted) |
+| --- | --- |
+| What actually holds in the code, where the boundaries are | [docs/架构.md](docs/架构.md) |
+| Writing a plugin (manifest, contributions, discipline) | [docs/插件开发.md](docs/插件开发.md) |
+| The four version numbers and when each moves | [docs/版本策略.md](docs/版本策略.md) |
+| How performance is measured | [docs/性能口径.md](docs/性能口径.md) |
+| "Whose fault is it" tooling | [docs/诊断与归因.md](docs/诊断与归因.md) |
+| Where the project stands, what is next | [docs/路线与缺口.md](docs/路线与缺口.md) |
+| Rules for AI collaborators (invariant list) | [CLAUDE.md](CLAUDE.md) |
+| Old documents (**superseded — do not quote their numbers**) | [docs/归档/](docs/归档/README.md) |
+
+## Layout
+
+```
+phantom-workshop/
+├── scripts/graph/           # kernel (9.3k lines, zero plugin class names, checked by diag.blame)
+│   ├── kernel/              # context, fibers, scopes, registry, settings, boot
+│   ├── plugins/             # plugin host and contracts
+│   ├── services/            # document store, clock broker, render broker
+│   └── ui/                  # shell, docks, skins, widgets
+├── plugins/                 # 42 plugins (each with plugin.json; pixels.native also has C++)
+├── scenes/main.tscn         # main scene
+├── tests/                   # 23 headless suites + display probes
+├── tools/                   # test runner, docs checker, icon and art scripts
+├── docs/                    # architecture, plugin dev, diagnostics, versions, performance, roadmap (archive in docs/归档/)
+└── examples/demo/           # the demo project (only source of perf numbers)
 ```
 
-> On-screen probes really load the 103-node project and play continuously; looking "frozen" is
-> expected — it is doing the work.
+## Contributing
 
----
+See [CONTRIBUTING.md](CONTRIBUTING.md). Two things that bite everyone:
 
-## Documentation
+- After changing a `class_name`, run `--headless --editor --quit` to rebuild the global class cache.
+- Before committing, both `bash tools/run_tests.sh` and `python tools/check_docs.py` must pass.
 
-- **[Plugin manual](docs/插件开发手册.md)** — writing a plugin from scratch: manifest fields,
-  contribution points, contracts, pitfalls (Chinese).
-- **[Architecture & implementation notes](docs/架构与实现.md)** — kernel boundaries, service
-  brokers, frame cache format, every optimisation round with measurements (Chinese).
-- **[Localisation guide](docs/本地化.md)** — UI language packs, adding a locale, keeping
-  `README.en.md` in sync (Chinese).
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** — build, style, test requirements, PR flow.
-- **[CLAUDE.md](CLAUDE.md)** — project conventions for AI collaborators (commands, invariants,
-  traps).
+## License
 
----
-
-## Related work & credits
-
-This project stands on the following (**none of them is a runtime dependency except Godot**):
-
-| Project                                                                                     | Relationship                                                                                      |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| [A Programming Paradigm for Spatiotemporal Composability](https://arxiv.org/abs/2608.25512) | The core design paper. Plugin boundaries, brokers, space/time orthogonality and the reversible ledger all follow it |
-| [Godot Engine](https://godotengine.org/)                                                    | The engine (4.7.2). Rendering, scene tree and `RenderingDevice` compute all come from it            |
-| [patch-gg/pixelfx](https://github.com/patch-gg/pixelfx)                                     | Pixel asset and operator inspiration; `core.asset` bundles 244 packs                                |
-| [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale)             | Reference project for the skin manager idea                                                        |
-| [maid-atelier](https://github.com/Small-tailqwq/dsh-deep-whale/tree/main/maid-atelier)      | Origin of the "Deep Sea Maid Atelier" theme skin                                                    |
-| [skin-manager](https://github.com/Small-tailqwq/dsh-deep-whale/tree/main/skin-manager)      | Reference implementation for skin management                                                       |
-| [DeepSeek Harness](https://www.deepseek.com/harness)                                        | AI toolchain used during development                                                               |
-| [WorkBuddy](https://www.workbuddy.cn)                                                       | Build, test and documentation collaboration environment                                            |
-
-Code is released under [MIT](LICENSE). Assets and fonts keep their original licences
-(pixelfx is MIT; HarmonyOS Sans ships with its own licence; `skin.maid-atelier` is
-**CC BY-NC-SA 4.0 — non-commercial**). See **[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)**.
-
----
-
-<div align="center">
-  <sub>Describe space with nodes, describe time with frames, let plugins do the rest.</sub>
-</div>
+MIT. Third-party assets and fonts: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

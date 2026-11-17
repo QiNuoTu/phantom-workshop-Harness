@@ -4,354 +4,296 @@
 
 # 幻像工坊 · Phantom Workshop
 
-**微内核 + 一切皆插件化的节点式实时特效工坊**。
+**微内核 + 一切皆插件化的节点式 2D 特效工坊**
 
 ![License](https://img.shields.io/badge/license-MIT-8C6BFF.svg)
-
 ![Godot](https://img.shields.io/badge/Godot-4.7.2-478CBF.svg)
-
-![Plugins](https://img.shields.io/badge/plugins-39-2FE6C8.svg)
-
+![Plugins](https://img.shields.io/badge/plugins-42-2FE6C8.svg)
 ![Nodes](https://img.shields.io/badge/节点-77-FFBE5C.svg)
-
-![Tests](https://img.shields.io/badge/断言-998-44D17A.svg)
-
-![Release](https://img.shields.io/github/v/release/QiNuoTu/phantom-workshop-Harness?color=8C6BFF&label=release)
-
-![Paper](https://img.shields.io/badge/arXiv-2608.25512-B31B1B.svg)
+![Tests](https://img.shields.io/badge/断言-1366-44D17A.svg)
+![Status](https://img.shields.io/badge/status-alpha_·_not_production_ready-DF6B4F.svg)
 
 <sub>**简体中文** · [English](README.en.md)</sub>
 
-[快速开始](#快速开始) · [截图](#界面) · [插件地图](#插件地图) · [架构](#架构) · [性能](#真实工程性能) · [参与贡献](CONTRIBUTING.md)
-
 </div>
 
----
+> **当前状态 `0.0.17-alpha`（最初测试版）。** 远未达到生产可用：接口、文件格式、
+> 性能都可能变。仓库没有正式构建，请从源码运行——它自己就是编辑器。
+> GitHub 上的 Release **一律标记为 Pre-release**，不产生「最新稳定版」。
+>
+> 这一版做的是**把话说准**：所有数字都由 `python tools/check_docs.py` 从代码里取，
+> 文档里对不上就返回非 0；六项待办的真实进度写在 [已知缺口](#已知缺口)。
+> 代码与文档不一致时，以脚本输出为准。
 
-## 这是什么
+## 它是什么
 
-幻像工坊是一个跑在 [Godot 4.7](https://godotengine.org/) 上的 **2D 特效合成器**：把节点连成图，  
-图在时间轴上动起来，编辑器实时给你看结果，最后导出成视频或序列帧。
+一个跑在 Godot 4.7 上的 **2D 特效合成器**：节点连成图，图在时间轴上动起来，
+编辑器实时给你看结果，最后导出视频或序列帧。
 
-与众不同的地方不是「有节点」，而是**软件本身是可拆卸的**：
+与众不同的不是「有节点」，而是**软件本身可拆卸**：
 
-- 基座只有 **8.9k 行**：文档撤销栈、上下文/作用域、注册表与账本、服务代理、外壳与停靠。
-- 其余全部是 **39 个插件**：图语义、求值器、渲染编排、GPU 后端、算子库、蓝图编辑器、  
-  时间轴、皮肤、导出器、语言包……每个都能单独停用、热重载、或在运行时换掉。
-- 基座源码里 **不出现任何插件类名**。删掉 `plugins/core.render/`，软件照样启动，  
-  只是拿到一个「空呈现器」——没画面，但菜单、面板、快捷键都还在。
+| 层 | 位置 | 体量 | 职责 |
+| --- | --- | --- | --- |
+| **内核** | `scripts/graph/` | 9.3k 行 | 上下文与作用域、组件/纤维生命周期、注册表与账本、设置、服务代理、外壳与停靠 |
+| **插件** | `plugins/` | 31k 行 / 42 个 | 图语义、求值器、IR 编译、渲染编排、GPU 后端、原生像素内核、算子库、蓝图编辑器、时间轴、皮肤、导出器、语言包、诊断 |
 
-这不是工程洁癖。它来自一篇论文：
+内核里**不出现任何插件类名**——`--fx-run=diag.blame` 会自报这条事实（当前：内核 0 条）。
+删掉 `plugins/core.render/` 仍能启动，只是拿到一个空呈现器：没画面，菜单与面板都在。
 
-> **A Programming Paradigm for Spatiotemporal Composability**  
-> <https://arxiv.org/abs/2608.25512>
+## 范式：照它组织边界，不是等价实现
 
-论文的核心主张是 **空间与时间必须正交**：空间（图结构、子图、算子）与时间（时钟、帧号、  
-缓存）各自独立演化，只在「组合点」相遇。本项目就是这条主张的一次完整落地：
+设计参照 *[A Programming Paradigm for Spatiotemporal Composability](https://arxiv.org/abs/2608.25512)*：
+**空间**（依赖声明与响应）与**时间**（副作用的可撤回）各自独立演进，只在组合点相遇。
 
-| 维度 | 谁负责             | 具体表现                                      |
-| -- | --------------- | ----------------------------------------- |
-| 空间 | `core.graph`    | 文档、节点、端口、连线、子图。解释器不认识 UI，编辑器不认识图容器        |
-| 时间 | `core.timeline` | `FxPlaybackClock` 只回答「该不该进下一帧」，不认识图、缓存、UI |
-| 组合 | `core.render`   | 唯一同时持有「帧号」和「这一帧的图」的地方；播放时只读缓存，绝不求值        |
+**已在代码里成立的**（每条都能指到文件）：
 
-三者之间没有共享可变状态，只有 broker 契约。所以你可以把时钟换成变速/音频驱动，  
-把后端换成 GPU，把编辑器换成别的形态，而不动另外两块。
+| 论文 | 落点 |
+| --- | --- |
+| 余效果上下文 Σ（键 → 值 / 键 → 提供者） | `FxContext.values` / `providers` |
+| 依赖满足判定 `σ ⊧ d` | `FxContext.satisfies()` |
+| 通知三分类（activating / deactivating / neutral） | `FxFiber.refresh()` |
+| 带见证的效果与逆操作栈（LIFO） | `FxEffectScope.add(inverse)` |
+| 组件 =(d, p, e)、纤维含 retire | `FxComponent` / `FxFiber` |
+| 声明式装载 + 配置调和 + 热重载 | `FxPluginHost` / `plugins.cfg` |
 
----
+**明确没做到的**（写在这里，免得有人按论文的强保证来用）：
 
-## 界面
+1. **没有值等价关系 `≃ₖ`**。`set_value()` / `provide()` 写进去就通知，不比新旧值。
+   后果是通知偏多、下游重建偏多——这是「缓存重建」问题的语义根源之一。
+2. **`set` 没有「键未被占用」的前置条件**，实为后登记者覆盖（`render.gpu` 覆盖
+   `image.blur` 就是靠这个）。于是「同一 registry 内供给互斥」这条保证不成立。
+3. **没有 isolation / interception / 派生上下文**。上下文是一张平表，
+   无法给两个组件绑定同一键的不同值，也无法在依赖访问路径上插横切逻辑。
+4. **时间可组合只在 UI/服务层成立**。图与算子层的卸载靠
+   `reset_runtime_tables()` 整体清表兜底，不是「逆操作恰好恢复原状」。
 
-<div align="center">    
-  <img src="docs/screenshots/04-main.png" alt="主界面：蓝图 / 预览 / 时间轴 / 插件中心" width="100%">    
-  <sub>左：文档与画布 · 中：蓝图（节点卡片上直接显示该节点这一帧的输出小图）· 右：预览与插件中心 · 下：时间轴</sub>    
-</div>
-
-<table>    
-<tr>    
-<td width="50%"><img src="docs/screenshots/05-playback.png" alt="时间轴：帧刻度、缓存色带、关键帧">    
-   <sub><b>时间轴</b>：标尺按帧刻度，滚轮以光标为锚点缩放，色带逐帧显示缓存状态</sub></td>    
-<td width="50%"><img src="docs/screenshots/06-plugins.png" alt="插件中心">    
-   <sub><b>插件中心</b>：39 个插件的启用状态、依赖、提供的能力与设置项，一键启停</sub></td>    
-</tr>    
-<tr>    
-<td><img src="docs/screenshots/02-node-card.png" alt="节点卡片与状态签">    
-   <sub><b>节点卡片</b>：展开即实时预览，右上角状态签说明这一帧烘没烘好（✓ / … / —）</sub></td>    
-<td><img src="docs/screenshots/01-overview.png" alt="103 节点的示范工程">    
-   <sub><b>示范工程</b>：103 节点 / 81 连线 / 192×108 / 30fps / 60 帧 —— 所有性能数字的唯一基准</sub></td>    
-</tr>    
-<tr>    
-<td><img src="docs/screenshots/08-add-node.png" alt="添加节点面板">    
-   <sub><b>添加节点</b>：77 个节点按 11 个分类归档，卡片本身就是实时缩略图，右侧直接看端口与参数</sub></td>    
-<td><img src="docs/screenshots/09-workbench.png" alt="工作台：帧刻度与缓存带">    
-   <sub><b>工作台</b>：节点参数内联编辑、标尺按帧对齐（f2 / f4 …）、标尺下方逐帧缓存色带</sub></td>    
-</tr>    
-</table>
-
-<div align="center">    
-  <img src="docs/screenshots/07-skin.png" alt="皮肤：深海女仆工坊" width="100%">    
-  <sub>皮肤不是换配色：面板、停靠、节点卡片、端口都由插件重绘（皮肤包可以单独安装 / 停用）</sub>    
-</div>
-
----
-
-## 亮点
-
-<table>    
-<tr>    
-<td width="33%" valign="top">
-
-**可拆卸的插件体系**
-
-节点类型、算子、导出格式、参数控件、面板、窗口、命令、菜单、皮肤、语言包、素材包，  
-全部是贡献点。热重载按 LIFO 撤回，停用一个插件不会留下半截 UI。
-
-</td>    
-<td width="33%" valign="top">
-
-**播放只读缓存**
-
-帧被算过一次就落进紧密单文件 `frames.fxc`：64B 头 + 位图 + 定长 RGBA8。  
-播放时一次 `seek` 取一帧（约 0.1 ms），**0 跳帧、0 未命中**，界面线程不做任何求值。
-
-</td>    
-<td width="33%" valign="top">
-
-**GPU 渲染服务器**
-
-逐像素算子用 compute shader 覆盖，结果与 CPU **逐字节一致**（像素差 ≤ 0.0027）。  
-模糊快 6.4×，混合快 14.6×；无图形设备时自动退回 CPU，不停机。
-
-</td>    
-</tr>    
-</table>
-
-<div align="center">    
-  <img src="branding/promo-cache.jpg" alt="帧级缓存" width="100%">    
-</div>
-
-**颜色只说事实**：标尺上的红 = 没算过，黄 = 只有播放档垫图（画面能看，但不是精确帧），  
-绿 = 与导出逐像素一致的精确帧。低质量预览永远不会冒充绿格——这是用户能一眼看懂的契约。
-
----
+一句话：**范式是组织边界的依据，不是已经兑现的数学保证。**
 
 ## 快速开始
 
-### 直接下载（Windows 10/11 x64）
-
-不想装 Godot 的话，抓现成的便携版：[**Releases · 最新版**](../../releases/latest)  
-解压后双击 `幻像工坊.exe` 即可，无需安装、无需运行时；示例工程在
-`examples/demo/示范工程.fxproj`。
-
-### 从源码运行
-
-**需要**：Godot **4.7.2**（标准版或 .NET 版均可，本项目是纯 GDScript）。
-
 ```bash
-git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git phantom-workshop
+git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git
 cd phantom-workshop
-
-# 1) 打开工作台（编辑器形态）
-godot --path .
-
-# 2) 装配诊断：插件 / 节点 / 面板 / 设置 / 语言包 / 贴图 / 缓存位置
-godot --headless --path . -- --fx-diagnose
-
-# 3) 跑回归（14 套，约 4 分钟）
-bash tools/run_tests.sh
+godot --path .                     # 直接启动工作台（主场景 scenes/main.tscn）
 ```
 
-**导出成 exe**：
+没有可下载的正式构建。原生像素内核是**可选加速层**，没编也能跑（全部回落 GDScript，只是慢）：
 
 ```bash
-godot --headless --path . --export-release "Windows Desktop" ../dist/幻像工坊.exe
+# 需要 godot-cpp 源码 + MSVC。不编也不影响功能，只影响速度。
+bash plugins/pixels.native/build.sh template_debug
 ```
 
-打包脚本会把 `plugins/` 按插件 id 镜像到 exe 同级目录 —— 插件是**外部资源**，  
-玩家可以直接删掉某个插件目录来精简功能。
+回归与自检：
 
-### 目录结构
-
-```
-.
-├── project.godot            # Godot 工程（仓库根目录就是工程根目录）
-├── scenes/main.tscn         # 唯一场景：外壳 FxShell
-├── scripts/graph/           # 基座（8.9k 行，不认识任何插件类名）
-│   ├── kernel/              #   上下文 / 文档撤销栈 / 代理 / 注册表契约
-│   ├── plugins/             #   插件宿主：扫描、依赖、可逆账本
-│   ├── ui/                  #   外壳 / 停靠 / 窗口 / 皮肤 / 控件工厂
-│   └── services/            #   资源根
-├── plugins/                 # 39 个插件（每个都有 plugin.json + plugin.gd）
-│   ├── core.graph/          #   图语义：文档、目录、端口、子图、求值器
-│   ├── core.render/         #   渲染编排：时钟组合、帧缓存、预渲染
-│   ├── render.gpu/          #   GPU 渲染服务器（compute shader）
-│   ├── editor.*/            #   蓝图、时间轴、预览、皮肤、插件中心、设置…
-│   └── fx.*/ glow/ …        #   算子库
-├── examples/demo/           # 示范工程（性能基准，务必用它做验证）
-├── docs/                    # 架构笔记 · 插件开发手册 · 截图
-├── branding/         # 图标与宣传物料
-├── tests/                   # 14 套回归 + 各种带显示的探针
-└── tools/                   # 打包、图标渲染、素材生成
+```bash
+bash tools/run_tests.sh            # 23 套 / 1366 条断言（0 失败、0 异常退出）
+python tools/check_docs.py         # 文档与代码一致性（CI 用，非 0 表示不一致）
 ```
 
----
+## 界面
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/01-overview.png" alt="工作台总览" /></td>
+    <td><img src="docs/screenshots/02-node-card.png" alt="节点卡片与实时读数" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>工作台</b>：左侧节点库、中间蓝图、右侧参数、底部时间轴</sub></td>
+    <td align="center"><sub><b>节点卡片</b>：端口类型、参数、本帧输出读数（数值带曲线采样）</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/09-workbench.png" alt="帧刻度与缓存带" /></td>
+    <td><img src="docs/screenshots/05-playback.png" alt="播放与缓存状态" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>缓存带</b>：绿=精确帧已缓存，橘=正在渲染，黄=垫图待替换</sub></td>
+    <td align="center"><sub><b>播放</b>：播放头推进只读缓存，缺帧才挂起</sub></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/06-plugins.png" alt="插件中心" /></td>
+    <td><img src="docs/screenshots/08-add-node.png" alt="添加节点面板" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>插件中心</b>：42 个插件的依赖、能力、设置项与启停</sub></td>
+    <td align="center"><sub><b>添加节点</b>：77 个节点按 11 类归档，卡片本身是实时样张</sub></td>
+  </tr>
+</table>
 
 ## 插件地图
 
-启动日志里的 `39` 就是它们。按职责分成五层：
+| 分组 | 插件 | 提供什么 |
+| --- | --- | --- |
+| **内核能力** | `core.graph` `core.compile` `core.render` `core.quality` `core.timeline` `core.control` `core.i18n` | 图语义与求值器、IR 编译与剪枝、渲染编排与帧缓存、质量策略、时钟、配色、语言包 |
+| **像素** | `core.pixels` `core.image` `core.source` `core.text` `core.asset` `core.recipe` `core.shader` | 混合/重采样工具、图像算子、生成器、文本栅格化、pixelfx 素材、配方引擎、着色器节点 |
+| **加速** | **`pixels.native`** `render.gpu` `render.lite` | 五个 C++ 算子族（GDExtension）、GPU compute 后端、纯 CPU 后端 |
+| **算子库** | `core.math` `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion` | 数值与逻辑、颜色、合成、扭曲、生成器、VFX、辉光、曲线、运动 —— 77 个节点整体在这个范围里 |
+| **编辑器** | `editor.document` `editor.graph` `editor.preview` `editor.timeline` `editor.node-picker` `editor.palette` `editor.plugin-hub` `editor.plugins` `editor.settings` `editor.skin` `editor.skin-manager` `editor.help` `editor.dropimport` `editor.diagnostics` | 文档与撤销栈、蓝图视图、输出预览、时间轴、节点面板、调色板、插件中心、设置、皮肤、帮助、拖拽导入、归因诊断 |
+| **外观 / 输出** | `skin.maid-atelier` `godot.export` | 皮肤、导出器（视频 / 序列帧 / PNG） |
 
-| 层           | 插件                                                                                                                                                                                                                                     | 贡献                                                   |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| **内核能力**    | `core.graph` `core.render` `core.timeline` `core.quality` `core.i18n` `core.asset` `core.pixels` `core.math` `core.text` `core.control` `core.shader` `core.recipe` `core.source` `core.image`                                         | 图语义、渲染编排、时钟、质量策略、语言、素材、像素工具、数学、文本、控件、着色器、配方、外部源、图像算子 |
-| **求值后端**    | `render.gpu` `render.lite`                                                                                                                                                                                                             | compute 算子覆盖；播放时跳帧省预览的经济模式                           |
-| **算子库**     | `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion`                                                                                                                                     | 颜色、合成、扭曲、生成器、VFX、辉光、曲线、运动 —— 共 77 个节点/算子             |
-| **编辑器**     | `editor.graph` `editor.timeline` `editor.preview` `editor.document` `editor.node-picker` `editor.palette` `editor.settings` `editor.plugins` `editor.plugin-hub` `editor.skin` `editor.skin-manager` `editor.help` `editor.dropimport` | 蓝图、时间轴、预览、文档标签、添加面板、命令面板、设置、插件管理、皮肤、帮助、拖拽导入          |
-| **皮肤 / 导出** | `skin.maid-atelier` `godot.export`                                                                                                                                                                                                     | 第三套主题；PNG 序列 / GIF / 视频等 4 个导出器                      |
-
-一个插件能贡献什么，全部写在 `plugin.gd` 的方法里：
-
-```gdscript
-nodes()          # 节点定义（nodes*.json）
-ops()            # 算子实现（静态 Callable）
-render_backends()# 求帧后端
-exporters()      # 导出格式
-panels()         # 面板
-windows()        # 独立窗口
-commands()       # 命令（菜单 / 命令面板 / 快捷键共用）
-status_fragments() # 状态栏片段
-settings()       # 设置项（含按钮型 action）
-skins()          # 皮肤与停靠样式
-locales()        # 语言包
-quality_policies() # 质量策略 provider
-graph_access()   # 图能力实现
-node_picker()    # 添加面板的检索实现
-drop_handlers()  # 拖拽导入
-```
-
-写一个新插件只需要两个文件：`plugin.json`（元数据 + 依赖 + 注入键）和 `plugin.gd`  
-（继承 `FxPlugin`），细节见 **[插件开发手册](docs/插件开发手册.md)**。
-
----
+插件用 JSON 声明、用 `FxPlugin` 子类贡献能力。写一个是**加目录**，不是改外壳——
+见 [插件开发](docs/插件开发.md)。
 
 ## 架构
 
 ```mermaid
 flowchart TB
-  subgraph Base["基座 scripts/graph（8.9k 行，零插件类名）"]
+  subgraph Base["内核 scripts/graph (9.3k 行, 零插件类名)"]
     direction LR
     B1[FxContext / Fiber / Scope]
-    B2[FxDocumentStore<br/>撤销栈 + 内容身份]
-    B3[FxRegistry / FxPluginHost<br/>可逆账本]
-    B4[FxGraphFacade / FxRenderBroker<br/>FxClockBroker / FxSettings …]
-    B5[FxShell<br/>停靠 / 窗口 / 皮肤 / 菜单]
+    B2[FxRegistry / Ledger]
+    B3[FxShell / Docks]
   end
-
-  subgraph Domain["插件（可插拔）"]
-    D1[core.graph<br/>图语义 + 求值器]
-    D2[core.timeline<br/>FxPlaybackClock]
-    D3[core.render<br/>渲染编排 + 帧缓存]
-    D4[render.gpu<br/>compute 算子]
-    D5[editor.*<br/>蓝图 / 时间轴 / 预览]
+  subgraph Plugins["插件 plugins/ (42)"]
+    P1[core.graph 图语义+求值]
+    P2[core.compile IR+剪枝]
+    P3[core.render 编排+缓存]
+    P4[pixels.native C++ 内核]
+    P5[editor.* 界面]
   end
-
-  B4 -->|doc_* 契约| D1
-  D3 -->|只问「进不进下一帧」| D2
-  D3 -->|取图| D1
-  D3 -->|postprocess| D4
-  D5 -->|只 inject graph.facade| B4
-  B5 -->|services["render"]| D3
+  Base -- 契约: 贡献点 / 能力键 / 服务代理 --> Plugins
+  P1 -- 只经 FxGraphFacade 被访问 --> Base
 ```
 
-三条硬规则（`tests/test_architecture.gd` 静态断言盯着）：
+三条硬纪律（都有机器检查，不靠自觉）：
 
-1. **基座不出现插件类名** —— 不是「停用后不崩」，而是「删掉目录仍能编译」。
-2. **界面不出现图领域符号** —— 编辑器只 inject `graph.facade`，不 import 任何容器类。
-3. **节点类型只活在插件里** —— 执行器与 UI 里没有 `if type == "image.blur"`，只有 op 表。
+1. **内核源码零插件类名**——`test_architecture` 白名单 + `diag.blame` 结构扫描。
+2. **图语义只在 `core.graph`**，基座只经 `FxGraphFacade.access()`；节点类型只在
+   `nodes*.json` + 算子表，不在代码里写死。
+3. **呈现器是契约不是实现**——`FxRenderHost` 是空实现，`core.render` 继承它；
+   外观 id 不写死，默认取 order 最小的。
 
-### 时空可组合的落点
+细节见 [架构](docs/架构.md)。
 
-- 文档写入只走 `FxDocumentStore.mutate / apply_param / apply_path`；批量用 `begin_batch/commit_batch`。  
-  写前写后相同就**完全静默**：不记撤销点、不递增修订号、不广播。
-- 「内容身份」`content_key = 世代 × 2²⁰ + 修订号`：换工程、改参数会变，但拖节点（纯布局）不会。  
-  渲染端据此决定缓存桶与快照是否重做 —— 一次拖拽不该让整段 60 帧缓存作废。
-- 播放帧号每个 process 至多 `+1`：界面掉帧时播放变慢，但绝不跳号；目标帧连垫图都没有才挂起等。
+## 缓存、预览与剪枝
 
----
+**帧缓存**是这软件的核心资产：一帧算对了就存盘（`frames.fxc`，64B 头 + 定长 RGBA8），
+播放只读缓存。
 
-## 真实工程性能
+- **定桶依据是内容身份**，不是「通知」：`content_key() = 世代×2²⁰ + 内容修订`。
+  拖动节点、缩放分组、改选中**不算内容**，不换桶、不重画。
+- **失效分三档**：`content`（换桶）/ `derived`（丢派生表与样张，保留精确帧）/
+  `display`（只丢显示层）。设置项用 `impact` 声明自己属于哪一档（26 个 runtime 项已标注）。
+- **预览有两条管线**：节点小图可降算子质量（默认 0.5）、输出预览恒精确。
+  精确性由「算它的那一档质量」决定，结果自带 `frame_quality`，不看「此刻在不在播」。
+- **动态质量**：内容一变，整段先用 **1/8 画布**铺一遍垫图（黄格，60 帧约 3 帧内完成），
+  精确帧随后逐格替换成绿色；当前帧另有一条单帧草稿线（1/8 → 1/4 → 1/2）负责
+  「停下来改参数」的那一眼。草稿只服务显示：写进垫图层（不落盘、不归档）、不跑汇点、
+  不进显示缓存，所以「改完立刻有画面」与「导出逐像素不变」不冲突。
+  成本与播放收益见 [性能口径](docs/性能口径.md) §3.1–3.2。
+- **停靠区默认面板由 `order` 决定**（可见面板里最小的那个），不由装配顺序决定 ——
+  右侧区打开软件就是「预览」，不是插件列表。
+- **标尺四色**：红=没算过 · **橘=正在渲染** · 黄=只有垫图 · 绿=精确帧已缓存。
+  橘色是调度事实（此刻谁在算这一格），不是缓存状态 —— `cache.state()` 永远不返回它。
+- **画布尺寸只有一个来源**（`meta.canvas`）：帧缓存是定长紧密文件，帧尺寸就是它的布局，
+  所以「文档说 192、节点说 256」这种状态一旦出现，每一帧都会被尺寸闸门丢掉。
+  输出节点上那对宽/高滑块是画布的**视图**（声明 `binds`），改它等于改文档画布；
+  定桶 / 出入库 / 上屏三道防线各自独立地拒绝异形帧。见 [架构](docs/架构.md) §5.1。
+- **剪枝分两层**：拉取式求值天然不碰不可达节点；`core.compile` 再把图编译成
+  纯数据计划（拓扑序 / live / dead / 汇点 / 常量 / 类型错误 / 帧段），
+  求值器按计划跑。示范工程实测 **Live 85 / Dead 18**、常量折叠 2。
 
-> **唯一基准**：`examples/demo/示范工程.fxproj` —— 103 节点 / 81 连线 / 192×108 / 30fps / 60 帧。  
-> 所有数字都在同一台机器（RTX 3060 / 12 核）上用带显示的探针实测，脚本在 `tests/`。
+> 注意口径：Dead 18 是**结构剪枝上界**，不是提速。拉取式本来就跳过 Dead，
+> 真实收益是「常量折叠让 steps 3→2」「汇点从 O(N) 变 O(汇点数)」与可观测性。
 
-| 指标               | 数值                                               |
-| ---------------- | ------------------------------------------------ |
-| 单帧求值（CPU 逐像素）    | **480 – 530 ms**（优化前 643 ms）                     |
-| 整段 60 帧并行预渲染     | **1.79 s**（6 线程；单线程约 36 s）                       |
-| 播放 73 帧          | **0 跳帧 · 0 未命中**，界面帧时间 **13.3 ms**（空闲基线 13.2 ms） |
-| 打开工程 → 预渲染启动     | **31 – 80 ms**                                   |
-| GPU 算子：可分离模糊 r8  | 43.6 → **6.8 ms**（**6.4×**）                      |
-| GPU 算子：六种混合 α.35 | 54.0 → **3.7 ms**（**14.6×**）                     |
-| GPU 与 CPU 像素差    | **≤ 0.0027**（逐字节比对）                              |
-| 缓存读取             | **0.1 ms/帧**（PNG 编码曾是 11 ms/帧）                   |
+## 性能
 
-<div align="center">    
-  <img src="branding/promo-gpu.jpg" alt="GPU 渲染服务器" width="88%">    
-</div>
+口径固定：**`examples/demo/示范工程.fxproj`，103 节点，192×108，60 帧，无头**。
+换口径的数字不予比较。
 
----
+| 项 | 数值 | 说明 |
+| --- | --- | --- |
+| 整帧 | **69.0 ms** | 2026-11-17 实测，`tests/_profile_frame.gd` |
+| 算子累计 | 44.1 ms（64%） | 97 次调用，平均 0.45 ms/次 |
+| 框架/其它 | 24.9 ms（36%） | 端口表、参数解析、子图 runner、预览捕获 |
+| 单帧最贵 | `graph.subgraph` 13.3 ms | 2 次调用，其中 3.55 ms 是子图内部算子 |
 
-## 测试
+历史基线：纯 GDScript 逐像素 555 ms → 行内并行 344 ms（1.61×）→ 原生内核 226 ms（2.46×）
+→ 当前 69 ms（相对最初 **8.0×**）。
 
-14 套无头回归，覆盖基座、图、编辑器、插件生命周期、像素算子、文本、平台、IO、工程文件与架构边界：
+两条可选加速路径，都可缺席：
+
+- **原生像素内核**（`pixels.native`，GDExtension）：5 个类 / 25 个通用图元，
+  不认识任何节点类型。缺席或停用即回落 GDScript，`tests/test_pixel_native.gd`
+  用「开关两跑逐字节比对」守住精度（97 条断言）。
+- **GPU compute**（`render.gpu`）：模糊、混合、锐化、描边；工作线程走
+  `RenderingServer.call_on_render_thread` 合流。**主求值仍是 CPU**。
+
+逐层分辨率档（`res_scale`）是唯一两位数百分比级别的开关：0.5 档 2.40×、0.25 档 3.59×（192²）。
+
+## 诊断：先弄清「谁的错」
+
+出问题时第一步不是改代码，是**归因**：
 
 ```bash
-bash tools/run_tests.sh          # 全量
-godot --headless --path . --script res://tests/test_architecture.gd   # 只跑架构边界
+GODOT="D:/SteamLibrary/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe"
+
+"$GODOT" --headless --path . -- --fx-diagnose                        # 有什么
+"$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.blame    # 谁的错
+"$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.cache    # 谁在重建
+"$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.compile  # 图编译成什么
 ```
 
-带显示的探针（真实渲染 / GPU / 播放）在 `tests/_probe_*.gd`，例如：
+`diag.blame` 的结论有一行「需要动手：内核 N / 插件 M / 装配 K」，那是唯一行动依据。
+归属来自**声明**而不是措辞：`FxBoot.error(where, msg, scope)` 的 `scope` 可以是
+`kernel` / `assembly` / `plugin:<id>`，没声明才回落到文本推断——
+上一版就是因为靠措辞猜，把「插件目录缺清单」判成了内核问题。
 
-```bash
-godot --path . --script res://tests/_probe_playback.gd    # 播放不跳帧验收（会占用窗口）
-godot --path . --script res://tests/_shot_release.gd      # 重新生成 docs/screenshots
+详见 [诊断与归因](docs/诊断与归因.md)。
+
+## 已知缺口
+
+六项待办的真实进度（不写「已完成」，写做了什么、没做什么）：
+
+| # | 目标 | 现在 |
+| --- | --- | --- |
+| 1 | 只有数据改变才重建 | **主干完成**。三道闸门 + 每节点签名 + 下游闭包差量失效：改一个参数只废它和下游，上游缓存继续命中（`tests/test_invalidation.gd`）。 |
+| 2 | 预览走独立可调质量管线 | **部分**。`display_scale`（1.0/0.5/0.25）只缩屏幕那一张，归档与导出逐像素不变；**草稿帧阶梯**（1/8 → 1/4 → 1/2）让「帧没算好也有画面」成立；节点小图仍走「全分辨率算完再 resize」。 |
+| 3 | 运行时剪枝 | **部分**。IR 计划已接入三条求值路径（同步 / 工作线程 / 预渲染）；执行流入口、`evaluate_always` 旁支、无关键帧判定、端口表每帧重建仍未收口。 |
+| 4 | 管线完全 GDExtension | **未做**。原生只覆盖 25 个图元；求值主循环、参数解析、端口转换、Image 分配仍在 GDScript（就是那 36%）。 |
+| 5 | GDExtension 做成插件 | **已完成**。`plugins/pixels.native/` 是真插件：自带库与描述文件、声明能力、停用即回落；装配诊断会报「5/5 族在场」。 |
+| 6 | 单体 CPP 打散 | **已完成**。1635 行单体 → 5 个算子族（point / warp / blend / edge / gen）+ `common/`，共 2027 行，逐字节对拍 97 条全过。 |
+
+## 文档地图
+
+| 想了解 | 看这里 |
+| --- | --- |
+| 代码里现在成立什么、边界怎么划 | [架构](docs/架构.md) |
+| 写一个插件（清单、贡献点、贡献纪律） | [插件开发](docs/插件开发.md) |
+| 四套版本号各管什么、什么时候涨 | [版本策略](docs/版本策略.md) |
+| 性能数字怎么量、口径是什么 | [性能口径](docs/性能口径.md) |
+| 出问题先判「谁的错」 | [诊断与归因](docs/诊断与归因.md) |
+| 现在到哪一步、下一步做什么 | [路线与缺口](docs/路线与缺口.md) |
+| 给 AI 协作者的约定（不变量清单） | [CLAUDE.md](CLAUDE.md) |
+| 旧版文档（**已被取代，别引用其中数字**） | [归档](docs/归档/README.md) |
+
+## 项目结构
+
+```
+phantom-workshop/
+├── scripts/graph/           # 内核（9.3k 行，零插件类名，由 diag.blame 检查）
+│   ├── kernel/              # 上下文、纤维、作用域、注册表、设置、启动
+│   ├── plugins/             # 插件宿主与契约
+│   ├── services/            # 文档存储、时钟代理、渲染代理
+│   └── ui/                  # 外壳、停靠、皮肤、UI 组件
+├── plugins/                 # 42 个插件（每个都有 plugin.json；pixels.native 另有 C++ 源码）
+├── scenes/main.tscn         # 主场景
+├── tests/                   # 23 套无头回归 + 带显示的探针
+├── tools/                   # 回归脚本、文档一致性检查、图标与美术脚本
+├── docs/                    # 架构、插件开发、诊断、版本策略、性能口径、路线与缺口（归档在 docs/归档/）
+└── examples/demo/           # 示范工程（性能口径唯一来源）
 ```
 
-> 带显示的探针会真的加载 103 节点工程并连续播放，看起来像「卡住」是正常的 —— 它就是在跑。
+## 参与贡献
 
----
+见 [CONTRIBUTING.md](CONTRIBUTING.md)。两条最容易踩的：
 
-## 文档
+- 改 `class_name` 之后必须 `--headless --editor --quit` 重建全局类缓存；
+- 提交前 `bash tools/run_tests.sh` 与 `python tools/check_docs.py` 都要过。
 
+## 许可证
 
-- **[插件开发手册](docs/插件开发手册.md)** —— 从零写一个插件：清单字段、贡献点、契约、常见坑。
-- **[架构与实现笔记](docs/架构与实现.md)** —— 微内核边界、服务代理、帧缓存格式、每一轮性能优化的实测与踩坑。
-- **[本地化与翻译](docs/本地化.md)** —— 界面语言包怎么加、回退链与合并顺序、`README.en.md` 同步规则与术语表。
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** —— 构建、代码风格、测试要求、PR 流程。
-- **[CLAUDE.md](CLAUDE.md)** —— 给 AI 协作者的项目约定（命令、不变量、陷阱）。
-
----
-
-## 相关项目与致谢
-
-本项目站在这些工作之上（**除 Godot 引擎外都不是运行时依赖**）：
-
-| 项目                                                                                          | 关系                                              |
-| ------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| [A Programming Paradigm for Spatiotemporal Composability](https://arxiv.org/abs/2608.25512) | 核心开发理念论文。插件边界、broker、时空正交、可逆账本都按它落地             |
-| [Godot Engine](https://godotengine.org/)                                                    | 引擎（4.7.2）。渲染、场景树、`RenderingDevice` compute 都来自它 |
-| [patch-gg/pixelfx](https://github.com/patch-gg/pixelfx)                                     | 像素素材与算子灵感来源；`core.asset` 收录了 244 套素材            |
-| [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale)             | 皮肤管理器的思路参照项目。                                   |
-| [maid-atelier](https://github.com/Small-tailqwq/dsh-deep-whale/tree/main/maid-atelier)      | 「深海女仆工坊」主题皮肤的出处                                 |
-| [skin-manager](https://github.com/Small-tailqwq/dsh-deep-whale/tree/main/skin-manager)      | 皮肤管理器的参考实现                                      |
-| [DeepSeek Harness](https://www.deepseek.com/harness)                                        | 开发期使用的 AI 工具链                                   |
-| [WorkBuddy](https://www.workbuddy.cn)                                                       | 构建、测试与文档协作环境                                    |
-
-代码以 [MIT](LICENSE) 发布；素材与字体各自遵循原许可（pixelfx 为 MIT、HarmonyOS Sans
-需随附许可、`skin.maid-atelier` 为 **CC BY-NC-SA 4.0 禁止商用**），
-详见 **[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)**。
-
----
-
-<div align="center">  
-  <sub>用节点描述空间，用帧描述时间，剩下的交给插件。</sub>  
-</div>
+MIT。第三方素材与字体见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

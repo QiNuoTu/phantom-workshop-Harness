@@ -17,7 +17,7 @@
 git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git phantom-workshop
 cd phantom-workshop
 godot --path .                       # 启动工作台
-bash tools/run_tests.sh              # 14 套无头回归
+bash tools/run_tests.sh              # 23 套无头回归
 ```
 
 `tools/run_tests.sh` 默认找 `godot`，找不到会退回 Windows 上的 Steam 版路径。
@@ -60,7 +60,7 @@ bash tools/run_tests.sh              # 14 套无头回归
   按钮型入口用 `"kind": "action"`，不要把动作伪装成开关。
 - 译文放 `plugins/<id>/locales/<locale>.json`，键名全局唯一；
   `core.i18n` 只放外壳文案，不要塞领域词。翻译规则、回退链、术语表见
-  **[本地化与翻译](docs/本地化.md)**。
+  **[本地化与翻译](docs/归档/本地化.md)**（旧文档，语言包机制见 `docs/插件开发.md` 的 `locales()`）。
 
 ---
 
@@ -83,7 +83,7 @@ bash tools/run_tests.sh              # 14 套无头回归
 test_kernel              ok=28   fail=0
 test_graph_core          ok=51   fail=0
 ...
-断言 998 条，失败 0 条
+断言 1366 条，失败 0 条，异常退出 0 个
 ```
 
 ### 性能改动
@@ -116,7 +116,7 @@ func ops() -> Dictionary:
 	return {&"my.op": MyOps.run}
 ```
 
-步骤与字段说明见 **[docs/插件开发手册.md](docs/插件开发手册.md)**。提交前自检：
+步骤与字段说明见 **[docs/插件开发.md](docs/插件开发.md)**。提交前自检：
 
 - [ ] 停用这个插件，工作台仍能启动、其余功能不受影响
 - [ ] 重新启用后能力完整恢复（账本能撤回干净）
