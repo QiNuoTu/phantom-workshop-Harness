@@ -121,6 +121,30 @@ static func _mix(a: Variant, b: Variant, u: float) -> Variant:
 				break
 		if numeric:
 			return out
+	# 曲线（控制点数组 [[x,y], …]）：两端点数相同就**逐点插值**。
+	# 没有这一条时，曲线参数打关键帧只会在下一帧"跳"过去（走下面的 Array 分支），
+	# 看起来像控件的 bug，其实是插值不认识这种形状。
+	if a is Array and b is Array and (a as Array).size() == (b as Array).size():
+		var pa: Array = a
+		var pb: Array = b
+		var points: Array = []
+		var ok := pa.size() >= 2
+		for i in range(pa.size()):
+			var ka: Variant = pa[i]
+			var kb: Variant = pb[i]
+			if not (ka is Array and kb is Array):
+				ok = false
+				break
+			if (ka as Array).size() != 2 or (kb as Array).size() != 2:
+				ok = false
+				break
+			var x0: float = float((ka as Array)[0])
+			var y0: float = float((ka as Array)[1])
+			var x1: float = float((kb as Array)[0])
+			var y1: float = float((kb as Array)[1])
+			points.append([lerpf(x0, x1, u), lerpf(y0, y1, u)])
+		if ok:
+			return points
 	# 文本 / 布尔不是连续量：按“到下一帧才切换”处理，避免 float("abc") 崩溃。
 	if a is String or b is String:
 		return a if u < 1.0 else b

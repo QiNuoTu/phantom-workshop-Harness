@@ -1,0 +1,20 @@
+{
+	"id": "fx.native-kit",
+	"name": "调色抠像原生包",
+	"version": "0.2.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "抠像 / 通道 / 蒙版 / 色调 / 风格化 28 个算子的 C++ 实现（唯一实现，无 GDScript 回落）",
+	"script": "plugin.gd",
+	"native": {
+		"library": "fx_native_kit.gdextension"
+	},
+	"icon": "⚙",
+	"color": "#8ab4f8",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph"
+	],
+	"provide": {
+		"plugin.fx.native-kit": "1.0"
+	}
+}

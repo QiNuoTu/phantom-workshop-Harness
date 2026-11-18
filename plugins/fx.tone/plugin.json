@@ -1,0 +1,18 @@
+{
+	"id": "fx.tone",
+	"name": "色调分离",
+	"version": "0.3.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "色调分离 Pro、调色板量化、专业色阶、分离色调、色温与自然饱和（算子由 fx.native-kit 原生实现）",
+	"script": "plugin.gd",
+	"icon": "◪",
+	"color": "#ffb86b",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.fx.native-kit"
+	],
+	"provide": {
+		"plugin.fx.tone": "1.0"
+	}
+}

@@ -17,7 +17,7 @@
 git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git phantom-workshop
 cd phantom-workshop
 godot --path .                       # 启动工作台
-bash tools/run_tests.sh              # 23 套无头回归
+bash tools/run_tests.sh              # 25 套无头回归
 ```
 
 `tools/run_tests.sh` 默认找 `godot`，找不到会退回 Windows 上的 Steam 版路径。
@@ -59,8 +59,8 @@ bash tools/run_tests.sh              # 23 套无头回归
 - 新增设置项要写 `applies`（`runtime` / `ui` / `none`）与 `order`；
   按钮型入口用 `"kind": "action"`，不要把动作伪装成开关。
 - 译文放 `plugins/<id>/locales/<locale>.json`，键名全局唯一；
-  `core.i18n` 只放外壳文案，不要塞领域词。翻译规则、回退链、术语表见
-  **[本地化与翻译](docs/归档/本地化.md)**（旧文档，语言包机制见 `docs/插件开发.md` 的 `locales()`）。
+  `core.i18n` 只放外壳文案，不要塞领域词。语言包机制（回退链、键名规则）见
+  **[插件开发](docs/插件开发.md)** 的 `locales()`。
 
 ---
 

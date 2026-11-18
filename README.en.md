@@ -8,16 +8,16 @@
 
 ![License](https://img.shields.io/badge/license-MIT-8C6BFF.svg)
 ![Godot](https://img.shields.io/badge/Godot-4.7.2-478CBF.svg)
-![Plugins](https://img.shields.io/badge/plugins-42-2FE6C8.svg)
-![Nodes](https://img.shields.io/badge/nodes-77-FFBE5C.svg)
-![Tests](https://img.shields.io/badge/assertions-1366-44D17A.svg)
+![Plugins](https://img.shields.io/badge/plugins-48-2FE6C8.svg)
+![Nodes](https://img.shields.io/badge/nodes-106-FFBE5C.svg)
+![Tests](https://img.shields.io/badge/assertions-1693-44D17A.svg)
 ![Status](https://img.shields.io/badge/status-alpha_·_not_production_ready-DF6B4F.svg)
 
 <sub>[简体中文](README.md) · **English**</sub>
 
 </div>
 
-> **Current state: `0.0.17-alpha` (first test build).** Not production ready: APIs, file
+> **Current state: `0.0.20-alpha` (first test build).** Not production ready: APIs, file
 > formats and performance will change. There is no official binary — run it from source;
 > the app is its own editor. Every GitHub Release is published as a **pre-release**;
 > there is no "latest stable".
@@ -76,7 +76,7 @@ In one line: **the paradigm is the basis for the boundaries, not a fulfilled mat
 
 ```bash
 git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git
-cd phantom-workshop
+cd phantom-workshop-Harness
 godot --path .                     # launches the workbench (scenes/main.tscn)
 ```
 
@@ -88,8 +88,17 @@ GDScript (same output, slower):
 bash plugins/pixels.native/build.sh template_debug
 ```
 
+The look-dev pack (`fx.keying` / `fx.channels` / `fx.masks` / `fx.tone` / `fx.stylize`,
+29 operators) has **no GDScript fallback** — the operators only exist in C++
+(`plugins/fx.native-kit`). Without this build those five plugins stay inactive and their
+nodes never appear (`diag.blame` says so explicitly):
+
 ```bash
-bash tools/run_tests.sh            # 23 suites / 1366 assertions (0 failed, 0 abnormal exits)
+bash plugins/fx.native-kit/build.sh template_debug
+```
+
+```bash
+bash tools/run_tests.sh            # 25 suites / 1693 assertions (0 failed, 0 abnormal exits, incl. operator budget gate)
 python tools/check_docs.py         # docs vs code (CI; non-zero means drift)
 ```
 
@@ -120,8 +129,8 @@ python tools/check_docs.py         # docs vs code (CI; non-zero means drift)
     <td><img src="docs/screenshots/08-add-node.png" alt="Add node" /></td>
   </tr>
   <tr>
-    <td align="center"><sub><b>Plugin hub</b>: dependencies, capabilities, settings, toggle for all 42 plugins</sub></td>
-    <td align="center"><sub><b>Add node</b>: 77 nodes in 11 categories, each card is a live thumbnail</sub></td>
+    <td align="center"><sub><b>Plugin hub</b>: dependencies, capabilities, settings, toggle for all 48 plugins</sub></td>
+    <td align="center"><sub><b>Add node</b>: 105 nodes in 22 categories, each card is a live thumbnail</sub></td>
   </tr>
 </table>
 
@@ -132,7 +141,7 @@ python tools/check_docs.py         # docs vs code (CI; non-zero means drift)
 | **Kernel capabilities** | `core.graph` `core.compile` `core.render` `core.quality` `core.timeline` `core.control` `core.i18n` | graph semantics + evaluator, IR compile + pruning, render orchestration + frame cache, quality policy, clock, palette, locales |
 | **Pixels** | `core.pixels` `core.image` `core.source` `core.text` `core.asset` `core.recipe` `core.shader` | blend/resample utilities, image ops, generators, text raster, pixelfx assets, recipe engine, shader nodes |
 | **Acceleration** | **`pixels.native`** `render.gpu` `render.lite` | five C++ operator families (GDExtension), GPU compute backend, pure CPU backend |
-| **Operators** | `core.math` `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion` | maths and logic, colour, compositing, distortion, generators, VFX, glow, curves, motion — the 77 nodes live in this range |
+| **Operators** | `core.math` `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion` `fx.keying` `fx.channels` `fx.masks` `fx.tone` `fx.stylize` | maths and logic, colour, compositing, distortion, generators, VFX, glow, curves, motion, keying, channels, masks, tone, stylize — the 106 nodes live in this range |
 | **Editor** | `editor.document` `editor.graph` `editor.preview` `editor.timeline` `editor.node-picker` `editor.palette` `editor.plugin-hub` `editor.plugins` `editor.settings` `editor.skin` `editor.skin-manager` `editor.help` `editor.dropimport` `editor.diagnostics` | document + undo, blueprint view, output preview, timeline, node picker, palette, plugin hub, settings, skins, help, drag-import, blame diagnostics |
 | **Look / output** | `skin.maid-atelier` `godot.export` | skins, exporters (video / frame sequences / PNG) |
 
@@ -149,7 +158,7 @@ flowchart TB
     B2[FxRegistry / Ledger]
     B3[FxShell / Docks]
   end
-  subgraph Plugins["plugins/ (42)"]
+  subgraph Plugins["plugins/ (48)"]
     P1[core.graph semantics+evaluator]
     P2[core.compile IR+pruning]
     P3[core.render orchestration+cache]
@@ -264,7 +273,6 @@ See [docs/诊断与归因.md](docs/诊断与归因.md) (Chinese).
 | "Whose fault is it" tooling | [docs/诊断与归因.md](docs/诊断与归因.md) |
 | Where the project stands, what is next | [docs/路线与缺口.md](docs/路线与缺口.md) |
 | Rules for AI collaborators (invariant list) | [CLAUDE.md](CLAUDE.md) |
-| Old documents (**superseded — do not quote their numbers**) | [docs/归档/](docs/归档/README.md) |
 
 ## Layout
 
@@ -275,11 +283,11 @@ phantom-workshop/
 │   ├── plugins/             # plugin host and contracts
 │   ├── services/            # document store, clock broker, render broker
 │   └── ui/                  # shell, docks, skins, widgets
-├── plugins/                 # 42 plugins (each with plugin.json; pixels.native also has C++)
+├── plugins/                 # 48 plugins (each with plugin.json; pixels.native also has C++)
 ├── scenes/main.tscn         # main scene
-├── tests/                   # 23 headless suites + display probes
+├── tests/                   # 25 headless suites + display probes
 ├── tools/                   # test runner, docs checker, icon and art scripts
-├── docs/                    # architecture, plugin dev, diagnostics, versions, performance, roadmap (archive in docs/归档/)
+├── docs/                    # architecture, plugin dev, diagnostics, versions, performance, roadmap, look-dev pack
 └── examples/demo/           # the demo project (only source of perf numbers)
 ```
 

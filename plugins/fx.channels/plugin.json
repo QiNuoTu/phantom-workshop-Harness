@@ -1,0 +1,18 @@
+{
+	"id": "fx.channels",
+	"name": "通道",
+	"version": "0.2.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "分离 / 合并 / 混合 / 设置透明 / 错位 / 交换：把 RGBA 四条通道拆开再拼回去（算子由 fx.native-kit 原生实现）",
+	"script": "plugin.gd",
+	"icon": "◫",
+	"color": "#6ea8fe",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.fx.native-kit"
+	],
+	"provide": {
+		"plugin.fx.channels": "1.0"
+	}
+}

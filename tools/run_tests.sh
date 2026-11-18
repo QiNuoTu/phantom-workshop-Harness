@@ -17,7 +17,8 @@ SUITES=(test_kernel test_graph_core test_editor_ui test_plugins test_pixelfx tes
         test_math_flow test_plugin_lifecycle test_shell_ui test_interactions \
         test_platform test_io test_project test_architecture test_cache_trace test_preview_roots \
         test_core_compile test_res_scale test_pixel_parallel test_pixel_native \
-        test_invalidation test_dynamic_quality test_render_canvas_binding)
+        test_invalidation test_dynamic_quality test_render_canvas_binding \
+        test_fx_ae_pack test_fx_budget)
 
 if [ "${1:-}" = "--only" ] && [ -n "${2:-}" ]; then
   IFS=',' read -r -a SUITES <<< "$2"

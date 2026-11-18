@@ -1,0 +1,19 @@
+; 调色抠像套装的原生实现（插件 fx.native-kit）。
+;
+; 这五个族**不再提供 GDScript 实现**：算子表里只有原生绑定。
+; 因此这个库编不出来或加载失败时，28 个节点会报「算子没有实现」——
+; 这是刻意的取舍：同一段像素逻辑只留一份实现，不存在「原生慢一点但能跑」的
+; 第二条路径可以悄悄漂移。诊断会把这条错误判给 fx.native-kit，而不是内核。
+;
+; 库路径必须与 build.sh 产出的 `native/<name><suffix>.dll` 逐字一致。
+
+[configuration]
+
+entry_symbol = "fx_native_kit_library_init"
+compatibility_minimum = "4.7"
+reloadable = false
+
+[libraries]
+
+windows.debug.x86_64 = "res://plugins/fx.native-kit/native/fx_native_kit.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://plugins/fx.native-kit/native/fx_native_kit.windows.template_release.x86_64.dll"

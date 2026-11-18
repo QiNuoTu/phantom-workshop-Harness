@@ -8,7 +8,7 @@
 ## 项目一句话
 
 Godot **4.7.2** 的节点式 2D 特效工坊。基座 `scripts/graph/`（9.3k 行）只提供机制，
-其余 42 个插件在 `plugins/`。核心设计来自论文
+其余 48 个插件在 `plugins/`。核心设计来自论文
 *[A Programming Paradigm for Spatiotemporal Composability](https://arxiv.org/abs/2608.25512)*：
 空间（图）与时间（帧）正交，只在 `core.render` 组合。
 
@@ -19,7 +19,7 @@ Godot **4.7.2** 的节点式 2D 特效工坊。基座 `scripts/graph/`（9.3k �
 ```bash
 GODOT="D:/SteamLibrary/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe"
 
-# 全量回归（23 套，逐套打印断言数；改完必须全绿）—— 全部在 --headless 下跑
+# 全量回归（25 套，逐套打印断言数；改完必须全绿）—— 全部在 --headless 下跑
 bash tools/run_tests.sh
 
 # 运行时冒烟（**开窗**）：headless 看不见的那一半（_draw / 纹理 / 预渲染线程 / GPU）
@@ -74,7 +74,7 @@ bash tools/smoke.sh
 
 ---
 
-## 必须先知道的 9 条不变量
+## 必须先知道的 19 条不变量
 
 1. **基座零插件类名。** `scripts/graph/**` 不许出现 `FxRenderService` / `FxFrameCache` /
    `FxGraphDoc` / `FxCatalog` 等。
@@ -123,6 +123,23 @@ bash tools/smoke.sh
     逐像素循环里 `for c in range(3)` 展开成三行、`int(round(x))` 换成 `int(x + 0.5)`、
     `lerpf` 链换成「权重一次算完」、能走引擎 C++（`Color.from_hsv` 之类）就别自己写。
     实测这些改动（1.21×）比行内并行（1.34×）还值钱。
+19. **插件自带的参数控件：kind 带前缀、写入要合批、`sync()` 不许覆盖正在改的值。**
+    kind 是全局命名空间（后注册覆盖先注册），所以叫 `tone.curve` 而不是 `curve`；
+    拖动类交互必须把多次改动攒成 ~0.1s 一次 `ctx["set"]` —— 每次写入都是一条撤销记录
+    加一次换桶 + 整段缓存重建，逐事件写就是把界面拖死。
+    另：控件侧与算子侧的采样规则必须**逐点对拍**（`test_fx_ae_pack` 里有一条），
+    否则会出现"画的是 S 形、算的是别的"，而且不报错。细则见 `docs/插件开发.md` §5.0。
+
+18. **重操作不许留在 GDScript。** 硬规则：**任何像素算子，192×108 下必须 ≤ 3 ms；
+    做不到就写成 GDExtension（`native_ops` 窄 ABI），不要写成逐像素 GDScript。**
+    两种落地方式二选一，别混：
+    · 整个算子在 C++ —— `native_ops()` + 一个族类实现 `fx_exec(inputs, params, env)`；
+    · 只有最内层在 C++ —— 桥接（`pixels.native` 的做法），语义仍在 GDScript。
+    这条规则由 `tests/test_fx_budget.gd` 执行（在 `run_tests.sh` 里，超预算即红），
+    口径见 `docs/性能口径.md` §2.1。
+    **写 C++ 时的头号坑：循环里不要比较 `String`。** `mode == String("red")` 会让每像素
+    构造一次字符串 —— 实测把 0.6 ms 的算子拖到 8.6 ms；循环外转成整数枚举即可。
+    同理：每像素调一次小函数取亮度，也要先算成平面（4.9 ms → 1.6 ms）。
 18. **改逐像素循环必须与串行「逐字节」比对。** 切片差一行、读写索引没分开，
     画面只在某些尺寸上烂一点点，肉眼很难发现。`tests/test_pixel_parallel.gd`
     用 25/37/101 行这种除不尽的尺寸钉这件事。
@@ -243,15 +260,22 @@ bash tools/smoke.sh
 ## 交付前自检
 
 ```bash
-bash tools/run_tests.sh      # 必须 0 失败（headless）
-bash tools/smoke.sh          # 必须 0 失败 + 0 引擎级报错（开窗，约 30s）
+bash tools/run_tests.sh      # 必须 0 失败（headless；含 tests/test_fx_budget.gd 的预算门禁）
+bash tools/smoke.sh          # 必须 0 失败 + 0 引擎级报错（开窗，整机行为：示范工程）
+bash tools/accept.sh         # 必须 0 失败 + 0 引擎级报错（开窗，这套插件：调色抠像验收工程）
 python tools/check_docs.py   # 必须返回 0（版本/插件数/断言数与代码一致）
 "$GODOT" --headless --path . -- --fx-diagnose --fx-run=diag.blame | tail -4  # 内核 0 条
 "$GODOT" --headless --path . -- --fx-diagnose | tail -20
 ```
+
+**加了新节点/新算子之后，还要做一件事**：把示例工程跑一遍
+（`bash tools/accept.sh`，或在应用里打开 `examples/demo/调色抠像.fxproj` 播放一遍）。
+节点定义写对不等于画面正确 —— 开窗跑一次是唯一能证明"它真的出图"的方式。
 
 - [ ] 断言总数没有减少，没有为了让测试过而放宽断言
 - [ ] 没有把插件类名/id 写进基座
 - [ ] 新增设置项有 `applies` / `order`，按钮型用 `kind:"action"`
 - [ ] 注释解释了「为什么」，而不是复述代码
 - [ ] 改动涉及性能时，PR 里带示范工程的改前/改后数字
+- [ ] 新增/修改像素算子时，`test_fx_budget` 全绿（192×108 ≤ 3 ms、≤ 135 ns/px）
+- [ ] 新增节点已进示例工程并开窗跑过（`tools/accept.sh`）

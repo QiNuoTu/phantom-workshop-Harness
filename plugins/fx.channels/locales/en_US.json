@@ -1,0 +1,7 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"通道": "Channels",
+		"分离 / 合并 / 混合 / 设置透明 / 错位 / 交换：把 RGBA 四条通道拆开再拼回去": "Extract, combine, mix, set alpha, shift and swap RGBA channels"
+	}
+}

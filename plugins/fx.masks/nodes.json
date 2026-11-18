@@ -1,0 +1,145 @@
+{
+	"category": "图像/蒙版",
+	"nodes": [
+		{
+			"id": "mask.rect",
+			"label": "矩形蒙版",
+			"desc": "画一个可圆角、可羽化、可扩张的矩形蒙版。位置与尺寸都按画布像素算。",
+			"op": "mask.rect",
+			"outputs": [
+				{ "id": "image", "label": "蒙版", "type": "image" }
+			],
+			"params": [
+				{ "id": "position", "label": "左上角", "kind": "vec2", "default": [0, 0],
+					"hint": "按画布像素给；想居中就先拖到看着对" },
+				{ "id": "size", "label": "尺寸", "kind": "vec2", "default": [128, 128],
+					"min": 0, "max": 8192, "step": 1 },
+				{ "id": "roundness", "label": "圆角", "kind": "float", "default": 0.0,
+					"min": 0.0, "max": 1.0, "step": 0.01,
+					"hint": "0 = 直角，1 = 椭圆" },
+				{ "id": "feather", "label": "羽化", "kind": "float", "default": 0.0,
+					"min": 0.0, "max": 128.0, "step": 0.5, "unit": "px" },
+				{ "id": "expand", "label": "扩张", "kind": "float", "default": 0.0,
+					"min": -128.0, "max": 128.0, "step": 0.5, "unit": "px",
+					"hint": "正数往外长（做柔和过渡），负数往里收" },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "opacity", "label": "不透明度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "mask.ellipse",
+			"label": "椭圆蒙版",
+			"desc": "以某点为中心的椭圆，可旋转、可羽化。追脸、做圆形聚焦最常用。",
+			"op": "mask.ellipse",
+			"outputs": [
+				{ "id": "image", "label": "蒙版", "type": "image" }
+			],
+			"params": [
+				{ "id": "center", "label": "中心", "kind": "vec2", "default": [96, 54] },
+				{ "id": "radius", "label": "半径", "kind": "vec2", "default": [48, 36],
+					"min": 1, "max": 4096, "step": 1 },
+				{ "id": "rotation", "label": "旋转", "kind": "float", "default": 0.0,
+					"min": -180.0, "max": 180.0, "step": 1.0, "unit": "°" },
+				{ "id": "feather", "label": "羽化", "kind": "float", "default": 0.0,
+					"min": 0.0, "max": 128.0, "step": 0.5, "unit": "px" },
+				{ "id": "expand", "label": "扩张", "kind": "float", "default": 0.0,
+					"min": -128.0, "max": 128.0, "step": 0.5, "unit": "px" },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "opacity", "label": "不透明度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "mask.boolean",
+			"label": "蒙版布尔",
+			"desc": "两张蒙版做相加 / 相减 / 相交 / 排除。尺寸不同时自动对齐到 A。",
+			"op": "mask.boolean",
+			"inputs": [
+				{ "id": "a", "label": "A", "type": "image", "required": true },
+				{ "id": "b", "label": "B", "type": "image", "required": false }
+			],
+			"outputs": [
+				{ "id": "image", "label": "蒙版", "type": "image" }
+			],
+			"params": [
+				{
+					"id": "mode", "label": "运算", "kind": "enum", "default": "add",
+					"options": [
+						{ "value": "add", "label": "相加（并集）" },
+						{ "value": "subtract", "label": "相减（A 减 B）" },
+						{ "value": "intersect", "label": "相交" },
+						{ "value": "exclude", "label": "排除（只留不重叠部分）" }
+					]
+				},
+				{ "id": "opacity", "label": "不透明度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false }
+			]
+		},
+		{
+			"id": "mask.from_luma",
+			"label": "亮度转蒙版",
+			"desc": "把一张图的亮度重映射成蒙版：黑点以下全抠、白点以上全留。",
+			"op": "mask.from_luma",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "蒙版", "type": "image" }
+			],
+			"params": [
+				{ "id": "black", "label": "黑点", "kind": "float", "default": 0.15,
+					"min": 0.0, "max": 0.99, "step": 0.01 },
+				{ "id": "white", "label": "白点", "kind": "float", "default": 0.85,
+					"min": 0.01, "max": 1.0, "step": 0.01 },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "opacity", "label": "不透明度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "mask.feather",
+			"label": "蒙版柔化",
+			"desc": "羽化 + 扩张/收缩 + 伽马。参数全默认时原样返回，方便来回对比。",
+			"op": "mask.feather",
+			"inputs": [
+				{ "id": "image", "label": "蒙版", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "蒙版", "type": "image" }
+			],
+			"params": [
+				{ "id": "radius", "label": "羽化", "kind": "int", "default": 0,
+					"min": 0, "max": 64, "step": 1, "unit": "px" },
+				{ "id": "expand", "label": "扩张", "kind": "int", "default": 0,
+					"min": -32, "max": 32, "step": 1, "unit": "px",
+					"hint": "正数长出去、负数收进来；收比羽化更能去掉亮边" },
+				{ "id": "gamma", "label": "软硬", "kind": "float", "default": 1.0,
+					"min": 0.2, "max": 4.0, "step": 0.05,
+					"hint": "大于 1 更软，小于 1 更实" }
+			]
+		},
+		{
+			"id": "mask.vignette",
+			"label": "暗角蒙版",
+			"desc": "径向渐变蒙版：中心留、四周走。中心留 (0,0) 表示自动取画布中心。",
+			"op": "mask.vignette",
+			"outputs": [
+				{ "id": "image", "label": "蒙版", "type": "image" }
+			],
+			"params": [
+				{ "id": "center", "label": "中心", "kind": "vec2", "default": [0, 0],
+					"hint": "(0,0) = 自动用画布中心；填别的值就按像素定位" },
+				{ "id": "radius", "label": "半径", "kind": "float", "default": 0.75,
+					"min": 0.05, "max": 3.0, "step": 0.01,
+					"hint": "1.0 = 刚好到短边的一半；大于 1 会连角落一起留住" },
+				{ "id": "softness", "label": "柔化", "kind": "float", "default": 0.45,
+					"min": 0.001, "max": 1.0, "step": 0.01 },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "opacity", "label": "不透明度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		}
+	]
+}

@@ -1,0 +1,1148 @@
+{
+	"edges": [
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "key_luma",
+			"to_port": "image"
+		},
+		{
+			"from": "key_luma",
+			"from_port": "image",
+			"to": "prev_key_luma",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "key_diff",
+			"to_port": "image"
+		},
+		{
+			"from": "key_diff",
+			"from_port": "image",
+			"to": "prev_key_diff",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "key_range",
+			"to_port": "image"
+		},
+		{
+			"from": "key_range",
+			"from_port": "image",
+			"to": "prev_key_range",
+			"to_port": "image"
+		},
+		{
+			"from": "key",
+			"from_port": "image",
+			"to": "key_despill",
+			"to_port": "image"
+		},
+		{
+			"from": "key_despill",
+			"from_port": "image",
+			"to": "prev_key_despill",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "ch_mixer",
+			"to_port": "image"
+		},
+		{
+			"from": "ch_mixer",
+			"from_port": "image",
+			"to": "prev_ch_mixer",
+			"to_port": "image"
+		},
+		{
+			"from": "comp",
+			"from_port": "image",
+			"to": "ch_shift",
+			"to_port": "image"
+		},
+		{
+			"from": "ch_shift",
+			"from_port": "image",
+			"to": "prev_ch_shift",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "ch_swap",
+			"to_port": "image"
+		},
+		{
+			"from": "ch_swap",
+			"from_port": "image",
+			"to": "prev_ch_swap",
+			"to_port": "image"
+		},
+		{
+			"from": "m_rect",
+			"from_port": "image",
+			"to": "prev_m_rect",
+			"to_port": "image"
+		},
+		{
+			"from": "m_vig",
+			"from_port": "image",
+			"to": "prev_m_vig",
+			"to_port": "image"
+		},
+		{
+			"from": "clean",
+			"from_port": "image",
+			"to": "m_luma",
+			"to_port": "image"
+		},
+		{
+			"from": "m_luma",
+			"from_port": "image",
+			"to": "prev_m_luma",
+			"to_port": "image"
+		},
+		{
+			"from": "clean",
+			"from_port": "image",
+			"to": "m_feather",
+			"to_port": "image"
+		},
+		{
+			"from": "m_feather",
+			"from_port": "image",
+			"to": "prev_m_feather",
+			"to_port": "image"
+		},
+		{
+			"from": "comp",
+			"from_port": "image",
+			"to": "t_poster",
+			"to_port": "image"
+		},
+		{
+			"from": "t_poster",
+			"from_port": "image",
+			"to": "prev_t_poster",
+			"to_port": "image"
+		},
+		{
+			"from": "grade",
+			"from_port": "image",
+			"to": "t_temp",
+			"to_port": "image"
+		},
+		{
+			"from": "t_temp",
+			"from_port": "image",
+			"to": "prev_t_temp",
+			"to_port": "image"
+		},
+		{
+			"from": "comp",
+			"from_port": "image",
+			"to": "t_curve",
+			"to_port": "image"
+		},
+		{
+			"from": "t_curve",
+			"from_port": "image",
+			"to": "prev_t_curve",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "s_emboss",
+			"to_port": "image"
+		},
+		{
+			"from": "s_emboss",
+			"from_port": "image",
+			"to": "prev_s_emboss",
+			"to_port": "image"
+		},
+		{
+			"from": "bg_look",
+			"from_port": "image",
+			"to": "s_half",
+			"to_port": "image"
+		},
+		{
+			"from": "s_half",
+			"from_port": "image",
+			"to": "prev_s_half",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "s_edges",
+			"to_port": "image"
+		},
+		{
+			"from": "s_edges",
+			"from_port": "image",
+			"to": "prev_s_edges",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "s_toon",
+			"to_port": "image"
+		},
+		{
+			"from": "s_toon",
+			"from_port": "image",
+			"to": "prev_s_toon",
+			"to_port": "image"
+		},
+		{
+			"from": "key",
+			"from_port": "image",
+			"to": "ch_extract",
+			"to_port": "image"
+		},
+		{
+			"from": "ch_extract",
+			"from_port": "image",
+			"to": "prev_ch_extract",
+			"to_port": "image"
+		},
+		{
+			"from": "clean",
+			"from_port": "image",
+			"to": "ch_combine",
+			"to_port": "r"
+		},
+		{
+			"from": "ch_combine",
+			"from_port": "image",
+			"to": "prev_ch_combine",
+			"to_port": "image"
+		},
+		{
+			"from": "clean",
+			"from_port": "image",
+			"to": "m_bool",
+			"to_port": "a"
+		},
+		{
+			"from": "m_bool",
+			"from_port": "image",
+			"to": "prev_m_bool",
+			"to_port": "image"
+		},
+		{
+			"from": "plate_bg",
+			"from_port": "image",
+			"to": "key_diff",
+			"to_port": "background"
+		},
+		{
+			"from": "clean",
+			"from_port": "image",
+			"to": "ch_combine",
+			"to_port": "g"
+		},
+		{
+			"from": "m_rect",
+			"from_port": "image",
+			"to": "m_bool",
+			"to_port": "b"
+		},
+		{
+			"from": "plate_bg",
+			"from_port": "image",
+			"to": "plate",
+			"to_port": "a"
+		},
+		{
+			"from": "subj_fill",
+			"from_port": "image",
+			"to": "subj_cut",
+			"to_port": "image"
+		},
+		{
+			"from": "subj_shape",
+			"from_port": "image",
+			"to": "subj_cut",
+			"to_port": "mask"
+		},
+		{
+			"from": "subj_cut",
+			"from_port": "image",
+			"to": "plate",
+			"to_port": "b"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "key",
+			"to_port": "image"
+		},
+		{
+			"from": "key",
+			"from_port": "image",
+			"to": "clean",
+			"to_port": "image"
+		},
+		{
+			"from": "plate",
+			"from_port": "image",
+			"to": "cutout",
+			"to_port": "image"
+		},
+		{
+			"from": "clean",
+			"from_port": "image",
+			"to": "cutout",
+			"to_port": "source"
+		},
+		{
+			"from": "bg_raw",
+			"from_port": "image",
+			"to": "bg_look",
+			"to_port": "image"
+		},
+		{
+			"from": "bg_look",
+			"from_port": "image",
+			"to": "comp",
+			"to_port": "a"
+		},
+		{
+			"from": "cutout",
+			"from_port": "image",
+			"to": "comp",
+			"to_port": "b"
+		},
+		{
+			"from": "comp",
+			"from_port": "image",
+			"to": "grade",
+			"to_port": "image"
+		},
+		{
+			"from": "grade",
+			"from_port": "image",
+			"to": "levels",
+			"to_port": "image"
+		},
+		{
+			"from": "levels",
+			"from_port": "image",
+			"to": "grain",
+			"to_port": "image"
+		},
+		{
+			"from": "grain",
+			"from_port": "image",
+			"to": "out",
+			"to_port": "layer_0"
+		}
+	],
+	"format": "phantom.graph",
+	"frames": [],
+	"meta": {
+		"author": "幻像工坊 · 随包示例",
+		"canvas": {
+			"background": "#00000000",
+			"height": 108,
+			"width": 192
+		},
+		"name": "调色抠像 · 28 个原生算子验收工程",
+		"note": "主链：绿幕 → 抠像 → 蒙版清理 → 换背景 → 分离色调 → 色阶 → 颗粒。验收墙：每个算子各接一个预览，打开即可逐个看效果（也保证它们被真实求值）。",
+		"seed": 1,
+		"timeline": {
+			"duration": 2.0,
+			"fps": 30,
+			"loop": true
+		}
+	},
+	"nodes": [
+		{
+			"collapsed": false,
+			"id": "plate_bg",
+			"params": {
+				"color": "#1ecf58"
+			},
+			"pos": [
+				0.0,
+				0.0
+			],
+			"type": "image.solid"
+		},
+		{
+			"collapsed": false,
+			"id": "subj_fill",
+			"params": {
+				"color": "#e6b48c"
+			},
+			"pos": [
+				0.0,
+				140.0
+			],
+			"type": "image.solid"
+		},
+		{
+			"collapsed": false,
+			"id": "subj_shape",
+			"params": {
+				"center": [
+					96,
+					58
+				],
+				"feather": 0.0,
+				"radius": [
+					30,
+					44
+				]
+			},
+			"pos": [
+				0.0,
+				280.0
+			],
+			"type": "mask.ellipse"
+		},
+		{
+			"collapsed": false,
+			"id": "subj_cut",
+			"params": {
+				"channel": "alpha"
+			},
+			"pos": [
+				240.0,
+				140.0
+			],
+			"type": "image.mask"
+		},
+		{
+			"collapsed": false,
+			"id": "plate",
+			"params": {
+				"mode": "normal"
+			},
+			"pos": [
+				480.0,
+				40.0
+			],
+			"type": "image.blend2"
+		},
+		{
+			"collapsed": false,
+			"id": "key",
+			"params": {
+				"black": 0.18,
+				"despill": 0.7,
+				"screen": "#1ecf58",
+				"soften": 0.12,
+				"white": 0.6
+			},
+			"pos": [
+				700.0,
+				40.0
+			],
+			"type": "key.chroma_pro"
+		},
+		{
+			"collapsed": false,
+			"id": "clean",
+			"params": {
+				"denoise": 0.1,
+				"feather": 2,
+				"shrink": 1,
+				"view": "matte"
+			},
+			"pos": [
+				940.0,
+				40.0
+			],
+			"type": "key.matte_clean"
+		},
+		{
+			"collapsed": false,
+			"id": "cutout",
+			"params": {
+				"channel": "alpha",
+				"mode": "multiply"
+			},
+			"pos": [
+				1180.0,
+				40.0
+			],
+			"type": "channel.set_alpha"
+		},
+		{
+			"collapsed": false,
+			"id": "bg_raw",
+			"params": {
+				"angle": 90.0,
+				"color_a": "#0a1230",
+				"color_b": "#5f9fd0",
+				"mode": "linear",
+				"softness": 0.2
+			},
+			"pos": [
+				700.0,
+				300.0
+			],
+			"type": "image.gradient"
+		},
+		{
+			"collapsed": false,
+			"id": "bg_look",
+			"params": {
+				"c1": "#0a1024",
+				"c2": "#2f5f96",
+				"c3": "#8fc4e8",
+				"smooth": 0.4,
+				"steps": 3
+			},
+			"pos": [
+				940.0,
+				300.0
+			],
+			"type": "tone.palette"
+		},
+		{
+			"collapsed": false,
+			"id": "comp",
+			"params": {
+				"mode": "normal"
+			},
+			"pos": [
+				1420.0,
+				40.0
+			],
+			"type": "image.blend2"
+		},
+		{
+			"collapsed": false,
+			"id": "grade",
+			"params": {
+				"amount": 0.75,
+				"balance": 0.55,
+				"highlight": "#ffd9a0",
+				"shadow": "#22306a"
+			},
+			"pos": [
+				1640.0,
+				40.0
+			],
+			"type": "tone.split_tone"
+		},
+		{
+			"collapsed": false,
+			"id": "levels",
+			"params": {
+				"gamma": 1.05,
+				"in_black": 0.03,
+				"in_white": 0.97
+			},
+			"pos": [
+				1860.0,
+				40.0
+			],
+			"type": "tone.levels_pro"
+		},
+		{
+			"collapsed": false,
+			"id": "grain",
+			"params": {
+				"amount": 0.07,
+				"seed": 3,
+				"size": 1
+			},
+			"pos": [
+				2080.0,
+				40.0
+			],
+			"type": "style.grain"
+		},
+		{
+			"collapsed": false,
+			"id": "out",
+			"params": {
+				"layers": [
+					{
+						"blend": "normal",
+						"name": "合成",
+						"offset": [
+							0,
+							0
+						],
+						"opacity": 1.0,
+						"visible": true
+					}
+				]
+			},
+			"pos": [
+				2320.0,
+				40.0
+			],
+			"type": "output.final"
+		},
+		{
+			"collapsed": false,
+			"id": "key_luma",
+			"params": {
+				"black": 0.55,
+				"view": "matte",
+				"white": 0.75
+			},
+			"pos": [
+				0.0,
+				520.0
+			],
+			"type": "key.luma"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_key_luma",
+			"params": {
+				"note": "key.luma"
+			},
+			"pos": [
+				240.0,
+				520.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "key_diff",
+			"params": {
+				"despill": 0.0,
+				"softness": 0.1,
+				"tolerance": 0.06
+			},
+			"pos": [
+				0.0,
+				1520.0
+			],
+			"type": "key.diff"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_key_diff",
+			"params": {
+				"note": "key.diff"
+			},
+			"pos": [
+				240.0,
+				1520.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "key_range",
+			"params": {
+				"hue_range": 0.06,
+				"target": "#1ecf58"
+			},
+			"pos": [
+				0.0,
+				740.0
+			],
+			"type": "key.color_range"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_key_range",
+			"params": {
+				"note": "key.color_range"
+			},
+			"pos": [
+				240.0,
+				740.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "key_despill",
+			"params": {
+				"mode": "green",
+				"strength": 1.0
+			},
+			"pos": [
+				0.0,
+				1740.0
+			],
+			"type": "key.despill"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_key_despill",
+			"params": {
+				"note": "key.despill"
+			},
+			"pos": [
+				240.0,
+				1740.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "ch_mixer",
+			"params": {
+				"mono": true
+			},
+			"pos": [
+				0.0,
+				960.0
+			],
+			"type": "channel.mixer"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_ch_mixer",
+			"params": {
+				"note": "channel.mixer"
+			},
+			"pos": [
+				240.0,
+				960.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "ch_shift",
+			"params": {
+				"amount": 1.0,
+				"offset": [
+					3,
+					1
+				]
+			},
+			"pos": [
+				0.0,
+				1960.0
+			],
+			"type": "channel.shift"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_ch_shift",
+			"params": {
+				"note": "channel.shift"
+			},
+			"pos": [
+				240.0,
+				1960.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "ch_swap",
+			"params": {
+				"g_from": "red",
+				"r_from": "green"
+			},
+			"pos": [
+				0.0,
+				1180.0
+			],
+			"type": "channel.swap"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_ch_swap",
+			"params": {
+				"note": "channel.swap"
+			},
+			"pos": [
+				240.0,
+				1180.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "m_rect",
+			"params": {
+				"feather": 6.0,
+				"position": [
+					40,
+					18
+				],
+				"roundness": 0.35,
+				"size": [
+					112,
+					72
+				]
+			},
+			"pos": [
+				0.0,
+				2180.0
+			],
+			"type": "mask.rect"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_m_rect",
+			"params": {
+				"note": "mask.rect"
+			},
+			"pos": [
+				240.0,
+				2180.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "m_vig",
+			"params": {
+				"radius": 0.8,
+				"softness": 0.5
+			},
+			"pos": [
+				0.0,
+				1400.0
+			],
+			"type": "mask.vignette"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_m_vig",
+			"params": {
+				"note": "mask.vignette"
+			},
+			"pos": [
+				240.0,
+				1400.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "m_luma",
+			"params": {
+				"black": 0.1,
+				"white": 0.9
+			},
+			"pos": [
+				0.0,
+				2400.0
+			],
+			"type": "mask.from_luma"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_m_luma",
+			"params": {
+				"note": "mask.from_luma"
+			},
+			"pos": [
+				240.0,
+				2400.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "m_feather",
+			"params": {
+				"expand": 1,
+				"radius": 4
+			},
+			"pos": [
+				0.0,
+				1620.0
+			],
+			"type": "mask.feather"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_m_feather",
+			"params": {
+				"note": "mask.feather"
+			},
+			"pos": [
+				240.0,
+				1620.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "t_poster",
+			"params": {
+				"levels": 4,
+				"mode": "luma",
+				"smooth": 0.2
+			},
+			"pos": [
+				0.0,
+				2620.0
+			],
+			"type": "tone.posterize_pro"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_t_poster",
+			"params": {
+				"note": "tone.posterize_pro"
+			},
+			"pos": [
+				240.0,
+				2620.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "t_temp",
+			"params": {
+				"temperature": 45.0,
+				"vibrance": 0.3
+			},
+			"pos": [
+				0.0,
+				1840.0
+			],
+			"type": "tone.temperature"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_t_temp",
+			"params": {
+				"note": "tone.temperature"
+			},
+			"pos": [
+				240.0,
+				1840.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "t_curve",
+			"params": {
+				"points": [
+					[
+						0.0,
+						0.0
+					],
+					[
+						0.25,
+						0.18
+					],
+					[
+						0.6,
+						0.72
+					],
+					[
+						1.0,
+						1.0
+					]
+				]
+			},
+			"pos": [
+				0.0,
+				2840.0
+			],
+			"type": "tone.curves"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_t_curve",
+			"params": {
+				"note": "tone.curves"
+			},
+			"pos": [
+				240.0,
+				2840.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "s_emboss",
+			"params": {
+				"angle": 45.0,
+				"strength": 1.2
+			},
+			"pos": [
+				0.0,
+				2060.0
+			],
+			"type": "style.emboss"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_s_emboss",
+			"params": {
+				"note": "style.emboss"
+			},
+			"pos": [
+				240.0,
+				2060.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "s_half",
+			"params": {
+				"angle": 45.0,
+				"cell": 4,
+				"contrast": 1.6
+			},
+			"pos": [
+				0.0,
+				3060.0
+			],
+			"type": "style.halftone"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_s_half",
+			"params": {
+				"note": "style.halftone"
+			},
+			"pos": [
+				240.0,
+				3060.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "s_edges",
+			"params": {
+				"mode": "invert",
+				"strength": 1.2
+			},
+			"pos": [
+				0.0,
+				2280.0
+			],
+			"type": "style.find_edges"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_s_edges",
+			"params": {
+				"note": "style.find_edges"
+			},
+			"pos": [
+				240.0,
+				2280.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "s_toon",
+			"params": {
+				"edge_strength": 0.8,
+				"levels": 4
+			},
+			"pos": [
+				0.0,
+				3280.0
+			],
+			"type": "style.cartoon"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_s_toon",
+			"params": {
+				"note": "style.cartoon"
+			},
+			"pos": [
+				240.0,
+				3280.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "ch_extract",
+			"params": {
+				"channel": "alpha"
+			},
+			"pos": [
+				0.0,
+				2500.0
+			],
+			"type": "channel.extract"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_ch_extract",
+			"params": {
+				"note": "channel.extract"
+			},
+			"pos": [
+				240.0,
+				2500.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "ch_combine",
+			"params": {
+				"mode": "luma"
+			},
+			"pos": [
+				0.0,
+				3500.0
+			],
+			"type": "channel.combine"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_ch_combine",
+			"params": {
+				"note": "channel.combine"
+			},
+			"pos": [
+				240.0,
+				3500.0
+			],
+			"type": "output.preview"
+		},
+		{
+			"collapsed": false,
+			"id": "m_bool",
+			"params": {
+				"mode": "intersect"
+			},
+			"pos": [
+				0.0,
+				2720.0
+			],
+			"type": "mask.boolean"
+		},
+		{
+			"collapsed": false,
+			"id": "prev_m_bool",
+			"params": {
+				"note": "mask.boolean"
+			},
+			"pos": [
+				240.0,
+				2720.0
+			],
+			"type": "output.preview"
+		}
+	],
+	"output": "out",
+	"version": 1
+}

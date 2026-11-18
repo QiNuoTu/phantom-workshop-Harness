@@ -8,16 +8,16 @@
 
 ![License](https://img.shields.io/badge/license-MIT-8C6BFF.svg)
 ![Godot](https://img.shields.io/badge/Godot-4.7.2-478CBF.svg)
-![Plugins](https://img.shields.io/badge/plugins-42-2FE6C8.svg)
-![Nodes](https://img.shields.io/badge/节点-77-FFBE5C.svg)
-![Tests](https://img.shields.io/badge/断言-1366-44D17A.svg)
+![Plugins](https://img.shields.io/badge/plugins-48-2FE6C8.svg)
+![Nodes](https://img.shields.io/badge/节点-106-FFBE5C.svg)
+![Tests](https://img.shields.io/badge/断言-1693-44D17A.svg)
 ![Status](https://img.shields.io/badge/status-alpha_·_not_production_ready-DF6B4F.svg)
 
 <sub>**简体中文** · [English](README.en.md)</sub>
 
 </div>
 
-> **当前状态 `0.0.17-alpha`（最初测试版）。** 远未达到生产可用：接口、文件格式、
+> **当前状态 `0.0.20-alpha`（最初测试版）。** 远未达到生产可用：接口、文件格式、
 > 性能都可能变。仓库没有正式构建，请从源码运行——它自己就是编辑器。
 > GitHub 上的 Release **一律标记为 Pre-release**，不产生「最新稳定版」。
 >
@@ -73,7 +73,7 @@
 
 ```bash
 git clone https://github.com/QiNuoTu/phantom-workshop-Harness.git
-cd phantom-workshop
+cd phantom-workshop-Harness
 godot --path .                     # 直接启动工作台（主场景 scenes/main.tscn）
 ```
 
@@ -84,10 +84,18 @@ godot --path .                     # 直接启动工作台（主场景 scenes/ma
 bash plugins/pixels.native/build.sh template_debug
 ```
 
+调色抠像套装（`fx.keying` / `fx.channels` / `fx.masks` / `fx.tone` / `fx.stylize`，
+29 个算子）**没有回落**：算子只存在于 `plugins/fx.native-kit` 的 C++ 里。
+不编这一步，这五个插件不会激活、它们的节点也不会出现（`diag.blame` 会直接指出原因）：
+
+```bash
+bash plugins/fx.native-kit/build.sh template_debug
+```
+
 回归与自检：
 
 ```bash
-bash tools/run_tests.sh            # 23 套 / 1366 条断言（0 失败、0 异常退出）
+bash tools/run_tests.sh            # 25 套 / 1693 条断言（0 失败、0 异常退出，含算子预算门禁）
 python tools/check_docs.py         # 文档与代码一致性（CI 用，非 0 表示不一致）
 ```
 
@@ -118,8 +126,8 @@ python tools/check_docs.py         # 文档与代码一致性（CI 用，非 0 �
     <td><img src="docs/screenshots/08-add-node.png" alt="添加节点面板" /></td>
   </tr>
   <tr>
-    <td align="center"><sub><b>插件中心</b>：42 个插件的依赖、能力、设置项与启停</sub></td>
-    <td align="center"><sub><b>添加节点</b>：77 个节点按 11 类归档，卡片本身是实时样张</sub></td>
+    <td align="center"><sub><b>插件中心</b>：48 个插件的依赖、能力、设置项与启停</sub></td>
+    <td align="center"><sub><b>添加节点</b>：106 个节点按 22 类归档，卡片本身是实时样张</sub></td>
   </tr>
 </table>
 
@@ -129,8 +137,8 @@ python tools/check_docs.py         # 文档与代码一致性（CI 用，非 0 �
 | --- | --- | --- |
 | **内核能力** | `core.graph` `core.compile` `core.render` `core.quality` `core.timeline` `core.control` `core.i18n` | 图语义与求值器、IR 编译与剪枝、渲染编排与帧缓存、质量策略、时钟、配色、语言包 |
 | **像素** | `core.pixels` `core.image` `core.source` `core.text` `core.asset` `core.recipe` `core.shader` | 混合/重采样工具、图像算子、生成器、文本栅格化、pixelfx 素材、配方引擎、着色器节点 |
-| **加速** | **`pixels.native`** `render.gpu` `render.lite` | 五个 C++ 算子族（GDExtension）、GPU compute 后端、纯 CPU 后端 |
-| **算子库** | `core.math` `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion` | 数值与逻辑、颜色、合成、扭曲、生成器、VFX、辉光、曲线、运动 —— 77 个节点整体在这个范围里 |
+| **加速** | **`pixels.native`** **`fx.native-kit`** `render.gpu` `render.lite` | 两份 GDExtension：前者是五个有回落的全工程像素族，后者是调色抠像套装 28 个算子的**唯一实现**；GPU compute 后端、纯 CPU 后端 |
+| **算子库** | `core.math` `fx.color` `fx.composite` `fx.distort` `fx.generators` `fx.vfx` `glow` `anim.curves` `anim.motion` `fx.keying` `fx.channels` `fx.masks` `fx.tone` `fx.stylize` | 数值与逻辑、颜色、合成、扭曲、生成器、VFX、辉光、曲线、运动、抠像、通道、蒙版、色调、风格化 —— 106 个节点整体在这个范围里 |
 | **编辑器** | `editor.document` `editor.graph` `editor.preview` `editor.timeline` `editor.node-picker` `editor.palette` `editor.plugin-hub` `editor.plugins` `editor.settings` `editor.skin` `editor.skin-manager` `editor.help` `editor.dropimport` `editor.diagnostics` | 文档与撤销栈、蓝图视图、输出预览、时间轴、节点面板、调色板、插件中心、设置、皮肤、帮助、拖拽导入、归因诊断 |
 | **外观 / 输出** | `skin.maid-atelier` `godot.export` | 皮肤、导出器（视频 / 序列帧 / PNG） |
 
@@ -147,7 +155,7 @@ flowchart TB
     B2[FxRegistry / Ledger]
     B3[FxShell / Docks]
   end
-  subgraph Plugins["插件 plugins/ (42)"]
+  subgraph Plugins["插件 plugins/ (48)"]
     P1[core.graph 图语义+求值]
     P2[core.compile IR+剪枝]
     P3[core.render 编排+缓存]
@@ -263,12 +271,12 @@ GODOT="D:/SteamLibrary/steamapps/common/Godot Engine/godot.windows.opt.tools.64.
 | --- | --- |
 | 代码里现在成立什么、边界怎么划 | [架构](docs/架构.md) |
 | 写一个插件（清单、贡献点、贡献纪律） | [插件开发](docs/插件开发.md) |
+| 抠像/通道/蒙版/色调分离/风格化这套节点怎么用 | [调色抠像套装](docs/调色抠像套装.md) |
 | 四套版本号各管什么、什么时候涨 | [版本策略](docs/版本策略.md) |
 | 性能数字怎么量、口径是什么 | [性能口径](docs/性能口径.md) |
-| 出问题先判「谁的错」 | [诊断与归因](docs/诊断与归因.md) |
+| 出问题先判「谁的错」（装配 / 某个工程） | [诊断与归因](docs/诊断与归因.md) |
 | 现在到哪一步、下一步做什么 | [路线与缺口](docs/路线与缺口.md) |
 | 给 AI 协作者的约定（不变量清单） | [CLAUDE.md](CLAUDE.md) |
-| 旧版文档（**已被取代，别引用其中数字**） | [归档](docs/归档/README.md) |
 
 ## 项目结构
 
@@ -279,11 +287,11 @@ phantom-workshop/
 │   ├── plugins/             # 插件宿主与契约
 │   ├── services/            # 文档存储、时钟代理、渲染代理
 │   └── ui/                  # 外壳、停靠、皮肤、UI 组件
-├── plugins/                 # 42 个插件（每个都有 plugin.json；pixels.native 另有 C++ 源码）
+├── plugins/                 # 48 个插件（每个都有 plugin.json；pixels.native 另有 C++ 源码）
 ├── scenes/main.tscn         # 主场景
-├── tests/                   # 23 套无头回归 + 带显示的探针
+├── tests/                   # 25 套无头回归 + 带显示的探针
 ├── tools/                   # 回归脚本、文档一致性检查、图标与美术脚本
-├── docs/                    # 架构、插件开发、诊断、版本策略、性能口径、路线与缺口（归档在 docs/归档/）
+├── docs/                    # 架构、插件开发、诊断、版本策略、性能口径、路线与缺口、调色抠像套装
 └── examples/demo/           # 示范工程（性能口径唯一来源）
 ```
 

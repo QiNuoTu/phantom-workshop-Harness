@@ -1,0 +1,7 @@
+{
+	"name": "English (US)",
+	"entries": {
+		"蒙版": "Masks",
+		"矩形 / 椭圆 / 布尔 / 亮度转 / 柔化 / 暗角：生成与组合蒙版": "Rect, ellipse, boolean, luma-to-matte, feather and vignette"
+	}
+}

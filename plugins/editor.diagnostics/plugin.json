@@ -1,7 +1,7 @@
 {
 	"id": "editor.diagnostics",
 	"name": "归因诊断",
-	"version": "0.1.4",
+	"version": "0.1.7",
 	"contract": ">=0.1.0 <0.2.0",
 	"description": "把问题判给内核 / 具体插件 / 装配，而不是笼统报错",
 	"script": "plugin.gd",
@@ -13,6 +13,7 @@
 		"kernel.graph"
 	],
 	"provide": {
-		"panel.editor.diagnostics": "0.1.0"
+		"panel.editor.diagnostics": "0.1.0",
+		"plugin.editor.diagnostics": "1.0"
 	}
 }

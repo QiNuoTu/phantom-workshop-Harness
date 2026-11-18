@@ -1,0 +1,18 @@
+{
+	"id": "fx.stylize",
+	"name": "风格化",
+	"version": "0.2.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "查找边缘、浮雕、卡通、半调网点、胶片颗粒（算子由 fx.native-kit 原生实现）",
+	"script": "plugin.gd",
+	"icon": "✎",
+	"color": "#e6edf3",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.fx.native-kit"
+	],
+	"provide": {
+		"plugin.fx.stylize": "1.0"
+	}
+}

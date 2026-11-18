@@ -1,7 +1,7 @@
 {
 	"id": "core.graph",
 	"name": "图文档与求值核心",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"contract": ">=0.1.0 <0.2.0",
 	"description": "图文档、节点目录、执行器与关键帧轨道",
 	"icon": "◇",

@@ -1,0 +1,132 @@
+{
+	"category": "图像/风格化",
+	"nodes": [
+		{
+			"id": "style.find_edges",
+			"label": "查找边缘",
+			"desc": "Sobel 梯度当边际：白底线稿、彩色勾边、黑底白线（可直接当蒙版）。",
+			"op": "style.find_edges",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "strength", "label": "强度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 8.0, "step": 0.05,
+					"hint": "小的材质细节想留就加大；画面太吵就降到 0.6 以下" },
+				{
+					"id": "mode", "label": "样式", "kind": "enum", "default": "mono",
+					"options": [
+						{ "value": "mono", "label": "白底线稿" },
+						{ "value": "color", "label": "彩色勾边" },
+						{ "value": "invert", "label": "黑底白线（当蒙版）" }
+					]
+				},
+				{ "id": "amount", "label": "混合", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "style.emboss",
+			"label": "浮雕",
+			"desc": "定向差分：角度决定光从哪来。石头、金属、压印的质感都靠它。",
+			"op": "style.emboss",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "angle", "label": "光向", "kind": "float", "default": 45.0,
+					"min": -180.0, "max": 180.0, "step": 1.0, "unit": "°" },
+				{ "id": "strength", "label": "强度", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 4.0, "step": 0.05 },
+				{ "id": "keep_color", "label": "保留颜色", "kind": "bool", "default": false,
+					"hint": "打开后是「压印在原图上」，关闭是「灰色浮雕板」" },
+				{ "id": "amount", "label": "混合", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "style.cartoon",
+			"label": "卡通",
+			"desc": "平涂 + 勾线：两个参数分别管「颜色分几层」和「线有多重」。",
+			"op": "style.cartoon",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "levels", "label": "平涂层数", "kind": "int", "default": 5,
+					"min": 2, "max": 16, "step": 1 },
+				{ "id": "edge_strength", "label": "线的重量", "kind": "float", "default": 0.6,
+					"min": 0.0, "max": 2.0, "step": 0.05,
+					"hint": "0 = 只平涂不勾线" },
+				{ "id": "smooth", "label": "色层过渡", "kind": "float", "default": 0.25,
+					"min": 0.0, "max": 0.9, "step": 0.01 },
+				{ "id": "amount", "label": "混合", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "style.halftone",
+			"label": "半调网点",
+			"desc": "按亮度调网点大小：印刷感、漫画感。45° 是最不刺眼的常用角。",
+			"op": "style.halftone",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "cell", "label": "网点大小", "kind": "int", "default": 4,
+					"min": 2, "max": 32, "step": 1, "unit": "px" },
+				{ "id": "angle", "label": "网点角度", "kind": "float", "default": 45.0,
+					"min": 0.0, "max": 180.0, "step": 1.0, "unit": "°" },
+				{
+					"id": "mode", "label": "形状", "kind": "enum", "default": "dot",
+					"options": [
+						{ "value": "dot", "label": "圆点" },
+						{ "value": "line", "label": "线条" }
+					]
+				},
+				{ "id": "contrast", "label": "反差", "kind": "float", "default": 1.4,
+					"min": 0.2, "max": 4.0, "step": 0.05,
+					"hint": "大于 1 网点更极端（黑白分明），小于 1 更平" },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "amount", "label": "混合", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "style.grain",
+			"label": "胶片颗粒",
+			"desc": "加噪点。颗粒是静态的（同 seed 每帧一样），所以进得了跨帧缓存、播放不重算。",
+			"op": "style.grain",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "amount", "label": "颗粒量", "kind": "float", "default": 0.12,
+					"min": 0.0, "max": 1.0, "step": 0.01 },
+				{ "id": "size", "label": "颗粒大小", "kind": "int", "default": 1,
+					"min": 1, "max": 16, "step": 1, "unit": "px",
+					"hint": "1 = 细颗粒（35mm），3~6 = 粗颗粒（16mm / 老录像）" },
+				{ "id": "seed", "label": "随机种子", "kind": "int", "default": 1,
+					"min": 0, "max": 9999, "step": 1,
+					"hint": "换种子就换一张雪花；要「闪」就把它接到动画节点上" },
+				{ "id": "mono", "label": "单色颗粒", "kind": "bool", "default": true,
+					"hint": "关闭后是彩色噪点（数码高感的那种）" }
+			]
+		}
+	]
+}

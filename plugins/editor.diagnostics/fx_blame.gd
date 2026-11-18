@@ -71,22 +71,15 @@ static func report(doc: Dictionary = {}) -> Dictionary:
 	findings.append_array(_check_contracts())
 	findings.append_array(_check_bindings(doc))
 	findings.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
-		var la := _level_rank(String(a.get("level", LEVEL_INFO)))
-		var lb := _level_rank(String(b.get("level", LEVEL_INFO)))
+		var la := level_rank(String(a.get("level", LEVEL_INFO)))
+		var lb := level_rank(String(b.get("level", LEVEL_INFO)))
 		if la != lb:
 			return la < lb
 		return String(a.get("layer", "")) < String(b.get("layer", ""))
 	)
-	var by_level := {LEVEL_ERROR: 0, LEVEL_WARN: 0, LEVEL_INFO: 0}
-	var by_layer := {LAYER_KERNEL: 0, LAYER_PLUGIN: 0, LAYER_ASSEMBLY: 0}
-	for raw in findings:
-		var item: Dictionary = raw
-		var level := String(item.get("level", LEVEL_INFO))
-		by_level[level] = int(by_level.get(level, 0)) + 1
-		if level == LEVEL_INFO:
-			continue
-		var layer := String(item.get("layer", LAYER_ASSEMBLY))
-		by_layer[layer] = int(by_layer.get(layer, 0)) + 1
+	var counts := tally(findings)
+	var by_level: Dictionary = counts["by_level"]
+	var by_layer: Dictionary = counts["by_layer"]
 	return {
 		"findings": findings,
 		"by_level": by_level,
@@ -161,7 +154,7 @@ static func _check_kernel_boundary() -> Array:
 			var symbol := String(raw_name)
 			if not words.has(symbol):
 				continue
-			out.append(_finding(LEVEL_ERROR, LAYER_KERNEL,
+			out.append(finding(LEVEL_ERROR, LAYER_KERNEL,
 				"基座引用了插件类名 %s（来自 %s）" % [symbol, String(owners[raw_name])],
 				"停用/删除该插件后 scripts/graph 编译失败。改法：定义基座契约，或把这段逻辑挪回插件（由插件贡献诊断/数据）。",
 				String(file).replace("res://", "")))
@@ -181,18 +174,18 @@ static func _check_boot_errors() -> Array:
 		var message := String(item.get("message", ""))
 		var scope := String(item.get("scope", ""))
 		if scope == "assembly":
-			out.append(_finding(LEVEL_ERROR, LAYER_ASSEMBLY,
+			out.append(finding(LEVEL_ERROR, LAYER_ASSEMBLY,
 				"启动错误［%s］%s" % [where, message],
 				"发生在装配阶段（扫插件目录 / 读清单 / 协调供给键）：先看目录结构与 plugin.json，别急着改内核。", ""))
 			continue
 		if scope.begins_with("plugin:"):
 			var scoped_owner := scope.substr(7)
-			out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+			out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 				"启动错误［%s］%s" % [where, message],
 				"由插件 %s 造成：先看它的 plugin.json / 脚本解析。" % scoped_owner, "", scoped_owner))
 			continue
 		if scope == "kernel":
-			out.append(_finding(LEVEL_ERROR, LAYER_KERNEL,
+			out.append(finding(LEVEL_ERROR, LAYER_KERNEL,
 				"启动错误［%s］%s" % [where, message],
 				"由基座启动步骤自报，可直接按内核问题排查。", ""))
 			continue
@@ -200,11 +193,11 @@ static func _check_boot_errors() -> Array:
 		if owner.is_empty():
 			owner = _owner_from_text(message)
 		if owner.is_empty():
-			out.append(_finding(LEVEL_ERROR, LAYER_KERNEL,
+			out.append(finding(LEVEL_ERROR, LAYER_KERNEL,
 				"启动错误［%s］%s" % [where, message],
 				"这条错误没有声明归属，文本里也没有插件痕迹，暂按内核启动步骤排查。", ""))
 		else:
-			out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+			out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 				"启动错误［%s］%s" % [where, message],
 				"由插件 %s 造成（文本推断）：先看它的 plugin.json / 脚本解析。" % owner, "", owner))
 	return out
@@ -218,7 +211,7 @@ static func _check_ledger_errors() -> Array:
 		if String(entry.get("kind", "")) != "error":
 			continue
 		var owner := String(entry.get("owner", ""))
-		out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN if owner != "" else LAYER_KERNEL,
+		out.append(finding(LEVEL_ERROR, LAYER_PLUGIN if owner != "" else LAYER_KERNEL,
 			String(entry.get("value", "")),
 			"这条错误在账本里登记，停用该插件即可撤回；修好后再启用。",
 			"", owner))
@@ -232,7 +225,7 @@ static func _check_dependencies() -> Array:
 	for raw in dep.get("missing", []):
 		var item: Dictionary = raw
 		var pid := String(item.get("plugin", ""))
-		out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+		out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 			"插件 %s 声明的注入键 %s 没有提供者，无法激活" % [pid, String(item.get("key", ""))],
 			"要么补一个提供该键的插件，要么删掉这条 inject。", "", pid))
 	for raw_cycle in dep.get("cycles", []):
@@ -242,7 +235,7 @@ static func _check_dependencies() -> Array:
 		var names: Array[String] = []
 		for pid in cycle:
 			names.append(String(pid))
-		out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+		out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 			"依赖环：%s" % " → ".join(names),
 			"环上的每个插件都永远激活不了；按论文 §6.5 把双向交互拆成两条单向绑定。",
 			"", String(names[0])))
@@ -251,7 +244,7 @@ static func _check_dependencies() -> Array:
 		var pid := String(raw_pid)
 		if disabled.has(pid):
 			continue
-		out.append(_finding(LEVEL_WARN, LAYER_PLUGIN,
+		out.append(finding(LEVEL_WARN, LAYER_PLUGIN,
 			"插件 %s 未激活" % pid,
 			"看它的依赖是否被停用；依赖未满足时它会静默不生效。", "", pid))
 	return out
@@ -260,32 +253,76 @@ static func _check_dependencies() -> Array:
 ## 5) 节点定义与算子：缺实现、跨插件借算子、归属丢失。
 static func _check_catalog() -> Array:
 	var out: Array = []
+	var declared := {}
+	var native_broken := {}
 	for raw in FxCatalog.all():
 		var def: FxNodeDef = raw
 		var id := String(def.id)
 		var owner := def.owner_plugin
 		if owner.is_empty():
-			out.append(_finding(LEVEL_WARN, LAYER_ASSEMBLY,
+			out.append(finding(LEVEL_WARN, LAYER_ASSEMBLY,
 				"节点 %s 找不到所属插件（账本里没有对应 node_file）" % id,
 				"节点归属由账本反查；归属为空说明定义文件没走贡献点注册。", "", ""))
 			continue
 		if def.op == &"":
-			out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+			out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 				"节点 %s 没有声明算子（op 为空）" % id,
 				"执行器拿到它只会报「缺少算子实现」。", def.source_file, owner))
 			continue
 		if not FxOpRegistry.has_op(def.op):
-			out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+			# 算子可能来自**另一个插件**（例如原生包）。这时逐条报"某节点没实现"会把
+			# 人带到错误的方向：真因是那个插件的库没加载，28 个节点只是后果。
+			# 判据全部来自公开契约：owner.inject 声明了依赖 + 对方清单里有 native + 对方账本有错。
+			var failed := _failed_native_provider(owner)
+			if not failed.is_empty():
+				var key := "%s→%s" % [owner, failed]
+				if not native_broken.has(key):
+					native_broken[key] = {"owner": owner, "provider": failed, "count": 0}
+				native_broken[key]["count"] = int(native_broken[key]["count"]) + 1
+				continue
+			out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 				"节点 %s 的算子 %s 没有实现" % [id, String(def.op)],
-				"节点定义了但没人注册这个 op：算子表里查不到。", def.source_file, owner))
+				"节点定义了但没人注册这个 op：算子表里查不到。"
+					+ _native_hint(owner),
+				def.source_file, owner))
 			continue
 		var provider := String(_op_owner_of(String(def.op), owner))
 		if not provider.is_empty():
-			out.append(_finding(LEVEL_WARN, LAYER_PLUGIN,
+			# 跨插件借算子本身不是缺陷 —— 前提是**声明过**这条依赖。
+			# 声明了（inject 里有对方的 provide 键）就记一条信息：
+			# 它解释了「为什么停用那个插件会带走这些节点」，但不需要动手。
+			if _declares_dependency(owner, provider):
+				# 同一个 (定义方, 提供方) 下常有十几个节点，逐条打印只会把真问题淹掉。
+				# 先记账，循环结束后按对儿合成一条。
+				var pair := "%s→%s" % [owner, provider]
+				if not declared.has(pair):
+					declared[pair] = {"owner": owner, "provider": provider, "count": 0,
+						"at": def.source_file}
+				declared[pair]["count"] = int(declared[pair]["count"]) + 1
+				continue
+			out.append(finding(LEVEL_WARN, LAYER_PLUGIN,
 				"节点 %s 定义在 %s，算子 %s 只由 %s 实现" % [id, owner, String(def.op), provider],
 				"这是跨插件依赖，但 plugin.json 里没有声明 %s 的注入键：停用它时该节点会静默失效。"
 					% provider,
 				def.source_file, owner))
+	# 原生库没加载：一条错、指对人（归属提供方），不要 28 条"节点没实现"。
+	for key in native_broken.keys():
+		var item: Dictionary = native_broken[key]
+		out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
+			"%s 的 %d 个算子没有绑定：%s 的原生库没有加载" % [
+				String(item["owner"]), int(item["count"]), String(item["provider"])],
+			"重编那份扩展：`bash plugins/%s/build.sh template_debug`。"
+				% String(item["provider"])
+				+ "节点定义本身没问题，修库即可 —— 不要改这些节点的 JSON。",
+			"", String(item["provider"])))
+	for pair in declared.keys():
+		var item: Dictionary = declared[pair]
+		out.append(finding(LEVEL_INFO, LAYER_PLUGIN,
+			"%s 的 %d 个节点，算子由 %s 提供（已在 inject 声明）" % [
+				String(item["owner"]), int(item["count"]), String(item["provider"])],
+			"跨插件依赖已登记：停用 %s 时这些节点会跟着不可用，这是设计好的边界。"
+				% String(item["provider"]),
+			String(item["at"]), String(item["owner"])))
 	return out
 
 
@@ -319,7 +356,7 @@ static func _check_bindings(doc: Dictionary) -> Array:
 			var value := int(FxValue.as_number((params as Dictionary)[path], 0.0))
 			if value == 0:
 				continue
-			out.append(_finding(LEVEL_ERROR, LAYER_PLUGIN,
+			out.append(finding(LEVEL_ERROR, LAYER_PLUGIN,
 				"节点 %s 的「%s」存了覆盖值 %d，而它只是 %s 的视图"
 					% [node_id, String(spec.get("label", path)), value, binds],
 				"清成 0，尺寸改到文档画布上：绑定型参数只有一个来源，两个来源会让输出帧尺寸与帧缓存布局对不上。",
@@ -333,12 +370,12 @@ static func _check_contracts() -> Array:
 	var versions := read_versions()
 	var kernel_version := String(versions.get("kernel", ""))
 	if versions.is_empty():
-		out.append(_finding(LEVEL_ERROR, LAYER_KERNEL,
+		out.append(finding(LEVEL_ERROR, LAYER_KERNEL,
 			"缺少 %s：内核契约版本没有单一真源" % VERSION_FILE.replace("res://", ""),
 			"建立 {app, kernel, project_format} 三个字段，诊断与宿主都读它。", ""))
 		return out
 	if not FxContract.is_valid(kernel_version):
-		out.append(_finding(LEVEL_ERROR, LAYER_KERNEL,
+		out.append(finding(LEVEL_ERROR, LAYER_KERNEL,
 			"内核契约版本 %s 不是可比较的版本号" % kernel_version,
 			"用 x.y.z；预发布后缀写在后面（如 0.1.0-alpha）。", ""))
 	var loose: Array[String] = []
@@ -357,15 +394,15 @@ static func _check_contracts() -> Array:
 			unconstrained += 1
 			continue
 		if not FxContract.satisfies(kernel_version, contract):
-			out.append(_finding(LEVEL_ERROR, LAYER_ASSEMBLY,
+			out.append(finding(LEVEL_ERROR, LAYER_ASSEMBLY,
 				"插件 %s 要求内核 %s，当前内核 %s" % [pid, contract, kernel_version],
 				"版本不兼容：要么升级内核，要么停用该插件；不要靠「能跑就算过」。", "", pid))
 	if not loose.is_empty():
-		out.append(_finding(LEVEL_INFO, LAYER_PLUGIN,
+		out.append(finding(LEVEL_INFO, LAYER_PLUGIN,
 			"%d 个插件的 version 不是三段式：%s" % [loose.size(), _join_head(loose, 6)],
 			"两段式版本无法表达兼容区间；统一成 x.y.z。", ""))
 	if unconstrained > 0:
-		out.append(_finding(LEVEL_INFO, LAYER_ASSEMBLY,
+		out.append(finding(LEVEL_INFO, LAYER_ASSEMBLY,
 			"%d/%d 个插件没有声明 contract（内核契约区间）" % [
 				unconstrained, FxRegistry.plugin_infos.size()],
 			"补 \"contract\": \">=0.1.0 <0.2.0\"，让「插件能不能装在这版内核上」可查。", ""))
@@ -374,13 +411,29 @@ static func _check_contracts() -> Array:
 
 # ================= 工具 =================
 
-static func _finding(level: String, layer: String, message: String, hint: String,
+static func finding(level: String, layer: String, message: String, hint: String,
 		at: String = "", owner: String = "") -> Dictionary:
 	return {"level": level, "layer": layer, "message": message,
 		"hint": hint, "at": at, "owner": owner}
 
 
-static func _level_rank(level: String) -> int:
+## 把一组 findings 汇总成 {by_level, by_layer}。**只在这一处定义**：
+## 两个诊断命令（blame / project）输出的是同一种表，口径必须一致。
+static func tally(findings: Array) -> Dictionary:
+	var by_level := {LEVEL_ERROR: 0, LEVEL_WARN: 0, LEVEL_INFO: 0}
+	var by_layer := {LAYER_KERNEL: 0, LAYER_PLUGIN: 0, LAYER_ASSEMBLY: 0}
+	for raw in findings:
+		var item: Dictionary = raw
+		var level := String(item.get("level", LEVEL_INFO))
+		by_level[level] = int(by_level.get(level, 0)) + 1
+		if level == LEVEL_INFO:
+			continue
+		var layer := String(item.get("layer", LAYER_ASSEMBLY))
+		by_layer[layer] = int(by_layer.get(layer, 0)) + 1
+	return {"by_level": by_level, "by_layer": by_layer}
+
+
+static func level_rank(level: String) -> int:
 	match level:
 		LEVEL_ERROR:
 			return 0
@@ -456,6 +509,65 @@ static func _op_owner_of(op_id: String, owner: String) -> String:
 	if list.is_empty() or list.has(owner):
 		return ""
 	return String(list[0])
+
+
+## 谁的原生库没加载：owner 声明了依赖、对方清单写了 native、对方账本里有错。
+## 三个条件缺一不可 —— 少一个就可能把"节点定义写错 op 名"误判成"原生库坏了"。
+static func _failed_native_provider(owner: String) -> String:
+	var inject: Variant = _manifest_of(owner).get("inject", [])
+	if not (inject is Array):
+		return ""
+	for raw in (inject as Array):
+		var key := String(raw)
+		if not key.begins_with("plugin."):
+			continue
+		var provider := key.substr(7)
+		var manifest := _manifest_of(provider)
+		if not (manifest.get("native", null) is Dictionary):
+			continue
+		if _plugin_has_error(provider):
+			return provider
+	return ""
+
+
+static func _plugin_has_error(plugin_id: String) -> bool:
+	for raw in FxRegistry.ledger:
+		var entry: Dictionary = raw
+		if String(entry.get("kind", "")) != "error":
+			continue
+		if String(entry.get("owner", "")) == plugin_id:
+			return true
+	return false
+
+
+## 缺算子且没有原生库线索时，至少把"可能是原生实现"这句话给出去。
+static func _native_hint(owner: String) -> String:
+	var inject: Variant = _manifest_of(owner).get("inject", [])
+	if not (inject is Array):
+		return ""
+	for raw in (inject as Array):
+		var key := String(raw)
+		if not key.begins_with("plugin."):
+			continue
+		var provider := key.substr(7)
+		if _manifest_of(provider).get("native", null) is Dictionary:
+			return "该算子由 %s 提供：先看它账本里的「原生库加载失败」。" % provider
+	return ""
+
+
+## 声明方是否登记了「我要用 provider 提供的东西」：owner.inject ∩ provider.provide ≠ ∅。
+## 这是判断跨插件依赖合不合规的唯一依据 —— 不看代码怎么写，看清单怎么声明。
+static func _declares_dependency(owner: String, provider: String) -> bool:
+	if owner.is_empty() or provider.is_empty():
+		return false
+	var inject: Variant = _manifest_of(owner).get("inject", [])
+	var provide: Variant = _manifest_of(provider).get("provide", {})
+	if not (inject is Array) or not (provide is Dictionary):
+		return false
+	for key in (provide as Dictionary).keys():
+		if (inject as Array).has(String(key)):
+			return true
+	return false
 
 
 static func _manifest_of(plugin_id: String) -> Dictionary:

@@ -50,3 +50,11 @@ extensions/pixel_native/fx_pixel_native.gdextension
 extensions/pixel_native/.sconsign.dblite
 extensions/**/*.obj
 extensions/**/*.import
+
+# === 调色抠像原生包（插件 fx.native-kit）===
+# 与 pixels.native 同一条规矩：DLL / .exp / .lib / 生成的头文件都不入库。
+# 例外是**没有回落**——这套算子只有 C++ 实现，克隆后不编就没有这些节点，
+# 所以 README 的「怎么跑起来」里必须给出 build.sh 那一步。
+plugins/fx.native-kit/native/
+plugins/fx.native-kit/build/
+plugins/fx.native-kit/fx_native_kit.gdextension

@@ -1,0 +1,6 @@
+[
+	{ "op": "open", "path": "res://examples/demo/示范工程.fxproj" },
+	{ "op": "param", "node": "src_text", "param": "size", "value": 30 },
+	{ "op": "time", "value": 0.5 },
+	{ "op": "canvas", "width": 192, "height": 108 }
+]

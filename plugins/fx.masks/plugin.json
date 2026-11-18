@@ -1,0 +1,18 @@
+{
+	"id": "fx.masks",
+	"name": "蒙版",
+	"version": "0.2.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "矩形 / 椭圆 / 布尔 / 亮度转 / 柔化 / 暗角：生成与组合蒙版（算子由 fx.native-kit 原生实现）",
+	"script": "plugin.gd",
+	"icon": "◍",
+	"color": "#c792ea",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.fx.native-kit"
+	],
+	"provide": {
+		"plugin.fx.masks": "1.0"
+	}
+}

@@ -1,0 +1,237 @@
+{
+	"category": "图像/抠像",
+	"nodes": [
+		{
+			"id": "key.chroma_pro",
+			"label": "专业绿幕抠像",
+			"desc": "按色度距离抠掉屏幕色：先定屏幕色，再拉黑点/白点决定「抠到哪、留到哪」。配合「显示 → 蒙版」看黑白蒙版调。",
+			"op": "key.chroma_pro",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{
+					"id": "screen", "label": "屏幕色", "kind": "color", "default": "#00ff00",
+					"hint": "绿布的实际颜色：点色块吸管取色，或从下方的常用键色里点一个"
+				},
+				{
+					"id": "balance", "label": "色相权重", "kind": "float", "default": 0.0,
+					"min": -1.0, "max": 1.0, "step": 0.05,
+					"hint": "往右：更严格地按色相判（暗部绿也抠）；往左：更宽容（同色但不想抠的东西能留住）"
+				},
+				{
+					"id": "black", "label": "黑点", "kind": "float", "default": 0.18,
+					"min": 0.0, "max": 0.95, "step": 0.01,
+					"hint": "差多少就算「绝对是屏幕」：越大越保守，抠不干净时先降它"
+				},
+				{
+					"id": "white", "label": "白点", "kind": "float", "default": 0.62,
+					"min": 0.02, "max": 1.0, "step": 0.01,
+					"hint": "差多少就算「绝对是前景」：越小人物边缘越干净，但容易啃掉浅色衣角"
+				},
+				{
+					"id": "shrink", "label": "收缩", "kind": "float", "default": 0.0,
+					"min": 0.0, "max": 0.9, "step": 0.01,
+					"hint": "把半透明边缘往里收：绿边一圈去不掉时用，收太多会显刀切"
+				},
+				{
+					"id": "soften", "label": "柔化", "kind": "float", "default": 0.12,
+					"min": 0.0, "max": 1.0, "step": 0.01,
+					"hint": "边缘过渡的软硬：头发要软、产品要硬"
+				},
+				{
+					"id": "despill", "label": "去溢色", "kind": "float", "default": 0.6,
+					"min": 0.0, "max": 1.0, "step": 0.01,
+					"hint": "压掉边缘上的绿色反光；压太过会发灰"
+				},
+				{
+					"id": "edge", "label": "边缘去色", "kind": "float", "default": 0.0,
+					"min": 0.0, "max": 1.0, "step": 0.01,
+					"hint": "只对半透明像素去饱和：彩色毛边最有效的一招"
+				},
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false,
+					"hint": "抠掉的部分与保留的部分对调（做「只要背景」时用）" },
+				{
+					"id": "view", "label": "显示", "kind": "enum", "default": "result",
+					"options": [
+						{ "value": "result", "label": "结果" },
+						{ "value": "matte", "label": "蒙版" }
+					],
+					"hint": "调键时切到「蒙版」：白 = 保留，黑 = 抠掉"
+				}
+			]
+		},
+		{
+			"id": "key.luma",
+			"label": "亮度键",
+			"desc": "按亮度（或某个通道）抠：黑底、白底、扫描稿、字幕最好用。",
+			"op": "key.luma",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{
+					"id": "channel", "label": "取哪个", "kind": "enum", "default": "luma",
+					"options": [
+						{ "value": "luma", "label": "亮度" },
+						{ "value": "red", "label": "红通道" },
+						{ "value": "green", "label": "绿通道" },
+						{ "value": "blue", "label": "蓝通道" },
+						{ "value": "alpha", "label": "透明通道" },
+						{ "value": "max", "label": "最亮通道" }
+					]
+				},
+				{ "id": "black", "label": "黑点", "kind": "float", "default": 0.3,
+					"min": 0.0, "max": 0.99, "step": 0.01, "hint": "低于它的全抠掉" },
+				{ "id": "white", "label": "白点", "kind": "float", "default": 0.6,
+					"min": 0.01, "max": 1.0, "step": 0.01, "hint": "高于它的全保留" },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false,
+					"hint": "白底黑字要打开" },
+				{
+					"id": "view", "label": "显示", "kind": "enum", "default": "result",
+					"options": [
+						{ "value": "result", "label": "结果" },
+						{ "value": "matte", "label": "蒙版" }
+					]
+				}
+			]
+		},
+		{
+			"id": "key.diff",
+			"label": "差值键",
+			"desc": "和一张「干净背景」逐像素比：机位不动、没有遮挡的镜头，一次就抠干净。",
+			"op": "key.diff",
+			"inputs": [
+				{ "id": "image", "label": "素材", "type": "image", "required": true },
+				{ "id": "background", "label": "干净背景", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "tolerance", "label": "容差", "kind": "float", "default": 0.08,
+					"min": 0.0, "max": 1.0, "step": 0.01,
+					"hint": "背景里的噪点与压缩渣都算「没变」；画面残留麻点时加大" },
+				{ "id": "softness", "label": "柔化", "kind": "float", "default": 0.12,
+					"min": 0.001, "max": 1.0, "step": 0.01 },
+				{ "id": "despill", "label": "去溢色", "kind": "float", "default": 0.5,
+					"min": 0.0, "max": 1.0, "step": 0.01 },
+				{ "id": "offset", "label": "背景位移", "kind": "vec2", "default": [0, 0],
+					"hint": "素材与背景差半像素时微调它，边缘会明显干净" },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{
+					"id": "view", "label": "显示", "kind": "enum", "default": "result",
+					"options": [
+						{ "value": "result", "label": "结果" },
+						{ "value": "matte", "label": "蒙版" }
+					]
+				}
+			]
+		},
+		{
+			"id": "key.color_range",
+			"label": "颜色范围",
+			"desc": "在色相/饱和/亮度上划一个盒子选色：脏绿布、一片天空、一种品牌色都能抠。",
+			"op": "key.color_range",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "target", "label": "目标色", "kind": "color", "default": "#00ff00",
+					"hint": "想被抠掉的那个颜色；同一个色系里有深浅变化也没关系" },
+				{ "id": "hue_range", "label": "色相容差", "kind": "float", "default": 0.06,
+					"min": 0.001, "max": 0.5, "step": 0.005,
+					"hint": "0.06 约等于 ±21°：抠绿色只要覆盖绿到黄绿这一段" },
+				{ "id": "sat_range", "label": "饱和容差", "kind": "float", "default": 0.35,
+					"min": 0.001, "max": 1.0, "step": 0.01 },
+				{ "id": "luma_range", "label": "亮度容差", "kind": "float", "default": 0.45,
+					"min": 0.001, "max": 1.0, "step": 0.01 },
+				{ "id": "softness", "label": "柔化", "kind": "float", "default": 0.08,
+					"min": 0.001, "max": 1.0, "step": 0.01 },
+				{ "id": "despill", "label": "去溢色", "kind": "float", "default": 0.5,
+					"min": 0.0, "max": 1.0, "step": 0.01 },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false,
+					"hint": "打开后变成「只保留这个颜色」" },
+				{
+					"id": "view", "label": "显示", "kind": "enum", "default": "result",
+					"options": [
+						{ "value": "result", "label": "结果" },
+						{ "value": "matte", "label": "蒙版" }
+					]
+				}
+			]
+		},
+		{
+			"id": "key.matte_clean",
+			"label": "蒙版清理",
+			"desc": "给蒙版收边 / 扩边 / 填孔 / 去杂点 / 羽化：抠完之后必过的一步。",
+			"op": "key.matte_clean",
+			"inputs": [
+				{ "id": "image", "label": "蒙版", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "shrink", "label": "收缩", "kind": "int", "default": 0,
+					"min": -32, "max": 32, "step": 1, "unit": "px",
+					"hint": "正数往内收（去绿边），负数往外扩（补回被啃掉的发梢）" },
+				{ "id": "feather", "label": "羽化", "kind": "int", "default": 0,
+					"min": 0, "max": 64, "step": 1, "unit": "px" },
+				{ "id": "denoise", "label": "去杂点", "kind": "float", "default": 0.0,
+					"min": 0.0, "max": 1.0, "step": 0.01,
+					"hint": "把蒙版里半灰的碎点压成非黑即白" },
+				{ "id": "fill_holes", "label": "填孔", "kind": "bool", "default": false,
+					"hint": "补掉人物内部的小黑洞（通常是暗部被误抠）" },
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{
+					"id": "view", "label": "显示", "kind": "enum", "default": "matte",
+					"options": [
+						{ "value": "matte", "label": "蒙版" },
+						{ "value": "result", "label": "结果（带原色）" }
+					]
+				}
+			]
+		},
+		{
+			"id": "key.despill",
+			"label": "去溢色",
+			"desc": "只压掉边缘的彩色反光，不动 alpha：抠干净了但「还是假」，多半差这一步。",
+			"op": "key.despill",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "strength", "label": "强度", "kind": "float", "default": 0.8,
+					"min": 0.0, "max": 1.0, "step": 0.01 },
+				{
+					"id": "mode", "label": "压哪个", "kind": "enum", "default": "auto",
+					"options": [
+						{ "value": "auto", "label": "自动判断" },
+						{ "value": "green", "label": "绿" },
+						{ "value": "blue", "label": "蓝" },
+						{ "value": "red", "label": "红" },
+						{ "value": "magenta", "label": "品红（红+蓝）" }
+					],
+					"hint": "自动 = 取画面里最强的那个通道；蓝幕素材建议直接选「蓝」"
+				},
+				{ "id": "preserve_luma", "label": "保持亮度", "kind": "bool", "default": false,
+					"hint": "压色会让画面变暗，打开后补回亮度差" },
+				{ "id": "alpha_only", "label": "只处理半透明", "kind": "bool", "default": false,
+					"hint": "实心区域的颜色是真颜色，不该被压" }
+			]
+		}
+	]
+}

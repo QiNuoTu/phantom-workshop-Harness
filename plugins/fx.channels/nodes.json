@@ -1,0 +1,181 @@
+{
+	"category": "图像/通道",
+	"nodes": [
+		{
+			"id": "channel.extract",
+			"label": "分离通道",
+			"desc": "把某一条通道单独拿出来变成灰度图，当蒙版、当数据、当遮罩都行。",
+			"op": "channel.extract",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "灰度图", "type": "image" }
+			],
+			"params": [
+				{
+					"id": "channel", "label": "取哪条", "kind": "enum", "default": "luma",
+					"options": [
+						{ "value": "luma", "label": "亮度" },
+						{ "value": "red", "label": "红" },
+						{ "value": "green", "label": "绿" },
+						{ "value": "blue", "label": "蓝" },
+						{ "value": "alpha", "label": "透明" },
+						{ "value": "max", "label": "最亮那条" }
+					],
+					"hint": "想拿「哪里透明」就选透明；想拿「哪里亮」就选亮度"
+				},
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "amount", "label": "混合", "kind": "float", "default": 1.0,
+					"min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "channel.combine",
+			"label": "合并通道",
+			"desc": "四张灰度图合成一张彩色图：哪条不接就按 0 处理，可以只接三根线。",
+			"op": "channel.combine",
+			"inputs": [
+				{ "id": "r", "label": "R", "type": "image", "required": false },
+				{ "id": "g", "label": "G", "type": "image", "required": false },
+				{ "id": "b", "label": "B", "type": "image", "required": false },
+				{ "id": "a", "label": "透明", "type": "image", "required": false }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{
+					"id": "mode", "label": "从每张图取", "kind": "enum", "default": "red",
+					"options": [
+						{ "value": "red", "label": "红通道" },
+						{ "value": "green", "label": "绿通道" },
+						{ "value": "blue", "label": "蓝通道" },
+						{ "value": "luma", "label": "亮度" },
+						{ "value": "alpha", "label": "透明" },
+						{ "value": "max", "label": "最亮那条" }
+					],
+					"hint": "接入的是灰度图时选「亮度」最直观；接入的是彩色图时选「红通道」"
+				}
+			]
+		},
+		{
+			"id": "channel.mixer",
+			"label": "通道混合器",
+			"desc": "每个输出通道 = 红/绿/蓝的加权和。修偏色、做黑白、把颜色关系整个换一遍。",
+			"op": "channel.mixer",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "rr", "label": "红←红", "kind": "float", "default": 1.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "rg", "label": "红←绿", "kind": "float", "default": 0.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "rb", "label": "红←蓝", "kind": "float", "default": 0.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "gr", "label": "绿←红", "kind": "float", "default": 0.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "gg", "label": "绿←绿", "kind": "float", "default": 1.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "gb", "label": "绿←蓝", "kind": "float", "default": 0.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "br", "label": "蓝←红", "kind": "float", "default": 0.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "bg", "label": "蓝←绿", "kind": "float", "default": 0.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "bb", "label": "蓝←蓝", "kind": "float", "default": 1.0, "min": -2.0, "max": 2.0, "step": 0.01 },
+				{ "id": "mono", "label": "变黑白", "kind": "bool", "default": false,
+					"hint": "打开后三通道取同一个加权值：这是「最像胶片」的黑白转换方式" },
+				{ "id": "amount", "label": "混合", "kind": "float", "default": 1.0, "min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "channel.set_alpha",
+			"label": "设置透明度",
+			"desc": "用另一张图的某条通道当透明通道：手工抠像、渐变透明、文字穿透。",
+			"op": "channel.set_alpha",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true },
+				{ "id": "source", "label": "遮罩来源", "type": "image", "required": false }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{
+					"id": "channel", "label": "取哪条", "kind": "enum", "default": "alpha",
+					"options": [
+						{ "value": "alpha", "label": "透明" },
+						{ "value": "luma", "label": "亮度" },
+						{ "value": "red", "label": "红" },
+						{ "value": "green", "label": "绿" },
+						{ "value": "blue", "label": "蓝" },
+						{ "value": "max", "label": "最亮那条" }
+					],
+					"hint": "不接「遮罩来源」时，从图像自己身上取"
+				},
+				{
+					"id": "mode", "label": "怎么合", "kind": "enum", "default": "replace",
+					"options": [
+						{ "value": "replace", "label": "替换" },
+						{ "value": "multiply", "label": "相乘（只减不加）" },
+						{ "value": "add", "label": "相加" }
+					]
+				},
+				{ "id": "invert", "label": "反相", "kind": "bool", "default": false },
+				{ "id": "amount", "label": "强度", "kind": "float", "default": 1.0, "min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "channel.shift",
+			"label": "通道错位",
+			"desc": "红往一边走、蓝往另一边走：色差、老录像带、红蓝 3D。",
+			"op": "channel.shift",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "offset", "label": "位移", "kind": "vec2", "default": [2, 0],
+					"hint": "红向右下、蓝向左上；只做水平时把 Y 留在 0" },
+				{ "id": "amount", "label": "强度", "kind": "float", "default": 1.0, "min": 0.0, "max": 1.0, "step": 0.01 }
+			]
+		},
+		{
+			"id": "channel.swap",
+			"label": "通道交换",
+			"desc": "四个下拉说清「输出通道取谁」：把绿通道当红用、把透明通道当图用。",
+			"op": "channel.swap",
+			"inputs": [
+				{ "id": "image", "label": "图像", "type": "image", "required": true }
+			],
+			"outputs": [
+				{ "id": "image", "label": "图像", "type": "image" }
+			],
+			"params": [
+				{ "id": "r_from", "label": "红 ←", "kind": "enum", "default": "r",
+					"options": [
+						{ "value": "r", "label": "红" }, { "value": "g", "label": "绿" },
+						{ "value": "b", "label": "蓝" }, { "value": "a", "label": "透明" },
+						{ "value": "none", "label": "无（置 0）" }
+					] },
+				{ "id": "g_from", "label": "绿 ←", "kind": "enum", "default": "g",
+					"options": [
+						{ "value": "r", "label": "红" }, { "value": "g", "label": "绿" },
+						{ "value": "b", "label": "蓝" }, { "value": "a", "label": "透明" },
+						{ "value": "none", "label": "无（置 0）" }
+					] },
+				{ "id": "b_from", "label": "蓝 ←", "kind": "enum", "default": "b",
+					"options": [
+						{ "value": "r", "label": "红" }, { "value": "g", "label": "绿" },
+						{ "value": "b", "label": "蓝" }, { "value": "a", "label": "透明" },
+						{ "value": "none", "label": "无（置 0）" }
+					] },
+				{ "id": "a_from", "label": "透明 ←", "kind": "enum", "default": "a",
+					"options": [
+						{ "value": "r", "label": "红" }, { "value": "g", "label": "绿" },
+						{ "value": "b", "label": "蓝" }, { "value": "a", "label": "透明" },
+						{ "value": "none", "label": "无（置 0）" }
+					] }
+			]
+		}
+	]
+}

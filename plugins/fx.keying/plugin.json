@@ -1,0 +1,18 @@
+{
+	"id": "fx.keying",
+	"name": "抠像",
+	"version": "0.2.0",
+	"contract": ">=0.1.0 <0.2.0",
+	"description": "专业绿幕键、亮度键、差值键、颜色范围、蒙版清理与去溢色（算子由 fx.native-kit 原生实现）",
+	"script": "plugin.gd",
+	"icon": "◧",
+	"color": "#5ee1a6",
+	"category": "图像插件",
+	"inject": [
+		"kernel.graph",
+		"plugin.fx.native-kit"
+	],
+	"provide": {
+		"plugin.fx.keying": "1.0"
+	}
+}

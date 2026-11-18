@@ -1,0 +1,473 @@
+{
+	"category": "图像/色调",
+	"nodes": [
+		{
+			"id": "tone.posterize_pro",
+			"label": "色调分离 Pro",
+			"desc": "把连续的颜色压成有限几档。默认按亮度分档（保住色相），也可以按 RGB 分档做像素风。",
+			"op": "tone.posterize_pro",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "mode",
+					"label": "按什么分档",
+					"kind": "enum",
+					"default": "luma",
+					"options": [
+						{
+							"value": "luma",
+							"label": "亮度（保色相）"
+						},
+						{
+							"value": "rgb",
+							"label": "RGB 各自分档"
+						}
+					],
+					"hint": "赛璐璐上色选亮度；像素风与复古游戏选 RGB"
+				},
+				{
+					"id": "levels",
+					"label": "级数",
+					"kind": "int",
+					"default": 6,
+					"min": 2,
+					"max": 64,
+					"step": 1
+				},
+				{
+					"id": "smooth",
+					"label": "台阶平滑",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 0.9,
+					"step": 0.01,
+					"hint": "0 = 硬断层；0.3 左右像手绘的柔边"
+				},
+				{
+					"id": "dither",
+					"label": "抖动",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"hint": "用噪点打散色带，代价是变脏；只在断层明显时加一点"
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		},
+		{
+			"id": "tone.palette",
+			"label": "调色板量化",
+			"desc": "亮度每过一档换一个颜色：硬边、不插值。2 色做剪影，4 色做三色海报。",
+			"op": "tone.palette",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "steps",
+					"label": "几色",
+					"kind": "int",
+					"default": 3,
+					"min": 2,
+					"max": 4,
+					"step": 1
+				},
+				{
+					"id": "c1",
+					"label": "最暗",
+					"kind": "color",
+					"default": "#0b1020"
+				},
+				{
+					"id": "c2",
+					"label": "次暗",
+					"kind": "color",
+					"default": "#3f5f9e"
+				},
+				{
+					"id": "c3",
+					"label": "次亮",
+					"kind": "color",
+					"default": "#e8b06a"
+				},
+				{
+					"id": "c4",
+					"label": "最亮",
+					"kind": "color",
+					"default": "#fff4de"
+				},
+				{
+					"id": "smooth",
+					"label": "边界柔化",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 0.9,
+					"step": 0.01,
+					"hint": "0 = 硬边（海报感）；往右变成窄渐变"
+				},
+				{
+					"id": "invert",
+					"label": "反相",
+					"kind": "bool",
+					"default": false
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		},
+		{
+			"id": "tone.levels_pro",
+			"label": "专业色阶",
+			"desc": "输入黑白点 + 伽马 + 输出黑白点。可以只作用在某一条通道上，专治偏色。",
+			"op": "tone.levels_pro",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "in_black",
+					"label": "输入黑点",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 0.98,
+					"step": 0.005,
+					"hint": "把画面里最暗的灰认定成 0：灰片先用它"
+				},
+				{
+					"id": "in_white",
+					"label": "输入白点",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.02,
+					"max": 1.0,
+					"step": 0.005
+				},
+				{
+					"id": "gamma",
+					"label": "伽马",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.1,
+					"max": 10.0,
+					"step": 0.05,
+					"hint": "大于 1 提亮中间调，小于 1 压暗中间调（两端不动）"
+				},
+				{
+					"id": "out_black",
+					"label": "输出黑点",
+					"kind": "float",
+					"default": 0.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"hint": "把黑抬成灰：做「褪色胶片」"
+				},
+				{
+					"id": "out_white",
+					"label": "输出白点",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"hint": "把白压成灰：做「低对比」"
+				},
+				{
+					"id": "channel",
+					"label": "作用通道",
+					"kind": "enum",
+					"default": "rgb",
+					"options": [
+						{
+							"value": "rgb",
+							"label": "全部"
+						},
+						{
+							"value": "red",
+							"label": "只红"
+						},
+						{
+							"value": "green",
+							"label": "只绿"
+						},
+						{
+							"value": "blue",
+							"label": "只蓝"
+						}
+					],
+					"hint": "只动一条通道 = 最直接的偏色修正"
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		},
+		{
+			"id": "tone.split_tone",
+			"label": "分离色调",
+			"desc": "暗部染冷色、亮部染暖色：电影感最省力的一招。",
+			"op": "tone.split_tone",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "shadow",
+					"label": "暗部色",
+					"kind": "color",
+					"default": "#3b4a8c"
+				},
+				{
+					"id": "highlight",
+					"label": "亮部色",
+					"kind": "color",
+					"default": "#ffd9a0"
+				},
+				{
+					"id": "balance",
+					"label": "分界点",
+					"kind": "float",
+					"default": 0.5,
+					"min": 0.05,
+					"max": 0.95,
+					"step": 0.01,
+					"hint": "0.3 = 更多区域算暗部；0.7 = 更多区域算亮部"
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		},
+		{
+			"id": "tone.temperature",
+			"label": "色温 / 自然饱和",
+			"desc": "一格解决偏冷偏绿：色温、色调、自然饱和、饱和。拍完素材先过一遍。",
+			"op": "tone.temperature",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "temperature",
+					"label": "色温",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100.0,
+					"max": 100.0,
+					"step": 1.0,
+					"hint": "往右偏暖（黄），往左偏冷（蓝）"
+				},
+				{
+					"id": "tint",
+					"label": "色调",
+					"kind": "float",
+					"default": 0.0,
+					"min": -100.0,
+					"max": 100.0,
+					"step": 1.0,
+					"hint": "往右偏品红，往左偏绿：荧光灯下发绿用得上"
+				},
+				{
+					"id": "vibrance",
+					"label": "自然饱和",
+					"kind": "float",
+					"default": 0.0,
+					"min": -1.0,
+					"max": 1.0,
+					"step": 0.01,
+					"hint": "只提不饱和的地方，肤色不会被推爆"
+				},
+				{
+					"id": "saturation",
+					"label": "饱和度",
+					"kind": "float",
+					"default": 0.0,
+					"min": -1.0,
+					"max": 1.0,
+					"step": 0.01
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		},
+		{
+			"id": "tone.curves",
+			"label": "曲线",
+			"desc": "拖控制点调亮度与颜色：与 PS / AE 的曲线同一套用法。左键拖点、空白处加点、右键删点。",
+			"op": "tone.curves",
+			"inputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image",
+					"required": true
+				}
+			],
+			"outputs": [
+				{
+					"id": "image",
+					"label": "图像",
+					"type": "image"
+				}
+			],
+			"params": [
+				{
+					"id": "points",
+					"label": "曲线",
+					"kind": "tone.curve",
+					"default": [
+						[
+							0.0,
+							0.0
+						],
+						[
+							0.5,
+							0.5
+						],
+						[
+							1.0,
+							1.0
+						]
+					],
+					"bindable": false,
+					"hint": "横轴 = 输入亮度，纵轴 = 输出亮度；端点固定（定义域），中间点可加可删"
+				},
+				{
+					"id": "channel",
+					"label": "作用通道",
+					"kind": "enum",
+					"default": "rgb",
+					"options": [
+						{
+							"value": "rgb",
+							"label": "全部"
+						},
+						{
+							"value": "red",
+							"label": "只红"
+						},
+						{
+							"value": "green",
+							"label": "只绿"
+						},
+						{
+							"value": "blue",
+							"label": "只蓝"
+						}
+					],
+					"hint": "只动一条通道 = 最直接的偏色修正"
+				},
+				{
+					"id": "amount",
+					"label": "混合",
+					"kind": "float",
+					"default": 1.0,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01
+				}
+			]
+		}
+	]
+}
